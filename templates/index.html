@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Earnings Report Dashboard</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -34,7 +33,6 @@
       border: 1px solid #2d3148;
       border-radius: 12px;
       padding: 28px 32px;
-      margin-bottom: 32px;
     }
 
     .card-title {
@@ -44,11 +42,6 @@
       text-transform: uppercase;
       color: #64748b;
       margin-bottom: 20px;
-    }
-
-    .chart-wrap {
-      position: relative;
-      height: 340px;
     }
 
     table {
@@ -108,13 +101,6 @@
   <p class="subtitle">Revenue by company and period — figures in billions USD</p>
 
   <div class="card">
-    <div class="card-title">Revenue by Company &amp; Period</div>
-    <div class="chart-wrap">
-      <canvas id="revenueChart"></canvas>
-    </div>
-  </div>
-
-  <div class="card">
     <div class="card-title">Revenue Table</div>
     <table id="revenueTable">
       <thead>
@@ -132,11 +118,6 @@
   </div>
 
 <script>
-const PALETTE = [
-  "#818cf8", "#34d399", "#f472b6", "#fb923c",
-  "#38bdf8", "#a78bfa", "#4ade80", "#facc15",
-];
-
 function fmtB(thousands) {
   return "$" + (thousands / 1_000_000).toFixed(3) + "B";
 }
@@ -144,71 +125,13 @@ function fmtB(thousands) {
 async function init() {
   const rows = await fetch("/api/revenue").then(r => r.json());
 
+  const tbody = document.getElementById("tableBody");
+
   if (!rows.length) {
-    document.getElementById("tableBody").innerHTML =
-      `<tr><td colspan="4" class="empty">No data — run main.py against a 10-Q first.</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="4" class="empty">No data — run main.py against a 10-Q first.</td></tr>`;
     return;
   }
 
-  // Collect unique tickers and periods (preserving insertion order = date order)
-  const tickers = [...new Set(rows.map(r => r.ticker))];
-  const periods  = [...new Set(rows.map(r => r.period))];
-
-  // Build lookup: ticker → period → revenue
-  const lookup = {};
-  for (const r of rows) {
-    if (!lookup[r.ticker]) lookup[r.ticker] = {};
-    lookup[r.ticker][r.period] = r.revenue;
-  }
-
-  // Chart: one dataset per company, one bar per period
-  const datasets = tickers.map((ticker, i) => ({
-    label: ticker,
-    data: periods.map(p => {
-      const v = lookup[ticker]?.[p];
-      return v != null ? +(v / 1_000_000).toFixed(6) : null;
-    }),
-    backgroundColor: PALETTE[i % PALETTE.length] + "cc",
-    borderColor:     PALETTE[i % PALETTE.length],
-    borderWidth: 1,
-    borderRadius: 4,
-  }));
-
-  new Chart(document.getElementById("revenueChart"), {
-    type: "bar",
-    data: { labels: periods, datasets },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          labels: { color: "#94a3b8", font: { size: 12 } }
-        },
-        tooltip: {
-          callbacks: {
-            label: ctx => ` ${ctx.dataset.label}: $${ctx.parsed.y.toFixed(3)}B`
-          }
-        }
-      },
-      scales: {
-        x: {
-          ticks: { color: "#64748b" },
-          grid:  { color: "#1e2130" },
-        },
-        y: {
-          ticks: {
-            color: "#64748b",
-            callback: v => "$" + v.toFixed(2) + "B"
-          },
-          grid: { color: "#2d3148" },
-          title: { display: true, text: "Revenue (USD billions)", color: "#475569" }
-        }
-      }
-    }
-  });
-
-  // Table
-  const tbody = document.getElementById("tableBody");
   tbody.innerHTML = rows.map(r => `
     <tr>
       <td>${r.name}</td>

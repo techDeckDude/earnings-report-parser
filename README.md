@@ -80,9 +80,7 @@ A Flask web server that reads from the SQLite database and renders an interactiv
 - **`GET /`** — serves the dashboard HTML
 - **`GET /api/revenue`** — returns all revenue records as JSON, joined across `companies`, `earnings_reports`, and `financial_metrics`
 
-The dashboard shows:
-- A grouped bar chart (Chart.js) with one bar per company per period — new companies and periods appear automatically as more filings are parsed
-- A sortable revenue table beneath the chart
+The dashboard shows a revenue table with one row per company per period — new companies and periods appear automatically as more filings are parsed.
 
 To start the dashboard:
 
