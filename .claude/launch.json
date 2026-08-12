@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "earnings-dashboard",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["/Users/justinbullock/Documents/code-repositories/earnings-report-parser/app.py"],
+      "port": 5001
+    }
+  ]
+}

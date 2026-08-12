@@ -5,7 +5,7 @@ A prototype pipeline that extracts structured financial data from SEC 10-Q PDF f
 ## Usage
 
 ```bash
-pip install pdfplumber pydantic
+pip install pdfplumber pydantic flask
 python main.py path/to/10-Q.pdf [earnings.db]
 ```
 
@@ -73,14 +73,36 @@ All writes use `INSERT ... ON CONFLICT ... DO UPDATE`, so re-running against the
 
 Calls each step in sequence, prints a human-readable summary to stdout, and writes a full JSON dump of the extracted report.
 
+### 5. Web Dashboard (`app.py` + `templates/index.html`)
+
+A Flask web server that reads from the SQLite database and renders an interactive revenue dashboard at `http://localhost:5001`.
+
+- **`GET /`** — serves the dashboard HTML
+- **`GET /api/revenue`** — returns all revenue records as JSON, joined across `companies`, `earnings_reports`, and `financial_metrics`
+
+The dashboard shows:
+- A grouped bar chart (Chart.js) with one bar per company per period — new companies and periods appear automatically as more filings are parsed
+- A sortable revenue table beneath the chart
+
+To start the dashboard:
+
+```bash
+python app.py
+# then open http://localhost:5001
+```
+
 ## Project Structure
 
 ```
 earnings-report-parser/
-├── main.py        # Entry point and CLI
-├── extractor.py   # PDF parsing and regex extraction
-├── models.py      # Pydantic data models and validators
-├── db.py          # SQLite schema and persistence
+├── main.py              # CLI entry point: extract → validate → save → summarize
+├── extractor.py         # PDF parsing and regex extraction
+├── models.py            # Pydantic data models and validators
+├── db.py                # SQLite schema and persistence
+├── app.py               # Flask web server and API
+├── templates/
+│   └── index.html       # Revenue dashboard (Chart.js)
+├── CLAUDE.md            # AI agent rules for this project
 └── README.md
 ```
 
