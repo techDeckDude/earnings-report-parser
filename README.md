@@ -108,6 +108,74 @@ earnings-report-parser/
 └── README.md
 ```
 
+## Workflow: How to Ingest a New Quarterly Report
+
+This section describes the full process — including the iterative debugging that is typically required — for getting a new 10-Q PDF to parse correctly and appear in the dashboard.
+
+### Step 1: Run `main.py` against the new PDF
+
+```bash
+python main.py path/to/new-10-Q.pdf
+```
+
+The most common outcome on a brand-new filing is an extraction error printed to stderr:
+
+```
+ERROR during extraction: Pattern not found: 'Some label pattern here'
+```
+
+This means a regex in `extractor.py` couldn't find the expected label text on the page it was looking at. This is normal — SEC filings use slightly different label wording across companies and across years.
+
+### Step 2: Debug by printing the actual page text
+
+Open a Python shell or scratch script and print the raw text from the relevant page:
+
+```python
+import pdfplumber
+
+with pdfplumber.open("path/to/new-10-Q.pdf") as pdf:
+    print(pdf.pages[3].extract_text())  # page 3 = income statement
+    print(pdf.pages[2].extract_text())  # page 2 = balance sheet
+    # cash flow: scan pages 5-10 manually if needed
+```
+
+Look for the line that should match the failing pattern. The actual text will usually be slightly different — a missing `$`, a word order change, a negative in parentheses instead of with a minus sign, or a line item that's split across two rows instead of one.
+
+### Step 3: Fix the regex in `extractor.py`
+
+Common failure modes encountered so far and how they were fixed:
+
+| Problem | Example | Fix |
+|---|---|---|
+| Parenthetical negative | `(3,173)` instead of `3,173` | Change `([\d,]+)` to `(\([\d,]+\)\|[\d,]+)` |
+| Optional `$` sign | `Total assets 10,199,183` vs `Total assets $ 10,199,183` | Change `\$\s*` to `\$?\s*` |
+| Split line items | `Accounts payable` and `Accrued liabilities` on separate rows | Add a fallback in `_find_accounts_payable` that sums both |
+| Different label wording | `Net earnings per share` vs `Earnings per share` | Use `(?:Net )?` to make the prefix optional |
+| Wrong page | Cash flow on page 7 (index 6) vs page 8 (index 7) | Use `_find_cf_page()` which scans dynamically |
+
+After fixing a pattern, re-run `main.py`. Repeat until the run completes with "Validation passed" and "Saved as report_id=N".
+
+### Step 4: Verify in the dashboard
+
+Reload `http://localhost:5001` — the new filing should appear as a new row in the revenue table automatically. No dashboard changes needed; the UI pulls all data fresh from the DB on each load.
+
+### Step 5: Commit
+
+Per the project rules in `CLAUDE.md`, update this README to reflect any extractor changes (e.g. add the new failure mode to the table above), then commit.
+
+---
+
+### What "compatible" means in practice
+
+The extractor will work on a new filing without any changes if:
+- The income statement is on page 4 (index 3) and the balance sheet is on page 3 (index 2)
+- All line item labels use the same wording as a previously tested filing
+- Dollar amounts appear in the same column position (first number after the label)
+
+It will likely need a small fix if the filing is from a different company, a different fiscal year where label wording changed, or the page count of the document shifts the financial statement locations.
+
+---
+
 ## Known Limitations
 
 The extractor is tightly coupled to the Palantir 10-Q format:
