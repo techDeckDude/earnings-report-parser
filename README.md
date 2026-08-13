@@ -37,6 +37,10 @@ PDF → extractor.py → models.py → db.py → earnings.db
 
 Each statement has its own extraction function (`_extract_income_statement`, `_extract_balance_sheet`, `_extract_cash_flow`). These use regex patterns to find known line-item labels and capture the number that follows. Dollar signs, commas, and parenthetical negatives (e.g. `(1,509,665)`) are all normalized by `_parse_num`.
 
+The cash flow page is located dynamically (`_find_cf_page`) by scanning the first 20 pages for a content anchor (`Net cash provided by operating activities`), since this page number varies across quarterly filings. The balance sheet and income statement are reliably on pages 3 and 4 (0-indexed 2 and 3) across all tested filings.
+
+The extractor handles label variations between filing years, including split vs. combined accounts payable lines and differences in EPS label wording.
+
 The cover page is scanned separately to extract the company name, filing period, and period-end date.
 
 ### 2. Validation (`models.py`)
@@ -108,8 +112,9 @@ earnings-report-parser/
 
 The extractor is tightly coupled to the Palantir 10-Q format:
 
-- **Page numbers are hardcoded** — other filings put financial statements on different pages
-- **Regex labels match PLTR's exact wording** — other companies use different names for the same line items
+- **Balance sheet and income statement page numbers are hardcoded** (indices 2 and 3) — reliable across all tested PLTR filings but not guaranteed for other companies
+- **Cash flow page is discovered dynamically** — resolved across Q1 2025–Q2 2026
+- **Regex labels match PLTR's wording** — other companies use different names for the same line items
 - **Column order is assumed** — the income statement has four columns (current quarter, prior quarter, YTD, prior YTD); the regex always captures the first, which is the current quarter
 
-It will work reliably for any Palantir quarterly filing with the same page layout, but would need changes to handle other companies or annual 10-K filings.
+Tested and working against: Q1 2025, Q2 2025, Q3 2025, Q1 2026, Q2 2026.

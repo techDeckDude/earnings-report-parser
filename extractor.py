@@ -20,6 +20,18 @@ def _find(pattern: str, text: str, group: int = 1) -> float:
     return _parse_num(m.group(group))
 
 
+def _find_accounts_payable(text: str) -> float:
+    """Handle combined (2026+) and split (2025) accounts payable formats."""
+    try:
+        return _find(
+            r"Accounts payable, accrued liabilities, and other\s+\$?\s*([\d,]+)", text
+        )
+    except ValueError:
+        ap = _find(r"Accounts payable\s+\$\s*([\d,]+)", text)
+        accrued = _find(r"Accrued liabilities\s+([\d,]+)", text)
+        return ap + accrued
+
+
 def _extract_income_statement(text: str) -> IncomeStatement:
     return IncomeStatement(
         revenue=_find(r"Revenue\s+\$\s*([\d,]+)", text),
@@ -31,8 +43,9 @@ def _extract_income_statement(text: str) -> IncomeStatement:
         total_operating_expenses=_find(r"Total operating expenses\s+([\d,]+)", text),
         income_from_operations=_find(r"Income from operations\s+([\d,]+)", text),
         interest_income=_find(r"Interest income\s+([\d,]+)", text),
+        # Allow parenthetical negatives, e.g. (3,173)
         other_income_expense=_find(
-            r"Other income \(expense\), net\s+([\d,]+)", text
+            r"Other income \(expense\), net\s+(\([\d,]+\)|[\d,]+)", text
         ),
         income_before_tax=_find(
             r"Income before provision for income taxes\s+([\d,]+)", text
@@ -42,19 +55,21 @@ def _extract_income_statement(text: str) -> IncomeStatement:
         net_income_attributable_to_common=_find(
             r"Net income attributable to common stockholders\s+\$\s*([\d,]+)", text
         ),
+        # "Net earnings per share" (2025) vs "Earnings per share" (2026)
         eps_basic=_find(
-            r"Earnings per share attributable to common stockholders, basic\s+\$\s*([\d.]+)",
+            r"(?:Net )?[Ee]arnings per share attributable to common stockholders, basic\s+\$\s*([\d.]+)",
             text,
         ),
         eps_diluted=_find(
-            r"Earnings per share attributable to common stockholders, diluted\s+\$\s*([\d.]+)",
+            r"(?:Net )?[Ee]arnings per share attributable to common stockholders, diluted\s+\$\s*([\d.]+)",
             text,
         ),
+        # Match first share count after the label end "stockholders, basic"
         shares_outstanding_basic=_find(
-            r"basic\s+(2,\d{3},\d{3})\s+2,\d{3},\d{3}\s+2,\d{3},\d{3}", text
+            r"stockholders,\s*basic\s+(2,\d{3},\d{3})", text
         ),
         shares_outstanding_diluted=_find(
-            r"diluted\s+(2,\d{3},\d{3})\s+2,\d{3},\d{3}\s+2,\d{3},\d{3}", text
+            r"stockholders,\s*diluted\s+(2,\d{3},\d{3})", text
         ),
     )
 
@@ -75,10 +90,8 @@ def _extract_balance_sheet(text: str) -> BalanceSheet:
             r"Operating lease right-of-use assets\s+([\d,]+)", text
         ),
         other_assets=_find(r"Other assets\s+([\d,]+)", text),
-        total_assets=_find(r"Total assets\s+\$\s*([\d,]+)", text),
-        accounts_payable_and_accrued=_find(
-            r"Accounts payable, accrued liabilities, and other\s+\$\s*([\d,]+)", text
-        ),
+        total_assets=_find(r"Total assets\s+\$?\s*([\d,]+)", text),
+        accounts_payable_and_accrued=_find_accounts_payable(text),
         deferred_revenue_current=_find(r"Deferred revenue\s+([\d,]+)", text),
         customer_deposits_current=_find(r"Customer deposits\s+([\d,]+)", text),
         total_current_liabilities=_find(r"Total current liabilities\s+([\d,]+)", text),
@@ -87,7 +100,7 @@ def _extract_balance_sheet(text: str) -> BalanceSheet:
             r"Operating lease liabilities, noncurrent\s+([\d,]+)", text
         ),
         total_liabilities=_find(r"Total liabilities\s+([\d,]+)", text),
-        total_equity=_find(r"Total equity\s+([\d,]+)", text),
+        total_equity=_find(r"Total equity\s+\$?\s*([\d,]+)", text),
     )
 
 
@@ -138,15 +151,23 @@ def _extract_metadata(full_text: str) -> tuple[str, str, date]:
     return company_name, quarter, end_date
 
 
+def _find_cf_page(pdf) -> int:
+    """Return the 0-indexed page number of the cash flow statement."""
+    anchor = re.compile(r"Net cash provided by operating activities\s+[\d,]+")
+    for i, page in enumerate(pdf.pages[:20]):
+        if anchor.search(page.extract_text() or ""):
+            return i
+    raise ValueError("Could not locate cash flow statement in first 20 pages")
+
+
 def extract_report(pdf_path: str) -> EarningsReport:
     with pdfplumber.open(pdf_path) as pdf:
-        # Pages 3-4: balance sheet + income statement (0-indexed: 2, 3)
-        # Pages 8-9: cash flow (0-indexed: 7, 8)
         cover_text = pdf.pages[0].extract_text() or ""
         bs_text = pdf.pages[2].extract_text() or ""
         is_text = pdf.pages[3].extract_text() or ""
+        cf_start = _find_cf_page(pdf)
         cf_text = "\n".join(
-            p.extract_text() or "" for p in pdf.pages[7:9]
+            p.extract_text() or "" for p in pdf.pages[cf_start : cf_start + 2]
         )
 
     company_name, period, period_end_date = _extract_metadata(cover_text)
