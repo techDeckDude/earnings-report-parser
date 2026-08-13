@@ -103,10 +103,16 @@ earnings-report-parser/
 ├── db.py                # SQLite schema and persistence
 ├── app.py               # Flask web server and API
 ├── templates/
-│   └── index.html       # Revenue dashboard (Chart.js)
+│   └── index.html       # Revenue dashboard
+├── docs/
+│   └── aws-deployment.md  # Plan for deploying to S3 + EC2 + RDS
 ├── CLAUDE.md            # AI agent rules for this project
 └── README.md
 ```
+
+## Deployment
+
+See [docs/aws-deployment.md](docs/aws-deployment.md) for a full plan to deploy this project to AWS using S3 (PDF storage), EC2 (Flask + ingestion), and RDS PostgreSQL (replacing SQLite).
 
 ## Workflow: How to Ingest a New Quarterly Report
 
