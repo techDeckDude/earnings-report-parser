@@ -1,15 +1,17 @@
 from __future__ import annotations
-import sqlite3
 from flask import Flask, jsonify, render_template
 
+from db import init_db, _execute
+
 app = Flask(__name__)
-DB_PATH = "earnings.db"
+_conn = None
 
 
-def get_db() -> sqlite3.Connection:
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    return conn
+def get_db():
+    global _conn
+    if _conn is None:
+        _conn = init_db()
+    return _conn
 
 
 @app.route("/")
@@ -20,16 +22,14 @@ def index():
 @app.route("/api/revenue")
 def revenue():
     conn = get_db()
-    rows = conn.execute(
-        """
+    rows = _execute(conn, """
         SELECT c.ticker, c.name, er.period, er.period_end_date, fm.value AS revenue
         FROM financial_metrics fm
         JOIN earnings_reports er ON fm.report_id = er.id
         JOIN companies c ON er.company_id = c.id
         WHERE fm.statement = 'income_statement' AND fm.metric_name = 'revenue'
         ORDER BY er.period_end_date, c.ticker
-        """
-    ).fetchall()
+    """).fetchall()
     return jsonify([dict(r) for r in rows])
 
 

@@ -1,29 +1,41 @@
 # Earnings Report Parser
 
-A prototype pipeline that extracts structured financial data from SEC 10-Q PDF filings, validates it with Pydantic, and persists it to a SQLite database. Built and tested against the Palantir Technologies Q2 2026 10-Q.
+A pipeline that extracts structured financial data from SEC 10-Q PDF filings, validates it with Pydantic, uploads a normalized contract JSON to S3, and persists data to SQLite (local) or PostgreSQL (cloud). Built and tested against Palantir Technologies Q1 2025–Q2 2026.
 
 ## Usage
 
 ```bash
-pip install pdfplumber pydantic flask
-python main.py path/to/10-Q.pdf [earnings.db]
+pip install pdfplumber pydantic flask boto3 psycopg2-binary
+python main.py path/to/10-Q.pdf
 ```
 
 This produces:
 - Console output with a formatted financial summary
-- A SQLite database (default: `earnings.db`) with the extracted data
-- A JSON file alongside the PDF with the full extracted payload
+- A normalized contract JSON written locally alongside the PDF
+- The contract uploaded to S3 (when `S3_BUCKET` env var is set)
+- Data persisted to SQLite locally, or PostgreSQL when `DB_HOST` is set
+
+**To replay a contract from S3 into the database:**
+```bash
+python loader.py s3://financial-statements/PLTR/10-Q/FY2026Q2.json
+# or from a local file:
+python loader.py path/to/contract.json
+```
 
 ## How It Works
 
-The pipeline runs in four steps:
+The pipeline runs in two stages connected by a normalized contract JSON:
 
 ```
-PDF → extractor.py → models.py → db.py → earnings.db
-                          ↓
+PDF → extractor.py → models.py → contract JSON → S3
+                          ↓                    (audit trail / replay)
                     validation error
                     (stops the run)
+
+contract JSON → loader.py → db.py → SQLite or Postgres
 ```
+
+`main.py` runs both stages in sequence. `loader.py` can run the second stage independently from an existing S3 contract, without re-touching the original PDF.
 
 ### 1. Extraction (`extractor.py`)
 
@@ -75,7 +87,13 @@ All writes use `INSERT ... ON CONFLICT ... DO UPDATE`, so re-running against the
 
 ### 4. Orchestration (`main.py`)
 
-Calls each step in sequence, prints a human-readable summary to stdout, and writes a full JSON dump of the extracted report.
+Calls each step in sequence, prints a human-readable summary to stdout, writes the contract JSON locally, and uploads it to S3 if `S3_BUCKET` is set. The DB write uses Postgres when `DB_HOST` is set, SQLite otherwise — no code change required when switching environments.
+
+### 5. Contract Loader (`loader.py`)
+
+Reads a contract JSON from S3 (`s3://bucket/key`) or a local path, re-validates it with Pydantic, and upserts into the database. Useful for replaying ingestion without re-extracting the PDF — for example, after a schema migration or a database rebuild.
+
+The S3 key format is `{ticker}/{filing_type}/FY{year}Q{quarter}.json` (e.g. `PLTR/10-Q/FY2026Q2.json`), making filings browsable by company and report type.
 
 ### 5. Web Dashboard (`app.py` + `templates/index.html`)
 
@@ -106,6 +124,7 @@ earnings-report-parser/
 │   └── index.html       # Revenue dashboard
 ├── docs/
 │   └── aws-deployment.md  # Plan for deploying to S3 + EC2 + RDS
+├── loader.py            # Load a contract JSON from S3 or local path into the DB
 ├── CLAUDE.md            # AI agent rules for this project
 └── README.md
 ```

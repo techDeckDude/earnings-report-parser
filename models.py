@@ -77,6 +77,7 @@ class CashFlow(BaseModel):
 
 
 class EarningsReport(BaseModel):
+    schema_version: str = "1.0"
     company_name: str
     ticker: str
     period: str
