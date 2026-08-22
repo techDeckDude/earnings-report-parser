@@ -6,7 +6,8 @@ A pipeline that extracts structured financial data from SEC 10-Q PDF filings, va
 
 ```bash
 pip install pdfplumber pydantic flask boto3 psycopg2-binary
-python main.py path/to/10-Q.pdf
+# Place the PDF in data/inputs/{TICKER}/ first, then:
+python main.py data/inputs/PLTR/your-10-Q.pdf
 ```
 
 This produces:
@@ -127,6 +128,11 @@ earnings-report-parser/
 ├── app.py               # Flask web server and API
 ├── templates/
 │   └── index.html       # Revenue dashboard
+├── data/
+│   ├── inputs/
+│   │   └── PLTR/        # Place 10-Q PDFs here before running main.py
+│   └── outputs/
+│       └── PLTR/        # Extracted contract JSONs (FY{year}Q{quarter}.json)
 ├── docs/
 │   ├── aws-deployment.md              # Plan for deploying to S3 + EC2 + RDS
 │   └── architecture-diagram-8-22-26.png  # Visual architecture diagram

@@ -113,8 +113,11 @@ def run(pdf_path: str, db_path: str = "earnings.db") -> None:
     print("[4/4] Summary:")
     print_summary(report)
 
-    out_path = Path(pdf_path).stem + "_extracted.json"
-    Path(out_path).write_text(json.dumps(report.model_dump(mode="json"), indent=2))
+    q, year = report.period.split()
+    out_dir = Path("data/outputs") / report.ticker
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_path = out_dir / f"FY{year}{q}.json"
+    out_path.write_text(json.dumps(report.model_dump(mode="json"), indent=2))
     print(f"Full JSON written to: {out_path}")
 
 
