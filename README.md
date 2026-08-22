@@ -220,3 +220,54 @@ It will likely need a small fix if the filing is from a different company, a dif
 - **Only Palantir is implemented** — adding a new company requires writing a new `BaseExtractor` subclass in `extractors/`
 
 Tested and working against: PLTR Q1 2025, Q2 2025, Q3 2025, Q1 2026, Q2 2026.
+
+---
+
+## Design Patterns & Infrastructure
+
+### Design Patterns
+
+| Pattern | Where Applied | Purpose |
+|---|---|---|
+| **Strategy** | `extractors/` — `BaseExtractor` ABC + per-company subclasses, `get_extractor()` registry | Decouple PDF parsing logic from the orchestrator; new company = new file, nothing else changes |
+| **S3 Contract / Landing Zone** | `main.py` → `data/outputs/{ticker}/FY{year}Q{quarter}.json` → S3 → `loader.py` → DB | Decouple extraction from loading; contracts are the durable intermediate record; DB can be rebuilt from S3 without re-parsing PDFs |
+| **Repository** | `db.py` — `upsert_report()`, `init_db()` | Isolate all DB read/write logic; callers (`main.py`, `loader.py`, `app.py`) never write SQL directly |
+| **Dual-backend detection** | `db.py` — `isinstance(conn, sqlite3.Connection)` | Single codebase supports SQLite (local dev) and PostgreSQL (cloud) with no code changes; switching is env-var-driven |
+
+### Infrastructure
+
+| Layer | Technology | Notes |
+|---|---|---|
+| PDF parsing | `pdfplumber` | Text extraction from specific pages; cash flow page discovered dynamically |
+| Data validation | `Pydantic v2` | Schema enforcement + cross-field math checks (gross profit, balance sheet equation) |
+| Local database | `SQLite` | Default; auto-initialized at `earnings.db`; no env vars needed |
+| Cloud database | `PostgreSQL` (via `psycopg2`) | Enabled when `DB_HOST` env var is set |
+| Contract storage | `AWS S3` (via `boto3`) | Enabled when `S3_BUCKET` env var is set; key format `{ticker}/{filing_type}/FY{year}Q{quarter}.json` |
+| Web server | `Flask` | Serves dashboard at `localhost:5001`; single `/api/revenue` JSON endpoint |
+| Schema versioning | `schema_version: "1.0"` on `EarningsReport` | Lets `loader.py` detect and reject stale contract formats |
+
+### Environment Variables
+
+| Variable | Effect |
+|---|---|
+| `S3_BUCKET` | If set, `main.py` uploads the contract JSON to this S3 bucket after extraction |
+| `DB_HOST` | If set, `db.py` connects to PostgreSQL instead of local SQLite |
+| `DB_NAME` | PostgreSQL database name (default: `earningsdb`) |
+| `DB_USER` | PostgreSQL username |
+| `DB_PASSWORD` | PostgreSQL password |
+| `DB_PORT` | PostgreSQL port (default: `5432`) |
+
+---
+
+## Changelog
+
+- **2026-08-22** — Organized input/output files into `data/inputs/{ticker}/` and `data/outputs/{ticker}/` structure; `main.py` now writes contract JSONs there automatically
+- **2026-08-22** — Refactored extractor to Strategy pattern: `extractors/base.py` defines the `BaseExtractor` interface, `extractors/palantir.py` holds all PLTR-specific logic, `get_extractor()` selects the right implementation at runtime from the cover page
+- **2026-08-22** — Added architecture diagram to `docs/`
+- **2026-08-14** — Implemented S3 contract pattern: extraction now uploads a normalized JSON to S3; added `loader.py` to replay contracts into the DB without re-parsing PDFs; added PostgreSQL support via `psycopg2` with env-var-driven backend detection
+- **2026-08-12** — Added AWS deployment documentation (`docs/aws-deployment.md`) covering S3 + EC2 + RDS setup
+- **2026-08-12** — Added end-to-end ingestion workflow to README including common failure modes and debugging steps
+- **2026-08-12** — Fixed extractor to handle label variations across Q1 2025–Q2 2026 filings (parenthetical negatives, optional `$`, split accounts payable, EPS label wording, dynamic cash flow page)
+- **2026-08-12** — Removed bar chart from dashboard; revenue table only
+- **2026-08-12** — Added Flask web dashboard (`app.py` + `templates/index.html`) serving revenue data from SQLite
+- **2026-08-12** — Initial prototype: PDF → `pdfplumber` extraction → Pydantic validation → SQLite persistence
