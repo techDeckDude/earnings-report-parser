@@ -123,7 +123,8 @@ earnings-report-parser/
 ├── templates/
 │   └── index.html       # Revenue dashboard
 ├── docs/
-│   └── aws-deployment.md  # Plan for deploying to S3 + EC2 + RDS
+│   ├── aws-deployment.md              # Plan for deploying to S3 + EC2 + RDS
+│   └── architecture-diagram-8-22-26.png  # Visual architecture diagram
 ├── loader.py            # Load a contract JSON from S3 or local path into the DB
 ├── CLAUDE.md            # AI agent rules for this project
 └── README.md
