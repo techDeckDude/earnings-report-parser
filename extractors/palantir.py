@@ -1,12 +1,12 @@
 from __future__ import annotations
 import re
 import pdfplumber
-from datetime import date
+from datetime import date, datetime
 from models import BalanceSheet, CashFlow, EarningsReport, IncomeStatement
+from .base import BaseExtractor
 
 
 def _parse_num(text: str) -> float:
-    """Strip $, commas, whitespace and cast to float. Handles negatives in parens."""
     text = text.strip().replace("$", "").replace(",", "").replace(" ", "")
     if text.startswith("(") and text.endswith(")"):
         return -float(text[1:-1])
@@ -32,6 +32,14 @@ def _find_accounts_payable(text: str) -> float:
         return ap + accrued
 
 
+def _find_cf_page(pdf) -> int:
+    anchor = re.compile(r"Net cash provided by operating activities\s+[\d,]+")
+    for i, page in enumerate(pdf.pages[:20]):
+        if anchor.search(page.extract_text() or ""):
+            return i
+    raise ValueError("Could not locate cash flow statement in first 20 pages")
+
+
 def _extract_income_statement(text: str) -> IncomeStatement:
     return IncomeStatement(
         revenue=_find(r"Revenue\s+\$\s*([\d,]+)", text),
@@ -43,7 +51,6 @@ def _extract_income_statement(text: str) -> IncomeStatement:
         total_operating_expenses=_find(r"Total operating expenses\s+([\d,]+)", text),
         income_from_operations=_find(r"Income from operations\s+([\d,]+)", text),
         interest_income=_find(r"Interest income\s+([\d,]+)", text),
-        # Allow parenthetical negatives, e.g. (3,173)
         other_income_expense=_find(
             r"Other income \(expense\), net\s+(\([\d,]+\)|[\d,]+)", text
         ),
@@ -55,7 +62,6 @@ def _extract_income_statement(text: str) -> IncomeStatement:
         net_income_attributable_to_common=_find(
             r"Net income attributable to common stockholders\s+\$\s*([\d,]+)", text
         ),
-        # "Net earnings per share" (2025) vs "Earnings per share" (2026)
         eps_basic=_find(
             r"(?:Net )?[Ee]arnings per share attributable to common stockholders, basic\s+\$\s*([\d.]+)",
             text,
@@ -64,7 +70,6 @@ def _extract_income_statement(text: str) -> IncomeStatement:
             r"(?:Net )?[Ee]arnings per share attributable to common stockholders, diluted\s+\$\s*([\d.]+)",
             text,
         ),
-        # Match first share count after the label end "stockholders, basic"
         shares_outstanding_basic=_find(
             r"stockholders,\s*basic\s+(2,\d{3},\d{3})", text
         ),
@@ -132,53 +137,45 @@ def _extract_cash_flow(text: str) -> CashFlow:
     )
 
 
-def _extract_metadata(full_text: str) -> tuple[str, str, date]:
-    """Return (company_name, period, period_end_date)."""
-    name_m = re.search(r"(Palantir Technologies Inc\.)", full_text)
-    company_name = name_m.group(1) if name_m else "Unknown"
+class PalantirExtractor(BaseExtractor):
+    def can_handle(self, cover_text: str) -> bool:
+        return "Palantir" in cover_text
 
-    period_m = re.search(
-        r"quarterly period ended ([A-Z][a-z]+ \d{1,2}, \d{4})", full_text, re.IGNORECASE
-    )
-    if period_m:
-        from datetime import datetime
-        end_date = datetime.strptime(period_m.group(1), "%B %d, %Y").date()
-        quarter = f"Q{(end_date.month - 1) // 3 + 1} {end_date.year}"
-    else:
-        end_date = date(2026, 6, 30)
-        quarter = "Q2 2026"
+    def extract(self, pdf_path: str) -> EarningsReport:
+        with pdfplumber.open(pdf_path) as pdf:
+            cover_text = pdf.pages[0].extract_text() or ""
+            bs_text = pdf.pages[2].extract_text() or ""
+            is_text = pdf.pages[3].extract_text() or ""
+            cf_start = _find_cf_page(pdf)
+            cf_text = "\n".join(
+                p.extract_text() or "" for p in pdf.pages[cf_start : cf_start + 2]
+            )
 
-    return company_name, quarter, end_date
+        company_name, period, period_end_date = self._extract_metadata(cover_text)
 
-
-def _find_cf_page(pdf) -> int:
-    """Return the 0-indexed page number of the cash flow statement."""
-    anchor = re.compile(r"Net cash provided by operating activities\s+[\d,]+")
-    for i, page in enumerate(pdf.pages[:20]):
-        if anchor.search(page.extract_text() or ""):
-            return i
-    raise ValueError("Could not locate cash flow statement in first 20 pages")
-
-
-def extract_report(pdf_path: str) -> EarningsReport:
-    with pdfplumber.open(pdf_path) as pdf:
-        cover_text = pdf.pages[0].extract_text() or ""
-        bs_text = pdf.pages[2].extract_text() or ""
-        is_text = pdf.pages[3].extract_text() or ""
-        cf_start = _find_cf_page(pdf)
-        cf_text = "\n".join(
-            p.extract_text() or "" for p in pdf.pages[cf_start : cf_start + 2]
+        return EarningsReport(
+            company_name=company_name,
+            ticker="PLTR",
+            period=period,
+            period_end_date=period_end_date,
+            filing_type="10-Q",
+            income_statement=_extract_income_statement(is_text),
+            balance_sheet=_extract_balance_sheet(bs_text),
+            cash_flow=_extract_cash_flow(cf_text),
         )
 
-    company_name, period, period_end_date = _extract_metadata(cover_text)
+    def _extract_metadata(self, full_text: str) -> tuple[str, str, date]:
+        name_m = re.search(r"(Palantir Technologies Inc\.)", full_text)
+        company_name = name_m.group(1) if name_m else "Unknown"
 
-    return EarningsReport(
-        company_name=company_name,
-        ticker="PLTR",
-        period=period,
-        period_end_date=period_end_date,
-        filing_type="10-Q",
-        income_statement=_extract_income_statement(is_text),
-        balance_sheet=_extract_balance_sheet(bs_text),
-        cash_flow=_extract_cash_flow(cf_text),
-    )
+        period_m = re.search(
+            r"quarterly period ended ([A-Z][a-z]+ \d{1,2}, \d{4})", full_text, re.IGNORECASE
+        )
+        if period_m:
+            end_date = datetime.strptime(period_m.group(1), "%B %d, %Y").date()
+            quarter = f"Q{(end_date.month - 1) // 3 + 1} {end_date.year}"
+        else:
+            end_date = date(2026, 6, 30)
+            quarter = "Q2 2026"
+
+        return company_name, quarter, end_date

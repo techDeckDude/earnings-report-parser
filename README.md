@@ -37,23 +37,25 @@ contract JSON → loader.py → db.py → SQLite or Postgres
 
 `main.py` runs both stages in sequence. `loader.py` can run the second stage independently from an existing S3 contract, without re-touching the original PDF.
 
-### 1. Extraction (`extractor.py`)
+### 1. Extraction (`extractors/`)
 
-`pdfplumber` opens the PDF and pulls raw text from specific pages where each financial statement lives in the Palantir 10-Q:
+The extractor package uses a **Strategy pattern** to decouple the extraction interface from company-specific PDF formats:
+
+- **`extractors/base.py`** — defines `BaseExtractor`, an abstract base class with two methods: `can_handle(cover_text) -> bool` and `extract(pdf_path) -> EarningsReport`.
+- **`extractors/palantir.py`** — `PalantirExtractor` implements `BaseExtractor` with all Palantir-specific page numbers, regex patterns, and label variations.
+- **`extractors/__init__.py`** — maintains a registry of extractor instances. `get_extractor(pdf_path)` reads the PDF cover page and returns the first registered extractor whose `can_handle()` returns `True`.
+
+Adding support for a new company means creating a new file (e.g. `extractors/acme.py`), implementing `BaseExtractor`, and adding it to `_REGISTRY` — nothing else changes.
+
+`PalantirExtractor` reads raw text from specific pages:
 
 | Page (0-indexed) | Content |
 |---|---|
 | 2 | Balance Sheet |
 | 3 | Income Statement |
-| 7–8 | Cash Flow Statement |
+| dynamic | Cash Flow Statement |
 
-Each statement has its own extraction function (`_extract_income_statement`, `_extract_balance_sheet`, `_extract_cash_flow`). These use regex patterns to find known line-item labels and capture the number that follows. Dollar signs, commas, and parenthetical negatives (e.g. `(1,509,665)`) are all normalized by `_parse_num`.
-
-The cash flow page is located dynamically (`_find_cf_page`) by scanning the first 20 pages for a content anchor (`Net cash provided by operating activities`), since this page number varies across quarterly filings. The balance sheet and income statement are reliably on pages 3 and 4 (0-indexed 2 and 3) across all tested filings.
-
-The extractor handles label variations between filing years, including split vs. combined accounts payable lines and differences in EPS label wording.
-
-The cover page is scanned separately to extract the company name, filing period, and period-end date.
+Each statement has its own extraction function using regex patterns to find known line-item labels. Dollar signs, commas, and parenthetical negatives (e.g. `(1,509,665)`) are normalized by `_parse_num`. The cash flow page is located dynamically by scanning the first 20 pages for a content anchor, since this page number varies across quarterly filings.
 
 ### 2. Validation (`models.py`)
 
@@ -116,7 +118,10 @@ python app.py
 ```
 earnings-report-parser/
 ├── main.py              # CLI entry point: extract → validate → save → summarize
-├── extractor.py         # PDF parsing and regex extraction
+├── extractors/
+│   ├── __init__.py      # Registry and get_extractor() strategy selector
+│   ├── base.py          # BaseExtractor abstract interface
+│   └── palantir.py      # Palantir 10-Q implementation of BaseExtractor
 ├── models.py            # Pydantic data models and validators
 ├── db.py                # SQLite schema and persistence
 ├── app.py               # Flask web server and API
@@ -204,11 +209,8 @@ It will likely need a small fix if the filing is from a different company, a dif
 
 ## Known Limitations
 
-The extractor is tightly coupled to the Palantir 10-Q format:
-
-- **Balance sheet and income statement page numbers are hardcoded** (indices 2 and 3) — reliable across all tested PLTR filings but not guaranteed for other companies
-- **Cash flow page is discovered dynamically** — resolved across Q1 2025–Q2 2026
-- **Regex labels match PLTR's wording** — other companies use different names for the same line items
+- **`PalantirExtractor` page numbers are hardcoded** (balance sheet index 2, income statement index 3) — reliable across all tested PLTR filings but specific to their layout
 - **Column order is assumed** — the income statement has four columns (current quarter, prior quarter, YTD, prior YTD); the regex always captures the first, which is the current quarter
+- **Only Palantir is implemented** — adding a new company requires writing a new `BaseExtractor` subclass in `extractors/`
 
-Tested and working against: Q1 2025, Q2 2025, Q3 2025, Q1 2026, Q2 2026.
+Tested and working against: PLTR Q1 2025, Q2 2025, Q3 2025, Q1 2026, Q2 2026.

@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 from pydantic import ValidationError
 
-from extractor import extract_report
+from extractors import get_extractor
 from db import init_db, upsert_report
 from models import EarningsReport
 
@@ -81,7 +81,7 @@ def upload_contract(report: EarningsReport, bucket: str) -> str:
 def run(pdf_path: str, db_path: str = "earnings.db") -> None:
     print(f"[1/4] Extracting data from: {pdf_path}")
     try:
-        report = extract_report(pdf_path)
+        report = get_extractor(pdf_path).extract(pdf_path)
     except Exception as e:
         print(f"ERROR during extraction: {e}", file=sys.stderr)
         sys.exit(1)
