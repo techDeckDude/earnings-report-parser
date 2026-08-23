@@ -18,9 +18,9 @@ Before creating any git commit, you MUST update `README.md` to reflect the chang
 - If infrastructure changes (e.g. new cloud service, new env var, new dependency), update the **Infrastructure** subsection.
 
 ### Changelog
-- Every commit must add a new entry to the **Changelog** section at the bottom of the README.
+- Every commit must add a new entry to the top of `CHANGELOG.md` (newest-first).
 - Format: `- **YYYY-MM-DD** — <one-sentence description of what changed and why>`
-- Entries are newest-first. Never delete old entries.
+- Never delete old entries.
 - The entry should describe the change from a user/operator perspective, not an implementation perspective (e.g. "Added support for parsing Snowflake 10-Q filings" not "Added SnowflakeExtractor class").
 
 ### Known Limitations
