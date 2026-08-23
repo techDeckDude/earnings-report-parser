@@ -33,6 +33,14 @@
       border: 1px solid #2d3148;
       border-radius: 12px;
       padding: 28px 32px;
+      margin-bottom: 24px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
     }
 
     .card-title {
@@ -41,9 +49,92 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #64748b;
-      margin-bottom: 20px;
     }
 
+    /* Ticker selector buttons */
+    .ticker-selector {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ticker-btn {
+      background: #2d3148;
+      color: #64748b;
+      border: 1px solid #3d4165;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+
+    .ticker-btn.active {
+      background: #312e81;
+      color: #a5b4fc;
+      border-color: #6366f1;
+    }
+
+    .ticker-btn:hover:not(.active) {
+      background: #363a5a;
+      color: #94a3b8;
+    }
+
+    /* SVG chart */
+    #chart {
+      width: 100%;
+      overflow: visible;
+    }
+
+    .axis-label {
+      font-size: 11px;
+      fill: #64748b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .grid-line {
+      stroke: #2d3148;
+      stroke-width: 1;
+    }
+
+    .chart-line {
+      fill: none;
+      stroke: #6366f1;
+      stroke-width: 2.5;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    .chart-dot {
+      fill: #6366f1;
+      stroke: #1e2130;
+      stroke-width: 2;
+      cursor: pointer;
+      transition: r 0.1s;
+    }
+
+    .chart-dot:hover { r: 7; }
+
+    /* Tooltip */
+    #tooltip {
+      position: fixed;
+      background: #1e2130;
+      border: 1px solid #3d4165;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.8rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.1s;
+      z-index: 100;
+    }
+
+    #tooltip .tt-period { color: #64748b; font-size: 0.7rem; margin-bottom: 2px; }
+    #tooltip .tt-rev { color: #f8fafc; font-weight: 600; font-size: 0.95rem; }
+
+    /* Table */
     table {
       width: 100%;
       border-collapse: collapse;
@@ -100,9 +191,25 @@
   <h1>Earnings Dashboard</h1>
   <p class="subtitle">Revenue by company and period — figures in billions USD</p>
 
+  <!-- Chart card -->
   <div class="card">
-    <div class="card-title">Revenue Table</div>
-    <table id="revenueTable">
+    <div class="card-header">
+      <div class="card-title">Revenue Chart</div>
+      <div class="ticker-selector" id="tickerSelector"></div>
+    </div>
+    <svg id="chart" viewBox="0 0 780 260"></svg>
+  </div>
+
+  <!-- Tooltip -->
+  <div id="tooltip">
+    <div class="tt-period" id="ttPeriod"></div>
+    <div class="tt-rev" id="ttRev"></div>
+  </div>
+
+  <!-- Table card -->
+  <div class="card">
+    <div class="card-title" style="margin-bottom:20px">Revenue Table</div>
+    <table>
       <thead>
         <tr>
           <th>Company</th>
@@ -118,20 +225,152 @@
   </div>
 
 <script>
+const PAD = { top: 16, right: 24, bottom: 48, left: 64 };
+const W = 780, H = 260;
+const INNER_W = W - PAD.left - PAD.right;
+const INNER_H = H - PAD.top - PAD.bottom;
+
 function fmtB(thousands) {
   return "$" + (thousands / 1_000_000).toFixed(3) + "B";
 }
 
+function fmtBShort(thousands) {
+  return "$" + (thousands / 1_000_000).toFixed(1) + "B";
+}
+
+let allData = [];       // all revenue rows sorted by period_end_date
+let byTicker = {};      // { PLTR: [...], MRVL: [...] }
+let activeTicker = null;
+
 async function init() {
   const rows = await fetch("/api/revenue").then(r => r.json());
 
-  const tbody = document.getElementById("tableBody");
+  // Sort by date then ticker
+  rows.sort((a, b) => a.period_end_date.localeCompare(b.period_end_date) || a.ticker.localeCompare(b.ticker));
+  allData = rows;
 
+  // Group by ticker
+  byTicker = {};
+  for (const r of rows) {
+    if (!byTicker[r.ticker]) byTicker[r.ticker] = [];
+    byTicker[r.ticker].push(r);
+  }
+
+  buildSelector();
+  buildTable(rows);
+}
+
+function buildSelector() {
+  const container = document.getElementById("tickerSelector");
+  const tickers = Object.keys(byTicker).sort();
+  if (!tickers.length) return;
+
+  container.innerHTML = tickers.map(t =>
+    `<button class="ticker-btn" data-ticker="${t}" onclick="selectTicker('${t}')">${t}</button>`
+  ).join("");
+
+  selectTicker(tickers[0]);
+}
+
+function selectTicker(ticker) {
+  activeTicker = ticker;
+
+  document.querySelectorAll(".ticker-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.ticker === ticker);
+  });
+
+  drawChart(byTicker[ticker] || []);
+}
+
+function drawChart(rows) {
+  const svg = document.getElementById("chart");
+
+  if (!rows.length) {
+    svg.innerHTML = `<text x="${W/2}" y="${H/2}" text-anchor="middle" fill="#475569" font-size="14" font-family="system-ui">No data</text>`;
+    return;
+  }
+
+  const revenues = rows.map(r => r.revenue);
+  const minRev = Math.min(...revenues);
+  const maxRev = Math.max(...revenues);
+  const revPad = (maxRev - minRev) * 0.15 || maxRev * 0.1;
+  const yMin = Math.max(0, minRev - revPad);
+  const yMax = maxRev + revPad;
+
+  function xPos(i) {
+    return PAD.left + (rows.length === 1 ? INNER_W / 2 : (i / (rows.length - 1)) * INNER_W);
+  }
+  function yPos(rev) {
+    return PAD.top + INNER_H - ((rev - yMin) / (yMax - yMin)) * INNER_H;
+  }
+
+  // Y grid lines and labels (4 levels)
+  const yTicks = 4;
+  let gridLines = "";
+  let yLabels = "";
+  for (let i = 0; i <= yTicks; i++) {
+    const val = yMin + (i / yTicks) * (yMax - yMin);
+    const y = yPos(val);
+    gridLines += `<line class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}" />`;
+    yLabels += `<text class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${fmtBShort(val)}</text>`;
+  }
+
+  // X labels (period strings)
+  let xLabels = "";
+  const step = rows.length <= 8 ? 1 : Math.ceil(rows.length / 8);
+  rows.forEach((r, i) => {
+    if (i % step !== 0 && i !== rows.length - 1) return;
+    xLabels += `<text class="axis-label" x="${xPos(i)}" y="${H - PAD.bottom + 18}" text-anchor="middle">${r.period}</text>`;
+  });
+
+  // Line path
+  const points = rows.map((r, i) => `${xPos(i)},${yPos(r.revenue)}`);
+  const linePath = `M ${points.join(" L ")}`;
+
+  // Dots
+  const dots = rows.map((r, i) => {
+    const x = xPos(i);
+    const y = yPos(r.revenue);
+    return `<circle class="chart-dot" cx="${x}" cy="${y}" r="5"
+      onmouseenter="showTip(event,'${r.period}','${fmtB(r.revenue)}')"
+      onmouseleave="hideTip()" />`;
+  }).join("");
+
+  svg.innerHTML = `
+    ${gridLines}
+    ${yLabels}
+    ${xLabels}
+    <path class="chart-line" d="${linePath}" />
+    ${dots}
+  `;
+}
+
+function showTip(e, period, rev) {
+  const tip = document.getElementById("tooltip");
+  document.getElementById("ttPeriod").textContent = period;
+  document.getElementById("ttRev").textContent = rev;
+  tip.style.opacity = "1";
+  moveTip(e);
+}
+
+function moveTip(e) {
+  const tip = document.getElementById("tooltip");
+  tip.style.left = (e.clientX + 14) + "px";
+  tip.style.top  = (e.clientY - 36) + "px";
+}
+
+function hideTip() {
+  document.getElementById("tooltip").style.opacity = "0";
+}
+
+document.getElementById("chart").addEventListener("mousemove", moveTip);
+
+function buildTable(rows) {
+  const tbody = document.getElementById("tableBody");
   if (!rows.length) {
     tbody.innerHTML = `<tr><td colspan="4" class="empty">No data — run main.py against a 10-Q first.</td></tr>`;
     return;
   }
-
   tbody.innerHTML = rows.map(r => `
     <tr>
       <td>${r.name}</td>
