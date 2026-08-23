@@ -138,11 +138,15 @@ def _extract_cash_flow(text: str) -> CashFlow:
 
 
 class PalantirExtractor(BaseExtractor):
-    def can_handle(self, cover_text: str) -> bool:
-        return "Palantir" in cover_text
+    def can_handle(self, file_path: str) -> bool:
+        if not file_path.lower().endswith(".pdf"):
+            return False
+        with pdfplumber.open(file_path) as pdf:
+            cover = pdf.pages[0].extract_text() or ""
+        return "Palantir" in cover
 
-    def extract(self, pdf_path: str) -> EarningsReport:
-        with pdfplumber.open(pdf_path) as pdf:
+    def extract(self, file_path: str) -> EarningsReport:
+        with pdfplumber.open(file_path) as pdf:
             cover_text = pdf.pages[0].extract_text() or ""
             bs_text = pdf.pages[2].extract_text() or ""
             is_text = pdf.pages[3].extract_text() or ""

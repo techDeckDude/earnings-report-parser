@@ -1,21 +1,20 @@
 from __future__ import annotations
-import pdfplumber
 from .base import BaseExtractor
 from .palantir import PalantirExtractor
+from .marvell import MarvellExtractor
 
 _REGISTRY: list[BaseExtractor] = [
     PalantirExtractor(),
+    MarvellExtractor(),
 ]
 
 
-def get_extractor(pdf_path: str) -> BaseExtractor:
-    """Read the PDF cover page and return the first registered extractor that can handle it."""
-    with pdfplumber.open(pdf_path) as pdf:
-        cover = pdf.pages[0].extract_text() or ""
+def get_extractor(file_path: str) -> BaseExtractor:
+    """Return the first registered extractor that can handle the given file."""
     for extractor in _REGISTRY:
-        if extractor.can_handle(cover):
+        if extractor.can_handle(file_path):
             return extractor
     raise ValueError(
-        f"No registered extractor can handle this PDF.\n"
-        f"Cover text (first 300 chars):\n{cover[:300]}"
+        f"No registered extractor can handle: {file_path!r}\n"
+        f"Registered extractors: {[type(e).__name__ for e in _REGISTRY]}"
     )

@@ -171,6 +171,7 @@ def upsert_report(conn, report: EarningsReport) -> int:
             ("cash_flow",        report.cash_flow),
         ]
         for field_name, value in model.model_dump().items()
+        if value is not None
     ]
 
     _executemany(conn, f"""

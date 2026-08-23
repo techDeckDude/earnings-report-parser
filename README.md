@@ -122,7 +122,8 @@ earnings-report-parser/
 ├── extractors/
 │   ├── __init__.py      # Registry and get_extractor() strategy selector
 │   ├── base.py          # BaseExtractor abstract interface
-│   └── palantir.py      # Palantir 10-Q implementation of BaseExtractor
+│   ├── palantir.py      # Palantir 10-Q implementation (PDF via pdfplumber + regex)
+│   └── marvell.py       # Marvell Technology 10-Q implementation (iXBRL ZIP via tag lookup)
 ├── models.py            # Pydantic data models and validators
 ├── db.py                # SQLite schema and persistence
 ├── app.py               # Flask web server and API
@@ -130,9 +131,11 @@ earnings-report-parser/
 │   └── index.html       # Revenue dashboard
 ├── data/
 │   ├── inputs/
-│   │   └── PLTR/        # Place 10-Q PDFs here before running main.py
+│   │   ├── PLTR/        # Place 10-Q PDFs here before running main.py
+│   │   └── MRVL/        # Place 10-Q iXBRL ZIPs here before running main.py
 │   └── outputs/
-│       └── PLTR/        # Extracted contract JSONs (FY{year}Q{quarter}.json)
+│       ├── PLTR/        # Extracted contract JSONs (FY{year}Q{quarter}.json)
+│       └── MRVL/        # Extracted contract JSONs (FY{year}Q{quarter}.json)
 ├── docs/
 │   ├── aws-deployment.md              # Plan for deploying to S3 + EC2 + RDS
 │   └── architecture-diagram-8-22-26.png  # Visual architecture diagram
@@ -218,9 +221,10 @@ It will likely need a small fix if the filing is from a different company, a dif
 
 - **`PalantirExtractor` page numbers are hardcoded** (balance sheet index 2, income statement index 3) — reliable across all tested PLTR filings but specific to their layout
 - **Column order is assumed** — the income statement has four columns (current quarter, prior quarter, YTD, prior YTD); the regex always captures the first, which is the current quarter
-- **Only Palantir is implemented** — adding a new company requires writing a new `BaseExtractor` subclass in `extractors/`
+- **`PalantirExtractor` is PDF/regex-only** — adding another PDF-based company requires its own subclass
+- **MRVL cash flow is YTD, not quarterly** — Marvell files the cash flow statement as a year-to-date figure in their 10-Q; individual quarter CF is not directly available without subtracting prior periods
 
-Tested and working against: PLTR Q1 2025, Q2 2025, Q3 2025, Q1 2026, Q2 2026.
+Tested and working against: PLTR Q1 2025–Q2 2026; MRVL Q1 2024–Q1 2027.
 
 ---
 
@@ -230,7 +234,7 @@ Tested and working against: PLTR Q1 2025, Q2 2025, Q3 2025, Q1 2026, Q2 2026.
 
 | Pattern | Where Applied | Purpose |
 |---|---|---|
-| **Strategy** | `extractors/` — `BaseExtractor` ABC + per-company subclasses, `get_extractor()` registry | Decouple PDF parsing logic from the orchestrator; new company = new file, nothing else changes |
+| **Strategy** | `extractors/` — `BaseExtractor` ABC + per-company subclasses (`PalantirExtractor`, `MarvellExtractor`), `get_extractor()` registry | Decouple parsing logic from the orchestrator; new company = new file, nothing else changes |
 | **S3 Contract / Landing Zone** | `main.py` → `data/outputs/{ticker}/FY{year}Q{quarter}.json` → S3 → `loader.py` → DB | Decouple extraction from loading; contracts are the durable intermediate record; DB can be rebuilt from S3 without re-parsing PDFs |
 | **Repository** | `db.py` — `upsert_report()`, `init_db()` | Isolate all DB read/write logic; callers (`main.py`, `loader.py`, `app.py`) never write SQL directly |
 | **Dual-backend detection** | `db.py` — `isinstance(conn, sqlite3.Connection)` | Single codebase supports SQLite (local dev) and PostgreSQL (cloud) with no code changes; switching is env-var-driven |
@@ -239,7 +243,8 @@ Tested and working against: PLTR Q1 2025, Q2 2025, Q3 2025, Q1 2026, Q2 2026.
 
 | Layer | Technology | Notes |
 |---|---|---|
-| PDF parsing | `pdfplumber` | Text extraction from specific pages; cash flow page discovered dynamically |
+| PDF parsing | `pdfplumber` | Used by `PalantirExtractor`; text extraction from specific pages |
+| iXBRL parsing | `zipfile` + `re` | Used by `MarvellExtractor`; extracts US-GAAP tagged values directly from iXBRL HTML; no page-position assumptions |
 | Data validation | `Pydantic v2` | Schema enforcement + cross-field math checks (gross profit, balance sheet equation) |
 | Local database | `SQLite` | Default; auto-initialized at `earnings.db`; no env vars needed |
 | Cloud database | `PostgreSQL` (via `psycopg2`) | Enabled when `DB_HOST` env var is set |

@@ -2,6 +2,7 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-08-22** — Added Marvell Technology (MRVL) support: `MarvellExtractor` parses iXBRL ZIP filings using US-GAAP tag lookup instead of PDF regex; models updated to support optional company-specific fields; 10 MRVL filings (Q1 2024–Q1 2027) ingested and showing in dashboard alongside PLTR
 - **2026-08-22** — Organized input/output files into `data/inputs/{ticker}/` and `data/outputs/{ticker}/` structure; `main.py` now writes contract JSONs there automatically
 - **2026-08-22** — Refactored extractor to Strategy pattern: `extractors/base.py` defines the `BaseExtractor` interface, `extractors/palantir.py` holds all PLTR-specific logic, `get_extractor()` selects the right implementation at runtime from the cover page
 - **2026-08-22** — Added architecture diagram to `docs/`

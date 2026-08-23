@@ -5,11 +5,11 @@ from models import EarningsReport
 
 class BaseExtractor(ABC):
     @abstractmethod
-    def can_handle(self, cover_text: str) -> bool:
-        """Return True if this extractor can parse the given PDF cover page."""
+    def can_handle(self, file_path: str) -> bool:
+        """Return True if this extractor can parse the file at the given path."""
         ...
 
     @abstractmethod
-    def extract(self, pdf_path: str) -> EarningsReport:
-        """Extract a validated EarningsReport from the given PDF."""
+    def extract(self, file_path: str) -> EarningsReport:
+        """Extract a validated EarningsReport from the given file."""
         ...
