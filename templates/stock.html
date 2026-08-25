@@ -62,22 +62,22 @@
 
     .table-wrap { overflow-x: auto; }
 
-    table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 0.82rem; }
 
     th {
-      text-align: right; padding: 6px 12px;
+      text-align: right; padding: 8px 16px;
       font-size: 0.68rem; font-weight: 600;
       letter-spacing: 0.06em; text-transform: uppercase;
       color: #64748b; border-bottom: 1px solid #2d3148;
-      white-space: nowrap;
+      white-space: nowrap; min-width: 88px;
     }
-    th.label-col { text-align: left; min-width: 180px; }
+    th.label-col { text-align: left; min-width: 180px; width: 180px; }
 
     .group-row td {
-      padding: 14px 12px 4px;
+      padding: 16px 16px 6px;
       font-size: 0.65rem; font-weight: 700;
       letter-spacing: 0.1em; text-transform: uppercase;
-      color: #475569;
+      color: #475569; background: #181b2a;
     }
 
     tbody tr.metric-row { cursor: pointer; }
@@ -86,18 +86,18 @@
     tbody tr.metric-row.selected td.label-cell { color: #a5b4fc; }
 
     td {
-      padding: 8px 12px;
+      padding: 10px 16px;
       border-bottom: 1px solid #1a1d2e;
       color: #cbd5e1; white-space: nowrap;
     }
-    td.label-cell { color: #94a3b8; font-weight: 500; }
+    td.label-cell { color: #94a3b8; font-weight: 500; min-width: 180px; width: 180px; }
     td.num-cell {
       text-align: right;
       font-variant-numeric: tabular-nums;
-      color: #f8fafc;
+      color: #f8fafc; min-width: 88px;
     }
-    td.null-cell { text-align: right; color: #374151; }
-    td.derived-cell { text-align: right; color: #818cf8; font-variant-numeric: tabular-nums; }
+    td.null-cell { text-align: right; color: #2d3748; min-width: 88px; }
+    td.derived-cell { text-align: right; color: #818cf8; font-variant-numeric: tabular-nums; min-width: 88px; }
 
     /* ── Chart section ── */
     .chart-section { display: flex; gap: 24px; align-items: flex-start; }
@@ -173,17 +173,6 @@
 
   <div class="ticker-selector" id="tickerSelector"></div>
 
-  <!-- Metrics Table -->
-  <div class="card">
-    <div class="card-title">Quarterly Metrics</div>
-    <div class="table-wrap">
-      <table id="metricsTable">
-        <thead id="tableHead"></thead>
-        <tbody id="tableBody"><tr><td class="empty">Select a ticker above.</td></tr></tbody>
-      </table>
-    </div>
-  </div>
-
   <!-- Chart -->
   <div class="card">
     <div class="card-title">Metric Chart</div>
@@ -193,6 +182,17 @@
         <div class="chart-title" id="chartTitle">—</div>
         <svg id="chart" viewBox="0 0 620 220"></svg>
       </div>
+    </div>
+  </div>
+
+  <!-- Metrics Table -->
+  <div class="card">
+    <div class="card-title">Quarterly Metrics</div>
+    <div class="table-wrap">
+      <table id="metricsTable">
+        <thead id="tableHead"></thead>
+        <tbody id="tableBody"><tr><td class="empty">Select a ticker above.</td></tr></tbody>
+      </table>
     </div>
   </div>
 
