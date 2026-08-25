@@ -98,14 +98,18 @@ Reads a contract JSON from S3 (`s3://bucket/key`) or a local path, re-validates 
 
 The S3 key format is `{ticker}/{filing_type}/FY{year}Q{quarter}.json` (e.g. `PLTR/10-Q/FY2026Q2.json`), making filings browsable by company and report type.
 
-### 5. Web Dashboard (`app.py` + `templates/index.html`)
+### 5. Web Dashboard (`app.py` + `templates/`)
 
-A Flask web server that reads from the SQLite database and renders an interactive revenue dashboard at `http://localhost:5001`.
+A Flask web server that reads from the SQLite database and renders two interactive pages at `http://localhost:5001`.
 
-- **`GET /`** — serves the dashboard HTML
-- **`GET /api/revenue`** — returns all revenue records as JSON, joined across `companies`, `earnings_reports`, and `financial_metrics`
+**Routes:**
+- **`GET /`** — revenue dashboard (`index.html`): interactive line chart (one ticker at a time, switchable) above a full revenue table spanning all companies and periods
+- **`GET /stock`** — stock detail page (`stock.html`): per-ticker metrics table (rows = all metrics, columns = quarters) plus a toggleable line chart for any single metric; ticker and metric are both selectable
+- **`GET /api/revenue`** — revenue records for all companies as JSON
+- **`GET /api/tickers`** — list of all known ticker symbols and company names
+- **`GET /api/metrics/<ticker>`** — all financial metrics for a ticker, pivoted to `{statement: {metric_name: [value_per_period]}}` ordered by `period_end_date`
 
-The dashboard shows a revenue table with one row per company per period — new companies and periods appear automatically as more filings are parsed.
+New companies and periods appear automatically as more filings are parsed — no UI changes needed.
 
 To start the dashboard:
 
@@ -128,7 +132,8 @@ earnings-report-parser/
 ├── db.py                # SQLite schema and persistence
 ├── app.py               # Flask web server and API
 ├── templates/
-│   └── index.html       # Revenue dashboard
+│   ├── index.html       # Revenue dashboard (line chart + table, all companies)
+│   └── stock.html       # Stock detail page (metrics table + toggleable metric chart)
 ├── data/
 │   ├── inputs/
 │   │   ├── PLTR/        # Place 10-Q PDFs here before running main.py
@@ -249,7 +254,7 @@ Tested and working against: PLTR Q1 2025–Q2 2026; MRVL Q1 2024–Q1 2027.
 | Local database | `SQLite` | Default; auto-initialized at `earnings.db`; no env vars needed |
 | Cloud database | `PostgreSQL` (via `psycopg2`) | Enabled when `DB_HOST` env var is set |
 | Contract storage | `AWS S3` (via `boto3`) | Enabled when `S3_BUCKET` env var is set; key format `{ticker}/{filing_type}/FY{year}Q{quarter}.json` |
-| Web server | `Flask` | Serves dashboard at `localhost:5001`; single `/api/revenue` JSON endpoint |
+| Web server | `Flask` | Serves dashboard at `localhost:5001`; routes: `/`, `/stock`, `/api/revenue`, `/api/tickers`, `/api/metrics/<ticker>` |
 | Schema versioning | `schema_version: "1.0"` on `EarningsReport` | Lets `loader.py` detect and reject stale contract formats |
 
 ### Environment Variables
