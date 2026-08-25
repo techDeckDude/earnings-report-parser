@@ -100,33 +100,30 @@
     td.derived-cell { text-align: right; color: #818cf8; font-variant-numeric: tabular-nums; min-width: 88px; }
 
     /* ── Chart section ── */
-    .chart-section { display: flex; gap: 24px; align-items: flex-start; }
+    .chart-section { display: flex; flex-direction: column; gap: 16px; }
 
     .metric-pills {
-      flex-shrink: 0; width: 200px;
-      display: flex; flex-direction: column; gap: 2px;
-      max-height: 300px; overflow-y: auto;
+      display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
     }
 
-    .pill-group-label {
-      font-size: 0.6rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: #374151; padding: 8px 8px 4px;
+    .pill-group-sep {
+      width: 1px; height: 16px;
+      background: #2d3148; margin: 0 2px;
+      flex-shrink: 0;
     }
 
     .pill-btn {
-      background: none; border: none;
-      text-align: left; padding: 5px 8px;
+      background: #252840; border: 1px solid #2d3148;
+      text-align: center; padding: 4px 12px;
       font-size: 0.75rem; color: #64748b;
-      border-radius: 4px; cursor: pointer;
-      transition: background 0.1s, color 0.1s;
-      white-space: nowrap; overflow: hidden;
-      text-overflow: ellipsis;
+      border-radius: 20px; cursor: pointer;
+      transition: background 0.1s, color 0.1s, border-color 0.1s;
+      white-space: nowrap;
     }
-    .pill-btn:hover { background: #252840; color: #94a3b8; }
-    .pill-btn.active { background: #1e1e3a; color: #a5b4fc; font-weight: 600; }
+    .pill-btn:hover { background: #2d3148; color: #94a3b8; border-color: #3d4165; }
+    .pill-btn.active { background: #1e1e3a; color: #a5b4fc; border-color: #6366f1; font-weight: 600; }
 
-    .chart-wrap { flex: 1; min-width: 0; }
+    .chart-wrap { min-width: 0; }
     .chart-title {
       font-size: 0.8rem; font-weight: 600;
       color: #94a3b8; margin-bottom: 12px;
@@ -410,11 +407,13 @@ function buildPills() {
   const { data } = stockData;
   const n = stockData.periods.length;
   let html = "";
+  let firstGroup = true;
 
   for (const group of GROUPS) {
     const available = group.metrics.filter(m => getValues(m, data, n).some(v => v !== null));
     if (!available.length) continue;
-    html += `<div class="pill-group-label">${group.label}</div>`;
+    if (!firstGroup) html += `<div class="pill-group-sep"></div>`;
+    firstGroup = false;
     for (const m of available) {
       html += `<button class="pill-btn" id="pill-${m.id}" onclick="selectMetric('${m.id}')">${m.label}</button>`;
     }
