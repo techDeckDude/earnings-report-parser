@@ -111,11 +111,25 @@ A Flask web server that reads from the SQLite database and renders two interacti
 
 New companies and periods appear automatically as more filings are parsed — no UI changes needed.
 
-To start the dashboard:
+The app runs in two modes from a single codebase:
+
+| Mode | How to run | API |
+|---|---|---|
+| **Live** | `python app.py` → `localhost:5001` | Flask routes hit SQLite in real time |
+| **Static** | `python generate.py` → serve `static/` | Pre-built `.json` files (Cloudflare Pages) |
 
 ```bash
+# Live mode (local dev)
 python app.py
-# then open http://localhost:5001
+
+# Build static output
+python generate.py
+
+# Verify live and static are in sync
+python verify.py
+
+# Serve static locally to preview before deploying
+python -m http.server 8080 --directory static
 ```
 
 ## Project Structure
@@ -130,7 +144,9 @@ earnings-report-parser/
 │   └── marvell.py       # Marvell Technology 10-Q implementation (iXBRL ZIP via tag lookup)
 ├── models.py            # Pydantic data models and validators
 ├── db.py                # SQLite schema and persistence
-├── app.py               # Flask web server and API
+├── app.py               # Flask web server and API; injects STATIC_BUILD flag via context processor
+├── generate.py          # Build static/ from live Flask (sets STATIC_BUILD=true, uses test client)
+├── verify.py            # Diff live API responses against static JSON files; exits 1 on mismatch
 ├── templates/
 │   ├── index.html       # Revenue dashboard (line chart + table, all companies)
 │   └── stock.html       # Stock detail page (metrics table + toggleable metric chart)

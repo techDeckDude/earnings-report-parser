@@ -1,10 +1,16 @@
 from __future__ import annotations
+import os
 from flask import Flask, jsonify, render_template, request
 
 from db import init_db, _execute
 
 app = Flask(__name__)
 _conn = None
+
+
+@app.context_processor
+def inject_build_mode():
+    return {"static_build": os.getenv("STATIC_BUILD") == "true"}
 
 
 def get_db():

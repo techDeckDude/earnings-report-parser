@@ -1,0 +1,107 @@
+[
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q1 2024",
+    "period_end_date": "2023-04-29",
+    "revenue": 1321700.0,
+    "ticker": "MRVL"
+  },
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q2 2024",
+    "period_end_date": "2023-07-29",
+    "revenue": 1340900.0,
+    "ticker": "MRVL"
+  },
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q3 2024",
+    "period_end_date": "2023-10-28",
+    "revenue": 1418600.0,
+    "ticker": "MRVL"
+  },
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q1 2025",
+    "period_end_date": "2024-05-04",
+    "revenue": 1160900.0,
+    "ticker": "MRVL"
+  },
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q2 2025",
+    "period_end_date": "2024-08-03",
+    "revenue": 1272900.0,
+    "ticker": "MRVL"
+  },
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q3 2025",
+    "period_end_date": "2024-11-02",
+    "revenue": 1516100.0,
+    "ticker": "MRVL"
+  },
+  {
+    "name": "Palantir Technologies Inc.",
+    "period": "Q1 2025",
+    "period_end_date": "2025-03-31",
+    "revenue": 883855.0,
+    "ticker": "PLTR"
+  },
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q1 2026",
+    "period_end_date": "2025-05-03",
+    "revenue": 1895300.0,
+    "ticker": "MRVL"
+  },
+  {
+    "name": "Palantir Technologies Inc.",
+    "period": "Q2 2025",
+    "period_end_date": "2025-06-30",
+    "revenue": 1003697.0,
+    "ticker": "PLTR"
+  },
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q2 2026",
+    "period_end_date": "2025-08-02",
+    "revenue": 2006100.0,
+    "ticker": "MRVL"
+  },
+  {
+    "name": "Palantir Technologies Inc.",
+    "period": "Q3 2025",
+    "period_end_date": "2025-09-30",
+    "revenue": 1181092.0,
+    "ticker": "PLTR"
+  },
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q3 2026",
+    "period_end_date": "2025-11-01",
+    "revenue": 2074500.0,
+    "ticker": "MRVL"
+  },
+  {
+    "name": "Palantir Technologies Inc.",
+    "period": "Q1 2026",
+    "period_end_date": "2026-03-31",
+    "revenue": 1632583.0,
+    "ticker": "PLTR"
+  },
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q1 2027",
+    "period_end_date": "2026-05-02",
+    "revenue": 2417800.0,
+    "ticker": "MRVL"
+  },
+  {
+    "name": "Palantir Technologies Inc.",
+    "period": "Q2 2026",
+    "period_end_date": "2026-06-30",
+    "revenue": 1935464.0,
+    "ticker": "PLTR"
+  }
+]

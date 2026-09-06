@@ -120,6 +120,11 @@ def run(pdf_path: str, db_path: str = "earnings.db") -> None:
     out_path.write_text(json.dumps(report.model_dump(mode="json"), indent=2))
     print(f"Full JSON written to: {out_path}")
 
+    print("\n[5/5] Rebuilding static site...")
+    import subprocess
+    subprocess.run([sys.executable, "generate.py"], check=True)
+    subprocess.run([sys.executable, "verify.py"],  check=True)
+
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
