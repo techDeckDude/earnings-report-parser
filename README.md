@@ -283,6 +283,7 @@ Tested and working against: PLTR Q1 2025–Q2 2026; MRVL Q1 2024–Q1 2027.
 | `DB_USER` | PostgreSQL username |
 | `DB_PASSWORD` | PostgreSQL password |
 | `DB_PORT` | PostgreSQL port (default: `5432`) |
+| `PORT` | Flask dev server port (default: `5001`); set automatically by the preview server when `autoPort: true` |
 
 ---
 
