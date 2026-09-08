@@ -161,6 +161,9 @@ earnings-report-parser/
 │   ├── aws-deployment.md              # Plan for deploying to S3 + EC2 + RDS
 │   └── architecture-diagram-8-22-26.png  # Visual architecture diagram
 ├── loader.py            # Load a contract JSON from S3 or local path into the DB
+├── .claude/
+│   └── agents/
+│       └── news-aggregator.md  # Claude Code skill: fetch and sentiment-score AI stock headlines
 ├── CLAUDE.md            # AI agent rules for this project
 ├── CHANGELOG.md         # Chronological record of changes
 └── README.md
