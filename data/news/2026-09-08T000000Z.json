@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-09-08T00:00:00Z",
+  "headlines": [
+    {
+      "headline": "Nvidia agrees to acquire Hugging Face for ~$13B in its second-biggest deal ever",
+      "source": "CNBC",
+      "stocks_mentioned": ["NVDA"],
+      "sentiment": "Bullish",
+      "summary": "Major M&A signals Nvidia deepening its grip on the AI software/model ecosystem, a strong strategic move for the chipmaker"
+    },
+    {
+      "headline": "Qualcomm partners with AWS to build AI infrastructure; shares rise 7%+",
+      "source": "CNBC",
+      "stocks_mentioned": ["QCOM", "AMZN"],
+      "sentiment": "Bullish",
+      "summary": "Strategic partnership expands Qualcomm's AI infrastructure footprint alongside AWS, driving immediate market enthusiasm"
+    },
+    {
+      "headline": "Google launches Gemini 3.8 Flash — its third Flash model in six weeks — plus a cybersecurity model for government customers",
+      "source": "CNBC",
+      "stocks_mentioned": ["GOOGL"],
+      "sentiment": "Bullish",
+      "summary": "Rapid model releases signal aggressive product momentum as Google tries to reverse its four-month losing streak"
+    },
+    {
+      "headline": "Etched raises $700M for custom AI inference silicon and rack-scale systems",
+      "source": "New Market Pitch",
+      "stocks_mentioned": [],
+      "sentiment": "Bullish",
+      "summary": "Massive raise for inference-focused chip startup reflects surging demand for alternatives to GPU-only AI infrastructure"
+    },
+    {
+      "headline": "AI chip market raises $5.37B across 12 deals in Jan–Aug 2026; inference accounts for 67% of capital",
+      "source": "New Market Pitch",
+      "stocks_mentioned": ["NVDA", "AMD", "INTC"],
+      "sentiment": "Bullish",
+      "summary": "Sustained funding concentration in inference hardware indicates the build-out phase is far from over"
+    },
+    {
+      "headline": "Dow drops 511 points in early September; S&P 500 and Nasdaq also slip on post-Labor Day weakness",
+      "source": "CNBC",
+      "stocks_mentioned": [],
+      "sentiment": "Bearish",
+      "summary": "Broad market pullback creates headwinds for AI equities despite strong underlying fundamentals"
+    }
+  ],
+  "summary_stats": {
+    "total_headlines": 6,
+    "bullish_count": 5,
+    "bearish_count": 1,
+    "net_sentiment": "Strongly Bullish"
+  }
+}
