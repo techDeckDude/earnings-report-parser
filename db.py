@@ -1,4 +1,5 @@
 from __future__ import annotations
+import json
 import os
 import sqlite3
 from models import EarningsReport
@@ -37,6 +38,27 @@ CREATE TABLE IF NOT EXISTS financial_metrics (
     value           REAL NOT NULL,
     UNIQUE(report_id, statement, metric_name)
 );
+CREATE TABLE IF NOT EXISTS news_runs (
+    id                  INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_at              DATETIME NOT NULL,
+    period              TEXT NOT NULL,
+    total_headlines     INTEGER NOT NULL DEFAULT 0,
+    score_distribution  TEXT NOT NULL DEFAULT '{}',
+    weighted_sentiment  REAL NOT NULL DEFAULT 0,
+    net_sentiment_label TEXT NOT NULL DEFAULT 'Neutral'
+);
+CREATE TABLE IF NOT EXISTS news_articles (
+    id               INTEGER PRIMARY KEY AUTOINCREMENT,
+    run_id           INTEGER NOT NULL REFERENCES news_runs(id),
+    headline         TEXT NOT NULL,
+    source           TEXT NOT NULL,
+    url              TEXT,
+    url_verified     INTEGER NOT NULL DEFAULT 0,
+    stocks_mentioned TEXT NOT NULL DEFAULT '[]',
+    sentiment_score  INTEGER NOT NULL DEFAULT 0,
+    sentiment_label  TEXT NOT NULL DEFAULT 'Neutral',
+    summary          TEXT NOT NULL DEFAULT ''
+);
 """
 
 _SCHEMA_PG = """
@@ -63,6 +85,27 @@ CREATE TABLE IF NOT EXISTS financial_metrics (
     metric_name     TEXT NOT NULL,
     value           DOUBLE PRECISION NOT NULL,
     UNIQUE(report_id, statement, metric_name)
+);
+CREATE TABLE IF NOT EXISTS news_runs (
+    id                  SERIAL PRIMARY KEY,
+    run_at              TIMESTAMPTZ NOT NULL,
+    period              TEXT NOT NULL,
+    total_headlines     INTEGER NOT NULL DEFAULT 0,
+    score_distribution  TEXT NOT NULL DEFAULT '{}',
+    weighted_sentiment  DOUBLE PRECISION NOT NULL DEFAULT 0,
+    net_sentiment_label TEXT NOT NULL DEFAULT 'Neutral'
+);
+CREATE TABLE IF NOT EXISTS news_articles (
+    id               SERIAL PRIMARY KEY,
+    run_id           INTEGER NOT NULL REFERENCES news_runs(id),
+    headline         TEXT NOT NULL,
+    source           TEXT NOT NULL,
+    url              TEXT,
+    url_verified     BOOLEAN NOT NULL DEFAULT FALSE,
+    stocks_mentioned TEXT NOT NULL DEFAULT '[]',
+    sentiment_score  INTEGER NOT NULL DEFAULT 0,
+    sentiment_label  TEXT NOT NULL DEFAULT 'Neutral',
+    summary          TEXT NOT NULL DEFAULT ''
 );
 """
 
@@ -202,3 +245,103 @@ def query_report(conn, ticker: str, period: str) -> dict:
     for row in rows:
         result.setdefault(row["statement"], {})[row["metric_name"]] = row["value"]
     return result
+
+
+def upsert_news_run(conn, data: dict) -> int:
+    """Insert a news ingestion run and all its articles. Returns run_id."""
+    from datetime import datetime, timezone
+
+    P = _ph(conn)
+    stats = data.get("summary_stats", {})
+    run_at = data.get("timestamp") or datetime.now(timezone.utc).isoformat()
+    headlines = data.get("headlines", [])
+
+    cur = _execute(conn, f"""
+        INSERT INTO news_runs (run_at, period, total_headlines, score_distribution, weighted_sentiment, net_sentiment_label)
+        VALUES ({P}, {P}, {P}, {P}, {P}, {P})
+        RETURNING id
+        """,
+        (
+            run_at,
+            data.get("period", "past 7 days"),
+            stats.get("total_headlines", len(headlines)),
+            json.dumps(stats.get("score_distribution", {})),
+            stats.get("weighted_sentiment", 0.0),
+            stats.get("net_sentiment_label", "Neutral"),
+        ),
+    )
+    run_id = cur.fetchone()["id"]
+
+    _executemany(conn, f"""
+        INSERT INTO news_articles
+            (run_id, headline, source, url, url_verified, stocks_mentioned, sentiment_score, sentiment_label, summary)
+        VALUES ({P}, {P}, {P}, {P}, {P}, {P}, {P}, {P}, {P})
+        """,
+        [
+            (
+                run_id,
+                a["headline"],
+                a["source"],
+                a.get("url"),
+                1 if a.get("url_verified") else 0,
+                json.dumps(a.get("stocks_mentioned", [])),
+                a.get("sentiment_score", 0),
+                a.get("sentiment_label", "Neutral"),
+                a.get("summary", ""),
+            )
+            for a in headlines
+        ],
+    )
+
+    conn.commit()
+    return run_id
+
+
+def get_latest_news(conn) -> dict | None:
+    """Return the most recent ingestion run with all its articles, or None."""
+    run = _execute(conn, """
+        SELECT id, run_at, period, total_headlines, score_distribution, weighted_sentiment, net_sentiment_label
+        FROM news_runs
+        ORDER BY run_at DESC
+        LIMIT 1
+    """).fetchone()
+
+    if not run:
+        return None
+
+    articles = _execute(conn, f"""
+        SELECT headline, source, url, url_verified, stocks_mentioned, sentiment_score, sentiment_label, summary
+        FROM news_articles
+        WHERE run_id = {_ph(conn)}
+        ORDER BY id
+        """,
+        (run["id"],),
+    ).fetchall()
+
+    run_at = run["run_at"]
+    if not isinstance(run_at, str):
+        run_at = run_at.isoformat()
+
+    return {
+        "run_at": run_at,
+        "period": run["period"],
+        "headlines": [
+            {
+                "headline": a["headline"],
+                "source": a["source"],
+                "url": a["url"],
+                "url_verified": bool(a["url_verified"]),
+                "stocks_mentioned": json.loads(a["stocks_mentioned"]),
+                "sentiment_score": a["sentiment_score"],
+                "sentiment_label": a["sentiment_label"],
+                "summary": a["summary"],
+            }
+            for a in articles
+        ],
+        "summary_stats": {
+            "total_headlines": run["total_headlines"],
+            "score_distribution": json.loads(run["score_distribution"]),
+            "weighted_sentiment": run["weighted_sentiment"],
+            "net_sentiment_label": run["net_sentiment_label"],
+        },
+    }

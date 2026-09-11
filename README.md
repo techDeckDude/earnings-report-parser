@@ -71,7 +71,7 @@ If either check fails the run stops before anything is written to the database.
 
 ### 3. Database (`db.py`)
 
-SQLite with three tables:
+SQLite with five tables:
 
 ```
 companies
@@ -82,6 +82,13 @@ earnings_reports
 
 financial_metrics
   id, report_id → earnings_reports, statement, metric_name, value
+
+news_runs
+  id, run_at, period, total_headlines, score_distribution, weighted_sentiment, net_sentiment_label
+
+news_articles
+  id, run_id → news_runs, headline, source, url, url_verified,
+  stocks_mentioned (JSON), sentiment_score, sentiment_label, summary
 ```
 
 `financial_metrics` is a key-value store — every field from every Pydantic model is flattened into a `(statement, metric_name, value)` row. This makes it easy to add new metrics without schema changes.
@@ -107,6 +114,8 @@ A Flask web server that reads from the SQLite database and renders two interacti
 - **`GET /api/revenue`** — revenue records for all companies as JSON
 - **`GET /api/tickers`** — list of all known ticker symbols and company names
 - **`GET /api/metrics/<ticker>`** — all financial metrics for a ticker, pivoted to `{statement: {metric_name: [value_per_period]}}` ordered by `period_end_date`
+- **`GET /api/news`** — most recent news ingestion run with all headlines and summary stats as JSON; returns empty headlines array if no ingestion has run yet
+- **`GET /experimental/themes`** — AI market news feed page; reads from `/api/news`
 
 New companies and periods appear automatically as more filings are parsed — no UI changes needed.
 
@@ -146,10 +155,11 @@ earnings-report-parser/
 ├── app.py               # Flask web server and API; injects STATIC_BUILD flag via context processor
 ├── generate.py          # Build static/ from live Flask (sets STATIC_BUILD=true, uses test client)
 ├── verify.py            # Diff live API responses against static JSON files; exits 1 on mismatch
+├── ingest_news.py       # CLI: fetch AI stock news via Claude (Anthropic SDK + web search), store in DB
 ├── templates/
 │   ├── stock.html       # Earnings page: ticker selector, metric chart, quarterly metrics table
 │   └── experimental/
-│       └── themes.html  # [Experimental] AI news feed with sentiment chart (mock data)
+│       └── themes.html  # [Experimental] AI news feed with sentiment chart (reads from /api/news)
 ├── data/
 │   ├── inputs/
 │   │   ├── PLTR/        # Place 10-Q PDFs here before running main.py
@@ -180,7 +190,7 @@ The `experimental/` package is a Flask Blueprint mounted at `/experimental`. It 
 
 | Route | Template | Description |
 |---|---|---|
-| `GET /experimental/themes` | `templates/experimental/themes.html` | AI market news feed with 5-level sentiment scoring and a sentiment line chart; data is hardcoded (not wired to a live backend) |
+| `GET /experimental/themes` | `templates/experimental/themes.html` | AI market news feed with 5-level sentiment scoring and a sentiment line chart; reads live data from the database via `GET /api/news` |
 
 **Enabling / disabling:**
 

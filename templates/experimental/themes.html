@@ -225,7 +225,7 @@
   </nav>
 
   <h1>Market News</h1>
-  <div class="report-meta">Last report: Sep 11, 2026 · Past 7 days · AI &amp; Stock Market</div>
+  <div class="report-meta" id="reportMeta">Loading…</div>
 
   <div class="chart-card">
     <div class="chart-card-title">Sentiment Score by Article</div>
@@ -258,81 +258,6 @@
   });
 })();
 
-const NEWS = [
-  {
-    headline: "Broadcom Q3 2026: AI revenue hits $16.7B, up 221% year-over-year",
-    source: "24/7 Wall St.",
-    url: "https://247wallst.com/cards/broadcom-q3-2026-earnings-avgo-01m1hx207g9d64z38jwrpy5fdm",
-    url_verified: true,
-    stocks: ["AVGO"],
-    score: 2,
-    summary: "Confirmed Q3 reported revenue with 221% YoY growth — direct upside to earnings, not a forecast.",
-  },
-  {
-    headline: "Broadcom guides Q4 AI semiconductor revenue to $21.7B (+236% YoY); outlines $58B FY2026, $115B in 2027, $230B in 2028",
-    source: "Seeking Alpha",
-    url: "https://seekingalpha.com/news/4639799-broadcom-forecasts-58b-fiscal-2026-ai-revenue-and-outlines-115b-in-2027-230b-in-2028",
-    url_verified: true,
-    stocks: ["AVGO"],
-    score: 2,
-    summary: "Management-issued multi-year revenue guidance qualifies as a confirmed forward commitment under the raised guidance threshold.",
-  },
-  {
-    headline: "Nvidia agrees to acquire Hugging Face for ~$13B",
-    source: "CNBC",
-    url: "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html",
-    url_verified: true,
-    stocks: ["NVDA"],
-    score: 1,
-    summary: "Acquisition deal is confirmed but revenue synergies from Hugging Face remain potential — capital outflow of $13B is not a revenue event.",
-  },
-  {
-    headline: "ExlService raises FY2026 revenue guidance to $2.30B–$2.33B, above prior range",
-    source: "SEC Form 8-K",
-    url: "https://www.sec.gov/Archives/edgar/data/0001297989/000129798926000014/exlq126pressrelease.htm",
-    url_verified: true,
-    stocks: ["EXLS"],
-    score: 2,
-    summary: "Confirmed guidance raise above prior disclosed range — direct upside signal to FY2026 revenue.",
-  },
-  {
-    headline: "Meta AI activity drives stock up 3% — Muse Spark model update reported",
-    source: "CNBC / Axios",
-    url: null,
-    url_verified: false,
-    stocks: ["META"],
-    score: 1,
-    summary: "Meta AI model activity is verified (Muse Spark exists; 1.1 launched July 2026) but the specific version cited in market summaries could not be confirmed — potential upside from continued model rollout.",
-  },
-  {
-    headline: "Kinetix AI raises RMB 500M+ for embodied AI and humanoid robotics",
-    source: "Tech Startups",
-    url: "https://techstartups.com/2026/09/11/startup-funding-news-today-september-11-2026-kinetix-ai-aidin-robotics-enigmata-more/",
-    url_verified: true,
-    stocks: [],
-    score: 1,
-    summary: "Funding round confirms investor confidence in embodied AI — capital raised is not revenue; commercial outcomes remain potential.",
-  },
-  {
-    headline: "Micron Q4 earnings preview: analysts forecast revenue up 350%, EPS up 900% for Sept. 30 report",
-    source: "Motley Fool",
-    url: "https://www.fool.com/investing/2026/09/09/prediction-microns-earnings-could-be-catalyst-ai/",
-    url_verified: true,
-    stocks: ["MU"],
-    score: 0,
-    summary: "Analyst predictions ahead of an upcoming report — no confirmed outcome; elevated expectations could as easily create a miss as a beat.",
-  },
-  {
-    headline: "Wall Street raises bar for AI stocks; portfolio managers shift to defensive positioning",
-    source: "CNBC",
-    url: "https://www.cnbc.com/2026/09/05/we-got-more-defensive-last-week-as-wall-street-raised-the-bar-for-ai-stocks.html",
-    url_verified: true,
-    stocks: [],
-    score: 0,
-    summary: "Market sentiment commentary — investor positioning shift with no specific company revenue or earnings impact confirmed.",
-  },
-];
-
 const LABELS = {
   2: "Very Positive", 1: "Positive", 0: "Neutral", "-1": "Negative", "-2": "Very Negative"
 };
@@ -343,8 +268,7 @@ const CARD_CLASS = {
   2: "s2", 1: "s1", 0: "s0", "-1": "sn1", "-2": "sn2"
 };
 
-// ── Sentiment Chart ──
-(function buildChart() {
+function buildChart(NEWS) {
   const W = 720, H = 210;
   const PAD = { top: 20, right: 28, bottom: 44, left: 44 };
   const IW = W - PAD.left - PAD.right;
@@ -370,7 +294,7 @@ const CARD_CLASS = {
     yLabels += `<text class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${tick > 0 ? "+" : ""}${tick}</text>`;
   });
 
-  const pts = NEWS.map((item, i) => [xPos(i), yPos(item.score)]);
+  const pts = NEWS.map((item, i) => [xPos(i), yPos(item.sentiment_score)]);
   const linePts = pts.map(p => `${p[0]},${p[1]}`).join(" L ");
   const areaD = `M ${pts[0][0]},${zeroY} L ${linePts} L ${pts[pts.length - 1][0]},${zeroY} Z`;
 
@@ -381,13 +305,13 @@ const CARD_CLASS = {
   ).join("");
 
   const dots = NEWS.map((item, i) => {
-    const cx = xPos(i), cy = yPos(item.score);
-    const col = SCORE_COLOR[item.score] || "#818cf8";
+    const cx = xPos(i), cy = yPos(item.sentiment_score);
+    const col = SCORE_COLOR[item.sentiment_score] || "#818cf8";
     const hl = item.headline.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
     const src = item.source.replace(/'/g, "\\'");
-    const scoreLabel = LABELS[item.score];
+    const scoreLabel = LABELS[item.sentiment_score];
     return `<circle class="chart-dot" cx="${cx}" cy="${cy}" r="5" fill="${col}"
-      onmouseenter="showChartTip(event,${item.score},'${scoreLabel}','${hl}','${src}')"
+      onmouseenter="showChartTip(event,${item.sentiment_score},'${scoreLabel}','${hl}','${src}')"
       onmouseleave="hideChartTip()" />`;
   }).join("");
 
@@ -416,7 +340,7 @@ const CARD_CLASS = {
     tip.style.left = (e.clientX + 16) + "px";
     tip.style.top  = (e.clientY - 48) + "px";
   });
-})();
+}
 
 function showChartTip(e, score, label, headline, source) {
   const SCORE_COLOR = { 2: "#00e664", 1: "rgba(0,230,100,0.6)", 0: "#555", "-1": "#f97316", "-2": "#ef4444" };
@@ -435,42 +359,79 @@ function hideChartTip() {
   document.getElementById("chartTooltip").style.opacity = "0";
 }
 
-// Stats row
-const dist = {2:0, 1:0, 0:0, "-1":0, "-2":0};
-NEWS.forEach(n => dist[n.score]++);
-const weighted = (NEWS.reduce((s,n) => s + n.score, 0) / NEWS.length).toFixed(1);
+function renderStats(NEWS) {
+  const dist = {2:0, 1:0, 0:0, "-1":0, "-2":0};
+  NEWS.forEach(n => dist[n.sentiment_score]++);
+  const weighted = (NEWS.reduce((s, n) => s + n.sentiment_score, 0) / NEWS.length).toFixed(1);
 
-document.getElementById("statsRow").innerHTML = [
-  { key: 2,    label: "Very Positive", cls: "very-positive" },
-  { key: 1,    label: "Positive",      cls: "positive" },
-  { key: 0,    label: "Neutral",       cls: "neutral" },
-  { key: "-1", label: "Negative",      cls: "negative" },
-  { key: "-2", label: "Very Negative", cls: "very-negative" },
-].filter(s => dist[s.key] > 0).map(s =>
-  `<div class="stat-chip ${s.cls}"><div class="stat-val">${dist[s.key]}</div><div class="stat-lbl">${s.label}</div></div>`
-).join("") +
-`<div class="stat-chip"><div class="stat-val">${weighted}</div><div class="stat-lbl">Avg Score</div></div>`;
+  document.getElementById("statsRow").innerHTML = [
+    { key: 2,    label: "Very Positive", cls: "very-positive" },
+    { key: 1,    label: "Positive",      cls: "positive" },
+    { key: 0,    label: "Neutral",       cls: "neutral" },
+    { key: "-1", label: "Negative",      cls: "negative" },
+    { key: "-2", label: "Very Negative", cls: "very-negative" },
+  ].filter(s => dist[s.key] > 0).map(s =>
+    `<div class="stat-chip ${s.cls}"><div class="stat-val">${dist[s.key]}</div><div class="stat-lbl">${s.label}</div></div>`
+  ).join("") +
+  `<div class="stat-chip"><div class="stat-val">${weighted}</div><div class="stat-lbl">Avg Score</div></div>`;
+}
 
-// Feed
-document.getElementById("feed").innerHTML = NEWS.map(n => {
-  const titleHtml = n.url
-    ? `<a href="${n.url}" target="_blank" rel="noopener">${n.headline}</a>`
-    : n.headline;
-  const unverified = !n.url_verified
-    ? `<span class="unverified-badge">⚠ Unverified source</span>`
-    : "";
-  const tickers = n.stocks.map(t => `<span class="ticker-tag">${t}</span>`).join("");
-  return `
-    <div class="headline-card ${CARD_CLASS[n.score]}">
-      <div class="headline-top">
-        <div class="headline-text">${titleHtml}</div>
-        <span class="sentiment-pill ${PILL_CLASS[n.score]}">${LABELS[n.score]}</span>
-      </div>
-      <div class="headline-source">${n.source}${unverified}</div>
-      <div class="headline-summary">${n.summary}</div>
-      ${tickers ? `<div class="headline-footer">${tickers}</div>` : ""}
-    </div>`;
-}).join("");
+function renderFeed(NEWS) {
+  document.getElementById("feed").innerHTML = NEWS.map(n => {
+    const titleHtml = n.url
+      ? `<a href="${n.url}" target="_blank" rel="noopener">${n.headline}</a>`
+      : n.headline;
+    const unverified = !n.url_verified
+      ? `<span class="unverified-badge">⚠ Unverified source</span>`
+      : "";
+    const tickers = (n.stocks_mentioned || []).map(t => `<span class="ticker-tag">${t}</span>`).join("");
+    return `
+      <div class="headline-card ${CARD_CLASS[n.sentiment_score]}">
+        <div class="headline-top">
+          <div class="headline-text">${titleHtml}</div>
+          <span class="sentiment-pill ${PILL_CLASS[n.sentiment_score]}">${LABELS[n.sentiment_score]}</span>
+        </div>
+        <div class="headline-source">${n.source}${unverified}</div>
+        <div class="headline-summary">${n.summary}</div>
+        ${tickers ? `<div class="headline-footer">${tickers}</div>` : ""}
+      </div>`;
+  }).join("");
+}
+
+async function loadAndRender() {
+  try {
+    const resp = await fetch('/api/news');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    const NEWS = data.headlines || [];
+
+    if (data.run_at) {
+      const d = new Date(data.run_at);
+      const fmt = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      document.getElementById('reportMeta').textContent =
+        `Last report: ${fmt} · ${data.period || 'past 7 days'} · AI & Stock Market`;
+    }
+
+    if (!NEWS.length) {
+      document.getElementById('reportMeta').textContent = 'No data — run python ingest_news.py to fetch headlines';
+      document.getElementById('feed').innerHTML =
+        `<p style="color:var(--text-3);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;padding:20px 0">` +
+        `Run <code>python ingest_news.py</code> to populate the news feed.</p>`;
+      return;
+    }
+
+    buildChart(NEWS);
+    renderStats(NEWS);
+    renderFeed(NEWS);
+  } catch (err) {
+    document.getElementById('reportMeta').textContent = 'Failed to load';
+    document.getElementById('feed').innerHTML =
+      `<p style="color:#f97316;font-family:'IBM Plex Mono',monospace;font-size:0.75rem;padding:20px 0">` +
+      `Error loading news: ${err.message}</p>`;
+  }
+}
+
+loadAndRender();
 </script>
 </body>
 </html>

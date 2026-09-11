@@ -2,7 +2,7 @@ from __future__ import annotations
 import os
 from flask import Flask, jsonify, render_template, request
 
-from db import init_db, _execute
+from db import init_db, _execute, get_latest_news
 
 app = Flask(__name__)
 _conn = None
@@ -106,6 +106,14 @@ def metrics(ticker):
             for s in pivot
         },
     })
+
+
+@app.route("/api/news")
+def news():
+    data = get_latest_news(get_db())
+    if data is None:
+        return jsonify({"run_at": None, "period": "past 7 days", "headlines": [], "summary_stats": {}})
+    return jsonify(data)
 
 
 if __name__ == "__main__":
