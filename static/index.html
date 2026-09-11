@@ -3,390 +3,607 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Earnings Report Dashboard</title>
+  <title>Earnings Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a' rx='5'/><rect x='5' y='5' width='10' height='10' fill='none' stroke='%2300e664' stroke-width='1.5' rx='1'/><rect x='17' y='5' width='10' height='10' fill='%2300e664' rx='1' opacity='0.4'/><rect x='5' y='17' width='10' height='10' fill='%2300e664' rx='1' opacity='0.7'/><rect x='17' y='17' width='10' height='10' fill='%2300e664' rx='1'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
   <script>window.API_EXT = ".json";</script>
+  <script>(function(){var t=localStorage.getItem('theme');if(t==='light')document.documentElement.dataset.theme='light';})()</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { background: var(--bg); }
+
+    :root {
+      --green:           #00e664;
+      --green-dim:       rgba(0, 230, 100, 0.12);
+      --green-line:      rgba(0, 230, 100, 0.18);
+      --bg:              #0a0a0a;
+      --bg-card:         rgba(255, 255, 255, 0.03);
+      --border:          rgba(255, 255, 255, 0.07);
+      --text-1:          #f0f0f0;
+      --text-2:          #999;
+      --text-3:          #555;
+      --grid-color:      rgba(0, 255, 100, 0.03);
+      --vignette-color:  rgba(0, 0, 0, 0.55);
+    }
+
+    :root[data-theme="light"] {
+      --green:           #007a35;
+      --green-dim:       rgba(0, 122, 53, 0.10);
+      --green-line:      rgba(0, 122, 53, 0.22);
+      --bg:              #f2f1ec;
+      --bg-card:         rgba(0, 0, 0, 0.025);
+      --border:          rgba(0, 0, 0, 0.09);
+      --text-1:          #0e0e0e;
+      --text-2:          #444;
+      --text-3:          #888;
+      --grid-color:      rgba(0, 60, 20, 0.05);
+      --vignette-color:  rgba(242, 241, 236, 0.5);
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0f1117;
-      color: #e2e8f0;
+      font-family: "IBM Plex Sans", -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
       min-height: 100vh;
       padding: 40px 32px;
+      max-width: 940px;
+      margin: 0 auto;
     }
 
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none; z-index: 0;
+    }
+    body::after {
+      content: "";
+      position: fixed; inset: 0;
+      background: radial-gradient(transparent 40%, var(--vignette-color) 100%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .topnav, .page-header, .ticker-selector, .card, #tooltip {
+      position: relative; z-index: 1;
+    }
+
+    /* ── Nav ── */
+    .topnav {
+      display: flex; align-items: center; gap: 4px;
+      border-bottom: 0.5px solid var(--border);
+      margin: -40px -32px 40px;
+      padding: 0 32px;
+      background: var(--bg);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .topnav a {
+      display: block; padding: 14px 18px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em;
+      color: var(--text-3); text-decoration: none;
+      border-bottom: 1px solid transparent; margin-bottom: -1px;
+      transition: color 0.12s;
+    }
+    .topnav a:hover { color: var(--text-2); }
+    .topnav a.active { color: var(--green); border-bottom-color: var(--green); }
+    .theme-toggle {
+      margin-left: auto;
+      background: none; border: 0.5px solid var(--border);
+      color: var(--text-3); cursor: pointer;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em;
+      padding: 5px 10px; border-radius: 3px;
+      transition: color 0.12s, border-color 0.12s;
+    }
+    .theme-toggle:hover { color: var(--text-2); border-color: var(--text-3); }
+
+    /* ── Header ── */
+    .page-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
     h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #f8fafc;
-      margin-bottom: 4px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 1.75rem; font-weight: 600;
+      color: var(--text-1); letter-spacing: -0.02em;
+    }
+    .company-name {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem; color: var(--text-3);
+      letter-spacing: 0.08em; text-transform: uppercase;
     }
 
-    .subtitle {
-      font-size: 0.875rem;
-      color: #64748b;
-      margin-bottom: 40px;
-    }
-
-    .card {
-      background: #1e2130;
-      border: 1px solid #2d3148;
-      border-radius: 12px;
-      padding: 28px 32px;
-      margin-bottom: 24px;
-    }
-
-    .card-header {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    .card-title {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #64748b;
-    }
-
-    /* Ticker selector buttons */
-    .ticker-selector {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
+    /* ── Ticker selector ── */
+    .ticker-selector { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
     .ticker-btn {
-      background: #2d3148;
-      color: #64748b;
-      border: 1px solid #3d4165;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 4px;
-      letter-spacing: 0.04em;
-      cursor: pointer;
-      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      background: var(--bg-card); color: var(--text-3);
+      border: 0.5px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem; font-weight: 600;
+      padding: 5px 14px; border-radius: 4px; letter-spacing: 0.06em;
+      cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .ticker-btn.active { background: var(--green-dim); color: var(--green); border-color: var(--green-line); }
+    .ticker-btn:hover:not(.active) { background: rgba(255,255,255,0.05); color: var(--text-2); border-color: rgba(255,255,255,0.12); }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--bg-card); border: 0.5px solid var(--border);
+      border-radius: 6px; padding: 24px 28px; margin-bottom: 20px;
+    }
+    .card-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-3); margin-bottom: 20px;
     }
 
-    .ticker-btn.active {
-      background: #312e81;
-      color: #a5b4fc;
-      border-color: #6366f1;
+    /* ── Table ── */
+    .table-wrap { overflow-x: auto; }
+    table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+
+    th {
+      text-align: right; padding: 8px 16px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-3); border-bottom: 0.5px solid var(--border);
+      white-space: nowrap; min-width: 88px;
+    }
+    th.label-col { text-align: left; min-width: 180px; width: 180px; }
+
+    .group-row td {
+      padding: 16px 16px 6px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-3); background: rgba(0, 0, 0, 0.3);
     }
 
-    .ticker-btn:hover:not(.active) {
-      background: #363a5a;
-      color: #94a3b8;
+    tbody tr.metric-row { cursor: pointer; }
+    tbody tr.metric-row:hover td { background: rgba(255,255,255,0.03); }
+    tbody tr.metric-row.selected td { background: var(--green-dim); }
+    tbody tr.metric-row.selected td.label-cell { color: var(--green); }
+
+    td { padding: 10px 16px; border-bottom: 0.5px solid rgba(255,255,255,0.04); color: var(--text-2); white-space: nowrap; }
+    td.label-cell { color: var(--text-2); font-weight: 400; min-width: 180px; width: 180px; }
+    td.num-cell { text-align: right; font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; color: var(--text-1); min-width: 88px; }
+    td.null-cell { text-align: right; font-family: "IBM Plex Mono", monospace; color: var(--text-3); min-width: 88px; }
+    td.derived-cell { text-align: right; font-family: "IBM Plex Mono", monospace; color: var(--green); font-variant-numeric: tabular-nums; min-width: 88px; }
+
+    /* ── Chart section ── */
+    .chart-section { display: flex; flex-direction: column; gap: 16px; }
+    .metric-pills { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .pill-group-sep { width: 0.5px; height: 16px; background: var(--border); margin: 0 2px; flex-shrink: 0; }
+
+    .pill-btn {
+      background: var(--bg-card); border: 0.5px solid var(--border);
+      text-align: center; padding: 4px 12px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem; color: var(--text-3);
+      border-radius: 4px; cursor: pointer;
+      transition: background 0.1s, color 0.1s, border-color 0.1s; white-space: nowrap;
+    }
+    .pill-btn:hover { background: rgba(255,255,255,0.05); color: var(--text-2); border-color: rgba(255,255,255,0.12); }
+    .pill-btn.active { background: var(--green-dim); color: var(--green); border-color: var(--green-line); font-weight: 600; }
+
+    .chart-wrap { min-width: 0; }
+    .chart-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em;
+      color: var(--text-2); margin-bottom: 12px;
     }
 
-    /* SVG chart */
-    #chart {
-      width: 100%;
-      overflow: visible;
-    }
-
-    .axis-label {
-      font-size: 11px;
-      fill: #64748b;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    .grid-line {
-      stroke: #2d3148;
-      stroke-width: 1;
-    }
-
-    .chart-line {
-      fill: none;
-      stroke: #6366f1;
-      stroke-width: 2.5;
-      stroke-linejoin: round;
-      stroke-linecap: round;
-    }
-
-    .chart-dot {
-      fill: #6366f1;
-      stroke: #1e2130;
-      stroke-width: 2;
-      cursor: pointer;
-      transition: r 0.1s;
-    }
-
+    #chart { width: 100%; overflow: visible; }
+    .axis-label { font-size: 10px; fill: var(--text-3); font-family: "IBM Plex Mono", monospace; }
+    .grid-line { stroke: var(--border); stroke-width: 1; }
+    .chart-line { fill: none; stroke: var(--green); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+    .chart-dot { fill: var(--green); stroke: var(--bg); stroke-width: 2; cursor: pointer; }
     .chart-dot:hover { r: 7; }
 
-    /* Tooltip */
+    /* ── Tooltip ── */
     #tooltip {
-      position: fixed;
-      background: #1e2130;
-      border: 1px solid #3d4165;
-      border-radius: 8px;
+      position: fixed; background: #0d0d0d;
+      border: 0.5px solid var(--border); border-radius: 6px;
       padding: 10px 14px;
-      font-size: 0.8rem;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.1s;
-      z-index: 100;
+      font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+      pointer-events: none; opacity: 0; transition: opacity 0.1s; z-index: 100;
     }
+    #tooltip .tt-period { color: var(--text-3); font-size: 0.62rem; margin-bottom: 2px; }
+    #tooltip .tt-val { color: var(--green); font-weight: 600; font-size: 0.88rem; }
 
-    #tooltip .tt-period { color: #64748b; font-size: 0.7rem; margin-bottom: 2px; }
-    #tooltip .tt-rev { color: #f8fafc; font-weight: 600; font-size: 0.95rem; }
-
-    /* Table */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.875rem;
-    }
-
-    thead th {
-      text-align: left;
-      padding: 8px 16px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #64748b;
-      border-bottom: 1px solid #2d3148;
-    }
-
-    tbody tr:hover { background: #252840; }
-
-    tbody td {
-      padding: 12px 16px;
-      border-bottom: 1px solid #1a1d2e;
-      color: #cbd5e1;
-    }
-
-    tbody td.num {
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-      color: #f8fafc;
-      font-weight: 500;
-    }
-
-    .ticker {
-      display: inline-block;
-      background: #2d3148;
-      color: #818cf8;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 4px;
-      letter-spacing: 0.04em;
-    }
-
-    .empty {
-      text-align: center;
-      color: #475569;
-      padding: 48px 0;
-      font-size: 0.875rem;
-    }
+    .empty { color: var(--text-3); font-size: 0.875rem; padding: 40px 0; text-align: center; }
   </style>
 </head>
 <body>
 
-  <div style="font-size:0.8rem;color:#475569;margin-bottom:16px;">
-    <a href="/stock" style="color:#6366f1;text-decoration:none;">Stock Detail →</a>
+  <nav class="topnav">
+    <a href="/" class="active">Earnings</a>
+    <a href="/experimental/themes">News</a>
+    <button class="theme-toggle" id="themeToggle">◐ LIGHT</button>
+  </nav>
+
+  <div class="page-header">
+    <h1 id="pageTitle">Stock Detail</h1>
+    <span class="company-name" id="companyName"></span>
   </div>
 
-  <h1>Earnings Dashboard</h1>
-  <p class="subtitle">Revenue by company and period — figures in billions USD</p>
+  <div class="ticker-selector" id="tickerSelector"></div>
 
-  <!-- Chart card -->
+  <!-- Chart -->
   <div class="card">
-    <div class="card-header">
-      <div class="card-title">Revenue Chart</div>
-      <div class="ticker-selector" id="tickerSelector"></div>
+    <div class="card-title">Metric Chart</div>
+    <div class="chart-section">
+      <div class="metric-pills" id="metricPills"></div>
+      <div class="chart-wrap">
+        <div class="chart-title" id="chartTitle">—</div>
+        <svg id="chart" viewBox="0 0 620 220"></svg>
+      </div>
     </div>
-    <svg id="chart" viewBox="0 0 780 260"></svg>
   </div>
 
-  <!-- Tooltip -->
+  <!-- Metrics Table -->
+  <div class="card">
+    <div class="card-title">Quarterly Metrics</div>
+    <div class="table-wrap">
+      <table id="metricsTable">
+        <thead id="tableHead"></thead>
+        <tbody id="tableBody"><tr><td class="empty">Select a ticker above.</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
   <div id="tooltip">
     <div class="tt-period" id="ttPeriod"></div>
-    <div class="tt-rev" id="ttRev"></div>
-  </div>
-
-  <!-- Table card -->
-  <div class="card">
-    <div class="card-title" style="margin-bottom:20px">Revenue Table</div>
-    <table>
-      <thead>
-        <tr>
-          <th>Company</th>
-          <th>Ticker</th>
-          <th>Period</th>
-          <th style="text-align:right">Revenue</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-        <tr><td colspan="4" class="empty">Loading…</td></tr>
-      </tbody>
-    </table>
+    <div class="tt-val" id="ttVal"></div>
   </div>
 
 <script>
-const PAD = { top: 16, right: 24, bottom: 48, left: 64 };
-const W = 780, H = 260;
-const INNER_W = W - PAD.left - PAD.right;
-const INNER_H = H - PAD.top - PAD.bottom;
+// Theme toggle
+(function() {
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  function syncLabel() {
+    btn.textContent = root.dataset.theme === 'light' ? '◑ DARK' : '◐ LIGHT';
+  }
+  syncLabel();
+  btn.addEventListener('click', function() {
+    const isLight = root.dataset.theme === 'light';
+    root.dataset.theme = isLight ? 'dark' : 'light';
+    localStorage.setItem('theme', isLight ? 'dark' : 'light');
+    syncLabel();
+  });
+})();
 
-function fmtB(thousands) {
-  return "$" + (thousands / 1_000_000).toFixed(3) + "B";
+// ── Metric definitions ────────────────────────────────────────────────────────
+
+const GROUPS = [
+  {
+    label: "Income Statement",
+    metrics: [
+      { id: "revenue",           stmt: "income_statement", field: "revenue",                         label: "Revenue",              fmt: "money" },
+      { id: "cost_of_revenue",   stmt: "income_statement", field: "cost_of_revenue",                 label: "Cost of Revenue",      fmt: "money" },
+      { id: "gross_profit",      stmt: "income_statement", field: "gross_profit",                    label: "Gross Profit",         fmt: "money" },
+      { id: "gross_margin",      derived: true,                                                       label: "Gross Margin",         fmt: "pct"   },
+      { id: "rd",                stmt: "income_statement", field: "research_and_development",        label: "R&D",                  fmt: "money" },
+      { id: "sm",                stmt: "income_statement", field: "sales_and_marketing",             label: "Sales & Marketing",    fmt: "money" },
+      { id: "ga",                stmt: "income_statement", field: "general_and_administrative",      label: "G&A",                  fmt: "money" },
+      { id: "sga",               stmt: "income_statement", field: "selling_general_and_administrative", label: "SG&A",             fmt: "money" },
+      { id: "total_opex",        stmt: "income_statement", field: "total_operating_expenses",        label: "Total Opex",           fmt: "money" },
+      { id: "op_income",         stmt: "income_statement", field: "income_from_operations",          label: "Operating Income",     fmt: "money" },
+      { id: "net_income",        stmt: "income_statement", field: "net_income",                      label: "Net Income",           fmt: "money" },
+      { id: "eps_basic",         stmt: "income_statement", field: "eps_basic",                       label: "EPS (Basic)",          fmt: "eps"   },
+      { id: "eps_diluted",       stmt: "income_statement", field: "eps_diluted",                     label: "EPS (Diluted)",        fmt: "eps"   },
+    ],
+  },
+  {
+    label: "Balance Sheet",
+    metrics: [
+      { id: "cash",              stmt: "balance_sheet",    field: "cash_and_equivalents",            label: "Cash & Equivalents",   fmt: "money" },
+      { id: "mkt_sec",           stmt: "balance_sheet",    field: "marketable_securities",           label: "Marketable Securities",fmt: "money" },
+      { id: "ar",                stmt: "balance_sheet",    field: "accounts_receivable_net",         label: "Accounts Receivable",  fmt: "money" },
+      { id: "cur_assets",        stmt: "balance_sheet",    field: "total_current_assets",            label: "Total Current Assets", fmt: "money" },
+      { id: "total_assets",      stmt: "balance_sheet",    field: "total_assets",                    label: "Total Assets",         fmt: "money" },
+      { id: "cur_liab",          stmt: "balance_sheet",    field: "total_current_liabilities",       label: "Current Liabilities",  fmt: "money" },
+      { id: "total_liab",        stmt: "balance_sheet",    field: "total_liabilities",               label: "Total Liabilities",    fmt: "money" },
+      { id: "equity",            stmt: "balance_sheet",    field: "total_equity",                    label: "Total Equity",         fmt: "money" },
+    ],
+  },
+  {
+    label: "Cash Flow",
+    metrics: [
+      { id: "op_cf",             stmt: "cash_flow",        field: "net_cash_from_operations",        label: "Operating Cash Flow",  fmt: "money" },
+      { id: "capex",             stmt: "cash_flow",        field: "capex",                           label: "CapEx",                fmt: "money" },
+      { id: "fcf",               derived: true,                                                       label: "Free Cash Flow",       fmt: "money" },
+      { id: "inv_cf",            stmt: "cash_flow",        field: "net_cash_from_investing",         label: "Investing Cash Flow",  fmt: "money" },
+      { id: "fin_cf",            stmt: "cash_flow",        field: "net_cash_from_financing",         label: "Financing Cash Flow",  fmt: "money" },
+      { id: "sbc",               stmt: "cash_flow",        field: "stock_based_compensation",        label: "Stock-Based Comp",     fmt: "money" },
+    ],
+  },
+];
+
+const ALL_METRICS = GROUPS.flatMap(g => g.metrics);
+const BY_ID = Object.fromEntries(ALL_METRICS.map(m => [m.id, m]));
+
+// ── Formatting ────────────────────────────────────────────────────────────────
+
+function fmtMoney(thousands) {
+  if (thousands === null || thousands === undefined) return null;
+  const b = thousands / 1_000_000;
+  const m = thousands / 1_000;
+  if (Math.abs(b) >= 1)  return (b >= 0 ? "" : "-") + "$" + Math.abs(b).toFixed(2) + "B";
+  if (Math.abs(m) >= 1)  return (m >= 0 ? "" : "-") + "$" + Math.abs(m).toFixed(0) + "M";
+  return (thousands >= 0 ? "" : "-") + "$" + Math.abs(thousands).toFixed(0) + "K";
 }
 
-function fmtBShort(thousands) {
-  return "$" + (thousands / 1_000_000).toFixed(1) + "B";
+function fmtEps(v) {
+  if (v === null || v === undefined) return null;
+  return (v >= 0 ? "$" : "-$") + Math.abs(v).toFixed(2);
 }
+
+function fmtPct(v) {
+  if (v === null || v === undefined) return null;
+  return v.toFixed(1) + "%";
+}
+
+function fmt(m, v) {
+  if (v === null || v === undefined) return null;
+  if (m.fmt === "money") return fmtMoney(v);
+  if (m.fmt === "eps")   return fmtEps(v);
+  if (m.fmt === "pct")   return fmtPct(v);
+  return v;
+}
+
+function fmtForChart(metricId, v) {
+  const m = BY_ID[metricId];
+  if (!m) return String(v);
+  return fmt(m, v) || String(v);
+}
+
+// ── Derived metrics ───────────────────────────────────────────────────────────
+
+function deriveValues(metricId, data, n) {
+  const get = (stmt, field) => {
+    return (data[stmt] && data[stmt][field]) ? data[stmt][field] : Array(n).fill(null);
+  };
+  if (metricId === "gross_margin") {
+    const rev = get("income_statement", "revenue");
+    const gp  = get("income_statement", "gross_profit");
+    return rev.map((r, i) => (r && gp[i] !== null) ? (gp[i] / r * 100) : null);
+  }
+  if (metricId === "fcf") {
+    const ops  = get("cash_flow", "net_cash_from_operations");
+    const cap  = get("cash_flow", "capex");
+    return ops.map((o, i) => (o !== null && cap[i] !== null) ? o - cap[i] : null);
+  }
+  return Array(n).fill(null);
+}
+
+function getValues(metricDef, data, n) {
+  if (metricDef.derived) return deriveValues(metricDef.id, data, n);
+  const vals = data[metricDef.stmt] && data[metricDef.stmt][metricDef.field];
+  return vals || Array(n).fill(null);
+}
+
+// ── State ─────────────────────────────────────────────────────────────────────
 
 const API_EXT = window.API_EXT || "";
-
-let allData = [];       // all revenue rows sorted by period_end_date
-let byTicker = {};      // { PLTR: [...], MRVL: [...] }
 let activeTicker = null;
+let stockData    = null;
+let selectedMetricId = "revenue";
+
+// ── Init ──────────────────────────────────────────────────────────────────────
 
 async function init() {
-  const rows = await fetch(`/api/revenue${API_EXT}`).then(r => r.json());
+  const tickers = await fetch(`/api/tickers${API_EXT}`).then(r => r.json());
+  buildTickerSelector(tickers);
 
-  // Sort by date then ticker
-  rows.sort((a, b) => a.period_end_date.localeCompare(b.period_end_date) || a.ticker.localeCompare(b.ticker));
-  allData = rows;
+  // Check URL param
+  const params = new URLSearchParams(location.search);
+  const t = params.get("ticker");
+  const first = t || (tickers[0] && tickers[0].ticker);
+  if (first) selectTicker(first);
+}
 
-  // Group by ticker
-  byTicker = {};
-  for (const r of rows) {
-    if (!byTicker[r.ticker]) byTicker[r.ticker] = [];
-    byTicker[r.ticker].push(r);
+function buildTickerSelector(tickers) {
+  const el = document.getElementById("tickerSelector");
+  el.innerHTML = tickers.map(t =>
+    `<button class="ticker-btn" data-ticker="${t.ticker}" onclick="selectTicker('${t.ticker}')">${t.ticker}</button>`
+  ).join("");
+}
+
+async function selectTicker(ticker) {
+  activeTicker = ticker;
+  document.querySelectorAll(".ticker-btn").forEach(b =>
+    b.classList.toggle("active", b.dataset.ticker === ticker)
+  );
+  history.replaceState(null, "", `?ticker=${ticker}`);
+
+  stockData = await fetch(`/api/metrics/${ticker}${API_EXT}`).then(r => r.json());
+
+  document.getElementById("pageTitle").textContent = stockData.ticker;
+  document.getElementById("companyName").textContent = stockData.name;
+
+  buildTable();
+  buildPills();
+  selectMetric(selectedMetricId);
+}
+
+// ── Table ─────────────────────────────────────────────────────────────────────
+
+function buildTable() {
+  const { periods, data } = stockData;
+  const n = periods.length;
+
+  // Header
+  const head = document.getElementById("tableHead");
+  head.innerHTML = `<tr>
+    <th class="label-col">Metric</th>
+    ${periods.map(p => `<th>${p.period}</th>`).join("")}
+  </tr>`;
+
+  // Body
+  const tbody = document.getElementById("tableBody");
+  let html = "";
+
+  for (const group of GROUPS) {
+    html += `<tr class="group-row"><td colspan="${n + 1}">${group.label}</td></tr>`;
+
+    for (const m of group.metrics) {
+      const vals = getValues(m, data, n);
+      const hasAny = vals.some(v => v !== null);
+      if (!hasAny) continue; // skip metrics this company doesn't have
+
+      const cells = vals.map(v => {
+        const display = fmt(m, v);
+        if (display === null) return `<td class="null-cell">—</td>`;
+        if (m.derived) return `<td class="derived-cell">${display}</td>`;
+        return `<td class="num-cell">${display}</td>`;
+      }).join("");
+
+      html += `<tr class="metric-row" id="row-${m.id}" onclick="selectMetric('${m.id}')">
+        <td class="label-cell">${m.label}</td>
+        ${cells}
+      </tr>`;
+    }
   }
 
-  buildSelector();
-  buildTable(rows);
+  tbody.innerHTML = html;
+  highlightRow(selectedMetricId);
 }
 
-function buildSelector() {
-  const container = document.getElementById("tickerSelector");
-  const tickers = Object.keys(byTicker).sort();
-  if (!tickers.length) return;
-
-  container.innerHTML = tickers.map(t =>
-    `<button class="ticker-btn" data-ticker="${t}" onclick="selectTicker('${t}')">${t}</button>`
-  ).join("");
-
-  selectTicker(tickers[0]);
+function highlightRow(metricId) {
+  document.querySelectorAll(".metric-row").forEach(r => r.classList.remove("selected"));
+  const row = document.getElementById(`row-${metricId}`);
+  if (row) row.classList.add("selected");
 }
 
-function selectTicker(ticker) {
-  activeTicker = ticker;
+// ── Metric pills ──────────────────────────────────────────────────────────────
 
-  document.querySelectorAll(".ticker-btn").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.ticker === ticker);
-  });
+function buildPills() {
+  const { data } = stockData;
+  const n = stockData.periods.length;
+  let html = "";
+  let firstGroup = true;
 
-  drawChart(byTicker[ticker] || []);
+  for (const group of GROUPS) {
+    const available = group.metrics.filter(m => getValues(m, data, n).some(v => v !== null));
+    if (!available.length) continue;
+    if (!firstGroup) html += `<div class="pill-group-sep"></div>`;
+    firstGroup = false;
+    for (const m of available) {
+      html += `<button class="pill-btn" id="pill-${m.id}" onclick="selectMetric('${m.id}')">${m.label}</button>`;
+    }
+  }
+
+  document.getElementById("metricPills").innerHTML = html;
 }
 
-function drawChart(rows) {
+function highlightPill(metricId) {
+  document.querySelectorAll(".pill-btn").forEach(b => b.classList.remove("active"));
+  const pill = document.getElementById(`pill-${metricId}`);
+  if (pill) { pill.classList.add("active"); pill.scrollIntoView({ block: "nearest" }); }
+}
+
+// ── Select metric ─────────────────────────────────────────────────────────────
+
+function selectMetric(metricId) {
+  const m = BY_ID[metricId];
+  if (!m) return;
+
+  // Check if available for this ticker
+  const vals = getValues(m, stockData.data, stockData.periods.length);
+  if (!vals.some(v => v !== null)) return;
+
+  selectedMetricId = metricId;
+  highlightRow(metricId);
+  highlightPill(metricId);
+  document.getElementById("chartTitle").textContent = m.label;
+  drawChart(vals, m);
+}
+
+// ── Chart ─────────────────────────────────────────────────────────────────────
+
+const PAD = { top: 16, right: 20, bottom: 44, left: 68 };
+const W = 620, H = 220;
+const IW = W - PAD.left - PAD.right;
+const IH = H - PAD.top - PAD.bottom;
+
+function drawChart(vals, metricDef) {
+  const periods = stockData.periods;
   const svg = document.getElementById("chart");
 
-  if (!rows.length) {
-    svg.innerHTML = `<text x="${W/2}" y="${H/2}" text-anchor="middle" fill="#475569" font-size="14" font-family="system-ui">No data</text>`;
+  // Filter out null entries
+  const points = vals.map((v, i) => ({ v, p: periods[i] })).filter(x => x.v !== null);
+  if (!points.length) {
+    svg.innerHTML = `<text x="${W/2}" y="${H/2}" text-anchor="middle" fill="#444" font-size="13" font-family="IBM Plex Mono, monospace">No data</text>`;
     return;
   }
 
-  const revenues = rows.map(r => r.revenue);
-  const minRev = Math.min(...revenues);
-  const maxRev = Math.max(...revenues);
-  const revPad = (maxRev - minRev) * 0.15 || maxRev * 0.1;
-  const yMin = Math.max(0, minRev - revPad);
-  const yMax = maxRev + revPad;
+  const rawVals = points.map(x => x.v);
+  const minV = Math.min(...rawVals);
+  const maxV = Math.max(...rawVals);
+  const pad  = (maxV - minV) * 0.15 || Math.abs(maxV) * 0.1 || 1;
+  const yMin = minV - pad;
+  const yMax = maxV + pad;
 
   function xPos(i) {
-    return PAD.left + (rows.length === 1 ? INNER_W / 2 : (i / (rows.length - 1)) * INNER_W);
+    return PAD.left + (points.length === 1 ? IW / 2 : (i / (points.length - 1)) * IW);
   }
-  function yPos(rev) {
-    return PAD.top + INNER_H - ((rev - yMin) / (yMax - yMin)) * INNER_H;
+  function yPos(v) {
+    return PAD.top + IH - ((v - yMin) / (yMax - yMin)) * IH;
   }
 
-  // Y grid lines and labels (4 levels)
+  // Grid + y-labels
+  let grid = "", yLabels = "";
   const yTicks = 4;
-  let gridLines = "";
-  let yLabels = "";
   for (let i = 0; i <= yTicks; i++) {
-    const val = yMin + (i / yTicks) * (yMax - yMin);
-    const y = yPos(val);
-    gridLines += `<line class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}" />`;
-    yLabels += `<text class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${fmtBShort(val)}</text>`;
+    const v = yMin + (i / yTicks) * (yMax - yMin);
+    const y = yPos(v);
+    grid    += `<line class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}" />`;
+    yLabels += `<text class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${fmt(metricDef, v) || v.toFixed(1)}</text>`;
   }
 
-  // X labels (period strings)
+  // X-labels
+  const step = points.length <= 8 ? 1 : Math.ceil(points.length / 8);
   let xLabels = "";
-  const step = rows.length <= 8 ? 1 : Math.ceil(rows.length / 8);
-  rows.forEach((r, i) => {
-    if (i % step !== 0 && i !== rows.length - 1) return;
-    xLabels += `<text class="axis-label" x="${xPos(i)}" y="${H - PAD.bottom + 18}" text-anchor="middle">${r.period}</text>`;
+  points.forEach((pt, i) => {
+    if (i % step !== 0 && i !== points.length - 1) return;
+    xLabels += `<text class="axis-label" x="${xPos(i)}" y="${H - PAD.bottom + 16}" text-anchor="middle">${pt.p.period}</text>`;
   });
 
-  // Line path
-  const points = rows.map((r, i) => `${xPos(i)},${yPos(r.revenue)}`);
-  const linePath = `M ${points.join(" L ")}`;
+  // Line
+  const path = points.map((pt, i) => `${i === 0 ? "M" : "L"} ${xPos(i)},${yPos(pt.v)}`).join(" ");
 
   // Dots
-  const dots = rows.map((r, i) => {
-    const x = xPos(i);
-    const y = yPos(r.revenue);
-    return `<circle class="chart-dot" cx="${x}" cy="${y}" r="5"
-      onmouseenter="showTip(event,'${r.period}','${fmtB(r.revenue)}')"
-      onmouseleave="hideTip()" />`;
-  }).join("");
+  const dots = points.map((pt, i) =>
+    `<circle class="chart-dot" cx="${xPos(i)}" cy="${yPos(pt.v)}" r="5"
+      onmouseenter="showTip(event,'${pt.p.period}','${fmt(metricDef, pt.v)}')"
+      onmouseleave="hideTip()" />`
+  ).join("");
 
-  svg.innerHTML = `
-    ${gridLines}
-    ${yLabels}
-    ${xLabels}
-    <path class="chart-line" d="${linePath}" />
-    ${dots}
-  `;
+  svg.innerHTML = `${grid}${yLabels}${xLabels}<path class="chart-line" d="${path}" />${dots}`;
 }
 
-function showTip(e, period, rev) {
-  const tip = document.getElementById("tooltip");
+// ── Tooltip ───────────────────────────────────────────────────────────────────
+
+function showTip(e, period, val) {
   document.getElementById("ttPeriod").textContent = period;
-  document.getElementById("ttRev").textContent = rev;
-  tip.style.opacity = "1";
-  moveTip(e);
-}
-
-function moveTip(e) {
+  document.getElementById("ttVal").textContent = val;
   const tip = document.getElementById("tooltip");
+  tip.style.opacity = "1";
   tip.style.left = (e.clientX + 14) + "px";
   tip.style.top  = (e.clientY - 36) + "px";
 }
-
-function hideTip() {
-  document.getElementById("tooltip").style.opacity = "0";
-}
-
-document.getElementById("chart").addEventListener("mousemove", moveTip);
-
-function buildTable(rows) {
-  const tbody = document.getElementById("tableBody");
-  if (!rows.length) {
-    tbody.innerHTML = `<tr><td colspan="4" class="empty">No data — run main.py against a 10-Q first.</td></tr>`;
-    return;
+function hideTip() { document.getElementById("tooltip").style.opacity = "0"; }
+document.getElementById("chart").addEventListener("mousemove", e => {
+  const tip = document.getElementById("tooltip");
+  if (tip.style.opacity === "1") {
+    tip.style.left = (e.clientX + 14) + "px";
+    tip.style.top  = (e.clientY - 36) + "px";
   }
-  tbody.innerHTML = rows.map(r => `
-    <tr>
-      <td>${r.name}</td>
-      <td><span class="ticker">${r.ticker}</span></td>
-      <td>${r.period}</td>
-      <td class="num">${fmtB(r.revenue)}</td>
-    </tr>
-  `).join("");
-}
+});
 
 init();
 </script>

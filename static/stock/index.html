@@ -3,166 +3,226 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Stock Detail — Earnings Dashboard</title>
+  <title>Earnings Dashboard</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a' rx='5'/><rect x='5' y='5' width='10' height='10' fill='none' stroke='%2300e664' stroke-width='1.5' rx='1'/><rect x='17' y='5' width='10' height='10' fill='%2300e664' rx='1' opacity='0.4'/><rect x='5' y='17' width='10' height='10' fill='%2300e664' rx='1' opacity='0.7'/><rect x='17' y='17' width='10' height='10' fill='%2300e664' rx='1'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
   <script>window.API_EXT = ".json";</script>
+  <script>(function(){var t=localStorage.getItem('theme');if(t==='light')document.documentElement.dataset.theme='light';})()</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { background: var(--bg); }
+
+    :root {
+      --green:           #00e664;
+      --green-dim:       rgba(0, 230, 100, 0.12);
+      --green-line:      rgba(0, 230, 100, 0.18);
+      --bg:              #0a0a0a;
+      --bg-card:         rgba(255, 255, 255, 0.03);
+      --border:          rgba(255, 255, 255, 0.07);
+      --text-1:          #f0f0f0;
+      --text-2:          #999;
+      --text-3:          #555;
+      --grid-color:      rgba(0, 255, 100, 0.03);
+      --vignette-color:  rgba(0, 0, 0, 0.55);
+    }
+
+    :root[data-theme="light"] {
+      --green:           #007a35;
+      --green-dim:       rgba(0, 122, 53, 0.10);
+      --green-line:      rgba(0, 122, 53, 0.22);
+      --bg:              #f2f1ec;
+      --bg-card:         rgba(0, 0, 0, 0.025);
+      --border:          rgba(0, 0, 0, 0.09);
+      --text-1:          #0e0e0e;
+      --text-2:          #444;
+      --text-3:          #888;
+      --grid-color:      rgba(0, 60, 20, 0.05);
+      --vignette-color:  rgba(242, 241, 236, 0.5);
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0f1117;
-      color: #e2e8f0;
+      font-family: "IBM Plex Sans", -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
       min-height: 100vh;
       padding: 40px 32px;
+      max-width: 940px;
+      margin: 0 auto;
     }
 
-    nav {
-      font-size: 0.8rem;
-      color: #475569;
-      margin-bottom: 28px;
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none; z-index: 0;
     }
-    nav a { color: #6366f1; text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-
-    .page-header {
-      display: flex;
-      align-items: baseline;
-      gap: 16px;
-      margin-bottom: 32px;
-      flex-wrap: wrap;
-    }
-
-    h1 { font-size: 1.5rem; font-weight: 600; color: #f8fafc; }
-    .company-name { font-size: 0.9rem; color: #64748b; }
-
-    .ticker-selector { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
-
-    .ticker-btn {
-      background: #2d3148; color: #64748b;
-      border: 1px solid #3d4165;
-      font-size: 0.75rem; font-weight: 700;
-      padding: 5px 14px; border-radius: 4px;
-      letter-spacing: 0.04em; cursor: pointer;
-      transition: background 0.15s, color 0.15s, border-color 0.15s;
-    }
-    .ticker-btn.active { background: #312e81; color: #a5b4fc; border-color: #6366f1; }
-    .ticker-btn:hover:not(.active) { background: #363a5a; color: #94a3b8; }
-
-    /* ── Metrics Table ── */
-    .card {
-      background: #1e2130; border: 1px solid #2d3148;
-      border-radius: 12px; padding: 28px 32px;
-      margin-bottom: 24px;
+    body::after {
+      content: "";
+      position: fixed; inset: 0;
+      background: radial-gradient(transparent 40%, var(--vignette-color) 100%);
+      pointer-events: none; z-index: 0;
     }
 
-    .card-title {
-      font-size: 0.75rem; font-weight: 600;
+    .topnav, .page-header, .ticker-selector, .card, #tooltip {
+      position: relative; z-index: 1;
+    }
+
+    /* ── Nav ── */
+    .topnav {
+      display: flex; align-items: center; gap: 4px;
+      border-bottom: 0.5px solid var(--border);
+      margin: -40px -32px 40px;
+      padding: 0 32px;
+      background: var(--bg);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .topnav a {
+      display: block; padding: 14px 18px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em;
+      color: var(--text-3); text-decoration: none;
+      border-bottom: 1px solid transparent; margin-bottom: -1px;
+      transition: color 0.12s;
+    }
+    .topnav a:hover { color: var(--text-2); }
+    .topnav a.active { color: var(--green); border-bottom-color: var(--green); }
+    .theme-toggle {
+      margin-left: auto;
+      background: none; border: 0.5px solid var(--border);
+      color: var(--text-3); cursor: pointer;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em;
+      padding: 5px 10px; border-radius: 3px;
+      transition: color 0.12s, border-color 0.12s;
+    }
+    .theme-toggle:hover { color: var(--text-2); border-color: var(--text-3); }
+
+    /* ── Header ── */
+    .page-header { display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px; flex-wrap: wrap; }
+    h1 {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 1.75rem; font-weight: 600;
+      color: var(--text-1); letter-spacing: -0.02em;
+    }
+    .company-name {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem; color: var(--text-3);
       letter-spacing: 0.08em; text-transform: uppercase;
-      color: #64748b; margin-bottom: 20px;
     }
 
-    .table-wrap { overflow-x: auto; }
+    /* ── Ticker selector ── */
+    .ticker-selector { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .ticker-btn {
+      background: var(--bg-card); color: var(--text-3);
+      border: 0.5px solid var(--border);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem; font-weight: 600;
+      padding: 5px 14px; border-radius: 4px; letter-spacing: 0.06em;
+      cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
+    }
+    .ticker-btn.active { background: var(--green-dim); color: var(--green); border-color: var(--green-line); }
+    .ticker-btn:hover:not(.active) { background: rgba(255,255,255,0.05); color: var(--text-2); border-color: rgba(255,255,255,0.12); }
 
+    /* ── Cards ── */
+    .card {
+      background: var(--bg-card); border: 0.5px solid var(--border);
+      border-radius: 6px; padding: 24px 28px; margin-bottom: 20px;
+    }
+    .card-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-3); margin-bottom: 20px;
+    }
+
+    /* ── Table ── */
+    .table-wrap { overflow-x: auto; }
     table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 0.82rem; }
 
     th {
       text-align: right; padding: 8px 16px;
-      font-size: 0.68rem; font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      color: #64748b; border-bottom: 1px solid #2d3148;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-3); border-bottom: 0.5px solid var(--border);
       white-space: nowrap; min-width: 88px;
     }
     th.label-col { text-align: left; min-width: 180px; width: 180px; }
 
     .group-row td {
       padding: 16px 16px 6px;
-      font-size: 0.65rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: #475569; background: #181b2a;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.6rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-3); background: rgba(0, 0, 0, 0.3);
     }
 
     tbody tr.metric-row { cursor: pointer; }
-    tbody tr.metric-row:hover td { background: #252840; }
-    tbody tr.metric-row.selected td { background: #1e1e3a; }
-    tbody tr.metric-row.selected td.label-cell { color: #a5b4fc; }
+    tbody tr.metric-row:hover td { background: rgba(255,255,255,0.03); }
+    tbody tr.metric-row.selected td { background: var(--green-dim); }
+    tbody tr.metric-row.selected td.label-cell { color: var(--green); }
 
-    td {
-      padding: 10px 16px;
-      border-bottom: 1px solid #1a1d2e;
-      color: #cbd5e1; white-space: nowrap;
-    }
-    td.label-cell { color: #94a3b8; font-weight: 500; min-width: 180px; width: 180px; }
-    td.num-cell {
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-      color: #f8fafc; min-width: 88px;
-    }
-    td.null-cell { text-align: right; color: #2d3748; min-width: 88px; }
-    td.derived-cell { text-align: right; color: #818cf8; font-variant-numeric: tabular-nums; min-width: 88px; }
+    td { padding: 10px 16px; border-bottom: 0.5px solid rgba(255,255,255,0.04); color: var(--text-2); white-space: nowrap; }
+    td.label-cell { color: var(--text-2); font-weight: 400; min-width: 180px; width: 180px; }
+    td.num-cell { text-align: right; font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; color: var(--text-1); min-width: 88px; }
+    td.null-cell { text-align: right; font-family: "IBM Plex Mono", monospace; color: var(--text-3); min-width: 88px; }
+    td.derived-cell { text-align: right; font-family: "IBM Plex Mono", monospace; color: var(--green); font-variant-numeric: tabular-nums; min-width: 88px; }
 
     /* ── Chart section ── */
     .chart-section { display: flex; flex-direction: column; gap: 16px; }
-
-    .metric-pills {
-      display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
-    }
-
-    .pill-group-sep {
-      width: 1px; height: 16px;
-      background: #2d3148; margin: 0 2px;
-      flex-shrink: 0;
-    }
+    .metric-pills { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .pill-group-sep { width: 0.5px; height: 16px; background: var(--border); margin: 0 2px; flex-shrink: 0; }
 
     .pill-btn {
-      background: #252840; border: 1px solid #2d3148;
+      background: var(--bg-card); border: 0.5px solid var(--border);
       text-align: center; padding: 4px 12px;
-      font-size: 0.75rem; color: #64748b;
-      border-radius: 20px; cursor: pointer;
-      transition: background 0.1s, color 0.1s, border-color 0.1s;
-      white-space: nowrap;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem; color: var(--text-3);
+      border-radius: 4px; cursor: pointer;
+      transition: background 0.1s, color 0.1s, border-color 0.1s; white-space: nowrap;
     }
-    .pill-btn:hover { background: #2d3148; color: #94a3b8; border-color: #3d4165; }
-    .pill-btn.active { background: #1e1e3a; color: #a5b4fc; border-color: #6366f1; font-weight: 600; }
+    .pill-btn:hover { background: rgba(255,255,255,0.05); color: var(--text-2); border-color: rgba(255,255,255,0.12); }
+    .pill-btn.active { background: var(--green-dim); color: var(--green); border-color: var(--green-line); font-weight: 600; }
 
     .chart-wrap { min-width: 0; }
     .chart-title {
-      font-size: 0.8rem; font-weight: 600;
-      color: #94a3b8; margin-bottom: 12px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em;
+      color: var(--text-2); margin-bottom: 12px;
     }
 
     #chart { width: 100%; overflow: visible; }
-
-    .axis-label {
-      font-size: 11px; fill: #64748b;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-    .grid-line { stroke: #2d3148; stroke-width: 1; }
-    .chart-line {
-      fill: none; stroke: #6366f1;
-      stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round;
-    }
-    .chart-dot {
-      fill: #6366f1; stroke: #1e2130; stroke-width: 2;
-      cursor: pointer;
-    }
+    .axis-label { font-size: 10px; fill: var(--text-3); font-family: "IBM Plex Mono", monospace; }
+    .grid-line { stroke: var(--border); stroke-width: 1; }
+    .chart-line { fill: none; stroke: var(--green); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+    .chart-dot { fill: var(--green); stroke: var(--bg); stroke-width: 2; cursor: pointer; }
     .chart-dot:hover { r: 7; }
 
+    /* ── Tooltip ── */
     #tooltip {
-      position: fixed; background: #1e2130;
-      border: 1px solid #3d4165; border-radius: 8px;
-      padding: 10px 14px; font-size: 0.8rem;
-      pointer-events: none; opacity: 0;
-      transition: opacity 0.1s; z-index: 100;
+      position: fixed; background: #0d0d0d;
+      border: 0.5px solid var(--border); border-radius: 6px;
+      padding: 10px 14px;
+      font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+      pointer-events: none; opacity: 0; transition: opacity 0.1s; z-index: 100;
     }
-    #tooltip .tt-period { color: #64748b; font-size: 0.7rem; margin-bottom: 2px; }
-    #tooltip .tt-val { color: #f8fafc; font-weight: 600; font-size: 0.95rem; }
+    #tooltip .tt-period { color: var(--text-3); font-size: 0.62rem; margin-bottom: 2px; }
+    #tooltip .tt-val { color: var(--green); font-weight: 600; font-size: 0.88rem; }
 
-    .empty { color: #475569; font-size: 0.875rem; padding: 40px 0; text-align: center; }
+    .empty { color: var(--text-3); font-size: 0.875rem; padding: 40px 0; text-align: center; }
   </style>
 </head>
 <body>
 
-  <nav><a href="/">← Dashboard</a></nav>
+  <nav class="topnav">
+    <a href="/" class="active">Earnings</a>
+    <a href="/experimental/themes">News</a>
+    <button class="theme-toggle" id="themeToggle">◐ LIGHT</button>
+  </nav>
 
   <div class="page-header">
     <h1 id="pageTitle">Stock Detail</h1>
@@ -200,6 +260,22 @@
   </div>
 
 <script>
+// Theme toggle
+(function() {
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  function syncLabel() {
+    btn.textContent = root.dataset.theme === 'light' ? '◑ DARK' : '◐ LIGHT';
+  }
+  syncLabel();
+  btn.addEventListener('click', function() {
+    const isLight = root.dataset.theme === 'light';
+    root.dataset.theme = isLight ? 'dark' : 'light';
+    localStorage.setItem('theme', isLight ? 'dark' : 'light');
+    syncLabel();
+  });
+})();
+
 // ── Metric definitions ────────────────────────────────────────────────────────
 
 const GROUPS = [
@@ -461,7 +537,7 @@ function drawChart(vals, metricDef) {
   // Filter out null entries
   const points = vals.map((v, i) => ({ v, p: periods[i] })).filter(x => x.v !== null);
   if (!points.length) {
-    svg.innerHTML = `<text x="${W/2}" y="${H/2}" text-anchor="middle" fill="#475569" font-size="13" font-family="system-ui">No data</text>`;
+    svg.innerHTML = `<text x="${W/2}" y="${H/2}" text-anchor="middle" fill="#444" font-size="13" font-family="IBM Plex Mono, monospace">No data</text>`;
     return;
   }
 
