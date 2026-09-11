@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "earnings-dashboard",
-      "runtimeExecutable": "/bin/sh",
-      "runtimeArgs": ["run.sh"],
+      "runtimeExecutable": "/usr/bin/python3",
+      "runtimeArgs": ["app.py"],
       "port": 5001,
       "autoPort": true
     }

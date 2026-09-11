@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market News — Earnings Dashboard</title>
+  {% if static_build %}<script>window.API_EXT = ".json";</script>{% endif %}
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 40px 32px;
+    }
+
+    /* ── Nav bar ── */
+    .topnav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border-bottom: 1px solid #2d3148;
+      margin: -40px -32px 40px;
+      padding: 0 32px;
+    }
+    .topnav a {
+      display: block;
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #64748b;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.12s;
+    }
+    .topnav a:hover { color: #94a3b8; }
+    .topnav a.active { color: #a5b4fc; border-bottom-color: #6366f1; }
+
+    h1 { font-size: 1.5rem; font-weight: 600; color: #f8fafc; margin-bottom: 4px; }
+
+    .report-meta {
+      font-size: 0.75rem;
+      color: #475569;
+      margin-bottom: 28px;
+    }
+
+    /* ── Stats ── */
+    .stats-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .stat-chip {
+      background: #1e2130;
+      border: 1px solid #2d3148;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 0.75rem;
+    }
+    .stat-chip .stat-val {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .stat-chip .stat-lbl { color: #64748b; margin-top: 2px; }
+    .stat-chip.bullish .stat-val { color: #4ade80; }
+    .stat-chip.bearish .stat-val { color: #f87171; }
+
+    /* ── Feed ── */
+    .feed { max-width: 780px; }
+
+    .headline-card {
+      background: #1e2130;
+      border: 1px solid #2d3148;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      transition: border-color 0.15s;
+    }
+    .headline-card:hover { border-color: #3d4165; }
+    .headline-card.bullish { border-left: 3px solid #166534; }
+    .headline-card.bearish { border-left: 3px solid #7f1d1d; }
+
+    .headline-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .headline-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      line-height: 1.4;
+      flex: 1;
+    }
+
+    .sentiment-pill {
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      flex-shrink: 0;
+    }
+    .bull-pill { background: #052e16; color: #4ade80; border: 1px solid #166534; }
+    .bear-pill { background: #2d0d0d; color: #f87171; border: 1px solid #7f1d1d; }
+
+    .headline-source {
+      font-size: 0.7rem;
+      color: #64748b;
+      margin-bottom: 10px;
+    }
+
+    .headline-summary {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .headline-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ticker-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #2d3148;
+      color: #6366f1;
+      border: 1px solid #3d4165;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="topnav">
+    <a href="/">Earnings</a>
+    <a href="/themes" class="active">News</a>
+  </nav>
+
+  <h1>Market News</h1>
+  <div class="report-meta">Last report: Sep 8, 2026 · AI &amp; Stock Market</div>
+
+  <div class="stats-row">
+    <div class="stat-chip bullish"><div class="stat-val">5</div><div class="stat-lbl">Bullish</div></div>
+    <div class="stat-chip bearish"><div class="stat-val">1</div><div class="stat-lbl">Bearish</div></div>
+    <div class="stat-chip"><div class="stat-val">6</div><div class="stat-lbl">Headlines</div></div>
+  </div>
+
+  <div class="feed" id="feed"></div>
+
+<script>
+const NEWS = [
+  {
+    headline: "Nvidia agrees to acquire Hugging Face for ~$13B in its second-biggest deal ever",
+    source: "CNBC",
+    stocks: ["NVDA"],
+    sentiment: "Bullish",
+    summary: "Major M&A signals Nvidia deepening its grip on the AI software/model ecosystem, a strong strategic move for the chipmaker.",
+  },
+  {
+    headline: "Qualcomm partners with AWS to build AI infrastructure; shares rise 7%+",
+    source: "CNBC",
+    stocks: ["QCOM", "AMZN"],
+    sentiment: "Bullish",
+    summary: "Strategic partnership expands Qualcomm's AI infrastructure footprint alongside AWS, driving immediate market enthusiasm.",
+  },
+  {
+    headline: "Google launches Gemini 3.8 Flash — its third Flash model in six weeks — plus a cybersecurity model for government customers",
+    source: "CNBC",
+    stocks: ["GOOGL"],
+    sentiment: "Bullish",
+    summary: "Rapid model releases signal aggressive product momentum as Google tries to reverse its four-month losing streak.",
+  },
+  {
+    headline: "Etched raises $700M for custom AI inference silicon and rack-scale systems",
+    source: "New Market Pitch",
+    stocks: [],
+    sentiment: "Bullish",
+    summary: "Massive raise for inference-focused chip startup reflects surging demand for alternatives to GPU-only AI infrastructure.",
+  },
+  {
+    headline: "AI chip market raises $5.37B across 12 deals in Jan–Aug 2026; inference accounts for 67% of capital",
+    source: "New Market Pitch",
+    stocks: ["NVDA", "AMD", "INTC"],
+    sentiment: "Bullish",
+    summary: "Sustained funding concentration in inference hardware indicates the build-out phase is far from over.",
+  },
+  {
+    headline: "Dow drops 511 points in early September; S&P 500 and Nasdaq also slip on post-Labor Day weakness",
+    source: "CNBC",
+    stocks: [],
+    sentiment: "Bearish",
+    summary: "Broad market pullback creates headwinds for AI equities despite strong underlying fundamentals.",
+  },
+];
+
+document.getElementById("feed").innerHTML = NEWS.map(n => `
+  <div class="headline-card ${n.sentiment.toLowerCase()}">
+    <div class="headline-top">
+      <div class="headline-text">${n.headline}</div>
+      <span class="sentiment-pill ${n.sentiment === 'Bullish' ? 'bull-pill' : 'bear-pill'}">${n.sentiment}</span>
+    </div>
+    <div class="headline-source">${n.source}</div>
+    <div class="headline-summary">${n.summary}</div>
+    <div class="headline-footer">
+      ${n.stocks.map(t => `<span class="ticker-tag">${t}</span>`).join("")}
+    </div>
+  </div>
+`).join("");
+</script>
+</body>
+</html>

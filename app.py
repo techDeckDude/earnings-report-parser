@@ -30,6 +30,11 @@ def stock():
     return render_template("stock.html")
 
 
+@app.route("/themes")
+def themes():
+    return render_template("themes.html")
+
+
 @app.route("/api/revenue")
 def revenue():
     conn = get_db()

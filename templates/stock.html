@@ -158,11 +158,37 @@
     #tooltip .tt-val { color: #f8fafc; font-weight: 600; font-size: 0.95rem; }
 
     .empty { color: #475569; font-size: 0.875rem; padding: 40px 0; text-align: center; }
+
+    /* ── Nav bar ── */
+    .topnav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border-bottom: 1px solid #2d3148;
+      margin: -40px -32px 40px;
+      padding: 0 32px;
+    }
+    .topnav a {
+      display: block;
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #64748b;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.12s;
+    }
+    .topnav a:hover { color: #94a3b8; }
+    .topnav a.active { color: #a5b4fc; border-bottom-color: #6366f1; }
   </style>
 </head>
 <body>
 
-  <nav><a href="/">← Dashboard</a></nav>
+  <nav class="topnav">
+    <a href="/" class="active">Earnings</a>
+    <a href="/themes">News</a>
+  </nav>
 
   <div class="page-header">
     <h1 id="pageTitle">Stock Detail</h1>

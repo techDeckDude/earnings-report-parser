@@ -185,13 +185,37 @@
       padding: 48px 0;
       font-size: 0.875rem;
     }
+
+    /* ── Nav bar ── */
+    .topnav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border-bottom: 1px solid #2d3148;
+      margin: -40px -32px 40px;
+      padding: 0 32px;
+    }
+    .topnav a {
+      display: block;
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #64748b;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.12s;
+    }
+    .topnav a:hover { color: #94a3b8; }
+    .topnav a.active { color: #a5b4fc; border-bottom-color: #6366f1; }
   </style>
 </head>
 <body>
 
-  <div style="font-size:0.8rem;color:#475569;margin-bottom:16px;">
-    <a href="/stock" style="color:#6366f1;text-decoration:none;">Stock Detail →</a>
-  </div>
+  <nav class="topnav">
+    <a href="/" class="active">Earnings</a>
+    <a href="/themes">News</a>
+  </nav>
 
   <h1>Earnings Dashboard</h1>
   <p class="subtitle">Revenue by company and period — figures in billions USD</p>

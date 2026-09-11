@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-11** — Added mandatory self-critic pass to news-aggregator skill: verifies URL uniqueness, sentiment score boundaries, ticker accuracy, and confirmed-vs-potential language before output
+- **2026-09-11** — Updated news-aggregator skill to cover the past 7 days, added direct article URLs, and replaced binary sentiment with a 5-level scale (−2 to +2) based on confirmed vs. potential revenue/earnings impact
 - **2026-09-08** — Added news-aggregator Claude Code skill for fetching and sentiment-scoring AI stock market headlines from the past 24 hours
 - **2026-09-06** — Made Flask port configurable via `PORT` env var so the preview server can assign a free port automatically; `launch.json` updated with `autoPort: true`
 - **2026-09-06** — Added dual-mode static deploy support: `generate.py` pre-builds JSON and HTML into `static/` for Cloudflare Pages; `verify.py` diffs live vs static and exits non-zero on mismatch; templates use a single `API_EXT` flag (injected at build time) to switch between Flask routes and flat files; `main.py` chains both scripts after every ingestion
