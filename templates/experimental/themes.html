@@ -71,7 +71,7 @@
       pointer-events: none; z-index: 0;
     }
 
-    .topnav, h1, .report-meta, .stats-row, .chart-card, .feed, #chartTooltip {
+    .topnav, h1, .carousel-nav, .report-meta, .stats-row, .chart-card, .feed, #chartTooltip {
       position: relative; z-index: 1;
     }
 
@@ -107,12 +107,58 @@
     h1 {
       font-family: "IBM Plex Mono", monospace;
       font-size: 1.75rem; font-weight: 600;
-      color: var(--text-1); letter-spacing: -0.02em; margin-bottom: 4px;
+      color: var(--text-1); letter-spacing: -0.02em; margin-bottom: 16px;
     }
+
+    /* ── Carousel nav ── */
+    .carousel-nav {
+      display: flex; align-items: center; gap: 0;
+      margin-bottom: 8px;
+      border: 0.5px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      font-family: "IBM Plex Mono", monospace;
+    }
+    .carousel-nav .nav-btn {
+      background: var(--bg-card);
+      border: none; border-right: 0.5px solid var(--border);
+      color: var(--text-2); cursor: pointer;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em;
+      padding: 10px 18px;
+      transition: color 0.12s, background 0.12s;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .carousel-nav .nav-btn:last-child {
+      border-right: none; border-left: 0.5px solid var(--border);
+    }
+    .carousel-nav .nav-btn:hover:not(:disabled) { color: var(--green); background: var(--green-dim); }
+    .carousel-nav .nav-btn:disabled { color: var(--text-3); cursor: default; }
+    .carousel-nav .week-info {
+      flex: 1; text-align: center; padding: 10px 12px;
+    }
+    .week-label {
+      font-size: 0.75rem; font-weight: 600; color: var(--text-1);
+      letter-spacing: 0.02em;
+    }
+    .week-counter {
+      font-size: 0.6rem; color: var(--text-3); letter-spacing: 0.06em;
+      margin-top: 2px;
+    }
+
     .report-meta {
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.65rem; color: var(--text-3);
       letter-spacing: 0.04em; margin-bottom: 28px;
+    }
+
+    /* ── Carousel content transition ── */
+    #carouselContent {
+      transition: opacity 0.18s ease;
+    }
+    #carouselContent.fading {
+      opacity: 0;
     }
 
     /* ── Stats ── */
@@ -225,15 +271,27 @@
   </nav>
 
   <h1>Market News</h1>
-  <div class="report-meta" id="reportMeta">Loading…</div>
 
-  <div class="chart-card">
-    <div class="chart-card-title">Sentiment Score by Article</div>
-    <div id="chartSvgContainer"></div>
+  <!-- Carousel nav — hidden until data loads -->
+  <div class="carousel-nav" id="carouselNav" hidden>
+    <button class="nav-btn" id="prevWeek">‹ PREV</button>
+    <div class="week-info">
+      <div id="weekLabel" class="week-label"></div>
+      <div id="weekCounter" class="week-counter"></div>
+    </div>
+    <button class="nav-btn" id="nextWeek">NEXT ›</button>
   </div>
 
-  <div class="stats-row" id="statsRow"></div>
-  <div class="feed" id="feed"></div>
+  <div class="report-meta" id="reportMeta">Loading…</div>
+
+  <div id="carouselContent">
+    <div class="chart-card">
+      <div class="chart-card-title">Sentiment Score by Article</div>
+      <div id="chartSvgContainer"></div>
+    </div>
+    <div class="stats-row" id="statsRow"></div>
+    <div class="feed" id="feed"></div>
+  </div>
 
   <div id="chartTooltip">
     <div class="tt-score" id="ttScore"></div>
@@ -268,6 +326,70 @@ const CARD_CLASS = {
   2: "s2", 1: "s1", 0: "s0", "-1": "sn1", "-2": "sn2"
 };
 
+// ── Carousel state ────────────────────────────────────────────────────────────
+let allWeeks = [];   // newest first
+let currentIdx = 0; // 0 = most recent
+
+function weekRangeLabel(run) {
+  const end = new Date(run.run_at);
+  const start = new Date(end);
+  start.setDate(end.getDate() - 6);
+  const fmt = (d, includeYear) => d.toLocaleDateString('en-US', {
+    month: 'short', day: 'numeric', ...(includeYear ? { year: 'numeric' } : {})
+  });
+  return `${fmt(start, false)} – ${fmt(end, true)}`;
+}
+
+function updateCarouselNav() {
+  const total = allWeeks.length;
+  const run = allWeeks[currentIdx];
+
+  document.getElementById('weekLabel').textContent = weekRangeLabel(run);
+  document.getElementById('weekCounter').textContent =
+    `week ${total - currentIdx} of ${total}`;
+
+  document.getElementById('prevWeek').disabled = currentIdx >= total - 1;
+  document.getElementById('nextWeek').disabled = currentIdx <= 0;
+}
+
+function navigate(delta) {
+  // delta = +1 → older week, -1 → newer week
+  const newIdx = currentIdx + delta;
+  if (newIdx < 0 || newIdx >= allWeeks.length) return;
+
+  const content = document.getElementById('carouselContent');
+  content.classList.add('fading');
+
+  setTimeout(() => {
+    currentIdx = newIdx;
+    renderWeek(allWeeks[currentIdx]);
+    updateCarouselNav();
+    content.classList.remove('fading');
+  }, 180);
+}
+
+// Swipe support
+(function() {
+  let tx = 0, ty = 0;
+  const el = document.getElementById('carouselContent');
+  el.addEventListener('touchstart', e => {
+    tx = e.touches[0].clientX;
+    ty = e.touches[0].clientY;
+  }, { passive: true });
+  el.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    const dy = e.changedTouches[0].clientY - ty;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+      navigate(dx < 0 ? 1 : -1); // swipe left = older, swipe right = newer
+    }
+  }, { passive: true });
+})();
+
+document.getElementById('prevWeek').addEventListener('click', () => navigate(1));
+document.getElementById('nextWeek').addEventListener('click', () => navigate(-1));
+
+// ── Rendering ─────────────────────────────────────────────────────────────────
+
 function buildChart(NEWS) {
   const W = 720, H = 210;
   const PAD = { top: 20, right: 28, bottom: 44, left: 44 };
@@ -285,8 +407,7 @@ function buildChart(NEWS) {
 
   const zeroY = yPos(0);
 
-  let gridLines = "";
-  let yLabels = "";
+  let gridLines = "", yLabels = "";
   [-2, -1, 0, 1, 2].forEach(tick => {
     const y = yPos(tick);
     const cls = tick === 0 ? "zero-line" : "grid-line";
@@ -398,31 +519,50 @@ function renderFeed(NEWS) {
   }).join("");
 }
 
+function renderWeek(run) {
+  const NEWS = run.headlines || [];
+
+  const d = new Date(run.run_at);
+  const fmt = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  document.getElementById('reportMeta').textContent =
+    `${run.period || weekRangeLabel(run)} · AI & Stock Market · ingested ${fmt}`;
+
+  if (!NEWS.length) {
+    document.getElementById('chartSvgContainer').innerHTML = '';
+    document.getElementById('statsRow').innerHTML = '';
+    document.getElementById('feed').innerHTML =
+      `<p style="color:var(--text-3);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;padding:20px 0">` +
+      `No articles for this week.</p>`;
+    return;
+  }
+
+  buildChart(NEWS);
+  renderStats(NEWS);
+  renderFeed(NEWS);
+}
+
 async function loadAndRender() {
   try {
     const resp = await fetch('/api/news');
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const data = await resp.json();
-    const NEWS = data.headlines || [];
+    allWeeks = await resp.json();
 
-    if (data.run_at) {
-      const d = new Date(data.run_at);
-      const fmt = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    if (!allWeeks.length) {
       document.getElementById('reportMeta').textContent =
-        `Last report: ${fmt} · ${data.period || 'past 7 days'} · AI & Stock Market`;
-    }
-
-    if (!NEWS.length) {
-      document.getElementById('reportMeta').textContent = 'No data — run python ingest_news.py to fetch headlines';
+        'No data — run python ingest_news.py to fetch headlines';
       document.getElementById('feed').innerHTML =
         `<p style="color:var(--text-3);font-family:'IBM Plex Mono',monospace;font-size:0.75rem;padding:20px 0">` +
         `Run <code>python ingest_news.py</code> to populate the news feed.</p>`;
       return;
     }
 
-    buildChart(NEWS);
-    renderStats(NEWS);
-    renderFeed(NEWS);
+    currentIdx = 0;
+    renderWeek(allWeeks[0]);
+
+    if (allWeeks.length > 1) {
+      document.getElementById('carouselNav').hidden = false;
+      updateCarouselNav();
+    }
   } catch (err) {
     document.getElementById('reportMeta').textContent = 'Failed to load';
     document.getElementById('feed').innerHTML =

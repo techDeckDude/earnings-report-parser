@@ -297,6 +297,57 @@ def upsert_news_run(conn, data: dict) -> int:
     return run_id
 
 
+def get_all_news_runs(conn) -> list[dict]:
+    """Return all ingestion runs with their articles, newest first."""
+    runs = _execute(conn, """
+        SELECT id, run_at, period, total_headlines, score_distribution, weighted_sentiment, net_sentiment_label
+        FROM news_runs
+        ORDER BY run_at DESC
+    """).fetchall()
+
+    result = []
+    for run in runs:
+        articles = _execute(conn, f"""
+            SELECT headline, source, url, url_verified, stocks_mentioned, sentiment_score, sentiment_label, summary
+            FROM news_articles
+            WHERE run_id = {_ph(conn)}
+            ORDER BY id
+            """,
+            (run["id"],),
+        ).fetchall()
+
+        run_at = run["run_at"]
+        if not isinstance(run_at, str):
+            run_at = run_at.isoformat()
+
+        result.append({
+            "run_id": run["id"],
+            "run_at": run_at,
+            "period": run["period"],
+            "headlines": [
+                {
+                    "headline": a["headline"],
+                    "source": a["source"],
+                    "url": a["url"],
+                    "url_verified": bool(a["url_verified"]),
+                    "stocks_mentioned": json.loads(a["stocks_mentioned"]),
+                    "sentiment_score": a["sentiment_score"],
+                    "sentiment_label": a["sentiment_label"],
+                    "summary": a["summary"],
+                }
+                for a in articles
+            ],
+            "summary_stats": {
+                "total_headlines": run["total_headlines"],
+                "score_distribution": json.loads(run["score_distribution"]),
+                "weighted_sentiment": run["weighted_sentiment"],
+                "net_sentiment_label": run["net_sentiment_label"],
+            },
+        })
+
+    return result
+
+
 def get_latest_news(conn) -> dict | None:
     """Return the most recent ingestion run with all its articles, or None."""
     run = _execute(conn, """

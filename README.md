@@ -174,9 +174,17 @@ python ingest_news.py
 python ingest_news.py --dry-run
 ```
 
-The script calls `claude-sonnet-4-6` with the web search beta tool, follows the news-aggregator skill prompt (searches, scores −2 to +2, verifies URLs, runs a critic pass), then writes the structured JSON into `news_runs` and `news_articles`. Running it again adds a new run; the news page always shows the most recent one.
+The script calls `claude-sonnet-4-6` with the web search beta tool, follows the news-aggregator skill prompt (searches, scores −2 to +2, verifies URLs, runs a critic pass), then writes the structured JSON into `news_runs` and `news_articles`. Each invocation adds a new run; the news page displays all runs as a weekly carousel.
 
-After running, reload `http://localhost:5001/experimental/themes` to see the updated feed.
+```bash
+# Ingest a specific historical week (7-day window ending on DATE)
+python ingest_news.py --week-of 2026-09-04
+
+# Dry run: print JSON without storing
+python ingest_news.py --dry-run
+```
+
+After running, reload `http://localhost:5001/experimental/themes` to see the updated feed. The carousel shows the most recent week by default; use the PREV/NEXT buttons (or swipe on mobile) to navigate between weeks.
 
 ## Project Structure
 
@@ -197,7 +205,7 @@ earnings-report-parser/
 ├── templates/
 │   ├── stock.html       # Earnings page: ticker selector, metric chart, quarterly metrics table
 │   └── experimental/
-│       └── themes.html  # [Experimental] AI news feed with sentiment chart (reads from /api/news)
+│       └── themes.html  # [Experimental] AI news feed: weekly carousel, sentiment chart, swipe nav
 ├── data/
 │   ├── inputs/
 │   │   ├── PLTR/        # Place 10-Q PDFs here before running main.py
