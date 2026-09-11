@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
-  {% if static_build %}<script>window.API_EXT = ".json";</script>{% endif %}
+  <script>window.API_EXT = ".json";</script>
   <script>(function(){var t=localStorage.getItem('theme');if(t==='light')document.documentElement.dataset.theme='light';})()</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -220,7 +220,7 @@
 
   <nav class="topnav">
     <a href="/" class="active">Earnings</a>
-    {% if experimental and not static_build %}<a href="/experimental/themes">News</a>{% endif %}
+    <a href="/news">News</a>
     <button class="theme-toggle" id="themeToggle">◐ LIGHT</button>
   </nav>
 

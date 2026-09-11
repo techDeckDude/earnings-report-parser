@@ -1,0 +1,595 @@
+[
+  {
+    "headlines": [
+      {
+        "headline": "Broadcom Q3 FY2026: AI semiconductor revenue surges 221% to $16.7B, EPS beats consensus for ninth straight quarter; guides AI revenue to $115B in FY2027",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "AVGO"
+        ],
+        "summary": "Confirmed earnings beat: Q3 revenue of $29.59B beat the $29.36B consensus, adjusted EPS of $3.32 beat $3.24 estimate, extending a nine-quarter streak. AI semiconductor revenue grew 221% YoY to $16.7B \u2014 confirmed upside to revenue and earnings. Multi-year guidance (FY2027 AI revenue $115B, FY2028 $230B) is forward-looking and potential, but the quarterly beat itself is confirmed.",
+        "url": "https://www.cnbc.com/2026/09/02/broadcom-avgo-q3-earnings-report-2026.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Palo Alto Networks surpasses Q4 FY2026 estimates as AI-driven cyber threats boost demand; revenue jumps 34% YoY to $3.41B",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "PANW"
+        ],
+        "summary": "Confirmed earnings beat: Q4 FY2026 revenue of $3.41B exceeded the $3.35B Wall Street consensus, and adjusted EPS of $1.02 beat the 98-cent estimate. Revenue growth of 34% YoY is a confirmed positive outcome for revenue and earnings.",
+        "url": "https://www.cnbc.com/2026/09/01/palo-alto-networks-panw-q4-2026-earnings.html",
+        "url_verified": true
+      },
+      {
+        "headline": "eGain reports fiscal 2026 results: total revenue up 3%, AI customer revenue up 20%; named a Leader in Gartner's inaugural Customer Service Knowledge Management MQ",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "GlobeNewswire / SEC EDGAR",
+        "stocks_mentioned": [
+          "EGAN"
+        ],
+        "summary": "Confirmed revenue outcome: eGain reported full fiscal year 2026 results with total revenue up 3% to $91.1M and AI customer revenue up 20% YoY \u2014 a confirmed positive revenue result. The Gartner Leader recognition is a neutral reputational item but the revenue figures represent confirmed upside.",
+        "url": "https://www.globenewswire.com/news-release/2026/09/03/3356263/0/en/egain-reports-fiscal-2026-results-total-revenue-up-3-ai-customer-revenue-up-20-company-named-a-leader-in-gartner-s-first-customer-service-knowledge-management-mq.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Nvidia agrees to acquire open-source AI platform Hugging Face for $12.9 billion, expanding up the AI stack",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC / Bloomberg",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Confirmed deal announcement: Nvidia agreed to acquire Hugging Face for $12.9B, its second-largest acquisition on record. This represents a potential future revenue/ecosystem benefit for Nvidia by expanding its AI software platform \u2014 no confirmed near-term revenue impact from the acquisition itself.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-03/nvidia-agrees-to-13-billion-deal-for-ai-platform-hugging-face",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta releases Muse Spark 1.3, its most powerful AI model yet, available to developers on a paid basis via API",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Product launch: Meta released Muse Spark 1.3 with paid developer API access, expanding its AI monetization effort. This represents a potential revenue opportunity as Meta continues building out its commercial AI business \u2014 no confirmed revenue figures from this launch yet.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-02/meta-releases-more-powerful-ai-model-edging-closer-to-rivals",
+        "url_verified": true
+      },
+      {
+        "headline": "Micron's September 30 earnings preview: analysts expect ~$50.8B quarterly revenue, a 350% YoY increase, as AI memory demand booms",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "The Motley Fool",
+        "stocks_mentioned": [
+          "MU"
+        ],
+        "summary": "Forward-looking analyst preview with no confirmed earnings outcome. Micron has not yet reported Q4 FY2026 results (scheduled Sept. 30). Analyst expectations and management guidance are potential, not confirmed \u2014 score reflects absence of confirmed revenue or earnings impact at time of publication.",
+        "url": "https://www.fool.com/investing/2026/09/09/prediction-microns-earnings-could-be-catalyst-ai/",
+        "url_verified": true
+      },
+      {
+        "headline": "Gimlet Labs raises $300 million AI infrastructure hardware round as investors back compute cost solutions",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "blog.mean.ceo (Startup Funding Announcements, September 2026)",
+        "stocks_mentioned": [],
+        "summary": "Funding announcement: Gimlet Labs raised $300M for AI hardware infrastructure. This is a potential positive \u2014 capital raised signals investor confidence in the AI infrastructure theme but does not represent confirmed revenue. No publicly traded tickers explicitly named in the source. URL is a blog aggregator page, not a primary source article; treat with caution.",
+        "url": "https://blog.mean.ceo/startup-funding-announcements-news-september-2026/",
+        "url_verified": false
+      }
+    ],
+    "period": "past 7 days",
+    "run_at": "2026-09-11T12:00:00Z",
+    "run_id": 1,
+    "summary_stats": {
+      "net_sentiment_label": "Positive",
+      "score_distribution": {
+        "-1": 0,
+        "-2": 0,
+        "0": 1,
+        "1": 3,
+        "2": 3
+      },
+      "total_headlines": 7,
+      "weighted_sentiment": 1.4
+    }
+  },
+  {
+    "headlines": [
+      {
+        "headline": "Broadcom Q3 FY2026: AI Revenue Hits $16.7 Billion, Up 221% Year-Over-Year; Raises Full-Year AI Guidance to $58B",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC / Broadcom IR",
+        "stocks_mentioned": [
+          "AVGO",
+          "GOOGL",
+          "META"
+        ],
+        "summary": "Confirmed earnings beat: Q3 revenue of $29.59B (+86% YoY) and adjusted EPS of $3.32 exceeded analyst consensus; AI semiconductor revenue exceeded Broadcom's own $16B target by $700M; management raised full-year AI revenue guidance to $58B and guided Q4 AI revenue to $21.7B (+236% YoY). All impacts are confirmed, not potential.",
+        "url": "https://www.cnbc.com/2026/09/02/broadcom-avgo-q3-earnings-report-2026.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Qualcomm Partners With Amazon AWS on Multi-Generational Custom AI Data Center Chips; Issues $4B in Warrants to Amazon",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "QCOM",
+          "AMZN"
+        ],
+        "summary": "Potential upside: Qualcomm announced a multi-generational collaboration with Amazon Web Services to develop customized AI inference silicon and optical connectivity for large-scale data centers; Qualcomm issued warrants to Amazon to acquire 25 million shares at $4B total. No confirmed revenue has been reported yet \u2014 this is a partnership announcement with future revenue implications.",
+        "url": "https://www.cnbc.com/2026/09/08/qualcomm-amazon-data-center-infrastructure-deal.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Google Launches Gemini 3.8 Flash, Its Third Flash Model in Six Weeks, Targeting Agentic AI and Enterprise Customers",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "The Register / CNBC",
+        "stocks_mentioned": [
+          "GOOGL"
+        ],
+        "summary": "Potential upside: Google shipped Gemini 3.8 Flash on September 2, 2026, its third Flash-tier model in six weeks, topping the DeepSWE coding benchmark leaderboard and made immediately available to Google AI Pro and Ultra subscribers. The launch signals continued AI product momentum for Alphabet, though no confirmed revenue or subscription uplift has been reported yet.",
+        "url": "https://www.theregister.com/ai-and-ml/2026/09/02/with-gemini-38-flash-google-reminds-everyone-its-still-in-the-race/5294049",
+        "url_verified": true
+      },
+      {
+        "headline": "Gimlet Labs Raises $300M Series B at $3B Valuation Led by a16z, With ARM and Microsoft M12 as New Investors",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg / SiliconANGLE / GlobeNewswire",
+        "stocks_mentioned": [
+          "ARM",
+          "MSFT"
+        ],
+        "summary": "Potential upside: Gimlet Labs closed a $300M Series B on September 4, 2026, bringing total funding to $392M; Arm Holdings and Microsoft's M12 venture fund participated as new strategic investors. The funding round signals investor confidence in multi-silicon AI inference infrastructure but does not directly confirm revenue impact for ARM or MSFT \u2014 the impact is potential, not confirmed.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-04/andreessen-backed-ai-startup-gimlet-is-valued-at-3-billion-in-new-round",
+        "url_verified": true
+      },
+      {
+        "headline": "Analysts Flag Micron's September 30 Earnings as Key AI Memory Catalyst, With Revenue Estimates of ~$50.8B (+350% YoY)",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "The Motley Fool",
+        "stocks_mentioned": [
+          "MU"
+        ],
+        "summary": "No confirmed revenue or earnings impact: this is analyst forward commentary previewing Micron's Q4 FY2026 earnings scheduled for September 30. Wall Street consensus expects ~$50.8B in revenue and $31.28 EPS, but no results have been reported. This is macro/sector commentary with no confirmed company-specific outcome yet.",
+        "url": "https://www.fool.com/investing/2026/09/09/prediction-microns-earnings-could-be-catalyst-ai/",
+        "url_verified": true
+      }
+    ],
+    "period": "Aug 29 \u2013 Sep 04, 2026",
+    "run_at": "2026-09-04T23:59:59+00:00",
+    "run_id": 2,
+    "summary_stats": {
+      "net_sentiment_label": "Positive",
+      "score_distribution": {
+        "-1": 0,
+        "-2": 0,
+        "0": 1,
+        "1": 3,
+        "2": 1
+      },
+      "total_headlines": 5,
+      "weighted_sentiment": 1.0
+    }
+  },
+  {
+    "headlines": [
+      {
+        "headline": "Nvidia Q2 FY2027 Revenue Surges 106% to $96.2B; CEO Forecasts ~70% Fiscal 2028 Growth",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC / NVIDIA Newsroom",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Confirmed earnings beat: Nvidia reported $96.2B in Q2 FY2027 revenue (+106% YoY), surpassing consensus of ~$92.2B, with data center revenue of $89B (+117% YoY). Q3 guidance of $108B also exceeded analyst expectations of $104.2B. Fiscal 2028 revenue growth guided at ~70% YoY. All impacts are confirmed, not potential.",
+        "url": "https://www.cnbc.com/2026/08/26/nvidia-nvda-earnings-report-q2-2027-live-updates.html",
+        "url_verified": true
+      },
+      {
+        "headline": "AWS and Nvidia Announce 2 Million Additional GPU Deployment Deal for 2027\u20132028",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Bloomberg / Amazon Press Center",
+        "stocks_mentioned": [
+          "AMZN",
+          "NVDA"
+        ],
+        "summary": "Confirmed large-scale procurement commitment: AWS disclosed it will deploy an additional 2 million Nvidia Blackwell Ultra, Rubin, and Rubin Ultra GPUs across its global infrastructure in 2027\u20132028, bringing its total committed Nvidia GPU count to over 3 million units. This is a confirmed forward purchase agreement with direct and substantial revenue impact for Nvidia and a confirmed capex commitment for Amazon.",
+        "url": "https://www.bloomberg.com/news/articles/2026-08-26/amazon-to-buy-2-million-nvidia-chips-for-data-center-build-out",
+        "url_verified": true
+      },
+      {
+        "headline": "Marvell Posts Record Q2 Revenue of $2.74B (+37% YoY), Raises FY2027 and FY2028 Outlook; Stock Falls ~8\u201310%",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC / Marvell Investor Relations",
+        "stocks_mentioned": [
+          "MRVL"
+        ],
+        "summary": "Confirmed earnings beat: Marvell reported record Q2 FY2027 revenue of $2.739B (+37% YoY), beating guidance midpoint by $39M. Non-GAAP EPS of $0.94 beat the $0.87 consensus. Management raised FY2027 revenue outlook to ~$12B (~45% growth) and FY2028 outlook to ~$18B (~50% growth). Data center revenue grew 46% YoY and represents 79% of total revenue. The stock's post-earnings decline of ~8\u201310% reflects valuation/sentiment dynamics, not a deterioration in confirmed fundamentals; the revenue and guidance outcomes are unambiguously positive.",
+        "url": "https://www.cnbc.com/2026/08/28/marvell-mrvl-q2-earnings-outlook.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Marvell Grants Google $12.2B Stock Warrant in Custom AI Chip Deal Worth Up to $120B Through FY2033",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC / Reuters",
+        "stocks_mentioned": [
+          "MRVL",
+          "GOOGL",
+          "AVGO"
+        ],
+        "summary": "Potential upside: Marvell disclosed an expanded commercial agreement with Google (announced Aug 19; analysis and market reaction continued through Aug 22+). Google received a warrant to purchase up to 58.97 million Marvell shares at $206.58 each, vesting in tranches tied to every $500M of custom chip revenue through FY2033. The deal could bring Marvell up to ~$120B in cumulative revenue if all spending milestones are met \u2014 but this is conditional and milestone-based, not confirmed revenue. Broadcom (AVGO) fell >5% on the news as a competitive threat emerged. Scored +1 (potential) for MRVL and -1 for AVGO (competitive threat); composite score set to +1 reflecting the net new opportunity signal.",
+        "url": "https://www.cnbc.com/2026/08/19/marvell-google-ai-chips.html",
+        "url_verified": true
+      },
+      {
+        "headline": "UBS Downgrades SAP to Neutral, Citing Only 17 of 200 AI Agents Delivered; Stock Falls ~4%",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "CNBC (live blog) / Yahoo Finance / BigGo Finance",
+        "stocks_mentioned": [
+          "SAP"
+        ],
+        "summary": "Potential downside: UBS downgraded SAP from Buy to Neutral on Aug 26, citing the company's slow AI agent rollout \u2014 only 17 out-of-the-box agents delivered against a year-end target of 200. Analysts flagged that this lag constrains near-term AI monetization and risks driving enterprise customers to build DIY AI tools. Cloud gross margins also fell for the first time since 2021. No confirmed revenue miss was reported; the downgrade reflects a potential (not confirmed) deceleration in SAP's AI revenue trajectory. SAP shares fell ~4% on the day.",
+        "url": "https://www.cnbc.com/2026/08/25/stock-market-today-live-updates.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Jim Cramer Says AI Trade Is 'Currently Broken' Amid Data Center Slowdown Fears",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "CNBC",
+        "stocks_mentioned": [],
+        "summary": "No direct confirmed or potential revenue impact on a specific company: This is macro-level market commentary from a television personality expressing concern about sentiment in AI-related stocks and data center spending fears. No specific company earnings, contracts, or guidance were disclosed. Scored 0 per the rubric \u2014 industry commentary with no company-specific revenue impact.",
+        "url": "https://www.cnbc.com/video/2026/08/24/monday-august-24-2026-cramer-says-ai-trade-is-currently-broken-amid-fears-of-data-center-slowdown.html",
+        "url_verified": true
+      }
+    ],
+    "period": "Aug 22 \u2013 Aug 28, 2026",
+    "run_at": "2026-08-28T23:59:59+00:00",
+    "run_id": 3,
+    "summary_stats": {
+      "net_sentiment_label": "Positive",
+      "score_distribution": {
+        "-1": 1,
+        "-2": 0,
+        "0": 1,
+        "1": 1,
+        "2": 3
+      },
+      "total_headlines": 6,
+      "weighted_sentiment": 1.3
+    }
+  },
+  {
+    "headlines": [
+      {
+        "headline": "Jim Cramer declares AI data center trade 'back,' names 6 stocks after summer underperformance",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "TheStreet",
+        "stocks_mentioned": [
+          "NVDA",
+          "CRWV",
+          "NBIS",
+          "INTC",
+          "SMCI",
+          "LITE"
+        ],
+        "summary": "Macro/market commentary by a TV host declaring a sector rotation back to AI infrastructure names. No confirmed or potential revenue impact on any specific company \u2014 purely analyst/media opinion with no new earnings or contract data.",
+        "url": "https://www.thestreet.com/investing/stocks/jim-cramer-names-six-stocks-nvidia-coreweave-nebius-ai-data-center-trade",
+        "url_verified": true
+      },
+      {
+        "headline": "Anthropic signs $9.1 billion, 20-year compute deal with Riot Platforms for 191 MW of Texas data center capacity",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Bloomberg / CNBC",
+        "stocks_mentioned": [
+          "RIOT"
+        ],
+        "summary": "Confirmed closed contract with a disclosed $9.1 billion total value over 20 years \u2014 a direct, confirmed revenue impact for Riot Platforms. Deal represents a structural pivot for RIOT from bitcoin mining to AI infrastructure landlord, with potential extension to $16.1B if options exercised.",
+        "url": "https://www.cnbc.com/2026/08/11/riot-platforms-signs-anthropic-deal-as-miners-shift-to-ai-infrastructure-.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Pennsylvania Gov. Shapiro signs executive order imposing 'nation's strictest' guardrails on AI data center development, removes projects from fast-track permitting",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Commonwealth of Pennsylvania / The Philadelphia Inquirer / Reuters",
+        "stocks_mentioned": [
+          "AMZN",
+          "MSFT",
+          "GOOGL"
+        ],
+        "summary": "Regulatory restriction newly imposed \u2014 potential downside for hyperscalers and data center developers with planned or active projects in Pennsylvania. Amazon's existing $20B PA data center commitment is specifically referenced as a precedent now subject to tighter oversight. Impact on timelines and capex is potential, not yet confirmed.",
+        "url": "https://www.inquirer.com/politics/pennsylvania/josh-shapiro-data-center-order-20260818.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Marvell grants Google $12.2 billion stock warrant in custom AI chip deal that could yield ~$120B in revenue through 2033",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC / Reuters",
+        "stocks_mentioned": [
+          "MRVL",
+          "GOOGL",
+          "AVGO"
+        ],
+        "summary": "Large new partnership announced with potential revenue of ~$120B for MRVL through fiscal 2033, but revenue is contingent on Google meeting cumulative $500M purchasing tranches \u2014 impact is potential, not confirmed. MRVL stock jumped ~10% on news; AVGO fell 5%+ as competitive threat emerged.",
+        "url": "https://www.cnbc.com/2026/08/19/marvell-google-ai-chips.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Broadcom in talks to raise $70\u2013$100 billion in debt to fund custom AI chips for Anthropic and other customers",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC / Bloomberg",
+        "stocks_mentioned": [
+          "AVGO"
+        ],
+        "summary": "Broadcom in active debt-financing talks \u2014 deal not yet closed. If finalized, this would substantially expand AVGO's custom AI chip pipeline for Anthropic and OpenAI, representing potential upside to future revenue. Numbers remain fluid and deal structure is still being negotiated.",
+        "url": "https://www.cnbc.com/2026/08/21/broadcom-debt-deal-expected-to-reach-upwards-of-70-billion-sources.html",
+        "url_verified": true
+      }
+    ],
+    "period": "Aug 15 \u2013 Aug 21, 2026",
+    "run_at": "2026-08-21T23:59:59+00:00",
+    "run_id": 4,
+    "summary_stats": {
+      "net_sentiment_label": "Positive",
+      "score_distribution": {
+        "-1": 1,
+        "-2": 0,
+        "0": 1,
+        "1": 2,
+        "2": 1
+      },
+      "total_headlines": 5,
+      "weighted_sentiment": 0.6
+    }
+  },
+  {
+    "headlines": [
+      {
+        "headline": "Databricks Closes $5 Billion Funding Round at $190 Billion Valuation to Expand Enterprise AI Agent Platform",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "SNOW",
+          "GOOGL"
+        ],
+        "summary": "Databricks (private) raised $5B at a $190B valuation \u2014 potential upside for the AI data platform ecosystem; SNOW and GOOGL are named competitors. Funding is not confirmed revenue; impact on publicly traded rivals is potential and indirect.",
+        "url": "https://www.cnbc.com/2026/08/13/databricks-funding-round-190-billion-valuation.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Cloudflare Q2 2026 Earnings Beat: Revenue Jumps 36% to $696.1M, Full-Year Guidance Raised Above Estimates",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Yahoo Finance / Quartz",
+        "stocks_mentioned": [
+          "NET"
+        ],
+        "summary": "Confirmed earnings beat: NET reported Q2 revenue of $696.1M vs. $666M expected (+36% YoY), raised full-year revenue guidance to $2.864\u2013$2.870B (above prior $2.81B estimate), and raised EPS guidance. Direct, confirmed upside to revenue and earnings.",
+        "url": "https://finance.yahoo.com/technology/articles/cloudflare-q2-2026-earnings-beat-123048242.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Palantir Q2 2026: Revenue Surges 93% to $1.94B, Raises Full-Year Guidance to $8.15B \u2014 Stock Rallies Into Week of Aug 8",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "PLTR"
+        ],
+        "summary": "Confirmed earnings beat: PLTR reported Q2 revenue of $1.94B (+93% YoY) vs. $1.80B expected, with U.S. commercial revenue +149% and full-year guidance raised to $8.15B. Stock continued rallying through the Aug 8\u201314 window. Confirmed upside to revenue and earnings.",
+        "url": "https://www.cnbc.com/2026/08/03/palantir-pltr-earnings-q2-2026.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Applied Optoelectronics (AAOI) Surges 14.66% on August 14 After Fifth Consecutive Quarter of Record AI Revenue",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "StocksToTrade",
+        "stocks_mentioned": [
+          "AAOI"
+        ],
+        "summary": "Confirmed revenue beat: AAOI posted Q2 2026 revenue of $191.9M (+86% YoY), marking a fifth straight record quarter driven by optical networking demand for AI infrastructure. Non-GAAP EPS also beat estimates. Direct confirmed upside to revenue and earnings.",
+        "url": "https://stockstotrade.com/news/applied-optoelectronics-inc-aaoi-news-2026_08_14-2/",
+        "url_verified": true
+      },
+      {
+        "headline": "AMD Shares Jump 6.5% on August 14 Driven by Data Center GPU Demand",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "StartupHub.ai",
+        "stocks_mentioned": [
+          "AMD"
+        ],
+        "summary": "AMD rose 6.5% on Aug 14 on continued data center GPU demand tailwinds. No specific confirmed earnings or contract disclosed on this date; the move reflects potential ongoing demand, not a confirmed revenue event.",
+        "url": "https://www.startuphub.ai/ai-news/ai-stocks-daily/2026/ai-stocks-2026-08-14",
+        "url_verified": true
+      },
+      {
+        "headline": "Monday.com (MNDY) Falls 7.2% After Lowering Revenue Guidance; Raises Operating Margin Outlook as Part of AI Pivot",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "StartupHub.ai",
+        "stocks_mentioned": [
+          "MNDY"
+        ],
+        "summary": "MNDY disclosed a revenue guidance reduction alongside an AI-pivot restructuring and raised operating margin target. The revenue guidance cut represents a potential downside to near-term earnings; the margin improvement is a partial offset but does not confirm positive revenue trajectory.",
+        "url": "https://www.startuphub.ai/ai-news/ai-stocks-daily/2026/ai-stocks-2026-08-14",
+        "url_verified": true
+      },
+      {
+        "headline": "Broadcom Falls 5.9% on August 14 With No Company-Specific Catalyst \u2014 Post-Rally Giveback in AI Chip Names",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "StartupHub.ai",
+        "stocks_mentioned": [
+          "AVGO"
+        ],
+        "summary": "AVGO declined 5.9% on Aug 14 with no company-specific news. The move was characterized as a post-rally giveback after AI chip enthusiasm. No confirmed or potential revenue/earnings impact \u2014 purely a market price movement with macro context.",
+        "url": "https://www.startuphub.ai/ai-news/ai-stocks-daily/2026/ai-stocks-2026-08-14",
+        "url_verified": true
+      },
+      {
+        "headline": "xAI Launches Grok 4.6 on August 12: Matches GPT-5.6 on AI Index, Expands Context to 500K Tokens",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "AIToolsRecap",
+        "stocks_mentioned": [],
+        "summary": "xAI (private) launched Grok 4.6 with expanded context and improved agent performance. This is a product launch representing potential competitive upside for xAI and potential threat to public AI model providers, but no confirmed revenue impact is reported. No publicly traded tickers are explicitly named in the article.",
+        "url": "https://aitoolsrecap.com/Blog/AINewsAugust2026.aspx",
+        "url_verified": true
+      },
+      {
+        "headline": "NVIDIA, Marvell, and Broadcom Pre-Earnings Anticipation: Semiconductor AI Wave Expected to Accelerate in Late August",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "247 Wall St.",
+        "stocks_mentioned": [
+          "NVDA",
+          "MRVL",
+          "AVGO"
+        ],
+        "summary": "Industry commentary anticipating NVDA (Aug 26), MRVL (Aug 27), and AVGO (Sep 2) earnings reports. No confirmed revenue outcomes yet \u2014 this is forward-looking analyst and market commentary. Scored 0 as no confirmed or newly potential revenue impact is established within the article.",
+        "url": "https://247wallst.com/investing/2026/08/13/3-semiconductor-stocks-to-buy-before-the-next-ai-earnings-wave-in-august/",
+        "url_verified": true
+      }
+    ],
+    "period": "Aug 08 \u2013 Aug 14, 2026",
+    "run_at": "2026-08-14T23:59:59+00:00",
+    "run_id": 5,
+    "summary_stats": {
+      "net_sentiment_label": "Positive",
+      "score_distribution": {
+        "-1": 1,
+        "-2": 0,
+        "0": 2,
+        "1": 3,
+        "2": 3
+      },
+      "total_headlines": 9,
+      "weighted_sentiment": 0.9
+    }
+  },
+  {
+    "headlines": [
+      {
+        "headline": "Zeta Global Beats Q2 2026 Estimates, Reports 44% Revenue Growth, Raises Full-Year Guidance to $1.818B",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Seeking Alpha / SEC Form 8-K",
+        "stocks_mentioned": [
+          "ZETA"
+        ],
+        "summary": "Confirmed earnings beat: Q2 revenue of $443M exceeded guidance midpoint by $23M, and full-year 2026 revenue guidance was raised by $33M to $1.818B midpoint \u2014 direct confirmed upside to revenue and earnings.",
+        "url": "https://seekingalpha.com/news/4625559-zeta-projects-1_818b-2026-revenue-and-raises-gaap-eps-guide-to-0_10-amid-athena-adoption",
+        "url_verified": true
+      },
+      {
+        "headline": "Hyperscale Data Hosts August 4 Investor Call; Reports H1 2026 Revenue Up ~57% YoY, Reaffirms $180M\u2013$200M Full-Year Guidance",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "PR Newswire / SEC Form 8-K",
+        "stocks_mentioned": [
+          "GPUS"
+        ],
+        "summary": "Confirmed revenue growth: Hyperscale Data reported preliminary H1 2026 revenue of approximately $80M, up ~57% year-over-year, reaffirmed full-year guidance, and raised 2027 preliminary outlook above $300M \u2014 all confirmed financial disclosures with direct revenue impact.",
+        "url": "https://www.prnewswire.com/news-releases/hyperscale-data-announces-preliminary-first-half-2026-revenue-growth-of-approximately-57-year-over-year-reaffirms-2026-revenue-guidance-of-180-million-to-200-million-and-provides-preliminary-2027-revenue-outlook-exceeding-300-302837235.html",
+        "url_verified": true
+      },
+      {
+        "headline": "BigBear.ai Posts Q2 2026 Revenue of $36.7M, Up 13% YoY, With 20+ New Contract Wins; Affirms Full-Year Revenue Guidance",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "BigBear.ai Investor Relations / Business Wire",
+        "stocks_mentioned": [
+          "BBAI"
+        ],
+        "summary": "Confirmed earnings beat: Q2 revenue of $36.74M beat analyst estimates by ~3.2%, gross margins expanded 781 basis points year-over-year, backlog rose 9%, and full-year 2026 guidance of $135M\u2013$165M was reaffirmed \u2014 all confirmed positive revenue and margin outcomes.",
+        "url": "https://ir.bigbear.ai/news-events/press-releases/detail/146/bigbear-ai-announces-second-quarter-2026-results-delivers",
+        "url_verified": true
+      },
+      {
+        "headline": "Fireworks AI's $1.5B Series D Signals Enterprise Shift to Custom AI Inference; Company Crosses $1B Annualized Revenue",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Enera Labs / Business Wire (analysis published Aug 2, 2026)",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Potential upside: Fireworks AI raised $1.505B at a $17.5B valuation and crossed $1B in annualized revenue run rate \u2014 the funding is potential (not confirmed additional revenue), though NVDA participated as an investor. Fireworks is private, so no public ticker is directly impacted; NVDA listed as a named participant in the round.",
+        "url": "https://www.eneralabs.com/blog/fireworks-ai-series-d-enterprise-inference-2026/",
+        "url_verified": true
+      },
+      {
+        "headline": "Agentic AI Startups Raise ~$676M Across 12 Deals in Late July\u2013Early August 2026 Wave",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "New Market Pitch",
+        "stocks_mentioned": [],
+        "summary": "Sector-level funding trend with no specific publicly traded company named; the $676M in agentic AI startup rounds (HappyRobot, Zenity, Onyx Security among top recipients) represents potential upside for the broader AI ecosystem but carries no confirmed revenue impact on any identifiable public stock ticker.",
+        "url": "https://newmarketpitch.com/blogs/news/agentic-ai-funding-news",
+        "url_verified": true
+      },
+      {
+        "headline": "OLIX Announces Series B Financing on August 3, 2026 to Expand Frontier AI Model Inference Accelerators",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "New Market Pitch",
+        "stocks_mentioned": [],
+        "summary": "OLIX (private UK-based startup) announced a Series B to develop photonic interconnects and AI inference rack systems \u2014 potential upside for the private company, but no publicly traded tickers are directly named or impacted; classified neutral for public market purposes.",
+        "url": "https://newmarketpitch.com/blogs/news/ai-chip-funding-news",
+        "url_verified": true
+      },
+      {
+        "headline": "Micron Q4 FY2026 Guidance of $50B Revenue Dominates Early-August AI Semiconductor Narrative; HBM4 Fully Booked Through 2027",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "247 Wall St. / Investing.com",
+        "stocks_mentioned": [
+          "MU",
+          "AVGO",
+          "NVDA"
+        ],
+        "summary": "Confirmed upside: Micron's Q4 FY2026 guidance of $50B (beating Wall Street consensus of ~$43.5B by ~15%) and its HBM4 products being fully booked through calendar 2027 represent confirmed forward revenue commitments; Broadcom's guidance for 200%+ year-over-year AI semiconductor revenue growth to $16B also confirmed. These are disclosed guidance figures with direct revenue impact.",
+        "url": "https://247wallst.com/investing/2026/08/01/3-semiconductor-stocks-to-buy-before-ai-demand-explodes-in-august/",
+        "url_verified": true
+      }
+    ],
+    "period": "Aug 01 \u2013 Aug 07, 2026",
+    "run_at": "2026-08-07T23:59:59+00:00",
+    "run_id": 6,
+    "summary_stats": {
+      "net_sentiment_label": "Positive",
+      "score_distribution": {
+        "-1": 0,
+        "-2": 0,
+        "0": 2,
+        "1": 1,
+        "2": 4
+      },
+      "total_headlines": 7,
+      "weighted_sentiment": 1.3
+    }
+  }
+]

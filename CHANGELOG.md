@@ -2,6 +2,7 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-11** — Promoted News page from experimental to production: moved to GET /news (templates/news.html), renamed stock.html to earnings.html, removed experimental guard from nav link, wired news page into generate.py static build (static/news/index.html + static/api/news.json)
 - **2026-09-11** — Added weekly carousel to the News page: GET /api/news now returns all ingestion runs; the UI shows one week at a time with PREV/NEXT navigation and touch swipe support; ingest_news.py gains a --week-of DATE flag for ingesting historical weeks; populated 6 weeks of data (Aug 1 – Sep 11, 2026)
 - **2026-09-11** — Wired news feed to a real backend: added news_runs and news_articles database tables, ingest_news.py CLI script (calls Claude with web search via Anthropic SDK), GET /api/news endpoint, and updated the News page to fetch live data instead of using hardcoded headlines
 - **2026-09-11** — Hidden News nav link from static builds: the experimental /themes page is not built statically so the link is now suppressed with {% if experimental and not static_build %}

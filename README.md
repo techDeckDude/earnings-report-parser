@@ -129,12 +129,12 @@ The S3 key format is `{ticker}/{filing_type}/FY{year}Q{quarter}.json` (e.g. `PLT
 A Flask web server that reads from the SQLite database and renders two interactive pages at `http://localhost:5001`.
 
 **Routes:**
-- **`GET /`** — stock metrics page (`stock.html`): ticker selector, toggleable metric line chart, and a full quarterly metrics table spanning all companies and periods
+- **`GET /`** — earnings page (`earnings.html`): ticker selector, toggleable metric line chart, and a full quarterly metrics table spanning all companies and periods
 - **`GET /api/revenue`** — revenue records for all companies as JSON
 - **`GET /api/tickers`** — list of all known ticker symbols and company names
 - **`GET /api/metrics/<ticker>`** — all financial metrics for a ticker, pivoted to `{statement: {metric_name: [value_per_period]}}` ordered by `period_end_date`
 - **`GET /api/news`** — most recent news ingestion run with all headlines and summary stats as JSON; returns empty headlines array if no ingestion has run yet
-- **`GET /experimental/themes`** — AI market news feed page; reads from `/api/news`
+- **`GET /news`** — AI market news feed page; reads from `/api/news`
 
 New companies and periods appear automatically as more filings are parsed — no UI changes needed.
 
@@ -184,7 +184,7 @@ python ingest_news.py --week-of 2026-09-04
 python ingest_news.py --dry-run
 ```
 
-After running, reload `http://localhost:5001/experimental/themes` to see the updated feed. The carousel shows the most recent week by default; use the PREV/NEXT buttons (or swipe on mobile) to navigate between weeks.
+After running, reload `http://localhost:5001/news` to see the updated feed. The carousel shows the most recent week by default; use the PREV/NEXT buttons (or swipe on mobile) to navigate between weeks.
 
 ## Project Structure
 
@@ -203,9 +203,8 @@ earnings-report-parser/
 ├── verify.py            # Diff live API responses against static JSON files; exits 1 on mismatch
 ├── ingest_news.py       # CLI: fetch AI stock news via Claude (Anthropic SDK + web search), store in DB
 ├── templates/
-│   ├── stock.html       # Earnings page: ticker selector, metric chart, quarterly metrics table
-│   └── experimental/
-│       └── themes.html  # [Experimental] AI news feed: weekly carousel, sentiment chart, swipe nav
+│   ├── earnings.html    # Earnings page: ticker selector, metric chart, quarterly metrics table
+│   └── news.html        # AI news feed: weekly carousel, sentiment chart, swipe nav
 ├── data/
 │   ├── inputs/
 │   │   ├── PLTR/        # Place 10-Q PDFs here before running main.py
@@ -236,7 +235,7 @@ The `experimental/` package is a Flask Blueprint mounted at `/experimental`. It 
 
 | Route | Template | Description |
 |---|---|---|
-| `GET /experimental/themes` | `templates/experimental/themes.html` | AI market news feed with 5-level sentiment scoring and a sentiment line chart; reads live data from the database via `GET /api/news` |
+| `GET /news` | `templates/news.html` | AI market news feed with weekly carousel, 5-level sentiment scoring, and a sentiment line chart; reads live data via `GET /api/news` |
 
 **Enabling / disabling:**
 

@@ -36,9 +36,12 @@ def main() -> None:
                 client.get(f"/api/metrics/{ticker}").get_json(),
             )
 
+        write_json("api/news.json", client.get("/api/news").get_json())
+
         # Render HTML with STATIC_BUILD=true active so Jinja injects API_EXT
         write_html("index.html", "/", client)
-        write_html("stock/index.html", "/", client)  # clean URL on Cloudflare
+        write_html("earnings/index.html", "/", client)  # clean URL: /earnings
+        write_html("news/index.html", "/news", client)  # clean URL: /news
 
     print("Static site written to ./static/")
 

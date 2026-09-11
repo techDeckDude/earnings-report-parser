@@ -34,7 +34,12 @@ def get_db():
 
 @app.route("/")
 def index():
-    return render_template("stock.html")
+    return render_template("earnings.html")
+
+
+@app.route("/news")
+def news_page():
+    return render_template("news.html")
 
 
 
