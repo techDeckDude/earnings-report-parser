@@ -10,7 +10,19 @@ _conn = None
 
 @app.context_processor
 def inject_build_mode():
-    return {"static_build": os.getenv("STATIC_BUILD") == "true"}
+    return {
+        "static_build": os.getenv("STATIC_BUILD") == "true",
+        "experimental": os.getenv("EXPERIMENTAL", "1") != "0",
+    }
+
+
+# ── Experimental Blueprint ──────────────────────────────────────────────────
+# Mounted unconditionally so routes are reachable during development.
+# Set EXPERIMENTAL=0 to disable in production.
+if os.getenv("EXPERIMENTAL", "1") != "0":
+    from experimental import bp as experimental_bp
+    app.register_blueprint(experimental_bp)
+# ───────────────────────────────────────────────────────────────────────────
 
 
 def get_db():
@@ -22,17 +34,8 @@ def get_db():
 
 @app.route("/")
 def index():
-    return render_template("index.html")
-
-
-@app.route("/stock")
-def stock():
     return render_template("stock.html")
 
-
-@app.route("/themes")
-def themes():
-    return render_template("themes.html")
 
 
 @app.route("/api/revenue")

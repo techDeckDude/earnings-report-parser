@@ -103,8 +103,7 @@ The S3 key format is `{ticker}/{filing_type}/FY{year}Q{quarter}.json` (e.g. `PLT
 A Flask web server that reads from the SQLite database and renders two interactive pages at `http://localhost:5001`.
 
 **Routes:**
-- **`GET /`** — revenue dashboard (`index.html`): interactive line chart (one ticker at a time, switchable) above a full revenue table spanning all companies and periods
-- **`GET /stock`** — stock detail page (`stock.html`): per-ticker metrics table (rows = all metrics, columns = quarters) plus a toggleable line chart for any single metric; ticker and metric are both selectable
+- **`GET /`** — stock metrics page (`stock.html`): ticker selector, toggleable metric line chart, and a full quarterly metrics table spanning all companies and periods
 - **`GET /api/revenue`** — revenue records for all companies as JSON
 - **`GET /api/tickers`** — list of all known ticker symbols and company names
 - **`GET /api/metrics/<ticker>`** — all financial metrics for a ticker, pivoted to `{statement: {metric_name: [value_per_period]}}` ordered by `period_end_date`
@@ -148,8 +147,9 @@ earnings-report-parser/
 ├── generate.py          # Build static/ from live Flask (sets STATIC_BUILD=true, uses test client)
 ├── verify.py            # Diff live API responses against static JSON files; exits 1 on mismatch
 ├── templates/
-│   ├── index.html       # Revenue dashboard (line chart + table, all companies)
-│   └── stock.html       # Stock detail page (metrics table + toggleable metric chart)
+│   ├── stock.html       # Earnings page: ticker selector, metric chart, quarterly metrics table
+│   └── experimental/
+│       └── themes.html  # [Experimental] AI news feed with sentiment chart (mock data)
 ├── data/
 │   ├── inputs/
 │   │   ├── PLTR/        # Place 10-Q PDFs here before running main.py
@@ -161,6 +161,9 @@ earnings-report-parser/
 │   ├── aws-deployment.md              # Plan for deploying to S3 + EC2 + RDS
 │   └── architecture-diagram-8-22-26.png  # Visual architecture diagram
 ├── loader.py            # Load a contract JSON from S3 or local path into the DB
+├── experimental/
+│   ├── __init__.py      # Flask Blueprint definition (url_prefix="/experimental")
+│   └── routes.py        # Route handlers for experimental features
 ├── .claude/
 │   └── agents/
 │       └── news-aggregator.md  # Claude Code skill: fetch and sentiment-score AI stock headlines
@@ -168,6 +171,28 @@ earnings-report-parser/
 ├── CHANGELOG.md         # Chronological record of changes
 └── README.md
 ```
+
+## Experimental Features
+
+The `experimental/` package is a Flask Blueprint mounted at `/experimental`. It is the designated place for prototype pages, mock-data UIs, and ideas under active exploration — features that are not yet part of the production surface.
+
+**Currently experimental:**
+
+| Route | Template | Description |
+|---|---|---|
+| `GET /experimental/themes` | `templates/experimental/themes.html` | AI market news feed with 5-level sentiment scoring and a sentiment line chart; data is hardcoded (not wired to a live backend) |
+
+**Enabling / disabling:**
+
+The Blueprint is on by default. Set `EXPERIMENTAL=0` to disable all experimental routes (e.g. in a production deploy or static build):
+
+```bash
+EXPERIMENTAL=0 python app.py
+```
+
+**Promoting a feature to production** means: move its template to `templates/`, add its route to `app.py`, wire it to the real backend, and remove the `{% if experimental %}` nav guards. The full checklist is in `CLAUDE.md`.
+
+---
 
 ## Deployment
 
@@ -259,6 +284,7 @@ Tested and working against: PLTR Q1 2025–Q2 2026; MRVL Q1 2024–Q1 2027.
 | Pattern | Where Applied | Purpose |
 |---|---|---|
 | **Strategy** | `extractors/` — `BaseExtractor` ABC + per-company subclasses (`PalantirExtractor`, `MarvellExtractor`), `get_extractor()` registry | Decouple parsing logic from the orchestrator; new company = new file, nothing else changes |
+| **Experimental Blueprint** | `experimental/` Flask Blueprint mounted at `/experimental` | Isolate prototype features (mock data, unvalidated UI) from the production surface; controlled by `EXPERIMENTAL` env var; see `CLAUDE.md` for the promotion checklist |
 | **S3 Contract / Landing Zone** | `main.py` → `data/outputs/{ticker}/FY{year}Q{quarter}.json` → S3 → `loader.py` → DB | Decouple extraction from loading; contracts are the durable intermediate record; DB can be rebuilt from S3 without re-parsing PDFs |
 | **Repository** | `db.py` — `upsert_report()`, `init_db()` | Isolate all DB read/write logic; callers (`main.py`, `loader.py`, `app.py`) never write SQL directly |
 | **Dual-backend detection** | `db.py` — `isinstance(conn, sqlite3.Connection)` | Single codebase supports SQLite (local dev) and PostgreSQL (cloud) with no code changes; switching is env-var-driven |
@@ -273,7 +299,7 @@ Tested and working against: PLTR Q1 2025–Q2 2026; MRVL Q1 2024–Q1 2027.
 | Local database | `SQLite` | Default; auto-initialized at `earnings.db`; no env vars needed |
 | Cloud database | `PostgreSQL` (via `psycopg2`) | Enabled when `DB_HOST` env var is set |
 | Contract storage | `AWS S3` (via `boto3`) | Enabled when `S3_BUCKET` env var is set; key format `{ticker}/{filing_type}/FY{year}Q{quarter}.json` |
-| Web server | `Flask` | Serves dashboard at `localhost:5001`; routes: `/`, `/stock`, `/api/revenue`, `/api/tickers`, `/api/metrics/<ticker>` |
+| Web server | `Flask` | Serves dashboard at `localhost:5001`; routes: `/`, `/stock`, `/themes`, `/api/revenue`, `/api/tickers`, `/api/metrics/<ticker>` |
 | Schema versioning | `schema_version: "1.0"` on `EarningsReport` | Lets `loader.py` detect and reject stale contract formats |
 
 ### Environment Variables
@@ -287,6 +313,7 @@ Tested and working against: PLTR Q1 2025–Q2 2026; MRVL Q1 2024–Q1 2027.
 | `DB_PASSWORD` | PostgreSQL password |
 | `DB_PORT` | PostgreSQL port (default: `5432`) |
 | `PORT` | Flask dev server port (default: `5001`); set automatically by the preview server when `autoPort: true` |
+| `EXPERIMENTAL` | Mount the experimental Blueprint (default: `1` = enabled); set `0` to disable all `/experimental/*` routes in production |
 
 ---
 

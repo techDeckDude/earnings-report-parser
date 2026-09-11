@@ -2,6 +2,11 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-11** — Removed the separate revenue table dashboard; stock metrics page (stock.html) is now the root / and the sole earnings page
+- **2026-09-11** — Introduced Experimental Blueprint pattern (`experimental/` package, `/experimental` URL prefix): prototype features now live in a separate Flask Blueprint, isolated from the production surface, enabled by default and disableable via `EXPERIMENTAL=0`; full usage and promotion checklist documented in `CLAUDE.md` and `README.md`
+- **2026-09-11** — Added sentiment line chart to the News page: X-axis = article order, Y-axis = score −2 to +2, green/red split-fill area above/below the neutral line, hover tooltip shows full headline and score label
+- **2026-09-11** — Added News page (`/themes`): AI market news feed with clickable headline links, 5-level sentiment pills, source badges, ⚠ Unverified badge for unconfirmed URLs, and summary stat chips
+- **2026-09-11** — Added URL verification step to news-aggregator skill: targeted follow-up search for any unconfirmed URL; headlines without a verifiable source surface url_verified: false as an honest signal rather than fabricating a link
 - **2026-09-11** — Added mandatory self-critic pass to news-aggregator skill: verifies URL uniqueness, sentiment score boundaries, ticker accuracy, and confirmed-vs-potential language before output
 - **2026-09-11** — Updated news-aggregator skill to cover the past 7 days, added direct article URLs, and replaced binary sentiment with a 5-level scale (−2 to +2) based on confirmed vs. potential revenue/earnings impact
 - **2026-09-08** — Added news-aggregator Claude Code skill for fetching and sentiment-scoring AI stock market headlines from the past 24 hours

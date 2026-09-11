@@ -10,7 +10,8 @@ description: Fetch and analyze AI stock market theme headlines from the past 7 d
 Fetches the latest AI stock market theme headlines from the past 7 days and returns them in a structured JSON format with:
 - **headline**: The news headline text
 - **source**: News source/publisher
-- **url**: Direct link to the article
+- **url**: Direct link to the article (`null` if no verifiable source found)
+- **url_verified**: `true` if URL came from a listed search result matching this headline; `false` if URL is a general page or could not be confirmed after a follow-up search
 - **stocks_mentioned**: Array of stock tickers mentioned in the article
 - **sentiment_score**: Integer from -2 to +2 (see scoring guidelines below)
 - **sentiment_label**: Human-readable label for the score
@@ -55,7 +56,8 @@ Score each headline strictly on its **confirmed or potential impact to company r
     {
       "headline": "Mistral raises €3B in Europe's biggest tech round, led by Samsung",
       "source": "Bloomberg",
-      "url": "https://www.bloomberg.com/news/articles/...",
+      "url": "https://www.bloomberg.com/news/articles/2026-09-08/mistral-raises-3b",
+      "url_verified": true,
       "stocks_mentioned": ["MSFT", "AMZN"],
       "sentiment_score": 1,
       "sentiment_label": "Positive",
@@ -64,11 +66,12 @@ Score each headline strictly on its **confirmed or potential impact to company r
     {
       "headline": "Nvidia beats Q3 estimates; raises full-year guidance by 12%",
       "source": "CNBC",
-      "url": "https://www.cnbc.com/2026/09/11/nvidia-earnings...",
+      "url": null,
+      "url_verified": false,
       "stocks_mentioned": ["NVDA"],
       "sentiment_score": 2,
       "sentiment_label": "Very Positive",
-      "summary": "Confirmed earnings beat and raised guidance represent direct upside to revenue and earnings"
+      "summary": "Confirmed earnings beat and raised guidance represent direct upside to revenue and earnings — source not verified, treat with caution"
     }
   ],
   "summary_stats": {
@@ -89,15 +92,21 @@ Run 2–3 web searches to gather headlines:
 - "AI funding announcements deals [current month year]"
 
 ### Step 2 — Draft JSON
-For each headline found, produce a draft entry with all fields filled in.
+For each headline found, produce a draft entry with all fields filled in. Note whether the URL came directly from a listed search result link, or whether the fact came only from the search tool's synthesized summary text.
 
-### Step 3 — Critic Pass (mandatory before output)
-Before returning results, review every draft entry by answering these questions explicitly in your internal reasoning:
+### Step 3 — URL Verification (mandatory)
+For every headline whose URL is uncertain (fact came from synthesized summary, or URL seems like a general page rather than the specific article), run a targeted follow-up search:
+- Query format: `"[key phrase from headline]" site:cnbc.com OR site:bloomberg.com OR site:reuters.com OR site:wsj.com`
+- If the follow-up search returns a direct article link → update `url` with that link
+- If no direct article link is found after one targeted search → set `"url": null` and set `"url_verified": false`
+- If the URL came from a listed search result link that clearly matches this headline → set `"url_verified": true`
+
+### Step 4 — Critic Pass (mandatory before output)
+Review every draft entry:
 
 **URL check**
-- Is this URL the actual source for this specific headline?
-- Was this URL reused from a different headline in the same batch?
-- If yes to either → set `"url": null` rather than carry a wrong link.
+- Was this URL reused from a different headline in the same batch? → set `url: null`, `url_verified: false`
+- Does the URL point to a general page (live blog, weekly recap, aggregator) rather than the specific article? → note this in `source`, keep the URL but set `url_verified: false`
 
 **Score check — ask in order, stop at the first "yes"**
 1. Does the article report a confirmed outcome (beat/miss earnings, raised/lowered guidance, closed contract, reported revenue growth/decline)? → score ±2
@@ -114,12 +123,13 @@ Before returning results, review every draft entry by answering these questions 
 - Does the summary explicitly state whether the impact is *confirmed* or *potential*?
 - If not → rewrite it to make this clear.
 
-### Step 4 — Output corrected final JSON
+### Step 5 — Output corrected final JSON
 
 ## Implementation Notes
 
 - Extract stock tickers from news content (look for ticker symbols in parentheses or context)
-- Always include the direct article URL from the search result — never reuse a URL from another headline in the same batch
-- If a URL is unavailable or uncertain, set `"url": null`
+- Always attempt to verify URLs via a targeted follow-up search before accepting or rejecting them
+- Never reuse a URL from one headline for a different headline in the same batch
+- `url_verified: false` is the honest signal that a headline came from synthesized search summary text rather than a confirmed article link — the user can decide whether to trust it
 - `weighted_sentiment` in summary_stats is the mean score across all headlines (round to 1 decimal)
 - `net_sentiment_label` maps the weighted average: ≥1.5 → "Very Positive", ≥0.5 → "Positive", >-0.5 → "Neutral", >-1.5 → "Negative", else → "Very Negative"

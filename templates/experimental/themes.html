@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Market News — Earnings Dashboard</title>
+  {% if static_build %}<script>window.API_EXT = ".json";</script>{% endif %}
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 40px 32px;
+    }
+
+    /* ── Nav bar ── */
+    .topnav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border-bottom: 1px solid #2d3148;
+      margin: -40px -32px 40px;
+      padding: 0 32px;
+    }
+    .topnav a {
+      display: block;
+      padding: 14px 18px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: #64748b;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.12s;
+    }
+    .topnav a:hover { color: #94a3b8; }
+    .topnav a.active { color: #a5b4fc; border-bottom-color: #6366f1; }
+
+    h1 { font-size: 1.5rem; font-weight: 600; color: #f8fafc; margin-bottom: 4px; }
+
+    .report-meta {
+      font-size: 0.75rem;
+      color: #475569;
+      margin-bottom: 28px;
+    }
+
+    /* ── Stats ── */
+    .stats-row {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .stat-chip {
+      background: #1e2130;
+      border: 1px solid #2d3148;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 0.75rem;
+    }
+    .stat-chip .stat-val {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .stat-chip .stat-lbl { color: #64748b; margin-top: 2px; }
+    .stat-chip.very-positive .stat-val { color: #4ade80; }
+    .stat-chip.positive .stat-val { color: #86efac; }
+    .stat-chip.neutral .stat-val { color: #94a3b8; }
+    .stat-chip.negative .stat-val { color: #fca5a5; }
+    .stat-chip.very-negative .stat-val { color: #f87171; }
+
+    /* ── Feed ── */
+    .feed { max-width: 780px; }
+
+    .headline-card {
+      background: #1e2130;
+      border: 1px solid #2d3148;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      transition: border-color 0.15s;
+    }
+    .headline-card:hover { border-color: #3d4165; }
+    .headline-card.s2  { border-left: 3px solid #16a34a; }
+    .headline-card.s1  { border-left: 3px solid #4ade80; }
+    .headline-card.s0  { border-left: 3px solid #475569; }
+    .headline-card.sn1 { border-left: 3px solid #f97316; }
+    .headline-card.sn2 { border-left: 3px solid #dc2626; }
+
+    .headline-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .headline-text {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      line-height: 1.4;
+      flex: 1;
+    }
+    .headline-text a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .headline-text a:hover { color: #a5b4fc; }
+
+    /* ── Sentiment pills ── */
+    .sentiment-pill {
+      padding: 2px 10px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .pill-s2  { background: #052e16; color: #4ade80; border: 1px solid #16a34a; }
+    .pill-s1  { background: #052e16; color: #86efac; border: 1px solid #4ade80; }
+    .pill-s0  { background: #1e293b; color: #94a3b8; border: 1px solid #475569; }
+    .pill-sn1 { background: #431407; color: #fdba74; border: 1px solid #f97316; }
+    .pill-sn2 { background: #2d0d0d; color: #f87171; border: 1px solid #dc2626; }
+
+    .headline-source {
+      font-size: 0.7rem;
+      color: #64748b;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .unverified-badge {
+      font-size: 0.65rem;
+      color: #92400e;
+      background: #1c1207;
+      border: 1px solid #78350f;
+      border-radius: 4px;
+      padding: 1px 6px;
+    }
+
+    .headline-summary {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    .headline-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ticker-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #2d3148;
+      color: #6366f1;
+      border: 1px solid #3d4165;
+    }
+
+    /* ── Chart card ── */
+    .chart-card {
+      background: #1e2130;
+      border: 1px solid #2d3148;
+      border-radius: 12px;
+      padding: 24px 28px 20px;
+      margin-bottom: 24px;
+      max-width: 780px;
+    }
+
+    .chart-card-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #64748b;
+      margin-bottom: 16px;
+    }
+
+    #sentimentChart { width: 100%; overflow: visible; }
+
+    .axis-label {
+      font-size: 11px;
+      fill: #64748b;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .grid-line { stroke: #2d3148; stroke-width: 1; }
+    .zero-line { stroke: #475569; stroke-width: 1.5; stroke-dasharray: 4 3; }
+
+    .chart-line {
+      fill: none;
+      stroke: #818cf8;
+      stroke-width: 2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    .chart-dot {
+      fill: #818cf8;
+      stroke: #1e2130;
+      stroke-width: 2;
+      cursor: pointer;
+      transition: r 0.1s;
+    }
+    .chart-dot:hover { r: 7; }
+
+    #chartTooltip {
+      position: fixed;
+      background: #1e2130;
+      border: 1px solid #3d4165;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.78rem;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.1s;
+      z-index: 100;
+      max-width: 280px;
+    }
+    #chartTooltip .tt-score {
+      font-size: 0.68rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    #chartTooltip .tt-headline { color: #e2e8f0; line-height: 1.4; }
+    #chartTooltip .tt-source { color: #64748b; font-size: 0.68rem; margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+  <nav class="topnav">
+    <a href="/">Earnings</a>
+    <a href="/experimental/themes" class="active">News</a>
+  </nav>
+
+  <h1>Market News</h1>
+  <div class="report-meta">Last report: Sep 11, 2026 · Past 7 days · AI &amp; Stock Market</div>
+
+  <div class="chart-card">
+    <div class="chart-card-title">Sentiment Score by Article</div>
+    <div id="chartSvgContainer"></div>
+  </div>
+
+  <div class="stats-row" id="statsRow"></div>
+  <div class="feed" id="feed"></div>
+
+  <div id="chartTooltip">
+    <div class="tt-score" id="ttScore"></div>
+    <div class="tt-headline" id="ttHeadline"></div>
+    <div class="tt-source" id="ttSource"></div>
+  </div>
+
+<script>
+const NEWS = [
+  {
+    headline: "Broadcom Q3 2026: AI revenue hits $16.7B, up 221% year-over-year",
+    source: "24/7 Wall St.",
+    url: "https://247wallst.com/cards/broadcom-q3-2026-earnings-avgo-01m1hx207g9d64z38jwrpy5fdm",
+    url_verified: true,
+    stocks: ["AVGO"],
+    score: 2,
+    summary: "Confirmed Q3 reported revenue with 221% YoY growth — direct upside to earnings, not a forecast.",
+  },
+  {
+    headline: "Broadcom guides Q4 AI semiconductor revenue to $21.7B (+236% YoY); outlines $58B FY2026, $115B in 2027, $230B in 2028",
+    source: "Seeking Alpha",
+    url: "https://seekingalpha.com/news/4639799-broadcom-forecasts-58b-fiscal-2026-ai-revenue-and-outlines-115b-in-2027-230b-in-2028",
+    url_verified: true,
+    stocks: ["AVGO"],
+    score: 2,
+    summary: "Management-issued multi-year revenue guidance qualifies as a confirmed forward commitment under the raised guidance threshold.",
+  },
+  {
+    headline: "Nvidia agrees to acquire Hugging Face for ~$13B",
+    source: "CNBC",
+    url: "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html",
+    url_verified: true,
+    stocks: ["NVDA"],
+    score: 1,
+    summary: "Acquisition deal is confirmed but revenue synergies from Hugging Face remain potential — capital outflow of $13B is not a revenue event.",
+  },
+  {
+    headline: "ExlService raises FY2026 revenue guidance to $2.30B–$2.33B, above prior range",
+    source: "SEC Form 8-K",
+    url: "https://www.sec.gov/Archives/edgar/data/0001297989/000129798926000014/exlq126pressrelease.htm",
+    url_verified: true,
+    stocks: ["EXLS"],
+    score: 2,
+    summary: "Confirmed guidance raise above prior disclosed range — direct upside signal to FY2026 revenue.",
+  },
+  {
+    headline: "Meta AI activity drives stock up 3% — Muse Spark model update reported",
+    source: "CNBC / Axios",
+    url: null,
+    url_verified: false,
+    stocks: ["META"],
+    score: 1,
+    summary: "Meta AI model activity is verified (Muse Spark exists; 1.1 launched July 2026) but the specific version cited in market summaries could not be confirmed — potential upside from continued model rollout.",
+  },
+  {
+    headline: "Kinetix AI raises RMB 500M+ for embodied AI and humanoid robotics",
+    source: "Tech Startups",
+    url: "https://techstartups.com/2026/09/11/startup-funding-news-today-september-11-2026-kinetix-ai-aidin-robotics-enigmata-more/",
+    url_verified: true,
+    stocks: [],
+    score: 1,
+    summary: "Funding round confirms investor confidence in embodied AI — capital raised is not revenue; commercial outcomes remain potential.",
+  },
+  {
+    headline: "Micron Q4 earnings preview: analysts forecast revenue up 350%, EPS up 900% for Sept. 30 report",
+    source: "Motley Fool",
+    url: "https://www.fool.com/investing/2026/09/09/prediction-microns-earnings-could-be-catalyst-ai/",
+    url_verified: true,
+    stocks: ["MU"],
+    score: 0,
+    summary: "Analyst predictions ahead of an upcoming report — no confirmed outcome; elevated expectations could as easily create a miss as a beat.",
+  },
+  {
+    headline: "Wall Street raises bar for AI stocks; portfolio managers shift to defensive positioning",
+    source: "CNBC",
+    url: "https://www.cnbc.com/2026/09/05/we-got-more-defensive-last-week-as-wall-street-raised-the-bar-for-ai-stocks.html",
+    url_verified: true,
+    stocks: [],
+    score: 0,
+    summary: "Market sentiment commentary — investor positioning shift with no specific company revenue or earnings impact confirmed.",
+  },
+];
+
+const LABELS = {
+  2: "Very Positive", 1: "Positive", 0: "Neutral", "-1": "Negative", "-2": "Very Negative"
+};
+const PILL_CLASS = {
+  2: "pill-s2", 1: "pill-s1", 0: "pill-s0", "-1": "pill-sn1", "-2": "pill-sn2"
+};
+const CARD_CLASS = {
+  2: "s2", 1: "s1", 0: "s0", "-1": "sn1", "-2": "sn2"
+};
+
+// ── Sentiment Chart ──
+(function buildChart() {
+  const W = 720, H = 210;
+  const PAD = { top: 20, right: 28, bottom: 44, left: 44 };
+  const IW = W - PAD.left - PAD.right;
+  const IH = H - PAD.top - PAD.bottom;
+  const Y_MIN = -2, Y_MAX = 2;
+  const n = NEWS.length;
+
+  function xPos(i) {
+    return PAD.left + (n === 1 ? IW / 2 : (i / (n - 1)) * IW);
+  }
+  function yPos(score) {
+    return PAD.top + IH - ((score - Y_MIN) / (Y_MAX - Y_MIN)) * IH;
+  }
+
+  const zeroY = yPos(0);
+
+  let gridLines = "";
+  let yLabels = "";
+  [-2, -1, 0, 1, 2].forEach(tick => {
+    const y = yPos(tick);
+    const cls = tick === 0 ? "zero-line" : "grid-line";
+    gridLines += `<line class="${cls}" x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}" />`;
+    yLabels += `<text class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${tick > 0 ? "+" : ""}${tick}</text>`;
+  });
+
+  const pts = NEWS.map((item, i) => [xPos(i), yPos(item.score)]);
+  const linePts = pts.map(p => `${p[0]},${p[1]}`).join(" L ");
+  const areaD = `M ${pts[0][0]},${zeroY} L ${linePts} L ${pts[pts.length - 1][0]},${zeroY} Z`;
+
+  const SCORE_COLOR = { 2: "#4ade80", 1: "#86efac", 0: "#94a3b8", "-1": "#f97316", "-2": "#f87171" };
+
+  const xLabels = NEWS.map((item, i) =>
+    `<text class="axis-label" x="${xPos(i)}" y="${H - PAD.bottom + 16}" text-anchor="middle">${i + 1}</text>`
+  ).join("");
+
+  const dots = NEWS.map((item, i) => {
+    const cx = xPos(i), cy = yPos(item.score);
+    const col = SCORE_COLOR[item.score] || "#818cf8";
+    const hl = item.headline.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+    const src = item.source.replace(/'/g, "\\'");
+    const scoreLabel = LABELS[item.score];
+    return `<circle class="chart-dot" cx="${cx}" cy="${cy}" r="5" fill="${col}"
+      onmouseenter="showChartTip(event,${item.score},'${scoreLabel}','${hl}','${src}')"
+      onmouseleave="hideChartTip()" />`;
+  }).join("");
+
+  document.getElementById("chartSvgContainer").innerHTML = `
+    <svg id="sentimentChart" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;overflow:visible">
+      <defs>
+        <clipPath id="clipAbove">
+          <rect x="${PAD.left - 1}" y="${PAD.top}" width="${IW + 2}" height="${zeroY - PAD.top}" />
+        </clipPath>
+        <clipPath id="clipBelow">
+          <rect x="${PAD.left - 1}" y="${zeroY}" width="${IW + 2}" height="${PAD.top + IH - zeroY + 1}" />
+        </clipPath>
+      </defs>
+      ${gridLines}
+      ${yLabels}
+      ${xLabels}
+      <path d="${areaD}" fill="#22c55e" fill-opacity="0.18" clip-path="url(#clipAbove)" />
+      <path d="${areaD}" fill="#ef4444" fill-opacity="0.18" clip-path="url(#clipBelow)" />
+      <polyline fill="none" stroke="#818cf8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+        points="${pts.map(p => p.join(",")).join(" ")}" />
+      ${dots}
+    </svg>`;
+
+  document.getElementById("sentimentChart").addEventListener("mousemove", e => {
+    const tip = document.getElementById("chartTooltip");
+    tip.style.left = (e.clientX + 16) + "px";
+    tip.style.top  = (e.clientY - 48) + "px";
+  });
+})();
+
+function showChartTip(e, score, label, headline, source) {
+  const SCORE_COLOR = { 2: "#4ade80", 1: "#86efac", 0: "#94a3b8", "-1": "#f97316", "-2": "#f87171" };
+  const tip = document.getElementById("chartTooltip");
+  const col = SCORE_COLOR[score] || "#94a3b8";
+  document.getElementById("ttScore").innerHTML =
+    `<span style="color:${col}">${score > 0 ? "+" : ""}${score} — ${label}</span>`;
+  document.getElementById("ttHeadline").textContent = headline;
+  document.getElementById("ttSource").textContent = source;
+  tip.style.opacity = "1";
+  tip.style.left = (e.clientX + 16) + "px";
+  tip.style.top  = (e.clientY - 48) + "px";
+}
+
+function hideChartTip() {
+  document.getElementById("chartTooltip").style.opacity = "0";
+}
+
+// Stats row
+const dist = {2:0, 1:0, 0:0, "-1":0, "-2":0};
+NEWS.forEach(n => dist[n.score]++);
+const weighted = (NEWS.reduce((s,n) => s + n.score, 0) / NEWS.length).toFixed(1);
+
+document.getElementById("statsRow").innerHTML = [
+  { key: 2,    label: "Very Positive", cls: "very-positive" },
+  { key: 1,    label: "Positive",      cls: "positive" },
+  { key: 0,    label: "Neutral",       cls: "neutral" },
+  { key: "-1", label: "Negative",      cls: "negative" },
+  { key: "-2", label: "Very Negative", cls: "very-negative" },
+].filter(s => dist[s.key] > 0).map(s =>
+  `<div class="stat-chip ${s.cls}"><div class="stat-val">${dist[s.key]}</div><div class="stat-lbl">${s.label}</div></div>`
+).join("") +
+`<div class="stat-chip"><div class="stat-val">${weighted}</div><div class="stat-lbl">Avg Score</div></div>`;
+
+// Feed
+document.getElementById("feed").innerHTML = NEWS.map(n => {
+  const titleHtml = n.url
+    ? `<a href="${n.url}" target="_blank" rel="noopener">${n.headline}</a>`
+    : n.headline;
+  const unverified = !n.url_verified
+    ? `<span class="unverified-badge">⚠ Unverified source</span>`
+    : "";
+  const tickers = n.stocks.map(t => `<span class="ticker-tag">${t}</span>`).join("");
+  return `
+    <div class="headline-card ${CARD_CLASS[n.score]}">
+      <div class="headline-top">
+        <div class="headline-text">${titleHtml}</div>
+        <span class="sentiment-pill ${PILL_CLASS[n.score]}">${LABELS[n.score]}</span>
+      </div>
+      <div class="headline-source">${n.source}${unverified}</div>
+      <div class="headline-summary">${n.summary}</div>
+      ${tickers ? `<div class="headline-footer">${tickers}</div>` : ""}
+    </div>`;
+}).join("");
+</script>
+</body>
+</html>
