@@ -2,6 +2,7 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-11** — Hidden News nav link from static builds: the experimental /themes page is not built statically so the link is now suppressed with {% if experimental and not static_build %}
 - **2026-09-11** — Added browser tab favicon: 2×2 quad-grid SVG in green on black — four squares with ascending opacity, matching the terminal aesthetic
 - **2026-09-11** — Fixed chart tooltip text being unreadable in light mode: tooltip background is now theme-aware (#161616 dark / #ffffff light) via a --tooltip-bg CSS variable
 - **2026-09-11** — Improved contrast for secondary and tertiary text in both light and dark modes; standardized page max-width to 940px across both pages; made the nav bar sticky so it stays pinned at the top of the viewport while scrolling

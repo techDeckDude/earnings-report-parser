@@ -220,7 +220,7 @@
 
   <nav class="topnav">
     <a href="/" class="active">Earnings</a>
-    {% if experimental %}<a href="/experimental/themes">News</a>{% endif %}
+    {% if experimental and not static_build %}<a href="/experimental/themes">News</a>{% endif %}
     <button class="theme-toggle" id="themeToggle">◐ LIGHT</button>
   </nav>
 
