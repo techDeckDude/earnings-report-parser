@@ -140,6 +140,25 @@ python verify.py
 python -m http.server 8080 --directory static
 ```
 
+### 6. News Ingestion (`ingest_news.py`)
+
+Fetches AI stock market headlines from the past 7 days and stores them in the database. Requires an `ANTHROPIC_API_KEY` with credits.
+
+```bash
+# Set your API key (add to .env or export directly)
+export ANTHROPIC_API_KEY=sk-ant-...
+
+# Fetch and store headlines
+python ingest_news.py
+
+# Dry run: print JSON without storing
+python ingest_news.py --dry-run
+```
+
+The script calls `claude-sonnet-4-6` with the web search beta tool, follows the news-aggregator skill prompt (searches, scores −2 to +2, verifies URLs, runs a critic pass), then writes the structured JSON into `news_runs` and `news_articles`. Running it again adds a new run; the news page always shows the most recent one.
+
+After running, reload `http://localhost:5001/experimental/themes` to see the updated feed.
+
 ## Project Structure
 
 ```
