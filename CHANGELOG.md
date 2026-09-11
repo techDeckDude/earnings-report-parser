@@ -2,6 +2,7 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-11** — Added light/dark mode toggle to both pages: button in the nav bar switches between a warm off-white light theme and the default black terminal dark theme; preference is persisted in localStorage and shared across pages
 - **2026-09-11** — Fixed responsive layout on News and Earnings pages: content now centers and scales correctly on large screens via max-width (940px News, 1280px Earnings) with margin:auto; html background fills the full viewport gutter
 - **2026-09-11** — Restyled both pages to match a terminal/Bloomberg aesthetic: pure black background (#0a0a0a), IBM Plex Mono + IBM Plex Sans fonts, #00e664 green accent, hairline 0.5px borders, subtle green grid overlay, and radial vignette; chart lines, active states, derived metric values, and ticker tags all updated to green
 - **2026-09-11** — Removed the separate revenue table dashboard; stock metrics page (stock.html) is now the root / and the sole earnings page

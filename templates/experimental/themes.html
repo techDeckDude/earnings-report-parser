@@ -8,21 +8,38 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
   {% if static_build %}<script>window.API_EXT = ".json";</script>{% endif %}
+  <script>(function(){var t=localStorage.getItem('theme');if(t==='light')document.documentElement.dataset.theme='light';})()</script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { background: #0a0a0a; }
+    html { background: var(--bg); }
 
     :root {
-      --green:      #00e664;
-      --green-dim:  rgba(0, 230, 100, 0.12);
-      --green-line: rgba(0, 230, 100, 0.18);
-      --bg:         #0a0a0a;
-      --bg-card:    rgba(255, 255, 255, 0.03);
-      --border:     rgba(255, 255, 255, 0.07);
-      --text-1:     #f0f0f0;
-      --text-2:     #888;
-      --text-3:     #444;
+      --green:           #00e664;
+      --green-dim:       rgba(0, 230, 100, 0.12);
+      --green-line:      rgba(0, 230, 100, 0.18);
+      --bg:              #0a0a0a;
+      --bg-card:         rgba(255, 255, 255, 0.03);
+      --border:          rgba(255, 255, 255, 0.07);
+      --text-1:          #f0f0f0;
+      --text-2:          #888;
+      --text-3:          #444;
+      --grid-color:      rgba(0, 255, 100, 0.03);
+      --vignette-color:  rgba(0, 0, 0, 0.55);
+    }
+
+    :root[data-theme="light"] {
+      --green:           #007a35;
+      --green-dim:       rgba(0, 122, 53, 0.10);
+      --green-line:      rgba(0, 122, 53, 0.22);
+      --bg:              #f2f1ec;
+      --bg-card:         rgba(0, 0, 0, 0.025);
+      --border:          rgba(0, 0, 0, 0.09);
+      --text-1:          #0e0e0e;
+      --text-2:          #555;
+      --text-3:          #aaa;
+      --grid-color:      rgba(0, 60, 20, 0.05);
+      --vignette-color:  rgba(242, 241, 236, 0.5);
     }
 
     body {
@@ -39,15 +56,15 @@
       content: "";
       position: fixed; inset: 0;
       background-image:
-        linear-gradient(rgba(0, 255, 100, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 255, 100, 0.03) 1px, transparent 1px);
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
       background-size: 40px 40px;
       pointer-events: none; z-index: 0;
     }
     body::after {
       content: "";
       position: fixed; inset: 0;
-      background: radial-gradient(transparent 40%, rgba(0,0,0,0.55) 100%);
+      background: radial-gradient(transparent 40%, var(--vignette-color) 100%);
       pointer-events: none; z-index: 0;
     }
 
@@ -72,6 +89,16 @@
     }
     .topnav a:hover { color: var(--text-2); }
     .topnav a.active { color: var(--green); border-bottom-color: var(--green); }
+    .theme-toggle {
+      margin-left: auto;
+      background: none; border: 0.5px solid var(--border);
+      color: var(--text-3); cursor: pointer;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.08em;
+      padding: 5px 10px; border-radius: 3px;
+      transition: color 0.12s, border-color 0.12s;
+    }
+    .theme-toggle:hover { color: var(--text-2); border-color: var(--text-3); }
 
     h1 {
       font-family: "IBM Plex Mono", monospace;
@@ -110,8 +137,8 @@
       font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
       color: var(--text-3); margin-bottom: 16px;
     }
-    .axis-label { font-size: 10px; fill: #444; font-family: "IBM Plex Mono", monospace; }
-    .grid-line { stroke: rgba(255,255,255,0.05); stroke-width: 1; }
+    .axis-label { font-size: 10px; fill: var(--text-3); font-family: "IBM Plex Mono", monospace; }
+    .grid-line { stroke: var(--border); stroke-width: 1; }
     .zero-line { stroke: rgba(255,255,255,0.15); stroke-width: 1; stroke-dasharray: 4 3; }
 
     /* ── Feed ── */
@@ -189,6 +216,7 @@
   <nav class="topnav">
     <a href="/">Earnings</a>
     <a href="/experimental/themes" class="active">News</a>
+    <button class="theme-toggle" id="themeToggle">◐ LIGHT</button>
   </nav>
 
   <h1>Market News</h1>
@@ -209,6 +237,22 @@
   </div>
 
 <script>
+// Theme toggle
+(function() {
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  function syncLabel() {
+    btn.textContent = root.dataset.theme === 'light' ? '◑ DARK' : '◐ LIGHT';
+  }
+  syncLabel();
+  btn.addEventListener('click', function() {
+    const isLight = root.dataset.theme === 'light';
+    root.dataset.theme = isLight ? 'dark' : 'light';
+    localStorage.setItem('theme', isLight ? 'dark' : 'light');
+    syncLabel();
+  });
+})();
+
 const NEWS = [
   {
     headline: "Broadcom Q3 2026: AI revenue hits $16.7B, up 221% year-over-year",
