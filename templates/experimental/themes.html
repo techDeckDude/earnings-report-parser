@@ -11,6 +11,8 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html { background: #0a0a0a; }
+
     :root {
       --green:      #00e664;
       --green-dim:  rgba(0, 230, 100, 0.12);
@@ -29,6 +31,8 @@
       color: var(--text-1);
       min-height: 100vh;
       padding: 40px 32px;
+      max-width: 940px;
+      margin: 0 auto;
     }
 
     body::before {
@@ -99,7 +103,7 @@
     .chart-card {
       background: var(--bg-card); border: 0.5px solid var(--border);
       border-radius: 6px; padding: 24px 28px 20px;
-      margin-bottom: 20px; max-width: 780px;
+      margin-bottom: 20px;
     }
     .chart-card-title {
       font-family: "IBM Plex Mono", monospace;
@@ -111,7 +115,7 @@
     .zero-line { stroke: rgba(255,255,255,0.15); stroke-width: 1; stroke-dasharray: 4 3; }
 
     /* ── Feed ── */
-    .feed { max-width: 780px; }
+    .feed { width: 100%; }
 
     .headline-card {
       background: var(--bg-card); border: 0.5px solid var(--border);
