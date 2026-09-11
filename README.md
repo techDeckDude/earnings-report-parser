@@ -2,6 +2,25 @@
 
 A pipeline that extracts structured financial data from SEC 10-Q PDF filings, validates it with Pydantic, uploads a normalized contract JSON to S3, and persists data to SQLite (local) or PostgreSQL (cloud). Built and tested against Palantir Technologies Q1 2025–Q2 2026.
 
+## Table of Contents
+
+- [Usage](#usage)
+- [How It Works](#how-it-works)
+  - [1. Extraction](#1-extraction-extractors)
+  - [2. Validation](#2-validation-modelspy)
+  - [3. Database](#3-database-dbpy)
+  - [4. Orchestration](#4-orchestration-mainpy)
+  - [5. Contract Loader](#5-contract-loader-loaderpy)
+  - [5. Web Dashboard](#5-web-dashboard-apppy--templates)
+  - [6. News Ingestion](#6-news-ingestion-ingest_newspy)
+- [Project Structure](#project-structure)
+- [Experimental Features](#experimental-features)
+- [Deployment](#deployment)
+- [Workflow: How to Ingest a New Quarterly Report](#workflow-how-to-ingest-a-new-quarterly-report)
+- [Design Patterns & Infrastructure](#design-patterns--infrastructure)
+- [Known Limitations](#known-limitations)
+- [Changelog](#changelog)
+
 ## Usage
 
 ```bash
