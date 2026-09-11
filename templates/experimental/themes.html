@@ -26,6 +26,7 @@
       --text-3:          #555;
       --grid-color:      rgba(0, 255, 100, 0.03);
       --vignette-color:  rgba(0, 0, 0, 0.55);
+      --tooltip-bg:      #161616;
     }
 
     :root[data-theme="light"] {
@@ -40,6 +41,7 @@
       --text-3:          #888;
       --grid-color:      rgba(0, 60, 20, 0.05);
       --vignette-color:  rgba(242, 241, 236, 0.5);
+      --tooltip-bg:      #ffffff;
     }
 
     body {
@@ -200,10 +202,11 @@
 
     /* ── Chart tooltip ── */
     #chartTooltip {
-      position: fixed; background: #0d0d0d;
+      position: fixed; background: var(--tooltip-bg);
       border: 0.5px solid var(--border); border-radius: 6px;
       padding: 10px 14px;
       font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+      color: var(--text-1);
       pointer-events: none; opacity: 0; transition: opacity 0.1s;
       z-index: 100; max-width: 280px;
     }
