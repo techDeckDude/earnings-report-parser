@@ -3,243 +3,181 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Market News — Earnings Dashboard</title>
+  <title>Market News</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
   {% if static_build %}<script>window.API_EXT = ".json";</script>{% endif %}
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --green:      #00e664;
+      --green-dim:  rgba(0, 230, 100, 0.12);
+      --green-line: rgba(0, 230, 100, 0.18);
+      --bg:         #0a0a0a;
+      --bg-card:    rgba(255, 255, 255, 0.03);
+      --border:     rgba(255, 255, 255, 0.07);
+      --text-1:     #f0f0f0;
+      --text-2:     #888;
+      --text-3:     #444;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #0f1117;
-      color: #e2e8f0;
+      font-family: "IBM Plex Sans", -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
       min-height: 100vh;
       padding: 40px 32px;
     }
 
-    /* ── Nav bar ── */
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 255, 100, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 100, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none; z-index: 0;
+    }
+    body::after {
+      content: "";
+      position: fixed; inset: 0;
+      background: radial-gradient(transparent 40%, rgba(0,0,0,0.55) 100%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .topnav, h1, .report-meta, .stats-row, .chart-card, .feed, #chartTooltip {
+      position: relative; z-index: 1;
+    }
+
+    /* ── Nav ── */
     .topnav {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      border-bottom: 1px solid #2d3148;
-      margin: -40px -32px 40px;
-      padding: 0 32px;
+      display: flex; align-items: center; gap: 4px;
+      border-bottom: 0.5px solid var(--border);
+      margin: -40px -32px 40px; padding: 0 32px;
+      background: var(--bg);
     }
     .topnav a {
-      display: block;
-      padding: 14px 18px;
-      font-size: 0.82rem;
-      font-weight: 500;
-      color: #64748b;
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      margin-bottom: -1px;
+      display: block; padding: 14px 18px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em;
+      color: var(--text-3); text-decoration: none;
+      border-bottom: 1px solid transparent; margin-bottom: -1px;
       transition: color 0.12s;
     }
-    .topnav a:hover { color: #94a3b8; }
-    .topnav a.active { color: #a5b4fc; border-bottom-color: #6366f1; }
+    .topnav a:hover { color: var(--text-2); }
+    .topnav a.active { color: var(--green); border-bottom-color: var(--green); }
 
-    h1 { font-size: 1.5rem; font-weight: 600; color: #f8fafc; margin-bottom: 4px; }
-
+    h1 {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 1.75rem; font-weight: 600;
+      color: var(--text-1); letter-spacing: -0.02em; margin-bottom: 4px;
+    }
     .report-meta {
-      font-size: 0.75rem;
-      color: #475569;
-      margin-bottom: 28px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem; color: var(--text-3);
+      letter-spacing: 0.04em; margin-bottom: 28px;
     }
 
     /* ── Stats ── */
-    .stats-row {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
+    .stats-row { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; }
     .stat-chip {
-      background: #1e2130;
-      border: 1px solid #2d3148;
-      border-radius: 8px;
-      padding: 10px 18px;
-      font-size: 0.75rem;
+      background: var(--bg-card); border: 0.5px solid var(--border);
+      border-radius: 6px; padding: 10px 18px;
+      font-family: "IBM Plex Mono", monospace; font-size: 0.68rem;
     }
-    .stat-chip .stat-val {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #f8fafc;
+    .stat-chip .stat-val { font-size: 1.2rem; font-weight: 600; color: var(--text-1); }
+    .stat-chip .stat-lbl { color: var(--text-3); margin-top: 2px; letter-spacing: 0.04em; }
+    .stat-chip.very-positive .stat-val { color: var(--green); }
+    .stat-chip.positive .stat-val     { color: rgba(0,230,100,0.7); }
+    .stat-chip.neutral .stat-val      { color: var(--text-2); }
+    .stat-chip.negative .stat-val     { color: #f97316; }
+    .stat-chip.very-negative .stat-val{ color: #ef4444; }
+
+    /* ── Chart card ── */
+    .chart-card {
+      background: var(--bg-card); border: 0.5px solid var(--border);
+      border-radius: 6px; padding: 24px 28px 20px;
+      margin-bottom: 20px; max-width: 780px;
     }
-    .stat-chip .stat-lbl { color: #64748b; margin-top: 2px; }
-    .stat-chip.very-positive .stat-val { color: #4ade80; }
-    .stat-chip.positive .stat-val { color: #86efac; }
-    .stat-chip.neutral .stat-val { color: #94a3b8; }
-    .stat-chip.negative .stat-val { color: #fca5a5; }
-    .stat-chip.very-negative .stat-val { color: #f87171; }
+    .chart-card-title {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-3); margin-bottom: 16px;
+    }
+    .axis-label { font-size: 10px; fill: #444; font-family: "IBM Plex Mono", monospace; }
+    .grid-line { stroke: rgba(255,255,255,0.05); stroke-width: 1; }
+    .zero-line { stroke: rgba(255,255,255,0.15); stroke-width: 1; stroke-dasharray: 4 3; }
 
     /* ── Feed ── */
     .feed { max-width: 780px; }
 
     .headline-card {
-      background: #1e2130;
-      border: 1px solid #2d3148;
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 12px;
+      background: var(--bg-card); border: 0.5px solid var(--border);
+      border-radius: 6px; padding: 20px 24px; margin-bottom: 10px;
       transition: border-color 0.15s;
     }
-    .headline-card:hover { border-color: #3d4165; }
-    .headline-card.s2  { border-left: 3px solid #16a34a; }
-    .headline-card.s1  { border-left: 3px solid #4ade80; }
-    .headline-card.s0  { border-left: 3px solid #475569; }
-    .headline-card.sn1 { border-left: 3px solid #f97316; }
-    .headline-card.sn2 { border-left: 3px solid #dc2626; }
+    .headline-card:hover { border-color: rgba(255,255,255,0.12); }
+    .headline-card.s2  { border-left: 2px solid var(--green); }
+    .headline-card.s1  { border-left: 2px solid rgba(0,230,100,0.45); }
+    .headline-card.s0  { border-left: 2px solid var(--text-3); }
+    .headline-card.sn1 { border-left: 2px solid #f97316; }
+    .headline-card.sn2 { border-left: 2px solid #ef4444; }
 
     .headline-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 6px;
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: 12px; margin-bottom: 6px;
     }
-
-    .headline-text {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #f1f5f9;
-      line-height: 1.4;
-      flex: 1;
-    }
-    .headline-text a {
-      color: inherit;
-      text-decoration: none;
-    }
-    .headline-text a:hover { color: #a5b4fc; }
+    .headline-text { font-size: 0.88rem; font-weight: 500; color: var(--text-1); line-height: 1.45; flex: 1; }
+    .headline-text a { color: inherit; text-decoration: none; }
+    .headline-text a:hover { color: var(--green); }
 
     /* ── Sentiment pills ── */
     .sentiment-pill {
-      padding: 2px 10px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.68rem;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      flex-shrink: 0;
+      font-family: "IBM Plex Mono", monospace;
+      padding: 2px 9px; border-radius: 4px;
+      font-weight: 500; font-size: 0.62rem; letter-spacing: 0.06em;
+      white-space: nowrap; flex-shrink: 0;
     }
-    .pill-s2  { background: #052e16; color: #4ade80; border: 1px solid #16a34a; }
-    .pill-s1  { background: #052e16; color: #86efac; border: 1px solid #4ade80; }
-    .pill-s0  { background: #1e293b; color: #94a3b8; border: 1px solid #475569; }
-    .pill-sn1 { background: #431407; color: #fdba74; border: 1px solid #f97316; }
-    .pill-sn2 { background: #2d0d0d; color: #f87171; border: 1px solid #dc2626; }
+    .pill-s2  { background: var(--green-dim); color: var(--green);             border: 0.5px solid var(--green-line); }
+    .pill-s1  { background: var(--green-dim); color: rgba(0,230,100,0.7);      border: 0.5px solid rgba(0,230,100,0.25); }
+    .pill-s0  { background: rgba(255,255,255,0.04); color: var(--text-2);       border: 0.5px solid var(--border); }
+    .pill-sn1 { background: rgba(249,115,22,0.1);  color: #f97316;             border: 0.5px solid rgba(249,115,22,0.3); }
+    .pill-sn2 { background: rgba(239,68,68,0.1);   color: #ef4444;             border: 0.5px solid rgba(239,68,68,0.3); }
 
     .headline-source {
-      font-size: 0.7rem;
-      color: #64748b;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .unverified-badge {
-      font-size: 0.65rem;
-      color: #92400e;
-      background: #1c1207;
-      border: 1px solid #78350f;
-      border-radius: 4px;
-      padding: 1px 6px;
-    }
-
-    .headline-summary {
-      font-size: 0.8rem;
-      color: #94a3b8;
-      line-height: 1.5;
-      margin-bottom: 12px;
-    }
-
-    .headline-footer {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .ticker-tag {
-      font-size: 0.68rem;
-      font-weight: 700;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem; color: var(--text-3);
+      margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
       letter-spacing: 0.04em;
-      padding: 2px 8px;
-      border-radius: 4px;
-      background: #2d3148;
-      color: #6366f1;
-      border: 1px solid #3d4165;
+    }
+    .unverified-badge {
+      font-size: 0.6rem; color: #92400e;
+      background: rgba(120,53,15,0.15); border: 0.5px solid rgba(120,53,15,0.4);
+      border-radius: 3px; padding: 1px 6px;
+    }
+    .headline-summary { font-size: 0.8rem; color: var(--text-2); line-height: 1.55; margin-bottom: 12px; }
+    .headline-footer { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .ticker-tag {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em;
+      padding: 2px 8px; border-radius: 3px;
+      background: var(--green-dim); color: var(--green); border: 0.5px solid var(--green-line);
     }
 
-    /* ── Chart card ── */
-    .chart-card {
-      background: #1e2130;
-      border: 1px solid #2d3148;
-      border-radius: 12px;
-      padding: 24px 28px 20px;
-      margin-bottom: 24px;
-      max-width: 780px;
-    }
-
-    .chart-card-title {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #64748b;
-      margin-bottom: 16px;
-    }
-
-    #sentimentChart { width: 100%; overflow: visible; }
-
-    .axis-label {
-      font-size: 11px;
-      fill: #64748b;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    .grid-line { stroke: #2d3148; stroke-width: 1; }
-    .zero-line { stroke: #475569; stroke-width: 1.5; stroke-dasharray: 4 3; }
-
-    .chart-line {
-      fill: none;
-      stroke: #818cf8;
-      stroke-width: 2;
-      stroke-linejoin: round;
-      stroke-linecap: round;
-    }
-
-    .chart-dot {
-      fill: #818cf8;
-      stroke: #1e2130;
-      stroke-width: 2;
-      cursor: pointer;
-      transition: r 0.1s;
-    }
-    .chart-dot:hover { r: 7; }
-
+    /* ── Chart tooltip ── */
     #chartTooltip {
-      position: fixed;
-      background: #1e2130;
-      border: 1px solid #3d4165;
-      border-radius: 8px;
+      position: fixed; background: #0d0d0d;
+      border: 0.5px solid var(--border); border-radius: 6px;
       padding: 10px 14px;
-      font-size: 0.78rem;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.1s;
-      z-index: 100;
-      max-width: 280px;
+      font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+      pointer-events: none; opacity: 0; transition: opacity 0.1s;
+      z-index: 100; max-width: 280px;
     }
-    #chartTooltip .tt-score {
-      font-size: 0.68rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    #chartTooltip .tt-headline { color: #e2e8f0; line-height: 1.4; }
-    #chartTooltip .tt-source { color: #64748b; font-size: 0.68rem; margin-top: 4px; }
+    #chartTooltip .tt-score { font-size: 0.65rem; font-weight: 600; margin-bottom: 4px; }
+    #chartTooltip .tt-headline { color: var(--text-1); line-height: 1.4; }
+    #chartTooltip .tt-source { color: var(--text-3); font-size: 0.62rem; margin-top: 4px; }
   </style>
 </head>
 <body>
@@ -383,7 +321,7 @@ const CARD_CLASS = {
   const linePts = pts.map(p => `${p[0]},${p[1]}`).join(" L ");
   const areaD = `M ${pts[0][0]},${zeroY} L ${linePts} L ${pts[pts.length - 1][0]},${zeroY} Z`;
 
-  const SCORE_COLOR = { 2: "#4ade80", 1: "#86efac", 0: "#94a3b8", "-1": "#f97316", "-2": "#f87171" };
+  const SCORE_COLOR = { 2: "#00e664", 1: "rgba(0,230,100,0.6)", 0: "#555", "-1": "#f97316", "-2": "#ef4444" };
 
   const xLabels = NEWS.map((item, i) =>
     `<text class="axis-label" x="${xPos(i)}" y="${H - PAD.bottom + 16}" text-anchor="middle">${i + 1}</text>`
@@ -413,9 +351,9 @@ const CARD_CLASS = {
       ${gridLines}
       ${yLabels}
       ${xLabels}
-      <path d="${areaD}" fill="#22c55e" fill-opacity="0.18" clip-path="url(#clipAbove)" />
-      <path d="${areaD}" fill="#ef4444" fill-opacity="0.18" clip-path="url(#clipBelow)" />
-      <polyline fill="none" stroke="#818cf8" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+      <path d="${areaD}" fill="#00e664" fill-opacity="0.12" clip-path="url(#clipAbove)" />
+      <path d="${areaD}" fill="#ef4444" fill-opacity="0.14" clip-path="url(#clipBelow)" />
+      <polyline fill="none" stroke="#00e664" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
         points="${pts.map(p => p.join(",")).join(" ")}" />
       ${dots}
     </svg>`;
@@ -428,7 +366,7 @@ const CARD_CLASS = {
 })();
 
 function showChartTip(e, score, label, headline, source) {
-  const SCORE_COLOR = { 2: "#4ade80", 1: "#86efac", 0: "#94a3b8", "-1": "#f97316", "-2": "#f87171" };
+  const SCORE_COLOR = { 2: "#00e664", 1: "rgba(0,230,100,0.6)", 0: "#555", "-1": "#f97316", "-2": "#ef4444" };
   const tip = document.getElementById("chartTooltip");
   const col = SCORE_COLOR[score] || "#94a3b8";
   document.getElementById("ttScore").innerHTML =

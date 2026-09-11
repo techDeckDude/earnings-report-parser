@@ -2,6 +2,7 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-11** — Restyled both pages to match a terminal/Bloomberg aesthetic: pure black background (#0a0a0a), IBM Plex Mono + IBM Plex Sans fonts, #00e664 green accent, hairline 0.5px borders, subtle green grid overlay, and radial vignette; chart lines, active states, derived metric values, and ticker tags all updated to green
 - **2026-09-11** — Removed the separate revenue table dashboard; stock metrics page (stock.html) is now the root / and the sole earnings page
 - **2026-09-11** — Introduced Experimental Blueprint pattern (`experimental/` package, `/experimental` URL prefix): prototype features now live in a separate Flask Blueprint, isolated from the production surface, enabled by default and disableable via `EXPERIMENTAL=0`; full usage and promotion checklist documented in `CLAUDE.md` and `README.md`
 - **2026-09-11** — Added sentiment line chart to the News page: X-axis = article order, Y-axis = score −2 to +2, green/red split-fill area above/below the neutral line, hover tooltip shows full headline and score label

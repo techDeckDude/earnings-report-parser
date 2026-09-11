@@ -299,7 +299,8 @@ Tested and working against: PLTR Q1 2025–Q2 2026; MRVL Q1 2024–Q1 2027.
 | Local database | `SQLite` | Default; auto-initialized at `earnings.db`; no env vars needed |
 | Cloud database | `PostgreSQL` (via `psycopg2`) | Enabled when `DB_HOST` env var is set |
 | Contract storage | `AWS S3` (via `boto3`) | Enabled when `S3_BUCKET` env var is set; key format `{ticker}/{filing_type}/FY{year}Q{quarter}.json` |
-| Web server | `Flask` | Serves dashboard at `localhost:5001`; routes: `/`, `/stock`, `/themes`, `/api/revenue`, `/api/tickers`, `/api/metrics/<ticker>` |
+| Web server | `Flask` | Serves dashboard at `localhost:5001`; routes: `/`, `/api/revenue`, `/api/tickers`, `/api/metrics/<ticker>` |
+| Fonts | `IBM Plex Mono` + `IBM Plex Sans` (Google Fonts) | Terminal aesthetic: mono for all UI chrome (nav, labels, values), sans-serif for body text |
 | Schema versioning | `schema_version: "1.0"` on `EarningsReport` | Lets `loader.py` detect and reject stale contract formats |
 
 ### Environment Variables
