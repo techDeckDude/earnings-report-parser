@@ -7,6 +7,12 @@
       "runtimeArgs": ["app.py"],
       "port": 5001,
       "autoPort": true
+    },
+    {
+      "name": "static-preview",
+      "runtimeExecutable": "/usr/bin/python3",
+      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "static"],
+      "port": 8080
     }
   ]
 }

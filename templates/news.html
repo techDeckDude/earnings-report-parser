@@ -260,6 +260,11 @@
     #chartTooltip .tt-score { font-size: 0.65rem; font-weight: 600; margin-bottom: 4px; }
     #chartTooltip .tt-headline { color: var(--text-1); line-height: 1.4; }
     #chartTooltip .tt-source { color: var(--text-3); font-size: 0.62rem; margin-top: 4px; }
+
+    /* ── Mobile: chart labels only ── */
+    @media (max-width: 600px) {
+      .axis-label { font-size: 12px; }
+    }
   </style>
 </head>
 <body>
@@ -391,8 +396,12 @@ document.getElementById('nextWeek').addEventListener('click', () => navigate(-1)
 // ── Rendering ─────────────────────────────────────────────────────────────────
 
 function buildChart(NEWS) {
-  const W = 720, H = 210;
-  const PAD = { top: 20, right: 28, bottom: 44, left: 44 };
+  const container = document.getElementById("chartSvgContainer");
+  const W = Math.max(260, Math.floor(container.getBoundingClientRect().width));
+  const mobile = W < 520;
+  const H = mobile ? 240 : 210;
+  const PAD = { top: 20, right: mobile ? 16 : 28, bottom: mobile ? 44 : 44, left: mobile ? 40 : 44 };
+  const dotR = mobile ? 7 : 5;
   const IW = W - PAD.left - PAD.right;
   const IH = H - PAD.top - PAD.bottom;
   const Y_MIN = -2, Y_MAX = 2;
@@ -431,13 +440,13 @@ function buildChart(NEWS) {
     const hl = item.headline.replace(/\\/g, "\\\\").replace(/'/g, "\\'");
     const src = item.source.replace(/'/g, "\\'");
     const scoreLabel = LABELS[item.sentiment_score];
-    return `<circle class="chart-dot" cx="${cx}" cy="${cy}" r="5" fill="${col}"
+    return `<circle class="chart-dot" cx="${cx}" cy="${cy}" r="${dotR}" fill="${col}"
       onmouseenter="showChartTip(event,${item.sentiment_score},'${scoreLabel}','${hl}','${src}')"
       onmouseleave="hideChartTip()" />`;
   }).join("");
 
   document.getElementById("chartSvgContainer").innerHTML = `
-    <svg id="sentimentChart" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;overflow:visible">
+    <svg id="sentimentChart" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
       <defs>
         <clipPath id="clipAbove">
           <rect x="${PAD.left - 1}" y="${PAD.top}" width="${IW + 2}" height="${zeroY - PAD.top}" />
@@ -572,6 +581,14 @@ async function loadAndRender() {
 }
 
 loadAndRender();
+
+let _resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(_resizeTimer);
+  _resizeTimer = setTimeout(() => {
+    if (allWeeks.length) buildChart(allWeeks[currentIdx].headlines || []);
+  }, 150);
+});
 </script>
 </body>
 </html>
