@@ -110,7 +110,7 @@ news_articles
   stocks_mentioned (JSON), sentiment_score, sentiment_label, summary
 
 target_stocks
-  ticker (PK), name, category, ingested (0/1), added_at
+  ticker (PK), name, category, cik (SEC CIK, cached), ingested (0/1), added_at
 ```
 
 `financial_metrics` is a key-value store — every field from every Pydantic model is flattened into a `(statement, metric_name, value)` row. This makes it easy to add new metrics without schema changes.
@@ -194,6 +194,7 @@ After running, reload `http://localhost:5001/news` to see the updated feed. The 
 ```
 earnings-report-parser/
 ├── main.py              # CLI entry point: extract → validate → save → summarize
+├── edgar.py             # EDGAR API client: CIK lookup and 10-Q filing discovery for any ticker
 ├── extractors/
 │   ├── __init__.py      # Registry and get_extractor() strategy selector
 │   ├── base.py          # BaseExtractor abstract interface

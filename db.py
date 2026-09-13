@@ -64,6 +64,7 @@ CREATE TABLE IF NOT EXISTS target_stocks (
     ticker      TEXT PRIMARY KEY,
     name        TEXT NOT NULL,
     category    TEXT,
+    cik         TEXT,
     ingested    INTEGER NOT NULL DEFAULT 0,
     added_at    DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -120,10 +121,23 @@ CREATE TABLE IF NOT EXISTS target_stocks (
     ticker      TEXT PRIMARY KEY,
     name        TEXT NOT NULL,
     category    TEXT,
+    cik         TEXT,
     ingested    BOOLEAN NOT NULL DEFAULT FALSE,
     added_at    TIMESTAMPTZ DEFAULT NOW()
 );
 """
+
+
+# ── Migrations (additive ALTER TABLE statements) ──────────────────────────────
+# New entries go at the end. SQLite wraps each in try/except; PG uses IF NOT EXISTS.
+
+_MIGRATIONS_SQLITE = [
+    "ALTER TABLE target_stocks ADD COLUMN cik TEXT",
+]
+
+_MIGRATIONS_PG = [
+    "ALTER TABLE target_stocks ADD COLUMN IF NOT EXISTS cik TEXT",
+]
 
 
 # ── Backend detection ─────────────────────────────────────────────────────────
@@ -176,12 +190,19 @@ def init_db(db_path: str = "earnings.db"):
             stmt = stmt.strip()
             if stmt:
                 cur.execute(stmt)
+        for stmt in _MIGRATIONS_PG:
+            cur.execute(stmt)
         conn.commit()
         return conn
     else:
         conn = sqlite3.connect(db_path, check_same_thread=False)
         conn.row_factory = sqlite3.Row
         conn.executescript(_SCHEMA_SQLITE)
+        for stmt in _MIGRATIONS_SQLITE:
+            try:
+                conn.execute(stmt)
+            except sqlite3.OperationalError:
+                pass  # column already exists
         conn.commit()
         return conn
 
