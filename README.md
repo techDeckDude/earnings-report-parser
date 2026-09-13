@@ -90,11 +90,11 @@ If either check fails the run stops before anything is written to the database.
 
 ### 3. Database (`db.py`)
 
-SQLite with five tables:
+SQLite with six tables:
 
 ```
 companies
-  id, ticker, name
+  id, ticker, name, category
 
 earnings_reports
   id, company_id → companies, period, period_end_date, filing_type, units
@@ -108,6 +108,9 @@ news_runs
 news_articles
   id, run_id → news_runs, headline, source, url, url_verified,
   stocks_mentioned (JSON), sentiment_score, sentiment_label, summary
+
+target_stocks
+  ticker (PK), name, category, ingested (0/1), added_at
 ```
 
 `financial_metrics` is a key-value store — every field from every Pydantic model is flattened into a `(statement, metric_name, value)` row. This makes it easy to add new metrics without schema changes.

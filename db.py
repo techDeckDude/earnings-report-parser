@@ -18,6 +18,7 @@ CREATE TABLE IF NOT EXISTS companies (
     id          INTEGER PRIMARY KEY AUTOINCREMENT,
     ticker      TEXT NOT NULL UNIQUE,
     name        TEXT NOT NULL,
+    category    TEXT,
     created_at  DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 CREATE TABLE IF NOT EXISTS earnings_reports (
@@ -59,6 +60,13 @@ CREATE TABLE IF NOT EXISTS news_articles (
     sentiment_label  TEXT NOT NULL DEFAULT 'Neutral',
     summary          TEXT NOT NULL DEFAULT ''
 );
+CREATE TABLE IF NOT EXISTS target_stocks (
+    ticker      TEXT PRIMARY KEY,
+    name        TEXT NOT NULL,
+    category    TEXT,
+    ingested    INTEGER NOT NULL DEFAULT 0,
+    added_at    DATETIME DEFAULT CURRENT_TIMESTAMP
+);
 """
 
 _SCHEMA_PG = """
@@ -66,6 +74,7 @@ CREATE TABLE IF NOT EXISTS companies (
     id          SERIAL PRIMARY KEY,
     ticker      TEXT NOT NULL UNIQUE,
     name        TEXT NOT NULL,
+    category    TEXT,
     created_at  TIMESTAMPTZ DEFAULT NOW()
 );
 CREATE TABLE IF NOT EXISTS earnings_reports (
@@ -106,6 +115,13 @@ CREATE TABLE IF NOT EXISTS news_articles (
     sentiment_score  INTEGER NOT NULL DEFAULT 0,
     sentiment_label  TEXT NOT NULL DEFAULT 'Neutral',
     summary          TEXT NOT NULL DEFAULT ''
+);
+CREATE TABLE IF NOT EXISTS target_stocks (
+    ticker      TEXT PRIMARY KEY,
+    name        TEXT NOT NULL,
+    category    TEXT,
+    ingested    BOOLEAN NOT NULL DEFAULT FALSE,
+    added_at    TIMESTAMPTZ DEFAULT NOW()
 );
 """
 
@@ -223,6 +239,11 @@ def upsert_report(conn, report: EarningsReport) -> int:
         ON CONFLICT(report_id, statement, metric_name) DO UPDATE SET value = EXCLUDED.value
         """,
         metrics,
+    )
+
+    _execute(conn,
+        f"UPDATE target_stocks SET ingested = {1 if not _is_pg(conn) else 'TRUE'} WHERE ticker = {P}",
+        (report.ticker,),
     )
 
     conn.commit()

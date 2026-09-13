@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-13** — Added category column to target_stocks and companies tables; pre-populated 100 AI stocks across 8 categories in target_stocks; added list-ingested-stocks and pending-ingestion Claude Code skills for querying pipeline status
+- **2026-09-13** — Added target_stocks table: tracks which tickers are planned for ingestion and whether each has been ingested; upsert_report() now automatically marks a ticker as ingested when its filing is processed; seeded with MRVL and PLTR (already ingested)
 - **2026-09-12** — Fixed earnings page metric chart on mobile: chart now measures its container at render time and builds the SVG at actual pixel dimensions (no scale-down); chart is taller on mobile (260px vs 220px), dots are larger (7px vs 5px); added resize handler for orientation changes
 - **2026-09-12** — Dev server now binds to 0.0.0.0 so the app is reachable from other devices on the local network (e.g. testing on a phone); added .env to .gitignore; added static-preview server config to launch.json
 - **2026-09-11** — Fixed news page chart on mobile: chart now measures its container at render time and builds the SVG at actual pixel dimensions (no scale-down); chart is taller on mobile (240px vs 210px), axis labels scale to 12px, dots are larger (7px vs 5px); added resize handler for orientation changes
