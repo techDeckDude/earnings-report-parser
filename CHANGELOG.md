@@ -2,6 +2,7 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-12** — Fixed earnings page metric chart on mobile: chart now measures its container at render time and builds the SVG at actual pixel dimensions (no scale-down); chart is taller on mobile (260px vs 220px), dots are larger (7px vs 5px); added resize handler for orientation changes
 - **2026-09-12** — Dev server now binds to 0.0.0.0 so the app is reachable from other devices on the local network (e.g. testing on a phone); added .env to .gitignore; added static-preview server config to launch.json
 - **2026-09-11** — Fixed news page chart on mobile: chart now measures its container at render time and builds the SVG at actual pixel dimensions (no scale-down); chart is taller on mobile (240px vs 210px), axis labels scale to 12px, dots are larger (7px vs 5px); added resize handler for orientation changes
 - **2026-09-11** — Promoted News page from experimental to production: moved to GET /news (templates/news.html), renamed stock.html to earnings.html, removed experimental guard from nav link, wired news page into generate.py static build (static/news/index.html + static/api/news.json)

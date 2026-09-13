@@ -195,7 +195,7 @@
       color: var(--text-2); margin-bottom: 12px;
     }
 
-    #chart { width: 100%; overflow: visible; }
+    #chart { overflow: visible; }
     .axis-label { font-size: 10px; fill: var(--text-3); font-family: "IBM Plex Mono", monospace; }
     .grid-line { stroke: var(--border); stroke-width: 1; }
     .chart-line { fill: none; stroke: var(--green); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
@@ -238,7 +238,7 @@
       <div class="metric-pills" id="metricPills"></div>
       <div class="chart-wrap">
         <div class="chart-title" id="chartTitle">—</div>
-        <svg id="chart" viewBox="0 0 620 220"></svg>
+        <svg id="chart" style="width:100%;display:block"></svg>
       </div>
     </div>
   </div>
@@ -525,14 +525,20 @@ function selectMetric(metricId) {
 
 // ── Chart ─────────────────────────────────────────────────────────────────────
 
-const PAD = { top: 16, right: 20, bottom: 44, left: 68 };
-const W = 620, H = 220;
-const IW = W - PAD.left - PAD.right;
-const IH = H - PAD.top - PAD.bottom;
-
 function drawChart(vals, metricDef) {
   const periods = stockData.periods;
   const svg = document.getElementById("chart");
+
+  const W = Math.max(260, Math.floor(svg.getBoundingClientRect().width));
+  const mobile = W < 520;
+  const H = mobile ? 260 : 220;
+  const PAD = { top: 16, right: mobile ? 12 : 20, bottom: mobile ? 48 : 44, left: 68 };
+  const IW = W - PAD.left - PAD.right;
+  const IH = H - PAD.top - PAD.bottom;
+  const dotR = mobile ? 7 : 5;
+
+  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  svg.setAttribute("height", H);
 
   // Filter out null entries
   const points = vals.map((v, i) => ({ v, p: periods[i] })).filter(x => x.v !== null);
@@ -578,7 +584,7 @@ function drawChart(vals, metricDef) {
 
   // Dots
   const dots = points.map((pt, i) =>
-    `<circle class="chart-dot" cx="${xPos(i)}" cy="${yPos(pt.v)}" r="5"
+    `<circle class="chart-dot" cx="${xPos(i)}" cy="${yPos(pt.v)}" r="${dotR}"
       onmouseenter="showTip(event,'${pt.p.period}','${fmt(metricDef, pt.v)}')"
       onmouseleave="hideTip()" />`
   ).join("");
@@ -606,6 +612,15 @@ document.getElementById("chart").addEventListener("mousemove", e => {
 });
 
 init();
+
+let _chartResizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(_chartResizeTimer);
+  _chartResizeTimer = setTimeout(() => {
+    const active = document.querySelector('.pill.active');
+    if (active) active.click();
+  }, 150);
+});
 </script>
 </body>
 </html>
