@@ -2,6 +2,7 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-13** — Added test suite: 50 tests across models, DB layer, news DB, API endpoints, loader, and static build; all passing; documented testing strategy in docs/testing-strategy.md
 - **2026-09-13** — Added category column to target_stocks and companies tables; pre-populated 100 AI stocks across 8 categories in target_stocks; added list-ingested-stocks and pending-ingestion Claude Code skills for querying pipeline status
 - **2026-09-13** — Added target_stocks table: tracks which tickers are planned for ingestion and whether each has been ingested; upsert_report() now automatically marks a ticker as ingested when its filing is processed; seeded with MRVL and PLTR (already ingested)
 - **2026-09-12** — Fixed earnings page metric chart on mobile: chart now measures its container at render time and builds the SVG at actual pixel dimensions (no scale-down); chart is taller on mobile (260px vs 220px), dots are larger (7px vs 5px); added resize handler for orientation changes
