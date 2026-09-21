@@ -80,7 +80,7 @@ def test_api_news_has_required_keys(flask_client):
     data = flask_client.get("/api/news").get_json()
     assert len(data) > 0
     run = data[0]
-    for key in ("run_id", "period", "headlines", "summary_stats"):
+    for key in ("week_start", "week_end", "period", "headlines", "summary_stats"):
         assert key in run, f"missing key: {key}"
 
 

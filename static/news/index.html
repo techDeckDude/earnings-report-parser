@@ -335,21 +335,11 @@ const CARD_CLASS = {
 let allWeeks = [];   // newest first
 let currentIdx = 0; // 0 = most recent
 
-function weekRangeLabel(run) {
-  const end = new Date(run.run_at);
-  const start = new Date(end);
-  start.setDate(end.getDate() - 6);
-  const fmt = (d, includeYear) => d.toLocaleDateString('en-US', {
-    month: 'short', day: 'numeric', ...(includeYear ? { year: 'numeric' } : {})
-  });
-  return `${fmt(start, false)} – ${fmt(end, true)}`;
-}
-
 function updateCarouselNav() {
   const total = allWeeks.length;
   const run = allWeeks[currentIdx];
 
-  document.getElementById('weekLabel').textContent = weekRangeLabel(run);
+  document.getElementById('weekLabel').textContent = run.period;
   document.getElementById('weekCounter').textContent =
     `week ${total - currentIdx} of ${total}`;
 
@@ -531,10 +521,8 @@ function renderFeed(NEWS) {
 function renderWeek(run) {
   const NEWS = run.headlines || [];
 
-  const d = new Date(run.run_at);
-  const fmt = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   document.getElementById('reportMeta').textContent =
-    `${run.period || weekRangeLabel(run)} · AI & Stock Market · ingested ${fmt}`;
+    `${run.period} · AI & Stock Market`;
 
   if (!NEWS.length) {
     document.getElementById('chartSvgContainer').innerHTML = '';

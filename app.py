@@ -2,7 +2,7 @@ from __future__ import annotations
 import os
 from flask import Flask, jsonify, render_template, request
 
-from db import init_db, _execute, get_latest_news, get_all_news_runs
+from db import init_db, _execute, get_latest_news, get_all_news_runs, get_news_by_week
 
 app = Flask(__name__)
 _conn = None
@@ -115,7 +115,7 @@ def metrics(ticker):
 
 @app.route("/api/news")
 def news():
-    return jsonify(get_all_news_runs(get_db()))
+    return jsonify(get_news_by_week(get_db()))
 
 
 if __name__ == "__main__":

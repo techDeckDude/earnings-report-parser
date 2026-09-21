@@ -107,7 +107,8 @@ news_runs
 
 news_articles
   id, run_id → news_runs, headline, source, url, url_verified,
-  stocks_mentioned (JSON), sentiment_score, sentiment_label, summary
+  stocks_mentioned (JSON), sentiment_score, sentiment_label, summary,
+  published_date (article publish date, used for week grouping)
 
 target_stocks
   ticker (PK), name, category, cik (SEC CIK, cached), ingested (0/1), added_at
@@ -136,7 +137,7 @@ A Flask web server that reads from the SQLite database and renders two interacti
 - **`GET /api/revenue`** — revenue records for all companies as JSON
 - **`GET /api/tickers`** — list of all known ticker symbols and company names
 - **`GET /api/metrics/<ticker>`** — all financial metrics for a ticker, pivoted to `{statement: {metric_name: [value_per_period]}}` ordered by `period_end_date`
-- **`GET /api/news`** — most recent news ingestion run with all headlines and summary stats as JSON; returns empty headlines array if no ingestion has run yet
+- **`GET /api/news`** — all news articles grouped into Mon–Sun calendar weeks, newest first; each week includes `week_start`, `week_end`, `period`, `headlines`, and dynamically-computed `summary_stats`
 - **`GET /news`** — AI market news feed page; reads from `/api/news`
 
 New companies and periods appear automatically as more filings are parsed — no UI changes needed.
@@ -164,30 +165,22 @@ python -m http.server 8080 --directory static
 
 ### 6. News Ingestion (`ingest_news.py`)
 
-Fetches AI stock market headlines from the past 7 days and stores them in the database. Requires an `ANTHROPIC_API_KEY` with credits.
+Fetches AI stock market headlines from the last ingested article date to today, then stores them in the database. Requires an `ANTHROPIC_API_KEY` with credits.
 
 ```bash
 # Set your API key (add to .env or export directly)
 export ANTHROPIC_API_KEY=sk-ant-...
 
-# Fetch and store headlines
+# Fetch and store headlines (auto-detects date range from DB)
 python ingest_news.py
 
 # Dry run: print JSON without storing
 python ingest_news.py --dry-run
 ```
 
-The script calls `claude-sonnet-4-6` with the web search beta tool, follows the news-aggregator skill prompt (searches, scores −2 to +2, verifies URLs, runs a critic pass), then writes the structured JSON into `news_runs` and `news_articles`. Each invocation adds a new run; the news page displays all runs as a weekly carousel.
+The script reads `MAX(published_date)` from `news_articles` to determine the start of the next fetch window (last date + 1 day). On first run with an empty database, it defaults to the past 7 days. The date range is injected into the skill prompt so each article's `published_date` is constrained to the window. Articles are stored with their individual `published_date`.
 
-```bash
-# Ingest a specific historical week (7-day window ending on DATE)
-python ingest_news.py --week-of 2026-09-04
-
-# Dry run: print JSON without storing
-python ingest_news.py --dry-run
-```
-
-After running, reload `http://localhost:5001/news` to see the updated feed. The carousel shows the most recent week by default; use the PREV/NEXT buttons (or swipe on mobile) to navigate between weeks.
+The news page groups articles into Mon–Sun calendar weeks based on `published_date` (not ingestion time), so a single run covering multiple weeks will appear as separate carousel pages. The carousel shows the most recent week by default; use the PREV/NEXT buttons (or swipe on mobile) to navigate.
 
 ## Project Structure
 
