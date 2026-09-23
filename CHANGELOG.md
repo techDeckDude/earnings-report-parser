@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-22** — Added `scheduler.py`: runs `ingest_news.py` automatically on a configurable interval (`INGEST_INTERVAL_HOURS` env var, default 24); process named `earnings-news-scheduler` for easy identification in Activity Monitor; skips API call if already up to date for the day; supports background execution via `nohup`
+
 - **2026-09-20** — News pipeline now tracks `published_date` per article and groups the feed by Mon–Sun calendar weeks based on article publish date rather than ingestion run; `ingest_news.py` auto-detects the start date from the last stored article and removes the `--week-of` flag; `GET /api/news` now returns week-grouped data with dynamically computed `summary_stats`
 - **2026-09-13** — Phase 1 of scaled ingestion pipeline: added `edgar.py` with `get_cik()` (ticker → SEC CIK via bulk company_tickers.json, cached in `target_stocks.cik`) and `get_new_filings()` (10-Q filing discovery from EDGAR submissions API, filtered by last ingested period, rate-limited to 10 req/sec); added `cik TEXT` column to `target_stocks` with automatic DB migration on `init_db()`; 11 new tests in `tests/test_edgar.py`
 - **2026-09-13** — Added test suite: 50 tests across models, DB layer, news DB, API endpoints, loader, and static build; all passing; documented testing strategy in docs/testing-strategy.md

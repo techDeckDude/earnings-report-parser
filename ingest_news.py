@@ -62,6 +62,10 @@ def run(dry_run: bool = False) -> None:
     start = (latest + timedelta(days=1)) if latest else (date.today() - timedelta(days=6))
     end = date.today()
 
+    if start > end:
+        print(f"Already up to date (latest: {latest}). Nothing to fetch.")
+        return
+
     period_label = (
         f"{start.strftime('%b %d')} – {end.strftime('%b %d, %Y')}"
         if start != end

@@ -13,6 +13,7 @@ A pipeline that extracts structured financial data from SEC 10-Q PDF filings, va
   - [5. Contract Loader](#5-contract-loader-loaderpy)
   - [5. Web Dashboard](#5-web-dashboard-apppy--templates)
   - [6. News Ingestion](#6-news-ingestion-ingest_newspy)
+  - [7. News Scheduler](#7-news-scheduler-schedulerpy)
 - [Project Structure](#project-structure)
 - [Experimental Features](#experimental-features)
 - [Deployment](#deployment)
@@ -182,6 +183,30 @@ The script reads `MAX(published_date)` from `news_articles` to determine the sta
 
 The news page groups articles into Mon–Sun calendar weeks based on `published_date` (not ingestion time), so a single run covering multiple weeks will appear as separate carousel pages. The carousel shows the most recent week by default; use the PREV/NEXT buttons (or swipe on mobile) to navigate.
 
+### 7. News Scheduler (`scheduler.py`)
+
+Runs `ingest_news.py` automatically on a configurable interval. The interval is set via the `INGEST_INTERVAL_HOURS` env var (default `24`; supports fractional hours).
+
+```bash
+# Run in the foreground (logs to stdout)
+python3 scheduler.py
+
+# Custom interval (every 12 hours)
+INGEST_INTERVAL_HOURS=12 python3 scheduler.py
+
+# Run in the background and log to file
+mkdir -p logs
+nohup python3 scheduler.py > logs/scheduler.log 2>&1 &
+
+# Watch the log live
+tail -f logs/scheduler.log
+
+# Stop the scheduler
+pkill -f earnings-news-scheduler
+```
+
+On startup, the scheduler runs ingestion immediately, then sleeps for the configured interval before the next run. Each run logs its start time, result, and the timestamp of the next scheduled run.
+
 ## Project Structure
 
 ```
@@ -199,6 +224,7 @@ earnings-report-parser/
 ├── generate.py          # Build static/ from live Flask (sets STATIC_BUILD=true, uses test client)
 ├── verify.py            # Diff live API responses against static JSON files; exits 1 on mismatch
 ├── ingest_news.py       # CLI: fetch AI stock news via Claude (Anthropic SDK + web search), store in DB
+├── scheduler.py         # Run ingest_news.py on a configurable interval (INGEST_INTERVAL_HOURS env var)
 ├── templates/
 │   ├── earnings.html    # Earnings page: ticker selector, metric chart, quarterly metrics table
 │   └── news.html        # AI news feed: weekly carousel, sentiment chart, swipe nav
