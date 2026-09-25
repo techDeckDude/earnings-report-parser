@@ -400,7 +400,7 @@ document.getElementById('nextWeek').addEventListener('click', () => navigate(-1)
 function buildChart(NEWS) {
   const container = document.getElementById("chartSvgContainer");
   const containerW = Math.max(260, Math.floor(container.getBoundingClientRect().width));
-  const MIN_SPACING = 32; // px per article — keeps dots readable at any article count
+  const MIN_SPACING = Math.max(36, Math.ceil(containerW / 10)); // ~10 articles visible; scales to container
   const W = Math.max(containerW, NEWS.length * MIN_SPACING);
   const scrollable = W > containerW;
   const mobile = containerW < 520;
