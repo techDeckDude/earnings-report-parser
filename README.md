@@ -194,6 +194,10 @@ python3 scheduler.py
 # Custom interval (every 12 hours)
 INGEST_INTERVAL_HOURS=12 python3 scheduler.py
 
+# Every 10 seconds (for testing)
+INGEST_INTERVAL_HOURS=0.0028 python3 scheduler.py
+INGEST_INTERVAL_HOURS=0.0027 nohup python3 scheduler.py > logs/scheduler.log 2>&1 &
+
 # Run in the background and log to file
 mkdir -p logs
 nohup python3 scheduler.py > logs/scheduler.log 2>&1 &
