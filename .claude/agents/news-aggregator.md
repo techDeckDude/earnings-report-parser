@@ -7,7 +7,8 @@ description: Fetch and analyze AI stock market theme headlines from the past 7 d
 
 ## What This Skill Does
 
-Fetches the latest AI stock market theme headlines from the past 7 days and returns them in a structured JSON format with:
+Fetches the latest AI stock market theme headlines from a specified date range and returns them in a structured JSON format with:
+- **published_date**: ISO date the article was published (e.g. `"2026-09-17"`), must fall within the injected date range
 - **headline**: The news headline text
 - **source**: News source/publisher
 - **url**: Direct link to the article (`null` if no verifiable source found)
@@ -51,9 +52,10 @@ Score each headline strictly on its **confirmed or potential impact to company r
 ```json
 {
   "timestamp": "2026-09-11T12:00:00Z",
-  "period": "past 7 days",
+  "period": "Sep 05 – Sep 11, 2026",
   "headlines": [
     {
+      "published_date": "2026-09-08",
       "headline": "Mistral raises €3B in Europe's biggest tech round, led by Samsung",
       "source": "Bloomberg",
       "url": "https://www.bloomberg.com/news/articles/2026-09-08/mistral-raises-3b",
@@ -64,6 +66,7 @@ Score each headline strictly on its **confirmed or potential impact to company r
       "summary": "Large funding round signals continued investor confidence but does not directly confirm revenue impact"
     },
     {
+      "published_date": "2026-09-10",
       "headline": "Nvidia beats Q3 estimates; raises full-year guidance by 12%",
       "source": "CNBC",
       "url": null,
@@ -118,6 +121,11 @@ Review every draft entry:
 **Stock ticker check**
 - Is each listed ticker actually named in the article?
 - If a ticker was inferred but not explicitly mentioned → remove it.
+
+**published_date check**
+- Does `published_date` fall within the date range injected in the system prompt?
+- If the exact publish date is unknown, use the most specific date that can be confirmed from the article (day of publication visible in the URL or byline); if truly unknown, use the closest date within the range rather than null.
+- `published_date` must be >= the start date in the injected range — do not include articles published before it.
 
 **Summary check**
 - Does the summary explicitly state whether the impact is *confirmed* or *potential*?

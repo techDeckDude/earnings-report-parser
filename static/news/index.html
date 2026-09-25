@@ -261,6 +261,18 @@
     #chartTooltip .tt-headline { color: var(--text-1); line-height: 1.4; }
     #chartTooltip .tt-source { color: var(--text-3); font-size: 0.62rem; margin-top: 4px; }
 
+    /* ── Chart scroll wrapper ── */
+    #chartSvgContainer {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .chart-scroll-hint {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.6rem; color: var(--text-3);
+      letter-spacing: 0.06em; text-align: center;
+      margin-top: 8px;
+    }
+
     /* ── Mobile: chart labels only ── */
     @media (max-width: 600px) {
       .axis-label { font-size: 12px; }
@@ -335,21 +347,11 @@ const CARD_CLASS = {
 let allWeeks = [];   // newest first
 let currentIdx = 0; // 0 = most recent
 
-function weekRangeLabel(run) {
-  const end = new Date(run.run_at);
-  const start = new Date(end);
-  start.setDate(end.getDate() - 6);
-  const fmt = (d, includeYear) => d.toLocaleDateString('en-US', {
-    month: 'short', day: 'numeric', ...(includeYear ? { year: 'numeric' } : {})
-  });
-  return `${fmt(start, false)} – ${fmt(end, true)}`;
-}
-
 function updateCarouselNav() {
   const total = allWeeks.length;
   const run = allWeeks[currentIdx];
 
-  document.getElementById('weekLabel').textContent = weekRangeLabel(run);
+  document.getElementById('weekLabel').textContent = run.period;
   document.getElementById('weekCounter').textContent =
     `week ${total - currentIdx} of ${total}`;
 
@@ -397,8 +399,11 @@ document.getElementById('nextWeek').addEventListener('click', () => navigate(-1)
 
 function buildChart(NEWS) {
   const container = document.getElementById("chartSvgContainer");
-  const W = Math.max(260, Math.floor(container.getBoundingClientRect().width));
-  const mobile = W < 520;
+  const containerW = Math.max(260, Math.floor(container.getBoundingClientRect().width));
+  const MIN_SPACING = Math.max(36, Math.ceil(containerW / 10)); // ~10 articles visible; scales to container
+  const W = Math.max(containerW, NEWS.length * MIN_SPACING);
+  const scrollable = W > containerW;
+  const mobile = containerW < 520;
   const H = mobile ? 240 : 210;
   const PAD = { top: 20, right: mobile ? 16 : 28, bottom: mobile ? 44 : 44, left: mobile ? 40 : 44 };
   const dotR = mobile ? 7 : 5;
@@ -445,8 +450,9 @@ function buildChart(NEWS) {
       onmouseleave="hideChartTip()" />`;
   }).join("");
 
+  const svgWidth = scrollable ? `${W}px` : '100%';
   document.getElementById("chartSvgContainer").innerHTML = `
-    <svg id="sentimentChart" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+    <svg id="sentimentChart" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:${svgWidth};min-width:${W}px;display:block">
       <defs>
         <clipPath id="clipAbove">
           <rect x="${PAD.left - 1}" y="${PAD.top}" width="${IW + 2}" height="${zeroY - PAD.top}" />
@@ -464,6 +470,16 @@ function buildChart(NEWS) {
         points="${pts.map(p => p.join(",")).join(" ")}" />
       ${dots}
     </svg>`;
+
+  // Show/hide scroll hint
+  const existingHint = container.parentElement.querySelector('.chart-scroll-hint');
+  if (existingHint) existingHint.remove();
+  if (scrollable) {
+    const hint = document.createElement('div');
+    hint.className = 'chart-scroll-hint';
+    hint.textContent = '← scroll to see all articles →';
+    container.parentElement.appendChild(hint);
+  }
 
   document.getElementById("sentimentChart").addEventListener("mousemove", e => {
     const tip = document.getElementById("chartTooltip");
@@ -531,10 +547,8 @@ function renderFeed(NEWS) {
 function renderWeek(run) {
   const NEWS = run.headlines || [];
 
-  const d = new Date(run.run_at);
-  const fmt = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
   document.getElementById('reportMeta').textContent =
-    `${run.period || weekRangeLabel(run)} · AI & Stock Market · ingested ${fmt}`;
+    `${run.period} · AI & Stock Market`;
 
   if (!NEWS.length) {
     document.getElementById('chartSvgContainer').innerHTML = '';

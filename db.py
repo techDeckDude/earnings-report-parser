@@ -58,12 +58,14 @@ CREATE TABLE IF NOT EXISTS news_articles (
     stocks_mentioned TEXT NOT NULL DEFAULT '[]',
     sentiment_score  INTEGER NOT NULL DEFAULT 0,
     sentiment_label  TEXT NOT NULL DEFAULT 'Neutral',
-    summary          TEXT NOT NULL DEFAULT ''
+    summary          TEXT NOT NULL DEFAULT '',
+    published_date   DATE
 );
 CREATE TABLE IF NOT EXISTS target_stocks (
     ticker      TEXT PRIMARY KEY,
     name        TEXT NOT NULL,
     category    TEXT,
+    cik         TEXT,
     ingested    INTEGER NOT NULL DEFAULT 0,
     added_at    DATETIME DEFAULT CURRENT_TIMESTAMP
 );
@@ -114,16 +116,34 @@ CREATE TABLE IF NOT EXISTS news_articles (
     stocks_mentioned TEXT NOT NULL DEFAULT '[]',
     sentiment_score  INTEGER NOT NULL DEFAULT 0,
     sentiment_label  TEXT NOT NULL DEFAULT 'Neutral',
-    summary          TEXT NOT NULL DEFAULT ''
+    summary          TEXT NOT NULL DEFAULT '',
+    published_date   DATE
 );
 CREATE TABLE IF NOT EXISTS target_stocks (
     ticker      TEXT PRIMARY KEY,
     name        TEXT NOT NULL,
     category    TEXT,
+    cik         TEXT,
     ingested    BOOLEAN NOT NULL DEFAULT FALSE,
     added_at    TIMESTAMPTZ DEFAULT NOW()
 );
 """
+
+
+# ── Migrations (additive ALTER TABLE statements) ──────────────────────────────
+# New entries go at the end. SQLite wraps each in try/except; PG uses IF NOT EXISTS.
+
+_MIGRATIONS_SQLITE = [
+    "ALTER TABLE target_stocks ADD COLUMN cik TEXT",
+    "ALTER TABLE news_articles ADD COLUMN published_date DATE",
+    "UPDATE news_articles SET published_date = (SELECT DATE(run_at) FROM news_runs WHERE news_runs.id = news_articles.run_id) WHERE published_date IS NULL",
+]
+
+_MIGRATIONS_PG = [
+    "ALTER TABLE target_stocks ADD COLUMN IF NOT EXISTS cik TEXT",
+    "ALTER TABLE news_articles ADD COLUMN IF NOT EXISTS published_date DATE",
+    "UPDATE news_articles SET published_date = nr.run_at::date FROM news_runs nr WHERE nr.id = news_articles.run_id AND news_articles.published_date IS NULL",
+]
 
 
 # ── Backend detection ─────────────────────────────────────────────────────────
@@ -176,12 +196,19 @@ def init_db(db_path: str = "earnings.db"):
             stmt = stmt.strip()
             if stmt:
                 cur.execute(stmt)
+        for stmt in _MIGRATIONS_PG:
+            cur.execute(stmt)
         conn.commit()
         return conn
     else:
         conn = sqlite3.connect(db_path, check_same_thread=False)
         conn.row_factory = sqlite3.Row
         conn.executescript(_SCHEMA_SQLITE)
+        for stmt in _MIGRATIONS_SQLITE:
+            try:
+                conn.execute(stmt)
+            except sqlite3.OperationalError:
+                pass  # column already exists
         conn.commit()
         return conn
 
@@ -295,8 +322,8 @@ def upsert_news_run(conn, data: dict) -> int:
 
     _executemany(conn, f"""
         INSERT INTO news_articles
-            (run_id, headline, source, url, url_verified, stocks_mentioned, sentiment_score, sentiment_label, summary)
-        VALUES ({P}, {P}, {P}, {P}, {P}, {P}, {P}, {P}, {P})
+            (run_id, headline, source, url, url_verified, stocks_mentioned, sentiment_score, sentiment_label, summary, published_date)
+        VALUES ({P}, {P}, {P}, {P}, {P}, {P}, {P}, {P}, {P}, {P})
         """,
         [
             (
@@ -309,6 +336,7 @@ def upsert_news_run(conn, data: dict) -> int:
                 a.get("sentiment_score", 0),
                 a.get("sentiment_label", "Neutral"),
                 a.get("summary", ""),
+                a.get("published_date"),
             )
             for a in headlines
         ],
@@ -417,3 +445,102 @@ def get_latest_news(conn) -> dict | None:
             "net_sentiment_label": run["net_sentiment_label"],
         },
     }
+
+
+def get_latest_news_date(conn):
+    """Return the most recent article published_date as a date object, or None."""
+    from datetime import date as _date
+    row = _execute(conn, """
+        SELECT MAX(COALESCE(na.published_date, DATE(nr.run_at))) AS latest
+        FROM news_articles na
+        JOIN news_runs nr ON na.run_id = nr.id
+    """).fetchone()
+    if not row or not row["latest"]:
+        return None
+    val = row["latest"]
+    if isinstance(val, str):
+        return _date.fromisoformat(val)
+    return val
+
+
+def get_news_by_week(conn) -> list[dict]:
+    """Return articles grouped into Mon–Sun calendar weeks, newest first."""
+    import collections
+    from datetime import date as _date, timedelta
+
+    rows = _execute(conn, """
+        SELECT
+            na.headline,
+            na.source,
+            na.url,
+            na.url_verified,
+            na.stocks_mentioned,
+            na.sentiment_score,
+            na.sentiment_label,
+            na.summary,
+            COALESCE(na.published_date, DATE(nr.run_at)) AS effective_date
+        FROM news_articles na
+        JOIN news_runs nr ON na.run_id = nr.id
+        ORDER BY COALESCE(na.published_date, DATE(nr.run_at)) DESC, na.id DESC
+    """).fetchall()
+
+    weeks: dict = collections.OrderedDict()
+    for row in rows:
+        date_val = row["effective_date"]
+        if not date_val:
+            continue
+        if isinstance(date_val, str):
+            pub_date = _date.fromisoformat(date_val)
+        else:
+            pub_date = date_val
+        monday = pub_date - timedelta(days=pub_date.weekday())
+        week_key = monday.isoformat()
+        if week_key not in weeks:
+            weeks[week_key] = {"monday": monday, "articles": []}
+        weeks[week_key]["articles"].append(row)
+
+    def _net_label(score: float) -> str:
+        if score >= 1.5: return "Very Positive"
+        if score >= 0.5: return "Positive"
+        if score > -0.5: return "Neutral"
+        if score > -1.5: return "Negative"
+        return "Very Negative"
+
+    result = []
+    for week_key, wdata in weeks.items():
+        monday = wdata["monday"]
+        sunday = monday + timedelta(days=6)
+        period = f"{monday.strftime('%b %d')} – {sunday.strftime('%b %d, %Y')}"
+        headlines = [
+            {
+                "headline": a["headline"],
+                "source": a["source"],
+                "url": a["url"],
+                "url_verified": bool(a["url_verified"]),
+                "stocks_mentioned": json.loads(a["stocks_mentioned"]),
+                "sentiment_score": a["sentiment_score"],
+                "sentiment_label": a["sentiment_label"],
+                "summary": a["summary"],
+                "published_date": a["effective_date"],
+            }
+            for a in wdata["articles"]
+        ]
+        scores = [h["sentiment_score"] for h in headlines]
+        dist = {"-2": 0, "-1": 0, "0": 0, "1": 0, "2": 0}
+        for s in scores:
+            dist[str(s)] = dist.get(str(s), 0) + 1
+        weighted = round(sum(scores) / len(scores), 1) if scores else 0.0
+        result.append({
+            "week_start": monday.isoformat(),
+            "week_end": sunday.isoformat(),
+            "period": period,
+            "headlines": headlines,
+            "summary_stats": {
+                "total_headlines": len(headlines),
+                "score_distribution": dist,
+                "weighted_sentiment": weighted,
+                "net_sentiment_label": _net_label(weighted),
+            },
+        })
+
+    return result
