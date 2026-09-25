@@ -2,6 +2,532 @@
   {
     "headlines": [
       {
+        "headline": "Meta Stock Forecast: META Rally, AI Growth and Key Levels \u2014 Muse AI Agent Gains Millions of Users After Connect 2026 Event",
+        "published_date": "2026-09-25",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "FX Leaders",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Meta's Muse AI agent surpassed 2.5\u20132.8 million downloads in its first 12 days and hit #1 on the US App Store. Analysts project $2.4B\u2013$10.8B in potential annual revenue from paid subscriptions, and new hardware products were unveiled at Connect 2026. Revenue impact is potential, not yet confirmed in financials.",
+        "url": "https://www.fxleaders.com/news/2026/09/25/meta-stock-rises-strongly-after-muse-ai-helper-gains-millions-of-users-and-connect-event-shows-new-products/",
+        "url_verified": false
+      },
+      {
+        "headline": "Datadog's Global Expansion Accelerates: Can It Drive More Revenues?",
+        "published_date": "2026-09-25",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Yahoo Finance / Zacks",
+        "stocks_mentioned": [
+          "DDOG"
+        ],
+        "summary": "Datadog is expanding internationally across EMEA and APAC, with international markets contributing ~27% of revenues in H1 2026. This represents a potential future revenue upside from geographic expansion \u2014 impact is potential, not yet confirmed.",
+        "url": "https://ca.finance.yahoo.com/news/datadogs-global-expansion-accelerates-drive-113700535.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Zacks Market Edge Highlights: McDonald's, Sandisk and NVIDIA \u2014 When Should Investors Buy a Stock?",
+        "published_date": "2026-09-25",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Zacks / TradingView",
+        "stocks_mentioned": [
+          "NVDA",
+          "SNDK",
+          "MCD"
+        ],
+        "summary": "Macro/investment commentary podcast discussing NVDA, SNDK, and MCD. No confirmed or potential direct revenue or earnings impact on any named company \u2014 purely analytical/educational in nature.",
+        "url": "https://www.tradingview.com/news/zacks:03b5956db094b:0-zacks-market-edge-highlights-mcdonald-s-sandisk-and-nvidia/",
+        "url_verified": true
+      },
+      {
+        "headline": "Travel Booking Stocks Tumble as Meta's Muse AI Agent Threatens to Bypass Them: Expedia Falls 7%, Airbnb Drops 6%, Booking Holdings Sinks 5%",
+        "published_date": "2026-09-24",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "24/7 Wall St.",
+        "stocks_mentioned": [
+          "META",
+          "EXPE",
+          "BKNG",
+          "ABNB"
+        ],
+        "summary": "Potential downside confirmed for travel aggregators \u2014 fears that Meta's Muse AI agent will bypass booking portals represent a competitive threat to Expedia, Booking Holdings, and Airbnb revenue, but no confirmed earnings impact yet.",
+        "url": "https://247wallst.com/investing/2026/09/23/travel-booking-stocks-tumble-as-muse-threatens-to-bypass-them-expedia-falls-7-airbnb-drops-6-booking-holdings-sinks-5/",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Agents Are Upending a Big Slice of the Stock Market: Banks, Brokers, Travel Booking Companies Hit by Threat to 'Consumer Inertia'",
+        "published_date": "2026-09-23",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "META",
+          "JPM",
+          "WFC",
+          "MS",
+          "SCHW",
+          "EXPE",
+          "BKNG",
+          "ALL"
+        ],
+        "summary": "Potential downside for financial services, insurance, and travel incumbents \u2014 Meta's Muse AI agent is disrupting consumer inertia business models; no confirmed revenue loss yet, but a broad-based re-pricing of affected sectors is underway.",
+        "url": "https://www.bloomberg.com/news/newsletters/2026-09-23/ai-agents-are-upending-a-big-slice-of-the-stock-market",
+        "url_verified": true
+      },
+      {
+        "headline": "Cognition Raises $2B at $48B Valuation in September 2026 AI Funding Round",
+        "published_date": "2026-09-23",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "SecondTalent / Crunchbase",
+        "stocks_mentioned": [],
+        "summary": "Cognition (maker of AI coding agent Devin) raised $2B at a $48B valuation in early September 2026, up from a $25B valuation before its May 2026 round. Cognition is private; this is a potential upside indicator for the AI software/agent market. No confirmed revenue figures disclosed; score reflects potential only.",
+        "url": "https://www.secondtalent.com/resources/ai-startup-funding-investment/",
+        "url_verified": false
+      },
+      {
+        "headline": "Broadcom Q3 FY2026: AI Revenue Hits $16.7B, Up 221% YoY; EPS Beats Consensus; Q4 AI Guidance Set at $21.7B",
+        "published_date": "2026-09-23",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC / PR Newswire / Broadcom IR",
+        "stocks_mentioned": [
+          "AVGO"
+        ],
+        "summary": "Broadcom reported Q3 FY2026 results on September 2, 2026: confirmed earnings beat ($3.32 non-GAAP EPS vs. $3.24 consensus), record revenue of $29.6B (+86% YoY), AI semiconductor revenue of $16.7B (+221% YoY), and raised Q4 AI revenue guidance to $21.7B. This is a confirmed upside event with a beat on earnings and raised guidance.",
+        "url": "https://www.cnbc.com/2026/09/02/broadcom-avgo-q3-earnings-report-2026.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Mistral AI Raises \u20ac3 Billion in Record European Tech Funding Round, Led by Samsung",
+        "published_date": "2026-09-23",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TechCrunch / France 24 / HPCwire",
+        "stocks_mentioned": [
+          "SSNLF"
+        ],
+        "summary": "Mistral AI completed a \u20ac3B Series D at a \u20ac21B+ valuation on September 8, 2026 \u2014 the largest-ever European tech equity raise. Samsung Electronics led the round. This is a potential upside signal for Samsung's AI investment thesis; funding does not confirm revenue. Mistral is private with no listed ticker.",
+        "url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/",
+        "url_verified": true
+      },
+      {
+        "headline": "Go.AI Closes $85M Series A to Scale On-Premises AI Infrastructure for Regulated Industries",
+        "published_date": "2026-09-23",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "FinTech Global",
+        "stocks_mentioned": [],
+        "summary": "Go.AI (private, formerly Go Abacus) closed an $85M Series A led by Updata Partners to expand AI infrastructure for banks and regulated organizations. Funding round signals potential future revenue growth \u2014 no confirmed revenue figures disclosed. Score reflects potential upside only; no publicly traded tickers directly mentioned.",
+        "url": "https://fintech.global/2026/09/22/go-ai-raises-85m-series-a-for-on-prem-ai-push/",
+        "url_verified": true
+      },
+      {
+        "headline": "Bloomberg: $33 Trillion in Stock Gains Riding on the Future of AI as Slowdown Debate Intensifies",
+        "published_date": "2026-09-23",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "NVDA",
+          "MSFT",
+          "GOOGL",
+          "META",
+          "AMZN"
+        ],
+        "summary": "Bloomberg warns that a national conversation about slowing AI development poses a serious threat to $33 trillion in equity gains tied to AI spending, which accounts for roughly half of US GDP growth by some estimates. This is a potential downside risk \u2014 no confirmed revenue loss yet, but the regulatory/political threat is real and emerging.",
+        "url": "https://www.bloomberg.com/news/newsletters/2026-09-21/there-s-33-trillion-in-stock-gains-riding-on-the-future-of-ai",
+        "url_verified": true
+      },
+      {
+        "headline": "Accenture Shares Surge ~7% After Anthropic AI Safety Partnership Announced; $1B Each Committed Over 5 Years",
+        "published_date": "2026-09-23",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Accenture Newsroom / Investing.com",
+        "stocks_mentioned": [
+          "ACN"
+        ],
+        "summary": "Accenture and Anthropic announced a partnership on September 18, with each committing at least $1B over five years to embedded AI safety evaluation. Accenture shares jumped ~6\u20137% in premarket. This is a potential revenue/earnings upside for ACN \u2014 the deal commits investment but does not yet confirm revenue from the engagement.",
+        "url": "https://newsroom.accenture.com/news/2026/accenture-and-anthropic-partner-to-build-team-of-embedded-evaluators-at-anthropic",
+        "url_verified": true
+      },
+      {
+        "headline": "Nasdaq Hits New All-Time Intraday High, Driven by AI Chip Stocks; Intel Surges 12%, AMD Tops $1T",
+        "published_date": "2026-09-23",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "AMD",
+          "INTC",
+          "QCOM",
+          "NVDA"
+        ],
+        "summary": "Broad AI-chip-led market rally pushed the Nasdaq to a new all-time intraday high. No company-specific confirmed revenue or earnings event; this is macro/index-level market commentary with no confirmed individual revenue impact.",
+        "url": "https://www.cnbc.com/2026/09/21/stock-market-today-live-updates.html",
+        "url_verified": true
+      },
+      {
+        "headline": "AMD Crosses $1 Trillion Market Cap for First Time as AI Chip Rally Sweeps Semiconductors",
+        "published_date": "2026-09-23",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TheStreet / CNBC",
+        "stocks_mentioned": [
+          "AMD",
+          "NVDA",
+          "INTC",
+          "QCOM",
+          "ARM"
+        ],
+        "summary": "AMD hit a $1 trillion market cap on September 22\u201323 on a five-day AI chip rally and unverified reports of a ~10% Q4 price hike on AI accelerators and GPUs. This is a potential revenue upside signal \u2014 confirmed earnings beat occurred last month, but the price increase has not been officially confirmed by AMD. Score reflects potential upside only.",
+        "url": "https://www.thestreet.com/investing/amd-1-trillion-market-cap-ai-chip-race",
+        "url_verified": true
+      },
+      {
+        "headline": "Snorkel AI Raises $350 Million Series E at $3.5 Billion Valuation; Reports $375M Annualized Revenue Run Rate",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TechCrunch / Unite.AI",
+        "stocks_mentioned": [],
+        "summary": "Snorkel AI raised a $350M Series E co-led by Insight Partners and S32, tripling its valuation from $1.3B to $3.5B in 17 months. The company disclosed a $375M annualized revenue run rate \u2014 up 18x in under a year \u2014 driven by frontier AI labs' demand for expert training data. Scored +1 (potential): the funding round signals investor confidence and the ARR is strong, but it is a run-rate figure (not booked annual revenue) and Snorkel is a private company.",
+        "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/",
+        "url_verified": true
+      },
+      {
+        "headline": "Snorkel AI Raises $350M Series E at $3.5B Valuation to Scale AI Training Data Platform",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TechCrunch",
+        "stocks_mentioned": [],
+        "summary": "Potential upside for Snorkel AI (private) \u2014 $350M Series E at $3.5B valuation signals strong investor demand; company reports $375M annualized revenue run rate (up 18x YoY), but Snorkel is not publicly traded, so no direct stock ticker impact is confirmed.",
+        "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta AI Agent Triggers Heavy Selloff in Banks, Insurers, and Travel Stocks; S&P 500 Financials Index Sheds 2%",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Yahoo Finance / Investing.com",
+        "stocks_mentioned": [
+          "META",
+          "SCHW",
+          "JPM",
+          "WFC",
+          "MS",
+          "ALL",
+          "PGR",
+          "EXPE",
+          "BKNG"
+        ],
+        "summary": "Potential downside for banks, insurers, and travel platforms \u2014 Goldman Sachs warned of AI agent disruption to consumer-inertia business models; no confirmed earnings impact yet, but sharp single-day sector declines reflect investor re-pricing of competitive risk.",
+        "url": "https://uk.finance.yahoo.com/news/meta-ai-agent-triggers-heavy-194211575.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta's Muse AI App Tops App Store Charts Ahead of ChatGPT and Claude, Sending META Shares Up 11%",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Yahoo Finance",
+        "stocks_mentioned": [
+          "META",
+          "AAPL"
+        ],
+        "summary": "Potential upside for Meta \u2014 Muse's viral launch (2.5M+ downloads in two weeks, No. 1 on iOS App Store) signals strong consumer traction and opens new monetization avenues (subscriptions, agent commerce), but confirmed revenue impact has not yet been reported.",
+        "url": "https://finance.yahoo.com/technology/ai/articles/meta-muse-ai-app-tops-095113099.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Go.AI Raises $85M Series A to Expand On-Premises AI Infrastructure for Regulated Industries",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Fintech Global",
+        "stocks_mentioned": [],
+        "summary": "Go.AI (private, formerly Go Abacus) closed an $85M Series A led by Updata Partners to scale its on-premises AI platform for banks, healthcare providers, and regulated organizations. Impact is potential \u2014 capital raised signals investor confidence but does not directly confirm revenue impact; no public ticker to assess.",
+        "url": "https://fintech.global/2026/09/22/go-ai-raises-85m-series-a-for-on-prem-ai-push/",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta's Muse Highlights AI Agents' Higher CPU-to-GPU Needs, Could Benefit Intel, AMD, and Arm",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TrendForce",
+        "stocks_mentioned": [
+          "AMD",
+          "INTC",
+          "ARM"
+        ],
+        "summary": "Analysis indicates AI agent workloads may require CPU-to-GPU ratios of 4:1 to 40:1, creating a potential new demand driver for Intel, AMD, and Arm. Impact is potential \u2014 no confirmed orders or revenue increases have been disclosed; the thesis depends on agent adoption scaling.",
+        "url": "https://www.trendforce.com/news/2026/09/22/news-metas-muse-highlights-ai-agents-higher-cpu-to-gpu-needs-could-benefit-intel-amd-and-arm/",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta's Muse AI Agent Tops U.S. App Charts 13 Days After Launch, Lifting CPU Stocks and Nasdaq to Record Close",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Seoul Economic Daily / CNBC / Benzinga",
+        "stocks_mentioned": [
+          "META",
+          "AMD",
+          "INTC",
+          "ARM",
+          "QCOM"
+        ],
+        "summary": "Meta's Muse AI agent ranked #1 in U.S. free app downloads on both Apple and Google Play just 13 days post-launch, and Meta shares jumped 11.43% in a single session. Impact is potential \u2014 rapid adoption signals meaningful engagement, but confirmed revenue contribution from Muse has not yet been reported.",
+        "url": "https://en.sedaily.com/international/2026/09/22/metas-ai-assistant-muse-tops-app-charts-lifting-cpu-stocks",
+        "url_verified": true
+      },
+      {
+        "headline": "AMD Crosses $1 Trillion Market Cap for First Time on AI Chip Rally Driven by Meta's Muse Agent",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "GamesReviews.com / Bloomberg / Quartz",
+        "stocks_mentioned": [
+          "AMD",
+          "INTC",
+          "ARM",
+          "QCOM",
+          "META"
+        ],
+        "summary": "AMD crossed $1 trillion in market capitalization on Sept. 21, with Intel (+12%), Arm (+17%), and Qualcomm (+9%) also surging on potential new CPU demand from Meta's Muse AI agent. Impact is potential \u2014 no confirmed revenue or earnings uplift from Muse has been reported; demand thesis remains speculative.",
+        "url": "https://qz.com/amd-stock-1-trillion-market-cap-ai-chips-092126",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta's Muse AI Agent Hits #1 on US App Store With 900K+ Downloads in Six Days, Surpassing ChatGPT",
+        "published_date": "2026-09-21",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg / CNBC",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Meta's Muse autonomous AI agent, launched September 8, became the #1 free app on US Apple iOS App Store and Google Play within 10 days, surpassing ChatGPT. The app accumulated over 900K downloads in six days per Sensor Tower. JPMorgan upgraded META from Neutral to Overweight, raising its price target. This is a potential revenue upside \u2014 strong early adoption signals but paid-tier monetization and long-term retention have not yet been confirmed.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-21/meta-s-new-muse-ai-app-tops-charts-draws-strong-early-reviews",
+        "url_verified": true
+      },
+      {
+        "headline": "AMD Hits $1 Trillion Market Cap for the First Time as AI Chip Stocks Rally 10%",
+        "published_date": "2026-09-21",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "AMD",
+          "INTC",
+          "QCOM"
+        ],
+        "summary": "AMD crossed the $1 trillion market cap threshold on September 21 as shares surged ~10%, driven by AI chip demand optimism. AMD's Q2 2026 revenue was confirmed at $11.54B (+50% YoY) with data center revenue of $6.7B (+107% YoY). CEO Lisa Su guided for data center revenue to more than double in 2027, underpinned by Anthropic's reported 2-gigawatt MI450 GPU commitment. Scored +1 (potential) as the milestone reflects market pricing of future share gains, not yet confirmed revenue at that scale. Intel (INTC) and Qualcomm (QCOM) also rallied 9\u201312% on the same session.",
+        "url": "https://www.cnbc.com/2026/09/21/amd-stock-1-trillion-value.html",
+        "url_verified": true
+      },
+      {
+        "headline": "There's $33 Trillion in Stock Gains Riding on the Future of AI as Slowdown Calls Mount",
+        "published_date": "2026-09-21",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Bloomberg",
+        "stocks_mentioned": [],
+        "summary": "Macro/industry commentary with no company-specific confirmed or potential revenue impact \u2014 highlights systemic risk if AI development slows, but does not attribute the threat to any specific issuer's earnings.",
+        "url": "https://www.bloomberg.com/news/newsletters/2026-09-21/there-s-33-trillion-in-stock-gains-riding-on-the-future-of-ai",
+        "url_verified": true
+      },
+      {
+        "headline": "AMD Hits $1 Trillion Market Cap for the First Time as AI Chip Stocks Rally",
+        "published_date": "2026-09-21",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "AMD",
+          "NVDA",
+          "INTC",
+          "QCOM",
+          "AVGO",
+          "MU"
+        ],
+        "summary": "Potential upside signal for AMD and AI chip peers \u2014 milestone market cap driven by AI demand; while AMD's Q2 revenue already beat at $11.54B (+50% YoY), the $1T valuation crossing itself is a market-driven event, not a new confirmed earnings result. Broader semiconductor sector rallied in sympathy.",
+        "url": "https://www.cnbc.com/2026/09/21/amd-stock-1-trillion-value.html",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Trade Regains Footing; Chipmakers Rally as Oil and Yields Pull Back",
+        "published_date": "2026-09-21",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Charles Schwab",
+        "stocks_mentioned": [
+          "NVDA",
+          "ACN"
+        ],
+        "summary": "Stocks rose in early September 21 trading as AI-related chipmakers regained ground after the prior week's selloff, with oil prices and Treasury yields pulling back. This is macro/index-level market commentary with no company-specific confirmed revenue or earnings impact.",
+        "url": "https://www.schwab.com/learn/story/stock-market-update-open",
+        "url_verified": true
+      },
+      {
+        "headline": "There's $33 Trillion in Stock Gains Riding on the Future of AI \u2014 Bloomberg",
+        "published_date": "2026-09-21",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Bloomberg",
+        "stocks_mentioned": [],
+        "summary": "Bloomberg's Markets Daily newsletter analyzed how the AI slowdown debate represents a broad macro threat to equity valuations, estimating roughly $33 trillion in stock gains are tied to AI-related spending. This is macro commentary with no company-specific confirmed or potential revenue impact.",
+        "url": "https://www.bloomberg.com/news/newsletters/2026-09-21/there-s-33-trillion-in-stock-gains-riding-on-the-future-of-ai",
+        "url_verified": true
+      },
+      {
+        "headline": "Accenture Shares Surge ~6% Premarket After Anthropic AI Safety Partnership Announced",
+        "published_date": "2026-09-21",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TradingPedia / Grafa",
+        "stocks_mentioned": [
+          "ACN"
+        ],
+        "summary": "Accenture shares climbed approximately 6% in premarket trading on September 21 following market reaction to the September 18 Anthropic partnership announcement. The partnership is a potential upside \u2014 Anthropic will directly finance Accenture's evaluation work, but full revenue contribution over the five-year term has not been confirmed.",
+        "url": "https://www.tradingpedia.com/2026/09/21/accenture-gains-6-premarket-on-anthropic-ai-safety-deal/",
+        "url_verified": true
+      }
+    ],
+    "period": "Sep 21 \u2013 Sep 27, 2026",
+    "summary_stats": {
+      "net_sentiment_label": "Positive",
+      "score_distribution": {
+        "-1": 4,
+        "-2": 0,
+        "0": 5,
+        "1": 18,
+        "2": 1
+      },
+      "total_headlines": 28,
+      "weighted_sentiment": 0.6
+    },
+    "week_end": "2026-09-27",
+    "week_start": "2026-09-21"
+  },
+  {
+    "headlines": [
+      {
+        "headline": "MIND Raises $72M Series B as AI-Native Data Loss Prevention Demand Surges",
+        "published_date": "2026-09-18",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "FinTech Global",
+        "stocks_mentioned": [],
+        "summary": "MIND, an AI-native data loss prevention platform, closed a $72M Series B led by Crosspoint Capital Partners. This is a potential upside \u2014 money raised is not revenue, and no confirmed revenue or earnings impact has been reported.",
+        "url": "https://fintech.global/2026/09/18/mind-raises-72m-as-ai-turns-data-security-urgent/",
+        "url_verified": true
+      },
+      {
+        "headline": "Accenture and Anthropic Partner on Embedded AI Safety Evaluation, Each Committing at Least $1B Over Five Years",
+        "published_date": "2026-09-18",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Accenture Newsroom / Anthropic",
+        "stocks_mentioned": [
+          "ACN"
+        ],
+        "summary": "Accenture and Anthropic announced a partnership to embed independent AI safety evaluators inside Anthropic's development process, backed by at least $2 billion in combined investment over five years, with Anthropic directly financing Accenture's evaluation work. This is a potential upside for Accenture (ACN) \u2014 the contract value represents future revenue opportunity, but no confirmed earnings impact has been reported yet.",
+        "url": "https://newsroom.accenture.com/news/2026/accenture-and-anthropic-partner-to-build-team-of-embedded-evaluators-at-anthropic",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Slowdown Calls Collide With Stock Market's AI Bets, Bloomberg Reports",
+        "published_date": "2026-09-16",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "NVDA",
+          "AVGO"
+        ],
+        "summary": "Bloomberg's AI Today newsletter detailed how industry-led calls to slow AI development collided with bullish market positioning in chipmakers. The impact on Nvidia and Broadcom revenues is a potential downside \u2014 no confirmed revenue reduction has been reported.",
+        "url": "https://www.bloomberg.com/news/newsletters/2026-09-16/ai-slowdown-calls-collide-with-stock-market-s-ai-bets",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Spending Drives Earnings Growth Across All S&P 500 Sectors for Q3 2026 \u2014 First Time Since 2021",
+        "published_date": "2026-09-16",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Bloomberg",
+        "stocks_mentioned": [],
+        "summary": "Bloomberg Intelligence data shows every S&P 500 sector is expected to deliver Q3 earnings growth, attributed to AI spending spillover. This is macro/market commentary without a company-specific confirmed revenue impact \u2014 no individual stock tickers are named in the article.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-16/ai-fueled-profit-growth-set-to-flow-through-every-s-p-500-sector",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Slowdown Calls From Industry Leaders Weigh on AI Stocks; S&P 500 Falls as Investors Reassess AI Bets",
+        "published_date": "2026-09-14",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "CNBC",
+        "stocks_mentioned": [],
+        "summary": "Calls from AI industry leaders (including Anthropic CEO Dario Amodei) for a slowdown in AI development pace, citing safety concerns, triggered a broad sell-off in AI-related stocks. The S&P 500 fell and the Dow declined 1.6% the prior week. This is a potential downside \u2014 regulatory investigation and competitive threats to AI capex momentum \u2014 but no confirmed revenue impact has yet been realized.",
+        "url": "https://www.cnbc.com/2026/09/13/stock-futures-today-live-updates.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Defense AI Startup Shield AI in Talks for New Funding Round at $20B+ Valuation",
+        "published_date": "2026-09-14",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "The Information / AI Weekly",
+        "stocks_mentioned": [],
+        "summary": "Shield AI is in early-stage talks to raise a new funding round at a valuation of at least $20 billion, up from $12.7 billion in March 2026. This is a potential upside signal \u2014 no round has been formally closed and no revenue impact is confirmed yet.",
+        "url": "https://www.theinformation.com/articles/defense-startup-shield-ai-talks-valuation-least-20-billion",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Slowdown Calls Pummel Chipmakers; Nvidia Falls 3.4%, PHLX Semiconductor Index Sinks ~6%",
+        "published_date": "2026-09-14",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Reuters / CNN Business",
+        "stocks_mentioned": [
+          "NVDA",
+          "AVGO",
+          "AMD",
+          "MU",
+          "INTC"
+        ],
+        "summary": "AI industry leaders (Anthropic, OpenAI, xAI) publicly called for a slowdown in AI development on safety grounds, triggering a broad chip selloff. The impact on future AI capex and chip demand is a potential downside \u2014 confirmed revenue losses have not yet been reported, making this a potential rather than confirmed negative.",
+        "url": "https://www.cnn.com/2026/09/14/business/ai-stocks-slide-slowdown-development-amodei-altman-intl",
+        "url_verified": true
+      }
+    ],
+    "period": "Sep 14 \u2013 Sep 20, 2026",
+    "summary_stats": {
+      "net_sentiment_label": "Neutral",
+      "score_distribution": {
+        "-1": 3,
+        "-2": 0,
+        "0": 1,
+        "1": 3,
+        "2": 0
+      },
+      "total_headlines": 7,
+      "weighted_sentiment": 0.0
+    },
+    "week_end": "2026-09-20",
+    "week_start": "2026-09-14"
+  },
+  {
+    "headlines": [
+      {
         "headline": "Gimlet Labs raises $300 million AI infrastructure hardware round as investors back compute cost solutions",
         "published_date": "2026-09-11",
         "sentiment_label": "Positive",
@@ -89,6 +615,28 @@
         "summary": "Confirmed earnings beat: Q3 revenue of $29.59B beat the $29.36B consensus, adjusted EPS of $3.32 beat $3.24 estimate, extending a nine-quarter streak. AI semiconductor revenue grew 221% YoY to $16.7B \u2014 confirmed upside to revenue and earnings. Multi-year guidance (FY2027 AI revenue $115B, FY2028 $230B) is forward-looking and potential, but the quarterly beat itself is confirmed.",
         "url": "https://www.cnbc.com/2026/09/02/broadcom-avgo-q3-earnings-report-2026.html",
         "url_verified": true
+      },
+      {
+        "headline": "Cognition AI Raises $2 Billion at $48 Billion Valuation; Run-Rate Revenue Jumps from $492M to $900M",
+        "published_date": "2026-09-08",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg / TechCrunch",
+        "stocks_mentioned": [],
+        "summary": "Cognition AI (maker of Devin coding agent) closed a $2B Series E led by a16z, Accel, Founders Fund, General Catalyst, and Avenir \u2014 nearly doubling its valuation from $26B to $48B in four months. The company disclosed run-rate revenue growth from $492M (May) to ~$900M, a strong underlying revenue signal. Scored +1 (potential) because the funding itself is not confirmed revenue, though the ARR growth is a strong positive indicator. Cognition is a private company with no public ticker.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-08/ai-startup-cognition-raises-2-billion-at-a-48-billion-value",
+        "url_verified": true
+      },
+      {
+        "headline": "Mistral Raises \u20ac3 Billion Series D at \u20ac21 Billion Valuation \u2014 Europe's Largest-Ever Tech Fundraising Round",
+        "published_date": "2026-09-08",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TechCrunch / PYMNTS",
+        "stocks_mentioned": [],
+        "summary": "Mistral AI raised \u20ac3B (~$3.5B) in a Samsung-led Series D \u2014 the largest equity fundraising round in European tech history \u2014 at a \u20ac21B valuation. The funding is earmarked for compute expansion, frontier model research, and international commercial growth. This is a potential upside event for Mistral's enterprise AI business; as a private company, no public tickers are directly impacted.",
+        "url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/",
+        "url_verified": true
       }
     ],
     "period": "Sep 07 \u2013 Sep 13, 2026",
@@ -98,11 +646,11 @@
         "-1": 0,
         "-2": 0,
         "0": 1,
-        "1": 3,
+        "1": 5,
         "2": 3
       },
-      "total_headlines": 7,
-      "weighted_sentiment": 1.3
+      "total_headlines": 9,
+      "weighted_sentiment": 1.2
     },
     "week_end": "2026-09-13",
     "week_start": "2026-09-07"
@@ -177,6 +725,45 @@
         "summary": "Confirmed earnings beat: Q3 revenue of $29.59B (+86% YoY) and adjusted EPS of $3.32 exceeded analyst consensus; AI semiconductor revenue exceeded Broadcom's own $16B target by $700M; management raised full-year AI revenue guidance to $58B and guided Q4 AI revenue to $21.7B (+236% YoY). All impacts are confirmed, not potential.",
         "url": "https://www.cnbc.com/2026/09/02/broadcom-avgo-q3-earnings-report-2026.html",
         "url_verified": true
+      },
+      {
+        "headline": "Nvidia Officially Agrees to Acquire Hugging Face for $12.9 Billion in AI Ecosystem Expansion",
+        "published_date": "2026-09-03",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC / TechCrunch",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Nvidia signed a definitive agreement to acquire Hugging Face for $12.93B, moving beyond hardware into the open-source AI software and model ecosystem. The deal is expected to close in H1 2027, pending regulatory approval \u2014 making this a potential (not confirmed) revenue and strategic impact. The acquisition signals Nvidia's intent to control the open-source AI development stack, with revenue implications contingent on deal closure.",
+        "url": "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Nvidia Confirms $12.9 Billion Acquisition of Hugging Face, Expanding Deep Into the AI Software Stack",
+        "published_date": "2026-09-03",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TechCrunch / CNBC",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Potential upside for Nvidia \u2014 the confirmed definitive agreement to acquire Hugging Face for $12.93B broadens Nvidia's position from hardware into the open-source AI software ecosystem; deal expected to close H1 2027 pending regulatory approval, so revenue contribution is not yet confirmed.",
+        "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/",
+        "url_verified": true
+      },
+      {
+        "headline": "Broadcom Q3 2026: AI Revenue Hits $16.7 Billion, Up 221% YoY; Raises FY2027 AI Outlook to $115 Billion",
+        "published_date": "2026-09-02",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC / Broadcom IR",
+        "stocks_mentioned": [
+          "AVGO"
+        ],
+        "summary": "Confirmed earnings beat: Broadcom reported Q3 revenue of $29.6B (+86% YoY), AI semiconductor revenue of $16.7B (+221% YoY), and non-GAAP EPS of $3.32 above the $3.24 consensus \u2014 extending a nine-quarter beat streak. Management also raised FY2027 AI revenue guidance to $115B and introduced a $230B FY2028 target. Both the beat and raised guidance represent confirmed upside to revenue and earnings.",
+        "url": "https://www.cnbc.com/2026/09/02/broadcom-avgo-q3-earnings-report-2026.html",
+        "url_verified": true
       }
     ],
     "period": "Aug 31 \u2013 Sep 06, 2026",
@@ -186,11 +773,11 @@
         "-1": 0,
         "-2": 0,
         "0": 1,
-        "1": 3,
-        "2": 1
+        "1": 5,
+        "2": 2
       },
-      "total_headlines": 5,
-      "weighted_sentiment": 1.0
+      "total_headlines": 8,
+      "weighted_sentiment": 1.1
     },
     "week_end": "2026-09-06",
     "week_start": "2026-08-31"
