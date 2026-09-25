@@ -448,7 +448,8 @@ function buildChart(NEWS) {
   const svgWidth = scrollable ? `${W}px` : '100%';
   const yAxisOverlay = scrollable ? `
     <svg class="chart-yaxis-overlay" aria-hidden="true"
-         viewBox="0 0 ${PAD.left} ${H}" width="${PAD.left}" height="${H}">
+         viewBox="0 0 ${PAD.left} ${H}" width="${PAD.left}" height="${H}"
+         style="display:block">
       ${yLabels}
     </svg>` : '';
 
