@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-25** — Added `docs/ingestion-pipeline.md`: end-to-end documentation of the earnings ingestion pipeline covering EDGAR API discovery, the extractor Strategy pattern, Pydantic validation, database persistence, contract JSON, and the static build step
+
 - **2026-09-25** — Added `deploy.sh`: automates the full release workflow — merges develop → main (code commit), runs the static build, commits and tags it with a timestamp version (e.g. `build-20260925-143022`), merges the build commit → main, then pushes and switches back to develop
 
 - **2026-09-25** — Fixed sentiment chart y-axis alignment: replaced absolute-positioned overlay SVG with a two-SVG flexbox layout (fixed left SVG for labels, scrollable right SVG for chart content) so the axis labels are always pixel-perfectly aligned with the grid lines regardless of scroll position

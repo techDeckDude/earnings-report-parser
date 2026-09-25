@@ -241,6 +241,7 @@ earnings-report-parser/
 │       ├── PLTR/        # Extracted contract JSONs (FY{year}Q{quarter}.json)
 │       └── MRVL/        # Extracted contract JSONs (FY{year}Q{quarter}.json)
 ├── docs/
+│   ├── ingestion-pipeline.md          # Full walkthrough of the earnings ingestion pipeline (EDGAR → extract → validate → DB → static build)
 │   ├── aws-deployment.md              # Plan for deploying to S3 + EC2 + RDS
 │   └── architecture-diagram-8-22-26.png  # Visual architecture diagram
 ├── loader.py            # Load a contract JSON from S3 or local path into the DB
