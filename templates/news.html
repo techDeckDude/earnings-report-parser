@@ -262,20 +262,15 @@
     #chartTooltip .tt-source { color: var(--text-3); font-size: 0.62rem; margin-top: 4px; }
 
     /* ── Chart scroll wrapper ── */
-    #chartSvgContainer {
-      position: relative;
+    .chart-flex {
+      display: flex;
+      align-items: flex-start;
     }
     .chart-scroll-inner {
+      flex: 1;
+      min-width: 0;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-    }
-    .chart-yaxis-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      pointer-events: none;
-      z-index: 2;
-      background: var(--bg-card);
-      border-right: 0.5px solid var(--border);
     }
     .chart-scroll-hint {
       font-family: "IBM Plex Mono", monospace;
@@ -445,36 +440,59 @@ function buildChart(NEWS) {
       onmouseleave="hideChartTip()" />`;
   }).join("");
 
-  const svgWidth = scrollable ? `${W}px` : '100%';
-  const yAxisOverlay = scrollable ? `
-    <svg class="chart-yaxis-overlay" aria-hidden="true"
-         viewBox="0 0 ${PAD.left} ${H}" width="${PAD.left}" height="${H}"
-         style="display:block">
-      ${yLabels}
-    </svg>` : '';
+  const rightW = W - PAD.left;
 
-  document.getElementById("chartSvgContainer").innerHTML = `
-    <div class="chart-scroll-inner">
-      <svg id="sentimentChart" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:${svgWidth};min-width:${W}px;display:block">
-        <defs>
-          <clipPath id="clipAbove">
-            <rect x="${PAD.left - 1}" y="${PAD.top}" width="${IW + 2}" height="${zeroY - PAD.top}" />
-          </clipPath>
-          <clipPath id="clipBelow">
-            <rect x="${PAD.left - 1}" y="${zeroY}" width="${IW + 2}" height="${PAD.top + IH - zeroY + 1}" />
-          </clipPath>
-        </defs>
-        ${gridLines}
-        ${yLabels}
-        ${xLabels}
-        <path d="${areaD}" fill="#00e664" fill-opacity="0.12" clip-path="url(#clipAbove)" />
-        <path d="${areaD}" fill="#ef4444" fill-opacity="0.14" clip-path="url(#clipBelow)" />
-        <polyline fill="none" stroke="#00e664" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
-          points="${pts.map(p => p.join(",")).join(" ")}" />
-        ${dots}
-      </svg>
-    </div>
-    ${yAxisOverlay}`;
+  if (scrollable) {
+    document.getElementById("chartSvgContainer").innerHTML = `
+      <div class="chart-flex">
+        <svg aria-hidden="true" style="display:block;flex-shrink:0;border-right:0.5px solid var(--border)"
+             width="${PAD.left}" height="${H}" viewBox="0 0 ${PAD.left} ${H}">
+          ${yLabels}
+        </svg>
+        <div class="chart-scroll-inner">
+          <svg id="sentimentChart" viewBox="${PAD.left} 0 ${rightW} ${H}"
+               xmlns="http://www.w3.org/2000/svg" style="width:${rightW}px;min-width:${rightW}px;display:block">
+            <defs>
+              <clipPath id="clipAbove">
+                <rect x="${PAD.left - 1}" y="${PAD.top}" width="${IW + 2}" height="${zeroY - PAD.top}" />
+              </clipPath>
+              <clipPath id="clipBelow">
+                <rect x="${PAD.left - 1}" y="${zeroY}" width="${IW + 2}" height="${PAD.top + IH - zeroY + 1}" />
+              </clipPath>
+            </defs>
+            ${gridLines}
+            ${xLabels}
+            <path d="${areaD}" fill="#00e664" fill-opacity="0.12" clip-path="url(#clipAbove)" />
+            <path d="${areaD}" fill="#ef4444" fill-opacity="0.14" clip-path="url(#clipBelow)" />
+            <polyline fill="none" stroke="#00e664" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+              points="${pts.map(p => p.join(",")).join(" ")}" />
+            ${dots}
+          </svg>
+        </div>
+      </div>`;
+  } else {
+    document.getElementById("chartSvgContainer").innerHTML = `
+      <div class="chart-scroll-inner">
+        <svg id="sentimentChart" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+          <defs>
+            <clipPath id="clipAbove">
+              <rect x="${PAD.left - 1}" y="${PAD.top}" width="${IW + 2}" height="${zeroY - PAD.top}" />
+            </clipPath>
+            <clipPath id="clipBelow">
+              <rect x="${PAD.left - 1}" y="${zeroY}" width="${IW + 2}" height="${PAD.top + IH - zeroY + 1}" />
+            </clipPath>
+          </defs>
+          ${gridLines}
+          ${yLabels}
+          ${xLabels}
+          <path d="${areaD}" fill="#00e664" fill-opacity="0.12" clip-path="url(#clipAbove)" />
+          <path d="${areaD}" fill="#ef4444" fill-opacity="0.14" clip-path="url(#clipBelow)" />
+          <polyline fill="none" stroke="#00e664" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+            points="${pts.map(p => p.join(",")).join(" ")}" />
+          ${dots}
+        </svg>
+      </div>`;
+  }
 
   // Show/hide scroll hint
   const existingHint = container.parentElement.querySelector('.chart-scroll-hint');
