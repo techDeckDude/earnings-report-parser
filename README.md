@@ -229,6 +229,7 @@ earnings-report-parser/
 ├── verify.py            # Diff live API responses against static JSON files; exits 1 on mismatch
 ├── ingest_news.py       # CLI: fetch AI stock news via Claude (Anthropic SDK + web search), store in DB
 ├── scheduler.py         # Run ingest_news.py on a configurable interval (INGEST_INTERVAL_HOURS env var)
+├── deploy.sh            # Deploy script: merge develop → main (code + build commits), tag, push to origin
 ├── templates/
 │   ├── earnings.html    # Earnings page: ticker selector, metric chart, quarterly metrics table
 │   └── news.html        # AI news feed: weekly carousel, sentiment chart, swipe nav
@@ -277,6 +278,26 @@ EXPERIMENTAL=0 python app.py
 ---
 
 ## Deployment
+
+### Cloudflare Pages (current)
+
+Run the deploy script from the `develop` branch:
+
+```bash
+./deploy.sh
+```
+
+This will:
+1. Show you a preview of uncommitted changes and ask for confirmation
+2. Merge `develop` → `main` (code changes commit)
+3. Run `python generate.py` to rebuild the static site on `develop`
+4. Commit the static files with a timestamped tag (e.g. `build-20260925-143022`)
+5. Merge the build commit → `main`
+6. Push `main` and the build tag to origin — Cloudflare picks up the push and deploys
+
+The two-commit structure keeps code changes and generated output separate in the git history.
+
+### AWS (planned)
 
 See [docs/aws-deployment.md](docs/aws-deployment.md) for a full plan to deploy this project to AWS using S3 (PDF storage), EC2 (Flask + ingestion), and RDS PostgreSQL (replacing SQLite).
 
