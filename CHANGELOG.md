@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-25** — Fixed sentiment chart y-axis alignment: replaced absolute-positioned overlay SVG with a two-SVG flexbox layout (fixed left SVG for labels, scrollable right SVG for chart content) so the axis labels are always pixel-perfectly aligned with the grid lines regardless of scroll position
+
 - **2026-09-22** — Added `scheduler.py`: runs `ingest_news.py` automatically on a configurable interval (`INGEST_INTERVAL_HOURS` env var, default 24); process named `earnings-news-scheduler` for easy identification in Activity Monitor; skips API call if already up to date for the day; supports background execution via `nohup`
 
 - **2026-09-20** — News pipeline now tracks `published_date` per article and groups the feed by Mon–Sun calendar weeks based on article publish date rather than ingestion run; `ingest_news.py` auto-detects the start date from the last stored article and removes the `--week-of` flag; `GET /api/news` now returns week-grouped data with dynamically computed `summary_stats`
