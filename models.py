@@ -109,6 +109,7 @@ class EarningsReport(BaseModel):
     period_end_date: date
     filing_type: str
     units: str = "thousands"
+    extraction_source: Optional[str] = None
     income_statement: IncomeStatement
     balance_sheet: BalanceSheet
     cash_flow: CashFlow

@@ -221,12 +221,14 @@ earnings-report-parser/
 │   ├── __init__.py      # Registry and get_extractor() strategy selector
 │   ├── base.py          # BaseExtractor abstract interface
 │   ├── palantir.py      # Palantir 10-Q implementation (PDF via pdfplumber + regex)
-│   └── marvell.py       # Marvell Technology 10-Q implementation (iXBRL ZIP via tag lookup)
+│   ├── marvell.py       # Marvell Technology 10-Q implementation (iXBRL ZIP via tag lookup)
+│   └── xbrl.py          # Tier 1 EDGAR XBRL extractor: maps US-GAAP concepts to EarningsReport for any XBRL filer
 ├── models.py            # Pydantic data models and validators
 ├── db.py                # SQLite schema and persistence
 ├── app.py               # Flask web server and API; injects STATIC_BUILD flag via context processor
 ├── generate.py          # Build static/ from live Flask (sets STATIC_BUILD=true, uses test client)
 ├── verify.py            # Diff live API responses against static JSON files; exits 1 on mismatch
+├── ingest_xbrl.py       # CLI: ingest 10-Q filings for any ticker via EDGAR XBRL API (no file download)
 ├── ingest_news.py       # CLI: fetch AI stock news via Claude (Anthropic SDK + web search), store in DB
 ├── scheduler.py         # Run ingest_news.py on a configurable interval (INGEST_INTERVAL_HOURS env var)
 ├── deploy.sh            # Deploy script: merge develop → main (code + build commits), tag, push to origin

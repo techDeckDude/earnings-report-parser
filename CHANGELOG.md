@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-25** — Added Tier 1 EDGAR XBRL ingestion: `extractors/xbrl.py` maps US-GAAP concepts to `EarningsReport` using the EDGAR Company Facts API (no file download); `ingest_xbrl.py` CLI ingests all 10-Q filings for any XBRL filer in one command; `EarningsReport` gains an optional `extraction_source` audit field; ingested 26 quarters of AMD data (Q1 2018 – Q2 2026)
+
 - **2026-09-25** — Added `docs/ingestion-pipeline.md`: end-to-end documentation of the earnings ingestion pipeline covering EDGAR API discovery, the extractor Strategy pattern, Pydantic validation, database persistence, contract JSON, and the static build step
 
 - **2026-09-25** — Added `deploy.sh`: automates the full release workflow — merges develop → main (code commit), runs the static build, commits and tags it with a timestamp version (e.g. `build-20260925-143022`), merges the build commit → main, then pushes and switches back to develop
