@@ -2,6 +2,10 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-26** — Extended analytics strip on the earnings metric chart with Year-over-Year stats: now shows four chips — Avg QoQ, Last QoQ, Avg YoY, and Last YoY — each with period labels and absolute delta (money metrics); YoY compares annual totals (sum of all quarters per year, averaged for percentage metrics) across consecutive years with the same quarter count; a divider separates the QoQ and YoY groups; all four update dynamically on every ticker and metric switch
+
+- **2026-09-26** — Added QoQ analytics strip to the earnings metric chart: shows average quarter-over-quarter % change (across all non-null pairs) and most recent QoQ % change (with absolute delta for money metrics and the two period labels); updates dynamically on every ticker and metric switch
+
 - **2026-09-25** — Added ticker search to the earnings page: a filter input above the ticker row narrows visible tickers as you type, shows a live match count (e.g. "3 / 76"), and supports keyboard shortcuts — press `/` from anywhere on the page to focus it, `Enter` to jump to the first match, `Esc` to clear
 
 - **2026-09-25** — Aligned News page spacing with the Earnings page: increased h1 margin, tightened carousel-nav/report-meta/stats-row rhythm to match the card cadence, matched chart-card-title margin, and added a mobile media query (16px body padding, compact nav, smaller h1, tighter card and headline-card padding)
