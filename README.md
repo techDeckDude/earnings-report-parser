@@ -134,12 +134,12 @@ The S3 key format is `{ticker}/{filing_type}/FY{year}Q{quarter}.json` (e.g. `PLT
 A Flask web server that reads from the SQLite database and renders two interactive pages at `http://localhost:5001`.
 
 **Routes:**
-- **`GET /`** — earnings page (`earnings.html`): horizontally-scrollable ticker selector and metric pill row; scrollable metric line chart (fixed y-axis, scrollable content with per-quarter minimum spacing); and a full quarterly metrics table
+- **`GET /`** — earnings page (`earnings.html`): ticker search filter (press `/` to focus, `Enter` to jump to first match, `Esc` to clear) above a horizontally-scrollable ticker selector; scrollable metric pill row; scrollable metric line chart (fixed y-axis, per-quarter minimum spacing); and a full quarterly metrics table
 - **`GET /api/revenue`** — revenue records for all companies as JSON
 - **`GET /api/tickers`** — list of all known ticker symbols and company names
 - **`GET /api/metrics/<ticker>`** — all financial metrics for a ticker, pivoted to `{statement: {metric_name: [value_per_period]}}` ordered by `period_end_date`
 - **`GET /api/news`** — all news articles grouped into Mon–Sun calendar weeks, newest first; each week includes `week_start`, `week_end`, `period`, `headlines`, and dynamically-computed `summary_stats`
-- **`GET /news`** — AI market news feed page; reads from `/api/news`
+- **`GET /news`** — AI market news feed page; spacing and mobile layout aligned with the earnings page; reads from `/api/news`
 
 New companies and periods appear automatically as more filings are parsed — no UI changes needed.
 
