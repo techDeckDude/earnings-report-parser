@@ -64,7 +64,8 @@ _CONCEPT_MAP: dict[str, tuple[list[str], str]] = {
     ),
     "research_and_development": (
         ["ResearchAndDevelopmentExpense",
-         "ResearchAndDevelopmentExpenseExcludingAcquiredInProcessCost"],
+         "ResearchAndDevelopmentExpenseExcludingAcquiredInProcessCost",
+         "ResearchAndDevelopmentExpenseSoftwareExcludingAcquiredInProcessCost"],
         "USD",
     ),
     "selling_general_and_administrative": (
@@ -73,7 +74,8 @@ _CONCEPT_MAP: dict[str, tuple[list[str], str]] = {
         "USD",
     ),
     "income_from_operations": (
-        ["OperatingIncomeLoss"],
+        ["OperatingIncomeLoss",
+         "IncomeLossFromContinuingOperationsBeforeIncomeTaxesExtraordinaryItemsNoncontrollingInterest"],
         "USD",
     ),
     "net_income": (
@@ -107,7 +109,8 @@ _CONCEPT_MAP: dict[str, tuple[list[str], str]] = {
         "USD",
     ),
     "accounts_receivable_net": (
-        ["AccountsReceivableNetCurrent", "ReceivablesNetCurrent"],
+        ["AccountsReceivableNetCurrent", "ReceivablesNetCurrent",
+         "AccountsAndOtherReceivablesNetCurrent"],
         "USD",
     ),
     "total_current_assets": (
@@ -115,7 +118,8 @@ _CONCEPT_MAP: dict[str, tuple[list[str], str]] = {
         "USD",
     ),
     "property_and_equipment_net": (
-        ["PropertyPlantAndEquipmentNet"],
+        ["PropertyPlantAndEquipmentNet",
+         "PropertyPlantAndEquipmentAndFinanceLeaseRightOfUseAssetAfterAccumulatedDepreciationAndAmortization"],
         "USD",
     ),
     "total_assets": (
@@ -124,6 +128,7 @@ _CONCEPT_MAP: dict[str, tuple[list[str], str]] = {
     ),
     "accounts_payable_and_accrued": (
         ["AccountsPayableAndAccruedLiabilitiesCurrent",
+         "AccountsPayableAndOtherAccruedLiabilitiesCurrent",
          "AccountsPayableCurrent",
          "AccruedLiabilitiesCurrent"],
         "USD",
@@ -137,8 +142,8 @@ _CONCEPT_MAP: dict[str, tuple[list[str], str]] = {
         "USD",
     ),
     "total_equity": (
-        ["StockholdersEquity",
-         "StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest"],
+        ["StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest",
+         "StockholdersEquity"],
         "USD",
     ),
     # Cash flow
@@ -267,10 +272,20 @@ class XBRLExtractor:
             else:
                 missing.append(field_name)
 
-        # ── Compute total_liabilities if EDGAR doesn't tag it ────────────────
+        # ── Compute derived fields when not tagged directly ──────────────────
+        if "gross_profit" in missing and "revenue" in raw and "cost_of_revenue" in raw:
+            raw["gross_profit"] = raw["revenue"] - raw["cost_of_revenue"]
+            missing.remove("gross_profit")
+
         if "total_liabilities" in missing and "total_assets" in raw and "total_equity" in raw:
             raw["total_liabilities"] = raw["total_assets"] - raw["total_equity"]
             missing.remove("total_liabilities")
+
+        # Fix mezzanine-equity gap (e.g. redeemable NCI makes total_equity > assets - liabilities)
+        if all(k in raw for k in ("total_assets", "total_liabilities", "total_equity")):
+            implied_equity = raw["total_assets"] - raw["total_liabilities"]
+            if abs(implied_equity - raw["total_equity"]) > 500:
+                raw["total_equity"] = implied_equity
 
         # ── Validate required fields are present ─────────────────────────────
         required = {
@@ -309,7 +324,7 @@ class XBRLExtractor:
                 revenue=raw["revenue"],
                 cost_of_revenue=raw["cost_of_revenue"],
                 gross_profit=raw["gross_profit"],
-                research_and_development=raw["research_and_development"],
+                research_and_development=g("research_and_development"),
                 selling_general_and_administrative=g("selling_general_and_administrative"),
                 income_from_operations=raw["income_from_operations"],
                 net_income=raw["net_income"],

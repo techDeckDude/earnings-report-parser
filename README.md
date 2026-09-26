@@ -231,6 +231,7 @@ earnings-report-parser/
 ├── add_stock.py         # CLI: add a ticker to target_stocks, resolve its CIK, and scan its EDGAR filing history in one command
 ├── scan_filings.py      # CLI: scan EDGAR 10-Q history for all target stocks — shows count, date range, years before ingestion; --save writes to DB
 ├── ingest_xbrl.py       # CLI: ingest 10-Q filings for any ticker via EDGAR XBRL API (no file download)
+├── bulk_ingest.py       # CLI: ingest all target stocks with EDGAR XBRL data in one pass; logs per-ticker results and final summary
 ├── ingest_news.py       # CLI: fetch AI stock news via Claude (Anthropic SDK + web search), store in DB
 ├── scheduler.py         # Run ingest_news.py on a configurable interval (INGEST_INTERVAL_HOURS env var)
 ├── deploy.sh            # Deploy script: merge develop → main (code + build commits), tag, push to origin
