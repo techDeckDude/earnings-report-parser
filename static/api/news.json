@@ -2,6 +2,84 @@
   {
     "headlines": [
       {
+        "headline": "Top 3 Undervalued AI Stocks to Watch Amid Rising Treasury Yields \u2014 Oracle Among Names Highlighted",
+        "published_date": "2026-09-26",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Simply Wall St",
+        "stocks_mentioned": [
+          "ORCL"
+        ],
+        "summary": "Simply Wall St published a September 26 commentary highlighting undervalued AI infrastructure stocks, including Oracle, amid rising long-term Treasury yields. This is industry commentary with no confirmed or potential company-specific revenue impact \u2014 analyst opinion only, no new contract or earnings data disclosed.",
+        "url": "https://simplywall.st/stocks/us/software/nasdaq-adbe/adobe/news/top-3-ai-stocks-to-watch-in-september-2026",
+        "url_verified": true
+      },
+      {
+        "headline": "Micron's Sept. 30 Earnings Eyed as Biggest AI Memory Catalyst of the Year; Shares Up 247% YTD",
+        "published_date": "2026-09-26",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Yahoo Finance / 24/7 Wall St.",
+        "stocks_mentioned": [
+          "MU"
+        ],
+        "summary": "Multiple analysts and previews ahead of Micron's Sept. 30 fiscal Q4 2026 earnings report highlight expectations of ~$50.8B in revenue (a ~350% YoY jump) and EPS of ~$31. This is a potential upside event \u2014 results have not yet been reported or confirmed. Micron's Q3 2026 results (previously reported) already confirmed record revenue of $41.46B and non-GAAP EPS of $25.11.",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/dear-micron-stock-fans-mark-155319130.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Akamai Announces $11.6 Billion Multi-Year Agreement with Anthropic for AI Cloud Infrastructure",
+        "published_date": "2026-09-25",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Akamai / TechCrunch / Bloomberg",
+        "stocks_mentioned": [
+          "AKAM"
+        ],
+        "summary": "Confirmed: Akamai signed a binding $11.6 billion, seven-year contract with Anthropic for CPU cloud infrastructure \u2014 the largest deal in Akamai's history. This is a confirmed contractual commitment with disclosed value, representing direct confirmed future revenue for AKAM, though delivery and service conditions apply.",
+        "url": "https://techcrunch.com/2026/09/25/anthropic-to-pay-akamai-11-6-billion-over-seven-years-in-cloud-deal/",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Momentum Lifts Markets as Nasdaq and S&P 500 End Week Higher; Akamai Surges 15%",
+        "published_date": "2026-09-25",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "TheStreet / Motley Fool",
+        "stocks_mentioned": [
+          "AKAM"
+        ],
+        "summary": "Broad AI-driven market rally on Sept 25 lifted major indexes; Nasdaq and S&P 500 posted weekly gains. Macro market movement with no company-specific confirmed revenue or earnings impact beyond what is captured in the Akamai headline \u2014 rated Neutral.",
+        "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-25-2026",
+        "url_verified": true
+      },
+      {
+        "headline": "Microsoft Stock Jumps 4% After Revamping Copilot With Code Generation and Agentic AI Tools",
+        "published_date": "2026-09-25",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Yahoo Finance / Motley Fool",
+        "stocks_mentioned": [
+          "MSFT"
+        ],
+        "summary": "Microsoft unveiled a revamped Copilot with new code generation and agentic AI features; stock rose ~4%. Potential positive impact on enterprise AI product adoption and cloud demand, but revenue impact is not yet confirmed \u2014 score reflects potential upside.",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/stock-market-today-sept-25-214549821.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Akamai Announces $11.6 Billion Multi-Year Agreement with Anthropic to Support Growing AI Demand",
+        "published_date": "2026-09-25",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Akamai Technologies / Reuters / Bloomberg / TechCrunch",
+        "stocks_mentioned": [
+          "AKAM"
+        ],
+        "summary": "Confirmed closed contract: Akamai signed a seven-year, $11.6 billion cloud services deal with Anthropic (with option to expand to $20 billion), representing the largest contract in Akamai's history and a directly confirmed future revenue commitment \u2014 a confirmed upside to revenue.",
+        "url": "https://www.ir.akamai.com/news-releases/news-release-details/akamai-announces-116-billion-multi-year-agreement-anthropic",
+        "url_verified": true
+      },
+      {
         "headline": "Meta Stock Forecast: META Rally, AI Growth and Key Levels \u2014 Muse AI Agent Gains Millions of Users After Connect 2026 Event",
         "published_date": "2026-09-25",
         "sentiment_label": "Positive",
@@ -40,6 +118,19 @@
         ],
         "summary": "Macro/investment commentary podcast discussing NVDA, SNDK, and MCD. No confirmed or potential direct revenue or earnings impact on any named company \u2014 purely analytical/educational in nature.",
         "url": "https://www.tradingview.com/news/zacks:03b5956db094b:0-zacks-market-edge-highlights-mcdonald-s-sandisk-and-nvidia/",
+        "url_verified": true
+      },
+      {
+        "headline": "Anthropic to Pay Akamai $11.6 Billion Over Seven Years in Cloud Deal; Agreement Includes Warrant for Up to 5% of Akamai Stock",
+        "published_date": "2026-09-24",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "TechCrunch",
+        "stocks_mentioned": [
+          "AKAM"
+        ],
+        "summary": "Confirmed $11.6 billion contractual commitment from Anthropic to Akamai is a direct, confirmed future revenue event; the deal is the largest in Akamai's history and includes a warrant arrangement. Note: Akamai stated no impact to its 2026 revenue guidance, but the long-term revenue commitment is confirmed.",
+        "url": "https://techcrunch.com/2026/09/25/anthropic-to-pay-akamai-11-6-billion-over-seven-years-in-cloud-deal/",
         "url_verified": true
       },
       {
@@ -190,6 +281,68 @@
         "url_verified": true
       },
       {
+        "headline": "Nasdaq 100 Closes at First Record in Three Months, Propelled by AI-Investing Euphoria",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "AMD",
+          "INTC",
+          "QCOM",
+          "NVDA"
+        ],
+        "summary": "The Nasdaq 100 climbed to a new record high of 30,732 on September 22, its fifth straight session of gains and its first record since June. Intel surged 12%, AMD added ~10%, and Qualcomm gained more than 9%. This is a macro market index movement \u2014 no company-specific earnings beat or confirmed revenue impact was reported.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-22/us-stock-futures-drift-after-ai-driven-rally-oil-prices-slip",
+        "url_verified": true
+      },
+      {
+        "headline": "Samsung Co-Leads \u20ac200 Million Series A for Dutch AI-Inference Infrastructure Startup Euclyd",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Superpower Daily",
+        "stocks_mentioned": [
+          "SSNLF"
+        ],
+        "summary": "Samsung Electronics co-led a \u20ac200 million Series A round for Euclyd, a Dutch AI-inference infrastructure startup. The deal signals Samsung's potential expansion into AI inference infrastructure beyond hardware. This is a potential upside \u2014 the investment reflects strategic positioning, not confirmed revenue or earnings impact for Samsung.",
+        "url": "https://superpowerdaily.com/signals/funding",
+        "url_verified": false
+      },
+      {
+        "headline": "Snorkel AI Raises $350 Million Series E at $3.5 Billion Valuation",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Superpower Daily",
+        "stocks_mentioned": [],
+        "summary": "Snorkel AI closed a $350 million Series E led by Insight and S32 at a $3.5 billion valuation, disclosed on September 22, 2026. This is a potential upside signal for AI data infrastructure tooling \u2014 Snorkel AI is privately held, so no public ticker is directly impacted. No revenue confirmation; this is a funding round, not a confirmed revenue event.",
+        "url": "https://superpowerdaily.com/signals/funding",
+        "url_verified": false
+      },
+      {
+        "headline": "Go.AI Closes $85 Million Series A to Scale On-Premises AI Infrastructure for Regulated Industries",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Fintech Global",
+        "stocks_mentioned": [],
+        "summary": "Go.AI (private company, no public ticker) closed an $85M Series A led by Updata Partners for on-premises AI infrastructure targeting banks and healthcare providers. Funding round represents potential upside \u2014 money raised is not confirmed revenue.",
+        "url": "https://fintech.global/2026/09/22/go-ai-raises-85m-series-a-for-on-prem-ai-push/",
+        "url_verified": true
+      },
+      {
+        "headline": "Snorkel AI Raises $350 Million Series E at $3.5 Billion Valuation to Scale AI Training Data Platform",
+        "published_date": "2026-09-22",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TechCrunch / Yahoo Finance / Unite.AI",
+        "stocks_mentioned": [],
+        "summary": "Snorkel AI closed a $350M Series E (private company, no public ticker) led by Insight Partners and S32 at a $3.5B valuation, nearly tripling its worth in 17 months. Funding round is a potential upside signal for AI data infrastructure demand \u2014 money raised is not confirmed revenue.",
+        "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/",
+        "url_verified": true
+      },
+      {
         "headline": "Snorkel AI Raises $350 Million Series E at $3.5 Billion Valuation; Reports $375M Annualized Revenue Run Rate",
         "published_date": "2026-09-22",
         "sentiment_label": "Positive",
@@ -307,6 +460,34 @@
         "url_verified": true
       },
       {
+        "headline": "AMD Surpasses $1 Trillion Market Cap for the First Time as AI Chip Stocks Rally",
+        "published_date": "2026-09-21",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC / Yahoo Finance",
+        "stocks_mentioned": [
+          "AMD",
+          "NVDA",
+          "INTC"
+        ],
+        "summary": "AMD shares surged ~10% to a record intraday high of $615.52 on September 21, pushing its market cap above $1 trillion for the first time. This milestone reflects potential upside from AI data center demand, but no specific earnings beat or new contract was confirmed \u2014 it is a market-driven valuation event driven by investor confidence in AMD's AI chip growth trajectory.",
+        "url": "https://www.cnbc.com/2026/09/21/amd-stock-1-trillion-value.html",
+        "url_verified": true
+      },
+      {
+        "headline": "AMD Hits $1 Trillion Market Cap for the First Time, Becoming Fourth US Chipmaker to Reach the Milestone",
+        "published_date": "2026-09-21",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "CNBC / Semafor / GuruFocus",
+        "stocks_mentioned": [
+          "AMD"
+        ],
+        "summary": "AMD's stock surged ~10% on Sept 21, pushing its market cap past $1 trillion \u2014 a market valuation milestone, not a confirmed earnings or revenue event. The underlying data center revenue growth (107% YoY to $6.7B in Q2) was previously reported; the $1T cap crossing itself has no direct revenue or earnings impact.",
+        "url": "https://www.cnbc.com/2026/09/21/amd-stock-1-trillion-value.html",
+        "url_verified": true
+      },
+      {
         "headline": "Meta's Muse AI Agent Hits #1 on US App Store With 900K+ Downloads in Six Days, Surpassing ChatGPT",
         "published_date": "2026-09-21",
         "sentiment_label": "Positive",
@@ -408,12 +589,12 @@
       "score_distribution": {
         "-1": 4,
         "-2": 0,
-        "0": 5,
-        "1": 18,
-        "2": 1
+        "0": 9,
+        "1": 25,
+        "2": 4
       },
-      "total_headlines": 28,
-      "weighted_sentiment": 0.6
+      "total_headlines": 42,
+      "weighted_sentiment": 0.7
     },
     "week_end": "2026-09-27",
     "week_start": "2026-09-21"
@@ -617,6 +798,28 @@
         "url_verified": true
       },
       {
+        "headline": "AI Coding Startup Cognition Raises $2 Billion at $48 Billion Valuation; Run-Rate Revenue Climbs to Nearly $900 Million",
+        "published_date": "2026-09-08",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg / TechCrunch",
+        "stocks_mentioned": [],
+        "summary": "Cognition AI (private, no public ticker) raised $2B at a $48B valuation, led by a16z, Accel, and Founders Fund. Annualized run-rate revenue grew from $492M to ~$900M \u2014 showing strong revenue growth trajectory, but this is a private company funding round. Score is +1 (potential) since the raise itself is not confirmed revenue for any publicly listed stock.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-08/ai-startup-cognition-raises-2-billion-at-a-48-billion-value",
+        "url_verified": true
+      },
+      {
+        "headline": "Mistral AI Raises \u20ac3 Billion in Record European Tech Funding Round, Led by Samsung; Valued at \u20ac21 Billion",
+        "published_date": "2026-09-08",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TechCrunch / PYMNTS / HPC Wire",
+        "stocks_mentioned": [],
+        "summary": "Mistral AI (private, no public ticker) raised \u20ac3 billion (~$3.5B) in a Samsung-led Series D, the largest equity round ever by a European tech company. Funding is a potential upside signal for European sovereign AI \u2014 money raised is not confirmed revenue. Indirectly positive for Samsung (ticker: 005930.KS), though not a US-listed stock.",
+        "url": "https://techcrunch.com/2026/09/08/mistral-raises-e3b-as-sovereign-ai-becomes-big-business/",
+        "url_verified": true
+      },
+      {
         "headline": "Cognition AI Raises $2 Billion at $48 Billion Valuation; Run-Rate Revenue Jumps from $492M to $900M",
         "published_date": "2026-09-08",
         "sentiment_label": "Positive",
@@ -646,10 +849,10 @@
         "-1": 0,
         "-2": 0,
         "0": 1,
-        "1": 5,
+        "1": 7,
         "2": 3
       },
-      "total_headlines": 9,
+      "total_headlines": 11,
       "weighted_sentiment": 1.2
     },
     "week_end": "2026-09-13",
@@ -727,6 +930,19 @@
         "url_verified": true
       },
       {
+        "headline": "Nvidia Confirms $12.93 Billion Acquisition of Hugging Face, Moving Beyond Hardware Into AI Software Ecosystem",
+        "published_date": "2026-09-03",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TechCrunch / CNBC / NVIDIA Blog",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Nvidia confirmed a definitive agreement to acquire Hugging Face for $12.93 billion, pending regulatory approval expected to close in H1 2027. This is a signed agreement (potential strategic upside), not yet a closed deal \u2014 scored +1 as potential. Deal expands Nvidia's position in the AI software/platform stack but introduces regulatory risk.",
+        "url": "https://techcrunch.com/2026/09/03/nvidia-confirms-it-will-buy-hugging-face-for-12-9-billion/",
+        "url_verified": true
+      },
+      {
         "headline": "Nvidia Officially Agrees to Acquire Hugging Face for $12.9 Billion in AI Ecosystem Expansion",
         "published_date": "2026-09-03",
         "sentiment_label": "Positive",
@@ -773,10 +989,10 @@
         "-1": 0,
         "-2": 0,
         "0": 1,
-        "1": 5,
+        "1": 6,
         "2": 2
       },
-      "total_headlines": 8,
+      "total_headlines": 9,
       "weighted_sentiment": 1.1
     },
     "week_end": "2026-09-06",
