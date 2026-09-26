@@ -1,10 +1,306 @@
 [
   {
+    "name": "Apple Inc.",
+    "ticker": "AAPL"
+  },
+  {
+    "name": "ADOBE INC.",
+    "ticker": "ADBE"
+  },
+  {
+    "name": "ANALOG DEVICES INC",
+    "ticker": "ADI"
+  },
+  {
+    "name": "AEVA TECHNOLOGIES, INC.",
+    "ticker": "AEVA"
+  },
+  {
+    "name": "C3.ai, Inc.",
+    "ticker": "AI"
+  },
+  {
+    "name": "Astera Labs, Inc.",
+    "ticker": "ALAB"
+  },
+  {
+    "name": "ALLEGRO MICROSYSTEMS, INC.",
+    "ticker": "ALGM"
+  },
+  {
+    "name": "APPLIED MATERIALS INC /DE",
+    "ticker": "AMAT"
+  },
+  {
+    "name": "AMBARELLA, INC.",
+    "ticker": "AMBA"
+  },
+  {
+    "name": "ADVANCED MICRO DEVICES INC",
+    "ticker": "AMD"
+  },
+  {
+    "name": "AMKOR TECHNOLOGY, INC.",
+    "ticker": "AMKR"
+  },
+  {
+    "name": "AMAZON COM INC",
+    "ticker": "AMZN"
+  },
+  {
+    "name": "Arista Networks,\u00a0Inc.",
+    "ticker": "ANET"
+  },
+  {
+    "name": "AppLovin Corporation",
+    "ticker": "APP"
+  },
+  {
+    "name": "Broadcom Inc.",
+    "ticker": "AVGO"
+  },
+  {
+    "name": "BigBear.ai Holdings, Inc.",
+    "ticker": "BBAI"
+  },
+  {
+    "name": "Calix, Inc",
+    "ticker": "CALX"
+  },
+  {
+    "name": "COHERENT CORP.",
+    "ticker": "COHR"
+  },
+  {
+    "name": "Credo Technology Group Holding Ltd",
+    "ticker": "CRDO"
+  },
+  {
+    "name": "Salesforce, Inc.",
+    "ticker": "CRM"
+  },
+  {
+    "name": "CIRRUS LOGIC, INC.",
+    "ticker": "CRUS"
+  },
+  {
+    "name": "CrowdStrike Holdings, Inc.",
+    "ticker": "CRWD"
+  },
+  {
+    "name": "CISCO SYSTEMS, INC.",
+    "ticker": "CSCO"
+  },
+  {
+    "name": "Datadog, Inc.",
+    "ticker": "DDOG"
+  },
+  {
+    "name": "Dell Technologies Inc.",
+    "ticker": "DELL"
+  },
+  {
+    "name": "DOMO, INC.",
+    "ticker": "DOMO"
+  },
+  {
+    "name": "Entegris, Inc.",
+    "ticker": "ENTG"
+  },
+  {
+    "name": "EQUINIX, INC.",
+    "ticker": "EQIX"
+  },
+  {
+    "name": "ELASTIC N.V.",
+    "ticker": "ESTC"
+  },
+  {
+    "name": "Alphabet Inc.",
+    "ticker": "GOOGL"
+  },
+  {
+    "name": "GITLAB INC.",
+    "ticker": "GTLB"
+  },
+  {
+    "name": "HubSpot, Inc.",
+    "ticker": "HUBS"
+  },
+  {
+    "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+    "ticker": "IBM"
+  },
+  {
+    "name": "INTEL CORP",
+    "ticker": "INTC"
+  },
+  {
+    "name": "Intuitive Surgical, Inc.",
+    "ticker": "ISRG"
+  },
+  {
+    "name": "KLA Corporation",
+    "ticker": "KLAC"
+  },
+  {
+    "name": "LAM RESEARCH CORPORATION",
+    "ticker": "LRCX"
+  },
+  {
+    "name": "Lattice Semiconductor Corp",
+    "ticker": "LSCC"
+  },
+  {
+    "name": "Mobileye Global\u00a0Inc.",
+    "ticker": "MBLY"
+  },
+  {
+    "name": "MICROCHIP TECHNOLOGY INCORPORATED",
+    "ticker": "MCHP"
+  },
+  {
+    "name": "MONGODB, INC.",
+    "ticker": "MDB"
+  },
+  {
+    "name": "Meta Platforms, Inc.",
+    "ticker": "META"
+  },
+  {
+    "name": "Monolithic Power Systems, Inc.",
+    "ticker": "MPWR"
+  },
+  {
     "name": "MARVELL TECHNOLOGY, INC",
     "ticker": "MRVL"
   },
   {
+    "name": "MICROSOFT CORPORATION",
+    "ticker": "MSFT"
+  },
+  {
+    "name": "MACOM Technology Solutions Holdings, Inc.",
+    "ticker": "MTSI"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "ticker": "MU"
+  },
+  {
+    "name": "Cloudflare, Inc.",
+    "ticker": "NET"
+  },
+  {
+    "name": "ServiceNow, Inc.",
+    "ticker": "NOW"
+  },
+  {
+    "name": "NetApp, Inc.",
+    "ticker": "NTAP"
+  },
+  {
+    "name": "NVIDIA CORP",
+    "ticker": "NVDA"
+  },
+  {
+    "name": "NXP Semiconductors N.V.",
+    "ticker": "NXPI"
+  },
+  {
+    "name": "Okta, Inc.",
+    "ticker": "OKTA"
+  },
+  {
+    "name": "ON SEMICONDUCTOR CORPORATION",
+    "ticker": "ON"
+  },
+  {
+    "name": "ONTO INNOVATION INC.",
+    "ticker": "ONTO"
+  },
+  {
+    "name": "Palo Alto Networks, Inc",
+    "ticker": "PANW"
+  },
+  {
+    "name": "UiPath, Inc.",
+    "ticker": "PATH"
+  },
+  {
     "name": "Palantir Technologies Inc.",
     "ticker": "PLTR"
+  },
+  {
+    "name": "QUALCOMM INC/DE",
+    "ticker": "QCOM"
+  },
+  {
+    "name": "RIGETTI COMPUTING, INC.",
+    "ticker": "RGTI"
+  },
+  {
+    "name": "RECURSION PHARMACEUTICALS, INC.",
+    "ticker": "RXRX"
+  },
+  {
+    "name": "SENTINELONE, INC",
+    "ticker": "S"
+  },
+  {
+    "name": "Schrodinger, Inc.",
+    "ticker": "SDGR"
+  },
+  {
+    "name": "Super Micro Computer, Inc.",
+    "ticker": "SMCI"
+  },
+  {
+    "name": "Semtech Corporation",
+    "ticker": "SMTC"
+  },
+  {
+    "name": "SNOWFLAKE INC.",
+    "ticker": "SNOW"
+  },
+  {
+    "name": "SYNOPSYS INC",
+    "ticker": "SNPS"
+  },
+  {
+    "name": "TERADATA CORPORATION",
+    "ticker": "TDC"
+  },
+  {
+    "name": "Tesla, Inc.",
+    "ticker": "TSLA"
+  },
+  {
+    "name": "The Trade Desk, Inc.",
+    "ticker": "TTD"
+  },
+  {
+    "name": "TEXAS INSTRUMENTS INCORPORATED",
+    "ticker": "TXN"
+  },
+  {
+    "name": "Veeva Systems Inc.",
+    "ticker": "VEEV"
+  },
+  {
+    "name": "Veritone, Inc.",
+    "ticker": "VERI"
+  },
+  {
+    "name": "Vertiv Holdings Co",
+    "ticker": "VRT"
+  },
+  {
+    "name": "WOLFSPEED, INC.",
+    "ticker": "WOLF"
+  },
+  {
+    "name": "Zscaler Inc",
+    "ticker": "ZS"
   }
 ]

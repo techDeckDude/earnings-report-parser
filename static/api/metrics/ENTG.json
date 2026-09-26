@@ -1,0 +1,132 @@
+{
+  "data": {
+    "balance_sheet": {
+      "accounts_payable_and_accrued": [
+        209000.0,
+        242800.0
+      ],
+      "accounts_receivable_net": [
+        529500.0,
+        559100.0
+      ],
+      "cash_and_equivalents": [
+        442700.0,
+        353600.0
+      ],
+      "property_and_equipment_net": [
+        1636600.0,
+        1624500.0
+      ],
+      "total_assets": [
+        8475100.0,
+        8418500.0
+      ],
+      "total_current_assets": [
+        1786000.0,
+        1784900.0
+      ],
+      "total_current_liabilities": [
+        555600.0,
+        585400.0
+      ],
+      "total_equity": [
+        4049200.0,
+        4156200.0
+      ],
+      "total_liabilities": [
+        4425900.0,
+        4262300.0
+      ]
+    },
+    "cash_flow": {
+      "capex": [
+        41500.0,
+        80800.0
+      ],
+      "depreciation_and_amortization": [
+        34100.0,
+        34400.0
+      ],
+      "net_cash_from_financing": [
+        -61600.0,
+        -270100.0
+      ],
+      "net_cash_from_investing": [
+        -38400.0,
+        -74600.0
+      ],
+      "net_cash_from_operations": [
+        183000.0,
+        339200.0
+      ],
+      "net_income": [
+        92000.0,
+        93600.0
+      ],
+      "stock_based_compensation": [
+        16700.0,
+        35100.0
+      ]
+    },
+    "income_statement": {
+      "cost_of_revenue": [
+        431100.0,
+        463200.0
+      ],
+      "eps_basic": [
+        0.6,
+        0.61
+      ],
+      "eps_diluted": [
+        0.6,
+        0.61
+      ],
+      "gross_profit": [
+        380800.0,
+        420000.0
+      ],
+      "income_from_operations": [
+        141600.0,
+        164600.0
+      ],
+      "net_income": [
+        92000.0,
+        93600.0
+      ],
+      "research_and_development": [
+        75300.0,
+        82800.0
+      ],
+      "revenue": [
+        811900.0,
+        883200.0
+      ],
+      "selling_general_and_administrative": [
+        117600.0,
+        126500.0
+      ],
+      "shares_outstanding_basic": [
+        152300.0,
+        152800.0
+      ],
+      "shares_outstanding_diluted": [
+        153200.0,
+        153600.0
+      ]
+    }
+  },
+  "name": "Entegris, Inc.",
+  "periods": [
+    {
+      "id": 372,
+      "period": "Q1 2026",
+      "period_end_date": "2026-03-28"
+    },
+    {
+      "id": 373,
+      "period": "Q2 2026",
+      "period_end_date": "2026-06-27"
+    }
+  ],
+  "ticker": "ENTG"
+}
