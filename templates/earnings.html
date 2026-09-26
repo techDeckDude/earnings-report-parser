@@ -232,6 +232,20 @@
       font-size: 0.6rem; color: var(--text-3);
       letter-spacing: 0.06em; text-align: center; margin-top: 6px;
     }
+
+    /* ── QoQ analytics strip ── */
+    .analytics-strip { display: flex; gap: 24px; margin-bottom: 14px; align-items: flex-start; }
+    .analytics-stat { display: flex; flex-direction: column; gap: 2px; }
+    .analytics-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.58rem; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--text-3);
+    }
+    .analytics-value { font-family: "IBM Plex Mono", monospace; font-size: 0.92rem; font-weight: 600; }
+    .analytics-sub { font-family: "IBM Plex Mono", monospace; font-size: 0.6rem; color: var(--text-3); }
+    .analytics-pos { color: var(--green); }
+    .analytics-neg { color: #f97316; }
+    .analytics-neu { color: var(--text-2); }
     .axis-label { font-size: 10px; fill: var(--text-3); font-family: "IBM Plex Mono", monospace; }
     .grid-line { stroke: var(--border); stroke-width: 1; }
     .chart-line { fill: none; stroke: var(--green); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
@@ -304,6 +318,7 @@
       <div class="metric-pills" id="metricPills"></div>
       <div class="chart-wrap">
         <div class="chart-title" id="chartTitle">—</div>
+        <div id="chartAnalytics"></div>
         <div id="chartContainer"></div>
       </div>
     </div>
@@ -629,7 +644,49 @@ function selectMetric(metricId) {
   highlightRow(metricId);
   highlightPill(metricId);
   document.getElementById("chartTitle").textContent = m.label;
+
+  // ── QoQ analytics ─────────────────────────────────────────────────────────
+  const qoqChanges = [], qoqDeltas = [];
+  for (let i = 1; i < vals.length; i++) {
+    if (vals[i] !== null && vals[i-1] !== null && vals[i-1] !== 0) {
+      qoqChanges.push((vals[i] - vals[i-1]) / Math.abs(vals[i-1]) * 100);
+      qoqDeltas.push(vals[i] - vals[i-1]);
+    }
+  }
+  const avgQoQ    = qoqChanges.length ? qoqChanges.reduce((a, b) => a + b, 0) / qoqChanges.length : null;
+  const lastQoQ   = qoqChanges.at(-1) ?? null;
+  const lastDelta = qoqDeltas.at(-1)  ?? null;
+  const nonNullIdxs = vals.map((v, i) => v !== null ? i : null).filter(i => i !== null);
+  const prevPeriod  = nonNullIdxs.length >= 2 ? stockData.periods[nonNullIdxs.at(-2)].period : "";
+  const currPeriod  = nonNullIdxs.length >= 1 ? stockData.periods[nonNullIdxs.at(-1)].period : "";
+  renderAnalytics(m, avgQoQ, qoqChanges.length, lastQoQ, lastDelta, prevPeriod, currPeriod);
+
   drawChart(vals, m);
+}
+
+function renderAnalytics(m, avgQoQ, nPairs, lastQoQ, lastDelta, prevPeriod, currPeriod) {
+  const el = document.getElementById("chartAnalytics");
+  if (!el) return;
+
+  function chip(label, pct, sub1, sub2) {
+    const cls = pct === null ? "analytics-neu" : pct > 0 ? "analytics-pos" : pct < 0 ? "analytics-neg" : "analytics-neu";
+    const valStr = pct !== null ? `${pct > 0 ? "+" : ""}${fmtPct(pct)}` : "—";
+    return `<div class="analytics-stat">
+      <div class="analytics-label">${label}</div>
+      <div class="analytics-value ${cls}">${valStr}</div>
+      ${sub1 ? `<div class="analytics-sub">${sub1}</div>` : ""}
+      ${sub2 ? `<div class="analytics-sub">${sub2}</div>` : ""}
+    </div>`;
+  }
+
+  const deltaSub = (lastDelta !== null && m.fmt === "money")
+    ? `${lastDelta > 0 ? "+" : ""}${fmt(m, lastDelta)}` : "";
+  const periodSub = prevPeriod && currPeriod ? `${prevPeriod} → ${currPeriod}` : "";
+
+  el.innerHTML = `<div class="analytics-strip">
+    ${chip("Avg QoQ Change", avgQoQ, nPairs ? `${nPairs} quarter ${nPairs === 1 ? "pair" : "pairs"}` : "", "")}
+    ${chip("Last QoQ Change", lastQoQ, deltaSub, periodSub)}
+  </div>`;
 }
 
 // ── Chart ─────────────────────────────────────────────────────────────────────
