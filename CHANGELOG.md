@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-25** — Added `earliest_xbrl_period` column to `target_stocks`: records the oldest 10-Q period that EDGAR has structured XBRL data for, populated automatically by `ingest_xbrl.py` after each ingestion run
+
 - **2026-09-25** — Added Tier 1 EDGAR XBRL ingestion: `extractors/xbrl.py` maps US-GAAP concepts to `EarningsReport` using the EDGAR Company Facts API (no file download); `ingest_xbrl.py` CLI ingests all 10-Q filings for any XBRL filer in one command; `EarningsReport` gains an optional `extraction_source` audit field; ingested 26 quarters of AMD data (Q1 2018 – Q2 2026)
 
 - **2026-09-25** — Added `docs/ingestion-pipeline.md`: end-to-end documentation of the earnings ingestion pipeline covering EDGAR API discovery, the extractor Strategy pattern, Pydantic validation, database persistence, contract JSON, and the static build step

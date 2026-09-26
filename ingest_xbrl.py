@@ -19,7 +19,7 @@ try:
 except ImportError:
     pass
 
-from db import init_db, upsert_report
+from db import init_db, upsert_report, set_earliest_xbrl_period
 from edgar import get_cik, get_new_filings
 from extractors.xbrl import XBRLExtractor
 
@@ -44,6 +44,7 @@ def run(ticker: str, since_date: str | None = None, dry_run: bool = False) -> No
     print(f"  Entity: {facts.get('entityName', ticker)}")
 
     success, failed = 0, 0
+    earliest: str | None = None
     for filing in filings:
         try:
             report = extractor.extract(ticker, cik, filing.period_end, facts)
@@ -54,14 +55,21 @@ def run(ticker: str, since_date: str | None = None, dry_run: bool = False) -> No
                 upsert_report(conn, report)
                 print(f"  ✓ {report.period} ({filing.period_end}) — "
                       f"revenue={report.income_statement.revenue:,.0f}K")
+                if earliest is None or filing.period_end < earliest:
+                    earliest = filing.period_end
             success += 1
         except Exception as e:
             print(f"  ✗ {filing.period_end}: {e}")
             failed += 1
 
+    if not dry_run and earliest:
+        set_earliest_xbrl_period(conn, ticker, earliest)
+
     action = "Would ingest" if dry_run else "Ingested"
     print(f"\n{action} {success}/{len(filings)} filings for {ticker}"
           + (f" ({failed} failed)" if failed else ""))
+    if not dry_run and earliest:
+        print(f"Earliest XBRL period recorded: {earliest}")
 
 
 if __name__ == "__main__":
