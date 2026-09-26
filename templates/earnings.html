@@ -246,6 +246,7 @@
     .analytics-pos { color: var(--green); }
     .analytics-neg { color: #f97316; }
     .analytics-neu { color: var(--text-2); }
+    .analytics-divider { width: 0.5px; background: var(--border); align-self: stretch; margin: 0 8px; }
     .axis-label { font-size: 10px; fill: var(--text-3); font-family: "IBM Plex Mono", monospace; }
     .grid-line { stroke: var(--border); stroke-width: 1; }
     .chart-line { fill: none; stroke: var(--green); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
@@ -659,12 +660,37 @@ function selectMetric(metricId) {
   const nonNullIdxs = vals.map((v, i) => v !== null ? i : null).filter(i => i !== null);
   const prevPeriod  = nonNullIdxs.length >= 2 ? stockData.periods[nonNullIdxs.at(-2)].period : "";
   const currPeriod  = nonNullIdxs.length >= 1 ? stockData.periods[nonNullIdxs.at(-1)].period : "";
-  renderAnalytics(m, avgQoQ, qoqChanges.length, lastQoQ, lastDelta, prevPeriod, currPeriod);
+
+  // ── YoY analytics ─────────────────────────────────────────────────────────
+  const periodMap = {};
+  stockData.periods.forEach((p, i) => { periodMap[p.period] = i; });
+  const yoyChanges = [], yoyDeltas = [], yoyPrevs = [], yoyCurrs = [];
+  for (let i = 0; i < vals.length; i++) {
+    if (vals[i] === null) continue;
+    const match = stockData.periods[i].period.match(/^(Q\d)\s+(\d{4})$/);
+    if (!match) continue;
+    const prevYearStr = `${match[1]} ${parseInt(match[2]) - 1}`;
+    const prevIdx = periodMap[prevYearStr];
+    if (prevIdx === undefined || vals[prevIdx] === null || vals[prevIdx] === 0) continue;
+    yoyChanges.push((vals[i] - vals[prevIdx]) / Math.abs(vals[prevIdx]) * 100);
+    yoyDeltas.push(vals[i] - vals[prevIdx]);
+    yoyPrevs.push(prevYearStr);
+    yoyCurrs.push(stockData.periods[i].period);
+  }
+  const avgYoY       = yoyChanges.length ? yoyChanges.reduce((a, b) => a + b, 0) / yoyChanges.length : null;
+  const lastYoY      = yoyChanges.at(-1) ?? null;
+  const lastYoyDelta = yoyDeltas.at(-1) ?? null;
+  const lastYoyPrev  = yoyPrevs.at(-1) ?? "";
+  const lastYoyCurr  = yoyCurrs.at(-1) ?? "";
+
+  renderAnalytics(m, avgQoQ, qoqChanges.length, lastQoQ, lastDelta, prevPeriod, currPeriod,
+                     avgYoY, yoyChanges.length, lastYoY, lastYoyDelta, lastYoyPrev, lastYoyCurr);
 
   drawChart(vals, m);
 }
 
-function renderAnalytics(m, avgQoQ, nPairs, lastQoQ, lastDelta, prevPeriod, currPeriod) {
+function renderAnalytics(m, avgQoQ, nQoQ, lastQoQ, lastQoQDelta, prevPeriod, currPeriod,
+                            avgYoY, nYoY, lastYoY, lastYoyDelta, lastYoyPrev, lastYoyCurr) {
   const el = document.getElementById("chartAnalytics");
   if (!el) return;
 
@@ -679,13 +705,20 @@ function renderAnalytics(m, avgQoQ, nPairs, lastQoQ, lastDelta, prevPeriod, curr
     </div>`;
   }
 
-  const deltaSub = (lastDelta !== null && m.fmt === "money")
-    ? `${lastDelta > 0 ? "+" : ""}${fmt(m, lastDelta)}` : "";
-  const periodSub = prevPeriod && currPeriod ? `${prevPeriod} → ${currPeriod}` : "";
+  const qoqDeltaSub = (lastQoQDelta !== null && m.fmt === "money")
+    ? `${lastQoQDelta > 0 ? "+" : ""}${fmt(m, lastQoQDelta)}` : "";
+  const qoqPeriodSub = prevPeriod && currPeriod ? `${prevPeriod} → ${currPeriod}` : "";
+
+  const yoyDeltaSub = (lastYoyDelta !== null && m.fmt === "money")
+    ? `${lastYoyDelta > 0 ? "+" : ""}${fmt(m, lastYoyDelta)}` : "";
+  const yoyPeriodSub = lastYoyPrev && lastYoyCurr ? `${lastYoyPrev} → ${lastYoyCurr}` : "";
 
   el.innerHTML = `<div class="analytics-strip">
-    ${chip("Avg QoQ Change", avgQoQ, nPairs ? `${nPairs} quarter ${nPairs === 1 ? "pair" : "pairs"}` : "", "")}
-    ${chip("Last QoQ Change", lastQoQ, deltaSub, periodSub)}
+    ${chip("Avg QoQ Change", avgQoQ, nQoQ ? `${nQoQ} quarter ${nQoQ === 1 ? "pair" : "pairs"}` : "", "")}
+    ${chip("Last QoQ Change", lastQoQ, qoqDeltaSub, qoqPeriodSub)}
+    <div class="analytics-divider"></div>
+    ${chip("Avg YoY Change", avgYoY, nYoY ? `${nYoY} year ${nYoY === 1 ? "pair" : "pairs"}` : "", "")}
+    ${chip("Last YoY Change", lastYoY, yoyDeltaSub, yoyPeriodSub)}
   </div>`;
 }
 
