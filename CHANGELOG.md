@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-25** — Added `add_stock.py`: single command to add a ticker to `target_stocks`, resolve its CIK from EDGAR, and scan its full 10-Q filing history — idempotent on existing tickers; documented the full add-stock → scan → ingest → deploy workflow in `docs/ingestion-pipeline.md`
+
 - **2026-09-25** — Added `scan_filings.py`: scans EDGAR submission history for all tickers in `target_stocks` and reports 10-Q count, oldest period, newest period, and years of history before any ingestion runs; `--save` writes the oldest period to `target_stocks.earliest_xbrl_period`; run against all 92 tickers with CIKs
 
 - **2026-09-25** — Added `earliest_xbrl_period` column to `target_stocks`: records the oldest 10-Q period that EDGAR has structured XBRL data for, populated automatically by `ingest_xbrl.py` after each ingestion run

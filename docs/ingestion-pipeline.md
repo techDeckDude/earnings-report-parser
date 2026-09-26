@@ -195,10 +195,94 @@ SELECT ticker, name, category, cik, ingested FROM target_stocks;
 | `category` | AI sector grouping (e.g. `Infrastructure`, `Applications`) |
 | `cik` | Cached EDGAR CIK — populated on first `get_cik()` call |
 | `ingested` | `1` once `upsert_report()` has run successfully for this ticker |
+| `earliest_xbrl_period` | Oldest 10-Q period_end EDGAR has on record — populated by `scan_filings.py` or `add_stock.py` |
 
 Use the built-in skills to query the queue:
 - `/list-ingested-stocks` — what's already in the database
 - `/pending-ingestion` — what's still waiting
+
+---
+
+## Adding a New Stock
+
+> Run these steps in order. Each one gates the next.
+
+### Step 1 — Add the stock and scan its history
+
+`add_stock.py` handles the first three steps in one command: it inserts the ticker into `target_stocks`, resolves and caches the CIK from EDGAR, and scans the full submission history to populate `earliest_xbrl_period`.
+
+```bash
+python3 add_stock.py NVDA "NVIDIA Corporation" --category "AI Infrastructure / Semiconductors"
+```
+
+Expected output:
+
+```
+Added NVDA — NVIDIA Corporation [AI Infrastructure / Semiconductors]
+Resolving CIK...
+  CIK: 0001045810
+Scanning EDGAR 10-Q history...
+  18 10-Q filings found
+  Oldest: 2020-10-25
+  Newest: 2026-07-26
+  Coverage: ~5.7 years
+
+Ready to ingest. Run:
+  python3 ingest_xbrl.py NVDA --since 2020-10-25
+```
+
+Available categories:
+- `AI Infrastructure / Semiconductors`
+- `AI Pure Plays`
+- `AI-Powered Software`
+- `Autonomous / Robotics / Vision`
+- `Cloud & Hyperscalers`
+- `Data & Analytics`
+- `Networking / Hardware`
+- `Semiconductors / EDA / IP`
+- `Specialty AI / Healthcare AI`
+
+If `add_stock.py` reports "No 10-Q filings found", the company is a **foreign private issuer** (files Form 20-F, not 10-Q). The XBRL extractor does not support these — ARM, ASML, INVZ, and MNDY fall into this category.
+
+### Step 2 — Preview what will be ingested (optional)
+
+Run `ingest_xbrl.py` with `--dry-run` to validate all periods extract cleanly before writing to the database:
+
+```bash
+python3 ingest_xbrl.py NVDA --since 2020-10-25 --dry-run
+```
+
+A clean dry-run prints one line per quarter with the extracted revenue. Any failures print the period and error reason.
+
+### Step 3 — Ingest
+
+```bash
+python3 ingest_xbrl.py NVDA --since 2020-10-25
+```
+
+On completion, `target_stocks.ingested` is flipped to `1` and the data is live in the Flask app at `GET /api/metrics/NVDA`.
+
+### Step 4 — Rebuild the static site (before deploy)
+
+The live Flask app reads from the database directly, so Step 3 is enough to see the data in development. Before deploying to production, rebuild the static files:
+
+```bash
+./deploy.sh
+```
+
+`deploy.sh` runs `generate.py` as part of the release, which picks up the new ticker automatically.
+
+---
+
+### Rescanning all stocks
+
+To refresh `earliest_xbrl_period` for every ticker (e.g. after adding many stocks at once, or to pick up newly public companies):
+
+```bash
+python3 scan_filings.py --save
+```
+
+This re-scans all tickers that have a CIK and updates their oldest period in the database. It does not fetch any financial data.
 
 ---
 
