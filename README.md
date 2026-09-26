@@ -228,6 +228,7 @@ earnings-report-parser/
 ├── app.py               # Flask web server and API; injects STATIC_BUILD flag via context processor
 ├── generate.py          # Build static/ from live Flask (sets STATIC_BUILD=true, uses test client)
 ├── verify.py            # Diff live API responses against static JSON files; exits 1 on mismatch
+├── scan_filings.py      # CLI: scan EDGAR 10-Q history for all target stocks — shows count, date range, years before ingestion; --save writes to DB
 ├── ingest_xbrl.py       # CLI: ingest 10-Q filings for any ticker via EDGAR XBRL API (no file download)
 ├── ingest_news.py       # CLI: fetch AI stock news via Claude (Anthropic SDK + web search), store in DB
 ├── scheduler.py         # Run ingest_news.py on a configurable interval (INGEST_INTERVAL_HOURS env var)

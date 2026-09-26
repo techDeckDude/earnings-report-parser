@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-25** — Added `scan_filings.py`: scans EDGAR submission history for all tickers in `target_stocks` and reports 10-Q count, oldest period, newest period, and years of history before any ingestion runs; `--save` writes the oldest period to `target_stocks.earliest_xbrl_period`; run against all 92 tickers with CIKs
+
 - **2026-09-25** — Added `earliest_xbrl_period` column to `target_stocks`: records the oldest 10-Q period that EDGAR has structured XBRL data for, populated automatically by `ingest_xbrl.py` after each ingestion run
 
 - **2026-09-25** — Added Tier 1 EDGAR XBRL ingestion: `extractors/xbrl.py` maps US-GAAP concepts to `EarningsReport` using the EDGAR Company Facts API (no file download); `ingest_xbrl.py` CLI ingests all 10-Q filings for any XBRL filer in one command; `EarningsReport` gains an optional `extraction_source` audit field; ingested 26 quarters of AMD data (Q1 2018 – Q2 2026)
