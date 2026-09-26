@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-25** — Improved earnings page layout: ticker selector and metric pills are now always a single horizontally-scrollable row (not a wrapping grid) at any viewport width; metric chart now uses a scrollable split-SVG layout (fixed y-axis, scrollable chart area with 44px minimum spacing per quarter) so data points are never squished regardless of how many quarters are loaded
+
 - **2026-09-25** — Added `bulk_ingest.py`: ingests all target stocks with EDGAR XBRL data in one pass; logs per-ticker progress, success/failure counts, and a final summary; 1,359 quarters ingested across 80 tickers in the first run. Extended `extractors/xbrl.py` with additional US-GAAP concept aliases (combined PPE+lease asset, alternative AR and AP names, software-specific R&D, pre-tax income as OI fallback) and two computed fallbacks (gross profit = revenue − COGS; balance sheet equity = assets − liabilities when mezzanine items cause a mismatch); made `research_and_development` optional in `IncomeStatement` to support companies like Amazon that do not separately tag R&D.
 
 - **2026-09-25** — Added `add_stock.py`: single command to add a ticker to `target_stocks`, resolve its CIK from EDGAR, and scan its full 10-Q filing history — idempotent on existing tickers; documented the full add-stock → scan → ingest → deploy workflow in `docs/ingestion-pipeline.md`
