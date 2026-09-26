@@ -2,6 +2,22 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-25** — Improved earnings page layout: ticker selector and metric pills are now always a single horizontally-scrollable row (not a wrapping grid) at any viewport width; metric chart now uses a scrollable split-SVG layout (fixed y-axis, scrollable chart area with 44px minimum spacing per quarter) so data points are never squished regardless of how many quarters are loaded
+
+- **2026-09-25** — Added `bulk_ingest.py`: ingests all target stocks with EDGAR XBRL data in one pass; logs per-ticker progress, success/failure counts, and a final summary; 1,359 quarters ingested across 80 tickers in the first run. Extended `extractors/xbrl.py` with additional US-GAAP concept aliases (combined PPE+lease asset, alternative AR and AP names, software-specific R&D, pre-tax income as OI fallback) and two computed fallbacks (gross profit = revenue − COGS; balance sheet equity = assets − liabilities when mezzanine items cause a mismatch); made `research_and_development` optional in `IncomeStatement` to support companies like Amazon that do not separately tag R&D.
+
+- **2026-09-25** — Added `add_stock.py`: single command to add a ticker to `target_stocks`, resolve its CIK from EDGAR, and scan its full 10-Q filing history — idempotent on existing tickers; documented the full add-stock → scan → ingest → deploy workflow in `docs/ingestion-pipeline.md`
+
+- **2026-09-25** — Added `scan_filings.py`: scans EDGAR submission history for all tickers in `target_stocks` and reports 10-Q count, oldest period, newest period, and years of history before any ingestion runs; `--save` writes the oldest period to `target_stocks.earliest_xbrl_period`; run against all 92 tickers with CIKs
+
+- **2026-09-25** — Added `earliest_xbrl_period` column to `target_stocks`: records the oldest 10-Q period that EDGAR has structured XBRL data for, populated automatically by `ingest_xbrl.py` after each ingestion run
+
+- **2026-09-25** — Added Tier 1 EDGAR XBRL ingestion: `extractors/xbrl.py` maps US-GAAP concepts to `EarningsReport` using the EDGAR Company Facts API (no file download); `ingest_xbrl.py` CLI ingests all 10-Q filings for any XBRL filer in one command; `EarningsReport` gains an optional `extraction_source` audit field; ingested 26 quarters of AMD data (Q1 2018 – Q2 2026)
+
+- **2026-09-25** — Added `docs/ingestion-pipeline.md`: end-to-end documentation of the earnings ingestion pipeline covering EDGAR API discovery, the extractor Strategy pattern, Pydantic validation, database persistence, contract JSON, and the static build step
+
+- **2026-09-25** — Added `deploy.sh`: automates the full release workflow — merges develop → main (code commit), runs the static build, commits and tags it with a timestamp version (e.g. `build-20260925-143022`), merges the build commit → main, then pushes and switches back to develop
+
 - **2026-09-25** — Fixed sentiment chart y-axis alignment: replaced absolute-positioned overlay SVG with a two-SVG flexbox layout (fixed left SVG for labels, scrollable right SVG for chart content) so the axis labels are always pixel-perfectly aligned with the grid lines regardless of scroll position
 
 - **2026-09-22** — Added `scheduler.py`: runs `ingest_news.py` automatically on a configurable interval (`INGEST_INTERVAL_HOURS` env var, default 24); process named `earnings-news-scheduler` for easy identification in Activity Monitor; skips API call if already up to date for the day; supports background execution via `nohup`

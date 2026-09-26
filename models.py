@@ -9,7 +9,7 @@ class IncomeStatement(BaseModel):
     revenue: float = Field(description="Total revenue in thousands USD")
     cost_of_revenue: float
     gross_profit: float
-    research_and_development: float
+    research_and_development: Optional[float] = None
     income_from_operations: float
     net_income: float
     eps_basic: float
@@ -109,6 +109,7 @@ class EarningsReport(BaseModel):
     period_end_date: date
     filing_type: str
     units: str = "thousands"
+    extraction_source: Optional[str] = None
     income_statement: IncomeStatement
     balance_sheet: BalanceSheet
     cash_flow: CashFlow

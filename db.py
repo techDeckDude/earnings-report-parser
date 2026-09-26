@@ -137,12 +137,14 @@ _MIGRATIONS_SQLITE = [
     "ALTER TABLE target_stocks ADD COLUMN cik TEXT",
     "ALTER TABLE news_articles ADD COLUMN published_date DATE",
     "UPDATE news_articles SET published_date = (SELECT DATE(run_at) FROM news_runs WHERE news_runs.id = news_articles.run_id) WHERE published_date IS NULL",
+    "ALTER TABLE target_stocks ADD COLUMN earliest_xbrl_period DATE",
 ]
 
 _MIGRATIONS_PG = [
     "ALTER TABLE target_stocks ADD COLUMN IF NOT EXISTS cik TEXT",
     "ALTER TABLE news_articles ADD COLUMN IF NOT EXISTS published_date DATE",
     "UPDATE news_articles SET published_date = nr.run_at::date FROM news_runs nr WHERE nr.id = news_articles.run_id AND news_articles.published_date IS NULL",
+    "ALTER TABLE target_stocks ADD COLUMN IF NOT EXISTS earliest_xbrl_period DATE",
 ]
 
 
@@ -275,6 +277,26 @@ def upsert_report(conn, report: EarningsReport) -> int:
 
     conn.commit()
     return report_id
+
+
+def set_earliest_xbrl_period(conn, ticker: str, period_end: str) -> None:
+    """Record the oldest period_end date successfully extracted via EDGAR XBRL for a ticker."""
+    P = _ph(conn)
+    existing = _execute(
+        conn,
+        f"SELECT earliest_xbrl_period FROM target_stocks WHERE ticker = {P}",
+        (ticker,),
+    ).fetchone()
+    if existing is None:
+        return  # ticker not in target_stocks — nothing to update
+    current = existing["earliest_xbrl_period"]
+    if current is None or period_end < str(current):
+        _execute(
+            conn,
+            f"UPDATE target_stocks SET earliest_xbrl_period = {P} WHERE ticker = {P}",
+            (period_end, ticker),
+        )
+        conn.commit()
 
 
 def query_report(conn, ticker: str, period: str) -> dict:
