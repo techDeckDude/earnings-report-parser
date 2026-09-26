@@ -661,21 +661,33 @@ function selectMetric(metricId) {
   const prevPeriod  = nonNullIdxs.length >= 2 ? stockData.periods[nonNullIdxs.at(-2)].period : "";
   const currPeriod  = nonNullIdxs.length >= 1 ? stockData.periods[nonNullIdxs.at(-1)].period : "";
 
-  // ── YoY analytics ─────────────────────────────────────────────────────────
-  const periodMap = {};
-  stockData.periods.forEach((p, i) => { periodMap[p.period] = i; });
-  const yoyChanges = [], yoyDeltas = [], yoyPrevs = [], yoyCurrs = [];
+  // ── YoY analytics (annual totals of complete years) ───────────────────────
+  const yearSums = {}, yearCounts = {};
   for (let i = 0; i < vals.length; i++) {
     if (vals[i] === null) continue;
-    const match = stockData.periods[i].period.match(/^(Q\d)\s+(\d{4})$/);
+    const match = stockData.periods[i].period.match(/^Q\d\s+(\d{4})$/);
     if (!match) continue;
-    const prevYearStr = `${match[1]} ${parseInt(match[2]) - 1}`;
-    const prevIdx = periodMap[prevYearStr];
-    if (prevIdx === undefined || vals[prevIdx] === null || vals[prevIdx] === 0) continue;
-    yoyChanges.push((vals[i] - vals[prevIdx]) / Math.abs(vals[prevIdx]) * 100);
-    yoyDeltas.push(vals[i] - vals[prevIdx]);
-    yoyPrevs.push(prevYearStr);
-    yoyCurrs.push(stockData.periods[i].period);
+    const yr = match[1];
+    yearSums[yr]   = (yearSums[yr]   || 0) + vals[i];
+    yearCounts[yr] = (yearCounts[yr] || 0) + 1;
+  }
+  // Compare consecutive years with the same quarter count (apples-to-apples);
+  // pct metrics use avg instead of sum
+  const sortedYears = Object.keys(yearSums).sort();
+  const yearVals = {};
+  sortedYears.forEach(yr => {
+    yearVals[yr] = m.fmt === "pct" ? yearSums[yr] / yearCounts[yr] : yearSums[yr];
+  });
+  const yoyChanges = [], yoyDeltas = [], yoyPrevs = [], yoyCurrs = [];
+  for (let i = 1; i < sortedYears.length; i++) {
+    const prevYr = sortedYears[i - 1], currYr = sortedYears[i];
+    if (yearCounts[prevYr] !== yearCounts[currYr]) continue;
+    const prev = yearVals[prevYr], curr = yearVals[currYr];
+    if (prev === 0) continue;
+    yoyChanges.push((curr - prev) / Math.abs(prev) * 100);
+    yoyDeltas.push(curr - prev);
+    yoyPrevs.push(prevYr);
+    yoyCurrs.push(currYr);
   }
   const avgYoY       = yoyChanges.length ? yoyChanges.reduce((a, b) => a + b, 0) / yoyChanges.length : null;
   const lastYoY      = yoyChanges.at(-1) ?? null;
