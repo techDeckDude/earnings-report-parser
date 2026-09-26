@@ -262,7 +262,13 @@
     #chartTooltip .tt-source { color: var(--text-3); font-size: 0.62rem; margin-top: 4px; }
 
     /* ── Chart scroll wrapper ── */
-    #chartSvgContainer {
+    .chart-flex {
+      display: flex;
+      align-items: flex-start;
+    }
+    .chart-scroll-inner {
+      flex: 1;
+      min-width: 0;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
@@ -375,22 +381,6 @@ function navigate(delta) {
   }, 180);
 }
 
-// Swipe support
-(function() {
-  let tx = 0, ty = 0;
-  const el = document.getElementById('carouselContent');
-  el.addEventListener('touchstart', e => {
-    tx = e.touches[0].clientX;
-    ty = e.touches[0].clientY;
-  }, { passive: true });
-  el.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - tx;
-    const dy = e.changedTouches[0].clientY - ty;
-    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
-      navigate(dx < 0 ? 1 : -1); // swipe left = older, swipe right = newer
-    }
-  }, { passive: true });
-})();
 
 document.getElementById('prevWeek').addEventListener('click', () => navigate(1));
 document.getElementById('nextWeek').addEventListener('click', () => navigate(-1));
@@ -405,7 +395,7 @@ function buildChart(NEWS) {
   const scrollable = W > containerW;
   const mobile = containerW < 520;
   const H = mobile ? 240 : 210;
-  const PAD = { top: 20, right: mobile ? 16 : 28, bottom: mobile ? 44 : 44, left: mobile ? 40 : 44 };
+  const PAD = { top: 12, right: mobile ? 8 : 12, bottom: 36, left: mobile ? 30 : 36 };
   const dotR = mobile ? 7 : 5;
   const IW = W - PAD.left - PAD.right;
   const IH = H - PAD.top - PAD.bottom;
@@ -450,26 +440,59 @@ function buildChart(NEWS) {
       onmouseleave="hideChartTip()" />`;
   }).join("");
 
-  const svgWidth = scrollable ? `${W}px` : '100%';
-  document.getElementById("chartSvgContainer").innerHTML = `
-    <svg id="sentimentChart" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:${svgWidth};min-width:${W}px;display:block">
-      <defs>
-        <clipPath id="clipAbove">
-          <rect x="${PAD.left - 1}" y="${PAD.top}" width="${IW + 2}" height="${zeroY - PAD.top}" />
-        </clipPath>
-        <clipPath id="clipBelow">
-          <rect x="${PAD.left - 1}" y="${zeroY}" width="${IW + 2}" height="${PAD.top + IH - zeroY + 1}" />
-        </clipPath>
-      </defs>
-      ${gridLines}
-      ${yLabels}
-      ${xLabels}
-      <path d="${areaD}" fill="#00e664" fill-opacity="0.12" clip-path="url(#clipAbove)" />
-      <path d="${areaD}" fill="#ef4444" fill-opacity="0.14" clip-path="url(#clipBelow)" />
-      <polyline fill="none" stroke="#00e664" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
-        points="${pts.map(p => p.join(",")).join(" ")}" />
-      ${dots}
-    </svg>`;
+  const rightW = W - PAD.left;
+
+  if (scrollable) {
+    document.getElementById("chartSvgContainer").innerHTML = `
+      <div class="chart-flex">
+        <svg aria-hidden="true" style="display:block;flex-shrink:0;border-right:0.5px solid var(--border)"
+             width="${PAD.left}" height="${H}" viewBox="0 0 ${PAD.left} ${H}">
+          ${yLabels}
+        </svg>
+        <div class="chart-scroll-inner">
+          <svg id="sentimentChart" viewBox="${PAD.left} 0 ${rightW} ${H}"
+               xmlns="http://www.w3.org/2000/svg" style="width:${rightW}px;min-width:${rightW}px;display:block">
+            <defs>
+              <clipPath id="clipAbove">
+                <rect x="${PAD.left - 1}" y="${PAD.top}" width="${IW + 2}" height="${zeroY - PAD.top}" />
+              </clipPath>
+              <clipPath id="clipBelow">
+                <rect x="${PAD.left - 1}" y="${zeroY}" width="${IW + 2}" height="${PAD.top + IH - zeroY + 1}" />
+              </clipPath>
+            </defs>
+            ${gridLines}
+            ${xLabels}
+            <path d="${areaD}" fill="#00e664" fill-opacity="0.12" clip-path="url(#clipAbove)" />
+            <path d="${areaD}" fill="#ef4444" fill-opacity="0.14" clip-path="url(#clipBelow)" />
+            <polyline fill="none" stroke="#00e664" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+              points="${pts.map(p => p.join(",")).join(" ")}" />
+            ${dots}
+          </svg>
+        </div>
+      </div>`;
+  } else {
+    document.getElementById("chartSvgContainer").innerHTML = `
+      <div class="chart-scroll-inner">
+        <svg id="sentimentChart" viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block">
+          <defs>
+            <clipPath id="clipAbove">
+              <rect x="${PAD.left - 1}" y="${PAD.top}" width="${IW + 2}" height="${zeroY - PAD.top}" />
+            </clipPath>
+            <clipPath id="clipBelow">
+              <rect x="${PAD.left - 1}" y="${zeroY}" width="${IW + 2}" height="${PAD.top + IH - zeroY + 1}" />
+            </clipPath>
+          </defs>
+          ${gridLines}
+          ${yLabels}
+          ${xLabels}
+          <path d="${areaD}" fill="#00e664" fill-opacity="0.12" clip-path="url(#clipAbove)" />
+          <path d="${areaD}" fill="#ef4444" fill-opacity="0.14" clip-path="url(#clipBelow)" />
+          <polyline fill="none" stroke="#00e664" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+            points="${pts.map(p => p.join(",")).join(" ")}" />
+          ${dots}
+        </svg>
+      </div>`;
+  }
 
   // Show/hide scroll hint
   const existingHint = container.parentElement.querySelector('.chart-scroll-hint');

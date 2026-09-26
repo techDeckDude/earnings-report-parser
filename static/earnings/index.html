@@ -117,7 +117,12 @@
     }
 
     /* ── Ticker selector ── */
-    .ticker-selector { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .ticker-selector {
+      display: flex; gap: 8px; flex-wrap: nowrap;
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; margin-bottom: 32px; padding-bottom: 2px;
+    }
+    .ticker-selector::-webkit-scrollbar { display: none; }
     .ticker-btn {
       background: var(--bg-card); color: var(--text-3);
       border: 0.5px solid var(--border);
@@ -174,7 +179,12 @@
 
     /* ── Chart section ── */
     .chart-section { display: flex; flex-direction: column; gap: 16px; }
-    .metric-pills { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+    .metric-pills {
+      display: flex; flex-wrap: nowrap; gap: 6px; align-items: center;
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; padding-bottom: 2px;
+    }
+    .metric-pills::-webkit-scrollbar { display: none; }
     .pill-group-sep { width: 0.5px; height: 16px; background: var(--border); margin: 0 2px; flex-shrink: 0; }
 
     .pill-btn {
@@ -195,7 +205,19 @@
       color: var(--text-2); margin-bottom: 12px;
     }
 
-    #chart { overflow: visible; }
+    /* ── Chart scroll (news-page pattern) ── */
+    .chart-flex { display: flex; align-items: flex-start; }
+    .chart-scroll-inner {
+      flex: 1; min-width: 0;
+      overflow-x: auto; -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .chart-scroll-inner::-webkit-scrollbar { display: none; }
+    .chart-scroll-hint {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.6rem; color: var(--text-3);
+      letter-spacing: 0.06em; text-align: center; margin-top: 6px;
+    }
     .axis-label { font-size: 10px; fill: var(--text-3); font-family: "IBM Plex Mono", monospace; }
     .grid-line { stroke: var(--border); stroke-width: 1; }
     .chart-line { fill: none; stroke: var(--green); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
@@ -214,6 +236,32 @@
     #tooltip .tt-val { color: var(--green); font-weight: 600; font-size: 0.88rem; }
 
     .empty { color: var(--text-3); font-size: 0.875rem; padding: 40px 0; text-align: center; }
+
+    /* ── Mobile ─────────────────────────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      body { padding: 20px 16px; }
+
+      .topnav {
+        margin: -20px -16px 20px;
+        padding: 0 12px;
+      }
+      .topnav a { padding: 12px 14px; }
+
+      h1 { font-size: 1.3rem; }
+      .page-header { margin-bottom: 18px; gap: 8px; }
+
+      /* Tighter spacing on small screens */
+      .ticker-selector { margin-bottom: 20px; }
+      .ticker-btn { padding: 5px 11px; }
+      .card { padding: 14px 14px; margin-bottom: 12px; }
+
+      /* Table: tighter label + data columns */
+      td.label-cell, th.label-col { min-width: 130px; width: 130px; font-size: 0.78rem; }
+      td.num-cell, td.null-cell, td.derived-cell { min-width: 72px; font-size: 0.78rem; }
+      th:not(.label-col) { min-width: 72px; }
+      td { padding: 8px 10px; }
+      td.label-cell { padding: 8px 10px; }
+    }
   </style>
 </head>
 <body>
@@ -238,7 +286,7 @@
       <div class="metric-pills" id="metricPills"></div>
       <div class="chart-wrap">
         <div class="chart-title" id="chartTitle">—</div>
-        <svg id="chart" style="width:100%;display:block"></svg>
+        <div id="chartContainer"></div>
       </div>
     </div>
   </div>
@@ -418,6 +466,8 @@ async function selectTicker(ticker) {
   document.querySelectorAll(".ticker-btn").forEach(b =>
     b.classList.toggle("active", b.dataset.ticker === ticker)
   );
+  const activeBtn = document.querySelector(".ticker-btn.active");
+  if (activeBtn) activeBtn.scrollIntoView({ block: "nearest", inline: "center" });
   history.replaceState(null, "", `?ticker=${ticker}`);
 
   stockData = await fetch(`/api/metrics/${ticker}${API_EXT}`).then(r => r.json());
@@ -503,7 +553,7 @@ function buildPills() {
 function highlightPill(metricId) {
   document.querySelectorAll(".pill-btn").forEach(b => b.classList.remove("active"));
   const pill = document.getElementById(`pill-${metricId}`);
-  if (pill) { pill.classList.add("active"); pill.scrollIntoView({ block: "nearest" }); }
+  if (pill) { pill.classList.add("active"); pill.scrollIntoView({ block: "nearest", inline: "center" }); }
 }
 
 // ── Select metric ─────────────────────────────────────────────────────────────
@@ -527,25 +577,30 @@ function selectMetric(metricId) {
 
 function drawChart(vals, metricDef) {
   const periods = stockData.periods;
-  const svg = document.getElementById("chart");
+  const container = document.getElementById("chartContainer");
 
-  const W = Math.max(260, Math.floor(svg.getBoundingClientRect().width));
-  const mobile = W < 520;
+  const containerW = Math.max(260, Math.floor(container.getBoundingClientRect().width));
+  const mobile = containerW < 520;
   const H = mobile ? 260 : 220;
   const PAD = { top: 16, right: mobile ? 12 : 20, bottom: mobile ? 48 : 44, left: 68 };
-  const IW = W - PAD.left - PAD.right;
-  const IH = H - PAD.top - PAD.bottom;
   const dotR = mobile ? 7 : 5;
-
-  svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
-  svg.setAttribute("height", H);
 
   // Filter out null entries
   const points = vals.map((v, i) => ({ v, p: periods[i] })).filter(x => x.v !== null);
   if (!points.length) {
-    svg.innerHTML = `<text x="${W/2}" y="${H/2}" text-anchor="middle" fill="#444" font-size="13" font-family="IBM Plex Mono, monospace">No data</text>`;
+    container.innerHTML = `<svg style="width:100%;display:block" height="${H}">
+      <text x="50%" y="50%" text-anchor="middle" fill="#444" font-size="13" font-family="IBM Plex Mono, monospace">No data</text>
+    </svg>`;
     return;
   }
+
+  // Ensure minimum spacing per quarter so dots are never squished
+  const MIN_SPACING = Math.max(44, Math.ceil(containerW / 8));
+  const W = Math.max(containerW, points.length * MIN_SPACING);
+  const scrollable = W > containerW;
+
+  const IW = W - PAD.left - PAD.right;
+  const IH = H - PAD.top - PAD.bottom;
 
   const rawVals = points.map(x => x.v);
   const minV = Math.min(...rawVals);
@@ -571,25 +626,47 @@ function drawChart(vals, metricDef) {
     yLabels += `<text class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${fmt(metricDef, v) || v.toFixed(1)}</text>`;
   }
 
-  // X-labels
-  const step = points.length <= 8 ? 1 : Math.ceil(points.length / 8);
+  // X-labels: show every Nth so they don't overlap
+  const step = points.length <= 12 ? 1 : Math.ceil(points.length / 12);
   let xLabels = "";
   points.forEach((pt, i) => {
     if (i % step !== 0 && i !== points.length - 1) return;
     xLabels += `<text class="axis-label" x="${xPos(i)}" y="${H - PAD.bottom + 16}" text-anchor="middle">${pt.p.period}</text>`;
   });
 
-  // Line
+  // Line + dots
   const path = points.map((pt, i) => `${i === 0 ? "M" : "L"} ${xPos(i)},${yPos(pt.v)}`).join(" ");
-
-  // Dots
   const dots = points.map((pt, i) =>
     `<circle class="chart-dot" cx="${xPos(i)}" cy="${yPos(pt.v)}" r="${dotR}"
       onmouseenter="showTip(event,'${pt.p.period}','${fmt(metricDef, pt.v)}')"
       onmouseleave="hideTip()" />`
   ).join("");
 
-  svg.innerHTML = `${grid}${yLabels}${xLabels}<path class="chart-line" d="${path}" />${dots}`;
+  const chartContent = `${grid}${xLabels}<path class="chart-line" d="${path}" />${dots}`;
+
+  if (scrollable) {
+    // Fixed y-axis SVG + scrollable chart SVG (news page pattern)
+    const rightW = W - PAD.left;
+    container.innerHTML = `
+      <div class="chart-flex">
+        <svg aria-hidden="true" style="display:block;flex-shrink:0;border-right:0.5px solid var(--border)"
+             width="${PAD.left}" height="${H}" viewBox="0 0 ${PAD.left} ${H}">
+          ${yLabels}
+        </svg>
+        <div class="chart-scroll-inner">
+          <svg viewBox="${PAD.left} 0 ${rightW} ${H}"
+               style="width:${rightW}px;min-width:${rightW}px;display:block;overflow:visible">
+            ${chartContent}
+          </svg>
+        </div>
+      </div>
+      <div class="chart-scroll-hint">← scroll →</div>`;
+  } else {
+    container.innerHTML = `
+      <svg viewBox="0 0 ${W} ${H}" style="width:100%;display:block;overflow:visible">
+        ${yLabels}${chartContent}
+      </svg>`;
+  }
 }
 
 // ── Tooltip ───────────────────────────────────────────────────────────────────
@@ -603,7 +680,7 @@ function showTip(e, period, val) {
   tip.style.top  = (e.clientY - 36) + "px";
 }
 function hideTip() { document.getElementById("tooltip").style.opacity = "0"; }
-document.getElementById("chart").addEventListener("mousemove", e => {
+document.getElementById("chartContainer").addEventListener("mousemove", e => {
   const tip = document.getElementById("tooltip");
   if (tip.style.opacity === "1") {
     tip.style.left = (e.clientX + 14) + "px";
