@@ -116,7 +116,21 @@
       letter-spacing: 0.08em; text-transform: uppercase;
     }
 
-    /* ── Ticker selector ── */
+    /* ── Ticker search + selector ── */
+    .ticker-search-wrap { margin-bottom: 10px; }
+    .ticker-search {
+      background: var(--bg-card); border: 0.5px solid var(--border);
+      color: var(--text-1); caret-color: var(--green);
+      font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+      padding: 7px 12px; border-radius: 4px; outline: none; width: 200px;
+      transition: border-color 0.15s;
+    }
+    .ticker-search::placeholder { color: var(--text-3); }
+    .ticker-search:focus { border-color: var(--green-line); }
+    .ticker-search-count {
+      font-family: "IBM Plex Mono", monospace; font-size: 0.62rem;
+      color: var(--text-3); margin-left: 10px; letter-spacing: 0.04em;
+    }
     .ticker-selector {
       display: flex; gap: 8px; flex-wrap: nowrap;
       overflow-x: auto; -webkit-overflow-scrolling: touch;
@@ -277,6 +291,10 @@
     <span class="company-name" id="companyName"></span>
   </div>
 
+  <div class="ticker-search-wrap">
+    <input type="text" id="tickerSearch" class="ticker-search" placeholder="/ search tickers" autocomplete="off" spellcheck="false">
+    <span class="ticker-search-count" id="tickerSearchCount"></span>
+  </div>
   <div class="ticker-selector" id="tickerSelector"></div>
 
   <!-- Chart -->
@@ -459,6 +477,47 @@ function buildTickerSelector(tickers) {
   el.innerHTML = tickers.map(t =>
     `<button class="ticker-btn" data-ticker="${t.ticker}" onclick="selectTicker('${t.ticker}')">${t.ticker}</button>`
   ).join("");
+
+  // ── Search / filter ──────────────────────────────────────────────────────
+  const input = document.getElementById("tickerSearch");
+  const countEl = document.getElementById("tickerSearchCount");
+  const total = tickers.length;
+
+  function applyFilter() {
+    const q = input.value.trim().toUpperCase();
+    const buttons = document.querySelectorAll(".ticker-btn");
+    let shown = 0;
+    buttons.forEach(btn => {
+      const match = !q || btn.dataset.ticker.includes(q);
+      btn.style.display = match ? "" : "none";
+      if (match) shown++;
+    });
+    countEl.textContent = q ? `${shown} / ${total}` : "";
+  }
+
+  input.addEventListener("input", applyFilter);
+
+  input.addEventListener("keydown", e => {
+    if (e.key === "Escape") {
+      input.value = "";
+      applyFilter();
+      input.blur();
+    }
+    // Enter: select first visible ticker
+    if (e.key === "Enter") {
+      const first = document.querySelector(".ticker-btn:not([style*='none'])");
+      if (first) { first.click(); input.blur(); }
+    }
+  });
+
+  // Press "/" anywhere on the page to focus the search
+  document.addEventListener("keydown", e => {
+    if (e.key === "/" && document.activeElement !== input && document.activeElement.tagName !== "INPUT") {
+      e.preventDefault();
+      input.focus();
+      input.select();
+    }
+  });
 }
 
 async function selectTicker(ticker) {
