@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-27** — Migrated database backend from SQLite to PostgreSQL running in Docker on a Mac Mini, reachable over Tailscale; app.py now uses `%s` placeholders correctly for Postgres; all 76 companies, 1,346 reports, and 36,012 financial metrics migrated; SQLite remains as a local fallback when `DB_HOST` is unset
+
 - **2026-09-26** — Extended analytics strip on the earnings metric chart with Year-over-Year stats: now shows four chips — Avg QoQ, Last QoQ, Avg YoY, and Last YoY — each with period labels and absolute delta (money metrics); YoY compares annual totals (sum of all quarters per year, averaged for percentage metrics) across consecutive years with the same quarter count; a divider separates the QoQ and YoY groups; all four update dynamically on every ticker and metric switch
 
 - **2026-09-26** — Added QoQ analytics strip to the earnings metric chart: shows average quarter-over-quarter % change (across all non-null pairs) and most recent QoQ % change (with absolute delta for money metrics and the two period labels); updates dynamically on every ticker and metric switch

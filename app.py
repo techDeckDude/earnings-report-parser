@@ -2,7 +2,7 @@ from __future__ import annotations
 import os
 from flask import Flask, jsonify, render_template, request
 
-from db import init_db, _execute, get_latest_news, get_all_news_runs, get_news_by_week
+from db import init_db, _execute, _ph, _is_pg, get_latest_news, get_all_news_runs, get_news_by_week
 
 app = Flask(__name__)
 _conn = None
@@ -67,11 +67,12 @@ def tickers():
 @app.route("/api/metrics/<ticker>")
 def metrics(ticker):
     conn = get_db()
-    periods = _execute(conn, """
+    ph = _ph(conn)
+    periods = _execute(conn, f"""
         SELECT er.id, er.period, er.period_end_date
         FROM earnings_reports er
         JOIN companies c ON er.company_id = c.id
-        WHERE c.ticker = ?
+        WHERE c.ticker = {ph}
         ORDER BY er.period_end_date
     """, (ticker.upper(),)).fetchall()
 
@@ -79,7 +80,7 @@ def metrics(ticker):
         return jsonify({"error": "Ticker not found"}), 404
 
     report_ids = [p["id"] for p in periods]
-    placeholders = ",".join("?" * len(report_ids))
+    placeholders = ",".join([ph] * len(report_ids))
     rows = _execute(conn, f"""
         SELECT report_id, statement, metric_name, value
         FROM financial_metrics
@@ -96,7 +97,7 @@ def metrics(ticker):
             pivot[s][m] = {}
         pivot[s][m][r["report_id"]] = r["value"]
 
-    company = _execute(conn, "SELECT name FROM companies WHERE ticker = ?",
+    company = _execute(conn, f"SELECT name FROM companies WHERE ticker = {ph}",
                        (ticker.upper(),)).fetchone()
 
     return jsonify({
