@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-29** — Charts now start scrolled to the most recent data; scroll left to view earlier periods
+
 - **2026-09-29** — Fixed mobile scroll jump on the earnings page: the resize handler now ignores height-only resize events (iOS Safari address bar collapsing/expanding during scroll), which previously triggered a chart redraw that snapped the page back to the chart section
 
 - **2026-09-29** — Added stock comparison mode to the earnings page: a SINGLE/COMPARE toggle switches between the existing single-stock view and a new two-stock compare view with autocomplete search inputs, a grouped bar chart (green = Stock A, blue = Stock B), and a y-axis that rescales dynamically as the user scrolls so bars in the current viewport always fill the chart height; also added `docs/postgres-ops.md` with a runbook for diagnosing and resolving Postgres idle-in-transaction blocking

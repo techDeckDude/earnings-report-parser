@@ -1022,7 +1022,10 @@ function drawCompareChart(metricDef) {
   _chartRenderState = { type: 'compare', metricDef, allPeriods, ptsA, ptsB, groupSpacing, PAD, H, IH };
   if (scrollable) {
     const scrollEl = container.querySelector('.chart-scroll-inner');
-    if (scrollEl) attachScrollRescale(scrollEl);
+    if (scrollEl) {
+      scrollEl.scrollLeft = scrollEl.scrollWidth;
+      attachScrollRescale(scrollEl);
+    }
   }
 }
 
@@ -1318,7 +1321,10 @@ function drawChart(vals, metricDef) {
   _chartRenderState = { type: 'single', metricDef, points, PAD, H, IH, W, n: points.length, IW };
   if (scrollable) {
     const scrollEl = container.querySelector('.chart-scroll-inner');
-    if (scrollEl) attachScrollRescale(scrollEl);
+    if (scrollEl) {
+      scrollEl.scrollLeft = scrollEl.scrollWidth;
+      attachScrollRescale(scrollEl);
+    }
   }
 }
 
