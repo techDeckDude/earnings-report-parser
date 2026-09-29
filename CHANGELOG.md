@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-29** — Fixed stale Postgres connection: `get_db()` now pings the connection before each request and calls `init_db()` to reconnect if it dropped, eliminating the `connection already closed` 500s that required restarting Flask
+
 - **2026-09-29** — Charts now start scrolled to the most recent data; scroll left to view earlier periods
 
 - **2026-09-29** — Fixed mobile scroll jump on the earnings page: the resize handler now ignores height-only resize events (iOS Safari address bar collapsing/expanding during scroll), which previously triggered a chart redraw that snapped the page back to the chart section
