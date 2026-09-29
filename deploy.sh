@@ -51,6 +51,7 @@ git checkout develop
 # ── Step 2: Run static build on develop ──────────────────────────────────────
 echo ""
 echo "==> [2/4] Building static files..."
+set -a; [ -f .env ] && source .env; set +a
 python3 generate.py
 
 # ── Step 3: Commit + tag the build on develop ────────────────────────────────
