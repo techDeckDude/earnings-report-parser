@@ -135,7 +135,7 @@ The S3 key format is `{ticker}/{filing_type}/FY{year}Q{quarter}.json` (e.g. `PLT
 A Flask web server that reads from the SQLite database and renders two interactive pages at `http://localhost:5001`.
 
 **Routes:**
-- **`GET /`** — earnings page (`earnings.html`): ticker search filter (press `/` to focus, `Enter` to jump to first match, `Esc` to clear) above a horizontally-scrollable ticker selector; scrollable metric pill row; scrollable metric line chart with a QoQ analytics strip (avg QoQ % change + most recent QoQ % change with period labels and absolute delta); and a full quarterly metrics table
+- **`GET /`** — earnings page (`earnings.html`): **Single mode** — ticker search filter (press `/` to focus, `Enter` to jump to first match, `Esc` to clear) above a horizontally-scrollable ticker selector; scrollable metric pill row; metric chart with a BAR/LINE toggle (bar view uses a per-bar gradient from medium emerald for low values to deep forest green for high values; line view uses the original dots-and-line design) plus a QoQ/YoY analytics strip; and a full quarterly metrics table. **Compare mode** — two autocomplete search inputs (one per stock) each with a selected-ticker chip; a grouped bar chart showing both stocks' metrics side by side per period (green = Stock A, blue = Stock B); the y-axis rescales dynamically as the user scrolls so that only the currently visible bars determine the scale, keeping small-cap and large-cap stocks visually comparable across the timeline
 - **`GET /api/revenue`** — revenue records for all companies as JSON
 - **`GET /api/tickers`** — list of all known ticker symbols and company names
 - **`GET /api/metrics/<ticker>`** — all financial metrics for a ticker, pivoted to `{statement: {metric_name: [value_per_period]}}` ordered by `period_end_date`
@@ -275,6 +275,7 @@ earnings-report-parser/
 ├── docs/
 │   ├── ingestion-pipeline.md          # Full walkthrough of the earnings ingestion pipeline (EDGAR → extract → validate → DB → static build)
 │   ├── aws-deployment.md              # Plan for deploying to S3 + EC2 + RDS
+│   ├── postgres-ops.md                # Postgres operations runbook: diagnosing idle-in-transaction blocking, terminating stuck connections, prevention
 │   └── architecture-diagram-8-22-26.png  # Visual architecture diagram
 ├── loader.py            # Load a contract JSON from S3 or local path into the DB
 ├── experimental/
