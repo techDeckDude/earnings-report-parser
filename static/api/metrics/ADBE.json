@@ -658,114 +658,114 @@
   "name": "ADOBE INC.",
   "periods": [
     {
-      "id": 895,
+      "id": 813,
       "period": "Q3 2018",
-      "period_end_date": "2018-08-31"
+      "period_end_date": "Fri, 31 Aug 2018 00:00:00 GMT"
     },
     {
-      "id": 896,
+      "id": 814,
       "period": "Q1 2020",
-      "period_end_date": "2020-02-28"
+      "period_end_date": "Fri, 28 Feb 2020 00:00:00 GMT"
     },
     {
-      "id": 897,
+      "id": 815,
       "period": "Q2 2020",
-      "period_end_date": "2020-05-29"
+      "period_end_date": "Fri, 29 May 2020 00:00:00 GMT"
     },
     {
-      "id": 898,
+      "id": 816,
       "period": "Q3 2020",
-      "period_end_date": "2020-08-28"
+      "period_end_date": "Fri, 28 Aug 2020 00:00:00 GMT"
     },
     {
-      "id": 899,
+      "id": 817,
       "period": "Q1 2021",
-      "period_end_date": "2021-03-05"
+      "period_end_date": "Fri, 05 Mar 2021 00:00:00 GMT"
     },
     {
-      "id": 900,
+      "id": 818,
       "period": "Q2 2021",
-      "period_end_date": "2021-06-04"
+      "period_end_date": "Fri, 04 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 901,
+      "id": 819,
       "period": "Q3 2021",
-      "period_end_date": "2021-09-03"
+      "period_end_date": "Fri, 03 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 902,
+      "id": 820,
       "period": "Q1 2022",
-      "period_end_date": "2022-03-04"
+      "period_end_date": "Fri, 04 Mar 2022 00:00:00 GMT"
     },
     {
-      "id": 903,
+      "id": 821,
       "period": "Q2 2022",
-      "period_end_date": "2022-06-03"
+      "period_end_date": "Fri, 03 Jun 2022 00:00:00 GMT"
     },
     {
-      "id": 904,
+      "id": 822,
       "period": "Q3 2022",
-      "period_end_date": "2022-09-02"
+      "period_end_date": "Fri, 02 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 905,
+      "id": 823,
       "period": "Q1 2023",
-      "period_end_date": "2023-03-03"
+      "period_end_date": "Fri, 03 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 906,
+      "id": 824,
       "period": "Q2 2023",
-      "period_end_date": "2023-06-02"
+      "period_end_date": "Fri, 02 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 907,
+      "id": 825,
       "period": "Q3 2023",
-      "period_end_date": "2023-09-01"
+      "period_end_date": "Fri, 01 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 908,
+      "id": 826,
       "period": "Q1 2024",
-      "period_end_date": "2024-03-01"
+      "period_end_date": "Fri, 01 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 909,
+      "id": 827,
       "period": "Q2 2024",
-      "period_end_date": "2024-05-31"
+      "period_end_date": "Fri, 31 May 2024 00:00:00 GMT"
     },
     {
-      "id": 910,
+      "id": 828,
       "period": "Q3 2024",
-      "period_end_date": "2024-08-30"
+      "period_end_date": "Fri, 30 Aug 2024 00:00:00 GMT"
     },
     {
-      "id": 911,
+      "id": 829,
       "period": "Q1 2025",
-      "period_end_date": "2025-02-28"
+      "period_end_date": "Fri, 28 Feb 2025 00:00:00 GMT"
     },
     {
-      "id": 912,
+      "id": 830,
       "period": "Q2 2025",
-      "period_end_date": "2025-05-30"
+      "period_end_date": "Fri, 30 May 2025 00:00:00 GMT"
     },
     {
-      "id": 913,
+      "id": 831,
       "period": "Q3 2025",
-      "period_end_date": "2025-08-29"
+      "period_end_date": "Fri, 29 Aug 2025 00:00:00 GMT"
     },
     {
-      "id": 914,
+      "id": 832,
       "period": "Q1 2026",
-      "period_end_date": "2026-02-27"
+      "period_end_date": "Fri, 27 Feb 2026 00:00:00 GMT"
     },
     {
-      "id": 915,
+      "id": 833,
       "period": "Q2 2026",
-      "period_end_date": "2026-05-29"
+      "period_end_date": "Fri, 29 May 2026 00:00:00 GMT"
     },
     {
-      "id": 916,
+      "id": 834,
       "period": "Q3 2026",
-      "period_end_date": "2026-08-28"
+      "period_end_date": "Fri, 28 Aug 2026 00:00:00 GMT"
     }
   ],
   "ticker": "ADBE"

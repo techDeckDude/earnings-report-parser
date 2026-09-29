@@ -253,39 +253,39 @@
   "name": "Astera Labs, Inc.",
   "periods": [
     {
-      "id": 134,
+      "id": 129,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-30"
+      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
+    },
+    {
+      "id": 130,
+      "period": "Q3 2024",
+      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
+    },
+    {
+      "id": 131,
+      "period": "Q1 2025",
+      "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT"
+    },
+    {
+      "id": 132,
+      "period": "Q2 2025",
+      "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT"
+    },
+    {
+      "id": 133,
+      "period": "Q3 2025",
+      "period_end_date": "Tue, 30 Sep 2025 00:00:00 GMT"
+    },
+    {
+      "id": 134,
+      "period": "Q1 2026",
+      "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT"
     },
     {
       "id": 135,
-      "period": "Q3 2024",
-      "period_end_date": "2024-09-30"
-    },
-    {
-      "id": 136,
-      "period": "Q1 2025",
-      "period_end_date": "2025-03-31"
-    },
-    {
-      "id": 137,
-      "period": "Q2 2025",
-      "period_end_date": "2025-06-30"
-    },
-    {
-      "id": 138,
-      "period": "Q3 2025",
-      "period_end_date": "2025-09-30"
-    },
-    {
-      "id": 139,
-      "period": "Q1 2026",
-      "period_end_date": "2026-03-31"
-    },
-    {
-      "id": 140,
       "period": "Q2 2026",
-      "period_end_date": "2026-06-30"
+      "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "ALAB"

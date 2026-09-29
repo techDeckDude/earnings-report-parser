@@ -550,94 +550,94 @@
   "name": "WOLFSPEED, INC.",
   "periods": [
     {
-      "id": 844,
+      "id": 796,
       "period": "Q1 2021",
-      "period_end_date": "2020-09-27"
+      "period_end_date": "Sun, 27 Sep 2020 00:00:00 GMT"
     },
     {
-      "id": 2088,
+      "id": 1231,
       "period": "Q2 2021",
-      "period_end_date": "2020-12-27"
+      "period_end_date": "Sun, 27 Dec 2020 00:00:00 GMT"
     },
     {
-      "id": 2089,
+      "id": 1232,
       "period": "Q3 2021",
-      "period_end_date": "2021-03-28"
+      "period_end_date": "Sun, 28 Mar 2021 00:00:00 GMT"
     },
     {
-      "id": 2090,
+      "id": 1233,
       "period": "Q1 2022",
-      "period_end_date": "2021-09-26"
+      "period_end_date": "Sun, 26 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 2091,
+      "id": 1234,
       "period": "Q2 2022",
-      "period_end_date": "2021-12-26"
+      "period_end_date": "Sun, 26 Dec 2021 00:00:00 GMT"
     },
     {
-      "id": 2092,
+      "id": 1235,
       "period": "Q3 2022",
-      "period_end_date": "2022-03-27"
+      "period_end_date": "Sun, 27 Mar 2022 00:00:00 GMT"
     },
     {
-      "id": 2093,
+      "id": 1236,
       "period": "Q1 2023",
-      "period_end_date": "2022-09-25"
+      "period_end_date": "Sun, 25 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 2094,
+      "id": 1237,
       "period": "Q2 2023",
-      "period_end_date": "2022-12-25"
+      "period_end_date": "Sun, 25 Dec 2022 00:00:00 GMT"
     },
     {
-      "id": 2095,
+      "id": 1238,
       "period": "Q3 2023",
-      "period_end_date": "2023-03-26"
+      "period_end_date": "Sun, 26 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 2096,
+      "id": 1239,
       "period": "Q1 2024",
-      "period_end_date": "2023-09-24"
+      "period_end_date": "Sun, 24 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 2097,
+      "id": 1240,
       "period": "Q2 2024",
-      "period_end_date": "2023-12-31"
+      "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT"
     },
     {
-      "id": 2098,
+      "id": 1241,
       "period": "Q3 2024",
-      "period_end_date": "2024-03-31"
+      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 2099,
+      "id": 1242,
       "period": "Q1 2025",
-      "period_end_date": "2024-09-29"
+      "period_end_date": "Sun, 29 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 2100,
+      "id": 1243,
       "period": "Q2 2025",
-      "period_end_date": "2024-12-29"
+      "period_end_date": "Sun, 29 Dec 2024 00:00:00 GMT"
     },
     {
-      "id": 2101,
+      "id": 1244,
       "period": "Q3 2025",
-      "period_end_date": "2025-03-30"
+      "period_end_date": "Sun, 30 Mar 2025 00:00:00 GMT"
     },
     {
-      "id": 2102,
+      "id": 1245,
       "period": "Q1 2026",
-      "period_end_date": "2025-09-28"
+      "period_end_date": "Sun, 28 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 2103,
+      "id": 1246,
       "period": "Q2 2026",
-      "period_end_date": "2025-12-28"
+      "period_end_date": "Sun, 28 Dec 2025 00:00:00 GMT"
     },
     {
-      "id": 2104,
+      "id": 1247,
       "period": "Q3 2026",
-      "period_end_date": "2026-03-29"
+      "period_end_date": "Sun, 29 Mar 2026 00:00:00 GMT"
     }
   ],
   "ticker": "WOLF"

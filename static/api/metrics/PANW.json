@@ -496,84 +496,84 @@
   "name": "Palo Alto Networks, Inc",
   "periods": [
     {
-      "id": 663,
+      "id": 618,
       "period": "Q3 2021",
-      "period_end_date": "2021-04-30"
+      "period_end_date": "Fri, 30 Apr 2021 00:00:00 GMT"
     },
     {
-      "id": 664,
+      "id": 619,
       "period": "Q1 2022",
-      "period_end_date": "2021-10-31"
+      "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 665,
+      "id": 620,
       "period": "Q2 2022",
-      "period_end_date": "2022-01-31"
+      "period_end_date": "Mon, 31 Jan 2022 00:00:00 GMT"
     },
     {
-      "id": 666,
+      "id": 621,
       "period": "Q3 2022",
-      "period_end_date": "2022-04-30"
+      "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 667,
+      "id": 622,
       "period": "Q1 2023",
-      "period_end_date": "2022-10-31"
+      "period_end_date": "Mon, 31 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 668,
+      "id": 623,
       "period": "Q2 2023",
-      "period_end_date": "2023-01-31"
+      "period_end_date": "Tue, 31 Jan 2023 00:00:00 GMT"
     },
     {
-      "id": 669,
+      "id": 624,
       "period": "Q3 2023",
-      "period_end_date": "2023-04-30"
+      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 670,
+      "id": 625,
       "period": "Q1 2024",
-      "period_end_date": "2023-10-31"
+      "period_end_date": "Tue, 31 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 671,
+      "id": 626,
       "period": "Q2 2024",
-      "period_end_date": "2024-01-31"
+      "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT"
     },
     {
-      "id": 672,
+      "id": 627,
       "period": "Q3 2024",
-      "period_end_date": "2024-04-30"
+      "period_end_date": "Tue, 30 Apr 2024 00:00:00 GMT"
     },
     {
-      "id": 673,
+      "id": 628,
       "period": "Q1 2025",
-      "period_end_date": "2024-10-31"
+      "period_end_date": "Thu, 31 Oct 2024 00:00:00 GMT"
     },
     {
-      "id": 674,
+      "id": 629,
       "period": "Q2 2025",
-      "period_end_date": "2025-01-31"
+      "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT"
     },
     {
-      "id": 675,
+      "id": 630,
       "period": "Q3 2025",
-      "period_end_date": "2025-04-30"
+      "period_end_date": "Wed, 30 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 676,
+      "id": 631,
       "period": "Q1 2026",
-      "period_end_date": "2025-10-31"
+      "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 677,
+      "id": 632,
       "period": "Q2 2026",
-      "period_end_date": "2026-01-31"
+      "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT"
     },
     {
-      "id": 678,
+      "id": 633,
       "period": "Q3 2026",
-      "period_end_date": "2026-04-30"
+      "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT"
     }
   ],
   "ticker": "PANW"

@@ -496,84 +496,84 @@
   "name": "CrowdStrike Holdings, Inc.",
   "periods": [
     {
-      "id": 1251,
+      "id": 914,
       "period": "Q1 2021",
-      "period_end_date": "2021-04-30"
+      "period_end_date": "Fri, 30 Apr 2021 00:00:00 GMT"
     },
     {
-      "id": 1252,
+      "id": 915,
       "period": "Q2 2021",
-      "period_end_date": "2021-07-31"
+      "period_end_date": "Sat, 31 Jul 2021 00:00:00 GMT"
     },
     {
-      "id": 1253,
+      "id": 916,
       "period": "Q3 2021",
-      "period_end_date": "2021-10-31"
+      "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 1254,
+      "id": 917,
       "period": "Q1 2023",
-      "period_end_date": "2022-04-30"
+      "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 1255,
+      "id": 918,
       "period": "Q2 2023",
-      "period_end_date": "2022-07-31"
+      "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 1256,
+      "id": 919,
       "period": "Q3 2023",
-      "period_end_date": "2022-10-31"
+      "period_end_date": "Mon, 31 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 1257,
+      "id": 920,
       "period": "Q1 2024",
-      "period_end_date": "2023-04-30"
+      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 1258,
+      "id": 921,
       "period": "Q2 2024",
-      "period_end_date": "2023-07-31"
+      "period_end_date": "Mon, 31 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 1259,
+      "id": 922,
       "period": "Q3 2024",
-      "period_end_date": "2023-10-31"
+      "period_end_date": "Tue, 31 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 1261,
+      "id": 924,
       "period": "Q2 2025",
-      "period_end_date": "2024-07-31"
+      "period_end_date": "Wed, 31 Jul 2024 00:00:00 GMT"
     },
     {
-      "id": 1262,
+      "id": 925,
       "period": "Q3 2025",
-      "period_end_date": "2024-10-31"
+      "period_end_date": "Thu, 31 Oct 2024 00:00:00 GMT"
     },
     {
-      "id": 1260,
+      "id": 923,
       "period": "Q1 2025",
-      "period_end_date": "2025-04-30"
+      "period_end_date": "Wed, 30 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 1264,
+      "id": 926,
       "period": "Q2 2026",
-      "period_end_date": "2025-07-31"
+      "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 1265,
+      "id": 927,
       "period": "Q3 2026",
-      "period_end_date": "2025-10-31"
+      "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 1266,
+      "id": 928,
       "period": "Q1 2027",
-      "period_end_date": "2026-04-30"
+      "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT"
     },
     {
-      "id": 1267,
+      "id": 929,
       "period": "Q2 2027",
-      "period_end_date": "2026-07-31"
+      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "CRWD"

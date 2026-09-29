@@ -739,129 +739,129 @@
   "name": "SYNOPSYS INC",
   "periods": [
     {
-      "id": 1944,
+      "id": 1144,
       "period": "Q3 2018",
-      "period_end_date": "2018-07-31"
+      "period_end_date": "Tue, 31 Jul 2018 00:00:00 GMT"
     },
     {
-      "id": 1945,
+      "id": 1145,
       "period": "Q1 2019",
-      "period_end_date": "2019-01-31"
+      "period_end_date": "Thu, 31 Jan 2019 00:00:00 GMT"
     },
     {
-      "id": 1946,
+      "id": 1146,
       "period": "Q2 2019",
-      "period_end_date": "2019-04-30"
+      "period_end_date": "Tue, 30 Apr 2019 00:00:00 GMT"
     },
     {
-      "id": 1947,
+      "id": 1147,
       "period": "Q3 2019",
-      "period_end_date": "2019-07-31"
+      "period_end_date": "Wed, 31 Jul 2019 00:00:00 GMT"
     },
     {
-      "id": 1948,
+      "id": 1148,
       "period": "Q1 2020",
-      "period_end_date": "2020-01-31"
+      "period_end_date": "Fri, 31 Jan 2020 00:00:00 GMT"
     },
     {
-      "id": 1949,
+      "id": 1149,
       "period": "Q2 2020",
-      "period_end_date": "2020-04-30"
+      "period_end_date": "Thu, 30 Apr 2020 00:00:00 GMT"
     },
     {
-      "id": 1950,
+      "id": 1150,
       "period": "Q3 2020",
-      "period_end_date": "2020-07-31"
+      "period_end_date": "Fri, 31 Jul 2020 00:00:00 GMT"
     },
     {
-      "id": 1951,
+      "id": 1151,
       "period": "Q1 2021",
-      "period_end_date": "2021-01-31"
+      "period_end_date": "Sun, 31 Jan 2021 00:00:00 GMT"
     },
     {
-      "id": 1952,
+      "id": 1152,
       "period": "Q2 2021",
-      "period_end_date": "2021-04-30"
+      "period_end_date": "Fri, 30 Apr 2021 00:00:00 GMT"
     },
     {
-      "id": 1953,
+      "id": 1153,
       "period": "Q3 2021",
-      "period_end_date": "2021-07-31"
+      "period_end_date": "Sat, 31 Jul 2021 00:00:00 GMT"
     },
     {
-      "id": 1954,
+      "id": 1154,
       "period": "Q1 2022",
-      "period_end_date": "2022-01-31"
+      "period_end_date": "Mon, 31 Jan 2022 00:00:00 GMT"
     },
     {
-      "id": 3280,
+      "id": 1313,
       "period": "Q2 2022",
-      "period_end_date": "2022-04-30"
+      "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 3281,
+      "id": 1314,
       "period": "Q3 2022",
-      "period_end_date": "2022-07-31"
+      "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 3282,
+      "id": 1315,
       "period": "Q1 2023",
-      "period_end_date": "2023-01-31"
+      "period_end_date": "Tue, 31 Jan 2023 00:00:00 GMT"
     },
     {
-      "id": 3283,
+      "id": 1316,
       "period": "Q2 2023",
-      "period_end_date": "2023-04-30"
+      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 3284,
+      "id": 1317,
       "period": "Q3 2023",
-      "period_end_date": "2023-07-31"
+      "period_end_date": "Mon, 31 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 3285,
+      "id": 1318,
       "period": "Q1 2024",
-      "period_end_date": "2024-01-31"
+      "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT"
     },
     {
-      "id": 3286,
+      "id": 1319,
       "period": "Q2 2024",
-      "period_end_date": "2024-04-30"
+      "period_end_date": "Tue, 30 Apr 2024 00:00:00 GMT"
     },
     {
-      "id": 3287,
+      "id": 1320,
       "period": "Q3 2024",
-      "period_end_date": "2024-07-31"
+      "period_end_date": "Wed, 31 Jul 2024 00:00:00 GMT"
     },
     {
-      "id": 788,
+      "id": 743,
       "period": "Q1 2025",
-      "period_end_date": "2025-01-31"
+      "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT"
     },
     {
-      "id": 789,
+      "id": 744,
       "period": "Q2 2025",
-      "period_end_date": "2025-04-30"
+      "period_end_date": "Wed, 30 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 790,
+      "id": 745,
       "period": "Q3 2025",
-      "period_end_date": "2025-07-31"
+      "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 1958,
+      "id": 1155,
       "period": "Q1 2026",
-      "period_end_date": "2026-01-31"
+      "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT"
     },
     {
-      "id": 1959,
+      "id": 1156,
       "period": "Q2 2026",
-      "period_end_date": "2026-04-30"
+      "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT"
     },
     {
-      "id": 1960,
+      "id": 1157,
       "period": "Q3 2026",
-      "period_end_date": "2026-07-31"
+      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "SNPS"

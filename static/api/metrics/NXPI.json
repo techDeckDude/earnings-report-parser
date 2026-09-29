@@ -550,94 +550,94 @@
   "name": "NXP Semiconductors N.V.",
   "periods": [
     {
-      "id": 1666,
+      "id": 1050,
       "period": "Q1 2020",
-      "period_end_date": "2020-03-29"
+      "period_end_date": "Sun, 29 Mar 2020 00:00:00 GMT"
     },
     {
-      "id": 1667,
+      "id": 1051,
       "period": "Q2 2020",
-      "period_end_date": "2020-09-27"
+      "period_end_date": "Sun, 27 Sep 2020 00:00:00 GMT"
     },
     {
-      "id": 1669,
+      "id": 1052,
       "period": "Q1 2021",
-      "period_end_date": "2021-04-04"
+      "period_end_date": "Sun, 04 Apr 2021 00:00:00 GMT"
     },
     {
-      "id": 1670,
+      "id": 1053,
       "period": "Q2 2021",
-      "period_end_date": "2021-07-04"
+      "period_end_date": "Sun, 04 Jul 2021 00:00:00 GMT"
     },
     {
-      "id": 1671,
+      "id": 1054,
       "period": "Q3 2021",
-      "period_end_date": "2021-10-03"
+      "period_end_date": "Sun, 03 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 1672,
+      "id": 1055,
       "period": "Q1 2022",
-      "period_end_date": "2022-04-03"
+      "period_end_date": "Sun, 03 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 1673,
+      "id": 1056,
       "period": "Q2 2022",
-      "period_end_date": "2022-07-03"
+      "period_end_date": "Sun, 03 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 1674,
+      "id": 1057,
       "period": "Q3 2022",
-      "period_end_date": "2022-10-02"
+      "period_end_date": "Sun, 02 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 1675,
+      "id": 1058,
       "period": "Q1 2023",
-      "period_end_date": "2023-04-02"
+      "period_end_date": "Sun, 02 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 1676,
+      "id": 1059,
       "period": "Q2 2023",
-      "period_end_date": "2023-07-02"
+      "period_end_date": "Sun, 02 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 1677,
+      "id": 1060,
       "period": "Q3 2023",
-      "period_end_date": "2023-10-01"
+      "period_end_date": "Sun, 01 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 1678,
+      "id": 1061,
       "period": "Q1 2024",
-      "period_end_date": "2024-03-31"
+      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 1679,
+      "id": 1062,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-30"
+      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 1680,
+      "id": 1063,
       "period": "Q3 2024",
-      "period_end_date": "2024-09-29"
+      "period_end_date": "Sun, 29 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 1681,
+      "id": 1064,
       "period": "Q1 2025",
-      "period_end_date": "2025-03-30"
+      "period_end_date": "Sun, 30 Mar 2025 00:00:00 GMT"
     },
     {
-      "id": 1682,
+      "id": 1065,
       "period": "Q2 2025",
-      "period_end_date": "2025-06-29"
+      "period_end_date": "Sun, 29 Jun 2025 00:00:00 GMT"
     },
     {
-      "id": 1683,
+      "id": 1066,
       "period": "Q3 2025",
-      "period_end_date": "2025-09-28"
+      "period_end_date": "Sun, 28 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 1684,
+      "id": 1067,
       "period": "Q1 2026",
-      "period_end_date": "2026-03-29"
+      "period_end_date": "Sun, 29 Mar 2026 00:00:00 GMT"
     }
   ],
   "ticker": "NXPI"

@@ -388,64 +388,64 @@
   "name": "INTEL CORP",
   "periods": [
     {
-      "id": 403,
+      "id": 371,
       "period": "Q2 2019",
-      "period_end_date": "2019-06-29"
+      "period_end_date": "Sat, 29 Jun 2019 00:00:00 GMT"
     },
     {
-      "id": 404,
+      "id": 372,
       "period": "Q3 2019",
-      "period_end_date": "2019-09-28"
+      "period_end_date": "Sat, 28 Sep 2019 00:00:00 GMT"
     },
     {
-      "id": 405,
+      "id": 373,
       "period": "Q1 2020",
-      "period_end_date": "2020-03-28"
+      "period_end_date": "Sat, 28 Mar 2020 00:00:00 GMT"
     },
     {
-      "id": 406,
+      "id": 374,
       "period": "Q2 2020",
-      "period_end_date": "2020-06-27"
+      "period_end_date": "Sat, 27 Jun 2020 00:00:00 GMT"
     },
     {
-      "id": 407,
+      "id": 375,
       "period": "Q3 2020",
-      "period_end_date": "2020-09-26"
+      "period_end_date": "Sat, 26 Sep 2020 00:00:00 GMT"
     },
     {
-      "id": 408,
+      "id": 376,
       "period": "Q1 2021",
-      "period_end_date": "2021-03-27"
+      "period_end_date": "Sat, 27 Mar 2021 00:00:00 GMT"
     },
     {
-      "id": 409,
+      "id": 377,
       "period": "Q2 2021",
-      "period_end_date": "2021-06-26"
+      "period_end_date": "Sat, 26 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 410,
+      "id": 378,
       "period": "Q3 2021",
-      "period_end_date": "2021-09-25"
+      "period_end_date": "Sat, 25 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 1387,
+      "id": 970,
       "period": "Q2 2025",
-      "period_end_date": "2025-06-28"
+      "period_end_date": "Sat, 28 Jun 2025 00:00:00 GMT"
     },
     {
-      "id": 1388,
+      "id": 971,
       "period": "Q3 2025",
-      "period_end_date": "2025-09-27"
+      "period_end_date": "Sat, 27 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 1389,
+      "id": 972,
       "period": "Q1 2026",
-      "period_end_date": "2026-03-28"
+      "period_end_date": "Sat, 28 Mar 2026 00:00:00 GMT"
     },
     {
-      "id": 1390,
+      "id": 973,
       "period": "Q2 2026",
-      "period_end_date": "2026-06-27"
+      "period_end_date": "Sat, 27 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "INTC"

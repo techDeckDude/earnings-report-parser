@@ -622,84 +622,84 @@
   "name": "MARVELL TECHNOLOGY, INC",
   "periods": [
     {
-      "id": 480,
+      "id": 447,
       "period": "Q2 2022",
-      "period_end_date": "2021-07-31"
+      "period_end_date": "Sat, 31 Jul 2021 00:00:00 GMT"
     },
     {
-      "id": 481,
+      "id": 448,
       "period": "Q3 2022",
-      "period_end_date": "2021-10-30"
+      "period_end_date": "Sat, 30 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 482,
+      "id": 449,
       "period": "Q1 2023",
-      "period_end_date": "2022-04-30"
+      "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 483,
+      "id": 450,
       "period": "Q2 2023",
-      "period_end_date": "2022-07-30"
+      "period_end_date": "Sat, 30 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 484,
+      "id": 451,
       "period": "Q3 2023",
-      "period_end_date": "2022-10-29"
+      "period_end_date": "Sat, 29 Oct 2022 00:00:00 GMT"
+    },
+    {
+      "id": 6,
+      "period": "Q1 2024",
+      "period_end_date": "Sat, 29 Apr 2023 00:00:00 GMT"
+    },
+    {
+      "id": 7,
+      "period": "Q2 2024",
+      "period_end_date": "Sat, 29 Jul 2023 00:00:00 GMT"
+    },
+    {
+      "id": 8,
+      "period": "Q3 2024",
+      "period_end_date": "Sat, 28 Oct 2023 00:00:00 GMT"
+    },
+    {
+      "id": 9,
+      "period": "Q1 2025",
+      "period_end_date": "Sat, 04 May 2024 00:00:00 GMT"
+    },
+    {
+      "id": 10,
+      "period": "Q2 2025",
+      "period_end_date": "Sat, 03 Aug 2024 00:00:00 GMT"
     },
     {
       "id": 11,
-      "period": "Q1 2024",
-      "period_end_date": "2023-04-29"
+      "period": "Q3 2025",
+      "period_end_date": "Sat, 02 Nov 2024 00:00:00 GMT"
     },
     {
       "id": 12,
-      "period": "Q2 2024",
-      "period_end_date": "2023-07-29"
+      "period": "Q1 2026",
+      "period_end_date": "Sat, 03 May 2025 00:00:00 GMT"
     },
     {
       "id": 13,
-      "period": "Q3 2024",
-      "period_end_date": "2023-10-28"
+      "period": "Q2 2026",
+      "period_end_date": "Sat, 02 Aug 2025 00:00:00 GMT"
     },
     {
       "id": 14,
-      "period": "Q1 2025",
-      "period_end_date": "2024-05-04"
+      "period": "Q3 2026",
+      "period_end_date": "Sat, 01 Nov 2025 00:00:00 GMT"
     },
     {
       "id": 15,
-      "period": "Q2 2025",
-      "period_end_date": "2024-08-03"
-    },
-    {
-      "id": 16,
-      "period": "Q3 2025",
-      "period_end_date": "2024-11-02"
-    },
-    {
-      "id": 17,
-      "period": "Q1 2026",
-      "period_end_date": "2025-05-03"
-    },
-    {
-      "id": 18,
-      "period": "Q2 2026",
-      "period_end_date": "2025-08-02"
-    },
-    {
-      "id": 19,
-      "period": "Q3 2026",
-      "period_end_date": "2025-11-01"
-    },
-    {
-      "id": 20,
       "period": "Q1 2027",
-      "period_end_date": "2026-05-02"
+      "period_end_date": "Sat, 02 May 2026 00:00:00 GMT"
     },
     {
-      "id": 495,
+      "id": 452,
       "period": "Q2 2027",
-      "period_end_date": "2026-08-01"
+      "period_end_date": "Sat, 01 Aug 2026 00:00:00 GMT"
     }
   ],
   "ticker": "MRVL"

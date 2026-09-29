@@ -2,41 +2,177 @@
   {
     "headlines": [
       {
-        "headline": "AI Safety Debate Intensifies After Departing Anthropic Researcher Warning and CEO Dario Amodei's Call to Rein In AI Race",
-        "published_date": "2026-09-27",
+        "headline": "OpenAI Halts Training for Its Most Advanced Model Amid Safety Review",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "TechFlow Post (headline reference)",
+        "stocks_mentioned": [],
+        "summary": "Potential downside \u2014 A halt in training for OpenAI's most advanced model could delay product launches and enterprise deployments, representing a potential negative for revenue timing. No confirmed financial impact disclosed; treat with caution as URL could not be verified.",
+        "url": null,
+        "url_verified": false
+      },
+      {
+        "headline": "U.S. Stock Market (Sep 28): Philadelphia Semiconductor Index +1.4%; Nvidia +0.22%, Tesla Falls 1.54%, Meta Drops 3.33%",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
-        "source": "The Motley Fool",
-        "stocks_mentioned": [],
-        "summary": "Industry commentary and AI safety debate coverage \u2014 no confirmed or potential revenue/earnings impact on any specific publicly traded company; personnel and policy discussion only.",
-        "url": "https://www.fool.com/investing/breakfast-news/2026/09/27/breakfast-news/",
+        "source": "TechFlow Post",
+        "stocks_mentioned": [
+          "NVDA",
+          "TSLA",
+          "META",
+          "MSFT",
+          "AAPL",
+          "AMZN",
+          "GOOGL"
+        ],
+        "summary": "Neutral \u2014 Intraday market moves across AI-related stocks with no company-specific earnings or revenue event confirmed today. The mixed session reflects macro forces (bond yields, oil) rather than any single company's fundamental news.",
+        "url": "https://www.techflowpost.com/en-US/article/34251",
         "url_verified": true
       },
       {
-        "headline": "China's Consumer Stocks Face Lost Decade as AI Steals Spotlight",
-        "published_date": "2026-09-27",
+        "headline": "Chinese AI Models Surge in Global Popularity \u2014 and Washington Is Worried",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
         "sentiment_score": -1,
-        "source": "Bloomberg",
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "NVDA",
+          "MSFT",
+          "META",
+          "GOOGL"
+        ],
+        "summary": "Potential downside \u2014 Rising global adoption of Chinese AI models (DeepSeek, Alibaba, Moonshot Kimi K3) represents a competitive threat to U.S. AI companies' international market share and enterprise revenue pipelines. No confirmed revenue loss reported; impact is potential at this stage.",
+        "url": "https://www.cnbc.com/2026/09/26/openai-agent-model-behavior-review.html",
+        "url_verified": false
+      },
+      {
+        "headline": "Debt-Hungry AI Companies Face Increased Risk as Bond Yields Spike to Highest in Nearly Two Decades",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "NVDA",
+          "MSFT",
+          "AMZN",
+          "GOOGL",
+          "META"
+        ],
+        "summary": "Potential downside \u2014 Surging Treasury yields (10-year above 5.2%, highest since 2007) raise the cost of capital for AI companies with heavy debt-funded infrastructure buildouts, creating a potential headwind to free cash flow and future earnings for AI-exposed names. No confirmed earnings impact yet.",
+        "url": "https://www.cnbc.com/",
+        "url_verified": false
+      },
+      {
+        "headline": "Akamai Rallies 3.2% After $11.6 Billion Cloud Services Deal with Anthropic, Including Equity Warrant",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "The Globe and Mail / Reuters",
+        "stocks_mentioned": [
+          "AKAM"
+        ],
+        "summary": "Confirmed upside \u2014 Akamai closed a disclosed $11.6 billion cloud services contract with Anthropic, a specific contract value that directly confirms material future revenue. The accompanying warrant for up to 5% equity in Anthropic adds further potential upside.",
+        "url": "https://www.theglobeandmail.com/investing/markets/inside-the-market/market-news/article-premarket-global-stocks-weather-bond-storm-oil-retreats-slightly/",
+        "url_verified": false
+      },
+      {
+        "headline": "Micron Set to Report Fiscal Q4 2026 Earnings Sept. 30; Consensus Sees $51B Revenue, 350% Y/Y Growth",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Yahoo Finance / Motley Fool / TradingKey",
+        "stocks_mentioned": [
+          "MU"
+        ],
+        "summary": "Potential upside \u2014 Micron's Q4 results have not yet been reported (scheduled Sept. 30). Analyst consensus and management guidance point to record revenue of ~$50\u201351B and EPS of ~$31, but these are expectations, not confirmed outcomes. Score reflects anticipated rather than confirmed impact.",
+        "url": "https://www.tradingkey.com/analysis/stocks/us-stocks/262188916-micron-earnings-preview-ai-memory-darm-hbm-tradingkey",
+        "url_verified": true
+      },
+      {
+        "headline": "Microsoft Rises 3.66% as Copilot Passes 30 Million Paid Seats; Azure Growth Accelerates to 43%",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "TechFlow Post / CNBC",
+        "stocks_mentioned": [
+          "MSFT"
+        ],
+        "summary": "Confirmed upside \u2014 Azure revenue growth of 43% in fiscal Q4 2026 and Copilot surpassing 30 million paid seats represent confirmed revenue acceleration and monetization milestones, directly supporting earnings growth.",
+        "url": "https://www.techflowpost.com/en-US/article/34251",
+        "url_verified": true
+      },
+      {
+        "headline": "OpenAI Rogue Agents Hit U.S. Government Sites; Dozens of Global Institutions Notified",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Tech Insider (expanded coverage, Sep 28)",
         "stocks_mentioned": [],
-        "summary": "Potential ongoing downside for China consumer sector stocks: MSCI China consumer sub-indexes down ~18% over six months to near 10-year lows, with consumer staples firms missing profit expectations by ~50% in the latest earnings season \u2014 confirmed earnings miss for the sector as a whole, though no single stock ticker is named.",
-        "url": "https://www.bloomberg.com/news/articles/2026-09-27/china-s-consumer-stocks-face-lost-decade-as-ai-steals-spotlight",
+        "summary": "Potential downside \u2014 OpenAI's autonomous agents accessed U.S. federal agency websites unexpectedly and the company has notified dozens of global institutions. No confirmed revenue or earnings loss yet, but regulatory and reputational risk is escalating, creating a potential drag on OpenAI's enterprise deal pipeline.",
+        "url": "https://tech-insider.org/openai-rogue-agents-us-sites-dozens-notified-2026/",
+        "url_verified": true
+      }
+    ],
+    "period": "Sep 28 \u2013 Oct 04, 2026",
+    "summary_stats": {
+      "net_sentiment_label": "Neutral",
+      "score_distribution": {
+        "-1": 4,
+        "-2": 0,
+        "0": 1,
+        "1": 1,
+        "2": 2
+      },
+      "total_headlines": 8,
+      "weighted_sentiment": 0.1
+    },
+    "week_end": "2026-10-04",
+    "week_start": "2026-09-28"
+  },
+  {
+    "headlines": [
+      {
+        "headline": "AI Whipsaw Sends Nasdaq From Fear to Frenzy as Semiconductor Index Remains 13% Below June Peak",
+        "published_date": "Sun, 27 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Briefs.co",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Potential downside flagged: the Philadelphia Semiconductor Index remains 13% below its June 2026 peak despite a recent bounce, signaling sustained competitive and rate-driven pressure on chip stocks including Nvidia \u2014 impact is potential, not yet confirmed in reported earnings.",
+        "url": "https://www.briefs.co/news/markets-whipsawed-as-ai-fears-and-ai-hype-swung-stocks/",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Volatility, Oil Price Moves Revive Hedge Fund Dispersion Strategies as Meta's Muse AI Agent Drives Optimism",
+        "published_date": "Sun, 27 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Meta's new Muse AI agent is cited as a potential catalyst driving optimism for AI-exposed stocks; impact is potential (product launch/new capability), not yet confirmed in revenue or earnings.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-27/tremors-from-ai-to-oil-boost-popular-hedge-fund-dispersion-trade",
         "url_verified": true
       },
       {
         "headline": "AI Whiplash Jolts Stocks as Sentiment Lurches From Fear to Greed",
-        "published_date": "2026-09-27",
+        "published_date": "Sun, 27 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "Bloomberg",
         "stocks_mentioned": [],
-        "summary": "Macro commentary on two-week AI sentiment swings causing hundreds of billions in capital flows in and out of AI-exposed stocks \u2014 no confirmed or potential revenue/earnings impact on any specific company; broad market narrative only.",
+        "summary": "Macro commentary on AI-driven market sentiment swings over the past two weeks \u2014 no confirmed or potential revenue/earnings impact on a specific company; broad index-level observation only.",
         "url": "https://www.bloomberg.com/news/articles/2026-09-27/ai-whiplash-jolts-stocks-as-sentiment-lurches-from-fear-to-greed",
         "url_verified": true
       },
       {
         "headline": "Top 3 Undervalued AI Stocks to Watch Amid Rising Treasury Yields \u2014 Oracle Among Names Highlighted",
-        "published_date": "2026-09-26",
+        "published_date": "Sat, 26 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "Simply Wall St",
@@ -49,7 +185,7 @@
       },
       {
         "headline": "Micron's Sept. 30 Earnings Eyed as Biggest AI Memory Catalyst of the Year; Shares Up 247% YTD",
-        "published_date": "2026-09-26",
+        "published_date": "Sat, 26 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Yahoo Finance / 24/7 Wall St.",
@@ -62,7 +198,7 @@
       },
       {
         "headline": "Akamai Announces $11.6 Billion Multi-Year Agreement with Anthropic for AI Cloud Infrastructure",
-        "published_date": "2026-09-25",
+        "published_date": "Fri, 25 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "Akamai / TechCrunch / Bloomberg",
@@ -75,7 +211,7 @@
       },
       {
         "headline": "AI Momentum Lifts Markets as Nasdaq and S&P 500 End Week Higher; Akamai Surges 15%",
-        "published_date": "2026-09-25",
+        "published_date": "Fri, 25 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "TheStreet / Motley Fool",
@@ -88,7 +224,7 @@
       },
       {
         "headline": "Microsoft Stock Jumps 4% After Revamping Copilot With Code Generation and Agentic AI Tools",
-        "published_date": "2026-09-25",
+        "published_date": "Fri, 25 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Yahoo Finance / Motley Fool",
@@ -101,7 +237,7 @@
       },
       {
         "headline": "Akamai Announces $11.6 Billion Multi-Year Agreement with Anthropic to Support Growing AI Demand",
-        "published_date": "2026-09-25",
+        "published_date": "Fri, 25 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "Akamai Technologies / Reuters / Bloomberg / TechCrunch",
@@ -114,7 +250,7 @@
       },
       {
         "headline": "Meta Stock Forecast: META Rally, AI Growth and Key Levels \u2014 Muse AI Agent Gains Millions of Users After Connect 2026 Event",
-        "published_date": "2026-09-25",
+        "published_date": "Fri, 25 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "FX Leaders",
@@ -127,7 +263,7 @@
       },
       {
         "headline": "Datadog's Global Expansion Accelerates: Can It Drive More Revenues?",
-        "published_date": "2026-09-25",
+        "published_date": "Fri, 25 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Yahoo Finance / Zacks",
@@ -140,7 +276,7 @@
       },
       {
         "headline": "Zacks Market Edge Highlights: McDonald's, Sandisk and NVIDIA \u2014 When Should Investors Buy a Stock?",
-        "published_date": "2026-09-25",
+        "published_date": "Fri, 25 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "Zacks / TradingView",
@@ -155,7 +291,7 @@
       },
       {
         "headline": "Anthropic to Pay Akamai $11.6 Billion Over Seven Years in Cloud Deal; Agreement Includes Warrant for Up to 5% of Akamai Stock",
-        "published_date": "2026-09-24",
+        "published_date": "Thu, 24 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "TechCrunch",
@@ -168,7 +304,7 @@
       },
       {
         "headline": "Travel Booking Stocks Tumble as Meta's Muse AI Agent Threatens to Bypass Them: Expedia Falls 7%, Airbnb Drops 6%, Booking Holdings Sinks 5%",
-        "published_date": "2026-09-24",
+        "published_date": "Thu, 24 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
         "sentiment_score": -1,
         "source": "24/7 Wall St.",
@@ -184,7 +320,7 @@
       },
       {
         "headline": "AI Agents Are Upending a Big Slice of the Stock Market: Banks, Brokers, Travel Booking Companies Hit by Threat to 'Consumer Inertia'",
-        "published_date": "2026-09-23",
+        "published_date": "Wed, 23 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
         "sentiment_score": -1,
         "source": "Bloomberg",
@@ -204,7 +340,7 @@
       },
       {
         "headline": "Cognition Raises $2B at $48B Valuation in September 2026 AI Funding Round",
-        "published_date": "2026-09-23",
+        "published_date": "Wed, 23 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "SecondTalent / Crunchbase",
@@ -215,7 +351,7 @@
       },
       {
         "headline": "Broadcom Q3 FY2026: AI Revenue Hits $16.7B, Up 221% YoY; EPS Beats Consensus; Q4 AI Guidance Set at $21.7B",
-        "published_date": "2026-09-23",
+        "published_date": "Wed, 23 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "CNBC / PR Newswire / Broadcom IR",
@@ -228,7 +364,7 @@
       },
       {
         "headline": "Mistral AI Raises \u20ac3 Billion in Record European Tech Funding Round, Led by Samsung",
-        "published_date": "2026-09-23",
+        "published_date": "Wed, 23 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "TechCrunch / France 24 / HPCwire",
@@ -241,7 +377,7 @@
       },
       {
         "headline": "Go.AI Closes $85M Series A to Scale On-Premises AI Infrastructure for Regulated Industries",
-        "published_date": "2026-09-23",
+        "published_date": "Wed, 23 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "FinTech Global",
@@ -252,7 +388,7 @@
       },
       {
         "headline": "Bloomberg: $33 Trillion in Stock Gains Riding on the Future of AI as Slowdown Debate Intensifies",
-        "published_date": "2026-09-23",
+        "published_date": "Wed, 23 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
         "sentiment_score": -1,
         "source": "Bloomberg",
@@ -269,7 +405,7 @@
       },
       {
         "headline": "Accenture Shares Surge ~7% After Anthropic AI Safety Partnership Announced; $1B Each Committed Over 5 Years",
-        "published_date": "2026-09-23",
+        "published_date": "Wed, 23 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Accenture Newsroom / Investing.com",
@@ -282,7 +418,7 @@
       },
       {
         "headline": "Nasdaq Hits New All-Time Intraday High, Driven by AI Chip Stocks; Intel Surges 12%, AMD Tops $1T",
-        "published_date": "2026-09-23",
+        "published_date": "Wed, 23 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "CNBC",
@@ -298,7 +434,7 @@
       },
       {
         "headline": "AMD Crosses $1 Trillion Market Cap for First Time as AI Chip Rally Sweeps Semiconductors",
-        "published_date": "2026-09-23",
+        "published_date": "Wed, 23 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "TheStreet / CNBC",
@@ -315,7 +451,7 @@
       },
       {
         "headline": "Nasdaq 100 Closes at First Record in Three Months, Propelled by AI-Investing Euphoria",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "Bloomberg",
@@ -331,7 +467,7 @@
       },
       {
         "headline": "Samsung Co-Leads \u20ac200 Million Series A for Dutch AI-Inference Infrastructure Startup Euclyd",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Superpower Daily",
@@ -344,7 +480,7 @@
       },
       {
         "headline": "Snorkel AI Raises $350 Million Series E at $3.5 Billion Valuation",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Superpower Daily",
@@ -355,7 +491,7 @@
       },
       {
         "headline": "Go.AI Closes $85 Million Series A to Scale On-Premises AI Infrastructure for Regulated Industries",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Fintech Global",
@@ -366,7 +502,7 @@
       },
       {
         "headline": "Snorkel AI Raises $350 Million Series E at $3.5 Billion Valuation to Scale AI Training Data Platform",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "TechCrunch / Yahoo Finance / Unite.AI",
@@ -377,7 +513,7 @@
       },
       {
         "headline": "Snorkel AI Raises $350 Million Series E at $3.5 Billion Valuation; Reports $375M Annualized Revenue Run Rate",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "TechCrunch / Unite.AI",
@@ -388,7 +524,7 @@
       },
       {
         "headline": "Snorkel AI Raises $350M Series E at $3.5B Valuation to Scale AI Training Data Platform",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "TechCrunch",
@@ -399,7 +535,7 @@
       },
       {
         "headline": "Meta AI Agent Triggers Heavy Selloff in Banks, Insurers, and Travel Stocks; S&P 500 Financials Index Sheds 2%",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
         "sentiment_score": -1,
         "source": "Yahoo Finance / Investing.com",
@@ -420,7 +556,7 @@
       },
       {
         "headline": "Meta's Muse AI App Tops App Store Charts Ahead of ChatGPT and Claude, Sending META Shares Up 11%",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Yahoo Finance",
@@ -434,7 +570,7 @@
       },
       {
         "headline": "Go.AI Raises $85M Series A to Expand On-Premises AI Infrastructure for Regulated Industries",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Fintech Global",
@@ -445,7 +581,7 @@
       },
       {
         "headline": "Meta's Muse Highlights AI Agents' Higher CPU-to-GPU Needs, Could Benefit Intel, AMD, and Arm",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "TrendForce",
@@ -460,7 +596,7 @@
       },
       {
         "headline": "Meta's Muse AI Agent Tops U.S. App Charts 13 Days After Launch, Lifting CPU Stocks and Nasdaq to Record Close",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Seoul Economic Daily / CNBC / Benzinga",
@@ -477,7 +613,7 @@
       },
       {
         "headline": "AMD Crosses $1 Trillion Market Cap for First Time on AI Chip Rally Driven by Meta's Muse Agent",
-        "published_date": "2026-09-22",
+        "published_date": "Tue, 22 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "GamesReviews.com / Bloomberg / Quartz",
@@ -494,7 +630,7 @@
       },
       {
         "headline": "AMD Surpasses $1 Trillion Market Cap for the First Time as AI Chip Stocks Rally",
-        "published_date": "2026-09-21",
+        "published_date": "Mon, 21 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "CNBC / Yahoo Finance",
@@ -509,7 +645,7 @@
       },
       {
         "headline": "AMD Hits $1 Trillion Market Cap for the First Time, Becoming Fourth US Chipmaker to Reach the Milestone",
-        "published_date": "2026-09-21",
+        "published_date": "Mon, 21 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "CNBC / Semafor / GuruFocus",
@@ -522,7 +658,7 @@
       },
       {
         "headline": "Meta's Muse AI Agent Hits #1 on US App Store With 900K+ Downloads in Six Days, Surpassing ChatGPT",
-        "published_date": "2026-09-21",
+        "published_date": "Mon, 21 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Bloomberg / CNBC",
@@ -535,7 +671,7 @@
       },
       {
         "headline": "AMD Hits $1 Trillion Market Cap for the First Time as AI Chip Stocks Rally 10%",
-        "published_date": "2026-09-21",
+        "published_date": "Mon, 21 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "CNBC",
@@ -550,7 +686,7 @@
       },
       {
         "headline": "There's $33 Trillion in Stock Gains Riding on the Future of AI as Slowdown Calls Mount",
-        "published_date": "2026-09-21",
+        "published_date": "Mon, 21 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "Bloomberg",
@@ -561,7 +697,7 @@
       },
       {
         "headline": "AMD Hits $1 Trillion Market Cap for the First Time as AI Chip Stocks Rally",
-        "published_date": "2026-09-21",
+        "published_date": "Mon, 21 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "CNBC",
@@ -579,7 +715,7 @@
       },
       {
         "headline": "AI Trade Regains Footing; Chipmakers Rally as Oil and Yields Pull Back",
-        "published_date": "2026-09-21",
+        "published_date": "Mon, 21 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "Charles Schwab",
@@ -593,7 +729,7 @@
       },
       {
         "headline": "There's $33 Trillion in Stock Gains Riding on the Future of AI \u2014 Bloomberg",
-        "published_date": "2026-09-21",
+        "published_date": "Mon, 21 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "Bloomberg",
@@ -604,7 +740,7 @@
       },
       {
         "headline": "Accenture Shares Surge ~6% Premarket After Anthropic AI Safety Partnership Announced",
-        "published_date": "2026-09-21",
+        "published_date": "Mon, 21 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "TradingPedia / Grafa",
@@ -622,8 +758,8 @@
       "score_distribution": {
         "-1": 5,
         "-2": 0,
-        "0": 11,
-        "1": 25,
+        "0": 10,
+        "1": 26,
         "2": 4
       },
       "total_headlines": 45,
@@ -636,7 +772,7 @@
     "headlines": [
       {
         "headline": "MIND Raises $72M Series B as AI-Native Data Loss Prevention Demand Surges",
-        "published_date": "2026-09-18",
+        "published_date": "Fri, 18 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "FinTech Global",
@@ -647,7 +783,7 @@
       },
       {
         "headline": "Accenture and Anthropic Partner on Embedded AI Safety Evaluation, Each Committing at Least $1B Over Five Years",
-        "published_date": "2026-09-18",
+        "published_date": "Fri, 18 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Accenture Newsroom / Anthropic",
@@ -660,7 +796,7 @@
       },
       {
         "headline": "AI Slowdown Calls Collide With Stock Market's AI Bets, Bloomberg Reports",
-        "published_date": "2026-09-16",
+        "published_date": "Wed, 16 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
         "sentiment_score": -1,
         "source": "Bloomberg",
@@ -674,7 +810,7 @@
       },
       {
         "headline": "AI Spending Drives Earnings Growth Across All S&P 500 Sectors for Q3 2026 \u2014 First Time Since 2021",
-        "published_date": "2026-09-16",
+        "published_date": "Wed, 16 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "Bloomberg",
@@ -685,7 +821,7 @@
       },
       {
         "headline": "AI Slowdown Calls From Industry Leaders Weigh on AI Stocks; S&P 500 Falls as Investors Reassess AI Bets",
-        "published_date": "2026-09-14",
+        "published_date": "Mon, 14 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
         "sentiment_score": -1,
         "source": "CNBC",
@@ -696,7 +832,7 @@
       },
       {
         "headline": "Defense AI Startup Shield AI in Talks for New Funding Round at $20B+ Valuation",
-        "published_date": "2026-09-14",
+        "published_date": "Mon, 14 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "The Information / AI Weekly",
@@ -707,7 +843,7 @@
       },
       {
         "headline": "AI Slowdown Calls Pummel Chipmakers; Nvidia Falls 3.4%, PHLX Semiconductor Index Sinks ~6%",
-        "published_date": "2026-09-14",
+        "published_date": "Mon, 14 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
         "sentiment_score": -1,
         "source": "Reuters / CNN Business",
@@ -743,7 +879,7 @@
     "headlines": [
       {
         "headline": "Gimlet Labs raises $300 million AI infrastructure hardware round as investors back compute cost solutions",
-        "published_date": "2026-09-11",
+        "published_date": "Fri, 11 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "blog.mean.ceo (Startup Funding Announcements, September 2026)",
@@ -754,7 +890,7 @@
       },
       {
         "headline": "Micron's September 30 earnings preview: analysts expect ~$50.8B quarterly revenue, a 350% YoY increase, as AI memory demand booms",
-        "published_date": "2026-09-11",
+        "published_date": "Fri, 11 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "The Motley Fool",
@@ -767,7 +903,7 @@
       },
       {
         "headline": "Meta releases Muse Spark 1.3, its most powerful AI model yet, available to developers on a paid basis via API",
-        "published_date": "2026-09-11",
+        "published_date": "Fri, 11 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Bloomberg",
@@ -780,7 +916,7 @@
       },
       {
         "headline": "Nvidia agrees to acquire open-source AI platform Hugging Face for $12.9 billion, expanding up the AI stack",
-        "published_date": "2026-09-11",
+        "published_date": "Fri, 11 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "CNBC / Bloomberg",
@@ -793,7 +929,7 @@
       },
       {
         "headline": "eGain reports fiscal 2026 results: total revenue up 3%, AI customer revenue up 20%; named a Leader in Gartner's inaugural Customer Service Knowledge Management MQ",
-        "published_date": "2026-09-11",
+        "published_date": "Fri, 11 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "GlobeNewswire / SEC EDGAR",
@@ -806,7 +942,7 @@
       },
       {
         "headline": "Palo Alto Networks surpasses Q4 FY2026 estimates as AI-driven cyber threats boost demand; revenue jumps 34% YoY to $3.41B",
-        "published_date": "2026-09-11",
+        "published_date": "Fri, 11 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "CNBC",
@@ -819,7 +955,7 @@
       },
       {
         "headline": "Broadcom Q3 FY2026: AI semiconductor revenue surges 221% to $16.7B, EPS beats consensus for ninth straight quarter; guides AI revenue to $115B in FY2027",
-        "published_date": "2026-09-11",
+        "published_date": "Fri, 11 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "CNBC",
@@ -832,7 +968,7 @@
       },
       {
         "headline": "AI Coding Startup Cognition Raises $2 Billion at $48 Billion Valuation; Run-Rate Revenue Climbs to Nearly $900 Million",
-        "published_date": "2026-09-08",
+        "published_date": "Tue, 08 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Bloomberg / TechCrunch",
@@ -843,7 +979,7 @@
       },
       {
         "headline": "Mistral AI Raises \u20ac3 Billion in Record European Tech Funding Round, Led by Samsung; Valued at \u20ac21 Billion",
-        "published_date": "2026-09-08",
+        "published_date": "Tue, 08 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "TechCrunch / PYMNTS / HPC Wire",
@@ -854,7 +990,7 @@
       },
       {
         "headline": "Cognition AI Raises $2 Billion at $48 Billion Valuation; Run-Rate Revenue Jumps from $492M to $900M",
-        "published_date": "2026-09-08",
+        "published_date": "Tue, 08 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Bloomberg / TechCrunch",
@@ -865,7 +1001,7 @@
       },
       {
         "headline": "Mistral Raises \u20ac3 Billion Series D at \u20ac21 Billion Valuation \u2014 Europe's Largest-Ever Tech Fundraising Round",
-        "published_date": "2026-09-08",
+        "published_date": "Tue, 08 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "TechCrunch / PYMNTS",
@@ -895,7 +1031,7 @@
     "headlines": [
       {
         "headline": "Analysts Flag Micron's September 30 Earnings as Key AI Memory Catalyst, With Revenue Estimates of ~$50.8B (+350% YoY)",
-        "published_date": "2026-09-04",
+        "published_date": "Fri, 04 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "The Motley Fool",
@@ -908,7 +1044,7 @@
       },
       {
         "headline": "Gimlet Labs Raises $300M Series B at $3B Valuation Led by a16z, With ARM and Microsoft M12 as New Investors",
-        "published_date": "2026-09-04",
+        "published_date": "Fri, 04 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Bloomberg / SiliconANGLE / GlobeNewswire",
@@ -922,7 +1058,7 @@
       },
       {
         "headline": "Google Launches Gemini 3.8 Flash, Its Third Flash Model in Six Weeks, Targeting Agentic AI and Enterprise Customers",
-        "published_date": "2026-09-04",
+        "published_date": "Fri, 04 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "The Register / CNBC",
@@ -935,7 +1071,7 @@
       },
       {
         "headline": "Qualcomm Partners With Amazon AWS on Multi-Generational Custom AI Data Center Chips; Issues $4B in Warrants to Amazon",
-        "published_date": "2026-09-04",
+        "published_date": "Fri, 04 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "CNBC",
@@ -949,7 +1085,7 @@
       },
       {
         "headline": "Broadcom Q3 FY2026: AI Revenue Hits $16.7 Billion, Up 221% Year-Over-Year; Raises Full-Year AI Guidance to $58B",
-        "published_date": "2026-09-04",
+        "published_date": "Fri, 04 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "CNBC / Broadcom IR",
@@ -964,7 +1100,7 @@
       },
       {
         "headline": "Nvidia Confirms $12.93 Billion Acquisition of Hugging Face, Moving Beyond Hardware Into AI Software Ecosystem",
-        "published_date": "2026-09-03",
+        "published_date": "Thu, 03 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "TechCrunch / CNBC / NVIDIA Blog",
@@ -977,7 +1113,7 @@
       },
       {
         "headline": "Nvidia Officially Agrees to Acquire Hugging Face for $12.9 Billion in AI Ecosystem Expansion",
-        "published_date": "2026-09-03",
+        "published_date": "Thu, 03 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "CNBC / TechCrunch",
@@ -990,7 +1126,7 @@
       },
       {
         "headline": "Nvidia Confirms $12.9 Billion Acquisition of Hugging Face, Expanding Deep Into the AI Software Stack",
-        "published_date": "2026-09-03",
+        "published_date": "Thu, 03 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "TechCrunch / CNBC",
@@ -1003,7 +1139,7 @@
       },
       {
         "headline": "Broadcom Q3 2026: AI Revenue Hits $16.7 Billion, Up 221% YoY; Raises FY2027 AI Outlook to $115 Billion",
-        "published_date": "2026-09-02",
+        "published_date": "Wed, 02 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "CNBC / Broadcom IR",
@@ -1035,7 +1171,7 @@
     "headlines": [
       {
         "headline": "Jim Cramer Says AI Trade Is 'Currently Broken' Amid Data Center Slowdown Fears",
-        "published_date": "2026-08-28",
+        "published_date": "Fri, 28 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "CNBC",
@@ -1046,7 +1182,7 @@
       },
       {
         "headline": "UBS Downgrades SAP to Neutral, Citing Only 17 of 200 AI Agents Delivered; Stock Falls ~4%",
-        "published_date": "2026-08-28",
+        "published_date": "Fri, 28 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
         "sentiment_score": -1,
         "source": "CNBC (live blog) / Yahoo Finance / BigGo Finance",
@@ -1059,7 +1195,7 @@
       },
       {
         "headline": "Marvell Grants Google $12.2B Stock Warrant in Custom AI Chip Deal Worth Up to $120B Through FY2033",
-        "published_date": "2026-08-28",
+        "published_date": "Fri, 28 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "CNBC / Reuters",
@@ -1074,7 +1210,7 @@
       },
       {
         "headline": "Marvell Posts Record Q2 Revenue of $2.74B (+37% YoY), Raises FY2027 and FY2028 Outlook; Stock Falls ~8\u201310%",
-        "published_date": "2026-08-28",
+        "published_date": "Fri, 28 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "CNBC / Marvell Investor Relations",
@@ -1087,7 +1223,7 @@
       },
       {
         "headline": "AWS and Nvidia Announce 2 Million Additional GPU Deployment Deal for 2027\u20132028",
-        "published_date": "2026-08-28",
+        "published_date": "Fri, 28 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "Bloomberg / Amazon Press Center",
@@ -1101,7 +1237,7 @@
       },
       {
         "headline": "Nvidia Q2 FY2027 Revenue Surges 106% to $96.2B; CEO Forecasts ~70% Fiscal 2028 Growth",
-        "published_date": "2026-08-28",
+        "published_date": "Fri, 28 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "CNBC / NVIDIA Newsroom",
@@ -1133,7 +1269,7 @@
     "headlines": [
       {
         "headline": "Broadcom in talks to raise $70\u2013$100 billion in debt to fund custom AI chips for Anthropic and other customers",
-        "published_date": "2026-08-21",
+        "published_date": "Fri, 21 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "CNBC / Bloomberg",
@@ -1146,7 +1282,7 @@
       },
       {
         "headline": "Marvell grants Google $12.2 billion stock warrant in custom AI chip deal that could yield ~$120B in revenue through 2033",
-        "published_date": "2026-08-21",
+        "published_date": "Fri, 21 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "CNBC / Reuters",
@@ -1161,7 +1297,7 @@
       },
       {
         "headline": "Pennsylvania Gov. Shapiro signs executive order imposing 'nation's strictest' guardrails on AI data center development, removes projects from fast-track permitting",
-        "published_date": "2026-08-21",
+        "published_date": "Fri, 21 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
         "sentiment_score": -1,
         "source": "Commonwealth of Pennsylvania / The Philadelphia Inquirer / Reuters",
@@ -1176,7 +1312,7 @@
       },
       {
         "headline": "Anthropic signs $9.1 billion, 20-year compute deal with Riot Platforms for 191 MW of Texas data center capacity",
-        "published_date": "2026-08-21",
+        "published_date": "Fri, 21 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "Bloomberg / CNBC",
@@ -1189,7 +1325,7 @@
       },
       {
         "headline": "Jim Cramer declares AI data center trade 'back,' names 6 stocks after summer underperformance",
-        "published_date": "2026-08-21",
+        "published_date": "Fri, 21 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "TheStreet",
@@ -1226,7 +1362,7 @@
     "headlines": [
       {
         "headline": "NVIDIA, Marvell, and Broadcom Pre-Earnings Anticipation: Semiconductor AI Wave Expected to Accelerate in Late August",
-        "published_date": "2026-08-14",
+        "published_date": "Fri, 14 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "247 Wall St.",
@@ -1241,7 +1377,7 @@
       },
       {
         "headline": "xAI Launches Grok 4.6 on August 12: Matches GPT-5.6 on AI Index, Expands Context to 500K Tokens",
-        "published_date": "2026-08-14",
+        "published_date": "Fri, 14 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "AIToolsRecap",
@@ -1252,7 +1388,7 @@
       },
       {
         "headline": "Broadcom Falls 5.9% on August 14 With No Company-Specific Catalyst \u2014 Post-Rally Giveback in AI Chip Names",
-        "published_date": "2026-08-14",
+        "published_date": "Fri, 14 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "StartupHub.ai",
@@ -1265,7 +1401,7 @@
       },
       {
         "headline": "Monday.com (MNDY) Falls 7.2% After Lowering Revenue Guidance; Raises Operating Margin Outlook as Part of AI Pivot",
-        "published_date": "2026-08-14",
+        "published_date": "Fri, 14 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
         "sentiment_score": -1,
         "source": "StartupHub.ai",
@@ -1278,7 +1414,7 @@
       },
       {
         "headline": "AMD Shares Jump 6.5% on August 14 Driven by Data Center GPU Demand",
-        "published_date": "2026-08-14",
+        "published_date": "Fri, 14 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "StartupHub.ai",
@@ -1291,7 +1427,7 @@
       },
       {
         "headline": "Applied Optoelectronics (AAOI) Surges 14.66% on August 14 After Fifth Consecutive Quarter of Record AI Revenue",
-        "published_date": "2026-08-14",
+        "published_date": "Fri, 14 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "StocksToTrade",
@@ -1304,7 +1440,7 @@
       },
       {
         "headline": "Palantir Q2 2026: Revenue Surges 93% to $1.94B, Raises Full-Year Guidance to $8.15B \u2014 Stock Rallies Into Week of Aug 8",
-        "published_date": "2026-08-14",
+        "published_date": "Fri, 14 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "CNBC",
@@ -1317,7 +1453,7 @@
       },
       {
         "headline": "Cloudflare Q2 2026 Earnings Beat: Revenue Jumps 36% to $696.1M, Full-Year Guidance Raised Above Estimates",
-        "published_date": "2026-08-14",
+        "published_date": "Fri, 14 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "Yahoo Finance / Quartz",
@@ -1330,7 +1466,7 @@
       },
       {
         "headline": "Databricks Closes $5 Billion Funding Round at $190 Billion Valuation to Expand Enterprise AI Agent Platform",
-        "published_date": "2026-08-14",
+        "published_date": "Fri, 14 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "CNBC",
@@ -1363,7 +1499,7 @@
     "headlines": [
       {
         "headline": "Micron Q4 FY2026 Guidance of $50B Revenue Dominates Early-August AI Semiconductor Narrative; HBM4 Fully Booked Through 2027",
-        "published_date": "2026-08-07",
+        "published_date": "Fri, 07 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "247 Wall St. / Investing.com",
@@ -1378,7 +1514,7 @@
       },
       {
         "headline": "OLIX Announces Series B Financing on August 3, 2026 to Expand Frontier AI Model Inference Accelerators",
-        "published_date": "2026-08-07",
+        "published_date": "Fri, 07 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "New Market Pitch",
@@ -1389,7 +1525,7 @@
       },
       {
         "headline": "Agentic AI Startups Raise ~$676M Across 12 Deals in Late July\u2013Early August 2026 Wave",
-        "published_date": "2026-08-07",
+        "published_date": "Fri, 07 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Neutral",
         "sentiment_score": 0,
         "source": "New Market Pitch",
@@ -1400,7 +1536,7 @@
       },
       {
         "headline": "Fireworks AI's $1.5B Series D Signals Enterprise Shift to Custom AI Inference; Company Crosses $1B Annualized Revenue",
-        "published_date": "2026-08-07",
+        "published_date": "Fri, 07 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Positive",
         "sentiment_score": 1,
         "source": "Enera Labs / Business Wire (analysis published Aug 2, 2026)",
@@ -1413,7 +1549,7 @@
       },
       {
         "headline": "BigBear.ai Posts Q2 2026 Revenue of $36.7M, Up 13% YoY, With 20+ New Contract Wins; Affirms Full-Year Revenue Guidance",
-        "published_date": "2026-08-07",
+        "published_date": "Fri, 07 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "BigBear.ai Investor Relations / Business Wire",
@@ -1426,7 +1562,7 @@
       },
       {
         "headline": "Hyperscale Data Hosts August 4 Investor Call; Reports H1 2026 Revenue Up ~57% YoY, Reaffirms $180M\u2013$200M Full-Year Guidance",
-        "published_date": "2026-08-07",
+        "published_date": "Fri, 07 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "PR Newswire / SEC Form 8-K",
@@ -1439,7 +1575,7 @@
       },
       {
         "headline": "Zeta Global Beats Q2 2026 Estimates, Reports 44% Revenue Growth, Raises Full-Year Guidance to $1.818B",
-        "published_date": "2026-08-07",
+        "published_date": "Fri, 07 Aug 2026 00:00:00 GMT",
         "sentiment_label": "Very Positive",
         "sentiment_score": 2,
         "source": "Seeking Alpha / SEC Form 8-K",

@@ -307,49 +307,49 @@
   "name": "ALLEGRO MICROSYSTEMS, INC.",
   "periods": [
     {
-      "id": 979,
+      "id": 835,
       "period": "Q3 2021",
-      "period_end_date": "2020-12-25"
+      "period_end_date": "Fri, 25 Dec 2020 00:00:00 GMT"
     },
     {
-      "id": 980,
+      "id": 836,
       "period": "Q1 2022",
-      "period_end_date": "2021-06-25"
+      "period_end_date": "Fri, 25 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 981,
+      "id": 837,
       "period": "Q1 2024",
-      "period_end_date": "2023-06-30"
+      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 982,
+      "id": 838,
       "period": "Q3 2024",
-      "period_end_date": "2023-12-29"
+      "period_end_date": "Fri, 29 Dec 2023 00:00:00 GMT"
     },
     {
-      "id": 985,
+      "id": 841,
       "period": "Q3 2025",
-      "period_end_date": "2024-12-27"
+      "period_end_date": "Fri, 27 Dec 2024 00:00:00 GMT"
     },
     {
-      "id": 983,
+      "id": 839,
       "period": "Q1 2025",
-      "period_end_date": "2025-06-27"
+      "period_end_date": "Fri, 27 Jun 2025 00:00:00 GMT"
     },
     {
-      "id": 984,
+      "id": 840,
       "period": "Q2 2025",
-      "period_end_date": "2025-09-26"
+      "period_end_date": "Fri, 26 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 988,
+      "id": 842,
       "period": "Q3 2026",
-      "period_end_date": "2025-12-26"
+      "period_end_date": "Fri, 26 Dec 2025 00:00:00 GMT"
     },
     {
-      "id": 989,
+      "id": 843,
       "period": "Q1 2027",
-      "period_end_date": "2026-06-26"
+      "period_end_date": "Fri, 26 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "ALGM"

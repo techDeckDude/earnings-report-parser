@@ -504,89 +504,89 @@
   "name": "Veeva Systems Inc.",
   "periods": [
     {
-      "id": 824,
+      "id": 779,
       "period": "Q1 2021",
-      "period_end_date": "2020-04-30"
+      "period_end_date": "Thu, 30 Apr 2020 00:00:00 GMT"
     },
     {
-      "id": 825,
+      "id": 780,
       "period": "Q2 2021",
-      "period_end_date": "2020-07-31"
+      "period_end_date": "Fri, 31 Jul 2020 00:00:00 GMT"
     },
     {
-      "id": 826,
+      "id": 781,
       "period": "Q3 2021",
-      "period_end_date": "2020-10-31"
+      "period_end_date": "Sat, 31 Oct 2020 00:00:00 GMT"
     },
     {
-      "id": 827,
+      "id": 782,
       "period": "Q1 2022",
-      "period_end_date": "2022-04-30"
+      "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 828,
+      "id": 783,
       "period": "Q2 2022",
-      "period_end_date": "2022-07-31"
+      "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 829,
+      "id": 784,
       "period": "Q3 2022",
-      "period_end_date": "2022-10-31"
+      "period_end_date": "Mon, 31 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 833,
+      "id": 785,
       "period": "Q1 2024",
-      "period_end_date": "2023-04-30"
+      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 834,
+      "id": 786,
       "period": "Q2 2024",
-      "period_end_date": "2023-07-31"
+      "period_end_date": "Mon, 31 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 835,
+      "id": 787,
       "period": "Q3 2024",
-      "period_end_date": "2023-10-31"
+      "period_end_date": "Tue, 31 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 836,
+      "id": 788,
       "period": "Q1 2025",
-      "period_end_date": "2024-04-30"
+      "period_end_date": "Tue, 30 Apr 2024 00:00:00 GMT"
     },
     {
-      "id": 837,
+      "id": 789,
       "period": "Q2 2025",
-      "period_end_date": "2024-07-31"
+      "period_end_date": "Wed, 31 Jul 2024 00:00:00 GMT"
     },
     {
-      "id": 838,
+      "id": 790,
       "period": "Q3 2025",
-      "period_end_date": "2024-10-31"
+      "period_end_date": "Thu, 31 Oct 2024 00:00:00 GMT"
     },
     {
-      "id": 839,
+      "id": 791,
       "period": "Q1 2026",
-      "period_end_date": "2025-04-30"
+      "period_end_date": "Wed, 30 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 840,
+      "id": 792,
       "period": "Q2 2026",
-      "period_end_date": "2025-07-31"
+      "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 841,
+      "id": 793,
       "period": "Q3 2026",
-      "period_end_date": "2025-10-31"
+      "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 842,
+      "id": 794,
       "period": "Q1 2027",
-      "period_end_date": "2026-04-30"
+      "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT"
     },
     {
-      "id": 843,
+      "id": 795,
       "period": "Q2 2027",
-      "period_end_date": "2026-07-31"
+      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "VEEV"

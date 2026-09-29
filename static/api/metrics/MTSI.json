@@ -766,134 +766,134 @@
   "name": "MACOM Technology Solutions Holdings, Inc.",
   "periods": [
     {
-      "id": 513,
+      "id": 470,
       "period": "Q2 2018",
-      "period_end_date": "2018-03-30"
+      "period_end_date": "Fri, 30 Mar 2018 00:00:00 GMT"
     },
     {
-      "id": 514,
+      "id": 471,
       "period": "Q3 2018",
-      "period_end_date": "2018-06-29"
+      "period_end_date": "Fri, 29 Jun 2018 00:00:00 GMT"
     },
     {
-      "id": 515,
+      "id": 472,
       "period": "Q1 2019",
-      "period_end_date": "2018-12-28"
+      "period_end_date": "Fri, 28 Dec 2018 00:00:00 GMT"
     },
     {
-      "id": 516,
+      "id": 473,
       "period": "Q2 2019",
-      "period_end_date": "2019-03-29"
+      "period_end_date": "Fri, 29 Mar 2019 00:00:00 GMT"
     },
     {
-      "id": 517,
+      "id": 474,
       "period": "Q3 2019",
-      "period_end_date": "2019-06-28"
+      "period_end_date": "Fri, 28 Jun 2019 00:00:00 GMT"
     },
     {
-      "id": 518,
+      "id": 475,
       "period": "Q1 2020",
-      "period_end_date": "2020-01-03"
+      "period_end_date": "Fri, 03 Jan 2020 00:00:00 GMT"
     },
     {
-      "id": 519,
+      "id": 476,
       "period": "Q2 2020",
-      "period_end_date": "2020-04-03"
+      "period_end_date": "Fri, 03 Apr 2020 00:00:00 GMT"
     },
     {
-      "id": 520,
+      "id": 477,
       "period": "Q3 2020",
-      "period_end_date": "2020-07-03"
+      "period_end_date": "Fri, 03 Jul 2020 00:00:00 GMT"
     },
     {
-      "id": 521,
+      "id": 478,
       "period": "Q1 2021",
-      "period_end_date": "2021-01-01"
+      "period_end_date": "Fri, 01 Jan 2021 00:00:00 GMT"
     },
     {
-      "id": 522,
+      "id": 479,
       "period": "Q2 2021",
-      "period_end_date": "2021-04-02"
+      "period_end_date": "Fri, 02 Apr 2021 00:00:00 GMT"
     },
     {
-      "id": 523,
+      "id": 480,
       "period": "Q3 2021",
-      "period_end_date": "2021-07-02"
+      "period_end_date": "Fri, 02 Jul 2021 00:00:00 GMT"
     },
     {
-      "id": 524,
+      "id": 481,
       "period": "Q1 2022",
-      "period_end_date": "2021-12-31"
+      "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT"
     },
     {
-      "id": 525,
+      "id": 482,
       "period": "Q2 2022",
-      "period_end_date": "2022-04-01"
+      "period_end_date": "Fri, 01 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 526,
+      "id": 483,
       "period": "Q3 2022",
-      "period_end_date": "2022-07-01"
+      "period_end_date": "Fri, 01 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 527,
+      "id": 484,
       "period": "Q1 2023",
-      "period_end_date": "2022-12-30"
+      "period_end_date": "Fri, 30 Dec 2022 00:00:00 GMT"
     },
     {
-      "id": 528,
+      "id": 485,
       "period": "Q2 2023",
-      "period_end_date": "2023-03-31"
+      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 529,
+      "id": 486,
       "period": "Q3 2023",
-      "period_end_date": "2023-06-30"
+      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 530,
+      "id": 487,
       "period": "Q1 2024",
-      "period_end_date": "2023-12-29"
+      "period_end_date": "Fri, 29 Dec 2023 00:00:00 GMT"
     },
     {
-      "id": 531,
+      "id": 488,
       "period": "Q2 2024",
-      "period_end_date": "2024-03-29"
+      "period_end_date": "Fri, 29 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 532,
+      "id": 489,
       "period": "Q3 2024",
-      "period_end_date": "2024-06-28"
+      "period_end_date": "Fri, 28 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 533,
+      "id": 490,
       "period": "Q1 2025",
-      "period_end_date": "2025-01-03"
+      "period_end_date": "Fri, 03 Jan 2025 00:00:00 GMT"
     },
     {
-      "id": 534,
+      "id": 491,
       "period": "Q2 2025",
-      "period_end_date": "2025-04-04"
+      "period_end_date": "Fri, 04 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 535,
+      "id": 492,
       "period": "Q3 2025",
-      "period_end_date": "2025-07-04"
+      "period_end_date": "Fri, 04 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 536,
+      "id": 493,
       "period": "Q1 2026",
-      "period_end_date": "2026-01-02"
+      "period_end_date": "Fri, 02 Jan 2026 00:00:00 GMT"
     },
     {
-      "id": 537,
+      "id": 494,
       "period": "Q2 2026",
-      "period_end_date": "2026-04-03"
+      "period_end_date": "Fri, 03 Apr 2026 00:00:00 GMT"
     },
     {
-      "id": 538,
+      "id": 495,
       "period": "Q3 2026",
-      "period_end_date": "2026-07-03"
+      "period_end_date": "Fri, 03 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "MTSI"

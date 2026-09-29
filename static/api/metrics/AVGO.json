@@ -712,129 +712,129 @@
   "name": "Broadcom Inc.",
   "periods": [
     {
-      "id": 240,
+      "id": 209,
       "period": "Q3 2018",
-      "period_end_date": "2018-08-05"
+      "period_end_date": "Sun, 05 Aug 2018 00:00:00 GMT"
     },
     {
-      "id": 241,
+      "id": 210,
       "period": "Q1 2019",
-      "period_end_date": "2019-02-03"
+      "period_end_date": "Sun, 03 Feb 2019 00:00:00 GMT"
     },
     {
-      "id": 242,
+      "id": 211,
       "period": "Q2 2019",
-      "period_end_date": "2019-05-05"
+      "period_end_date": "Sun, 05 May 2019 00:00:00 GMT"
     },
     {
-      "id": 243,
+      "id": 212,
       "period": "Q3 2019",
-      "period_end_date": "2019-08-04"
+      "period_end_date": "Sun, 04 Aug 2019 00:00:00 GMT"
     },
     {
-      "id": 2406,
+      "id": 1248,
       "period": "Q1 2020",
-      "period_end_date": "2020-02-02"
+      "period_end_date": "Sun, 02 Feb 2020 00:00:00 GMT"
     },
     {
-      "id": 2407,
+      "id": 1249,
       "period": "Q2 2020",
-      "period_end_date": "2020-05-03"
+      "period_end_date": "Sun, 03 May 2020 00:00:00 GMT"
     },
     {
-      "id": 2408,
+      "id": 1250,
       "period": "Q3 2020",
-      "period_end_date": "2020-08-02"
+      "period_end_date": "Sun, 02 Aug 2020 00:00:00 GMT"
     },
     {
-      "id": 2409,
+      "id": 1251,
       "period": "Q1 2021",
-      "period_end_date": "2021-01-31"
+      "period_end_date": "Sun, 31 Jan 2021 00:00:00 GMT"
     },
     {
-      "id": 2410,
+      "id": 1252,
       "period": "Q2 2021",
-      "period_end_date": "2021-05-02"
+      "period_end_date": "Sun, 02 May 2021 00:00:00 GMT"
     },
     {
-      "id": 2411,
+      "id": 1253,
       "period": "Q3 2021",
-      "period_end_date": "2021-08-01"
+      "period_end_date": "Sun, 01 Aug 2021 00:00:00 GMT"
     },
     {
-      "id": 2412,
+      "id": 1254,
       "period": "Q1 2022",
-      "period_end_date": "2022-01-30"
+      "period_end_date": "Sun, 30 Jan 2022 00:00:00 GMT"
     },
     {
-      "id": 2413,
+      "id": 1255,
       "period": "Q2 2022",
-      "period_end_date": "2022-05-01"
+      "period_end_date": "Sun, 01 May 2022 00:00:00 GMT"
     },
     {
-      "id": 2414,
+      "id": 1256,
       "period": "Q3 2022",
-      "period_end_date": "2022-07-31"
+      "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 244,
+      "id": 213,
       "period": "Q1 2023",
-      "period_end_date": "2023-01-29"
+      "period_end_date": "Sun, 29 Jan 2023 00:00:00 GMT"
     },
     {
-      "id": 245,
+      "id": 214,
       "period": "Q2 2023",
-      "period_end_date": "2023-04-30"
+      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 246,
+      "id": 215,
       "period": "Q3 2023",
-      "period_end_date": "2023-07-30"
+      "period_end_date": "Sun, 30 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 247,
+      "id": 216,
       "period": "Q1 2024",
-      "period_end_date": "2024-02-04"
+      "period_end_date": "Sun, 04 Feb 2024 00:00:00 GMT"
     },
     {
-      "id": 248,
+      "id": 217,
       "period": "Q2 2024",
-      "period_end_date": "2024-05-05"
+      "period_end_date": "Sun, 05 May 2024 00:00:00 GMT"
     },
     {
-      "id": 249,
+      "id": 218,
       "period": "Q3 2024",
-      "period_end_date": "2024-08-04"
+      "period_end_date": "Sun, 04 Aug 2024 00:00:00 GMT"
     },
     {
-      "id": 250,
+      "id": 219,
       "period": "Q1 2025",
-      "period_end_date": "2025-02-02"
+      "period_end_date": "Sun, 02 Feb 2025 00:00:00 GMT"
     },
     {
-      "id": 251,
+      "id": 220,
       "period": "Q2 2025",
-      "period_end_date": "2025-05-04"
+      "period_end_date": "Sun, 04 May 2025 00:00:00 GMT"
     },
     {
-      "id": 252,
+      "id": 221,
       "period": "Q3 2025",
-      "period_end_date": "2025-08-03"
+      "period_end_date": "Sun, 03 Aug 2025 00:00:00 GMT"
     },
     {
-      "id": 253,
+      "id": 222,
       "period": "Q1 2026",
-      "period_end_date": "2026-02-01"
+      "period_end_date": "Sun, 01 Feb 2026 00:00:00 GMT"
     },
     {
-      "id": 254,
+      "id": 223,
       "period": "Q2 2026",
-      "period_end_date": "2026-05-03"
+      "period_end_date": "Sun, 03 May 2026 00:00:00 GMT"
     },
     {
-      "id": 255,
+      "id": 224,
       "period": "Q3 2026",
-      "period_end_date": "2026-08-02"
+      "period_end_date": "Sun, 02 Aug 2026 00:00:00 GMT"
     }
   ],
   "ticker": "AVGO"

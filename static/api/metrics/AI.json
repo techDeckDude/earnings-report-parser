@@ -496,84 +496,84 @@
   "name": "C3.ai, Inc.",
   "periods": [
     {
-      "id": 118,
+      "id": 113,
       "period": "Q1 2022",
-      "period_end_date": "2021-07-31"
+      "period_end_date": "Sat, 31 Jul 2021 00:00:00 GMT"
+    },
+    {
+      "id": 114,
+      "period": "Q2 2022",
+      "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT"
+    },
+    {
+      "id": 115,
+      "period": "Q3 2022",
+      "period_end_date": "Mon, 31 Jan 2022 00:00:00 GMT"
+    },
+    {
+      "id": 116,
+      "period": "Q1 2023",
+      "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT"
+    },
+    {
+      "id": 117,
+      "period": "Q2 2023",
+      "period_end_date": "Mon, 31 Oct 2022 00:00:00 GMT"
+    },
+    {
+      "id": 118,
+      "period": "Q3 2023",
+      "period_end_date": "Tue, 31 Jan 2023 00:00:00 GMT"
     },
     {
       "id": 119,
-      "period": "Q2 2022",
-      "period_end_date": "2021-10-31"
+      "period": "Q1 2024",
+      "period_end_date": "Mon, 31 Jul 2023 00:00:00 GMT"
     },
     {
       "id": 120,
-      "period": "Q3 2022",
-      "period_end_date": "2022-01-31"
+      "period": "Q2 2024",
+      "period_end_date": "Tue, 31 Oct 2023 00:00:00 GMT"
     },
     {
       "id": 121,
-      "period": "Q1 2023",
-      "period_end_date": "2022-07-31"
+      "period": "Q3 2024",
+      "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT"
     },
     {
       "id": 122,
-      "period": "Q2 2023",
-      "period_end_date": "2022-10-31"
+      "period": "Q1 2025",
+      "period_end_date": "Wed, 31 Jul 2024 00:00:00 GMT"
     },
     {
       "id": 123,
-      "period": "Q3 2023",
-      "period_end_date": "2023-01-31"
+      "period": "Q2 2025",
+      "period_end_date": "Thu, 31 Oct 2024 00:00:00 GMT"
     },
     {
       "id": 124,
-      "period": "Q1 2024",
-      "period_end_date": "2023-07-31"
+      "period": "Q3 2025",
+      "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT"
     },
     {
       "id": 125,
-      "period": "Q2 2024",
-      "period_end_date": "2023-10-31"
+      "period": "Q1 2026",
+      "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT"
     },
     {
       "id": 126,
-      "period": "Q3 2024",
-      "period_end_date": "2024-01-31"
+      "period": "Q2 2026",
+      "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT"
     },
     {
       "id": 127,
-      "period": "Q1 2025",
-      "period_end_date": "2024-07-31"
+      "period": "Q3 2026",
+      "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT"
     },
     {
       "id": 128,
-      "period": "Q2 2025",
-      "period_end_date": "2024-10-31"
-    },
-    {
-      "id": 129,
-      "period": "Q3 2025",
-      "period_end_date": "2025-01-31"
-    },
-    {
-      "id": 130,
-      "period": "Q1 2026",
-      "period_end_date": "2025-07-31"
-    },
-    {
-      "id": 131,
-      "period": "Q2 2026",
-      "period_end_date": "2025-10-31"
-    },
-    {
-      "id": 132,
-      "period": "Q3 2026",
-      "period_end_date": "2026-01-31"
-    },
-    {
-      "id": 133,
       "period": "Q1 2027",
-      "period_end_date": "2026-07-31"
+      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "AI"

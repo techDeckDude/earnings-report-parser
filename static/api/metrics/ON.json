@@ -766,134 +766,134 @@
   "name": "ON SEMICONDUCTOR CORPORATION",
   "periods": [
     {
-      "id": 1705,
+      "id": 1068,
       "period": "Q1 2018",
-      "period_end_date": "2018-03-30"
+      "period_end_date": "Fri, 30 Mar 2018 00:00:00 GMT"
     },
     {
-      "id": 1706,
+      "id": 1069,
       "period": "Q2 2018",
-      "period_end_date": "2018-06-29"
+      "period_end_date": "Fri, 29 Jun 2018 00:00:00 GMT"
     },
     {
-      "id": 1707,
+      "id": 1070,
       "period": "Q3 2018",
-      "period_end_date": "2018-09-28"
+      "period_end_date": "Fri, 28 Sep 2018 00:00:00 GMT"
     },
     {
-      "id": 1708,
+      "id": 1071,
       "period": "Q1 2019",
-      "period_end_date": "2019-03-29"
+      "period_end_date": "Fri, 29 Mar 2019 00:00:00 GMT"
     },
     {
-      "id": 1709,
+      "id": 1072,
       "period": "Q2 2019",
-      "period_end_date": "2019-06-28"
+      "period_end_date": "Fri, 28 Jun 2019 00:00:00 GMT"
     },
     {
-      "id": 1710,
+      "id": 1073,
       "period": "Q3 2019",
-      "period_end_date": "2019-09-27"
+      "period_end_date": "Fri, 27 Sep 2019 00:00:00 GMT"
     },
     {
-      "id": 1711,
+      "id": 1074,
       "period": "Q1 2020",
-      "period_end_date": "2020-04-03"
+      "period_end_date": "Fri, 03 Apr 2020 00:00:00 GMT"
     },
     {
-      "id": 1712,
+      "id": 1075,
       "period": "Q2 2020",
-      "period_end_date": "2020-07-03"
+      "period_end_date": "Fri, 03 Jul 2020 00:00:00 GMT"
     },
     {
-      "id": 1713,
+      "id": 1076,
       "period": "Q3 2020",
-      "period_end_date": "2020-10-02"
+      "period_end_date": "Fri, 02 Oct 2020 00:00:00 GMT"
     },
     {
-      "id": 1714,
+      "id": 1077,
       "period": "Q1 2021",
-      "period_end_date": "2021-04-02"
+      "period_end_date": "Fri, 02 Apr 2021 00:00:00 GMT"
     },
     {
-      "id": 1715,
+      "id": 1078,
       "period": "Q2 2021",
-      "period_end_date": "2021-07-02"
+      "period_end_date": "Fri, 02 Jul 2021 00:00:00 GMT"
     },
     {
-      "id": 1716,
+      "id": 1079,
       "period": "Q3 2021",
-      "period_end_date": "2021-10-01"
+      "period_end_date": "Fri, 01 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 1717,
+      "id": 1080,
       "period": "Q1 2022",
-      "period_end_date": "2022-04-01"
+      "period_end_date": "Fri, 01 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 1718,
+      "id": 1081,
       "period": "Q2 2022",
-      "period_end_date": "2022-07-01"
+      "period_end_date": "Fri, 01 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 1719,
+      "id": 1082,
       "period": "Q3 2022",
-      "period_end_date": "2022-09-30"
+      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 1720,
+      "id": 1083,
       "period": "Q1 2023",
-      "period_end_date": "2023-03-31"
+      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 1721,
+      "id": 1084,
       "period": "Q2 2023",
-      "period_end_date": "2023-06-30"
+      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 1722,
+      "id": 1085,
       "period": "Q3 2023",
-      "period_end_date": "2023-09-29"
+      "period_end_date": "Fri, 29 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 1723,
+      "id": 1086,
       "period": "Q1 2024",
-      "period_end_date": "2024-03-29"
+      "period_end_date": "Fri, 29 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 1724,
+      "id": 1087,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-28"
+      "period_end_date": "Fri, 28 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 1725,
+      "id": 1088,
       "period": "Q3 2024",
-      "period_end_date": "2024-09-27"
+      "period_end_date": "Fri, 27 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 1726,
+      "id": 1089,
       "period": "Q1 2025",
-      "period_end_date": "2025-04-04"
+      "period_end_date": "Fri, 04 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 1727,
+      "id": 1090,
       "period": "Q2 2025",
-      "period_end_date": "2025-07-04"
+      "period_end_date": "Fri, 04 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 1728,
+      "id": 1091,
       "period": "Q3 2025",
-      "period_end_date": "2025-10-03"
+      "period_end_date": "Fri, 03 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 1729,
+      "id": 1092,
       "period": "Q1 2026",
-      "period_end_date": "2026-04-03"
+      "period_end_date": "Fri, 03 Apr 2026 00:00:00 GMT"
     },
     {
-      "id": 1730,
+      "id": 1093,
       "period": "Q2 2026",
-      "period_end_date": "2026-07-03"
+      "period_end_date": "Fri, 03 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "ON"
