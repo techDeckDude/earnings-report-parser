@@ -766,134 +766,134 @@
   "name": "Micron Technology, Inc.",
   "periods": [
     {
-      "id": 2892,
+      "id": 1303,
       "period": "Q2 2018",
-      "period_end_date": "2018-03-01"
+      "period_end_date": "Thu, 01 Mar 2018 00:00:00 GMT"
     },
     {
-      "id": 2893,
+      "id": 1304,
       "period": "Q3 2018",
-      "period_end_date": "2018-05-31"
+      "period_end_date": "Thu, 31 May 2018 00:00:00 GMT"
     },
     {
-      "id": 2894,
+      "id": 1305,
       "period": "Q1 2019",
-      "period_end_date": "2018-11-29"
+      "period_end_date": "Thu, 29 Nov 2018 00:00:00 GMT"
     },
     {
-      "id": 2895,
+      "id": 1306,
       "period": "Q2 2019",
-      "period_end_date": "2019-02-28"
+      "period_end_date": "Thu, 28 Feb 2019 00:00:00 GMT"
     },
     {
-      "id": 2896,
+      "id": 1307,
       "period": "Q3 2019",
-      "period_end_date": "2019-05-30"
+      "period_end_date": "Thu, 30 May 2019 00:00:00 GMT"
     },
     {
-      "id": 2897,
+      "id": 1308,
       "period": "Q1 2020",
-      "period_end_date": "2019-11-28"
+      "period_end_date": "Thu, 28 Nov 2019 00:00:00 GMT"
     },
     {
-      "id": 2898,
+      "id": 1309,
       "period": "Q2 2020",
-      "period_end_date": "2020-02-27"
+      "period_end_date": "Thu, 27 Feb 2020 00:00:00 GMT"
     },
     {
-      "id": 2899,
+      "id": 1310,
       "period": "Q3 2020",
-      "period_end_date": "2020-05-28"
+      "period_end_date": "Thu, 28 May 2020 00:00:00 GMT"
     },
     {
-      "id": 1577,
+      "id": 1032,
       "period": "Q1 2021",
-      "period_end_date": "2020-12-03"
+      "period_end_date": "Thu, 03 Dec 2020 00:00:00 GMT"
     },
     {
-      "id": 1578,
+      "id": 1033,
       "period": "Q2 2021",
-      "period_end_date": "2021-03-04"
+      "period_end_date": "Thu, 04 Mar 2021 00:00:00 GMT"
     },
     {
-      "id": 1579,
+      "id": 1034,
       "period": "Q3 2021",
-      "period_end_date": "2021-06-03"
+      "period_end_date": "Thu, 03 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 1580,
+      "id": 1035,
       "period": "Q1 2022",
-      "period_end_date": "2021-12-02"
+      "period_end_date": "Thu, 02 Dec 2021 00:00:00 GMT"
     },
     {
-      "id": 1581,
+      "id": 1036,
       "period": "Q2 2022",
-      "period_end_date": "2022-03-03"
+      "period_end_date": "Thu, 03 Mar 2022 00:00:00 GMT"
     },
     {
-      "id": 1582,
+      "id": 1037,
       "period": "Q3 2022",
-      "period_end_date": "2022-06-02"
+      "period_end_date": "Thu, 02 Jun 2022 00:00:00 GMT"
     },
     {
-      "id": 1583,
+      "id": 1038,
       "period": "Q1 2023",
-      "period_end_date": "2022-12-01"
+      "period_end_date": "Thu, 01 Dec 2022 00:00:00 GMT"
     },
     {
-      "id": 1584,
+      "id": 1039,
       "period": "Q2 2023",
-      "period_end_date": "2023-03-02"
+      "period_end_date": "Thu, 02 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 1585,
+      "id": 1040,
       "period": "Q3 2023",
-      "period_end_date": "2023-06-01"
+      "period_end_date": "Thu, 01 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 1586,
+      "id": 1041,
       "period": "Q1 2024",
-      "period_end_date": "2023-11-30"
+      "period_end_date": "Thu, 30 Nov 2023 00:00:00 GMT"
     },
     {
-      "id": 1587,
+      "id": 1042,
       "period": "Q2 2024",
-      "period_end_date": "2024-02-29"
+      "period_end_date": "Thu, 29 Feb 2024 00:00:00 GMT"
     },
     {
-      "id": 1588,
+      "id": 1043,
       "period": "Q3 2024",
-      "period_end_date": "2024-05-30"
+      "period_end_date": "Thu, 30 May 2024 00:00:00 GMT"
     },
     {
-      "id": 1589,
+      "id": 1044,
       "period": "Q1 2025",
-      "period_end_date": "2024-11-28"
+      "period_end_date": "Thu, 28 Nov 2024 00:00:00 GMT"
     },
     {
-      "id": 1590,
+      "id": 1045,
       "period": "Q2 2025",
-      "period_end_date": "2025-02-27"
+      "period_end_date": "Thu, 27 Feb 2025 00:00:00 GMT"
     },
     {
-      "id": 1591,
+      "id": 1046,
       "period": "Q3 2025",
-      "period_end_date": "2025-05-29"
+      "period_end_date": "Thu, 29 May 2025 00:00:00 GMT"
     },
     {
-      "id": 1592,
+      "id": 1047,
       "period": "Q1 2026",
-      "period_end_date": "2025-11-27"
+      "period_end_date": "Thu, 27 Nov 2025 00:00:00 GMT"
     },
     {
-      "id": 1593,
+      "id": 1048,
       "period": "Q2 2026",
-      "period_end_date": "2026-02-26"
+      "period_end_date": "Thu, 26 Feb 2026 00:00:00 GMT"
     },
     {
-      "id": 1594,
+      "id": 1049,
       "period": "Q3 2026",
-      "period_end_date": "2026-05-28"
+      "period_end_date": "Thu, 28 May 2026 00:00:00 GMT"
     }
   ],
   "ticker": "MU"

@@ -582,104 +582,104 @@
   "name": "Okta, Inc.",
   "periods": [
     {
-      "id": 610,
+      "id": 565,
       "period": "Q1 2021",
-      "period_end_date": "2020-04-30"
+      "period_end_date": "Thu, 30 Apr 2020 00:00:00 GMT"
     },
     {
-      "id": 611,
+      "id": 566,
       "period": "Q2 2021",
-      "period_end_date": "2020-07-31"
+      "period_end_date": "Fri, 31 Jul 2020 00:00:00 GMT"
     },
     {
-      "id": 612,
+      "id": 567,
       "period": "Q3 2021",
-      "period_end_date": "2020-10-31"
+      "period_end_date": "Sat, 31 Oct 2020 00:00:00 GMT"
     },
     {
-      "id": 613,
+      "id": 568,
       "period": "Q1 2022",
-      "period_end_date": "2021-04-30"
+      "period_end_date": "Fri, 30 Apr 2021 00:00:00 GMT"
     },
     {
-      "id": 614,
+      "id": 569,
       "period": "Q2 2022",
-      "period_end_date": "2021-07-31"
+      "period_end_date": "Sat, 31 Jul 2021 00:00:00 GMT"
     },
     {
-      "id": 615,
+      "id": 570,
       "period": "Q3 2022",
-      "period_end_date": "2021-10-31"
+      "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 616,
+      "id": 571,
       "period": "Q1 2023",
-      "period_end_date": "2022-04-30"
+      "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 617,
+      "id": 572,
       "period": "Q2 2023",
-      "period_end_date": "2022-07-31"
+      "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 618,
+      "id": 573,
       "period": "Q3 2023",
-      "period_end_date": "2022-10-31"
+      "period_end_date": "Mon, 31 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 619,
+      "id": 574,
       "period": "Q1 2024",
-      "period_end_date": "2023-04-30"
+      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 620,
+      "id": 575,
       "period": "Q2 2024",
-      "period_end_date": "2023-07-31"
+      "period_end_date": "Mon, 31 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 621,
+      "id": 576,
       "period": "Q3 2024",
-      "period_end_date": "2023-10-31"
+      "period_end_date": "Tue, 31 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 622,
+      "id": 577,
       "period": "Q1 2025",
-      "period_end_date": "2024-04-30"
+      "period_end_date": "Tue, 30 Apr 2024 00:00:00 GMT"
     },
     {
-      "id": 623,
+      "id": 578,
       "period": "Q2 2025",
-      "period_end_date": "2024-07-31"
+      "period_end_date": "Wed, 31 Jul 2024 00:00:00 GMT"
     },
     {
-      "id": 624,
+      "id": 579,
       "period": "Q3 2025",
-      "period_end_date": "2024-10-31"
+      "period_end_date": "Thu, 31 Oct 2024 00:00:00 GMT"
     },
     {
-      "id": 625,
+      "id": 580,
       "period": "Q1 2026",
-      "period_end_date": "2025-04-30"
+      "period_end_date": "Wed, 30 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 626,
+      "id": 581,
       "period": "Q2 2026",
-      "period_end_date": "2025-07-31"
+      "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 627,
+      "id": 582,
       "period": "Q3 2026",
-      "period_end_date": "2025-10-31"
+      "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 628,
+      "id": 583,
       "period": "Q1 2027",
-      "period_end_date": "2026-04-30"
+      "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT"
     },
     {
-      "id": 629,
+      "id": 584,
       "period": "Q2 2027",
-      "period_end_date": "2026-07-31"
+      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "OKTA"

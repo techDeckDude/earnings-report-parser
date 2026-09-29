@@ -307,49 +307,49 @@
   "name": "Salesforce, Inc.",
   "periods": [
     {
-      "id": 1213,
+      "id": 905,
       "period": "Q3 2024",
-      "period_end_date": "2023-10-31"
+      "period_end_date": "Tue, 31 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 1214,
+      "id": 906,
       "period": "Q1 2025",
-      "period_end_date": "2024-04-30"
+      "period_end_date": "Tue, 30 Apr 2024 00:00:00 GMT"
     },
     {
-      "id": 1215,
+      "id": 907,
       "period": "Q2 2025",
-      "period_end_date": "2024-07-31"
+      "period_end_date": "Wed, 31 Jul 2024 00:00:00 GMT"
     },
     {
-      "id": 1216,
+      "id": 908,
       "period": "Q3 2025",
-      "period_end_date": "2024-10-31"
+      "period_end_date": "Thu, 31 Oct 2024 00:00:00 GMT"
     },
     {
-      "id": 1217,
+      "id": 909,
       "period": "Q1 2026",
-      "period_end_date": "2025-04-30"
+      "period_end_date": "Wed, 30 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 1218,
+      "id": 910,
       "period": "Q2 2026",
-      "period_end_date": "2025-07-31"
+      "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 1219,
+      "id": 911,
       "period": "Q3 2026",
-      "period_end_date": "2025-10-31"
+      "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 1220,
+      "id": 912,
       "period": "Q1 2027",
-      "period_end_date": "2026-04-30"
+      "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT"
     },
     {
-      "id": 1221,
+      "id": 913,
       "period": "Q2 2027",
-      "period_end_date": "2026-07-31"
+      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "CRM"

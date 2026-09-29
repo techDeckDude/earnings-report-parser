@@ -504,89 +504,89 @@
   "name": "MICROSOFT CORPORATION",
   "periods": [
     {
-      "id": 496,
+      "id": 453,
       "period": "Q2 2021",
-      "period_end_date": "2020-12-31"
+      "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT"
     },
     {
-      "id": 497,
+      "id": 454,
       "period": "Q3 2021",
-      "period_end_date": "2021-03-31"
+      "period_end_date": "Wed, 31 Mar 2021 00:00:00 GMT"
     },
     {
-      "id": 498,
+      "id": 455,
       "period": "Q1 2022",
-      "period_end_date": "2021-09-30"
+      "period_end_date": "Thu, 30 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 499,
+      "id": 456,
       "period": "Q2 2022",
-      "period_end_date": "2021-12-31"
+      "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT"
     },
     {
-      "id": 500,
+      "id": 457,
       "period": "Q3 2022",
-      "period_end_date": "2022-03-31"
+      "period_end_date": "Thu, 31 Mar 2022 00:00:00 GMT"
     },
     {
-      "id": 501,
+      "id": 458,
       "period": "Q1 2023",
-      "period_end_date": "2022-09-30"
+      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 502,
+      "id": 459,
       "period": "Q2 2023",
-      "period_end_date": "2022-12-31"
+      "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT"
     },
     {
-      "id": 503,
+      "id": 460,
       "period": "Q3 2023",
-      "period_end_date": "2023-03-31"
+      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 504,
+      "id": 461,
       "period": "Q1 2024",
-      "period_end_date": "2023-09-30"
+      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 505,
+      "id": 462,
       "period": "Q2 2024",
-      "period_end_date": "2023-12-31"
+      "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT"
     },
     {
-      "id": 506,
+      "id": 463,
       "period": "Q3 2024",
-      "period_end_date": "2024-03-31"
+      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 507,
+      "id": 464,
       "period": "Q1 2025",
-      "period_end_date": "2024-09-30"
+      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 508,
+      "id": 465,
       "period": "Q2 2025",
-      "period_end_date": "2024-12-31"
+      "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT"
     },
     {
-      "id": 509,
+      "id": 466,
       "period": "Q3 2025",
-      "period_end_date": "2025-03-31"
+      "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT"
     },
     {
-      "id": 510,
+      "id": 467,
       "period": "Q1 2026",
-      "period_end_date": "2025-09-30"
+      "period_end_date": "Tue, 30 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 511,
+      "id": 468,
       "period": "Q2 2026",
-      "period_end_date": "2025-12-31"
+      "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT"
     },
     {
-      "id": 512,
+      "id": 469,
       "period": "Q3 2026",
-      "period_end_date": "2026-03-31"
+      "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT"
     }
   ],
   "ticker": "MSFT"

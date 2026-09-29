@@ -631,109 +631,109 @@
   "name": "MICROCHIP TECHNOLOGY INCORPORATED",
   "periods": [
     {
-      "id": 438,
+      "id": 406,
       "period": "Q2 2020",
-      "period_end_date": "2019-09-30"
+      "period_end_date": "Mon, 30 Sep 2019 00:00:00 GMT"
     },
     {
-      "id": 439,
+      "id": 407,
       "period": "Q3 2020",
-      "period_end_date": "2019-12-31"
+      "period_end_date": "Tue, 31 Dec 2019 00:00:00 GMT"
     },
     {
-      "id": 440,
+      "id": 408,
       "period": "Q1 2021",
-      "period_end_date": "2020-06-30"
+      "period_end_date": "Tue, 30 Jun 2020 00:00:00 GMT"
     },
     {
-      "id": 441,
+      "id": 409,
       "period": "Q2 2021",
-      "period_end_date": "2020-09-30"
+      "period_end_date": "Wed, 30 Sep 2020 00:00:00 GMT"
     },
     {
-      "id": 442,
+      "id": 410,
       "period": "Q3 2021",
-      "period_end_date": "2020-12-31"
+      "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT"
     },
     {
-      "id": 443,
+      "id": 411,
       "period": "Q1 2022",
-      "period_end_date": "2021-06-30"
+      "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 444,
+      "id": 412,
       "period": "Q2 2022",
-      "period_end_date": "2021-09-30"
+      "period_end_date": "Thu, 30 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 445,
+      "id": 413,
       "period": "Q3 2022",
-      "period_end_date": "2021-12-31"
+      "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT"
     },
     {
-      "id": 446,
+      "id": 414,
       "period": "Q1 2023",
-      "period_end_date": "2022-06-30"
+      "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT"
     },
     {
-      "id": 447,
+      "id": 415,
       "period": "Q2 2023",
-      "period_end_date": "2022-09-30"
+      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 448,
+      "id": 416,
       "period": "Q3 2023",
-      "period_end_date": "2022-12-31"
+      "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT"
     },
     {
-      "id": 449,
+      "id": 417,
       "period": "Q1 2024",
-      "period_end_date": "2023-06-30"
+      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 450,
+      "id": 418,
       "period": "Q2 2024",
-      "period_end_date": "2023-09-30"
+      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 451,
+      "id": 419,
       "period": "Q3 2024",
-      "period_end_date": "2023-12-31"
+      "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT"
     },
     {
-      "id": 452,
+      "id": 420,
       "period": "Q1 2025",
-      "period_end_date": "2024-06-30"
+      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 453,
+      "id": 421,
       "period": "Q2 2025",
-      "period_end_date": "2024-09-30"
+      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 454,
+      "id": 422,
       "period": "Q3 2025",
-      "period_end_date": "2024-12-31"
+      "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT"
     },
     {
-      "id": 455,
+      "id": 423,
       "period": "Q1 2026",
-      "period_end_date": "2025-06-30"
+      "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT"
     },
     {
-      "id": 456,
+      "id": 424,
       "period": "Q2 2026",
-      "period_end_date": "2025-09-30"
+      "period_end_date": "Tue, 30 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 457,
+      "id": 425,
       "period": "Q3 2026",
-      "period_end_date": "2025-12-31"
+      "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT"
     },
     {
-      "id": 458,
+      "id": 426,
       "period": "Q1 2027",
-      "period_end_date": "2026-06-30"
+      "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "MCHP"

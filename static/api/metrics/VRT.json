@@ -582,104 +582,104 @@
   "name": "Vertiv Holdings Co",
   "periods": [
     {
-      "id": 3426,
+      "id": 1344,
       "period": "Q1 2020",
-      "period_end_date": "2020-03-31"
+      "period_end_date": "Tue, 31 Mar 2020 00:00:00 GMT"
     },
     {
-      "id": 3427,
+      "id": 1345,
       "period": "Q2 2020",
-      "period_end_date": "2020-06-30"
+      "period_end_date": "Tue, 30 Jun 2020 00:00:00 GMT"
     },
     {
-      "id": 3428,
+      "id": 1346,
       "period": "Q3 2020",
-      "period_end_date": "2020-09-30"
+      "period_end_date": "Wed, 30 Sep 2020 00:00:00 GMT"
     },
     {
-      "id": 2070,
+      "id": 1214,
       "period": "Q1 2021",
-      "period_end_date": "2021-03-31"
+      "period_end_date": "Wed, 31 Mar 2021 00:00:00 GMT"
     },
     {
-      "id": 2071,
+      "id": 1215,
       "period": "Q2 2021",
-      "period_end_date": "2021-06-30"
+      "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 2072,
+      "id": 1216,
       "period": "Q3 2021",
-      "period_end_date": "2021-09-30"
+      "period_end_date": "Thu, 30 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 2073,
+      "id": 1217,
       "period": "Q1 2022",
-      "period_end_date": "2022-03-31"
+      "period_end_date": "Thu, 31 Mar 2022 00:00:00 GMT"
     },
     {
-      "id": 2074,
+      "id": 1218,
       "period": "Q2 2022",
-      "period_end_date": "2022-06-30"
+      "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT"
     },
     {
-      "id": 2075,
+      "id": 1219,
       "period": "Q3 2022",
-      "period_end_date": "2022-09-30"
+      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 2076,
+      "id": 1220,
       "period": "Q1 2023",
-      "period_end_date": "2023-03-31"
+      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 2077,
+      "id": 1221,
       "period": "Q2 2023",
-      "period_end_date": "2023-06-30"
+      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 2078,
+      "id": 1222,
       "period": "Q3 2023",
-      "period_end_date": "2023-09-30"
+      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 2079,
+      "id": 1223,
       "period": "Q1 2024",
-      "period_end_date": "2024-03-31"
+      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 2080,
+      "id": 1224,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-30"
+      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 2081,
+      "id": 1225,
       "period": "Q3 2024",
-      "period_end_date": "2024-09-30"
+      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 2082,
+      "id": 1226,
       "period": "Q1 2025",
-      "period_end_date": "2025-03-31"
+      "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT"
     },
     {
-      "id": 2083,
+      "id": 1227,
       "period": "Q2 2025",
-      "period_end_date": "2025-06-30"
+      "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT"
     },
     {
-      "id": 2084,
+      "id": 1228,
       "period": "Q3 2025",
-      "period_end_date": "2025-09-30"
+      "period_end_date": "Tue, 30 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 2085,
+      "id": 1229,
       "period": "Q1 2026",
-      "period_end_date": "2026-03-31"
+      "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT"
     },
     {
-      "id": 2086,
+      "id": 1230,
       "period": "Q2 2026",
-      "period_end_date": "2026-06-30"
+      "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "VRT"

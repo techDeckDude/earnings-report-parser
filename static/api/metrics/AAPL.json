@@ -928,164 +928,164 @@
   "name": "Apple Inc.",
   "periods": [
     {
-      "id": 47,
+      "id": 42,
       "period": "Q2 2016",
-      "period_end_date": "2016-03-26"
+      "period_end_date": "Sat, 26 Mar 2016 00:00:00 GMT"
+    },
+    {
+      "id": 43,
+      "period": "Q3 2016",
+      "period_end_date": "Sat, 25 Jun 2016 00:00:00 GMT"
+    },
+    {
+      "id": 44,
+      "period": "Q1 2017",
+      "period_end_date": "Sat, 31 Dec 2016 00:00:00 GMT"
+    },
+    {
+      "id": 45,
+      "period": "Q2 2017",
+      "period_end_date": "Sat, 01 Apr 2017 00:00:00 GMT"
+    },
+    {
+      "id": 46,
+      "period": "Q3 2017",
+      "period_end_date": "Sat, 01 Jul 2017 00:00:00 GMT"
+    },
+    {
+      "id": 47,
+      "period": "Q1 2018",
+      "period_end_date": "Sat, 30 Dec 2017 00:00:00 GMT"
     },
     {
       "id": 48,
-      "period": "Q3 2016",
-      "period_end_date": "2016-06-25"
+      "period": "Q2 2018",
+      "period_end_date": "Sat, 31 Mar 2018 00:00:00 GMT"
     },
     {
       "id": 49,
-      "period": "Q1 2017",
-      "period_end_date": "2016-12-31"
+      "period": "Q3 2018",
+      "period_end_date": "Sat, 30 Jun 2018 00:00:00 GMT"
     },
     {
       "id": 50,
-      "period": "Q2 2017",
-      "period_end_date": "2017-04-01"
+      "period": "Q1 2019",
+      "period_end_date": "Sat, 29 Dec 2018 00:00:00 GMT"
     },
     {
       "id": 51,
-      "period": "Q3 2017",
-      "period_end_date": "2017-07-01"
+      "period": "Q2 2019",
+      "period_end_date": "Sat, 30 Mar 2019 00:00:00 GMT"
     },
     {
       "id": 52,
-      "period": "Q1 2018",
-      "period_end_date": "2017-12-30"
+      "period": "Q3 2019",
+      "period_end_date": "Sat, 29 Jun 2019 00:00:00 GMT"
     },
     {
       "id": 53,
-      "period": "Q2 2018",
-      "period_end_date": "2018-03-31"
+      "period": "Q1 2020",
+      "period_end_date": "Sat, 28 Dec 2019 00:00:00 GMT"
     },
     {
       "id": 54,
-      "period": "Q3 2018",
-      "period_end_date": "2018-06-30"
+      "period": "Q2 2020",
+      "period_end_date": "Sat, 28 Mar 2020 00:00:00 GMT"
     },
     {
       "id": 55,
-      "period": "Q1 2019",
-      "period_end_date": "2018-12-29"
+      "period": "Q3 2020",
+      "period_end_date": "Sat, 27 Jun 2020 00:00:00 GMT"
     },
     {
       "id": 56,
-      "period": "Q2 2019",
-      "period_end_date": "2019-03-30"
+      "period": "Q1 2021",
+      "period_end_date": "Sat, 26 Dec 2020 00:00:00 GMT"
     },
     {
       "id": 57,
-      "period": "Q3 2019",
-      "period_end_date": "2019-06-29"
+      "period": "Q2 2021",
+      "period_end_date": "Sat, 27 Mar 2021 00:00:00 GMT"
     },
     {
       "id": 58,
-      "period": "Q1 2020",
-      "period_end_date": "2019-12-28"
+      "period": "Q3 2021",
+      "period_end_date": "Sat, 26 Jun 2021 00:00:00 GMT"
     },
     {
       "id": 59,
-      "period": "Q2 2020",
-      "period_end_date": "2020-03-28"
+      "period": "Q1 2022",
+      "period_end_date": "Sat, 25 Dec 2021 00:00:00 GMT"
     },
     {
       "id": 60,
-      "period": "Q3 2020",
-      "period_end_date": "2020-06-27"
+      "period": "Q2 2022",
+      "period_end_date": "Sat, 26 Mar 2022 00:00:00 GMT"
     },
     {
       "id": 61,
-      "period": "Q1 2021",
-      "period_end_date": "2020-12-26"
+      "period": "Q3 2022",
+      "period_end_date": "Sat, 25 Jun 2022 00:00:00 GMT"
     },
     {
       "id": 62,
-      "period": "Q2 2021",
-      "period_end_date": "2021-03-27"
+      "period": "Q1 2023",
+      "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT"
     },
     {
       "id": 63,
-      "period": "Q3 2021",
-      "period_end_date": "2021-06-26"
+      "period": "Q2 2023",
+      "period_end_date": "Sat, 01 Apr 2023 00:00:00 GMT"
     },
     {
       "id": 64,
-      "period": "Q1 2022",
-      "period_end_date": "2021-12-25"
+      "period": "Q3 2023",
+      "period_end_date": "Sat, 01 Jul 2023 00:00:00 GMT"
     },
     {
       "id": 65,
-      "period": "Q2 2022",
-      "period_end_date": "2022-03-26"
+      "period": "Q1 2024",
+      "period_end_date": "Sat, 30 Dec 2023 00:00:00 GMT"
     },
     {
       "id": 66,
-      "period": "Q3 2022",
-      "period_end_date": "2022-06-25"
+      "period": "Q2 2024",
+      "period_end_date": "Sat, 30 Mar 2024 00:00:00 GMT"
     },
     {
       "id": 67,
-      "period": "Q1 2023",
-      "period_end_date": "2022-12-31"
+      "period": "Q3 2024",
+      "period_end_date": "Sat, 29 Jun 2024 00:00:00 GMT"
     },
     {
       "id": 68,
-      "period": "Q2 2023",
-      "period_end_date": "2023-04-01"
+      "period": "Q1 2025",
+      "period_end_date": "Sat, 28 Dec 2024 00:00:00 GMT"
     },
     {
       "id": 69,
-      "period": "Q3 2023",
-      "period_end_date": "2023-07-01"
+      "period": "Q2 2025",
+      "period_end_date": "Sat, 29 Mar 2025 00:00:00 GMT"
     },
     {
       "id": 70,
-      "period": "Q1 2024",
-      "period_end_date": "2023-12-30"
+      "period": "Q3 2025",
+      "period_end_date": "Sat, 28 Jun 2025 00:00:00 GMT"
     },
     {
       "id": 71,
-      "period": "Q2 2024",
-      "period_end_date": "2024-03-30"
+      "period": "Q1 2026",
+      "period_end_date": "Sat, 27 Dec 2025 00:00:00 GMT"
     },
     {
       "id": 72,
-      "period": "Q3 2024",
-      "period_end_date": "2024-06-29"
+      "period": "Q2 2026",
+      "period_end_date": "Sat, 28 Mar 2026 00:00:00 GMT"
     },
     {
       "id": 73,
-      "period": "Q1 2025",
-      "period_end_date": "2024-12-28"
-    },
-    {
-      "id": 74,
-      "period": "Q2 2025",
-      "period_end_date": "2025-03-29"
-    },
-    {
-      "id": 75,
-      "period": "Q3 2025",
-      "period_end_date": "2025-06-28"
-    },
-    {
-      "id": 76,
-      "period": "Q1 2026",
-      "period_end_date": "2025-12-27"
-    },
-    {
-      "id": 77,
-      "period": "Q2 2026",
-      "period_end_date": "2026-03-28"
-    },
-    {
-      "id": 78,
       "period": "Q3 2026",
-      "period_end_date": "2026-06-27"
+      "period_end_date": "Sat, 27 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "AAPL"

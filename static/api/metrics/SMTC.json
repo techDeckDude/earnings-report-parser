@@ -685,119 +685,119 @@
   "name": "Semtech Corporation",
   "periods": [
     {
-      "id": 762,
+      "id": 717,
       "period": "Q3 2019",
-      "period_end_date": "2018-10-28"
+      "period_end_date": "Sun, 28 Oct 2018 00:00:00 GMT"
     },
     {
-      "id": 763,
+      "id": 718,
       "period": "Q1 2020",
-      "period_end_date": "2019-04-28"
+      "period_end_date": "Sun, 28 Apr 2019 00:00:00 GMT"
     },
     {
-      "id": 764,
+      "id": 719,
       "period": "Q2 2020",
-      "period_end_date": "2019-07-28"
+      "period_end_date": "Sun, 28 Jul 2019 00:00:00 GMT"
     },
     {
-      "id": 765,
+      "id": 720,
       "period": "Q3 2020",
-      "period_end_date": "2019-10-27"
+      "period_end_date": "Sun, 27 Oct 2019 00:00:00 GMT"
     },
     {
-      "id": 766,
+      "id": 721,
       "period": "Q1 2021",
-      "period_end_date": "2020-04-26"
+      "period_end_date": "Sun, 26 Apr 2020 00:00:00 GMT"
     },
     {
-      "id": 767,
+      "id": 722,
       "period": "Q2 2021",
-      "period_end_date": "2020-07-26"
+      "period_end_date": "Sun, 26 Jul 2020 00:00:00 GMT"
     },
     {
-      "id": 768,
+      "id": 723,
       "period": "Q3 2021",
-      "period_end_date": "2020-10-25"
+      "period_end_date": "Sun, 25 Oct 2020 00:00:00 GMT"
     },
     {
-      "id": 769,
+      "id": 724,
       "period": "Q1 2022",
-      "period_end_date": "2021-05-02"
+      "period_end_date": "Sun, 02 May 2021 00:00:00 GMT"
     },
     {
-      "id": 770,
+      "id": 725,
       "period": "Q2 2022",
-      "period_end_date": "2021-08-01"
+      "period_end_date": "Sun, 01 Aug 2021 00:00:00 GMT"
     },
     {
-      "id": 771,
+      "id": 726,
       "period": "Q3 2022",
-      "period_end_date": "2021-10-31"
+      "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 772,
+      "id": 727,
       "period": "Q1 2023",
-      "period_end_date": "2022-05-01"
+      "period_end_date": "Sun, 01 May 2022 00:00:00 GMT"
     },
     {
-      "id": 773,
+      "id": 728,
       "period": "Q2 2023",
-      "period_end_date": "2022-07-31"
+      "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 774,
+      "id": 729,
       "period": "Q3 2023",
-      "period_end_date": "2022-10-30"
+      "period_end_date": "Sun, 30 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 775,
+      "id": 730,
       "period": "Q1 2024",
-      "period_end_date": "2023-04-30"
+      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 776,
+      "id": 731,
       "period": "Q2 2024",
-      "period_end_date": "2023-07-30"
+      "period_end_date": "Sun, 30 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 777,
+      "id": 732,
       "period": "Q3 2024",
-      "period_end_date": "2023-10-29"
+      "period_end_date": "Sun, 29 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 778,
+      "id": 733,
       "period": "Q1 2025",
-      "period_end_date": "2024-04-28"
+      "period_end_date": "Sun, 28 Apr 2024 00:00:00 GMT"
     },
     {
-      "id": 779,
+      "id": 734,
       "period": "Q2 2025",
-      "period_end_date": "2024-07-28"
+      "period_end_date": "Sun, 28 Jul 2024 00:00:00 GMT"
     },
     {
-      "id": 780,
+      "id": 735,
       "period": "Q3 2025",
-      "period_end_date": "2024-10-27"
+      "period_end_date": "Sun, 27 Oct 2024 00:00:00 GMT"
     },
     {
-      "id": 781,
+      "id": 736,
       "period": "Q1 2026",
-      "period_end_date": "2025-04-27"
+      "period_end_date": "Sun, 27 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 782,
+      "id": 737,
       "period": "Q2 2026",
-      "period_end_date": "2025-07-27"
+      "period_end_date": "Sun, 27 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 783,
+      "id": 738,
       "period": "Q3 2026",
-      "period_end_date": "2025-10-26"
+      "period_end_date": "Sun, 26 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 784,
+      "id": 739,
       "period": "Q1 2027",
-      "period_end_date": "2026-04-26"
+      "period_end_date": "Sun, 26 Apr 2026 00:00:00 GMT"
     }
   ],
   "ticker": "SMTC"

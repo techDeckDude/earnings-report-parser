@@ -847,149 +847,149 @@
   "name": "CIRRUS LOGIC, INC.",
   "periods": [
     {
-      "id": 303,
+      "id": 272,
       "period": "Q3 2013",
-      "period_end_date": "2013-12-28"
+      "period_end_date": "Sat, 28 Dec 2013 00:00:00 GMT"
     },
     {
-      "id": 304,
+      "id": 273,
       "period": "Q1 2018",
-      "period_end_date": "2017-06-24"
+      "period_end_date": "Sat, 24 Jun 2017 00:00:00 GMT"
     },
     {
-      "id": 305,
+      "id": 274,
       "period": "Q2 2018",
-      "period_end_date": "2017-09-23"
+      "period_end_date": "Sat, 23 Sep 2017 00:00:00 GMT"
     },
     {
-      "id": 306,
+      "id": 275,
       "period": "Q3 2018",
-      "period_end_date": "2017-12-30"
+      "period_end_date": "Sat, 30 Dec 2017 00:00:00 GMT"
     },
     {
-      "id": 307,
+      "id": 276,
       "period": "Q1 2019",
-      "period_end_date": "2018-06-30"
+      "period_end_date": "Sat, 30 Jun 2018 00:00:00 GMT"
     },
     {
-      "id": 308,
+      "id": 277,
       "period": "Q2 2019",
-      "period_end_date": "2018-09-29"
+      "period_end_date": "Sat, 29 Sep 2018 00:00:00 GMT"
     },
     {
-      "id": 309,
+      "id": 278,
       "period": "Q3 2019",
-      "period_end_date": "2018-12-29"
+      "period_end_date": "Sat, 29 Dec 2018 00:00:00 GMT"
     },
     {
-      "id": 310,
+      "id": 279,
       "period": "Q1 2020",
-      "period_end_date": "2019-06-29"
+      "period_end_date": "Sat, 29 Jun 2019 00:00:00 GMT"
     },
     {
-      "id": 311,
+      "id": 280,
       "period": "Q2 2020",
-      "period_end_date": "2019-09-28"
+      "period_end_date": "Sat, 28 Sep 2019 00:00:00 GMT"
     },
     {
-      "id": 312,
+      "id": 281,
       "period": "Q3 2020",
-      "period_end_date": "2019-12-28"
+      "period_end_date": "Sat, 28 Dec 2019 00:00:00 GMT"
     },
     {
-      "id": 313,
+      "id": 282,
       "period": "Q1 2021",
-      "period_end_date": "2020-06-27"
+      "period_end_date": "Sat, 27 Jun 2020 00:00:00 GMT"
     },
     {
-      "id": 314,
+      "id": 283,
       "period": "Q2 2021",
-      "period_end_date": "2020-09-26"
+      "period_end_date": "Sat, 26 Sep 2020 00:00:00 GMT"
     },
     {
-      "id": 315,
+      "id": 284,
       "period": "Q3 2021",
-      "period_end_date": "2020-12-26"
+      "period_end_date": "Sat, 26 Dec 2020 00:00:00 GMT"
     },
     {
-      "id": 316,
+      "id": 285,
       "period": "Q1 2022",
-      "period_end_date": "2021-06-26"
+      "period_end_date": "Sat, 26 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 317,
+      "id": 286,
       "period": "Q2 2022",
-      "period_end_date": "2021-09-25"
+      "period_end_date": "Sat, 25 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 318,
+      "id": 287,
       "period": "Q3 2022",
-      "period_end_date": "2021-12-25"
+      "period_end_date": "Sat, 25 Dec 2021 00:00:00 GMT"
     },
     {
-      "id": 319,
+      "id": 288,
       "period": "Q1 2023",
-      "period_end_date": "2022-06-25"
+      "period_end_date": "Sat, 25 Jun 2022 00:00:00 GMT"
     },
     {
-      "id": 320,
+      "id": 289,
       "period": "Q2 2023",
-      "period_end_date": "2022-09-24"
+      "period_end_date": "Sat, 24 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 321,
+      "id": 290,
       "period": "Q3 2023",
-      "period_end_date": "2022-12-24"
+      "period_end_date": "Sat, 24 Dec 2022 00:00:00 GMT"
     },
     {
-      "id": 322,
+      "id": 291,
       "period": "Q1 2024",
-      "period_end_date": "2023-06-24"
+      "period_end_date": "Sat, 24 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 323,
+      "id": 292,
       "period": "Q2 2024",
-      "period_end_date": "2023-09-23"
+      "period_end_date": "Sat, 23 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 324,
+      "id": 293,
       "period": "Q3 2024",
-      "period_end_date": "2023-12-30"
+      "period_end_date": "Sat, 30 Dec 2023 00:00:00 GMT"
     },
     {
-      "id": 325,
+      "id": 294,
       "period": "Q1 2025",
-      "period_end_date": "2024-06-29"
+      "period_end_date": "Sat, 29 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 326,
+      "id": 295,
       "period": "Q2 2025",
-      "period_end_date": "2024-09-28"
+      "period_end_date": "Sat, 28 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 327,
+      "id": 296,
       "period": "Q3 2025",
-      "period_end_date": "2024-12-28"
+      "period_end_date": "Sat, 28 Dec 2024 00:00:00 GMT"
     },
     {
-      "id": 328,
+      "id": 297,
       "period": "Q1 2026",
-      "period_end_date": "2025-06-28"
+      "period_end_date": "Sat, 28 Jun 2025 00:00:00 GMT"
     },
     {
-      "id": 329,
+      "id": 298,
       "period": "Q2 2026",
-      "period_end_date": "2025-09-27"
+      "period_end_date": "Sat, 27 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 330,
+      "id": 299,
       "period": "Q3 2026",
-      "period_end_date": "2025-12-27"
+      "period_end_date": "Sat, 27 Dec 2025 00:00:00 GMT"
     },
     {
-      "id": 331,
+      "id": 300,
       "period": "Q1 2027",
-      "period_end_date": "2026-06-27"
+      "period_end_date": "Sat, 27 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "CRUS"

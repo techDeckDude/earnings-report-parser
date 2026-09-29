@@ -415,69 +415,69 @@
   "name": "Credo Technology Group Holding Ltd",
   "periods": [
     {
-      "id": 290,
+      "id": 259,
       "period": "Q1 2023",
-      "period_end_date": "2022-07-30"
+      "period_end_date": "Sat, 30 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 291,
+      "id": 260,
       "period": "Q2 2023",
-      "period_end_date": "2022-10-29"
+      "period_end_date": "Sat, 29 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 292,
+      "id": 261,
       "period": "Q3 2023",
-      "period_end_date": "2023-01-28"
+      "period_end_date": "Sat, 28 Jan 2023 00:00:00 GMT"
     },
     {
-      "id": 293,
+      "id": 262,
       "period": "Q1 2024",
-      "period_end_date": "2023-07-29"
+      "period_end_date": "Sat, 29 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 294,
+      "id": 263,
       "period": "Q2 2024",
-      "period_end_date": "2023-10-28"
+      "period_end_date": "Sat, 28 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 295,
+      "id": 264,
       "period": "Q3 2024",
-      "period_end_date": "2024-01-27"
+      "period_end_date": "Sat, 27 Jan 2024 00:00:00 GMT"
     },
     {
-      "id": 296,
+      "id": 265,
       "period": "Q1 2025",
-      "period_end_date": "2024-08-03"
+      "period_end_date": "Sat, 03 Aug 2024 00:00:00 GMT"
     },
     {
-      "id": 297,
+      "id": 266,
       "period": "Q2 2025",
-      "period_end_date": "2024-11-02"
+      "period_end_date": "Sat, 02 Nov 2024 00:00:00 GMT"
     },
     {
-      "id": 298,
+      "id": 267,
       "period": "Q3 2025",
-      "period_end_date": "2025-02-01"
+      "period_end_date": "Sat, 01 Feb 2025 00:00:00 GMT"
     },
     {
-      "id": 299,
+      "id": 268,
       "period": "Q1 2026",
-      "period_end_date": "2025-08-02"
+      "period_end_date": "Sat, 02 Aug 2025 00:00:00 GMT"
     },
     {
-      "id": 300,
+      "id": 269,
       "period": "Q2 2026",
-      "period_end_date": "2025-11-01"
+      "period_end_date": "Sat, 01 Nov 2025 00:00:00 GMT"
     },
     {
-      "id": 301,
+      "id": 270,
       "period": "Q3 2026",
-      "period_end_date": "2026-01-31"
+      "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT"
     },
     {
-      "id": 302,
+      "id": 271,
       "period": "Q1 2027",
-      "period_end_date": "2026-08-01"
+      "period_end_date": "Sat, 01 Aug 2026 00:00:00 GMT"
     }
   ],
   "ticker": "CRDO"

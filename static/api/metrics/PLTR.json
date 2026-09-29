@@ -865,89 +865,89 @@
   "name": "Palantir Technologies Inc.",
   "periods": [
     {
-      "id": 695,
+      "id": 650,
       "period": "Q1 2021",
-      "period_end_date": "2021-03-31"
+      "period_end_date": "Wed, 31 Mar 2021 00:00:00 GMT"
     },
     {
-      "id": 696,
+      "id": 651,
       "period": "Q2 2021",
-      "period_end_date": "2021-06-30"
+      "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 697,
+      "id": 652,
       "period": "Q3 2021",
-      "period_end_date": "2021-09-30"
+      "period_end_date": "Thu, 30 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 698,
+      "id": 653,
       "period": "Q1 2022",
-      "period_end_date": "2022-03-31"
+      "period_end_date": "Thu, 31 Mar 2022 00:00:00 GMT"
     },
     {
-      "id": 699,
+      "id": 654,
       "period": "Q2 2022",
-      "period_end_date": "2022-06-30"
+      "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT"
     },
     {
-      "id": 700,
+      "id": 655,
       "period": "Q3 2022",
-      "period_end_date": "2022-09-30"
+      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 1802,
+      "id": 1094,
       "period": "Q1 2023",
-      "period_end_date": "2023-03-31"
+      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 1803,
+      "id": 1095,
       "period": "Q2 2023",
-      "period_end_date": "2023-06-30"
+      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 1804,
+      "id": 1096,
       "period": "Q3 2023",
-      "period_end_date": "2023-09-30"
+      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 1805,
+      "id": 1097,
       "period": "Q1 2024",
-      "period_end_date": "2024-03-31"
+      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 1806,
+      "id": 1098,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-30"
+      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 1807,
+      "id": 1099,
       "period": "Q3 2024",
-      "period_end_date": "2024-09-30"
+      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 5,
+      "id": 3,
       "period": "Q1 2025",
-      "period_end_date": "2025-03-31"
+      "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT"
+    },
+    {
+      "id": 2,
+      "period": "Q2 2025",
+      "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT"
     },
     {
       "id": 4,
-      "period": "Q2 2025",
-      "period_end_date": "2025-06-30"
-    },
-    {
-      "id": 7,
       "period": "Q3 2025",
-      "period_end_date": "2025-09-30"
+      "period_end_date": "Tue, 30 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 8,
+      "id": 5,
       "period": "Q1 2026",
-      "period_end_date": "2026-03-31"
+      "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT"
     },
     {
       "id": 1,
       "period": "Q2 2026",
-      "period_end_date": "2026-06-30"
+      "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "PLTR"

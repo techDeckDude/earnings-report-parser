@@ -550,94 +550,94 @@
   "name": "Monolithic Power Systems, Inc.",
   "periods": [
     {
-      "id": 463,
+      "id": 431,
       "period": "Q2 2020",
-      "period_end_date": "2020-06-30"
+      "period_end_date": "Tue, 30 Jun 2020 00:00:00 GMT"
     },
     {
-      "id": 464,
+      "id": 432,
       "period": "Q3 2020",
-      "period_end_date": "2020-09-30"
+      "period_end_date": "Wed, 30 Sep 2020 00:00:00 GMT"
     },
     {
-      "id": 465,
+      "id": 433,
       "period": "Q1 2021",
-      "period_end_date": "2021-03-31"
+      "period_end_date": "Wed, 31 Mar 2021 00:00:00 GMT"
     },
     {
-      "id": 466,
+      "id": 434,
       "period": "Q2 2021",
-      "period_end_date": "2021-06-30"
+      "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 467,
+      "id": 435,
       "period": "Q3 2021",
-      "period_end_date": "2021-09-30"
+      "period_end_date": "Thu, 30 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 469,
+      "id": 437,
       "period": "Q2 2022",
-      "period_end_date": "2022-06-30"
+      "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT"
     },
     {
-      "id": 470,
+      "id": 438,
       "period": "Q3 2022",
-      "period_end_date": "2022-09-30"
+      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 468,
+      "id": 436,
       "period": "Q1 2022",
-      "period_end_date": "2023-03-31"
+      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 472,
+      "id": 439,
       "period": "Q2 2023",
-      "period_end_date": "2023-06-30"
+      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 473,
+      "id": 440,
       "period": "Q3 2023",
-      "period_end_date": "2023-09-30"
+      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 474,
+      "id": 441,
       "period": "Q1 2024",
-      "period_end_date": "2024-03-31"
+      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 475,
+      "id": 442,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-30"
+      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 476,
+      "id": 443,
       "period": "Q3 2024",
-      "period_end_date": "2024-09-30"
+      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 2828,
+      "id": 1301,
       "period": "Q1 2025",
-      "period_end_date": "2025-03-31"
+      "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT"
     },
     {
-      "id": 2829,
+      "id": 1302,
       "period": "Q2 2025",
-      "period_end_date": "2025-06-30"
+      "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT"
     },
     {
-      "id": 477,
+      "id": 444,
       "period": "Q3 2025",
-      "period_end_date": "2025-09-30"
+      "period_end_date": "Tue, 30 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 478,
+      "id": 445,
       "period": "Q1 2026",
-      "period_end_date": "2026-03-31"
+      "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT"
     },
     {
-      "id": 479,
+      "id": 446,
       "period": "Q2 2026",
-      "period_end_date": "2026-06-30"
+      "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "MPWR"

@@ -504,89 +504,89 @@
   "name": "CISCO SYSTEMS, INC.",
   "periods": [
     {
-      "id": 332,
+      "id": 301,
       "period": "Q2 2021",
-      "period_end_date": "2021-01-23"
+      "period_end_date": "Sat, 23 Jan 2021 00:00:00 GMT"
     },
     {
-      "id": 333,
+      "id": 302,
       "period": "Q3 2021",
-      "period_end_date": "2021-05-01"
+      "period_end_date": "Sat, 01 May 2021 00:00:00 GMT"
     },
     {
-      "id": 334,
+      "id": 303,
       "period": "Q1 2022",
-      "period_end_date": "2021-10-30"
+      "period_end_date": "Sat, 30 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 335,
+      "id": 304,
       "period": "Q2 2022",
-      "period_end_date": "2022-01-29"
+      "period_end_date": "Sat, 29 Jan 2022 00:00:00 GMT"
     },
     {
-      "id": 336,
+      "id": 305,
       "period": "Q3 2022",
-      "period_end_date": "2022-04-30"
+      "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 337,
+      "id": 306,
       "period": "Q1 2023",
-      "period_end_date": "2022-10-29"
+      "period_end_date": "Sat, 29 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 338,
+      "id": 307,
       "period": "Q2 2023",
-      "period_end_date": "2023-01-28"
+      "period_end_date": "Sat, 28 Jan 2023 00:00:00 GMT"
     },
     {
-      "id": 339,
+      "id": 308,
       "period": "Q3 2023",
-      "period_end_date": "2023-04-29"
+      "period_end_date": "Sat, 29 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 340,
+      "id": 309,
       "period": "Q1 2024",
-      "period_end_date": "2023-10-28"
+      "period_end_date": "Sat, 28 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 341,
+      "id": 310,
       "period": "Q2 2024",
-      "period_end_date": "2024-01-27"
+      "period_end_date": "Sat, 27 Jan 2024 00:00:00 GMT"
     },
     {
-      "id": 342,
+      "id": 311,
       "period": "Q3 2024",
-      "period_end_date": "2024-04-27"
+      "period_end_date": "Sat, 27 Apr 2024 00:00:00 GMT"
     },
     {
-      "id": 343,
+      "id": 312,
       "period": "Q1 2025",
-      "period_end_date": "2024-10-26"
+      "period_end_date": "Sat, 26 Oct 2024 00:00:00 GMT"
     },
     {
-      "id": 344,
+      "id": 313,
       "period": "Q2 2025",
-      "period_end_date": "2025-01-25"
+      "period_end_date": "Sat, 25 Jan 2025 00:00:00 GMT"
     },
     {
-      "id": 345,
+      "id": 314,
       "period": "Q3 2025",
-      "period_end_date": "2025-04-26"
+      "period_end_date": "Sat, 26 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 346,
+      "id": 315,
       "period": "Q1 2026",
-      "period_end_date": "2025-10-25"
+      "period_end_date": "Sat, 25 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 347,
+      "id": 316,
       "period": "Q2 2026",
-      "period_end_date": "2026-01-24"
+      "period_end_date": "Sat, 24 Jan 2026 00:00:00 GMT"
     },
     {
-      "id": 348,
+      "id": 317,
       "period": "Q3 2026",
-      "period_end_date": "2026-04-25"
+      "period_end_date": "Sat, 25 Apr 2026 00:00:00 GMT"
     }
   ],
   "ticker": "CSCO"

@@ -296,49 +296,49 @@
   "name": "Alphabet Inc.",
   "periods": [
     {
-      "id": 1335,
+      "id": 939,
       "period": "Q3 2023",
-      "period_end_date": "2023-09-30"
+      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 1336,
+      "id": 940,
       "period": "Q1 2024",
-      "period_end_date": "2024-03-31"
+      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 1337,
+      "id": 941,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-30"
+      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 1338,
+      "id": 942,
       "period": "Q3 2024",
-      "period_end_date": "2024-09-30"
+      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 1339,
+      "id": 943,
       "period": "Q1 2025",
-      "period_end_date": "2025-03-31"
+      "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT"
     },
     {
-      "id": 1340,
+      "id": 944,
       "period": "Q2 2025",
-      "period_end_date": "2025-06-30"
+      "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT"
     },
     {
-      "id": 1341,
+      "id": 945,
       "period": "Q3 2025",
-      "period_end_date": "2025-09-30"
+      "period_end_date": "Tue, 30 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 1342,
+      "id": 946,
       "period": "Q1 2026",
-      "period_end_date": "2026-03-31"
+      "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT"
     },
     {
-      "id": 1343,
+      "id": 947,
       "period": "Q2 2026",
-      "period_end_date": "2026-06-30"
+      "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "GOOGL"

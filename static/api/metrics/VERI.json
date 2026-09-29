@@ -361,59 +361,59 @@
   "name": "Veritone, Inc.",
   "periods": [
     {
-      "id": 2060,
+      "id": 1204,
       "period": "Q2 2021",
-      "period_end_date": "2021-06-30"
+      "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 2061,
+      "id": 1205,
       "period": "Q3 2021",
-      "period_end_date": "2021-09-30"
+      "period_end_date": "Thu, 30 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 3417,
+      "id": 1343,
       "period": "Q1 2022",
-      "period_end_date": "2022-03-31"
+      "period_end_date": "Thu, 31 Mar 2022 00:00:00 GMT"
     },
     {
-      "id": 2062,
+      "id": 1206,
       "period": "Q3 2022",
-      "period_end_date": "2022-09-30"
+      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 2063,
+      "id": 1207,
       "period": "Q1 2023",
-      "period_end_date": "2023-03-31"
+      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 2064,
+      "id": 1208,
       "period": "Q2 2023",
-      "period_end_date": "2023-06-30"
+      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 2065,
+      "id": 1209,
       "period": "Q3 2023",
-      "period_end_date": "2023-09-30"
+      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 2066,
+      "id": 1210,
       "period": "Q1 2024",
-      "period_end_date": "2024-03-31"
+      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 2067,
+      "id": 1211,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-30"
+      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 2068,
+      "id": 1212,
       "period": "Q3 2024",
-      "period_end_date": "2024-09-30"
+      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 2069,
+      "id": 1213,
       "period": "Q2 2025",
-      "period_end_date": "2025-06-30"
+      "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT"
     }
   ],
   "ticker": "VERI"

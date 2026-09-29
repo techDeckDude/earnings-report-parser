@@ -334,54 +334,54 @@
   "name": "SNOWFLAKE INC.",
   "periods": [
     {
-      "id": 1934,
+      "id": 1137,
       "period": "Q1 2024",
-      "period_end_date": "2023-04-30"
+      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 1935,
+      "id": 1138,
       "period": "Q2 2024",
-      "period_end_date": "2023-07-31"
+      "period_end_date": "Mon, 31 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 1936,
+      "id": 1139,
       "period": "Q3 2024",
-      "period_end_date": "2023-10-31"
+      "period_end_date": "Tue, 31 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 1937,
+      "id": 1140,
       "period": "Q2 2025",
-      "period_end_date": "2024-07-31"
+      "period_end_date": "Wed, 31 Jul 2024 00:00:00 GMT"
     },
     {
-      "id": 1938,
+      "id": 1141,
       "period": "Q3 2025",
-      "period_end_date": "2024-10-31"
+      "period_end_date": "Thu, 31 Oct 2024 00:00:00 GMT"
     },
     {
-      "id": 1939,
+      "id": 1142,
       "period": "Q1 2026",
-      "period_end_date": "2025-04-30"
+      "period_end_date": "Wed, 30 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 1940,
+      "id": 1143,
       "period": "Q2 2026",
-      "period_end_date": "2025-07-31"
+      "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 785,
+      "id": 740,
       "period": "Q3 2026",
-      "period_end_date": "2025-10-31"
+      "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 786,
+      "id": 741,
       "period": "Q1 2027",
-      "period_end_date": "2026-04-30"
+      "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT"
     },
     {
-      "id": 787,
+      "id": 742,
       "period": "Q2 2027",
-      "period_end_date": "2026-07-31"
+      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "SNOW"

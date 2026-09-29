@@ -253,39 +253,39 @@
   "name": "Dell Technologies Inc.",
   "periods": [
     {
-      "id": 2576,
+      "id": 1270,
       "period": "Q2 2025",
-      "period_end_date": "2024-08-02"
+      "period_end_date": "Fri, 02 Aug 2024 00:00:00 GMT"
     },
     {
-      "id": 2577,
+      "id": 1271,
       "period": "Q3 2025",
-      "period_end_date": "2024-11-01"
+      "period_end_date": "Fri, 01 Nov 2024 00:00:00 GMT"
     },
     {
-      "id": 358,
+      "id": 327,
       "period": "Q1 2026",
-      "period_end_date": "2025-05-02"
+      "period_end_date": "Fri, 02 May 2025 00:00:00 GMT"
     },
     {
-      "id": 359,
+      "id": 328,
       "period": "Q2 2026",
-      "period_end_date": "2025-08-01"
+      "period_end_date": "Fri, 01 Aug 2025 00:00:00 GMT"
     },
     {
-      "id": 360,
+      "id": 329,
       "period": "Q3 2026",
-      "period_end_date": "2025-10-31"
+      "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 361,
+      "id": 330,
       "period": "Q1 2027",
-      "period_end_date": "2026-05-01"
+      "period_end_date": "Fri, 01 May 2026 00:00:00 GMT"
     },
     {
-      "id": 362,
+      "id": 331,
       "period": "Q2 2027",
-      "period_end_date": "2026-07-31"
+      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "DELL"

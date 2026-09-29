@@ -496,84 +496,84 @@
   "name": "UiPath, Inc.",
   "periods": [
     {
-      "id": 679,
+      "id": 634,
       "period": "Q2 2022",
-      "period_end_date": "2021-07-31"
+      "period_end_date": "Sat, 31 Jul 2021 00:00:00 GMT"
     },
     {
-      "id": 680,
+      "id": 635,
       "period": "Q3 2022",
-      "period_end_date": "2021-10-31"
+      "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 681,
+      "id": 636,
       "period": "Q1 2023",
-      "period_end_date": "2022-04-30"
+      "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 682,
+      "id": 637,
       "period": "Q2 2023",
-      "period_end_date": "2022-07-31"
+      "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 683,
+      "id": 638,
       "period": "Q3 2023",
-      "period_end_date": "2022-10-31"
+      "period_end_date": "Mon, 31 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 684,
+      "id": 639,
       "period": "Q1 2024",
-      "period_end_date": "2023-04-30"
+      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 685,
+      "id": 640,
       "period": "Q2 2024",
-      "period_end_date": "2023-07-31"
+      "period_end_date": "Mon, 31 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 686,
+      "id": 641,
       "period": "Q3 2024",
-      "period_end_date": "2023-10-31"
+      "period_end_date": "Tue, 31 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 687,
+      "id": 642,
       "period": "Q1 2025",
-      "period_end_date": "2024-04-30"
+      "period_end_date": "Tue, 30 Apr 2024 00:00:00 GMT"
     },
     {
-      "id": 688,
+      "id": 643,
       "period": "Q2 2025",
-      "period_end_date": "2024-07-31"
+      "period_end_date": "Wed, 31 Jul 2024 00:00:00 GMT"
     },
     {
-      "id": 689,
+      "id": 644,
       "period": "Q3 2025",
-      "period_end_date": "2024-10-31"
+      "period_end_date": "Thu, 31 Oct 2024 00:00:00 GMT"
     },
     {
-      "id": 690,
+      "id": 645,
       "period": "Q1 2026",
-      "period_end_date": "2025-04-30"
+      "period_end_date": "Wed, 30 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 691,
+      "id": 646,
       "period": "Q2 2026",
-      "period_end_date": "2025-07-31"
+      "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 692,
+      "id": 647,
       "period": "Q3 2026",
-      "period_end_date": "2025-10-31"
+      "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 693,
+      "id": 648,
       "period": "Q1 2027",
-      "period_end_date": "2026-04-30"
+      "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT"
     },
     {
-      "id": 694,
+      "id": 649,
       "period": "Q2 2027",
-      "period_end_date": "2026-07-31"
+      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "PATH"

@@ -426,74 +426,74 @@
   "name": "INTERNATIONAL BUSINESS MACHINES CORP",
   "periods": [
     {
-      "id": 1368,
+      "id": 959,
       "period": "Q2 2020",
-      "period_end_date": "2020-06-30"
+      "period_end_date": "Tue, 30 Jun 2020 00:00:00 GMT"
     },
     {
-      "id": 1369,
+      "id": 960,
       "period": "Q3 2020",
-      "period_end_date": "2020-09-30"
+      "period_end_date": "Wed, 30 Sep 2020 00:00:00 GMT"
     },
     {
-      "id": 1370,
+      "id": 961,
       "period": "Q1 2021",
-      "period_end_date": "2021-03-31"
+      "period_end_date": "Wed, 31 Mar 2021 00:00:00 GMT"
     },
     {
-      "id": 1371,
+      "id": 962,
       "period": "Q2 2021",
-      "period_end_date": "2021-06-30"
+      "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 2672,
+      "id": 1288,
       "period": "Q3 2021",
-      "period_end_date": "2021-09-30"
+      "period_end_date": "Thu, 30 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 2673,
+      "id": 1289,
       "period": "Q1 2022",
-      "period_end_date": "2022-03-31"
+      "period_end_date": "Thu, 31 Mar 2022 00:00:00 GMT"
     },
     {
-      "id": 1372,
+      "id": 963,
       "period": "Q3 2022",
-      "period_end_date": "2022-09-30"
+      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 2675,
+      "id": 1290,
       "period": "Q1 2023",
-      "period_end_date": "2023-03-31"
+      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 1373,
+      "id": 964,
       "period": "Q2 2023",
-      "period_end_date": "2023-06-30"
+      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 1374,
+      "id": 965,
       "period": "Q3 2023",
-      "period_end_date": "2023-09-30"
+      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 1375,
+      "id": 966,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-30"
+      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 1376,
+      "id": 967,
       "period": "Q3 2024",
-      "period_end_date": "2024-09-30"
+      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 1377,
+      "id": 968,
       "period": "Q1 2025",
-      "period_end_date": "2025-03-31"
+      "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT"
     },
     {
-      "id": 1378,
+      "id": 969,
       "period": "Q2 2026",
-      "period_end_date": "2026-06-30"
+      "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "IBM"

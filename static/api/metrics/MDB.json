@@ -172,24 +172,24 @@
   "name": "MONGODB, INC.",
   "periods": [
     {
-      "id": 459,
+      "id": 427,
       "period": "Q1 2026",
-      "period_end_date": "2025-04-30"
+      "period_end_date": "Wed, 30 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 460,
+      "id": 428,
       "period": "Q2 2026",
-      "period_end_date": "2025-07-31"
+      "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 461,
+      "id": 429,
       "period": "Q1 2027",
-      "period_end_date": "2026-04-30"
+      "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT"
     },
     {
-      "id": 462,
+      "id": 430,
       "period": "Q2 2027",
-      "period_end_date": "2026-07-31"
+      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "MDB"

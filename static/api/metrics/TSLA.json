@@ -658,114 +658,114 @@
   "name": "Tesla, Inc.",
   "periods": [
     {
-      "id": 3318,
+      "id": 1321,
       "period": "Q2 2018",
-      "period_end_date": "2018-06-30"
+      "period_end_date": "Sat, 30 Jun 2018 00:00:00 GMT"
     },
     {
-      "id": 3319,
+      "id": 1322,
       "period": "Q3 2019",
-      "period_end_date": "2019-09-30"
+      "period_end_date": "Mon, 30 Sep 2019 00:00:00 GMT"
     },
     {
-      "id": 3320,
+      "id": 1323,
       "period": "Q1 2020",
-      "period_end_date": "2020-03-31"
+      "period_end_date": "Tue, 31 Mar 2020 00:00:00 GMT"
     },
     {
-      "id": 3321,
+      "id": 1324,
       "period": "Q2 2020",
-      "period_end_date": "2020-06-30"
+      "period_end_date": "Tue, 30 Jun 2020 00:00:00 GMT"
     },
     {
-      "id": 3322,
+      "id": 1325,
       "period": "Q3 2020",
-      "period_end_date": "2020-09-30"
+      "period_end_date": "Wed, 30 Sep 2020 00:00:00 GMT"
     },
     {
-      "id": 3323,
+      "id": 1326,
       "period": "Q1 2021",
-      "period_end_date": "2021-03-31"
+      "period_end_date": "Wed, 31 Mar 2021 00:00:00 GMT"
     },
     {
-      "id": 3324,
+      "id": 1327,
       "period": "Q2 2021",
-      "period_end_date": "2021-06-30"
+      "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 3325,
+      "id": 1328,
       "period": "Q3 2021",
-      "period_end_date": "2021-09-30"
+      "period_end_date": "Thu, 30 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 3326,
+      "id": 1329,
       "period": "Q1 2022",
-      "period_end_date": "2022-03-31"
+      "period_end_date": "Thu, 31 Mar 2022 00:00:00 GMT"
     },
     {
-      "id": 3327,
+      "id": 1330,
       "period": "Q2 2022",
-      "period_end_date": "2022-06-30"
+      "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT"
     },
     {
-      "id": 3328,
+      "id": 1331,
       "period": "Q3 2022",
-      "period_end_date": "2022-09-30"
+      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 3329,
+      "id": 1332,
       "period": "Q1 2023",
-      "period_end_date": "2023-03-31"
+      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 3330,
+      "id": 1333,
       "period": "Q2 2023",
-      "period_end_date": "2023-06-30"
+      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 3331,
+      "id": 1334,
       "period": "Q3 2023",
-      "period_end_date": "2023-09-30"
+      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 3332,
+      "id": 1335,
       "period": "Q1 2024",
-      "period_end_date": "2024-03-31"
+      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 3333,
+      "id": 1336,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-30"
+      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 3334,
+      "id": 1337,
       "period": "Q3 2024",
-      "period_end_date": "2024-09-30"
+      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 3335,
+      "id": 1338,
       "period": "Q1 2025",
-      "period_end_date": "2025-03-31"
+      "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT"
     },
     {
-      "id": 3336,
+      "id": 1339,
       "period": "Q2 2025",
-      "period_end_date": "2025-06-30"
+      "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT"
     },
     {
-      "id": 3337,
+      "id": 1340,
       "period": "Q3 2025",
-      "period_end_date": "2025-09-30"
+      "period_end_date": "Tue, 30 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 3338,
+      "id": 1341,
       "period": "Q1 2026",
-      "period_end_date": "2026-03-31"
+      "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT"
     },
     {
-      "id": 3339,
+      "id": 1342,
       "period": "Q2 2026",
-      "period_end_date": "2026-06-30"
+      "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "TSLA"

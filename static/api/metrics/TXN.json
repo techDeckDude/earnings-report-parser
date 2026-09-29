@@ -790,144 +790,144 @@
   "name": "TEXAS INSTRUMENTS INCORPORATED",
   "periods": [
     {
-      "id": 796,
+      "id": 751,
       "period": "Q2 2017",
-      "period_end_date": "2017-06-30"
+      "period_end_date": "Fri, 30 Jun 2017 00:00:00 GMT"
     },
     {
-      "id": 797,
+      "id": 752,
       "period": "Q3 2017",
-      "period_end_date": "2017-09-30"
+      "period_end_date": "Sat, 30 Sep 2017 00:00:00 GMT"
     },
     {
-      "id": 798,
+      "id": 753,
       "period": "Q1 2018",
-      "period_end_date": "2018-03-31"
+      "period_end_date": "Sat, 31 Mar 2018 00:00:00 GMT"
     },
     {
-      "id": 799,
+      "id": 754,
       "period": "Q2 2018",
-      "period_end_date": "2018-06-30"
+      "period_end_date": "Sat, 30 Jun 2018 00:00:00 GMT"
     },
     {
-      "id": 800,
+      "id": 755,
       "period": "Q3 2018",
-      "period_end_date": "2018-09-30"
+      "period_end_date": "Sun, 30 Sep 2018 00:00:00 GMT"
     },
     {
-      "id": 801,
+      "id": 756,
       "period": "Q1 2019",
-      "period_end_date": "2019-03-31"
+      "period_end_date": "Sun, 31 Mar 2019 00:00:00 GMT"
     },
     {
-      "id": 802,
+      "id": 757,
       "period": "Q2 2019",
-      "period_end_date": "2019-06-30"
+      "period_end_date": "Sun, 30 Jun 2019 00:00:00 GMT"
     },
     {
-      "id": 803,
+      "id": 758,
       "period": "Q3 2019",
-      "period_end_date": "2019-09-30"
+      "period_end_date": "Mon, 30 Sep 2019 00:00:00 GMT"
     },
     {
-      "id": 804,
+      "id": 759,
       "period": "Q1 2020",
-      "period_end_date": "2020-03-31"
+      "period_end_date": "Tue, 31 Mar 2020 00:00:00 GMT"
     },
     {
-      "id": 805,
+      "id": 760,
       "period": "Q2 2020",
-      "period_end_date": "2020-06-30"
+      "period_end_date": "Tue, 30 Jun 2020 00:00:00 GMT"
     },
     {
-      "id": 806,
+      "id": 761,
       "period": "Q3 2020",
-      "period_end_date": "2020-09-30"
+      "period_end_date": "Wed, 30 Sep 2020 00:00:00 GMT"
     },
     {
-      "id": 807,
+      "id": 762,
       "period": "Q1 2021",
-      "period_end_date": "2021-03-31"
+      "period_end_date": "Wed, 31 Mar 2021 00:00:00 GMT"
     },
     {
-      "id": 808,
+      "id": 763,
       "period": "Q2 2021",
-      "period_end_date": "2021-06-30"
+      "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT"
     },
     {
-      "id": 809,
+      "id": 764,
       "period": "Q3 2021",
-      "period_end_date": "2021-09-30"
+      "period_end_date": "Thu, 30 Sep 2021 00:00:00 GMT"
     },
     {
-      "id": 810,
+      "id": 765,
       "period": "Q1 2022",
-      "period_end_date": "2022-03-31"
+      "period_end_date": "Thu, 31 Mar 2022 00:00:00 GMT"
     },
     {
-      "id": 811,
+      "id": 766,
       "period": "Q2 2022",
-      "period_end_date": "2022-06-30"
+      "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT"
     },
     {
-      "id": 812,
+      "id": 767,
       "period": "Q3 2022",
-      "period_end_date": "2022-09-30"
+      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
     },
     {
-      "id": 813,
+      "id": 768,
       "period": "Q1 2023",
-      "period_end_date": "2023-03-31"
+      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
     },
     {
-      "id": 814,
+      "id": 769,
       "period": "Q2 2023",
-      "period_end_date": "2023-06-30"
+      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
     },
     {
-      "id": 815,
+      "id": 770,
       "period": "Q3 2023",
-      "period_end_date": "2023-09-30"
+      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 816,
+      "id": 771,
       "period": "Q1 2024",
-      "period_end_date": "2024-03-31"
+      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 817,
+      "id": 772,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-30"
+      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 818,
+      "id": 773,
       "period": "Q3 2024",
-      "period_end_date": "2024-09-30"
+      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 819,
+      "id": 774,
       "period": "Q1 2025",
-      "period_end_date": "2025-03-31"
+      "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT"
     },
     {
-      "id": 820,
+      "id": 775,
       "period": "Q2 2025",
-      "period_end_date": "2025-06-30"
+      "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT"
     },
     {
-      "id": 821,
+      "id": 776,
       "period": "Q3 2025",
-      "period_end_date": "2025-09-30"
+      "period_end_date": "Tue, 30 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 822,
+      "id": 777,
       "period": "Q1 2026",
-      "period_end_date": "2026-03-31"
+      "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT"
     },
     {
-      "id": 823,
+      "id": 778,
       "period": "Q2 2026",
-      "period_end_date": "2026-06-30"
+      "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "TXN"

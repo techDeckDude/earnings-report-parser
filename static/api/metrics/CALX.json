@@ -685,119 +685,119 @@
   "name": "Calix, Inc",
   "periods": [
     {
-      "id": 267,
+      "id": 236,
       "period": "Q3 2017",
-      "period_end_date": "2017-09-30"
+      "period_end_date": "Sat, 30 Sep 2017 00:00:00 GMT"
     },
     {
-      "id": 268,
+      "id": 237,
       "period": "Q3 2018",
-      "period_end_date": "2018-09-29"
+      "period_end_date": "Sat, 29 Sep 2018 00:00:00 GMT"
     },
     {
-      "id": 269,
+      "id": 238,
       "period": "Q3 2019",
-      "period_end_date": "2019-09-28"
+      "period_end_date": "Sat, 28 Sep 2019 00:00:00 GMT"
     },
     {
-      "id": 270,
+      "id": 239,
       "period": "Q1 2020",
-      "period_end_date": "2020-03-28"
+      "period_end_date": "Sat, 28 Mar 2020 00:00:00 GMT"
     },
     {
-      "id": 271,
+      "id": 240,
       "period": "Q2 2020",
-      "period_end_date": "2020-06-27"
+      "period_end_date": "Sat, 27 Jun 2020 00:00:00 GMT"
     },
     {
-      "id": 272,
+      "id": 241,
       "period": "Q3 2020",
-      "period_end_date": "2020-09-26"
+      "period_end_date": "Sat, 26 Sep 2020 00:00:00 GMT"
     },
     {
-      "id": 273,
+      "id": 242,
       "period": "Q1 2021",
-      "period_end_date": "2021-04-03"
+      "period_end_date": "Sat, 03 Apr 2021 00:00:00 GMT"
     },
     {
-      "id": 274,
+      "id": 243,
       "period": "Q2 2021",
-      "period_end_date": "2021-07-03"
+      "period_end_date": "Sat, 03 Jul 2021 00:00:00 GMT"
     },
     {
-      "id": 275,
+      "id": 244,
       "period": "Q3 2021",
-      "period_end_date": "2021-10-02"
+      "period_end_date": "Sat, 02 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 276,
+      "id": 245,
       "period": "Q1 2022",
-      "period_end_date": "2022-04-02"
+      "period_end_date": "Sat, 02 Apr 2022 00:00:00 GMT"
     },
     {
-      "id": 277,
+      "id": 246,
       "period": "Q2 2022",
-      "period_end_date": "2022-07-02"
+      "period_end_date": "Sat, 02 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 278,
+      "id": 247,
       "period": "Q3 2022",
-      "period_end_date": "2022-10-01"
+      "period_end_date": "Sat, 01 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 279,
+      "id": 248,
       "period": "Q1 2023",
-      "period_end_date": "2023-04-01"
+      "period_end_date": "Sat, 01 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 280,
+      "id": 249,
       "period": "Q2 2023",
-      "period_end_date": "2023-07-01"
+      "period_end_date": "Sat, 01 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 281,
+      "id": 250,
       "period": "Q3 2023",
-      "period_end_date": "2023-09-30"
+      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
     },
     {
-      "id": 282,
+      "id": 251,
       "period": "Q1 2024",
-      "period_end_date": "2024-03-30"
+      "period_end_date": "Sat, 30 Mar 2024 00:00:00 GMT"
     },
     {
-      "id": 283,
+      "id": 252,
       "period": "Q2 2024",
-      "period_end_date": "2024-06-29"
+      "period_end_date": "Sat, 29 Jun 2024 00:00:00 GMT"
     },
     {
-      "id": 284,
+      "id": 253,
       "period": "Q3 2024",
-      "period_end_date": "2024-09-28"
+      "period_end_date": "Sat, 28 Sep 2024 00:00:00 GMT"
     },
     {
-      "id": 285,
+      "id": 254,
       "period": "Q1 2025",
-      "period_end_date": "2025-03-29"
+      "period_end_date": "Sat, 29 Mar 2025 00:00:00 GMT"
     },
     {
-      "id": 286,
+      "id": 255,
       "period": "Q2 2025",
-      "period_end_date": "2025-06-28"
+      "period_end_date": "Sat, 28 Jun 2025 00:00:00 GMT"
     },
     {
-      "id": 287,
+      "id": 256,
       "period": "Q3 2025",
-      "period_end_date": "2025-09-27"
+      "period_end_date": "Sat, 27 Sep 2025 00:00:00 GMT"
     },
     {
-      "id": 288,
+      "id": 257,
       "period": "Q1 2026",
-      "period_end_date": "2026-03-28"
+      "period_end_date": "Sat, 28 Mar 2026 00:00:00 GMT"
     },
     {
-      "id": 289,
+      "id": 258,
       "period": "Q2 2026",
-      "period_end_date": "2026-06-27"
+      "period_end_date": "Sat, 27 Jun 2026 00:00:00 GMT"
     }
   ],
   "ticker": "CALX"

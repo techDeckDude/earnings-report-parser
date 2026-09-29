@@ -523,89 +523,89 @@
   "name": "NVIDIA CORP",
   "periods": [
     {
-      "id": 593,
+      "id": 548,
       "period": "Q1 2022",
-      "period_end_date": "2021-05-02"
+      "period_end_date": "Sun, 02 May 2021 00:00:00 GMT"
     },
     {
-      "id": 594,
+      "id": 549,
       "period": "Q2 2022",
-      "period_end_date": "2021-08-01"
+      "period_end_date": "Sun, 01 Aug 2021 00:00:00 GMT"
     },
     {
-      "id": 595,
+      "id": 550,
       "period": "Q3 2022",
-      "period_end_date": "2021-10-31"
+      "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 596,
+      "id": 551,
       "period": "Q1 2023",
-      "period_end_date": "2022-05-01"
+      "period_end_date": "Sun, 01 May 2022 00:00:00 GMT"
     },
     {
-      "id": 597,
+      "id": 552,
       "period": "Q2 2023",
-      "period_end_date": "2022-07-31"
+      "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 598,
+      "id": 553,
       "period": "Q3 2023",
-      "period_end_date": "2022-10-30"
+      "period_end_date": "Sun, 30 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 599,
+      "id": 554,
       "period": "Q1 2024",
-      "period_end_date": "2023-04-30"
+      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
     },
     {
-      "id": 600,
+      "id": 555,
       "period": "Q2 2024",
-      "period_end_date": "2023-07-30"
+      "period_end_date": "Sun, 30 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 601,
+      "id": 556,
       "period": "Q3 2024",
-      "period_end_date": "2023-10-29"
+      "period_end_date": "Sun, 29 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 602,
+      "id": 557,
       "period": "Q1 2025",
-      "period_end_date": "2024-04-28"
+      "period_end_date": "Sun, 28 Apr 2024 00:00:00 GMT"
     },
     {
-      "id": 603,
+      "id": 558,
       "period": "Q2 2025",
-      "period_end_date": "2024-07-28"
+      "period_end_date": "Sun, 28 Jul 2024 00:00:00 GMT"
     },
     {
-      "id": 604,
+      "id": 559,
       "period": "Q3 2025",
-      "period_end_date": "2024-10-27"
+      "period_end_date": "Sun, 27 Oct 2024 00:00:00 GMT"
     },
     {
-      "id": 605,
+      "id": 560,
       "period": "Q1 2026",
-      "period_end_date": "2025-04-27"
+      "period_end_date": "Sun, 27 Apr 2025 00:00:00 GMT"
     },
     {
-      "id": 606,
+      "id": 561,
       "period": "Q2 2026",
-      "period_end_date": "2025-07-27"
+      "period_end_date": "Sun, 27 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 607,
+      "id": 562,
       "period": "Q3 2026",
-      "period_end_date": "2025-10-26"
+      "period_end_date": "Sun, 26 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 608,
+      "id": 563,
       "period": "Q1 2027",
-      "period_end_date": "2026-04-26"
+      "period_end_date": "Sun, 26 Apr 2026 00:00:00 GMT"
     },
     {
-      "id": 609,
+      "id": 564,
       "period": "Q2 2027",
-      "period_end_date": "2026-07-26"
+      "period_end_date": "Sun, 26 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "NVDA"

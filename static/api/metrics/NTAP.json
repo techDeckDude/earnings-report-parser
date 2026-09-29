@@ -766,134 +766,134 @@
   "name": "NetApp, Inc.",
   "periods": [
     {
-      "id": 565,
+      "id": 522,
       "period": "Q1 2018",
-      "period_end_date": "2017-07-28"
+      "period_end_date": "Fri, 28 Jul 2017 00:00:00 GMT"
     },
     {
-      "id": 566,
+      "id": 523,
       "period": "Q2 2018",
-      "period_end_date": "2017-10-27"
+      "period_end_date": "Fri, 27 Oct 2017 00:00:00 GMT"
     },
     {
-      "id": 567,
+      "id": 524,
       "period": "Q3 2018",
-      "period_end_date": "2018-01-26"
+      "period_end_date": "Fri, 26 Jan 2018 00:00:00 GMT"
     },
     {
-      "id": 568,
+      "id": 525,
       "period": "Q1 2019",
-      "period_end_date": "2018-07-27"
+      "period_end_date": "Fri, 27 Jul 2018 00:00:00 GMT"
     },
     {
-      "id": 569,
+      "id": 526,
       "period": "Q2 2019",
-      "period_end_date": "2018-10-26"
+      "period_end_date": "Fri, 26 Oct 2018 00:00:00 GMT"
     },
     {
-      "id": 570,
+      "id": 527,
       "period": "Q3 2019",
-      "period_end_date": "2019-01-25"
+      "period_end_date": "Fri, 25 Jan 2019 00:00:00 GMT"
     },
     {
-      "id": 571,
+      "id": 528,
       "period": "Q1 2020",
-      "period_end_date": "2019-07-26"
+      "period_end_date": "Fri, 26 Jul 2019 00:00:00 GMT"
     },
     {
-      "id": 572,
+      "id": 529,
       "period": "Q2 2020",
-      "period_end_date": "2019-10-25"
+      "period_end_date": "Fri, 25 Oct 2019 00:00:00 GMT"
     },
     {
-      "id": 573,
+      "id": 530,
       "period": "Q3 2020",
-      "period_end_date": "2020-01-24"
+      "period_end_date": "Fri, 24 Jan 2020 00:00:00 GMT"
     },
     {
-      "id": 574,
+      "id": 531,
       "period": "Q1 2021",
-      "period_end_date": "2020-07-31"
+      "period_end_date": "Fri, 31 Jul 2020 00:00:00 GMT"
     },
     {
-      "id": 575,
+      "id": 532,
       "period": "Q2 2021",
-      "period_end_date": "2020-10-30"
+      "period_end_date": "Fri, 30 Oct 2020 00:00:00 GMT"
     },
     {
-      "id": 576,
+      "id": 533,
       "period": "Q3 2021",
-      "period_end_date": "2021-01-29"
+      "period_end_date": "Fri, 29 Jan 2021 00:00:00 GMT"
     },
     {
-      "id": 577,
+      "id": 534,
       "period": "Q1 2022",
-      "period_end_date": "2021-07-30"
+      "period_end_date": "Fri, 30 Jul 2021 00:00:00 GMT"
     },
     {
-      "id": 578,
+      "id": 535,
       "period": "Q2 2022",
-      "period_end_date": "2021-10-29"
+      "period_end_date": "Fri, 29 Oct 2021 00:00:00 GMT"
     },
     {
-      "id": 579,
+      "id": 536,
       "period": "Q3 2022",
-      "period_end_date": "2022-01-28"
+      "period_end_date": "Fri, 28 Jan 2022 00:00:00 GMT"
     },
     {
-      "id": 580,
+      "id": 537,
       "period": "Q1 2023",
-      "period_end_date": "2022-07-29"
+      "period_end_date": "Fri, 29 Jul 2022 00:00:00 GMT"
     },
     {
-      "id": 581,
+      "id": 538,
       "period": "Q2 2023",
-      "period_end_date": "2022-10-28"
+      "period_end_date": "Fri, 28 Oct 2022 00:00:00 GMT"
     },
     {
-      "id": 582,
+      "id": 539,
       "period": "Q3 2023",
-      "period_end_date": "2023-01-27"
+      "period_end_date": "Fri, 27 Jan 2023 00:00:00 GMT"
     },
     {
-      "id": 583,
+      "id": 540,
       "period": "Q1 2024",
-      "period_end_date": "2023-07-28"
+      "period_end_date": "Fri, 28 Jul 2023 00:00:00 GMT"
     },
     {
-      "id": 584,
+      "id": 541,
       "period": "Q2 2024",
-      "period_end_date": "2023-10-27"
+      "period_end_date": "Fri, 27 Oct 2023 00:00:00 GMT"
     },
     {
-      "id": 585,
+      "id": 542,
       "period": "Q3 2024",
-      "period_end_date": "2024-01-26"
+      "period_end_date": "Fri, 26 Jan 2024 00:00:00 GMT"
     },
     {
-      "id": 588,
+      "id": 545,
       "period": "Q3 2025",
-      "period_end_date": "2025-01-24"
+      "period_end_date": "Fri, 24 Jan 2025 00:00:00 GMT"
     },
     {
-      "id": 586,
+      "id": 543,
       "period": "Q1 2025",
-      "period_end_date": "2025-07-25"
+      "period_end_date": "Fri, 25 Jul 2025 00:00:00 GMT"
     },
     {
-      "id": 587,
+      "id": 544,
       "period": "Q2 2025",
-      "period_end_date": "2025-10-24"
+      "period_end_date": "Fri, 24 Oct 2025 00:00:00 GMT"
     },
     {
-      "id": 591,
+      "id": 546,
       "period": "Q3 2026",
-      "period_end_date": "2026-01-23"
+      "period_end_date": "Fri, 23 Jan 2026 00:00:00 GMT"
     },
     {
-      "id": 592,
+      "id": 547,
       "period": "Q1 2026",
-      "period_end_date": "2026-07-31"
+      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
     }
   ],
   "ticker": "NTAP"
