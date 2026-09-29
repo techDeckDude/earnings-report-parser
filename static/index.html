@@ -19,6 +19,9 @@
       --green:           #00e664;
       --green-dim:       rgba(0, 230, 100, 0.12);
       --green-line:      rgba(0, 230, 100, 0.18);
+      --accent-b:        #4a9eff;
+      --accent-b-dim:    rgba(74, 158, 255, 0.12);
+      --accent-b-line:   rgba(74, 158, 255, 0.35);
       --bg:              #0a0a0a;
       --bg-card:         rgba(255, 255, 255, 0.03);
       --border:          rgba(255, 255, 255, 0.07);
@@ -33,6 +36,9 @@
       --green:           #007a35;
       --green-dim:       rgba(0, 122, 53, 0.10);
       --green-line:      rgba(0, 122, 53, 0.22);
+      --accent-b:        #2563eb;
+      --accent-b-dim:    rgba(37, 99, 235, 0.10);
+      --accent-b-line:   rgba(37, 99, 235, 0.30);
       --bg:              #f2f1ec;
       --bg-card:         rgba(0, 0, 0, 0.025);
       --border:          rgba(0, 0, 0, 0.09);
@@ -116,6 +122,23 @@
       letter-spacing: 0.08em; text-transform: uppercase;
     }
 
+    /* ── Mode tabs ── */
+    .mode-tabs {
+      display: flex; gap: 0; margin-bottom: 18px;
+      border: 0.5px solid var(--border); border-radius: 5px;
+      overflow: hidden; width: fit-content;
+    }
+    .mode-tab {
+      background: none; border: none; border-right: 0.5px solid var(--border);
+      color: var(--text-3); cursor: pointer;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em;
+      padding: 6px 16px; transition: all 0.12s;
+    }
+    .mode-tab:last-child { border-right: none; }
+    .mode-tab:hover:not(.active) { color: var(--text-2); background: rgba(255,255,255,0.04); }
+    .mode-tab.active { background: var(--green-dim); color: var(--green); }
+
     /* ── Ticker search + selector ── */
     .ticker-search-wrap { margin-bottom: 10px; }
     .ticker-search {
@@ -147,6 +170,76 @@
     }
     .ticker-btn.active { background: var(--green-dim); color: var(--green); border-color: var(--green-line); }
     .ticker-btn:hover:not(.active) { background: rgba(255,255,255,0.05); color: var(--text-2); border-color: rgba(255,255,255,0.12); }
+
+    /* ── Compare search row ── */
+    .compare-row {
+      display: flex; gap: 20px; margin-bottom: 28px; align-items: flex-start;
+    }
+    .compare-vs {
+      font-family: "IBM Plex Mono", monospace; font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.12em; color: var(--text-3);
+      flex-shrink: 0; margin-top: 30px;
+    }
+    .compare-slot { flex: 1; min-width: 0; }
+    .compare-slot-label {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.58rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; margin-bottom: 7px;
+    }
+    .compare-slot-label.a { color: var(--green); }
+    .compare-slot-label.b { color: var(--accent-b); }
+    .compare-input-wrap { position: relative; }
+    .compare-input {
+      width: 100%; background: var(--bg-card); border: 0.5px solid var(--border);
+      color: var(--text-1); caret-color: var(--green); outline: none;
+      font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+      padding: 7px 12px; border-radius: 4px; transition: border-color 0.15s;
+    }
+    .compare-input::placeholder { color: var(--text-3); }
+    #inputA:focus { border-color: var(--green-line); }
+    #inputB:focus { border-color: var(--accent-b-line); }
+    .compare-dropdown {
+      position: absolute; top: calc(100% + 3px); left: 0; right: 0;
+      background: var(--bg); border: 0.5px solid var(--border);
+      border-radius: 4px; overflow: hidden; z-index: 50; display: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .compare-dd-item {
+      display: flex; align-items: baseline; gap: 10px;
+      padding: 7px 12px; cursor: pointer;
+      font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+      color: var(--text-2); transition: background 0.1s;
+    }
+    .compare-dd-item:hover { background: var(--green-dim); color: var(--green); }
+    .compare-dd-name {
+      font-size: 0.6rem; color: var(--text-3);
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .compare-chip {
+      display: flex; align-items: center; gap: 8px;
+      margin-top: 8px; min-height: 20px;
+      font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+    }
+    .compare-chip-ticker { font-weight: 600; }
+    .compare-chip-ticker.a { color: var(--green); }
+    .compare-chip-ticker.b { color: var(--accent-b); }
+    .compare-chip-name { color: var(--text-3); font-size: 0.6rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .compare-chip-clear {
+      margin-left: auto; background: none; border: none; color: var(--text-3);
+      cursor: pointer; font-size: 1rem; line-height: 1; padding: 0;
+      transition: color 0.1s; flex-shrink: 0;
+    }
+    .compare-chip-clear:hover { color: var(--text-1); }
+
+    /* ── Compare legend ── */
+    .compare-legend {
+      display: flex; gap: 18px; align-items: center; margin-bottom: 12px;
+    }
+    .legend-item {
+      display: flex; align-items: center; gap: 7px;
+      font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--text-2);
+    }
+    .legend-swatch { width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; }
 
     /* ── Cards ── */
     .card {
@@ -213,11 +306,25 @@
     .pill-btn.active { background: var(--green-dim); color: var(--green); border-color: var(--green-line); font-weight: 600; }
 
     .chart-wrap { min-width: 0; }
+    .chart-title-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 12px;
+    }
     .chart-title {
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em;
-      color: var(--text-2); margin-bottom: 12px;
+      color: var(--text-2); margin-bottom: 0;
     }
+    .chart-view-toggle { display: flex; gap: 2px; }
+    .cvt-btn {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.58rem; font-weight: 500; letter-spacing: 0.1em;
+      padding: 3px 8px; border: 0.5px solid var(--border);
+      background: transparent; color: var(--text-3); cursor: pointer;
+      border-radius: 2px; transition: color 0.15s, border-color 0.15s;
+    }
+    .cvt-btn.active { color: var(--green); border-color: var(--green); }
+    .cvt-btn:hover:not(.active) { color: var(--text-2); border-color: var(--text-3); }
 
     /* ── Chart scroll (news-page pattern) ── */
     .chart-flex { display: flex; align-items: flex-start; }
@@ -253,6 +360,12 @@
     .chart-dot { fill: var(--green); stroke: var(--bg); stroke-width: 2; cursor: pointer; }
     .chart-dot:hover { r: 7; }
 
+    /* ── Compare bar chart ── */
+    .bar-a { fill: var(--green); opacity: 0.82; cursor: pointer; transition: opacity 0.1s; }
+    .bar-a:hover { opacity: 1; }
+    .bar-b { fill: var(--accent-b); opacity: 0.82; cursor: pointer; transition: opacity 0.1s; }
+    .bar-b:hover { opacity: 1; }
+
     /* ── Tooltip ── */
     #tooltip {
       position: fixed; background: #0d0d0d;
@@ -262,7 +375,10 @@
       pointer-events: none; opacity: 0; transition: opacity 0.1s; z-index: 100;
     }
     #tooltip .tt-period { color: var(--text-3); font-size: 0.62rem; margin-bottom: 2px; }
+    #tooltip .tt-ticker { font-size: 0.65rem; margin-bottom: 2px; }
     #tooltip .tt-val { color: var(--green); font-weight: 600; font-size: 0.88rem; }
+    #tooltip .tt-ticker-a { color: var(--green); }
+    #tooltip .tt-ticker-b { color: var(--accent-b); }
 
     .empty { color: var(--text-3); font-size: 0.875rem; padding: 40px 0; text-align: center; }
 
@@ -279,17 +395,18 @@
       h1 { font-size: 1.3rem; }
       .page-header { margin-bottom: 18px; gap: 8px; }
 
-      /* Tighter spacing on small screens */
       .ticker-selector { margin-bottom: 20px; }
       .ticker-btn { padding: 5px 11px; }
       .card { padding: 14px 14px; margin-bottom: 12px; }
 
-      /* Table: tighter label + data columns */
       td.label-cell, th.label-col { min-width: 130px; width: 130px; font-size: 0.78rem; }
       td.num-cell, td.null-cell, td.derived-cell { min-width: 72px; font-size: 0.78rem; }
       th:not(.label-col) { min-width: 72px; }
       td { padding: 8px 10px; }
       td.label-cell { padding: 8px 10px; }
+
+      .compare-row { flex-direction: column; gap: 12px; }
+      .compare-vs { margin-top: 0; align-self: center; }
     }
   </style>
 </head>
@@ -306,27 +423,75 @@
     <span class="company-name" id="companyName"></span>
   </div>
 
-  <div class="ticker-search-wrap">
-    <input type="text" id="tickerSearch" class="ticker-search" placeholder="/ search tickers" autocomplete="off" spellcheck="false">
-    <span class="ticker-search-count" id="tickerSearchCount"></span>
+  <!-- Mode toggle: Single / Compare -->
+  <div class="mode-tabs" style="position:relative;z-index:1">
+    <button class="mode-tab active" id="tabSingle" onclick="setMode('single')">SINGLE</button>
+    <button class="mode-tab" id="tabCompare" onclick="setMode('compare')">COMPARE</button>
   </div>
-  <div class="ticker-selector" id="tickerSelector"></div>
+
+  <!-- Single mode UI -->
+  <div id="singleModeUI" style="position:relative;z-index:1">
+    <div class="ticker-search-wrap">
+      <input type="text" id="tickerSearch" class="ticker-search" placeholder="/ search tickers" autocomplete="off" spellcheck="false">
+      <span class="ticker-search-count" id="tickerSearchCount"></span>
+    </div>
+    <div class="ticker-selector" id="tickerSelector"></div>
+  </div>
+
+  <!-- Compare mode UI -->
+  <div id="compareModeUI" style="display:none;position:relative;z-index:20">
+    <div class="compare-row">
+      <div class="compare-slot">
+        <div class="compare-slot-label a">Stock A</div>
+        <div class="compare-input-wrap">
+          <input class="compare-input" id="inputA" placeholder="Search ticker…" autocomplete="off" spellcheck="false">
+          <div class="compare-dropdown" id="dropdownA"></div>
+        </div>
+        <div class="compare-chip" id="chipA"></div>
+      </div>
+      <div class="compare-vs">VS</div>
+      <div class="compare-slot">
+        <div class="compare-slot-label b">Stock B</div>
+        <div class="compare-input-wrap">
+          <input class="compare-input" id="inputB" placeholder="Search ticker…" autocomplete="off" spellcheck="false">
+          <div class="compare-dropdown" id="dropdownB"></div>
+        </div>
+        <div class="compare-chip" id="chipB"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Chart -->
-  <div class="card">
+  <div class="card" style="position:relative;z-index:1">
     <div class="card-title">Metric Chart</div>
     <div class="chart-section">
       <div class="metric-pills" id="metricPills"></div>
+      <div class="compare-legend" id="compareLegend" style="display:none">
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--green)"></div>
+          <span id="legendA">—</span>
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:var(--accent-b)"></div>
+          <span id="legendB">—</span>
+        </div>
+      </div>
       <div class="chart-wrap">
-        <div class="chart-title" id="chartTitle">—</div>
+        <div class="chart-title-row">
+          <div class="chart-title" id="chartTitle">—</div>
+          <div class="chart-view-toggle" id="chartViewToggle" style="display:none">
+            <button class="cvt-btn active" id="cvtBar" onclick="setChartView('bar')">BAR</button>
+            <button class="cvt-btn" id="cvtLine" onclick="setChartView('line')">LINE</button>
+          </div>
+        </div>
         <div id="chartAnalytics"></div>
         <div id="chartContainer"></div>
       </div>
     </div>
   </div>
 
-  <!-- Metrics Table -->
-  <div class="card">
+  <!-- Metrics Table (hidden in compare mode) -->
+  <div class="card" id="tableCard" style="position:relative;z-index:1">
     <div class="card-title">Quarterly Metrics</div>
     <div class="table-wrap">
       <table id="metricsTable">
@@ -338,6 +503,7 @@
 
   <div id="tooltip">
     <div class="tt-period" id="ttPeriod"></div>
+    <div class="tt-ticker" id="ttTicker" style="display:none"></div>
     <div class="tt-val" id="ttVal"></div>
   </div>
 
@@ -471,17 +637,27 @@ function getValues(metricDef, data, n) {
 // ── State ─────────────────────────────────────────────────────────────────────
 
 const API_EXT = window.API_EXT || "";
-let activeTicker = null;
-let stockData    = null;
+let allTickers       = [];
+let compareMode      = false;
+let compareTickerA   = null;
+let compareTickerB   = null;
+let stockDataA       = null;
+let stockDataB       = null;
+let activeTicker     = null;
+let stockData        = null;
 let selectedMetricId = "revenue";
+let _barTipData       = [];
+let _chartRenderState = null;
+let _singleChartView  = 'bar'; // 'bar' | 'line'
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 
 async function init() {
   const tickers = await fetch(`/api/tickers${API_EXT}`).then(r => r.json());
+  allTickers = tickers;
   buildTickerSelector(tickers);
+  setupCompareSearch();
 
-  // Check URL param
   const params = new URLSearchParams(location.search);
   const t = params.get("ticker");
   const first = t || (tickers[0] && tickers[0].ticker);
@@ -494,7 +670,6 @@ function buildTickerSelector(tickers) {
     `<button class="ticker-btn" data-ticker="${t.ticker}" onclick="selectTicker('${t.ticker}')">${t.ticker}</button>`
   ).join("");
 
-  // ── Search / filter ──────────────────────────────────────────────────────
   const input = document.getElementById("tickerSearch");
   const countEl = document.getElementById("tickerSearchCount");
   const total = tickers.length;
@@ -519,15 +694,14 @@ function buildTickerSelector(tickers) {
       applyFilter();
       input.blur();
     }
-    // Enter: select first visible ticker
     if (e.key === "Enter") {
       const first = document.querySelector(".ticker-btn:not([style*='none'])");
       if (first) { first.click(); input.blur(); }
     }
   });
 
-  // Press "/" anywhere on the page to focus the search
   document.addEventListener("keydown", e => {
+    if (compareMode) return;
     if (e.key === "/" && document.activeElement !== input && document.activeElement.tagName !== "INPUT") {
       e.preventDefault();
       input.focus();
@@ -535,6 +709,350 @@ function buildTickerSelector(tickers) {
     }
   });
 }
+
+// ── Mode toggle ───────────────────────────────────────────────────────────────
+
+function setMode(mode) {
+  compareMode = mode === "compare";
+
+  document.getElementById("tabSingle").classList.toggle("active", !compareMode);
+  document.getElementById("tabCompare").classList.toggle("active", compareMode);
+  document.getElementById("singleModeUI").style.display = compareMode ? "none" : "";
+  document.getElementById("compareModeUI").style.display = compareMode ? "" : "none";
+  document.getElementById("tableCard").style.display = compareMode ? "none" : "";
+  document.getElementById("compareLegend").style.display = compareMode ? "flex" : "none";
+  const toggleEl = document.getElementById("chartViewToggle");
+  if (toggleEl) toggleEl.style.display = compareMode ? "none" : (_chartRenderState ? "flex" : "none");
+
+  if (compareMode) {
+    document.getElementById("pageTitle").textContent = "Compare";
+    document.getElementById("companyName").textContent = "";
+    document.getElementById("chartAnalytics").innerHTML = "";
+    if (stockDataA && stockDataB) {
+      buildComparePills();
+      selectMetricCompare(selectedMetricId);
+    } else {
+      buildComparePillsPartial();
+      document.getElementById("chartContainer").innerHTML = chartPlaceholder("Select two stocks to compare");
+      document.getElementById("chartTitle").textContent = "—";
+    }
+    updateCompareLegend();
+  } else {
+    if (stockData) {
+      document.getElementById("pageTitle").textContent = stockData.ticker;
+      document.getElementById("companyName").textContent = stockData.name;
+      buildTable();
+      buildPills();
+      selectMetric(selectedMetricId);
+    } else {
+      document.getElementById("pageTitle").textContent = "Stock Detail";
+    }
+  }
+}
+
+function chartPlaceholder(text) {
+  return `<svg style="width:100%;display:block" height="220">
+    <text x="50%" y="50%" text-anchor="middle" fill="var(--text-3)" font-size="13" font-family="IBM Plex Mono, monospace">${text}</text>
+  </svg>`;
+}
+
+// ── Compare search ────────────────────────────────────────────────────────────
+
+function setupCompareSearch() {
+  setupDropdown("inputA", "dropdownA", "A");
+  setupDropdown("inputB", "dropdownB", "B");
+}
+
+function setupDropdown(inputId, dropdownId, slot) {
+  const input = document.getElementById(inputId);
+  const dropdown = document.getElementById(dropdownId);
+
+  input.addEventListener("input", () => {
+    const q = input.value.trim().toUpperCase();
+    if (!q) { dropdown.innerHTML = ""; dropdown.style.display = "none"; return; }
+    const matches = allTickers.filter(t =>
+      t.ticker.includes(q) || (t.name && t.name.toUpperCase().includes(q))
+    ).slice(0, 10);
+    if (!matches.length) { dropdown.innerHTML = ""; dropdown.style.display = "none"; return; }
+    dropdown.innerHTML = matches.map(t =>
+      `<div class="compare-dd-item" data-ticker="${t.ticker}">
+        ${t.ticker}<span class="compare-dd-name">${t.name || ""}</span>
+      </div>`
+    ).join("");
+    dropdown.style.display = "block";
+    dropdown.querySelectorAll(".compare-dd-item").forEach(item => {
+      item.addEventListener("click", e => {
+        e.stopPropagation();
+        const ticker = item.dataset.ticker;
+        input.value = "";
+        dropdown.style.display = "none";
+        selectCompareTicker(slot, ticker);
+      });
+    });
+  });
+
+  input.addEventListener("blur", () => {
+    // 300ms lets the click event fire on a dropdown item before hiding it
+    setTimeout(() => { dropdown.style.display = "none"; }, 300);
+  });
+
+  input.addEventListener("keydown", e => {
+    if (e.key === "Escape") { input.value = ""; dropdown.style.display = "none"; }
+  });
+}
+
+async function selectCompareTicker(slot, ticker) {
+  const data = await fetch(`/api/metrics/${ticker}${API_EXT}`).then(r => r.json());
+  if (slot === "A") {
+    compareTickerA = ticker;
+    stockDataA = data;
+    updateCompareChip("A", ticker, data.name);
+  } else {
+    compareTickerB = ticker;
+    stockDataB = data;
+    updateCompareChip("B", ticker, data.name);
+  }
+  buildComparePillsPartial();
+  updateCompareLegend();
+  selectMetricCompare(selectedMetricId);
+}
+
+function clearCompareTicker(slot) {
+  if (slot === "A") { compareTickerA = null; stockDataA = null; document.getElementById("chipA").innerHTML = ""; }
+  else              { compareTickerB = null; stockDataB = null; document.getElementById("chipB").innerHTML = ""; }
+  buildComparePillsPartial();
+  updateCompareLegend();
+  selectMetricCompare(selectedMetricId);
+}
+
+function updateCompareChip(slot, ticker, name) {
+  const chipEl = document.getElementById(`chip${slot}`);
+  const cls = slot === "A" ? "a" : "b";
+  chipEl.innerHTML = `
+    <span class="compare-chip-ticker ${cls}">${ticker}</span>
+    <span class="compare-chip-name">${name || ""}</span>
+    <button class="compare-chip-clear" onclick="clearCompareTicker('${slot}')">×</button>`;
+}
+
+function updateCompareLegend() {
+  document.getElementById("legendA").textContent = compareTickerA || "—";
+  document.getElementById("legendB").textContent = compareTickerB || "—";
+}
+
+// ── Compare pills ─────────────────────────────────────────────────────────────
+
+function buildComparePillsPartial() {
+  const nA = stockDataA ? stockDataA.periods.length : 0;
+  const nB = stockDataB ? stockDataB.periods.length : 0;
+  const dataA = stockDataA ? stockDataA.data : null;
+  const dataB = stockDataB ? stockDataB.data : null;
+  if (!dataA && !dataB) { document.getElementById("metricPills").innerHTML = ""; return; }
+
+  let html = "";
+  let firstGroup = true;
+  for (const group of GROUPS) {
+    const available = group.metrics.filter(m => {
+      const hasA = dataA ? getValues(m, dataA, nA).some(v => v !== null) : false;
+      const hasB = dataB ? getValues(m, dataB, nB).some(v => v !== null) : false;
+      return hasA || hasB;
+    });
+    if (!available.length) continue;
+    if (!firstGroup) html += `<div class="pill-group-sep"></div>`;
+    firstGroup = false;
+    for (const m of available) {
+      html += `<button class="pill-btn" id="pill-${m.id}" onclick="selectMetric('${m.id}')">${m.label}</button>`;
+    }
+  }
+  document.getElementById("metricPills").innerHTML = html;
+  highlightPill(selectedMetricId);
+}
+
+function buildComparePills() { buildComparePillsPartial(); }
+
+// ── Compare metric selection ──────────────────────────────────────────────────
+
+function selectMetricCompare(metricId) {
+  const m = BY_ID[metricId];
+  if (!m) return;
+  selectedMetricId = metricId;
+  highlightPill(metricId);
+  document.getElementById("chartAnalytics").innerHTML = "";
+
+  if (!stockDataA && !stockDataB) {
+    document.getElementById("chartTitle").textContent = "—";
+    document.getElementById("chartContainer").innerHTML = chartPlaceholder("Select two stocks to compare");
+    return;
+  }
+  if (!stockDataA || !stockDataB) {
+    const missing = !stockDataA ? "A" : "B";
+    document.getElementById("chartTitle").textContent = m.label;
+    document.getElementById("chartContainer").innerHTML = chartPlaceholder(`Select Stock ${missing} to compare`);
+    return;
+  }
+
+  document.getElementById("chartTitle").textContent = `${compareTickerA} vs ${compareTickerB} — ${m.label}`;
+  drawCompareChart(m);
+}
+
+// ── Period helpers ────────────────────────────────────────────────────────────
+
+function parsePeriodSortKey(period) {
+  const match = period.match(/^Q(\d)\s+(\d{4})$/);
+  if (match) return parseInt(match[2]) * 10 + parseInt(match[1]);
+  return 0;
+}
+
+function mergePeriodsForCompare(periodsA, periodsB) {
+  const seen = new Set();
+  const merged = [];
+  for (const p of [...periodsA, ...periodsB]) {
+    if (!seen.has(p.period)) {
+      seen.add(p.period);
+      merged.push(p);
+    }
+  }
+  return merged.sort((a, b) => parsePeriodSortKey(a.period) - parsePeriodSortKey(b.period));
+}
+
+// ── Compare bar chart ─────────────────────────────────────────────────────────
+
+function drawCompareChart(metricDef) {
+  const container = document.getElementById("chartContainer");
+
+  const valsA = getValues(metricDef, stockDataA.data, stockDataA.periods.length);
+  const valsB = getValues(metricDef, stockDataB.data, stockDataB.periods.length);
+
+  const mapA = {}, mapB = {};
+  stockDataA.periods.forEach((p, i) => { if (valsA[i] !== null) mapA[p.period] = valsA[i]; });
+  stockDataB.periods.forEach((p, i) => { if (valsB[i] !== null) mapB[p.period] = valsB[i]; });
+
+  const allPeriods = mergePeriodsForCompare(stockDataA.periods, stockDataB.periods);
+  const ptsA = allPeriods.map(p => mapA[p.period] ?? null);
+  const ptsB = allPeriods.map(p => mapB[p.period] ?? null);
+
+  const allVals = [...ptsA, ...ptsB].filter(v => v !== null);
+  if (!allVals.length) {
+    container.innerHTML = chartPlaceholder("No data for this metric");
+    return;
+  }
+
+  const containerW = Math.max(260, Math.floor(container.getBoundingClientRect().width));
+  const mobile = containerW < 520;
+  const H = mobile ? 260 : 220;
+  const PAD = { top: 16, right: mobile ? 12 : 20, bottom: mobile ? 52 : 48, left: 72 };
+
+  const barW = mobile ? 11 : 13;
+  const barGap = 4;
+  const minGroupSpacing = barW * 2 + barGap + (mobile ? 18 : 24);
+  const availW = containerW - PAD.left - PAD.right;
+  const groupSpacing = Math.max(minGroupSpacing, Math.ceil(availW / allPeriods.length));
+  const totalW = Math.max(containerW, PAD.left + allPeriods.length * groupSpacing + PAD.right);
+  const scrollable = totalW > containerW;
+
+  const IH = H - PAD.top - PAD.bottom;
+
+  const minV = Math.min(...allVals);
+  const maxV = Math.max(...allVals);
+  const padV = (maxV - minV) * 0.14 || Math.abs(maxV) * 0.14 || 1;
+  const yMin = Math.min(0, minV - padV);
+  const yMax = maxV + padV;
+
+  function yPos(v) {
+    return PAD.top + IH - ((v - yMin) / (yMax - yMin)) * IH;
+  }
+  function barTop(v) {
+    return v >= 0 ? yPos(v) : yPos(0);
+  }
+  function barH(v) {
+    return Math.max(1, Math.abs(yPos(v) - yPos(0)));
+  }
+  function groupCenterX(i) {
+    return PAD.left + (i + 0.5) * groupSpacing;
+  }
+  function barXA(i) { return groupCenterX(i) - barGap / 2 - barW; }
+  function barXB(i) { return groupCenterX(i) + barGap / 2; }
+
+  // Y axis
+  let grid = "", yLabels = "";
+  const yTicks = 4;
+  for (let t = 0; t <= yTicks; t++) {
+    const v = yMin + (t / yTicks) * (yMax - yMin);
+    const y = yPos(v);
+    grid    += `<line id="gy-${t}" class="grid-line" x1="${PAD.left}" y1="${y}" x2="${totalW - PAD.right}" y2="${y}"/>`;
+    yLabels += `<text id="yl-${t}" class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${fmt(metricDef, v) || v.toFixed(1)}</text>`;
+  }
+  // Zero baseline if in range
+  const zeroY = yPos(0);
+  if (zeroY > PAD.top && zeroY < PAD.top + IH) {
+    grid += `<line id="gz" stroke="var(--text-3)" stroke-width="0.8" stroke-dasharray="3,3" x1="${PAD.left}" y1="${zeroY}" x2="${totalW - PAD.right}" y2="${zeroY}"/>`;
+  }
+
+  // X labels
+  const step = allPeriods.length <= 12 ? 1 : Math.ceil(allPeriods.length / 12);
+  let xLabels = "";
+  allPeriods.forEach((p, i) => {
+    if (i % step !== 0 && i !== allPeriods.length - 1) return;
+    xLabels += `<text class="axis-label" x="${groupCenterX(i)}" y="${H - PAD.bottom + 18}" text-anchor="middle">${p.period}</text>`;
+  });
+
+  // Bars — store tooltip data by index to avoid escaping issues
+  _barTipData = [];
+  let bars = "";
+  allPeriods.forEach((p, i) => {
+    const vA = ptsA[i];
+    const vB = ptsB[i];
+    if (vA !== null) {
+      const idx = _barTipData.length;
+      _barTipData.push({ period: p.period, ticker: compareTickerA, slot: "A", val: fmt(metricDef, vA) });
+      bars += `<rect id="ba-${i}" class="bar-a" x="${barXA(i).toFixed(1)}" y="${barTop(vA).toFixed(1)}"
+        width="${barW}" height="${barH(vA).toFixed(1)}" rx="2"
+        onmouseenter="showBarTip(event,${idx})" onmouseleave="hideTip()"/>`;
+    }
+    if (vB !== null) {
+      const idx = _barTipData.length;
+      _barTipData.push({ period: p.period, ticker: compareTickerB, slot: "B", val: fmt(metricDef, vB) });
+      bars += `<rect id="bb-${i}" class="bar-b" x="${barXB(i).toFixed(1)}" y="${barTop(vB).toFixed(1)}"
+        width="${barW}" height="${barH(vB).toFixed(1)}" rx="2"
+        onmouseenter="showBarTip(event,${idx})" onmouseleave="hideTip()"/>`;
+    }
+  });
+
+  const chartContent = `${grid}${xLabels}${bars}`;
+
+  if (scrollable) {
+    const rightW = totalW - PAD.left;
+    container.innerHTML = `
+      <div class="chart-flex">
+        <svg aria-hidden="true" style="display:block;flex-shrink:0;border-right:0.5px solid var(--border)"
+             width="${PAD.left}" height="${H}" viewBox="0 0 ${PAD.left} ${H}">
+          ${yLabels}
+        </svg>
+        <div class="chart-scroll-inner">
+          <svg viewBox="${PAD.left} 0 ${rightW} ${H}"
+               style="width:${rightW}px;min-width:${rightW}px;display:block;overflow:visible">
+            ${chartContent}
+          </svg>
+        </div>
+      </div>
+      <div class="chart-scroll-hint">← scroll →</div>`;
+  } else {
+    container.innerHTML = `
+      <svg viewBox="0 0 ${totalW} ${H}" style="width:100%;display:block;overflow:visible">
+        ${yLabels}${chartContent}
+      </svg>`;
+  }
+
+  _chartRenderState = { type: 'compare', metricDef, allPeriods, ptsA, ptsB, groupSpacing, PAD, H, IH };
+  if (scrollable) {
+    const scrollEl = container.querySelector('.chart-scroll-inner');
+    if (scrollEl) {
+      scrollEl.scrollLeft = scrollEl.scrollWidth;
+      attachScrollRescale(scrollEl);
+    }
+  }
+}
+
+// ── Single-stock select ticker ────────────────────────────────────────────────
 
 async function selectTicker(ticker) {
   activeTicker = ticker;
@@ -561,14 +1079,12 @@ function buildTable() {
   const { periods, data } = stockData;
   const n = periods.length;
 
-  // Header
   const head = document.getElementById("tableHead");
   head.innerHTML = `<tr>
     <th class="label-col">Metric</th>
     ${periods.map(p => `<th>${p.period}</th>`).join("")}
   </tr>`;
 
-  // Body
   const tbody = document.getElementById("tableBody");
   let html = "";
 
@@ -578,7 +1094,7 @@ function buildTable() {
     for (const m of group.metrics) {
       const vals = getValues(m, data, n);
       const hasAny = vals.some(v => v !== null);
-      if (!hasAny) continue; // skip metrics this company doesn't have
+      if (!hasAny) continue;
 
       const cells = vals.map(v => {
         const display = fmt(m, v);
@@ -634,10 +1150,14 @@ function highlightPill(metricId) {
 // ── Select metric ─────────────────────────────────────────────────────────────
 
 function selectMetric(metricId) {
+  if (compareMode) {
+    selectMetricCompare(metricId);
+    return;
+  }
+
   const m = BY_ID[metricId];
   if (!m) return;
 
-  // Check if available for this ticker
   const vals = getValues(m, stockData.data, stockData.periods.length);
   if (!vals.some(v => v !== null)) return;
 
@@ -646,7 +1166,7 @@ function selectMetric(metricId) {
   highlightPill(metricId);
   document.getElementById("chartTitle").textContent = m.label;
 
-  // ── QoQ analytics ─────────────────────────────────────────────────────────
+  // QoQ analytics
   const qoqChanges = [], qoqDeltas = [];
   for (let i = 1; i < vals.length; i++) {
     if (vals[i] !== null && vals[i-1] !== null && vals[i-1] !== 0) {
@@ -661,7 +1181,7 @@ function selectMetric(metricId) {
   const prevPeriod  = nonNullIdxs.length >= 2 ? stockData.periods[nonNullIdxs.at(-2)].period : "";
   const currPeriod  = nonNullIdxs.length >= 1 ? stockData.periods[nonNullIdxs.at(-1)].period : "";
 
-  // ── YoY analytics (annual totals of complete years) ───────────────────────
+  // YoY analytics
   const yearSums = {}, yearCounts = {};
   for (let i = 0; i < vals.length; i++) {
     if (vals[i] === null) continue;
@@ -671,8 +1191,6 @@ function selectMetric(metricId) {
     yearSums[yr]   = (yearSums[yr]   || 0) + vals[i];
     yearCounts[yr] = (yearCounts[yr] || 0) + 1;
   }
-  // Compare consecutive years with the same quarter count (apples-to-apples);
-  // pct metrics use avg instead of sum
   const sortedYears = Object.keys(yearSums).sort();
   const yearVals = {};
   sortedYears.forEach(yr => {
@@ -734,19 +1252,28 @@ function renderAnalytics(m, avgQoQ, nQoQ, lastQoQ, lastQoQDelta, prevPeriod, cur
   </div>`;
 }
 
-// ── Chart ─────────────────────────────────────────────────────────────────────
+// ── Single-stock line chart ───────────────────────────────────────────────────
+
+function setChartView(view) {
+  _singleChartView = view;
+  document.getElementById('cvtBar').classList.toggle('active', view === 'bar');
+  document.getElementById('cvtLine').classList.toggle('active', view === 'line');
+  selectMetric(selectedMetricId);
+}
 
 function drawChart(vals, metricDef) {
   const periods = stockData.periods;
   const container = document.getElementById("chartContainer");
 
+  // Show the BAR/LINE toggle (only in single-stock mode)
+  const toggleEl = document.getElementById('chartViewToggle');
+  if (toggleEl) toggleEl.style.display = 'flex';
+
   const containerW = Math.max(260, Math.floor(container.getBoundingClientRect().width));
   const mobile = containerW < 520;
   const H = mobile ? 260 : 220;
   const PAD = { top: 16, right: mobile ? 12 : 20, bottom: mobile ? 48 : 44, left: 68 };
-  const dotR = mobile ? 7 : 5;
 
-  // Filter out null entries
   const points = vals.map((v, i) => ({ v, p: periods[i] })).filter(x => x.v !== null);
   if (!points.length) {
     container.innerHTML = `<svg style="width:100%;display:block" height="${H}">
@@ -755,7 +1282,77 @@ function drawChart(vals, metricDef) {
     return;
   }
 
-  // Ensure minimum spacing per quarter so dots are never squished
+  if (_singleChartView === 'bar') {
+    _drawChartBars(container, points, metricDef, containerW, mobile, H, PAD);
+  } else {
+    _drawChartLine(container, points, metricDef, containerW, mobile, H, PAD);
+  }
+}
+
+function _drawChartBars(container, points, metricDef, containerW, mobile, H, PAD) {
+  const barW = mobile ? 11 : 13;
+  const MIN_SPACING = Math.max(barW + (mobile ? 20 : 28), Math.ceil(containerW / 8));
+  const W = Math.max(containerW, points.length * MIN_SPACING);
+  const scrollable = W > containerW;
+
+  const IW = W - PAD.left - PAD.right;
+  const IH = H - PAD.top - PAD.bottom;
+  const groupSpacing = IW / points.length;
+
+  const rawVals = points.map(x => x.v);
+  const minV = Math.min(...rawVals);
+  const maxV = Math.max(...rawVals);
+  const pad  = (maxV - minV) * 0.14 || Math.abs(maxV) * 0.14 || 1;
+  const yMin = Math.min(0, minV - pad);
+  const yMax = maxV + pad;
+
+  function xPos(i) { return PAD.left + (i + 0.5) * groupSpacing; }
+  function yPos(v) { return PAD.top + IH - ((v - yMin) / (yMax - yMin)) * IH; }
+
+  let grid = "", yLabels = "";
+  for (let i = 0; i <= 4; i++) {
+    const v = yMin + (i / 4) * (yMax - yMin);
+    const y = yPos(v);
+    grid    += `<line id="gy-${i}" class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}" />`;
+    yLabels += `<text id="yl-${i}" class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${fmt(metricDef, v) || v.toFixed(1)}</text>`;
+  }
+  const zeroY = yPos(0);
+  if (zeroY > PAD.top && zeroY < PAD.top + IH) {
+    grid += `<line id="gz" stroke="var(--text-3)" stroke-width="0.8" stroke-dasharray="3,3" x1="${PAD.left}" y1="${zeroY}" x2="${W - PAD.right}" y2="${zeroY}"/>`;
+  }
+
+  const step = points.length <= 12 ? 1 : Math.ceil(points.length / 12);
+  let xLabels = "";
+  points.forEach((pt, i) => {
+    if (i % step !== 0 && i !== points.length - 1) return;
+    xLabels += `<text class="axis-label" x="${xPos(i)}" y="${H - PAD.bottom + 16}" text-anchor="middle">${pt.p.period}</text>`;
+  });
+
+  const normRange = maxV - minV || 1;
+  let bars = "";
+  points.forEach((pt, i) => {
+    const norm = (pt.v - minV) / normRange;
+    // Low → #34d399 (emerald-400), High → #052e16 (green-950)
+    const r = Math.round(52  + (5   - 52)  * norm);
+    const g = Math.round(211 + (46  - 211) * norm);
+    const b = Math.round(153 + (22  - 153) * norm);
+    const top = pt.v >= 0 ? yPos(pt.v) : yPos(0);
+    const h   = Math.max(1, Math.abs(yPos(pt.v) - yPos(0)));
+    bars += `<rect id="sbar-${i}" class="bar-a" x="${(xPos(i) - barW / 2).toFixed(1)}" y="${top.toFixed(1)}"
+      width="${barW}" height="${h.toFixed(1)}" rx="2"
+      style="fill:rgb(${r},${g},${b})"
+      onmouseenter="showTip(event,'${pt.p.period}','${fmt(metricDef, pt.v)}')"
+      onmouseleave="hideTip()"/>`;
+  });
+
+  const chartContent = `${grid}${xLabels}${bars}`;
+  _renderChartScroll(container, chartContent, yLabels, W, H, PAD, scrollable);
+  _chartRenderState = { type: 'single', barMode: true, metricDef, points, PAD, H, IH, W, n: points.length, IW, groupSpacing };
+  _attachScrollIfNeeded(container, scrollable);
+}
+
+function _drawChartLine(container, points, metricDef, containerW, mobile, H, PAD) {
+  const dotR = mobile ? 7 : 5;
   const MIN_SPACING = Math.max(44, Math.ceil(containerW / 8));
   const W = Math.max(containerW, points.length * MIN_SPACING);
   const scrollable = W > containerW;
@@ -773,21 +1370,16 @@ function drawChart(vals, metricDef) {
   function xPos(i) {
     return PAD.left + (points.length === 1 ? IW / 2 : (i / (points.length - 1)) * IW);
   }
-  function yPos(v) {
-    return PAD.top + IH - ((v - yMin) / (yMax - yMin)) * IH;
-  }
+  function yPos(v) { return PAD.top + IH - ((v - yMin) / (yMax - yMin)) * IH; }
 
-  // Grid + y-labels
   let grid = "", yLabels = "";
-  const yTicks = 4;
-  for (let i = 0; i <= yTicks; i++) {
-    const v = yMin + (i / yTicks) * (yMax - yMin);
+  for (let i = 0; i <= 4; i++) {
+    const v = yMin + (i / 4) * (yMax - yMin);
     const y = yPos(v);
-    grid    += `<line class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}" />`;
-    yLabels += `<text class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${fmt(metricDef, v) || v.toFixed(1)}</text>`;
+    grid    += `<line id="gy-${i}" class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}" />`;
+    yLabels += `<text id="yl-${i}" class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${fmt(metricDef, v) || v.toFixed(1)}</text>`;
   }
 
-  // X-labels: show every Nth so they don't overlap
   const step = points.length <= 12 ? 1 : Math.ceil(points.length / 12);
   let xLabels = "";
   points.forEach((pt, i) => {
@@ -795,18 +1387,21 @@ function drawChart(vals, metricDef) {
     xLabels += `<text class="axis-label" x="${xPos(i)}" y="${H - PAD.bottom + 16}" text-anchor="middle">${pt.p.period}</text>`;
   });
 
-  // Line + dots
   const path = points.map((pt, i) => `${i === 0 ? "M" : "L"} ${xPos(i)},${yPos(pt.v)}`).join(" ");
   const dots = points.map((pt, i) =>
-    `<circle class="chart-dot" cx="${xPos(i)}" cy="${yPos(pt.v)}" r="${dotR}"
+    `<circle id="dot-${i}" class="chart-dot" cx="${xPos(i)}" cy="${yPos(pt.v)}" r="${dotR}"
       onmouseenter="showTip(event,'${pt.p.period}','${fmt(metricDef, pt.v)}')"
       onmouseleave="hideTip()" />`
   ).join("");
 
-  const chartContent = `${grid}${xLabels}<path class="chart-line" d="${path}" />${dots}`;
+  const chartContent = `${grid}${xLabels}<path id="cpath" class="chart-line" d="${path}" />${dots}`;
+  _renderChartScroll(container, chartContent, yLabels, W, H, PAD, scrollable);
+  _chartRenderState = { type: 'single', barMode: false, metricDef, points, PAD, H, IH, W, n: points.length, IW };
+  _attachScrollIfNeeded(container, scrollable);
+}
 
+function _renderChartScroll(container, chartContent, yLabels, W, H, PAD, scrollable) {
   if (scrollable) {
-    // Fixed y-axis SVG + scrollable chart SVG (news page pattern)
     const rightW = W - PAD.left;
     container.innerHTML = `
       <div class="chart-flex">
@@ -830,17 +1425,169 @@ function drawChart(vals, metricDef) {
   }
 }
 
+function _attachScrollIfNeeded(container, scrollable) {
+  if (scrollable) {
+    const scrollEl = container.querySelector('.chart-scroll-inner');
+    if (scrollEl) {
+      scrollEl.scrollLeft = scrollEl.scrollWidth;
+      attachScrollRescale(scrollEl);
+    }
+  }
+}
+
+// ── Viewport-aware y-axis rescaling ──────────────────────────────────────────
+
+function attachScrollRescale(scrollEl) {
+  let _raf = null;
+  scrollEl.addEventListener('scroll', () => {
+    if (_raf) cancelAnimationFrame(_raf);
+    _raf = requestAnimationFrame(() => rescaleToVisible(scrollEl));
+  }, { passive: true });
+  rescaleToVisible(scrollEl);
+}
+
+function rescaleToVisible(scrollEl) {
+  const s = _chartRenderState;
+  if (!s) return;
+  const sl = scrollEl.scrollLeft;
+  const vw = scrollEl.clientWidth;
+  let visVals = [];
+
+  if (s.type === 'compare') {
+    const first = Math.max(0, Math.floor(sl / s.groupSpacing) - 1);
+    const last  = Math.min(s.allPeriods.length - 1, Math.ceil((sl + vw) / s.groupSpacing));
+    for (let i = first; i <= last; i++) {
+      if (s.ptsA[i] !== null) visVals.push(s.ptsA[i]);
+      if (s.ptsB[i] !== null) visVals.push(s.ptsB[i]);
+    }
+  } else if (s.barMode) {
+    const first = Math.max(0, Math.floor(sl / s.groupSpacing) - 1);
+    const last  = Math.min(s.n - 1, Math.ceil((sl + vw) / s.groupSpacing));
+    for (let i = first; i <= last; i++) {
+      if (s.points[i]) visVals.push(s.points[i].v);
+    }
+  } else {
+    const n1 = s.n > 1 ? s.n - 1 : 1;
+    const first = Math.max(0, Math.floor(sl * n1 / s.IW) - 1);
+    const last  = Math.min(s.n - 1, Math.ceil((sl + vw) * n1 / s.IW) + 1);
+    for (let i = first; i <= last; i++) {
+      if (s.points[i]) visVals.push(s.points[i].v);
+    }
+  }
+
+  if (!visVals.length) return;
+  const minV = Math.min(...visVals);
+  const maxV = Math.max(...visVals);
+
+  let yMin, yMax;
+  if (s.type === 'compare' || s.barMode) {
+    const p = (maxV - minV) * 0.14 || Math.abs(maxV) * 0.14 || 1;
+    yMin = Math.min(0, minV - p);
+    yMax = maxV + p;
+  } else {
+    const p = (maxV - minV) * 0.15 || Math.abs(maxV) * 0.1 || 1;
+    yMin = minV - p;
+    yMax = maxV + p;
+  }
+
+  const { PAD, IH } = s;
+  const range = yMax - yMin || 1;
+  function yp(v) { return PAD.top + IH - ((v - yMin) / range) * IH; }
+
+  for (let t = 0; t <= 4; t++) {
+    const v = yMin + (t / 4) * (yMax - yMin);
+    const y = yp(v);
+    const lbl = document.getElementById(`yl-${t}`);
+    if (lbl) { lbl.setAttribute('y', y + 4); lbl.textContent = fmt(s.metricDef, v) || v.toFixed(1); }
+    const grd = document.getElementById(`gy-${t}`);
+    if (grd) { grd.setAttribute('y1', y); grd.setAttribute('y2', y); }
+  }
+
+  if (s.type === 'compare') {
+    const gz = document.getElementById('gz');
+    if (gz) {
+      const zy = yp(0);
+      const vis = zy > PAD.top && zy < PAD.top + IH;
+      gz.style.display = vis ? '' : 'none';
+      if (vis) { gz.setAttribute('y1', zy); gz.setAttribute('y2', zy); }
+    }
+    s.ptsA.forEach((v, i) => {
+      if (v === null) return;
+      const el = document.getElementById(`ba-${i}`);
+      if (!el) return;
+      el.setAttribute('y', (v >= 0 ? yp(v) : yp(0)).toFixed(1));
+      el.setAttribute('height', Math.max(1, Math.abs(yp(v) - yp(0))).toFixed(1));
+    });
+    s.ptsB.forEach((v, i) => {
+      if (v === null) return;
+      const el = document.getElementById(`bb-${i}`);
+      if (!el) return;
+      el.setAttribute('y', (v >= 0 ? yp(v) : yp(0)).toFixed(1));
+      el.setAttribute('height', Math.max(1, Math.abs(yp(v) - yp(0))).toFixed(1));
+    });
+  } else if (s.barMode) {
+    const gz = document.getElementById('gz');
+    if (gz) {
+      const zy = yp(0);
+      const vis = zy > PAD.top && zy < PAD.top + IH;
+      gz.style.display = vis ? '' : 'none';
+      if (vis) { gz.setAttribute('y1', zy); gz.setAttribute('y2', zy); }
+    }
+    s.points.forEach((pt, i) => {
+      const el = document.getElementById(`sbar-${i}`);
+      if (!el) return;
+      el.setAttribute('y', (pt.v >= 0 ? yp(pt.v) : yp(0)).toFixed(1));
+      el.setAttribute('height', Math.max(1, Math.abs(yp(pt.v) - yp(0))).toFixed(1));
+    });
+  } else {
+    s.points.forEach((pt, i) => {
+      const el = document.getElementById(`dot-${i}`);
+      if (el) el.setAttribute('cy', yp(pt.v).toFixed(1));
+    });
+    const pe = document.getElementById('cpath');
+    if (pe) {
+      const IW2 = s.W - s.PAD.left - s.PAD.right;
+      const xp2 = j => s.PAD.left + (s.n === 1 ? IW2 / 2 : (j / (s.n - 1)) * IW2);
+      pe.setAttribute('d', s.points.map((pt, j) => `${j === 0 ? 'M' : 'L'} ${xp2(j)},${yp(pt.v)}`).join(' '));
+    }
+  }
+}
+
 // ── Tooltip ───────────────────────────────────────────────────────────────────
 
 function showTip(e, period, val) {
   document.getElementById("ttPeriod").textContent = period;
+  document.getElementById("ttTicker").style.display = "none";
   document.getElementById("ttVal").textContent = val;
+  document.getElementById("ttVal").className = "tt-val";
   const tip = document.getElementById("tooltip");
   tip.style.opacity = "1";
   tip.style.left = (e.clientX + 14) + "px";
   tip.style.top  = (e.clientY - 36) + "px";
 }
-function hideTip() { document.getElementById("tooltip").style.opacity = "0"; }
+
+function showBarTip(e, idx) {
+  const { period, ticker, slot, val } = _barTipData[idx];
+  document.getElementById("ttPeriod").textContent = period;
+  const ttTicker = document.getElementById("ttTicker");
+  ttTicker.textContent = ticker;
+  ttTicker.className = `tt-ticker tt-ticker-${slot.toLowerCase()}`;
+  ttTicker.style.display = "block";
+  const ttVal = document.getElementById("ttVal");
+  ttVal.textContent = val;
+  ttVal.className = slot === "A" ? "tt-val" : "tt-val";
+  ttVal.style.color = slot === "A" ? "var(--green)" : "var(--accent-b)";
+  const tip = document.getElementById("tooltip");
+  tip.style.opacity = "1";
+  tip.style.left = (e.clientX + 14) + "px";
+  tip.style.top  = (e.clientY - 36) + "px";
+}
+
+function hideTip() {
+  document.getElementById("tooltip").style.opacity = "0";
+  document.getElementById("ttVal").style.color = "";
+}
+
 document.getElementById("chartContainer").addEventListener("mousemove", e => {
   const tip = document.getElementById("tooltip");
   if (tip.style.opacity === "1") {
@@ -852,11 +1599,22 @@ document.getElementById("chartContainer").addEventListener("mousemove", e => {
 init();
 
 let _chartResizeTimer;
+let _lastResizeW = window.innerWidth;
 window.addEventListener('resize', () => {
+  const newW = window.innerWidth;
+  if (newW === _lastResizeW) return; // height-only resize (iOS address bar), skip
+  _lastResizeW = newW;
   clearTimeout(_chartResizeTimer);
   _chartResizeTimer = setTimeout(() => {
-    const active = document.querySelector('.pill.active');
-    if (active) active.click();
+    if (compareMode) {
+      if (stockDataA && stockDataB) {
+        const m = BY_ID[selectedMetricId];
+        if (m) drawCompareChart(m);
+      }
+    } else {
+      const active = document.querySelector('.pill-btn.active');
+      if (active) active.click();
+    }
   }, 150);
 });
 </script>
