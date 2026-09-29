@@ -2,6 +2,39 @@
   {
     "headlines": [
       {
+        "headline": "AI Safety Debate Intensifies After Departing Anthropic Researcher Warning and CEO Dario Amodei's Call to Rein In AI Race",
+        "published_date": "2026-09-27",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "The Motley Fool",
+        "stocks_mentioned": [],
+        "summary": "Industry commentary and AI safety debate coverage \u2014 no confirmed or potential revenue/earnings impact on any specific publicly traded company; personnel and policy discussion only.",
+        "url": "https://www.fool.com/investing/breakfast-news/2026/09/27/breakfast-news/",
+        "url_verified": true
+      },
+      {
+        "headline": "China's Consumer Stocks Face Lost Decade as AI Steals Spotlight",
+        "published_date": "2026-09-27",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [],
+        "summary": "Potential ongoing downside for China consumer sector stocks: MSCI China consumer sub-indexes down ~18% over six months to near 10-year lows, with consumer staples firms missing profit expectations by ~50% in the latest earnings season \u2014 confirmed earnings miss for the sector as a whole, though no single stock ticker is named.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-27/china-s-consumer-stocks-face-lost-decade-as-ai-steals-spotlight",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Whiplash Jolts Stocks as Sentiment Lurches From Fear to Greed",
+        "published_date": "2026-09-27",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Bloomberg",
+        "stocks_mentioned": [],
+        "summary": "Macro commentary on two-week AI sentiment swings causing hundreds of billions in capital flows in and out of AI-exposed stocks \u2014 no confirmed or potential revenue/earnings impact on any specific company; broad market narrative only.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-27/ai-whiplash-jolts-stocks-as-sentiment-lurches-from-fear-to-greed",
+        "url_verified": true
+      },
+      {
         "headline": "Top 3 Undervalued AI Stocks to Watch Amid Rising Treasury Yields \u2014 Oracle Among Names Highlighted",
         "published_date": "2026-09-26",
         "sentiment_label": "Neutral",
@@ -587,14 +620,14 @@
     "summary_stats": {
       "net_sentiment_label": "Positive",
       "score_distribution": {
-        "-1": 4,
+        "-1": 5,
         "-2": 0,
-        "0": 9,
+        "0": 11,
         "1": 25,
         "2": 4
       },
-      "total_headlines": 42,
-      "weighted_sentiment": 0.7
+      "total_headlines": 45,
+      "weighted_sentiment": 0.6
     },
     "week_end": "2026-09-27",
     "week_start": "2026-09-21"
