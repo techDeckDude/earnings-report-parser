@@ -26,19 +26,9 @@ if os.getenv("EXPERIMENTAL", "1") != "0":
 
 
 def get_db():
-    """Return an open DB connection, reconnecting if the Postgres connection dropped."""
     global _conn
     if _conn is None:
         _conn = init_db()
-        return _conn
-    if _is_pg(_conn):
-        if _conn.closed:
-            _conn = init_db()
-        else:
-            try:
-                _conn.cursor().execute("SELECT 1")
-            except Exception:
-                _conn = init_db()
     return _conn
 
 
