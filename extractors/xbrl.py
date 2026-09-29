@@ -205,6 +205,19 @@ def _pick_entry(entries: list[dict], period_end: str) -> Optional[dict]:
     return min(candidates, key=_days)
 
 
+def _pick_annual_entry(entries: list[dict], period_end: str) -> Optional[dict]:
+    """Return the 10-K annual entry for a given fiscal year end date."""
+    candidates = [
+        e for e in entries
+        if e.get("end") == period_end and e.get("form") == "10-K"
+    ]
+    if not candidates:
+        return None
+    # Prefer fp=FY (duration entry) over instant balance-sheet entries where both exist
+    fy_tagged = [e for e in candidates if e.get("fp") == "FY"]
+    return fy_tagged[0] if fy_tagged else candidates[0]
+
+
 def _period_label(gaap: dict, period_end: str) -> str:
     """Derive 'Q2 2026' from the fp/fy fields on any matching XBRL entry."""
     for concept_data in gaap.values():
@@ -231,6 +244,82 @@ class XBRLExtractor:
     def fetch_company_facts(self, cik: str) -> dict:
         """Fetch the full XBRL company facts payload for a CIK."""
         return _get(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json")
+
+    def get_fiscal_years(self, company_facts: dict) -> list[tuple[str, str, int]]:
+        """
+        Return sorted list of (fy_end_date, period_label, fy_number) for all 10-K filings.
+        Example: [("2022-01-30", "Q4 2022", 2022), ...]
+
+        Only includes entries whose duration is >= 340 days (full-year, not quarterly
+        comparatives that EDGAR sometimes tags with form=10-K and fp=FY).
+        """
+        gaap = company_facts["facts"].get("us-gaap", {})
+        # Keyed by fy_label; keeps the LATEST fy_end for each label.
+        # EDGAR sometimes includes comparative-year data from a single 10-K filing,
+        # all tagged with the same fy — the most recent end date is the actual year end.
+        seen: dict[str, tuple[str, str, int]] = {}
+
+        # Scan ALL revenue concepts to handle companies that changed their GAAP tag
+        # across years (e.g. NVDA used ContractWithCustomer through FY2022, Revenues after).
+        for concept in _CONCEPT_MAP["revenue"][0]:
+            if concept not in gaap:
+                continue
+            for e in gaap[concept]["units"].get("USD", []):
+                if e.get("form") != "10-K" or e.get("fp") != "FY":
+                    continue
+                # Filter out short comparative periods (< 340 days)
+                start = e.get("start")
+                if start:
+                    days = (date.fromisoformat(e["end"]) - date.fromisoformat(start)).days
+                    if days < 340:
+                        continue
+                fy_end = e["end"]
+                fy = e.get("fy")
+                if not fy:
+                    continue
+                fy_label = f"Q4 {fy}"
+                existing = seen.get(fy_label)
+                if existing is None or fy_end > existing[0]:
+                    seen[fy_label] = (fy_end, fy_label, int(fy))
+
+        return sorted(seen.values())
+
+    def extract_annual(self, ticker: str, fy_end: str, company_facts: dict) -> dict[str, float]:
+        """
+        Extract annual 10-K values for all concepts at fiscal year end fy_end.
+        Returns {field_name: value} with same units as extract(): USD→thousands,
+        shares→thousands, USD/shares (EPS) as-is.
+        """
+        gaap = company_facts["facts"].get("us-gaap", {})
+        raw: dict[str, float] = {}
+
+        for field_name, (concepts, unit) in _CONCEPT_MAP.items():
+            for concept in concepts:
+                if concept not in gaap:
+                    continue
+                entries = gaap[concept]["units"].get(unit, [])
+                entry = _pick_annual_entry(entries, fy_end)
+                if entry is not None:
+                    val = entry["val"]
+                    if unit == "USD":
+                        val = val / 1000
+                    elif unit == "shares":
+                        val = val / 1000
+                    raw[field_name] = val
+                    break
+
+        if "gross_profit" not in raw and "revenue" in raw and "cost_of_revenue" in raw:
+            raw["gross_profit"] = raw["revenue"] - raw["cost_of_revenue"]
+
+        if "total_liabilities" not in raw and "total_assets" in raw and "total_equity" in raw:
+            raw["total_liabilities"] = raw["total_assets"] - raw["total_equity"]
+
+        if all(k in raw for k in ("total_assets", "total_liabilities", "total_equity")):
+            implied = raw["total_assets"] - raw["total_liabilities"]
+            if abs(implied - raw["total_equity"]) > 500:
+                raw["total_equity"] = implied
+
+        return raw
 
     def extract(
         self,

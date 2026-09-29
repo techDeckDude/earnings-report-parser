@@ -14,6 +14,7 @@ A pipeline that extracts structured financial data from SEC 10-Q PDF filings, va
   - [5. Web Dashboard](#5-web-dashboard-apppy--templates)
   - [6. News Ingestion](#6-news-ingestion-ingest_newspy)
   - [7. News Scheduler](#7-news-scheduler-schedulerpy)
+  - [8. 10-K Q4 Derivation](#8-10-k-q4-derivation-ingest_10kpy)
 - [Project Structure](#project-structure)
 - [Experimental Features](#experimental-features)
 - [Deployment](#deployment)
@@ -183,6 +184,31 @@ The script reads `MAX(published_date)` from `news_articles` to determine the sta
 
 The news page groups articles into Mon–Sun calendar weeks based on `published_date` (not ingestion time), so a single run covering multiple weeks will appear as separate carousel pages. The carousel shows the most recent week by default; use the PREV/NEXT buttons (or swipe on mobile) to navigate.
 
+### 8. 10-K Q4 Derivation (`ingest_10k.py`)
+
+EDGAR only publishes 10-Q filings for Q1, Q2, and Q3. Q4 data is derived from each company's annual 10-K filing.
+
+**How derivation works:**
+
+- **Flow metrics** (income statement + cash flow): `Q4 = Annual (10-K) − Q1 − Q2 − Q3`. The annual total from the 10-K is the exact accounting sum of all four quarters, so subtraction gives the precise Q4 value.
+- **Balance sheet**: 10-K year-end snapshot taken directly (balance sheet items are point-in-time, not additive).
+- **EPS**: `Q4 EPS = Q4 net income ÷ annual weighted average shares` from the 10-K.
+
+Derived Q4 periods are stored with `period = "Q4 YYYY"`, `filing_type = "10-K"`, and `period_end_date` equal to the fiscal year end date. They appear in the earnings chart alongside Q1–Q3 data.
+
+```bash
+# Derive Q4 for a single ticker (all available fiscal years)
+python ingest_10k.py NVDA
+
+# Only process years ending after a given date
+python ingest_10k.py NVDA --since 2021-01-01
+
+# Dry run (print derived values without writing to DB)
+python ingest_10k.py NVDA --dry-run
+```
+
+`bulk_ingest.py` now runs both 10-Q ingestion and 10-K Q4 derivation in a single pass. Use `--skip-10k` to skip the Q4 step.
+
 ### 7. News Scheduler (`scheduler.py`)
 
 Runs `ingest_news.py` automatically on a configurable interval. The interval is set via the `INGEST_INTERVAL_HOURS` env var (default `24`; supports fractional hours).
@@ -231,7 +257,8 @@ earnings-report-parser/
 ├── add_stock.py         # CLI: add a ticker to target_stocks, resolve its CIK, and scan its EDGAR filing history in one command
 ├── scan_filings.py      # CLI: scan EDGAR 10-Q history for all target stocks — shows count, date range, years before ingestion; --save writes to DB
 ├── ingest_xbrl.py       # CLI: ingest 10-Q filings for any ticker via EDGAR XBRL API (no file download)
-├── bulk_ingest.py       # CLI: ingest all target stocks with EDGAR XBRL data in one pass; logs per-ticker results and final summary
+├── ingest_10k.py        # CLI: derive Q4 data from 10-K annual filings (Q4 = Annual − Q1 − Q2 − Q3); balance sheet taken directly from year-end snapshot
+├── bulk_ingest.py       # CLI: ingest all target stocks in one pass — runs 10-Q ingestion then 10-K Q4 derivation per ticker; --skip-10k skips derivation
 ├── ingest_news.py       # CLI: fetch AI stock news via Claude (Anthropic SDK + web search), store in DB
 ├── scheduler.py         # Run ingest_news.py on a configurable interval (INGEST_INTERVAL_HOURS env var)
 ├── deploy.sh            # Deploy script: merge develop → main (code + build commits), tag, push to origin

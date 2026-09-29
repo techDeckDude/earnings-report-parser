@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-29** — Added Q4 data derivation from 10-K annual filings: `ingest_10k.py` derives Q4 for each fiscal year as Annual − Q1 − Q2 − Q3 for income statement and cash flow metrics, takes year-end balance sheet snapshots directly from the 10-K, and computes Q4 EPS from Q4 net income divided by annual weighted shares; `XBRLExtractor` gains `get_fiscal_years()` and `extract_annual()` methods; `bulk_ingest.py` now runs both 10-Q ingestion and 10-K Q4 derivation per ticker in one pass; Q4 periods appear in the earnings chart alongside Q1–Q3
+
 - **2026-09-27** — Migrated database backend from SQLite to PostgreSQL running in Docker on a Mac Mini, reachable over Tailscale; app.py now uses `%s` placeholders correctly for Postgres; all 76 companies, 1,346 reports, and 36,012 financial metrics migrated; SQLite remains as a local fallback when `DB_HOST` is unset
 
 - **2026-09-26** — Extended analytics strip on the earnings metric chart with Year-over-Year stats: now shows four chips — Avg QoQ, Last QoQ, Avg YoY, and Last YoY — each with period labels and absolute delta (money metrics); YoY compares annual totals (sum of all quarters per year, averaged for percentage metrics) across consecutive years with the same quarter count; a divider separates the QoQ and YoY groups; all four update dynamically on every ticker and metric switch
