@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-09-29** — Added BAR/LINE toggle to the single-stock metric chart; bar view renders each bar with a gradient from medium emerald (lower values) to deep forest green (higher values) so relative performance is visible at a glance; line view restores the original dots-and-line design; the selected view persists as you switch metrics
+
 - **2026-09-29** — Charts now start scrolled to the most recent data; scroll left to view earlier periods
 
 - **2026-09-29** — Fixed mobile scroll jump on the earnings page: the resize handler now ignores height-only resize events (iOS Safari address bar collapsing/expanding during scroll), which previously triggered a chart redraw that snapped the page back to the chart section

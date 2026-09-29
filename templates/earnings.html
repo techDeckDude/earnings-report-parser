@@ -306,11 +306,25 @@
     .pill-btn.active { background: var(--green-dim); color: var(--green); border-color: var(--green-line); font-weight: 600; }
 
     .chart-wrap { min-width: 0; }
+    .chart-title-row {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 12px;
+    }
     .chart-title {
       font-family: "IBM Plex Mono", monospace;
       font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em;
-      color: var(--text-2); margin-bottom: 12px;
+      color: var(--text-2); margin-bottom: 0;
     }
+    .chart-view-toggle { display: flex; gap: 2px; }
+    .cvt-btn {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.58rem; font-weight: 500; letter-spacing: 0.1em;
+      padding: 3px 8px; border: 0.5px solid var(--border);
+      background: transparent; color: var(--text-3); cursor: pointer;
+      border-radius: 2px; transition: color 0.15s, border-color 0.15s;
+    }
+    .cvt-btn.active { color: var(--green); border-color: var(--green); }
+    .cvt-btn:hover:not(.active) { color: var(--text-2); border-color: var(--text-3); }
 
     /* ── Chart scroll (news-page pattern) ── */
     .chart-flex { display: flex; align-items: flex-start; }
@@ -463,7 +477,13 @@
         </div>
       </div>
       <div class="chart-wrap">
-        <div class="chart-title" id="chartTitle">—</div>
+        <div class="chart-title-row">
+          <div class="chart-title" id="chartTitle">—</div>
+          <div class="chart-view-toggle" id="chartViewToggle" style="display:none">
+            <button class="cvt-btn active" id="cvtBar" onclick="setChartView('bar')">BAR</button>
+            <button class="cvt-btn" id="cvtLine" onclick="setChartView('line')">LINE</button>
+          </div>
+        </div>
         <div id="chartAnalytics"></div>
         <div id="chartContainer"></div>
       </div>
@@ -626,8 +646,9 @@ let stockDataB       = null;
 let activeTicker     = null;
 let stockData        = null;
 let selectedMetricId = "revenue";
-let _barTipData      = [];
+let _barTipData       = [];
 let _chartRenderState = null;
+let _singleChartView  = 'bar'; // 'bar' | 'line'
 
 // ── Init ──────────────────────────────────────────────────────────────────────
 
@@ -700,6 +721,8 @@ function setMode(mode) {
   document.getElementById("compareModeUI").style.display = compareMode ? "" : "none";
   document.getElementById("tableCard").style.display = compareMode ? "none" : "";
   document.getElementById("compareLegend").style.display = compareMode ? "flex" : "none";
+  const toggleEl = document.getElementById("chartViewToggle");
+  if (toggleEl) toggleEl.style.display = compareMode ? "none" : (_chartRenderState ? "flex" : "none");
 
   if (compareMode) {
     document.getElementById("pageTitle").textContent = "Compare";
@@ -1231,15 +1254,25 @@ function renderAnalytics(m, avgQoQ, nQoQ, lastQoQ, lastQoQDelta, prevPeriod, cur
 
 // ── Single-stock line chart ───────────────────────────────────────────────────
 
+function setChartView(view) {
+  _singleChartView = view;
+  document.getElementById('cvtBar').classList.toggle('active', view === 'bar');
+  document.getElementById('cvtLine').classList.toggle('active', view === 'line');
+  selectMetric(selectedMetricId);
+}
+
 function drawChart(vals, metricDef) {
   const periods = stockData.periods;
   const container = document.getElementById("chartContainer");
+
+  // Show the BAR/LINE toggle (only in single-stock mode)
+  const toggleEl = document.getElementById('chartViewToggle');
+  if (toggleEl) toggleEl.style.display = 'flex';
 
   const containerW = Math.max(260, Math.floor(container.getBoundingClientRect().width));
   const mobile = containerW < 520;
   const H = mobile ? 260 : 220;
   const PAD = { top: 16, right: mobile ? 12 : 20, bottom: mobile ? 48 : 44, left: 68 };
-  const dotR = mobile ? 7 : 5;
 
   const points = vals.map((v, i) => ({ v, p: periods[i] })).filter(x => x.v !== null);
   if (!points.length) {
@@ -1249,6 +1282,77 @@ function drawChart(vals, metricDef) {
     return;
   }
 
+  if (_singleChartView === 'bar') {
+    _drawChartBars(container, points, metricDef, containerW, mobile, H, PAD);
+  } else {
+    _drawChartLine(container, points, metricDef, containerW, mobile, H, PAD);
+  }
+}
+
+function _drawChartBars(container, points, metricDef, containerW, mobile, H, PAD) {
+  const barW = mobile ? 11 : 13;
+  const MIN_SPACING = Math.max(barW + (mobile ? 20 : 28), Math.ceil(containerW / 8));
+  const W = Math.max(containerW, points.length * MIN_SPACING);
+  const scrollable = W > containerW;
+
+  const IW = W - PAD.left - PAD.right;
+  const IH = H - PAD.top - PAD.bottom;
+  const groupSpacing = IW / points.length;
+
+  const rawVals = points.map(x => x.v);
+  const minV = Math.min(...rawVals);
+  const maxV = Math.max(...rawVals);
+  const pad  = (maxV - minV) * 0.14 || Math.abs(maxV) * 0.14 || 1;
+  const yMin = Math.min(0, minV - pad);
+  const yMax = maxV + pad;
+
+  function xPos(i) { return PAD.left + (i + 0.5) * groupSpacing; }
+  function yPos(v) { return PAD.top + IH - ((v - yMin) / (yMax - yMin)) * IH; }
+
+  let grid = "", yLabels = "";
+  for (let i = 0; i <= 4; i++) {
+    const v = yMin + (i / 4) * (yMax - yMin);
+    const y = yPos(v);
+    grid    += `<line id="gy-${i}" class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}" />`;
+    yLabels += `<text id="yl-${i}" class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${fmt(metricDef, v) || v.toFixed(1)}</text>`;
+  }
+  const zeroY = yPos(0);
+  if (zeroY > PAD.top && zeroY < PAD.top + IH) {
+    grid += `<line id="gz" stroke="var(--text-3)" stroke-width="0.8" stroke-dasharray="3,3" x1="${PAD.left}" y1="${zeroY}" x2="${W - PAD.right}" y2="${zeroY}"/>`;
+  }
+
+  const step = points.length <= 12 ? 1 : Math.ceil(points.length / 12);
+  let xLabels = "";
+  points.forEach((pt, i) => {
+    if (i % step !== 0 && i !== points.length - 1) return;
+    xLabels += `<text class="axis-label" x="${xPos(i)}" y="${H - PAD.bottom + 16}" text-anchor="middle">${pt.p.period}</text>`;
+  });
+
+  const normRange = maxV - minV || 1;
+  let bars = "";
+  points.forEach((pt, i) => {
+    const norm = (pt.v - minV) / normRange;
+    // Low → #34d399 (emerald-400), High → #052e16 (green-950)
+    const r = Math.round(52  + (5   - 52)  * norm);
+    const g = Math.round(211 + (46  - 211) * norm);
+    const b = Math.round(153 + (22  - 153) * norm);
+    const top = pt.v >= 0 ? yPos(pt.v) : yPos(0);
+    const h   = Math.max(1, Math.abs(yPos(pt.v) - yPos(0)));
+    bars += `<rect id="sbar-${i}" class="bar-a" x="${(xPos(i) - barW / 2).toFixed(1)}" y="${top.toFixed(1)}"
+      width="${barW}" height="${h.toFixed(1)}" rx="2"
+      style="fill:rgb(${r},${g},${b})"
+      onmouseenter="showTip(event,'${pt.p.period}','${fmt(metricDef, pt.v)}')"
+      onmouseleave="hideTip()"/>`;
+  });
+
+  const chartContent = `${grid}${xLabels}${bars}`;
+  _renderChartScroll(container, chartContent, yLabels, W, H, PAD, scrollable);
+  _chartRenderState = { type: 'single', barMode: true, metricDef, points, PAD, H, IH, W, n: points.length, IW, groupSpacing };
+  _attachScrollIfNeeded(container, scrollable);
+}
+
+function _drawChartLine(container, points, metricDef, containerW, mobile, H, PAD) {
+  const dotR = mobile ? 7 : 5;
   const MIN_SPACING = Math.max(44, Math.ceil(containerW / 8));
   const W = Math.max(containerW, points.length * MIN_SPACING);
   const scrollable = W > containerW;
@@ -1266,14 +1370,11 @@ function drawChart(vals, metricDef) {
   function xPos(i) {
     return PAD.left + (points.length === 1 ? IW / 2 : (i / (points.length - 1)) * IW);
   }
-  function yPos(v) {
-    return PAD.top + IH - ((v - yMin) / (yMax - yMin)) * IH;
-  }
+  function yPos(v) { return PAD.top + IH - ((v - yMin) / (yMax - yMin)) * IH; }
 
   let grid = "", yLabels = "";
-  const yTicks = 4;
-  for (let i = 0; i <= yTicks; i++) {
-    const v = yMin + (i / yTicks) * (yMax - yMin);
+  for (let i = 0; i <= 4; i++) {
+    const v = yMin + (i / 4) * (yMax - yMin);
     const y = yPos(v);
     grid    += `<line id="gy-${i}" class="grid-line" x1="${PAD.left}" y1="${y}" x2="${W - PAD.right}" y2="${y}" />`;
     yLabels += `<text id="yl-${i}" class="axis-label" x="${PAD.left - 8}" y="${y + 4}" text-anchor="end">${fmt(metricDef, v) || v.toFixed(1)}</text>`;
@@ -1294,7 +1395,12 @@ function drawChart(vals, metricDef) {
   ).join("");
 
   const chartContent = `${grid}${xLabels}<path id="cpath" class="chart-line" d="${path}" />${dots}`;
+  _renderChartScroll(container, chartContent, yLabels, W, H, PAD, scrollable);
+  _chartRenderState = { type: 'single', barMode: false, metricDef, points, PAD, H, IH, W, n: points.length, IW };
+  _attachScrollIfNeeded(container, scrollable);
+}
 
+function _renderChartScroll(container, chartContent, yLabels, W, H, PAD, scrollable) {
   if (scrollable) {
     const rightW = W - PAD.left;
     container.innerHTML = `
@@ -1317,8 +1423,9 @@ function drawChart(vals, metricDef) {
         ${yLabels}${chartContent}
       </svg>`;
   }
+}
 
-  _chartRenderState = { type: 'single', metricDef, points, PAD, H, IH, W, n: points.length, IW };
+function _attachScrollIfNeeded(container, scrollable) {
   if (scrollable) {
     const scrollEl = container.querySelector('.chart-scroll-inner');
     if (scrollEl) {
@@ -1353,6 +1460,12 @@ function rescaleToVisible(scrollEl) {
       if (s.ptsA[i] !== null) visVals.push(s.ptsA[i]);
       if (s.ptsB[i] !== null) visVals.push(s.ptsB[i]);
     }
+  } else if (s.barMode) {
+    const first = Math.max(0, Math.floor(sl / s.groupSpacing) - 1);
+    const last  = Math.min(s.n - 1, Math.ceil((sl + vw) / s.groupSpacing));
+    for (let i = first; i <= last; i++) {
+      if (s.points[i]) visVals.push(s.points[i].v);
+    }
   } else {
     const n1 = s.n > 1 ? s.n - 1 : 1;
     const first = Math.max(0, Math.floor(sl * n1 / s.IW) - 1);
@@ -1367,7 +1480,7 @@ function rescaleToVisible(scrollEl) {
   const maxV = Math.max(...visVals);
 
   let yMin, yMax;
-  if (s.type === 'compare') {
+  if (s.type === 'compare' || s.barMode) {
     const p = (maxV - minV) * 0.14 || Math.abs(maxV) * 0.14 || 1;
     yMin = Math.min(0, minV - p);
     yMax = maxV + p;
@@ -1411,6 +1524,20 @@ function rescaleToVisible(scrollEl) {
       if (!el) return;
       el.setAttribute('y', (v >= 0 ? yp(v) : yp(0)).toFixed(1));
       el.setAttribute('height', Math.max(1, Math.abs(yp(v) - yp(0))).toFixed(1));
+    });
+  } else if (s.barMode) {
+    const gz = document.getElementById('gz');
+    if (gz) {
+      const zy = yp(0);
+      const vis = zy > PAD.top && zy < PAD.top + IH;
+      gz.style.display = vis ? '' : 'none';
+      if (vis) { gz.setAttribute('y1', zy); gz.setAttribute('y2', zy); }
+    }
+    s.points.forEach((pt, i) => {
+      const el = document.getElementById(`sbar-${i}`);
+      if (!el) return;
+      el.setAttribute('y', (pt.v >= 0 ? yp(pt.v) : yp(0)).toFixed(1));
+      el.setAttribute('height', Math.max(1, Math.abs(yp(pt.v) - yp(0))).toFixed(1));
     });
   } else {
     s.points.forEach((pt, i) => {
