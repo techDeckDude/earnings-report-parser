@@ -2,6 +2,57 @@
   {
     "headlines": [
       {
+        "headline": "BCBSA Study Finds AI Coding Tools Added $942 Million in Costs to Member Plans Over Two Years",
+        "published_date": "Tue, 29 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Complete AI Training (citing BCBSA)",
+        "stocks_mentioned": [],
+        "summary": "A Blue Cross Blue Shield Association study found that AI coding tools introduced $942 million in incremental costs to health plans over two years, a potential headwind for enterprise AI adoption in healthcare. Impact is on payers broadly \u2014 no single publicly traded company is confirmed as the direct revenue loser, so this is a potential sector-wide downside.",
+        "url": "https://completeaitraining.com/news/bcbsa-finds-ai-coding-tools-added-942-million-in-costs-to/",
+        "url_verified": false
+      },
+      {
+        "headline": "Meta's Muse AI Agent Targets the Subscription Economy as a Personal Financial Assistant",
+        "published_date": "Tue, 29 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Meta's Muse AI agent, launched in early September, is gaining traction with consumers as a personal finance and subscription management tool, including free and paid subscription tiers ($20/$100/month). This represents a potential new revenue stream for Meta; impact is not yet confirmed at scale.",
+        "url": "https://www.cnbc.com/2026/09/27/meta-muse-ai-personal-agent.html",
+        "url_verified": false
+      },
+      {
+        "headline": "Nvidia Shares Rise ~1% on Buyback News as AI-Related Stocks Broadly Sell Off Monday",
+        "published_date": "Tue, 29 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "CNBC Markets Live Blog",
+        "stocks_mentioned": [
+          "NVDA",
+          "META"
+        ],
+        "summary": "Macro market commentary: Nvidia rose ~1% on buyback news while Meta fell ~3% and broader AI stocks sold off amid rising Treasury yields. No company-specific confirmed revenue or earnings impact reported; this is market movement commentary only.",
+        "url": "https://www.cnbc.com/2026/09/27/stock-market-today-live-updates.html",
+        "url_verified": false
+      },
+      {
+        "headline": "Nvidia Authorizes $150 Billion Share Buyback \u2014 Largest Single Repurchase Authorization in History",
+        "published_date": "Tue, 29 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "NVIDIA Newsroom / CNBC / Bloomberg",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Nvidia's board authorized a $150B increase to its buyback program, raising the total to $235B through fiscal 2028. This is a capital return action \u2014 not a confirmed earnings beat or revenue report \u2014 representing potential shareholder value upside but not confirmed revenue or earnings impact.",
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-a-150-billion-share-repurchase-authorization-increase",
+        "url_verified": true
+      },
+      {
         "headline": "OpenAI Halts Training for Its Most Advanced Model Amid Safety Review",
         "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
@@ -119,14 +170,14 @@
     "summary_stats": {
       "net_sentiment_label": "Neutral",
       "score_distribution": {
-        "-1": 4,
+        "-1": 5,
         "-2": 0,
-        "0": 1,
-        "1": 1,
+        "0": 2,
+        "1": 3,
         "2": 2
       },
-      "total_headlines": 8,
-      "weighted_sentiment": 0.1
+      "total_headlines": 12,
+      "weighted_sentiment": 0.2
     },
     "week_end": "2026-10-04",
     "week_start": "2026-09-28"

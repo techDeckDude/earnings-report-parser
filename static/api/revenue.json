@@ -196,6 +196,13 @@
     "ticker": "LRCX"
   },
   {
+    "name": "Apple Inc.",
+    "period": "Q4 2017",
+    "period_end_date": "Sat, 30 Sep 2017 00:00:00 GMT",
+    "revenue": 52579000.0,
+    "ticker": "AAPL"
+  },
+  {
     "name": "Calix, Inc",
     "period": "Q3 2017",
     "period_end_date": "Sat, 30 Sep 2017 00:00:00 GMT",
@@ -308,6 +315,13 @@
     "ticker": "AMD"
   },
   {
+    "name": "CIRRUS LOGIC, INC.",
+    "period": "Q4 2018",
+    "period_end_date": "Sat, 31 Mar 2018 00:00:00 GMT",
+    "revenue": 303173.0,
+    "ticker": "CRUS"
+  },
+  {
     "name": "ONTO INNOVATION INC.",
     "period": "Q1 2018",
     "period_end_date": "Sat, 31 Mar 2018 00:00:00 GMT",
@@ -341,6 +355,13 @@
     "period_end_date": "Thu, 31 May 2018 00:00:00 GMT",
     "revenue": 7797000.0,
     "ticker": "MU"
+  },
+  {
+    "name": "LAM RESEARCH CORPORATION",
+    "period": "Q4 2018",
+    "period_end_date": "Sun, 24 Jun 2018 00:00:00 GMT",
+    "revenue": 3125928.0,
+    "ticker": "LRCX"
   },
   {
     "name": "MACOM Technology Solutions Holdings, Inc.",
@@ -462,6 +483,13 @@
     "ticker": "ON"
   },
   {
+    "name": "Apple Inc.",
+    "period": "Q4 2018",
+    "period_end_date": "Sat, 29 Sep 2018 00:00:00 GMT",
+    "revenue": 62900000.0,
+    "ticker": "AAPL"
+  },
+  {
     "name": "ADVANCED MICRO DEVICES INC",
     "period": "Q3 2018",
     "period_end_date": "Sat, 29 Sep 2018 00:00:00 GMT",
@@ -567,11 +595,25 @@
     "ticker": "AAPL"
   },
   {
+    "name": "ADVANCED MICRO DEVICES INC",
+    "period": "Q4 2018",
+    "period_end_date": "Sat, 29 Dec 2018 00:00:00 GMT",
+    "revenue": 1419000.0,
+    "ticker": "AMD"
+  },
+  {
     "name": "CIRRUS LOGIC, INC.",
     "period": "Q3 2019",
     "period_end_date": "Sat, 29 Dec 2018 00:00:00 GMT",
     "revenue": 324295.0,
     "ticker": "CRUS"
+  },
+  {
+    "name": "ONTO INNOVATION INC.",
+    "period": "Q4 2018",
+    "period_end_date": "Sat, 29 Dec 2018 00:00:00 GMT",
+    "revenue": 77016.0,
+    "ticker": "ONTO"
   },
   {
     "name": "QUALCOMM INC/DE",
@@ -588,11 +630,32 @@
     "ticker": "COHR"
   },
   {
+    "name": "ON SEMICONDUCTOR CORPORATION",
+    "period": "Q4 2018",
+    "period_end_date": "Mon, 31 Dec 2018 00:00:00 GMT",
+    "revenue": 1503100.0,
+    "ticker": "ON"
+  },
+  {
     "name": "Super Micro Computer, Inc.",
     "period": "Q2 2019",
     "period_end_date": "Mon, 31 Dec 2018 00:00:00 GMT",
     "revenue": 931509.0,
     "ticker": "SMCI"
+  },
+  {
+    "name": "The Trade Desk, Inc.",
+    "period": "Q4 2018",
+    "period_end_date": "Mon, 31 Dec 2018 00:00:00 GMT",
+    "revenue": 160468.0,
+    "ticker": "TTD"
+  },
+  {
+    "name": "TEXAS INSTRUMENTS INCORPORATED",
+    "period": "Q4 2018",
+    "period_end_date": "Mon, 31 Dec 2018 00:00:00 GMT",
+    "revenue": 3717000.0,
+    "ticker": "TXN"
   },
   {
     "name": "NetApp, Inc.",
@@ -607,6 +670,13 @@
     "period_end_date": "Sun, 27 Jan 2019 00:00:00 GMT",
     "revenue": 3753000.0,
     "ticker": "AMAT"
+  },
+  {
+    "name": "AMBARELLA, INC.",
+    "period": "Q4 2019",
+    "period_end_date": "Thu, 31 Jan 2019 00:00:00 GMT",
+    "revenue": 51070.0,
+    "ticker": "AMBA"
   },
   {
     "name": "SYNOPSYS INC",
@@ -656,6 +726,13 @@
     "period_end_date": "Sat, 30 Mar 2019 00:00:00 GMT",
     "revenue": 1272000.0,
     "ticker": "AMD"
+  },
+  {
+    "name": "CIRRUS LOGIC, INC.",
+    "period": "Q4 2019",
+    "period_end_date": "Sat, 30 Mar 2019 00:00:00 GMT",
+    "revenue": 240441.0,
+    "ticker": "CRUS"
   },
   {
     "name": "ONTO INNOVATION INC.",
@@ -712,6 +789,13 @@
     "period_end_date": "Sun, 31 Mar 2019 00:00:00 GMT",
     "revenue": 3594000.0,
     "ticker": "TXN"
+  },
+  {
+    "name": "NetApp, Inc.",
+    "period": "Q4 2019",
+    "period_end_date": "Fri, 26 Apr 2019 00:00:00 GMT",
+    "revenue": 1592000.0,
+    "ticker": "NTAP"
   },
   {
     "name": "APPLIED MATERIALS INC /DE",
@@ -819,11 +903,25 @@
     "ticker": "ISRG"
   },
   {
+    "name": "LAM RESEARCH CORPORATION",
+    "period": "Q4 2019",
+    "period_end_date": "Sun, 30 Jun 2019 00:00:00 GMT",
+    "revenue": 2361147.0,
+    "ticker": "LRCX"
+  },
+  {
     "name": "QUALCOMM INC/DE",
     "period": "Q3 2019",
     "period_end_date": "Sun, 30 Jun 2019 00:00:00 GMT",
     "revenue": 9635000.0,
     "ticker": "QCOM"
+  },
+  {
+    "name": "Super Micro Computer, Inc.",
+    "period": "Q4 2019",
+    "period_end_date": "Sun, 30 Jun 2019 00:00:00 GMT",
+    "revenue": 854234.0,
+    "ticker": "SMCI"
   },
   {
     "name": "TERADATA CORPORATION",
@@ -896,11 +994,32 @@
     "ticker": "AVGO"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2019",
+    "period_end_date": "Thu, 29 Aug 2019 00:00:00 GMT",
+    "revenue": 4870000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "MACOM Technology Solutions Holdings, Inc.",
+    "period": "Q4 2019",
+    "period_end_date": "Fri, 27 Sep 2019 00:00:00 GMT",
+    "revenue": 112248.0,
+    "ticker": "MTSI"
+  },
+  {
     "name": "ON SEMICONDUCTOR CORPORATION",
     "period": "Q3 2019",
     "period_end_date": "Fri, 27 Sep 2019 00:00:00 GMT",
     "revenue": 1381800.0,
     "ticker": "ON"
+  },
+  {
+    "name": "Apple Inc.",
+    "period": "Q4 2019",
+    "period_end_date": "Sat, 28 Sep 2019 00:00:00 GMT",
+    "revenue": 64040000.0,
+    "ticker": "AAPL"
   },
   {
     "name": "ADVANCED MICRO DEVICES INC",
@@ -943,6 +1062,13 @@
     "period_end_date": "Sun, 29 Sep 2019 00:00:00 GMT",
     "revenue": 2165746.0,
     "ticker": "LRCX"
+  },
+  {
+    "name": "QUALCOMM INC/DE",
+    "period": "Q4 2019",
+    "period_end_date": "Sun, 29 Sep 2019 00:00:00 GMT",
+    "revenue": 4814000.0,
+    "ticker": "QCOM"
   },
   {
     "name": "AMKOR TECHNOLOGY, INC.",
@@ -1015,6 +1141,13 @@
     "ticker": "NTAP"
   },
   {
+    "name": "APPLIED MATERIALS INC /DE",
+    "period": "Q4 2019",
+    "period_end_date": "Sun, 27 Oct 2019 00:00:00 GMT",
+    "revenue": 3754000.0,
+    "ticker": "AMAT"
+  },
+  {
     "name": "Semtech Corporation",
     "period": "Q3 2020",
     "period_end_date": "Sun, 27 Oct 2019 00:00:00 GMT",
@@ -1029,6 +1162,20 @@
     "ticker": "AMBA"
   },
   {
+    "name": "SYNOPSYS INC",
+    "period": "Q4 2019",
+    "period_end_date": "Thu, 31 Oct 2019 00:00:00 GMT",
+    "revenue": 851081.0,
+    "ticker": "SNPS"
+  },
+  {
+    "name": "Broadcom Inc.",
+    "period": "Q4 2019",
+    "period_end_date": "Sun, 03 Nov 2019 00:00:00 GMT",
+    "revenue": 5776000.0,
+    "ticker": "AVGO"
+  },
+  {
     "name": "Micron Technology, Inc.",
     "period": "Q1 2020",
     "period_end_date": "Thu, 28 Nov 2019 00:00:00 GMT",
@@ -1041,6 +1188,13 @@
     "period_end_date": "Sat, 28 Dec 2019 00:00:00 GMT",
     "revenue": 91819000.0,
     "ticker": "AAPL"
+  },
+  {
+    "name": "ADVANCED MICRO DEVICES INC",
+    "period": "Q4 2019",
+    "period_end_date": "Sat, 28 Dec 2019 00:00:00 GMT",
+    "revenue": 2127000.0,
+    "ticker": "AMD"
   },
   {
     "name": "CIRRUS LOGIC, INC.",
@@ -1071,11 +1225,46 @@
     "ticker": "MCHP"
   },
   {
+    "name": "ON SEMICONDUCTOR CORPORATION",
+    "period": "Q4 2019",
+    "period_end_date": "Tue, 31 Dec 2019 00:00:00 GMT",
+    "revenue": 1401800.0,
+    "ticker": "ON"
+  },
+  {
+    "name": "ONTO INNOVATION INC.",
+    "period": "Q4 2019",
+    "period_end_date": "Tue, 31 Dec 2019 00:00:00 GMT",
+    "revenue": 98051.0,
+    "ticker": "ONTO"
+  },
+  {
     "name": "Super Micro Computer, Inc.",
     "period": "Q2 2020",
     "period_end_date": "Tue, 31 Dec 2019 00:00:00 GMT",
     "revenue": 870943.0,
     "ticker": "SMCI"
+  },
+  {
+    "name": "TERADATA CORPORATION",
+    "period": "Q4 2019",
+    "period_end_date": "Tue, 31 Dec 2019 00:00:00 GMT",
+    "revenue": 494000.0,
+    "ticker": "TDC"
+  },
+  {
+    "name": "The Trade Desk, Inc.",
+    "period": "Q4 2019",
+    "period_end_date": "Tue, 31 Dec 2019 00:00:00 GMT",
+    "revenue": 215944.0,
+    "ticker": "TTD"
+  },
+  {
+    "name": "TEXAS INSTRUMENTS INCORPORATED",
+    "period": "Q4 2019",
+    "period_end_date": "Tue, 31 Dec 2019 00:00:00 GMT",
+    "revenue": 3350000.0,
+    "ticker": "TXN"
   },
   {
     "name": "MACOM Technology Solutions Holdings, Inc.",
@@ -1097,6 +1286,13 @@
     "period_end_date": "Sun, 26 Jan 2020 00:00:00 GMT",
     "revenue": 4162000.0,
     "ticker": "AMAT"
+  },
+  {
+    "name": "AMBARELLA, INC.",
+    "period": "Q4 2020",
+    "period_end_date": "Fri, 31 Jan 2020 00:00:00 GMT",
+    "revenue": 57212.0,
+    "ticker": "AMBA"
   },
   {
     "name": "SYNOPSYS INC",
@@ -1153,6 +1349,13 @@
     "period_end_date": "Sat, 28 Mar 2020 00:00:00 GMT",
     "revenue": 101682.0,
     "ticker": "CALX"
+  },
+  {
+    "name": "CIRRUS LOGIC, INC.",
+    "period": "Q4 2020",
+    "period_end_date": "Sat, 28 Mar 2020 00:00:00 GMT",
+    "revenue": 279291.0,
+    "ticker": "CRUS"
   },
   {
     "name": "INTEL CORP",
@@ -1244,6 +1447,13 @@
     "period_end_date": "Fri, 03 Apr 2020 00:00:00 GMT",
     "revenue": 1277900.0,
     "ticker": "ON"
+  },
+  {
+    "name": "NetApp, Inc.",
+    "period": "Q4 2020",
+    "period_end_date": "Fri, 24 Apr 2020 00:00:00 GMT",
+    "revenue": 1401000.0,
+    "ticker": "NTAP"
   },
   {
     "name": "APPLIED MATERIALS INC /DE",
@@ -1407,6 +1617,13 @@
     "ticker": "MPWR"
   },
   {
+    "name": "Super Micro Computer, Inc.",
+    "period": "Q4 2020",
+    "period_end_date": "Tue, 30 Jun 2020 00:00:00 GMT",
+    "revenue": 896126.0,
+    "ticker": "SMCI"
+  },
+  {
     "name": "TERADATA CORPORATION",
     "period": "Q2 2020",
     "period_end_date": "Tue, 30 Jun 2020 00:00:00 GMT",
@@ -1526,6 +1743,20 @@
     "ticker": "ADBE"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2020",
+    "period_end_date": "Thu, 03 Sep 2020 00:00:00 GMT",
+    "revenue": 6056000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Apple Inc.",
+    "period": "Q4 2020",
+    "period_end_date": "Sat, 26 Sep 2020 00:00:00 GMT",
+    "revenue": 64698000.0,
+    "ticker": "AAPL"
+  },
+  {
     "name": "ADVANCED MICRO DEVICES INC",
     "period": "Q3 2020",
     "period_end_date": "Sat, 26 Sep 2020 00:00:00 GMT",
@@ -1573,6 +1804,13 @@
     "period_end_date": "Sun, 27 Sep 2020 00:00:00 GMT",
     "revenue": 2267000.0,
     "ticker": "NXPI"
+  },
+  {
+    "name": "QUALCOMM INC/DE",
+    "period": "Q4 2020",
+    "period_end_date": "Sun, 27 Sep 2020 00:00:00 GMT",
+    "revenue": 8345000.0,
+    "ticker": "QCOM"
   },
   {
     "name": "WOLFSPEED, INC.",
@@ -1687,11 +1925,25 @@
     "ticker": "VRT"
   },
   {
+    "name": "MACOM Technology Solutions Holdings, Inc.",
+    "period": "Q4 2020",
+    "period_end_date": "Fri, 02 Oct 2020 00:00:00 GMT",
+    "revenue": 147249.0,
+    "ticker": "MTSI"
+  },
+  {
     "name": "ON SEMICONDUCTOR CORPORATION",
     "period": "Q3 2020",
     "period_end_date": "Fri, 02 Oct 2020 00:00:00 GMT",
     "revenue": 1317300.0,
     "ticker": "ON"
+  },
+  {
+    "name": "APPLIED MATERIALS INC /DE",
+    "period": "Q4 2020",
+    "period_end_date": "Sun, 25 Oct 2020 00:00:00 GMT",
+    "revenue": 4688000.0,
+    "ticker": "AMAT"
   },
   {
     "name": "Semtech Corporation",
@@ -1708,6 +1960,13 @@
     "ticker": "NTAP"
   },
   {
+    "name": "ANALOG DEVICES INC",
+    "period": "Q4 2020",
+    "period_end_date": "Sat, 31 Oct 2020 00:00:00 GMT",
+    "revenue": 1526295.0,
+    "ticker": "ADI"
+  },
+  {
     "name": "AMBARELLA, INC.",
     "period": "Q3 2021",
     "period_end_date": "Sat, 31 Oct 2020 00:00:00 GMT",
@@ -1722,11 +1981,32 @@
     "ticker": "OKTA"
   },
   {
+    "name": "SYNOPSYS INC",
+    "period": "Q4 2020",
+    "period_end_date": "Sat, 31 Oct 2020 00:00:00 GMT",
+    "revenue": 1025439.0,
+    "ticker": "SNPS"
+  },
+  {
     "name": "Veeva Systems Inc.",
     "period": "Q3 2021",
     "period_end_date": "Sat, 31 Oct 2020 00:00:00 GMT",
     "revenue": 377519.0,
     "ticker": "VEEV"
+  },
+  {
+    "name": "Broadcom Inc.",
+    "period": "Q4 2020",
+    "period_end_date": "Sun, 01 Nov 2020 00:00:00 GMT",
+    "revenue": 6467000.0,
+    "ticker": "AVGO"
+  },
+  {
+    "name": "ADOBE INC.",
+    "period": "Q4 2020",
+    "period_end_date": "Fri, 27 Nov 2020 00:00:00 GMT",
+    "revenue": 3424000.0,
+    "ticker": "ADBE"
   },
   {
     "name": "Micron Technology, Inc.",
@@ -1750,11 +2030,25 @@
     "ticker": "AAPL"
   },
   {
+    "name": "ADVANCED MICRO DEVICES INC",
+    "period": "Q4 2020",
+    "period_end_date": "Sat, 26 Dec 2020 00:00:00 GMT",
+    "revenue": 3244000.0,
+    "ticker": "AMD"
+  },
+  {
     "name": "CIRRUS LOGIC, INC.",
     "period": "Q3 2021",
     "period_end_date": "Sat, 26 Dec 2020 00:00:00 GMT",
     "revenue": 485795.0,
     "ticker": "CRUS"
+  },
+  {
+    "name": "ONTO INNOVATION INC.",
+    "period": "Q4 2020",
+    "period_end_date": "Sat, 26 Dec 2020 00:00:00 GMT",
+    "revenue": 155128.0,
+    "ticker": "ONTO"
   },
   {
     "name": "LAM RESEARCH CORPORATION",
@@ -1778,11 +2072,32 @@
     "ticker": "WOLF"
   },
   {
+    "name": "AMKOR TECHNOLOGY, INC.",
+    "period": "Q4 2020",
+    "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT",
+    "revenue": 1371041.0,
+    "ticker": "AMKR"
+  },
+  {
+    "name": "Calix, Inc",
+    "period": "Q4 2020",
+    "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT",
+    "revenue": 170026.0,
+    "ticker": "CALX"
+  },
+  {
     "name": "COHERENT CORP.",
     "period": "Q2 2021",
     "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT",
     "revenue": 786569.0,
     "ticker": "COHR"
+  },
+  {
+    "name": "Intuitive Surgical, Inc.",
+    "period": "Q4 2020",
+    "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT",
+    "revenue": 1329100.0,
+    "ticker": "ISRG"
   },
   {
     "name": "KLA Corporation",
@@ -1806,11 +2121,46 @@
     "ticker": "MSFT"
   },
   {
+    "name": "ON SEMICONDUCTOR CORPORATION",
+    "period": "Q4 2020",
+    "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT",
+    "revenue": 1446300.0,
+    "ticker": "ON"
+  },
+  {
     "name": "Super Micro Computer, Inc.",
     "period": "Q2 2021",
     "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT",
     "revenue": 830306.0,
     "ticker": "SMCI"
+  },
+  {
+    "name": "Tesla, Inc.",
+    "period": "Q4 2020",
+    "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT",
+    "revenue": 10744000.0,
+    "ticker": "TSLA"
+  },
+  {
+    "name": "The Trade Desk, Inc.",
+    "period": "Q4 2020",
+    "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT",
+    "revenue": 319905.0,
+    "ticker": "TTD"
+  },
+  {
+    "name": "TEXAS INSTRUMENTS INCORPORATED",
+    "period": "Q4 2020",
+    "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT",
+    "revenue": 4076000.0,
+    "ticker": "TXN"
+  },
+  {
+    "name": "Vertiv Holdings Co",
+    "period": "Q4 2020",
+    "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT",
+    "revenue": 1305600.0,
+    "ticker": "VRT"
   },
   {
     "name": "MACOM Technology Solutions Holdings, Inc.",
@@ -1848,11 +2198,39 @@
     "ticker": "AMAT"
   },
   {
+    "name": "AMBARELLA, INC.",
+    "period": "Q4 2021",
+    "period_end_date": "Sun, 31 Jan 2021 00:00:00 GMT",
+    "revenue": 62142.0,
+    "ticker": "AMBA"
+  },
+  {
     "name": "Broadcom Inc.",
     "period": "Q1 2021",
     "period_end_date": "Sun, 31 Jan 2021 00:00:00 GMT",
     "revenue": 6655000.0,
     "ticker": "AVGO"
+  },
+  {
+    "name": "CrowdStrike Holdings, Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Sun, 31 Jan 2021 00:00:00 GMT",
+    "revenue": -146146.0,
+    "ticker": "CRWD"
+  },
+  {
+    "name": "Okta, Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Sun, 31 Jan 2021 00:00:00 GMT",
+    "revenue": 234740.0,
+    "ticker": "OKTA"
+  },
+  {
+    "name": "Semtech Corporation",
+    "period": "Q4 2021",
+    "period_end_date": "Sun, 31 Jan 2021 00:00:00 GMT",
+    "revenue": 164673.0,
+    "ticker": "SMTC"
   },
   {
     "name": "SYNOPSYS INC",
@@ -1895,6 +2273,13 @@
     "period_end_date": "Sat, 27 Mar 2021 00:00:00 GMT",
     "revenue": 3445000.0,
     "ticker": "AMD"
+  },
+  {
+    "name": "CIRRUS LOGIC, INC.",
+    "period": "Q4 2021",
+    "period_end_date": "Sat, 27 Mar 2021 00:00:00 GMT",
+    "revenue": 293537.0,
+    "ticker": "CRUS"
   },
   {
     "name": "INTEL CORP",
@@ -1979,6 +2364,13 @@
     "period_end_date": "Wed, 31 Mar 2021 00:00:00 GMT",
     "revenue": 1803773.0,
     "ticker": "KLAC"
+  },
+  {
+    "name": "MICROCHIP TECHNOLOGY INCORPORATED",
+    "period": "Q4 2021",
+    "period_end_date": "Wed, 31 Mar 2021 00:00:00 GMT",
+    "revenue": 1467100.0,
+    "ticker": "MCHP"
   },
   {
     "name": "Monolithic Power Systems, Inc.",
@@ -2091,6 +2483,13 @@
     "period_end_date": "Fri, 30 Apr 2021 00:00:00 GMT",
     "revenue": 60062.0,
     "ticker": "DOMO"
+  },
+  {
+    "name": "NetApp, Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 30 Apr 2021 00:00:00 GMT",
+    "revenue": 1555000.0,
+    "ticker": "NTAP"
   },
   {
     "name": "Okta, Inc.",
@@ -2219,11 +2618,25 @@
     "ticker": "ONTO"
   },
   {
+    "name": "LAM RESEARCH CORPORATION",
+    "period": "Q4 2021",
+    "period_end_date": "Sun, 27 Jun 2021 00:00:00 GMT",
+    "revenue": 4145179.0,
+    "ticker": "LRCX"
+  },
+  {
     "name": "QUALCOMM INC/DE",
     "period": "Q3 2021",
     "period_end_date": "Sun, 27 Jun 2021 00:00:00 GMT",
     "revenue": 8060000.0,
     "ticker": "QCOM"
+  },
+  {
+    "name": "WOLFSPEED, INC.",
+    "period": "Q4 2021",
+    "period_end_date": "Sun, 27 Jun 2021 00:00:00 GMT",
+    "revenue": 145800.0,
+    "ticker": "WOLF"
   },
   {
     "name": "AEVA TECHNOLOGIES, INC.",
@@ -2322,6 +2735,13 @@
     "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT",
     "revenue": 29784.0,
     "ticker": "SDGR"
+  },
+  {
+    "name": "Super Micro Computer, Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT",
+    "revenue": 1068985.0,
+    "ticker": "SMCI"
   },
   {
     "name": "TERADATA CORPORATION",
@@ -2478,6 +2898,13 @@
     "ticker": "SNPS"
   },
   {
+    "name": "Zscaler Inc",
+    "period": "Q4 2021",
+    "period_end_date": "Sat, 31 Jul 2021 00:00:00 GMT",
+    "revenue": 109135.0,
+    "ticker": "ZS"
+  },
+  {
     "name": "APPLIED MATERIALS INC /DE",
     "period": "Q3 2021",
     "period_end_date": "Sun, 01 Aug 2021 00:00:00 GMT",
@@ -2506,11 +2933,25 @@
     "ticker": "SMTC"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Thu, 02 Sep 2021 00:00:00 GMT",
+    "revenue": 8274000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "ADOBE INC.",
     "period": "Q3 2021",
     "period_end_date": "Fri, 03 Sep 2021 00:00:00 GMT",
     "revenue": 3935000.0,
     "ticker": "ADBE"
+  },
+  {
+    "name": "Apple Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Sat, 25 Sep 2021 00:00:00 GMT",
+    "revenue": 83360000.0,
+    "ticker": "AAPL"
   },
   {
     "name": "ADVANCED MICRO DEVICES INC",
@@ -2546,6 +2987,13 @@
     "period_end_date": "Sun, 26 Sep 2021 00:00:00 GMT",
     "revenue": 4304465.0,
     "ticker": "LRCX"
+  },
+  {
+    "name": "QUALCOMM INC/DE",
+    "period": "Q4 2021",
+    "period_end_date": "Sun, 26 Sep 2021 00:00:00 GMT",
+    "revenue": 9336000.0,
+    "ticker": "QCOM"
   },
   {
     "name": "WOLFSPEED, INC.",
@@ -2723,6 +3171,13 @@
     "ticker": "VRT"
   },
   {
+    "name": "MACOM Technology Solutions Holdings, Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 01 Oct 2021 00:00:00 GMT",
+    "revenue": 155211.0,
+    "ticker": "MTSI"
+  },
+  {
     "name": "ON SEMICONDUCTOR CORPORATION",
     "period": "Q3 2021",
     "period_end_date": "Fri, 01 Oct 2021 00:00:00 GMT",
@@ -2758,6 +3213,13 @@
     "ticker": "NTAP"
   },
   {
+    "name": "ANALOG DEVICES INC",
+    "period": "Q4 2021",
+    "period_end_date": "Sat, 30 Oct 2021 00:00:00 GMT",
+    "revenue": 2339568.0,
+    "ticker": "ADI"
+  },
+  {
     "name": "CISCO SYSTEMS, INC.",
     "period": "Q1 2022",
     "period_end_date": "Sat, 30 Oct 2021 00:00:00 GMT",
@@ -2779,11 +3241,25 @@
     "ticker": "AI"
   },
   {
+    "name": "APPLIED MATERIALS INC /DE",
+    "period": "Q4 2021",
+    "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT",
+    "revenue": 6123000.0,
+    "ticker": "AMAT"
+  },
+  {
     "name": "AMBARELLA, INC.",
     "period": "Q3 2022",
     "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT",
     "revenue": 92167.0,
     "ticker": "AMBA"
+  },
+  {
+    "name": "Broadcom Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT",
+    "revenue": 7407000.0,
+    "ticker": "AVGO"
   },
   {
     "name": "CrowdStrike Holdings, Inc.",
@@ -2849,6 +3325,13 @@
     "ticker": "SMTC"
   },
   {
+    "name": "SYNOPSYS INC",
+    "period": "Q4 2021",
+    "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT",
+    "revenue": 1152419.0,
+    "ticker": "SNPS"
+  },
+  {
     "name": "Zscaler Inc",
     "period": "Q1 2021",
     "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT",
@@ -2863,11 +3346,25 @@
     "ticker": "MU"
   },
   {
+    "name": "ADOBE INC.",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 03 Dec 2021 00:00:00 GMT",
+    "revenue": 4110000.0,
+    "ticker": "ADBE"
+  },
+  {
     "name": "Apple Inc.",
     "period": "Q1 2022",
     "period_end_date": "Sat, 25 Dec 2021 00:00:00 GMT",
     "revenue": 123945000.0,
     "ticker": "AAPL"
+  },
+  {
+    "name": "ADVANCED MICRO DEVICES INC",
+    "period": "Q4 2021",
+    "period_end_date": "Sat, 25 Dec 2021 00:00:00 GMT",
+    "revenue": 4826000.0,
+    "ticker": "AMD"
   },
   {
     "name": "CIRRUS LOGIC, INC.",
@@ -2898,6 +3395,41 @@
     "ticker": "WOLF"
   },
   {
+    "name": "AMKOR TECHNOLOGY, INC.",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 1724644.0,
+    "ticker": "AMKR"
+  },
+  {
+    "name": "AMAZON COM INC",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 137412000.0,
+    "ticker": "AMZN"
+  },
+  {
+    "name": "Calix, Inc",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 176419.0,
+    "ticker": "CALX"
+  },
+  {
+    "name": "EQUINIX, INC.",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 1706378.0,
+    "ticker": "EQIX"
+  },
+  {
+    "name": "Intuitive Surgical, Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 1550700.0,
+    "ticker": "ISRG"
+  },
+  {
     "name": "KLA Corporation",
     "period": "Q2 2022",
     "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
@@ -2910,6 +3442,13 @@
     "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
     "revenue": 1757500.0,
     "ticker": "MCHP"
+  },
+  {
+    "name": "Monolithic Power Systems, Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 336504.0,
+    "ticker": "MPWR"
   },
   {
     "name": "MICROSOFT CORPORATION",
@@ -2926,11 +3465,74 @@
     "ticker": "MTSI"
   },
   {
+    "name": "NXP Semiconductors N.V.",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 3039000.0,
+    "ticker": "NXPI"
+  },
+  {
+    "name": "ON SEMICONDUCTOR CORPORATION",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 1846100.0,
+    "ticker": "ON"
+  },
+  {
+    "name": "Palantir Technologies Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 432867.0,
+    "ticker": "PLTR"
+  },
+  {
     "name": "Super Micro Computer, Inc.",
     "period": "Q2 2022",
     "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
     "revenue": 1172419.0,
     "ticker": "SMCI"
+  },
+  {
+    "name": "TERADATA CORPORATION",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 475000.0,
+    "ticker": "TDC"
+  },
+  {
+    "name": "Tesla, Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 17719000.0,
+    "ticker": "TSLA"
+  },
+  {
+    "name": "The Trade Desk, Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 395598.0,
+    "ticker": "TTD"
+  },
+  {
+    "name": "TEXAS INSTRUMENTS INCORPORATED",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 4832000.0,
+    "ticker": "TXN"
+  },
+  {
+    "name": "Vertiv Holdings Co",
+    "period": "Q4 2021",
+    "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT",
+    "revenue": 1410500.0,
+    "ticker": "VRT"
+  },
+  {
+    "name": "ONTO INNOVATION INC.",
+    "period": "Q4 2021",
+    "period_end_date": "Sat, 01 Jan 2022 00:00:00 GMT",
+    "revenue": 225644.0,
+    "ticker": "ONTO"
   },
   {
     "name": "NetApp, Inc.",
@@ -2968,6 +3570,20 @@
     "ticker": "AVGO"
   },
   {
+    "name": "NVIDIA CORP",
+    "period": "Q4 2022",
+    "period_end_date": "Sun, 30 Jan 2022 00:00:00 GMT",
+    "revenue": 7643000.0,
+    "ticker": "NVDA"
+  },
+  {
+    "name": "Semtech Corporation",
+    "period": "Q4 2022",
+    "period_end_date": "Sun, 30 Jan 2022 00:00:00 GMT",
+    "revenue": 190550.0,
+    "ticker": "SMTC"
+  },
+  {
     "name": "C3.ai, Inc.",
     "period": "Q3 2022",
     "period_end_date": "Mon, 31 Jan 2022 00:00:00 GMT",
@@ -2975,11 +3591,32 @@
     "ticker": "AI"
   },
   {
+    "name": "AMBARELLA, INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Mon, 31 Jan 2022 00:00:00 GMT",
+    "revenue": 90229.0,
+    "ticker": "AMBA"
+  },
+  {
+    "name": "DOMO, INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Mon, 31 Jan 2022 00:00:00 GMT",
+    "revenue": 69993.0,
+    "ticker": "DOMO"
+  },
+  {
     "name": "ELASTIC N.V.",
     "period": "Q3 2022",
     "period_end_date": "Mon, 31 Jan 2022 00:00:00 GMT",
     "revenue": 223944.0,
     "ticker": "ESTC"
+  },
+  {
+    "name": "Okta, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Mon, 31 Jan 2022 00:00:00 GMT",
+    "revenue": 383015.0,
+    "ticker": "OKTA"
   },
   {
     "name": "Palo Alto Networks, Inc",
@@ -2994,6 +3631,13 @@
     "period_end_date": "Mon, 31 Jan 2022 00:00:00 GMT",
     "revenue": 1270255.0,
     "ticker": "SNPS"
+  },
+  {
+    "name": "Veeva Systems Inc.",
+    "period": "Q4 2021",
+    "period_end_date": "Mon, 31 Jan 2022 00:00:00 GMT",
+    "revenue": 782469.0,
+    "ticker": "VEEV"
   },
   {
     "name": "Zscaler Inc",
@@ -3029,6 +3673,13 @@
     "period_end_date": "Sat, 26 Mar 2022 00:00:00 GMT",
     "revenue": 5887000.0,
     "ticker": "AMD"
+  },
+  {
+    "name": "CIRRUS LOGIC, INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 26 Mar 2022 00:00:00 GMT",
+    "revenue": 489972.0,
+    "ticker": "CRUS"
   },
   {
     "name": "LAM RESEARCH CORPORATION",
@@ -3120,6 +3771,13 @@
     "period_end_date": "Thu, 31 Mar 2022 00:00:00 GMT",
     "revenue": 2288676.0,
     "ticker": "KLAC"
+  },
+  {
+    "name": "MICROCHIP TECHNOLOGY INCORPORATED",
+    "period": "Q4 2022",
+    "period_end_date": "Thu, 31 Mar 2022 00:00:00 GMT",
+    "revenue": 1844200.0,
+    "ticker": "MCHP"
   },
   {
     "name": "MICROSOFT CORPORATION",
@@ -3255,11 +3913,25 @@
     "ticker": "NXPI"
   },
   {
+    "name": "NetApp, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Fri, 29 Apr 2022 00:00:00 GMT",
+    "revenue": 1680000.0,
+    "ticker": "NTAP"
+  },
+  {
     "name": "ANALOG DEVICES INC",
     "period": "Q2 2022",
     "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT",
     "revenue": 2972064.0,
     "ticker": "ADI"
+  },
+  {
+    "name": "C3.ai, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT",
+    "revenue": 72317.0,
+    "ticker": "AI"
   },
   {
     "name": "AMBARELLA, INC.",
@@ -3288,6 +3960,13 @@
     "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT",
     "revenue": 74464.0,
     "ticker": "DOMO"
+  },
+  {
+    "name": "ELASTIC N.V.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT",
+    "revenue": 239355.0,
+    "ticker": "ESTC"
   },
   {
     "name": "GITLAB INC.",
@@ -3416,11 +4095,25 @@
     "ticker": "CRUS"
   },
   {
+    "name": "LAM RESEARCH CORPORATION",
+    "period": "Q4 2022",
+    "period_end_date": "Sun, 26 Jun 2022 00:00:00 GMT",
+    "revenue": 4635554.0,
+    "ticker": "LRCX"
+  },
+  {
     "name": "QUALCOMM INC/DE",
     "period": "Q3 2022",
     "period_end_date": "Sun, 26 Jun 2022 00:00:00 GMT",
     "revenue": 10936000.0,
     "ticker": "QCOM"
+  },
+  {
+    "name": "WOLFSPEED, INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Sun, 26 Jun 2022 00:00:00 GMT",
+    "revenue": 228500.0,
+    "ticker": "WOLF"
   },
   {
     "name": "AEVA TECHNOLOGIES, INC.",
@@ -3486,6 +4179,13 @@
     "ticker": "ISRG"
   },
   {
+    "name": "KLA Corporation",
+    "period": "Q4 2022",
+    "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT",
+    "revenue": 2486739.0,
+    "ticker": "KLAC"
+  },
+  {
     "name": "MICROCHIP TECHNOLOGY INCORPORATED",
     "period": "Q1 2023",
     "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT",
@@ -3498,6 +4198,13 @@
     "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT",
     "revenue": 461004.0,
     "ticker": "MPWR"
+  },
+  {
+    "name": "MICROSOFT CORPORATION",
+    "period": "Q4 2022",
+    "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT",
+    "revenue": 51865000.0,
+    "ticker": "MSFT"
   },
   {
     "name": "Cloudflare, Inc.",
@@ -3533,6 +4240,13 @@
     "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT",
     "revenue": 38469.0,
     "ticker": "SDGR"
+  },
+  {
+    "name": "Super Micro Computer, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT",
+    "revenue": 1635460.0,
+    "ticker": "SMCI"
   },
   {
     "name": "TERADATA CORPORATION",
@@ -3633,6 +4347,13 @@
     "ticker": "CRDO"
   },
   {
+    "name": "CISCO SYSTEMS, INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 30 Jul 2022 00:00:00 GMT",
+    "revenue": 13102000.0,
+    "ticker": "CSCO"
+  },
+  {
     "name": "MARVELL TECHNOLOGY, INC",
     "period": "Q2 2023",
     "period_end_date": "Sat, 30 Jul 2022 00:00:00 GMT",
@@ -3710,6 +4431,13 @@
     "ticker": "OKTA"
   },
   {
+    "name": "Palo Alto Networks, Inc",
+    "period": "Q4 2022",
+    "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT",
+    "revenue": 1550500.0,
+    "ticker": "PANW"
+  },
+  {
     "name": "UiPath, Inc.",
     "period": "Q2 2023",
     "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT",
@@ -3745,11 +4473,25 @@
     "ticker": "VEEV"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Thu, 01 Sep 2022 00:00:00 GMT",
+    "revenue": 6643000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "ADOBE INC.",
     "period": "Q3 2022",
     "period_end_date": "Fri, 02 Sep 2022 00:00:00 GMT",
     "revenue": 4433000.0,
     "ticker": "ADBE"
+  },
+  {
+    "name": "Apple Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 24 Sep 2022 00:00:00 GMT",
+    "revenue": 90146000.0,
+    "ticker": "AAPL"
   },
   {
     "name": "ADVANCED MICRO DEVICES INC",
@@ -3771,6 +4513,13 @@
     "period_end_date": "Sun, 25 Sep 2022 00:00:00 GMT",
     "revenue": 5074121.0,
     "ticker": "LRCX"
+  },
+  {
+    "name": "QUALCOMM INC/DE",
+    "period": "Q4 2022",
+    "period_end_date": "Sun, 25 Sep 2022 00:00:00 GMT",
+    "revenue": 11395000.0,
+    "ticker": "QCOM"
   },
   {
     "name": "WOLFSPEED, INC.",
@@ -3876,6 +4625,13 @@
     "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT",
     "revenue": 50122000.0,
     "ticker": "MSFT"
+  },
+  {
+    "name": "MACOM Technology Solutions Holdings, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT",
+    "revenue": 178144.0,
+    "ticker": "MTSI"
   },
   {
     "name": "Cloudflare, Inc.",
@@ -4004,6 +4760,13 @@
     "ticker": "NTAP"
   },
   {
+    "name": "ANALOG DEVICES INC",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 29 Oct 2022 00:00:00 GMT",
+    "revenue": 3247716.0,
+    "ticker": "ADI"
+  },
+  {
     "name": "Credo Technology Group Holding Ltd",
     "period": "Q2 2023",
     "period_end_date": "Sat, 29 Oct 2022 00:00:00 GMT",
@@ -4023,6 +4786,20 @@
     "period_end_date": "Sat, 29 Oct 2022 00:00:00 GMT",
     "revenue": 1537300.0,
     "ticker": "MRVL"
+  },
+  {
+    "name": "APPLIED MATERIALS INC /DE",
+    "period": "Q4 2022",
+    "period_end_date": "Sun, 30 Oct 2022 00:00:00 GMT",
+    "revenue": 6749000.0,
+    "ticker": "AMAT"
+  },
+  {
+    "name": "Broadcom Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sun, 30 Oct 2022 00:00:00 GMT",
+    "revenue": 8930000.0,
+    "ticker": "AVGO"
   },
   {
     "name": "NVIDIA CORP",
@@ -4102,6 +4879,13 @@
     "ticker": "S"
   },
   {
+    "name": "SYNOPSYS INC",
+    "period": "Q4 2022",
+    "period_end_date": "Mon, 31 Oct 2022 00:00:00 GMT",
+    "revenue": 1284292.0,
+    "ticker": "SNPS"
+  },
+  {
     "name": "Veeva Systems Inc.",
     "period": "Q3 2022",
     "period_end_date": "Mon, 31 Oct 2022 00:00:00 GMT",
@@ -4114,6 +4898,13 @@
     "period_end_date": "Thu, 01 Dec 2022 00:00:00 GMT",
     "revenue": 4085000.0,
     "ticker": "MU"
+  },
+  {
+    "name": "ADOBE INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Fri, 02 Dec 2022 00:00:00 GMT",
+    "revenue": 4525000.0,
+    "ticker": "ADBE"
   },
   {
     "name": "CIRRUS LOGIC, INC.",
@@ -4158,11 +4949,81 @@
     "ticker": "AAPL"
   },
   {
+    "name": "AEVA TECHNOLOGIES, INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 188.0,
+    "ticker": "AEVA"
+  },
+  {
+    "name": "ADVANCED MICRO DEVICES INC",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 5599000.0,
+    "ticker": "AMD"
+  },
+  {
+    "name": "AMKOR TECHNOLOGY, INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 1906210.0,
+    "ticker": "AMKR"
+  },
+  {
+    "name": "AMAZON COM INC",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 149204000.0,
+    "ticker": "AMZN"
+  },
+  {
+    "name": "AppLovin Corporation",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 702307.0,
+    "ticker": "APP"
+  },
+  {
+    "name": "BigBear.ai Holdings, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 40357.0,
+    "ticker": "BBAI"
+  },
+  {
+    "name": "Calix, Inc",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 244503.0,
+    "ticker": "CALX"
+  },
+  {
     "name": "COHERENT CORP.",
     "period": "Q2 2023",
     "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
     "revenue": 1370285.0,
     "ticker": "COHR"
+  },
+  {
+    "name": "EQUINIX, INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 1870845.0,
+    "ticker": "EQIX"
+  },
+  {
+    "name": "HubSpot, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 469657.0,
+    "ticker": "HUBS"
+  },
+  {
+    "name": "Intuitive Surgical, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 1655000.0,
+    "ticker": "ISRG"
   },
   {
     "name": "KLA Corporation",
@@ -4172,11 +5033,25 @@
     "ticker": "KLAC"
   },
   {
+    "name": "Lattice Semiconductor Corp",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 175960.0,
+    "ticker": "LSCC"
+  },
+  {
     "name": "MICROCHIP TECHNOLOGY INCORPORATED",
     "period": "Q3 2023",
     "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
     "revenue": 2169200.0,
     "ticker": "MCHP"
+  },
+  {
+    "name": "Monolithic Power Systems, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 386661.0,
+    "ticker": "MPWR"
   },
   {
     "name": "MICROSOFT CORPORATION",
@@ -4186,11 +5061,95 @@
     "ticker": "MSFT"
   },
   {
+    "name": "Cloudflare, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 274700.0,
+    "ticker": "NET"
+  },
+  {
+    "name": "NXP Semiconductors N.V.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 3312000.0,
+    "ticker": "NXPI"
+  },
+  {
+    "name": "ON SEMICONDUCTOR CORPORATION",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 2103600.0,
+    "ticker": "ON"
+  },
+  {
+    "name": "Palantir Technologies Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 508624.0,
+    "ticker": "PLTR"
+  },
+  {
+    "name": "RIGETTI COMPUTING, INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 6060.0,
+    "ticker": "RGTI"
+  },
+  {
+    "name": "RECURSION PHARMACEUTICALS, INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 13676.0,
+    "ticker": "RXRX"
+  },
+  {
+    "name": "Schrodinger, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 56843.0,
+    "ticker": "SDGR"
+  },
+  {
     "name": "Super Micro Computer, Inc.",
     "period": "Q2 2023",
     "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
     "revenue": 1803195.0,
     "ticker": "SMCI"
+  },
+  {
+    "name": "TERADATA CORPORATION",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 452000.0,
+    "ticker": "TDC"
+  },
+  {
+    "name": "Tesla, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 24318000.0,
+    "ticker": "TSLA"
+  },
+  {
+    "name": "The Trade Desk, Inc.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 490737.0,
+    "ticker": "TTD"
+  },
+  {
+    "name": "TEXAS INSTRUMENTS INCORPORATED",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 4670000.0,
+    "ticker": "TXN"
+  },
+  {
+    "name": "Vertiv Holdings Co",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT",
+    "revenue": 1654600.0,
+    "ticker": "VRT"
   },
   {
     "name": "NetApp, Inc.",
@@ -4221,6 +5180,13 @@
     "ticker": "CSCO"
   },
   {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q4 2023",
+    "period_end_date": "Sat, 28 Jan 2023 00:00:00 GMT",
+    "revenue": 1418500.0,
+    "ticker": "MRVL"
+  },
+  {
     "name": "APPLIED MATERIALS INC /DE",
     "period": "Q1 2023",
     "period_end_date": "Sun, 29 Jan 2023 00:00:00 GMT",
@@ -4235,11 +5201,32 @@
     "ticker": "AVGO"
   },
   {
+    "name": "NVIDIA CORP",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 29 Jan 2023 00:00:00 GMT",
+    "revenue": 6051000.0,
+    "ticker": "NVDA"
+  },
+  {
+    "name": "Semtech Corporation",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 29 Jan 2023 00:00:00 GMT",
+    "revenue": 167512.0,
+    "ticker": "SMTC"
+  },
+  {
     "name": "C3.ai, Inc.",
     "period": "Q3 2023",
     "period_end_date": "Tue, 31 Jan 2023 00:00:00 GMT",
     "revenue": 66669.0,
     "ticker": "AI"
+  },
+  {
+    "name": "AMBARELLA, INC.",
+    "period": "Q4 2023",
+    "period_end_date": "Tue, 31 Jan 2023 00:00:00 GMT",
+    "revenue": 83321.0,
+    "ticker": "AMBA"
   },
   {
     "name": "ELASTIC N.V.",
@@ -4249,11 +5236,39 @@
     "ticker": "ESTC"
   },
   {
+    "name": "GITLAB INC.",
+    "period": "Q4 2023",
+    "period_end_date": "Tue, 31 Jan 2023 00:00:00 GMT",
+    "revenue": 122907.0,
+    "ticker": "GTLB"
+  },
+  {
+    "name": "Okta, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Tue, 31 Jan 2023 00:00:00 GMT",
+    "revenue": 510000.0,
+    "ticker": "OKTA"
+  },
+  {
     "name": "Palo Alto Networks, Inc",
     "period": "Q2 2023",
     "period_end_date": "Tue, 31 Jan 2023 00:00:00 GMT",
     "revenue": 1655100.0,
     "ticker": "PANW"
+  },
+  {
+    "name": "UiPath, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Tue, 31 Jan 2023 00:00:00 GMT",
+    "revenue": 308549.0,
+    "ticker": "PATH"
+  },
+  {
+    "name": "SENTINELONE, INC",
+    "period": "Q4 2023",
+    "period_end_date": "Tue, 31 Jan 2023 00:00:00 GMT",
+    "revenue": 126096.0,
+    "ticker": "S"
   },
   {
     "name": "SYNOPSYS INC",
@@ -4282,6 +5297,13 @@
     "period_end_date": "Fri, 03 Mar 2023 00:00:00 GMT",
     "revenue": 4655000.0,
     "ticker": "ADBE"
+  },
+  {
+    "name": "CIRRUS LOGIC, INC.",
+    "period": "Q4 2023",
+    "period_end_date": "Sat, 25 Mar 2023 00:00:00 GMT",
+    "revenue": 372822.0,
+    "ticker": "CRUS"
   },
   {
     "name": "LAM RESEARCH CORPORATION",
@@ -4387,6 +5409,13 @@
     "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT",
     "revenue": 2432608.0,
     "ticker": "KLAC"
+  },
+  {
+    "name": "MICROCHIP TECHNOLOGY INCORPORATED",
+    "period": "Q4 2023",
+    "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT",
+    "revenue": 2232700.0,
+    "ticker": "MCHP"
   },
   {
     "name": "Monolithic Power Systems, Inc.",
@@ -4543,11 +5572,25 @@
     "ticker": "NXPI"
   },
   {
+    "name": "NetApp, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Fri, 28 Apr 2023 00:00:00 GMT",
+    "revenue": 1581000.0,
+    "ticker": "NTAP"
+  },
+  {
     "name": "ANALOG DEVICES INC",
     "period": "Q2 2023",
     "period_end_date": "Sat, 29 Apr 2023 00:00:00 GMT",
     "revenue": 3262930.0,
     "ticker": "ADI"
+  },
+  {
+    "name": "Credo Technology Group Holding Ltd",
+    "period": "Q4 2023",
+    "period_end_date": "Sat, 29 Apr 2023 00:00:00 GMT",
+    "revenue": 32088.0,
+    "ticker": "CRDO"
   },
   {
     "name": "CISCO SYSTEMS, INC.",
@@ -4562,6 +5605,13 @@
     "period_end_date": "Sat, 29 Apr 2023 00:00:00 GMT",
     "revenue": 1321700.0,
     "ticker": "MRVL"
+  },
+  {
+    "name": "C3.ai, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT",
+    "revenue": 72410.0,
+    "ticker": "AI"
   },
   {
     "name": "APPLIED MATERIALS INC /DE",
@@ -4597,6 +5647,13 @@
     "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT",
     "revenue": 79458.0,
     "ticker": "DOMO"
+  },
+  {
+    "name": "ELASTIC N.V.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT",
+    "revenue": 279941.0,
+    "ticker": "ESTC"
   },
   {
     "name": "GITLAB INC.",
@@ -4697,11 +5754,25 @@
     "ticker": "CRUS"
   },
   {
+    "name": "LAM RESEARCH CORPORATION",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 25 Jun 2023 00:00:00 GMT",
+    "revenue": 3207257.0,
+    "ticker": "LRCX"
+  },
+  {
     "name": "QUALCOMM INC/DE",
     "period": "Q3 2023",
     "period_end_date": "Sun, 25 Jun 2023 00:00:00 GMT",
     "revenue": 8451000.0,
     "ticker": "QCOM"
+  },
+  {
+    "name": "WOLFSPEED, INC.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 25 Jun 2023 00:00:00 GMT",
+    "revenue": 366100.0,
+    "ticker": "WOLF"
   },
   {
     "name": "AEVA TECHNOLOGIES, INC.",
@@ -4781,6 +5852,13 @@
     "ticker": "ISRG"
   },
   {
+    "name": "KLA Corporation",
+    "period": "Q4 2023",
+    "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT",
+    "revenue": 2355137.0,
+    "ticker": "KLAC"
+  },
+  {
     "name": "MICROCHIP TECHNOLOGY INCORPORATED",
     "period": "Q1 2024",
     "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT",
@@ -4793,6 +5871,13 @@
     "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT",
     "revenue": 441128.0,
     "ticker": "MPWR"
+  },
+  {
+    "name": "MICROSOFT CORPORATION",
+    "period": "Q4 2023",
+    "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT",
+    "revenue": 56189000.0,
+    "ticker": "MSFT"
   },
   {
     "name": "MACOM Technology Solutions Holdings, Inc.",
@@ -4842,6 +5927,13 @@
     "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT",
     "revenue": 35189.0,
     "ticker": "SDGR"
+  },
+  {
+    "name": "Super Micro Computer, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT",
+    "revenue": 2184861.0,
+    "ticker": "SMCI"
   },
   {
     "name": "TERADATA CORPORATION",
@@ -4956,6 +6048,13 @@
     "ticker": "CRDO"
   },
   {
+    "name": "CISCO SYSTEMS, INC.",
+    "period": "Q4 2023",
+    "period_end_date": "Sat, 29 Jul 2023 00:00:00 GMT",
+    "revenue": 15203000.0,
+    "ticker": "CSCO"
+  },
+  {
     "name": "MARVELL TECHNOLOGY, INC",
     "period": "Q2 2024",
     "period_end_date": "Sat, 29 Jul 2023 00:00:00 GMT",
@@ -5033,6 +6132,13 @@
     "ticker": "OKTA"
   },
   {
+    "name": "Palo Alto Networks, Inc",
+    "period": "Q4 2023",
+    "period_end_date": "Mon, 31 Jul 2023 00:00:00 GMT",
+    "revenue": 1953300.0,
+    "ticker": "PANW"
+  },
+  {
     "name": "UiPath, Inc.",
     "period": "Q2 2024",
     "period_end_date": "Mon, 31 Jul 2023 00:00:00 GMT",
@@ -5068,6 +6174,20 @@
     "ticker": "VEEV"
   },
   {
+    "name": "Zscaler Inc",
+    "period": "Q4 2023",
+    "period_end_date": "Mon, 31 Jul 2023 00:00:00 GMT",
+    "revenue": 313851.0,
+    "ticker": "ZS"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Thu, 31 Aug 2023 00:00:00 GMT",
+    "revenue": 4010000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "ADOBE INC.",
     "period": "Q3 2023",
     "period_end_date": "Fri, 01 Sep 2023 00:00:00 GMT",
@@ -5089,6 +6209,13 @@
     "ticker": "LRCX"
   },
   {
+    "name": "QUALCOMM INC/DE",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 24 Sep 2023 00:00:00 GMT",
+    "revenue": 8631000.0,
+    "ticker": "QCOM"
+  },
+  {
     "name": "WOLFSPEED, INC.",
     "period": "Q1 2024",
     "period_end_date": "Sun, 24 Sep 2023 00:00:00 GMT",
@@ -5096,11 +6223,25 @@
     "ticker": "WOLF"
   },
   {
+    "name": "MACOM Technology Solutions Holdings, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Fri, 29 Sep 2023 00:00:00 GMT",
+    "revenue": 150375.0,
+    "ticker": "MTSI"
+  },
+  {
     "name": "ON SEMICONDUCTOR CORPORATION",
     "period": "Q3 2023",
     "period_end_date": "Fri, 29 Sep 2023 00:00:00 GMT",
     "revenue": 2180800.0,
     "ticker": "ON"
+  },
+  {
+    "name": "Apple Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT",
+    "revenue": 89498000.0,
+    "ticker": "AAPL"
   },
   {
     "name": "AEVA TECHNOLOGIES, INC.",
@@ -5348,6 +6489,13 @@
     "ticker": "NTAP"
   },
   {
+    "name": "ANALOG DEVICES INC",
+    "period": "Q4 2023",
+    "period_end_date": "Sat, 28 Oct 2023 00:00:00 GMT",
+    "revenue": 2716484.0,
+    "ticker": "ADI"
+  },
+  {
     "name": "Credo Technology Group Holding Ltd",
     "period": "Q2 2024",
     "period_end_date": "Sat, 28 Oct 2023 00:00:00 GMT",
@@ -5367,6 +6515,20 @@
     "period_end_date": "Sat, 28 Oct 2023 00:00:00 GMT",
     "revenue": 1418600.0,
     "ticker": "MRVL"
+  },
+  {
+    "name": "APPLIED MATERIALS INC /DE",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 29 Oct 2023 00:00:00 GMT",
+    "revenue": 6723000.0,
+    "ticker": "AMAT"
+  },
+  {
+    "name": "Broadcom Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 29 Oct 2023 00:00:00 GMT",
+    "revenue": 9295000.0,
+    "ticker": "AVGO"
   },
   {
     "name": "NVIDIA CORP",
@@ -5460,6 +6622,13 @@
     "ticker": "SNOW"
   },
   {
+    "name": "SYNOPSYS INC",
+    "period": "Q4 2023",
+    "period_end_date": "Tue, 31 Oct 2023 00:00:00 GMT",
+    "revenue": 1864145.0,
+    "ticker": "SNPS"
+  },
+  {
     "name": "Veeva Systems Inc.",
     "period": "Q3 2024",
     "period_end_date": "Tue, 31 Oct 2023 00:00:00 GMT",
@@ -5479,6 +6648,13 @@
     "period_end_date": "Thu, 30 Nov 2023 00:00:00 GMT",
     "revenue": 4726000.0,
     "ticker": "MU"
+  },
+  {
+    "name": "ADOBE INC.",
+    "period": "Q4 2023",
+    "period_end_date": "Fri, 01 Dec 2023 00:00:00 GMT",
+    "revenue": 5048000.0,
+    "ticker": "ADBE"
   },
   {
     "name": "LAM RESEARCH CORPORATION",
@@ -5516,6 +6692,13 @@
     "ticker": "AAPL"
   },
   {
+    "name": "ADVANCED MICRO DEVICES INC",
+    "period": "Q4 2023",
+    "period_end_date": "Sat, 30 Dec 2023 00:00:00 GMT",
+    "revenue": 6168000.0,
+    "ticker": "AMD"
+  },
+  {
     "name": "CIRRUS LOGIC, INC.",
     "period": "Q3 2024",
     "period_end_date": "Sat, 30 Dec 2023 00:00:00 GMT",
@@ -5523,11 +6706,109 @@
     "ticker": "CRUS"
   },
   {
+    "name": "Lattice Semiconductor Corp",
+    "period": "Q4 2023",
+    "period_end_date": "Sat, 30 Dec 2023 00:00:00 GMT",
+    "revenue": 170596.0,
+    "ticker": "LSCC"
+  },
+  {
+    "name": "Mobileye Global\u00a0Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sat, 30 Dec 2023 00:00:00 GMT",
+    "revenue": 637000.0,
+    "ticker": "MBLY"
+  },
+  {
+    "name": "ONTO INNOVATION INC.",
+    "period": "Q4 2022",
+    "period_end_date": "Sat, 30 Dec 2023 00:00:00 GMT",
+    "revenue": 63955.0,
+    "ticker": "ONTO"
+  },
+  {
+    "name": "AEVA TECHNOLOGIES, INC.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 1611.0,
+    "ticker": "AEVA"
+  },
+  {
+    "name": "AMKOR TECHNOLOGY, INC.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 1751811.0,
+    "ticker": "AMKR"
+  },
+  {
+    "name": "AMAZON COM INC",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 169961000.0,
+    "ticker": "AMZN"
+  },
+  {
+    "name": "Arista Networks,\u00a0Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 1540437.0,
+    "ticker": "ANET"
+  },
+  {
+    "name": "AppLovin Corporation",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 953261.0,
+    "ticker": "APP"
+  },
+  {
+    "name": "BigBear.ai Holdings, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 40563.0,
+    "ticker": "BBAI"
+  },
+  {
+    "name": "Calix, Inc",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 264734.0,
+    "ticker": "CALX"
+  },
+  {
     "name": "COHERENT CORP.",
     "period": "Q2 2024",
     "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
     "revenue": 1131434.0,
     "ticker": "COHR"
+  },
+  {
+    "name": "EQUINIX, INC.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 1883136.0,
+    "ticker": "EQIX"
+  },
+  {
+    "name": "HubSpot, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 581915.0,
+    "ticker": "HUBS"
+  },
+  {
+    "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 17381000.0,
+    "ticker": "IBM"
+  },
+  {
+    "name": "Intuitive Surgical, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 1928300.0,
+    "ticker": "ISRG"
   },
   {
     "name": "KLA Corporation",
@@ -5551,11 +6832,95 @@
     "ticker": "MSFT"
   },
   {
+    "name": "Cloudflare, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 362473.0,
+    "ticker": "NET"
+  },
+  {
+    "name": "NXP Semiconductors N.V.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 3422000.0,
+    "ticker": "NXPI"
+  },
+  {
+    "name": "ON SEMICONDUCTOR CORPORATION",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 2018100.0,
+    "ticker": "ON"
+  },
+  {
+    "name": "Palantir Technologies Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 608350.0,
+    "ticker": "PLTR"
+  },
+  {
+    "name": "RIGETTI COMPUTING, INC.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 3375.0,
+    "ticker": "RGTI"
+  },
+  {
+    "name": "Schrodinger, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 74126.0,
+    "ticker": "SDGR"
+  },
+  {
     "name": "Super Micro Computer, Inc.",
     "period": "Q2 2024",
     "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
     "revenue": 3664924.0,
     "ticker": "SMCI"
+  },
+  {
+    "name": "TERADATA CORPORATION",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 457000.0,
+    "ticker": "TDC"
+  },
+  {
+    "name": "Tesla, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 25167000.0,
+    "ticker": "TSLA"
+  },
+  {
+    "name": "The Trade Desk, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 605797.0,
+    "ticker": "TTD"
+  },
+  {
+    "name": "TEXAS INSTRUMENTS INCORPORATED",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 4077000.0,
+    "ticker": "TXN"
+  },
+  {
+    "name": "Veritone, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 41362.0,
+    "ticker": "VERI"
+  },
+  {
+    "name": "Vertiv Holdings Co",
+    "period": "Q4 2023",
+    "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT",
+    "revenue": 1865400.0,
+    "ticker": "VRT"
   },
   {
     "name": "WOLFSPEED, INC.",
@@ -5593,11 +6958,39 @@
     "ticker": "AMAT"
   },
   {
+    "name": "NVIDIA CORP",
+    "period": "Q4 2024",
+    "period_end_date": "Sun, 28 Jan 2024 00:00:00 GMT",
+    "revenue": 22103000.0,
+    "ticker": "NVDA"
+  },
+  {
+    "name": "Semtech Corporation",
+    "period": "Q4 2024",
+    "period_end_date": "Sun, 28 Jan 2024 00:00:00 GMT",
+    "revenue": 192948.0,
+    "ticker": "SMTC"
+  },
+  {
     "name": "C3.ai, Inc.",
     "period": "Q3 2024",
     "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT",
     "revenue": 78401.0,
     "ticker": "AI"
+  },
+  {
+    "name": "AMBARELLA, INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT",
+    "revenue": 51616.0,
+    "ticker": "AMBA"
+  },
+  {
+    "name": "CrowdStrike Holdings, Inc.",
+    "period": "Q4 2023",
+    "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT",
+    "revenue": 1451686.0,
+    "ticker": "CRWD"
   },
   {
     "name": "ELASTIC N.V.",
@@ -5607,6 +7000,20 @@
     "ticker": "ESTC"
   },
   {
+    "name": "GITLAB INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT",
+    "revenue": 163779.0,
+    "ticker": "GTLB"
+  },
+  {
+    "name": "Okta, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT",
+    "revenue": 605000.0,
+    "ticker": "OKTA"
+  },
+  {
     "name": "Palo Alto Networks, Inc",
     "period": "Q2 2024",
     "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT",
@@ -5614,11 +7021,39 @@
     "ticker": "PANW"
   },
   {
+    "name": "UiPath, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT",
+    "revenue": 405253.0,
+    "ticker": "PATH"
+  },
+  {
+    "name": "SENTINELONE, INC",
+    "period": "Q4 2024",
+    "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT",
+    "revenue": 174175.0,
+    "ticker": "S"
+  },
+  {
+    "name": "SNOWFLAKE INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT",
+    "revenue": 774699.0,
+    "ticker": "SNOW"
+  },
+  {
     "name": "SYNOPSYS INC",
     "period": "Q1 2024",
     "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT",
     "revenue": 1510989.0,
     "ticker": "SNPS"
+  },
+  {
+    "name": "Veeva Systems Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT",
+    "revenue": 630618.0,
+    "ticker": "VEEV"
   },
   {
     "name": "Zscaler Inc",
@@ -5633,6 +7068,13 @@
     "period_end_date": "Sat, 03 Feb 2024 00:00:00 GMT",
     "revenue": 2512704.0,
     "ticker": "ADI"
+  },
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q4 2024",
+    "period_end_date": "Sat, 03 Feb 2024 00:00:00 GMT",
+    "revenue": 1426500.0,
+    "ticker": "MRVL"
   },
   {
     "name": "Broadcom Inc.",
@@ -5696,6 +7138,13 @@
     "period_end_date": "Sat, 30 Mar 2024 00:00:00 GMT",
     "revenue": 226310.0,
     "ticker": "CALX"
+  },
+  {
+    "name": "CIRRUS LOGIC, INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Sat, 30 Mar 2024 00:00:00 GMT",
+    "revenue": 371827.0,
+    "ticker": "CRUS"
   },
   {
     "name": "Lattice Semiconductor Corp",
@@ -5817,6 +7266,13 @@
     "ticker": "LRCX"
   },
   {
+    "name": "MICROCHIP TECHNOLOGY INCORPORATED",
+    "period": "Q4 2024",
+    "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT",
+    "revenue": 1325800.0,
+    "ticker": "MCHP"
+  },
+  {
     "name": "Monolithic Power Systems, Inc.",
     "period": "Q1 2024",
     "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT",
@@ -5929,6 +7385,20 @@
     "ticker": "WOLF"
   },
   {
+    "name": "NetApp, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Fri, 26 Apr 2024 00:00:00 GMT",
+    "revenue": 1668000.0,
+    "ticker": "NTAP"
+  },
+  {
+    "name": "Credo Technology Group Holding Ltd",
+    "period": "Q4 2024",
+    "period_end_date": "Sat, 27 Apr 2024 00:00:00 GMT",
+    "revenue": 60782.0,
+    "ticker": "CRDO"
+  },
+  {
     "name": "CISCO SYSTEMS, INC.",
     "period": "Q3 2024",
     "period_end_date": "Sat, 27 Apr 2024 00:00:00 GMT",
@@ -5957,6 +7427,13 @@
     "ticker": "SMTC"
   },
   {
+    "name": "C3.ai, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 30 Apr 2024 00:00:00 GMT",
+    "revenue": 86590.0,
+    "ticker": "AI"
+  },
+  {
     "name": "Salesforce, Inc.",
     "period": "Q1 2025",
     "period_end_date": "Tue, 30 Apr 2024 00:00:00 GMT",
@@ -5969,6 +7446,13 @@
     "period_end_date": "Tue, 30 Apr 2024 00:00:00 GMT",
     "revenue": 80103.0,
     "ticker": "DOMO"
+  },
+  {
+    "name": "ELASTIC N.V.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 30 Apr 2024 00:00:00 GMT",
+    "revenue": 334999.0,
+    "ticker": "ESTC"
   },
   {
     "name": "GITLAB INC.",
@@ -6223,6 +7707,20 @@
     "ticker": "ISRG"
   },
   {
+    "name": "KLA Corporation",
+    "period": "Q4 2024",
+    "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT",
+    "revenue": 2568735.0,
+    "ticker": "KLAC"
+  },
+  {
+    "name": "LAM RESEARCH CORPORATION",
+    "period": "Q4 2024",
+    "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT",
+    "revenue": 3871507.0,
+    "ticker": "LRCX"
+  },
+  {
     "name": "MICROCHIP TECHNOLOGY INCORPORATED",
     "period": "Q1 2025",
     "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT",
@@ -6235,6 +7733,13 @@
     "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT",
     "revenue": 507431.0,
     "ticker": "MPWR"
+  },
+  {
+    "name": "MICROSOFT CORPORATION",
+    "period": "Q4 2024",
+    "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT",
+    "revenue": 64727000.0,
+    "ticker": "MSFT"
   },
   {
     "name": "Cloudflare, Inc.",
@@ -6279,6 +7784,13 @@
     "ticker": "SDGR"
   },
   {
+    "name": "Super Micro Computer, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT",
+    "revenue": 5354589.0,
+    "ticker": "SMCI"
+  },
+  {
     "name": "TERADATA CORPORATION",
     "period": "Q2 2024",
     "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT",
@@ -6319,6 +7831,20 @@
     "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT",
     "revenue": 1952800.0,
     "ticker": "VRT"
+  },
+  {
+    "name": "WOLFSPEED, INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT",
+    "revenue": 200700.0,
+    "ticker": "WOLF"
+  },
+  {
+    "name": "CISCO SYSTEMS, INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Sat, 27 Jul 2024 00:00:00 GMT",
+    "revenue": 13642000.0,
+    "ticker": "CSCO"
   },
   {
     "name": "APPLIED MATERIALS INC /DE",
@@ -6382,6 +7908,13 @@
     "period_end_date": "Wed, 31 Jul 2024 00:00:00 GMT",
     "revenue": 646000.0,
     "ticker": "OKTA"
+  },
+  {
+    "name": "Palo Alto Networks, Inc",
+    "period": "Q4 2024",
+    "period_end_date": "Wed, 31 Jul 2024 00:00:00 GMT",
+    "revenue": 2189500.0,
+    "ticker": "PANW"
   },
   {
     "name": "UiPath, Inc.",
@@ -6454,6 +7987,13 @@
     "ticker": "AVGO"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Thu, 29 Aug 2024 00:00:00 GMT",
+    "revenue": 7750000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "ADOBE INC.",
     "period": "Q3 2024",
     "period_end_date": "Fri, 30 Aug 2024 00:00:00 GMT",
@@ -6461,11 +8001,25 @@
     "ticker": "ADBE"
   },
   {
+    "name": "MACOM Technology Solutions Holdings, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Fri, 27 Sep 2024 00:00:00 GMT",
+    "revenue": 200710.0,
+    "ticker": "MTSI"
+  },
+  {
     "name": "ON SEMICONDUCTOR CORPORATION",
     "period": "Q3 2024",
     "period_end_date": "Fri, 27 Sep 2024 00:00:00 GMT",
     "revenue": 1761900.0,
     "ticker": "ON"
+  },
+  {
+    "name": "Apple Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Sat, 28 Sep 2024 00:00:00 GMT",
+    "revenue": 94930000.0,
+    "ticker": "AAPL"
   },
   {
     "name": "ADVANCED MICRO DEVICES INC",
@@ -6522,6 +8076,13 @@
     "period_end_date": "Sun, 29 Sep 2024 00:00:00 GMT",
     "revenue": 3250000.0,
     "ticker": "NXPI"
+  },
+  {
+    "name": "QUALCOMM INC/DE",
+    "period": "Q4 2024",
+    "period_end_date": "Sun, 29 Sep 2024 00:00:00 GMT",
+    "revenue": 10245000.0,
+    "ticker": "QCOM"
   },
   {
     "name": "WOLFSPEED, INC.",
@@ -6755,6 +8316,13 @@
     "ticker": "CSCO"
   },
   {
+    "name": "APPLIED MATERIALS INC /DE",
+    "period": "Q4 2024",
+    "period_end_date": "Sun, 27 Oct 2024 00:00:00 GMT",
+    "revenue": 7045000.0,
+    "ticker": "AMAT"
+  },
+  {
     "name": "NVIDIA CORP",
     "period": "Q3 2025",
     "period_end_date": "Sun, 27 Oct 2024 00:00:00 GMT",
@@ -6846,6 +8414,13 @@
     "ticker": "SNOW"
   },
   {
+    "name": "SYNOPSYS INC",
+    "period": "Q4 2024",
+    "period_end_date": "Thu, 31 Oct 2024 00:00:00 GMT",
+    "revenue": 1635986.0,
+    "ticker": "SNPS"
+  },
+  {
     "name": "Veeva Systems Inc.",
     "period": "Q3 2025",
     "period_end_date": "Thu, 31 Oct 2024 00:00:00 GMT",
@@ -6867,6 +8442,13 @@
     "ticker": "DELL"
   },
   {
+    "name": "ANALOG DEVICES INC",
+    "period": "Q4 2024",
+    "period_end_date": "Sat, 02 Nov 2024 00:00:00 GMT",
+    "revenue": 2443205.0,
+    "ticker": "ADI"
+  },
+  {
     "name": "Credo Technology Group Holding Ltd",
     "period": "Q2 2025",
     "period_end_date": "Sat, 02 Nov 2024 00:00:00 GMT",
@@ -6881,11 +8463,25 @@
     "ticker": "MRVL"
   },
   {
+    "name": "Broadcom Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Sun, 03 Nov 2024 00:00:00 GMT",
+    "revenue": 14054000.0,
+    "ticker": "AVGO"
+  },
+  {
     "name": "Micron Technology, Inc.",
     "period": "Q1 2025",
     "period_end_date": "Thu, 28 Nov 2024 00:00:00 GMT",
     "revenue": 8709000.0,
     "ticker": "MU"
+  },
+  {
+    "name": "ADOBE INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Fri, 29 Nov 2024 00:00:00 GMT",
+    "revenue": 5606000.0,
+    "ticker": "ADBE"
   },
   {
     "name": "ALLEGRO MICROSYSTEMS, INC.",
@@ -6902,11 +8498,32 @@
     "ticker": "AAPL"
   },
   {
+    "name": "ADVANCED MICRO DEVICES INC",
+    "period": "Q4 2024",
+    "period_end_date": "Sat, 28 Dec 2024 00:00:00 GMT",
+    "revenue": 7658000.0,
+    "ticker": "AMD"
+  },
+  {
     "name": "CIRRUS LOGIC, INC.",
     "period": "Q3 2025",
     "period_end_date": "Sat, 28 Dec 2024 00:00:00 GMT",
     "revenue": 555738.0,
     "ticker": "CRUS"
+  },
+  {
+    "name": "Lattice Semiconductor Corp",
+    "period": "Q4 2024",
+    "period_end_date": "Sat, 28 Dec 2024 00:00:00 GMT",
+    "revenue": 117419.0,
+    "ticker": "LSCC"
+  },
+  {
+    "name": "Mobileye Global\u00a0Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Sat, 28 Dec 2024 00:00:00 GMT",
+    "revenue": 490000.0,
+    "ticker": "MBLY"
   },
   {
     "name": "LAM RESEARCH CORPORATION",
@@ -6930,11 +8547,95 @@
     "ticker": "WOLF"
   },
   {
+    "name": "AEVA TECHNOLOGIES, INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 2696.0,
+    "ticker": "AEVA"
+  },
+  {
+    "name": "AMKOR TECHNOLOGY, INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 1629118.0,
+    "ticker": "AMKR"
+  },
+  {
+    "name": "AMAZON COM INC",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 187792000.0,
+    "ticker": "AMZN"
+  },
+  {
+    "name": "Arista Networks,\u00a0Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 1930446.0,
+    "ticker": "ANET"
+  },
+  {
+    "name": "AppLovin Corporation",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 2104932.0,
+    "ticker": "APP"
+  },
+  {
+    "name": "BigBear.ai Holdings, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 43827.0,
+    "ticker": "BBAI"
+  },
+  {
+    "name": "Calix, Inc",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 206124.0,
+    "ticker": "CALX"
+  },
+  {
     "name": "COHERENT CORP.",
     "period": "Q2 2025",
     "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
     "revenue": 1434665.0,
     "ticker": "COHR"
+  },
+  {
+    "name": "Datadog, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 737727.0,
+    "ticker": "DDOG"
+  },
+  {
+    "name": "EQUINIX, INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 2261000.0,
+    "ticker": "EQIX"
+  },
+  {
+    "name": "Alphabet Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 96469000.0,
+    "ticker": "GOOGL"
+  },
+  {
+    "name": "HubSpot, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 703178.0,
+    "ticker": "HUBS"
+  },
+  {
+    "name": "Intuitive Surgical, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 2413500.0,
+    "ticker": "ISRG"
   },
   {
     "name": "KLA Corporation",
@@ -6951,6 +8652,13 @@
     "ticker": "MCHP"
   },
   {
+    "name": "Monolithic Power Systems, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 621665.0,
+    "ticker": "MPWR"
+  },
+  {
     "name": "MICROSOFT CORPORATION",
     "period": "Q2 2025",
     "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
@@ -6958,11 +8666,95 @@
     "ticker": "MSFT"
   },
   {
+    "name": "Cloudflare, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 459946.0,
+    "ticker": "NET"
+  },
+  {
+    "name": "ServiceNow, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 2957000.0,
+    "ticker": "NOW"
+  },
+  {
+    "name": "NXP Semiconductors N.V.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 3111000.0,
+    "ticker": "NXPI"
+  },
+  {
+    "name": "ON SEMICONDUCTOR CORPORATION",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 1722500.0,
+    "ticker": "ON"
+  },
+  {
+    "name": "Palantir Technologies Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 827519.0,
+    "ticker": "PLTR"
+  },
+  {
+    "name": "RIGETTI COMPUTING, INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 2274.0,
+    "ticker": "RGTI"
+  },
+  {
+    "name": "Schrodinger, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 88317.0,
+    "ticker": "SDGR"
+  },
+  {
     "name": "Super Micro Computer, Inc.",
     "period": "Q2 2025",
     "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
     "revenue": 5677962.0,
     "ticker": "SMCI"
+  },
+  {
+    "name": "TERADATA CORPORATION",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 409000.0,
+    "ticker": "TDC"
+  },
+  {
+    "name": "Tesla, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 25707000.0,
+    "ticker": "TSLA"
+  },
+  {
+    "name": "The Trade Desk, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 741012.0,
+    "ticker": "TTD"
+  },
+  {
+    "name": "TEXAS INSTRUMENTS INCORPORATED",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 4007000.0,
+    "ticker": "TXN"
+  },
+  {
+    "name": "Vertiv Holdings Co",
+    "period": "Q4 2024",
+    "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT",
+    "revenue": 2346400.0,
+    "ticker": "VRT"
   },
   {
     "name": "MACOM Technology Solutions Holdings, Inc.",
@@ -6993,11 +8785,39 @@
     "ticker": "AMAT"
   },
   {
+    "name": "NVIDIA CORP",
+    "period": "Q4 2025",
+    "period_end_date": "Sun, 26 Jan 2025 00:00:00 GMT",
+    "revenue": 39331000.0,
+    "ticker": "NVDA"
+  },
+  {
+    "name": "Semtech Corporation",
+    "period": "Q4 2025",
+    "period_end_date": "Sun, 26 Jan 2025 00:00:00 GMT",
+    "revenue": 251002.0,
+    "ticker": "SMTC"
+  },
+  {
     "name": "C3.ai, Inc.",
     "period": "Q3 2025",
     "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT",
     "revenue": 98782.0,
     "ticker": "AI"
+  },
+  {
+    "name": "AMBARELLA, INC.",
+    "period": "Q4 2025",
+    "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT",
+    "revenue": 52616.0,
+    "ticker": "AMBA"
+  },
+  {
+    "name": "CrowdStrike Holdings, Inc.",
+    "period": "Q4 2024",
+    "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT",
+    "revenue": 1743404.0,
+    "ticker": "CRWD"
   },
   {
     "name": "ELASTIC N.V.",
@@ -7007,6 +8827,20 @@
     "ticker": "ESTC"
   },
   {
+    "name": "GITLAB INC.",
+    "period": "Q4 2025",
+    "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT",
+    "revenue": 211431.0,
+    "ticker": "GTLB"
+  },
+  {
+    "name": "Okta, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT",
+    "revenue": 682000.0,
+    "ticker": "OKTA"
+  },
+  {
     "name": "Palo Alto Networks, Inc",
     "period": "Q2 2025",
     "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT",
@@ -7014,11 +8848,32 @@
     "ticker": "PANW"
   },
   {
+    "name": "UiPath, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT",
+    "revenue": 423646.0,
+    "ticker": "PATH"
+  },
+  {
+    "name": "SENTINELONE, INC",
+    "period": "Q4 2025",
+    "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT",
+    "revenue": 225521.0,
+    "ticker": "S"
+  },
+  {
     "name": "SYNOPSYS INC",
     "period": "Q1 2025",
     "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT",
     "revenue": 1455315.0,
     "ticker": "SNPS"
+  },
+  {
+    "name": "Veeva Systems Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT",
+    "revenue": 720886.0,
+    "ticker": "VEEV"
   },
   {
     "name": "Zscaler Inc",
@@ -7042,6 +8897,13 @@
     "ticker": "CRDO"
   },
   {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q4 2025",
+    "period_end_date": "Sat, 01 Feb 2025 00:00:00 GMT",
+    "revenue": 1817400.0,
+    "ticker": "MRVL"
+  },
+  {
     "name": "Broadcom Inc.",
     "period": "Q1 2025",
     "period_end_date": "Sun, 02 Feb 2025 00:00:00 GMT",
@@ -7063,6 +8925,13 @@
     "ticker": "ADBE"
   },
   {
+    "name": "ALLEGRO MICROSYSTEMS, INC.",
+    "period": "Q4 2025",
+    "period_end_date": "Fri, 28 Mar 2025 00:00:00 GMT",
+    "revenue": 129435.0,
+    "ticker": "ALGM"
+  },
+  {
     "name": "Apple Inc.",
     "period": "Q2 2025",
     "period_end_date": "Sat, 29 Mar 2025 00:00:00 GMT",
@@ -7082,6 +8951,13 @@
     "period_end_date": "Sat, 29 Mar 2025 00:00:00 GMT",
     "revenue": 220242.0,
     "ticker": "CALX"
+  },
+  {
+    "name": "CIRRUS LOGIC, INC.",
+    "period": "Q4 2025",
+    "period_end_date": "Sat, 29 Mar 2025 00:00:00 GMT",
+    "revenue": 424456.0,
+    "ticker": "CRUS"
   },
   {
     "name": "Lattice Semiconductor Corp",
@@ -7238,6 +9114,13 @@
     "ticker": "KLAC"
   },
   {
+    "name": "MICROCHIP TECHNOLOGY INCORPORATED",
+    "period": "Q4 2025",
+    "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT",
+    "revenue": 970500.0,
+    "ticker": "MCHP"
+  },
+  {
     "name": "Meta Platforms, Inc.",
     "period": "Q1 2025",
     "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT",
@@ -7350,6 +9233,13 @@
     "ticker": "ON"
   },
   {
+    "name": "NetApp, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Fri, 25 Apr 2025 00:00:00 GMT",
+    "revenue": 1667000.0,
+    "ticker": "NTAP"
+  },
+  {
     "name": "CISCO SYSTEMS, INC.",
     "period": "Q3 2025",
     "period_end_date": "Sat, 26 Apr 2025 00:00:00 GMT",
@@ -7376,6 +9266,13 @@
     "period_end_date": "Sun, 27 Apr 2025 00:00:00 GMT",
     "revenue": 251060.0,
     "ticker": "SMTC"
+  },
+  {
+    "name": "C3.ai, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 30 Apr 2025 00:00:00 GMT",
+    "revenue": 108723.0,
+    "ticker": "AI"
   },
   {
     "name": "AMBARELLA, INC.",
@@ -7490,6 +9387,13 @@
     "ticker": "ADI"
   },
   {
+    "name": "Credo Technology Group Holding Ltd",
+    "period": "Q4 2025",
+    "period_end_date": "Sat, 03 May 2025 00:00:00 GMT",
+    "revenue": 170025.0,
+    "ticker": "CRDO"
+  },
+  {
     "name": "MARVELL TECHNOLOGY, INC",
     "period": "Q1 2026",
     "period_end_date": "Sat, 03 May 2025 00:00:00 GMT",
@@ -7581,6 +9485,13 @@
     "ticker": "ONTO"
   },
   {
+    "name": "LAM RESEARCH CORPORATION",
+    "period": "Q4 2025",
+    "period_end_date": "Sun, 29 Jun 2025 00:00:00 GMT",
+    "revenue": 5171393.0,
+    "ticker": "LRCX"
+  },
+  {
     "name": "NXP Semiconductors N.V.",
     "period": "Q2 2025",
     "period_end_date": "Sun, 29 Jun 2025 00:00:00 GMT",
@@ -7593,6 +9504,20 @@
     "period_end_date": "Sun, 29 Jun 2025 00:00:00 GMT",
     "revenue": 10365000.0,
     "ticker": "QCOM"
+  },
+  {
+    "name": "WOLFSPEED, INC.",
+    "period": "Q4 2026",
+    "period_end_date": "Sun, 29 Jun 2025 00:00:00 GMT",
+    "revenue": 242100.0,
+    "ticker": "WOLF"
+  },
+  {
+    "name": "WOLFSPEED, INC.",
+    "period": "Q4 2025",
+    "period_end_date": "Sun, 29 Jun 2025 00:00:00 GMT",
+    "revenue": 197000.0,
+    "ticker": "WOLF"
   },
   {
     "name": "AEVA TECHNOLOGIES, INC.",
@@ -7644,6 +9569,13 @@
     "ticker": "BBAI"
   },
   {
+    "name": "COHERENT CORP.",
+    "period": "Q4 2025",
+    "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT",
+    "revenue": 1529436.0,
+    "ticker": "COHR"
+  },
+  {
     "name": "Datadog, Inc.",
     "period": "Q2 2025",
     "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT",
@@ -7679,6 +9611,13 @@
     "ticker": "ISRG"
   },
   {
+    "name": "KLA Corporation",
+    "period": "Q4 2025",
+    "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT",
+    "revenue": 3174741.0,
+    "ticker": "KLAC"
+  },
+  {
     "name": "MICROCHIP TECHNOLOGY INCORPORATED",
     "period": "Q1 2026",
     "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT",
@@ -7698,6 +9637,13 @@
     "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT",
     "revenue": 664574.0,
     "ticker": "MPWR"
+  },
+  {
+    "name": "MICROSOFT CORPORATION",
+    "period": "Q4 2025",
+    "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT",
+    "revenue": 76441000.0,
+    "ticker": "MSFT"
   },
   {
     "name": "Cloudflare, Inc.",
@@ -7733,6 +9679,13 @@
     "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT",
     "revenue": 54759.0,
     "ticker": "SDGR"
+  },
+  {
+    "name": "Super Micro Computer, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT",
+    "revenue": 5756911.0,
+    "ticker": "SMCI"
   },
   {
     "name": "TERADATA CORPORATION",
@@ -7796,6 +9749,13 @@
     "period_end_date": "Fri, 25 Jul 2025 00:00:00 GMT",
     "revenue": 1559000.0,
     "ticker": "NTAP"
+  },
+  {
+    "name": "CISCO SYSTEMS, INC.",
+    "period": "Q4 2025",
+    "period_end_date": "Sat, 26 Jul 2025 00:00:00 GMT",
+    "revenue": 14673000.0,
+    "ticker": "CSCO"
   },
   {
     "name": "APPLIED MATERIALS INC /DE",
@@ -7875,6 +9835,13 @@
     "ticker": "OKTA"
   },
   {
+    "name": "Palo Alto Networks, Inc",
+    "period": "Q4 2025",
+    "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT",
+    "revenue": 2536500.0,
+    "ticker": "PANW"
+  },
+  {
     "name": "UiPath, Inc.",
     "period": "Q2 2026",
     "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT",
@@ -7908,6 +9875,13 @@
     "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT",
     "revenue": 789081.0,
     "ticker": "VEEV"
+  },
+  {
+    "name": "Zscaler Inc",
+    "period": "Q4 2025",
+    "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT",
+    "revenue": 719226.0,
+    "ticker": "ZS"
   },
   {
     "name": "Dell Technologies Inc.",
@@ -7945,6 +9919,13 @@
     "ticker": "AVGO"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Thu, 28 Aug 2025 00:00:00 GMT",
+    "revenue": 11315000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "ADOBE INC.",
     "period": "Q3 2025",
     "period_end_date": "Fri, 29 Aug 2025 00:00:00 GMT",
@@ -7957,6 +9938,13 @@
     "period_end_date": "Fri, 26 Sep 2025 00:00:00 GMT",
     "revenue": 214294.0,
     "ticker": "ALGM"
+  },
+  {
+    "name": "Apple Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Sat, 27 Sep 2025 00:00:00 GMT",
+    "revenue": 102466000.0,
+    "ticker": "AAPL"
   },
   {
     "name": "ADVANCED MICRO DEVICES INC",
@@ -8013,6 +10001,13 @@
     "period_end_date": "Sun, 28 Sep 2025 00:00:00 GMT",
     "revenue": 3173000.0,
     "ticker": "NXPI"
+  },
+  {
+    "name": "QUALCOMM INC/DE",
+    "period": "Q4 2025",
+    "period_end_date": "Sun, 28 Sep 2025 00:00:00 GMT",
+    "revenue": 11271000.0,
+    "ticker": "QCOM"
   },
   {
     "name": "WOLFSPEED, INC.",
@@ -8225,6 +10220,13 @@
     "ticker": "VRT"
   },
   {
+    "name": "MACOM Technology Solutions Holdings, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Fri, 03 Oct 2025 00:00:00 GMT",
+    "revenue": 261170.0,
+    "ticker": "MTSI"
+  },
+  {
     "name": "ON SEMICONDUCTOR CORPORATION",
     "period": "Q3 2025",
     "period_end_date": "Fri, 03 Oct 2025 00:00:00 GMT",
@@ -8244,6 +10246,13 @@
     "period_end_date": "Sat, 25 Oct 2025 00:00:00 GMT",
     "revenue": 14883000.0,
     "ticker": "CSCO"
+  },
+  {
+    "name": "APPLIED MATERIALS INC /DE",
+    "period": "Q4 2025",
+    "period_end_date": "Sun, 26 Oct 2025 00:00:00 GMT",
+    "revenue": 6800000.0,
+    "ticker": "AMAT"
   },
   {
     "name": "NVIDIA CORP",
@@ -8344,6 +10353,13 @@
     "ticker": "SNOW"
   },
   {
+    "name": "SYNOPSYS INC",
+    "period": "Q4 2025",
+    "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT",
+    "revenue": 2254860.0,
+    "ticker": "SNPS"
+  },
+  {
     "name": "Veeva Systems Inc.",
     "period": "Q3 2026",
     "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT",
@@ -8356,6 +10372,13 @@
     "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT",
     "revenue": 788112.0,
     "ticker": "ZS"
+  },
+  {
+    "name": "ANALOG DEVICES INC",
+    "period": "Q4 2025",
+    "period_end_date": "Sat, 01 Nov 2025 00:00:00 GMT",
+    "revenue": 3076117.0,
+    "ticker": "ADI"
   },
   {
     "name": "Credo Technology Group Holding Ltd",
@@ -8372,11 +10395,25 @@
     "ticker": "MRVL"
   },
   {
+    "name": "Broadcom Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Sun, 02 Nov 2025 00:00:00 GMT",
+    "revenue": 18015000.0,
+    "ticker": "AVGO"
+  },
+  {
     "name": "Micron Technology, Inc.",
     "period": "Q1 2026",
     "period_end_date": "Thu, 27 Nov 2025 00:00:00 GMT",
     "revenue": 13643000.0,
     "ticker": "MU"
+  },
+  {
+    "name": "ADOBE INC.",
+    "period": "Q4 2025",
+    "period_end_date": "Fri, 28 Nov 2025 00:00:00 GMT",
+    "revenue": 6194000.0,
+    "ticker": "ADBE"
   },
   {
     "name": "ALLEGRO MICROSYSTEMS, INC.",
@@ -8393,11 +10430,25 @@
     "ticker": "AAPL"
   },
   {
+    "name": "ADVANCED MICRO DEVICES INC",
+    "period": "Q4 2025",
+    "period_end_date": "Sat, 27 Dec 2025 00:00:00 GMT",
+    "revenue": 10270000.0,
+    "ticker": "AMD"
+  },
+  {
     "name": "CIRRUS LOGIC, INC.",
     "period": "Q3 2026",
     "period_end_date": "Sat, 27 Dec 2025 00:00:00 GMT",
     "revenue": 580624.0,
     "ticker": "CRUS"
+  },
+  {
+    "name": "Mobileye Global\u00a0Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Sat, 27 Dec 2025 00:00:00 GMT",
+    "revenue": 446000.0,
+    "ticker": "MBLY"
   },
   {
     "name": "QUALCOMM INC/DE",
@@ -8414,11 +10465,102 @@
     "ticker": "WOLF"
   },
   {
+    "name": "AEVA TECHNOLOGIES, INC.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 5621.0,
+    "ticker": "AEVA"
+  },
+  {
+    "name": "Astera Labs, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 270583.0,
+    "ticker": "ALAB"
+  },
+  {
+    "name": "AMKOR TECHNOLOGY, INC.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 1888046.0,
+    "ticker": "AMKR"
+  },
+  {
+    "name": "AMAZON COM INC",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 213386000.0,
+    "ticker": "AMZN"
+  },
+  {
+    "name": "Arista Networks,\u00a0Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 2487800.0,
+    "ticker": "ANET"
+  },
+  {
+    "name": "AppLovin Corporation",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 1657944.0,
+    "ticker": "APP"
+  },
+  {
+    "name": "BigBear.ai Holdings, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 27300.0,
+    "ticker": "BBAI"
+  },
+  {
+    "name": "Calix, Inc",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 272449.0,
+    "ticker": "CALX"
+  },
+  {
     "name": "COHERENT CORP.",
     "period": "Q2 2026",
     "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
     "revenue": 1685629.0,
     "ticker": "COHR"
+  },
+  {
+    "name": "Datadog, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 953194.0,
+    "ticker": "DDOG"
+  },
+  {
+    "name": "EQUINIX, INC.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 2420000.0,
+    "ticker": "EQIX"
+  },
+  {
+    "name": "Alphabet Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 113828000.0,
+    "ticker": "GOOGL"
+  },
+  {
+    "name": "HubSpot, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 846745.0,
+    "ticker": "HUBS"
+  },
+  {
+    "name": "Intuitive Surgical, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 2866200.0,
+    "ticker": "ISRG"
   },
   {
     "name": "KLA Corporation",
@@ -8435,11 +10577,74 @@
     "ticker": "MCHP"
   },
   {
+    "name": "Meta Platforms, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 59894000.0,
+    "ticker": "META"
+  },
+  {
+    "name": "Monolithic Power Systems, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 751155.0,
+    "ticker": "MPWR"
+  },
+  {
     "name": "MICROSOFT CORPORATION",
     "period": "Q2 2026",
     "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
     "revenue": 81273000.0,
     "ticker": "MSFT"
+  },
+  {
+    "name": "Cloudflare, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 614507.0,
+    "ticker": "NET"
+  },
+  {
+    "name": "ServiceNow, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 3568000.0,
+    "ticker": "NOW"
+  },
+  {
+    "name": "NXP Semiconductors N.V.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 3335000.0,
+    "ticker": "NXPI"
+  },
+  {
+    "name": "ON SEMICONDUCTOR CORPORATION",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 1530100.0,
+    "ticker": "ON"
+  },
+  {
+    "name": "Palantir Technologies Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 1406802.0,
+    "ticker": "PLTR"
+  },
+  {
+    "name": "RIGETTI COMPUTING, INC.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 1868.0,
+    "ticker": "RGTI"
+  },
+  {
+    "name": "Schrodinger, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 87235.0,
+    "ticker": "SDGR"
   },
   {
     "name": "Super Micro Computer, Inc.",
@@ -8449,11 +10654,60 @@
     "ticker": "SMCI"
   },
   {
+    "name": "TERADATA CORPORATION",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 421000.0,
+    "ticker": "TDC"
+  },
+  {
+    "name": "Tesla, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 24901000.0,
+    "ticker": "TSLA"
+  },
+  {
+    "name": "The Trade Desk, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 846791.0,
+    "ticker": "TTD"
+  },
+  {
+    "name": "TEXAS INSTRUMENTS INCORPORATED",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 4423000.0,
+    "ticker": "TXN"
+  },
+  {
+    "name": "Vertiv Holdings Co",
+    "period": "Q4 2025",
+    "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT",
+    "revenue": 2880000.0,
+    "ticker": "VRT"
+  },
+  {
     "name": "MACOM Technology Solutions Holdings, Inc.",
     "period": "Q1 2026",
     "period_end_date": "Fri, 02 Jan 2026 00:00:00 GMT",
     "revenue": 271612.0,
     "ticker": "MTSI"
+  },
+  {
+    "name": "Lattice Semiconductor Corp",
+    "period": "Q4 2025",
+    "period_end_date": "Sat, 03 Jan 2026 00:00:00 GMT",
+    "revenue": 145792.0,
+    "ticker": "LSCC"
+  },
+  {
+    "name": "ONTO INNOVATION INC.",
+    "period": "Q4 2024",
+    "period_end_date": "Sat, 03 Jan 2026 00:00:00 GMT",
+    "revenue": 281880.0,
+    "ticker": "ONTO"
   },
   {
     "name": "NetApp, Inc.",
@@ -8477,6 +10731,27 @@
     "ticker": "AMAT"
   },
   {
+    "name": "NVIDIA CORP",
+    "period": "Q4 2026",
+    "period_end_date": "Sun, 25 Jan 2026 00:00:00 GMT",
+    "revenue": 68127000.0,
+    "ticker": "NVDA"
+  },
+  {
+    "name": "Semtech Corporation",
+    "period": "Q4 2026",
+    "period_end_date": "Sun, 25 Jan 2026 00:00:00 GMT",
+    "revenue": 274355.0,
+    "ticker": "SMTC"
+  },
+  {
+    "name": "Dell Technologies Inc.",
+    "period": "Q4 2026",
+    "period_end_date": "Fri, 30 Jan 2026 00:00:00 GMT",
+    "revenue": 33379000.0,
+    "ticker": "DELL"
+  },
+  {
     "name": "ANALOG DEVICES INC",
     "period": "Q1 2026",
     "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT",
@@ -8498,11 +10773,39 @@
     "ticker": "CRDO"
   },
   {
+    "name": "Salesforce, Inc.",
+    "period": "Q4 2025",
+    "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT",
+    "revenue": 13623000.0,
+    "ticker": "CRM"
+  },
+  {
     "name": "ELASTIC N.V.",
     "period": "Q3 2026",
     "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT",
     "revenue": 449881.0,
     "ticker": "ESTC"
+  },
+  {
+    "name": "GITLAB INC.",
+    "period": "Q4 2026",
+    "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT",
+    "revenue": 260402.0,
+    "ticker": "GTLB"
+  },
+  {
+    "name": "MARVELL TECHNOLOGY, INC",
+    "period": "Q4 2026",
+    "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT",
+    "revenue": 2218700.0,
+    "ticker": "MRVL"
+  },
+  {
+    "name": "Okta, Inc.",
+    "period": "Q4 2026",
+    "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT",
+    "revenue": 761000.0,
+    "ticker": "OKTA"
   },
   {
     "name": "Palo Alto Networks, Inc",
@@ -8512,11 +10815,39 @@
     "ticker": "PANW"
   },
   {
+    "name": "UiPath, Inc.",
+    "period": "Q4 2026",
+    "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT",
+    "revenue": 481107.0,
+    "ticker": "PATH"
+  },
+  {
+    "name": "SENTINELONE, INC",
+    "period": "Q4 2026",
+    "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT",
+    "revenue": 271153.0,
+    "ticker": "S"
+  },
+  {
+    "name": "SNOWFLAKE INC.",
+    "period": "Q4 2026",
+    "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT",
+    "revenue": 1283994.0,
+    "ticker": "SNOW"
+  },
+  {
     "name": "SYNOPSYS INC",
     "period": "Q1 2026",
     "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT",
     "revenue": 2408798.0,
     "ticker": "SNPS"
+  },
+  {
+    "name": "Veeva Systems Inc.",
+    "period": "Q4 2026",
+    "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT",
+    "revenue": 835951.0,
+    "ticker": "VEEV"
   },
   {
     "name": "Zscaler Inc",
@@ -8566,6 +10897,13 @@
     "period_end_date": "Sat, 28 Mar 2026 00:00:00 GMT",
     "revenue": 279984.0,
     "ticker": "CALX"
+  },
+  {
+    "name": "CIRRUS LOGIC, INC.",
+    "period": "Q4 2026",
+    "period_end_date": "Sat, 28 Mar 2026 00:00:00 GMT",
+    "revenue": 448523.0,
+    "ticker": "CRUS"
   },
   {
     "name": "Entegris, Inc.",
@@ -8706,6 +11044,13 @@
     "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT",
     "revenue": 3415078.0,
     "ticker": "KLAC"
+  },
+  {
+    "name": "MICROCHIP TECHNOLOGY INCORPORATED",
+    "period": "Q4 2026",
+    "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT",
+    "revenue": 1311200.0,
+    "ticker": "MCHP"
   },
   {
     "name": "Meta Platforms, Inc.",
@@ -8862,6 +11207,13 @@
     "ticker": "SMTC"
   },
   {
+    "name": "C3.ai, Inc.",
+    "period": "Q4 2026",
+    "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT",
+    "revenue": 51600.0,
+    "ticker": "AI"
+  },
+  {
     "name": "AMBARELLA, INC.",
     "period": "Q1 2027",
     "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT",
@@ -8881,6 +11233,13 @@
     "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT",
     "revenue": 1385629.0,
     "ticker": "CRWD"
+  },
+  {
+    "name": "ELASTIC N.V.",
+    "period": "Q4 2026",
+    "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT",
+    "revenue": 450681.0,
+    "ticker": "ESTC"
   },
   {
     "name": "GITLAB INC.",
@@ -8965,6 +11324,13 @@
     "period_end_date": "Sat, 02 May 2026 00:00:00 GMT",
     "revenue": 3623465.0,
     "ticker": "ADI"
+  },
+  {
+    "name": "Credo Technology Group Holding Ltd",
+    "period": "Q4 2026",
+    "period_end_date": "Sat, 02 May 2026 00:00:00 GMT",
+    "revenue": 437003.0,
+    "ticker": "CRDO"
   },
   {
     "name": "MARVELL TECHNOLOGY, INC",
@@ -9100,6 +11466,13 @@
     "ticker": "BBAI"
   },
   {
+    "name": "COHERENT CORP.",
+    "period": "Q4 2026",
+    "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT",
+    "revenue": 2045533.0,
+    "ticker": "COHR"
+  },
+  {
     "name": "Datadog, Inc.",
     "period": "Q2 2026",
     "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT",
@@ -9142,6 +11515,13 @@
     "ticker": "ISRG"
   },
   {
+    "name": "KLA Corporation",
+    "period": "Q4 2026",
+    "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT",
+    "revenue": 3657556.0,
+    "ticker": "KLAC"
+  },
+  {
     "name": "MICROCHIP TECHNOLOGY INCORPORATED",
     "period": "Q1 2027",
     "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT",
@@ -9161,6 +11541,13 @@
     "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT",
     "revenue": 980642.0,
     "ticker": "MPWR"
+  },
+  {
+    "name": "MICROSOFT CORPORATION",
+    "period": "Q4 2026",
+    "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT",
+    "revenue": 90007000.0,
+    "ticker": "MSFT"
   },
   {
     "name": "Cloudflare, Inc.",
@@ -9203,6 +11590,13 @@
     "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT",
     "revenue": 58889.0,
     "ticker": "SDGR"
+  },
+  {
+    "name": "Super Micro Computer, Inc.",
+    "period": "Q4 2026",
+    "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT",
+    "revenue": 11119777.0,
+    "ticker": "SMCI"
   },
   {
     "name": "TERADATA CORPORATION",
@@ -9259,6 +11653,13 @@
     "period_end_date": "Sat, 04 Jul 2026 00:00:00 GMT",
     "revenue": 201079.0,
     "ticker": "LSCC"
+  },
+  {
+    "name": "CISCO SYSTEMS, INC.",
+    "period": "Q4 2026",
+    "period_end_date": "Sat, 25 Jul 2026 00:00:00 GMT",
+    "revenue": 17252000.0,
+    "ticker": "CSCO"
   },
   {
     "name": "APPLIED MATERIALS INC /DE",
@@ -9352,6 +11753,13 @@
     "ticker": "OKTA"
   },
   {
+    "name": "Palo Alto Networks, Inc",
+    "period": "Q4 2026",
+    "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT",
+    "revenue": 3410000.0,
+    "ticker": "PANW"
+  },
+  {
     "name": "UiPath, Inc.",
     "period": "Q2 2027",
     "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT",
@@ -9385,6 +11793,13 @@
     "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT",
     "revenue": 927963.0,
     "ticker": "VEEV"
+  },
+  {
+    "name": "Zscaler Inc",
+    "period": "Q4 2026",
+    "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT",
+    "revenue": 898185.0,
+    "ticker": "ZS"
   },
   {
     "name": "ANALOG DEVICES INC",
