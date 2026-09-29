@@ -1466,7 +1466,11 @@ document.getElementById("chartContainer").addEventListener("mousemove", e => {
 init();
 
 let _chartResizeTimer;
+let _lastResizeW = window.innerWidth;
 window.addEventListener('resize', () => {
+  const newW = window.innerWidth;
+  if (newW === _lastResizeW) return; // height-only resize (iOS address bar), skip
+  _lastResizeW = newW;
   clearTimeout(_chartResizeTimer);
   _chartResizeTimer = setTimeout(() => {
     if (compareMode) {
