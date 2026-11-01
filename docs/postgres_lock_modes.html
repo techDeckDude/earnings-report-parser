@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Postgres Lock Modes</title>
+<style>
+  :root {
+    --bg: #f8f8f8;
+    --surface: #fff;
+    --border: #d0d0d0;
+    --text: #1a1a1a;
+    --text2: #555;
+    --text3: #888;
+    --green: #27ae60;
+    --red: #c0392b;
+    --blue: #2471a3;
+    --pill-green: #d5f5e3;
+    --pill-red: #fadbd8;
+    --pill-green-text: #1a7a40;
+    --pill-red-text: #922b21;
+    --row-hover: #f0f0f0;
+    --header-bg: #f0f0f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1a1a1a; --surface: #242424; --border: #3a3a3a;
+      --text: #f0f0f0; --text2: #aaa; --text3: #666;
+      --green: #2ecc71; --red: #e74c3c; --blue: #5dade2;
+      --pill-green: #1a3a28; --pill-red: #3a1a1a;
+      --pill-green-text: #2ecc71; --pill-red-text: #e74c3c;
+      --row-hover: #2e2e2e; --header-bg: #2a2a2a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1a1a1a; --surface: #242424; --border: #3a3a3a;
+    --text: #f0f0f0; --text2: #aaa; --text3: #666;
+    --green: #2ecc71; --red: #e74c3c; --blue: #5dade2;
+    --pill-green: #1a3a28; --pill-red: #3a1a1a;
+    --pill-green-text: #2ecc71; --pill-red-text: #e74c3c;
+    --row-hover: #2e2e2e; --header-bg: #2a2a2a;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Mono', 'Courier New', monospace;
+    font-size: 13px;
+    margin: 0;
+    padding: 16px;
+  }
+
+  h2 { font-size: 13px; font-weight: 700; margin: 0 0 4px; letter-spacing: .04em; }
+  p.sub { color: var(--text2); font-size: 11px; margin: 0 0 16px; }
+
+  /* Lock list */
+  .locks {
+    display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px;
+  }
+  .lock-row {
+    display: flex; align-items: baseline; gap: 10px;
+    padding: 6px 10px; border-radius: 5px;
+    background: var(--surface); border: 1px solid var(--border);
+  }
+  .lock-row:hover { background: var(--row-hover); }
+  .num {
+    font-size: 10px; color: var(--text3); width: 14px; flex-shrink: 0; text-align: right;
+  }
+  .mode {
+    font-weight: 600; font-size: 12px; width: 196px; flex-shrink: 0; color: var(--blue);
+  }
+  .taken-by { color: var(--text2); font-size: 11px; flex: 1; }
+  .badge {
+    font-size: 10px; padding: 2px 7px; border-radius: 10px; flex-shrink: 0; font-weight: 600;
+  }
+  .badge-r { background: var(--pill-green); color: var(--pill-green-text); }
+  .badge-w { background: var(--pill-red);   color: var(--pill-red-text); }
+
+  /* Conflict matrix */
+  .matrix-wrap { overflow-x: auto; }
+  table {
+    border-collapse: collapse;
+    font-size: 10px;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 0;
+    text-align: center;
+    min-width: 28px;
+  }
+  thead th {
+    background: var(--header-bg);
+    padding: 4px 3px;
+    font-size: 9px;
+    color: var(--text2);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    height: 90px;
+    vertical-align: bottom;
+  }
+  thead th.corner {
+    writing-mode: horizontal-tb;
+    height: auto; padding: 4px 6px;
+    font-size: 10px; color: var(--text2);
+    text-align: left; vertical-align: bottom;
+  }
+  tbody tr:hover td { background: var(--row-hover); }
+  tbody td.label {
+    text-align: left;
+    padding: 3px 6px;
+    font-size: 10px;
+    color: var(--text2);
+    background: var(--header-bg);
+    white-space: nowrap;
+  }
+  .yes { background: var(--pill-red);   color: var(--pill-red-text);   font-weight: 700; font-size: 10px; }
+  .no  { background: var(--surface);    color: var(--text3);           font-size: 10px; }
+  .highlight td { outline: 2px solid var(--blue); }
+
+  .note { font-size: 10px; color: var(--text2); margin-top: 12px; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<h2>Postgres table-level lock modes</h2>
+<p class="sub">Lightest → heaviest. Each is a distinct named mode, not just "shared" or "exclusive."</p>
+
+<div class="locks">
+  <div class="lock-row">
+    <span class="num">1</span>
+    <span class="mode">ACCESS SHARE</span>
+    <span class="taken-by">SELECT</span>
+    <span class="badge badge-r">read</span>
+  </div>
+  <div class="lock-row">
+    <span class="num">2</span>
+    <span class="mode">ROW SHARE</span>
+    <span class="taken-by">SELECT FOR UPDATE / FOR SHARE</span>
+    <span class="badge badge-r">read</span>
+  </div>
+  <div class="lock-row">
+    <span class="num">3</span>
+    <span class="mode">ROW EXCLUSIVE</span>
+    <span class="taken-by">INSERT, UPDATE, DELETE</span>
+    <span class="badge badge-w">write</span>
+  </div>
+  <div class="lock-row">
+    <span class="num">4</span>
+    <span class="mode">SHARE UPDATE EXCLUSIVE</span>
+    <span class="taken-by">VACUUM, ANALYZE, CREATE INDEX CONCURRENTLY</span>
+    <span class="badge badge-w">write</span>
+  </div>
+  <div class="lock-row">
+    <span class="num">5</span>
+    <span class="mode">SHARE</span>
+    <span class="taken-by">CREATE INDEX (non-concurrent)</span>
+    <span class="badge badge-w">write</span>
+  </div>
+  <div class="lock-row">
+    <span class="num">6</span>
+    <span class="mode">SHARE ROW EXCLUSIVE</span>
+    <span class="taken-by">CREATE TRIGGER, some ALTER TABLE forms</span>
+    <span class="badge badge-w">write</span>
+  </div>
+  <div class="lock-row">
+    <span class="num">7</span>
+    <span class="mode">EXCLUSIVE</span>
+    <span class="taken-by">REFRESH MATERIALIZED VIEW CONCURRENTLY</span>
+    <span class="badge badge-w">write</span>
+  </div>
+  <div class="lock-row" style="border-color: var(--red); border-width: 1.5px;">
+    <span class="num">8</span>
+    <span class="mode" style="color:var(--red)">ACCESS EXCLUSIVE</span>
+    <span class="taken-by">ALTER TABLE, DROP, TRUNCATE, LOCK TABLE</span>
+    <span class="badge badge-w">write</span>
+  </div>
+</div>
+
+<h2>Conflict matrix — ✗ means "blocks"</h2>
+<p class="sub">Row = lock held. Column = lock being requested. ✗ = conflict (requester waits).</p>
+
+<div class="matrix-wrap">
+<table>
+  <thead>
+    <tr>
+      <th class="corner">Lock held ↓ / requested →</th>
+      <th>1<br>AS</th>
+      <th>2<br>RS</th>
+      <th>3<br>RE</th>
+      <th>4<br>SUE</th>
+      <th>5<br>S</th>
+      <th>6<br>SRE</th>
+      <th>7<br>E</th>
+      <th>8<br>AE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Row 1: ACCESS SHARE -->
+    <tr>
+      <td class="label">1 ACCESS SHARE</td>
+      <td class="no">·</td><td class="no">·</td><td class="no">·</td><td class="no">·</td>
+      <td class="no">·</td><td class="no">·</td><td class="no">·</td><td class="yes">✗</td>
+    </tr>
+    <!-- Row 2: ROW SHARE -->
+    <tr>
+      <td class="label">2 ROW SHARE</td>
+      <td class="no">·</td><td class="no">·</td><td class="no">·</td><td class="no">·</td>
+      <td class="no">·</td><td class="no">·</td><td class="yes">✗</td><td class="yes">✗</td>
+    </tr>
+    <!-- Row 3: ROW EXCLUSIVE -->
+    <tr>
+      <td class="label">3 ROW EXCLUSIVE</td>
+      <td class="no">·</td><td class="no">·</td><td class="no">·</td><td class="no">·</td>
+      <td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td>
+    </tr>
+    <!-- Row 4: SHARE UPDATE EXCLUSIVE -->
+    <tr>
+      <td class="label">4 SHARE UPDATE EXCLUSIVE</td>
+      <td class="no">·</td><td class="no">·</td><td class="no">·</td><td class="yes">✗</td>
+      <td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td>
+    </tr>
+    <!-- Row 5: SHARE -->
+    <tr>
+      <td class="label">5 SHARE</td>
+      <td class="no">·</td><td class="no">·</td><td class="yes">✗</td><td class="yes">✗</td>
+      <td class="no">·</td><td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td>
+    </tr>
+    <!-- Row 6: SHARE ROW EXCLUSIVE -->
+    <tr>
+      <td class="label">6 SHARE ROW EXCLUSIVE</td>
+      <td class="no">·</td><td class="no">·</td><td class="yes">✗</td><td class="yes">✗</td>
+      <td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td>
+    </tr>
+    <!-- Row 7: EXCLUSIVE -->
+    <tr>
+      <td class="label">7 EXCLUSIVE</td>
+      <td class="no">·</td><td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td>
+      <td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td>
+    </tr>
+    <!-- Row 8: ACCESS EXCLUSIVE -->
+    <tr style="border: 2px solid var(--red)">
+      <td class="label" style="color:var(--red); font-weight:600">8 ACCESS EXCLUSIVE</td>
+      <td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td>
+      <td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td><td class="yes">✗</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<p class="note">
+  <strong>Our situation:</strong> pid 2753 held <strong>ACCESS SHARE (1)</strong> on news_articles.
+  pid 5640 needed <strong>ACCESS EXCLUSIVE (8)</strong> for ALTER TABLE — the only lock that conflicts with #1.
+  Once #8 was queued, Postgres blocked all new lock requests on that table, including new #1s from our SELECTs.
+</p>
+
+</body>
+</html>
