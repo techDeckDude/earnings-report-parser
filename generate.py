@@ -5,7 +5,8 @@ from pathlib import Path
 os.environ["STATIC_BUILD"] = "true"  # must be set before importing app
 from app import app
 
-OUT = Path("static")
+# STATIC_OUT lets tests build somewhere other than the committed site.
+OUT = Path(os.environ.get("STATIC_OUT", "static"))
 
 
 def write_json(path: str, data) -> None:
@@ -43,7 +44,7 @@ def main() -> None:
         write_html("earnings/index.html", "/", client)  # clean URL: /earnings
         write_html("news/index.html", "/news", client)  # clean URL: /news
 
-    print("Static site written to ./static/")
+    print(f"Static site written to {OUT}/")
 
 
 if __name__ == "__main__":

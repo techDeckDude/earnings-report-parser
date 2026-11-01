@@ -1,289 +1,109 @@
 # Earnings Report Parser
 
-A pipeline that extracts structured financial data from SEC 10-Q PDF filings, validates it with Pydantic, uploads a normalized contract JSON to S3, and persists data to SQLite (local) or PostgreSQL (cloud). Built and tested against Palantir Technologies Q1 2025–Q2 2026.
+The public earnings site (10qs.io). Data comes from the shared Postgres database, which [core-data](../core-data) owns: its connection pool, schema migrations, EDGAR client, XBRL extraction, and ingestion jobs. This repo keeps only what is specific to it — the Flask site and its static build.
 
 ## Table of Contents
 
 - [Usage](#usage)
 - [How It Works](#how-it-works)
-  - [1. Extraction](#1-extraction-extractors)
-  - [2. Validation](#2-validation-modelspy)
-  - [3. Database](#3-database-dbpy)
-  - [4. Orchestration](#4-orchestration-mainpy)
-  - [5. Contract Loader](#5-contract-loader-loaderpy)
-  - [5. Web Dashboard](#5-web-dashboard-apppy--templates)
-  - [6. News Ingestion](#6-news-ingestion-ingest_newspy)
-  - [7. News Scheduler](#7-news-scheduler-schedulerpy)
-  - [8. 10-K Q4 Derivation](#8-10-k-q4-derivation-ingest_10kpy)
+  - [1. Web site](#1-web-site-apppy--templates)
+  - [2. Getting data in](#2-getting-data-in)
 - [Project Structure](#project-structure)
 - [Experimental Features](#experimental-features)
 - [Deployment](#deployment)
-- [Workflow: How to Ingest a New Quarterly Report](#workflow-how-to-ingest-a-new-quarterly-report)
-- [Design Patterns & Infrastructure](#design-patterns--infrastructure)
 - [Known Limitations](#known-limitations)
+- [Design Patterns & Infrastructure](#design-patterns--infrastructure)
 - [Changelog](#changelog)
 
 ## Usage
 
 ```bash
-pip install pdfplumber pydantic flask boto3 psycopg2-binary
-# Place the PDF in data/inputs/{TICKER}/ first, then:
-python main.py data/inputs/PLTR/your-10-Q.pdf
+pip3 install -e ../core-data                   # DB access, models, EDGAR ingestion (psycopg 3)
+pip3 install flask python-dotenv
+# .env: DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD (Postgres)
+
+python3 app.py                                 # the site, live from the database → http://localhost:5001
 ```
 
-This produces:
-- Console output with a formatted financial summary
-- A normalized contract JSON written locally alongside the PDF
-- The contract uploaded to S3 (when `S3_BUCKET` env var is set)
-- Data persisted to SQLite locally, or PostgreSQL when `DB_HOST` is set
+Loading earnings data is core-data's job (see [2. Getting data in](#2-getting-data-in)):
 
-**To replay a contract from S3 into the database:**
 ```bash
-python loader.py s3://financial-statements/PLTR/10-Q/FY2026Q2.json
-# or from a local file:
-python loader.py path/to/contract.json
+ingest-earnings NVDA                           # since the last pull; full XBRL history the first time
+ingest-earnings --all                          # every tracked stock
 ```
 
 ## How It Works
 
-The pipeline runs in two stages connected by a normalized contract JSON:
+### 1. Web site (`app.py` + `templates/`)
 
-```
-PDF → extractor.py → models.py → contract JSON → S3
-                          ↓                    (audit trail / replay)
-                    validation error
-                    (stops the run)
-
-contract JSON → loader.py → db.py → SQLite or Postgres
-```
-
-`main.py` runs both stages in sequence. `loader.py` can run the second stage independently from an existing S3 contract, without re-touching the original PDF.
-
-### 1. Extraction (`extractors/`)
-
-The extractor package uses a **Strategy pattern** to decouple the extraction interface from company-specific PDF formats:
-
-- **`extractors/base.py`** — defines `BaseExtractor`, an abstract base class with two methods: `can_handle(cover_text) -> bool` and `extract(pdf_path) -> EarningsReport`.
-- **`extractors/palantir.py`** — `PalantirExtractor` implements `BaseExtractor` with all Palantir-specific page numbers, regex patterns, and label variations.
-- **`extractors/__init__.py`** — maintains a registry of extractor instances. `get_extractor(pdf_path)` reads the PDF cover page and returns the first registered extractor whose `can_handle()` returns `True`.
-
-Adding support for a new company means creating a new file (e.g. `extractors/acme.py`), implementing `BaseExtractor`, and adding it to `_REGISTRY` — nothing else changes.
-
-`PalantirExtractor` reads raw text from specific pages:
-
-| Page (0-indexed) | Content |
-|---|---|
-| 2 | Balance Sheet |
-| 3 | Income Statement |
-| dynamic | Cash Flow Statement |
-
-Each statement has its own extraction function using regex patterns to find known line-item labels. Dollar signs, commas, and parenthetical negatives (e.g. `(1,509,665)`) are normalized by `_parse_num`. The cash flow page is located dynamically by scanning the first 20 pages for a content anchor, since this page number varies across quarterly filings.
-
-### 2. Validation (`models.py`)
-
-The raw extracted numbers are passed into Pydantic models, which serve two purposes:
-
-- **Type enforcement** — all values must be valid floats; missing or unparseable fields raise an error immediately
-- **Cross-field validation** — two `@model_validator` checks catch silent extraction errors:
-  - `IncomeStatement`: asserts `gross_profit == revenue - cost_of_revenue` (within a $5k rounding tolerance)
-  - `BalanceSheet`: asserts `total_assets == total_liabilities + total_equity` (within a $500k tolerance)
-
-If either check fails the run stops before anything is written to the database.
-
-### 3. Database (`db.py`)
-
-SQLite with six tables:
-
-```
-companies
-  id, ticker, name, category
-
-earnings_reports
-  id, company_id → companies, period, period_end_date, filing_type, units
-
-financial_metrics
-  id, report_id → earnings_reports, statement, metric_name, value
-
-news_runs
-  id, run_at, period, total_headlines, score_distribution, weighted_sentiment, net_sentiment_label
-
-news_articles
-  id, run_id → news_runs, headline, source, url, url_verified,
-  stocks_mentioned (JSON), sentiment_score, sentiment_label, summary,
-  published_date (article publish date, used for week grouping)
-
-target_stocks
-  ticker (PK), name, category, cik (SEC CIK, cached), ingested (0/1), added_at
-```
-
-`financial_metrics` is a key-value store — every field from every Pydantic model is flattened into a `(statement, metric_name, value)` row. This makes it easy to add new metrics without schema changes.
-
-All writes use `INSERT ... ON CONFLICT ... DO UPDATE`, so re-running against the same filing updates values in place rather than creating duplicates.
-
-### 4. Orchestration (`main.py`)
-
-Calls each step in sequence, prints a human-readable summary to stdout, writes the contract JSON locally, and uploads it to S3 if `S3_BUCKET` is set. The DB write uses Postgres when `DB_HOST` is set, SQLite otherwise — no code change required when switching environments.
-
-### 5. Contract Loader (`loader.py`)
-
-Reads a contract JSON from S3 (`s3://bucket/key`) or a local path, re-validates it with Pydantic, and upserts into the database. Useful for replaying ingestion without re-extracting the PDF — for example, after a schema migration or a database rebuild.
-
-The S3 key format is `{ticker}/{filing_type}/FY{year}Q{quarter}.json` (e.g. `PLTR/10-Q/FY2026Q2.json`), making filings browsable by company and report type.
-
-### 5. Web Dashboard (`app.py` + `templates/`)
-
-A Flask web server that reads from the SQLite database and renders two interactive pages at `http://localhost:5001`.
+A Flask app that reads the shared Postgres database through core-data and renders two pages at `http://localhost:5001`. Each request borrows one pooled connection and always returns it (`core_data.flask`). At startup it prints which database it is reading — `* Database: postgresql://user:***@host:port/dbname`, password redacted. The site only reads; it never migrates the schema (the admin dashboard and `core-data-migrate` do that).
 
 **Routes:**
 - **`GET /`** — earnings page (`earnings.html`): **Single mode** — ticker search filter (press `/` to focus, `Enter` to jump to first match, `Esc` to clear) above a horizontally-scrollable ticker selector; scrollable metric pill row; metric chart with a BAR/LINE toggle (bar view uses a per-bar gradient from medium emerald for low values to deep forest green for high values; line view uses the original dots-and-line design) plus a QoQ/YoY analytics strip; and a full quarterly metrics table. **Compare mode** — two autocomplete search inputs (one per stock) each with a selected-ticker chip; a grouped bar chart showing both stocks' metrics side by side per period (green = Stock A, blue = Stock B); the y-axis rescales dynamically as the user scrolls so that only the currently visible bars determine the scale, keeping small-cap and large-cap stocks visually comparable across the timeline
 - **`GET /api/revenue`** — revenue records for all companies as JSON
 - **`GET /api/tickers`** — list of all known ticker symbols and company names
-- **`GET /api/metrics/<ticker>`** — all financial metrics for a ticker, pivoted to `{statement: {metric_name: [value_per_period]}}` ordered by `period_end_date`
+- **`GET /api/metrics/<ticker>`** — every stored quarter for a ticker (`core_data.repositories.earnings.quarterly_table`): `{ticker, name, periods: [{period, period_end_date, filing_type}], data: {statement: {metric_name: [value_per_period]}}}`, ordered by `period_end_date`. A `null` value means the filing didn't report that metric
 - **`GET /api/news`** — all news articles grouped into Mon–Sun calendar weeks, newest first; each week includes `week_start`, `week_end`, `period`, `headlines`, and dynamically-computed `summary_stats`
 - **`GET /news`** — AI market news feed page; spacing and mobile layout aligned with the earnings page; reads from `/api/news`
 
-New companies and periods appear automatically as more filings are parsed — no UI changes needed.
+New companies and periods appear automatically as data is ingested — no UI changes needed.
 
 The app runs in two modes from a single codebase:
 
 | Mode | How to run | API |
 |---|---|---|
-| **Live** | `python app.py` → `localhost:5001` | Flask routes hit SQLite in real time |
-| **Static** | `python generate.py` → serve `static/` | Pre-built `.json` files (Cloudflare Pages) |
+| **Live** | `python3 app.py` → `localhost:5001` | Flask routes query Postgres in real time |
+| **Static** | `python3 generate.py` → serve `static/` | Pre-built `.json` files (Cloudflare Pages) |
 
 ```bash
 # Live mode (local dev)
-python app.py
+python3 app.py
 
-# Build static output
-python generate.py
+# Build static output (STATIC_OUT=dir to build somewhere other than static/)
+python3 generate.py
 
 # Verify live and static are in sync
-python verify.py
+python3 verify.py
 
 # Serve static locally to preview before deploying
-python -m http.server 8080 --directory static
+python3 -m http.server 8080 --directory static
 ```
 
-### 6. News Ingestion (`ingest_news.py`)
+### 2. Getting data in
 
-Fetches AI stock market headlines from the last ingested article date to today, then stores them in the database. Requires an `ANTHROPIC_API_KEY` with credits.
+Everything that used to live here as separate scripts now comes from core-data, shared with the admin dashboard:
 
-```bash
-# Set your API key (add to .env or export directly)
-export ANTHROPIC_API_KEY=sk-ant-...
+| Was (this repo) | Now (core-data) |
+|---|---|
+| `ingest_xbrl.py`, `ingest_10k.py`, `bulk_ingest.py` | `ingest-earnings TICKER…` / `--all` — one durable job per ticker: every 10-Q since the last pull plus derived Q4s, one transaction per quarter, resumable after a crash. `--reload` re-ingests everything (repairs older data) |
+| `add_stock.py` | `ingest-earnings TICKER` tracks an untracked ticker first (CIK + name from SEC), or use the admin dashboard's Stocks page |
+| `scan_filings.py` | `scan-filings --save` |
+| `ingest_news.py`, `scheduler.py` | `ingest-news`, `run-scheduler` |
+| `db.py`, `models.py`, `edgar.py`, `extractors/xbrl.py` | `core_data.db` / `.repositories`, `core_data.models`, `core_data.sources`, `core_data.extractors` |
+| `migrate_sqlite_to_pg.py` | Removed — SQLite is no longer supported; schema changes are versioned migrations (`core-data-migrate`) |
+| `main.py`, `loader.py`, `extractors/` (Palantir/Marvell PDF and iXBRL parsing, S3 contracts) | Removed — every stock now comes from EDGAR's XBRL API through core-data |
 
-# Fetch and store headlines (auto-detects date range from DB)
-python ingest_news.py
-
-# Dry run: print JSON without storing
-python ingest_news.py --dry-run
-```
-
-The script reads `MAX(published_date)` from `news_articles` to determine the start of the next fetch window (last date + 1 day). On first run with an empty database, it defaults to the past 7 days. The date range is injected into the skill prompt so each article's `published_date` is constrained to the window. Articles are stored with their individual `published_date`.
-
-The news page groups articles into Mon–Sun calendar weeks based on `published_date` (not ingestion time), so a single run covering multiple weeks will appear as separate carousel pages. The carousel shows the most recent week by default; use the PREV/NEXT buttons (or swipe on mobile) to navigate.
-
-### 8. 10-K Q4 Derivation (`ingest_10k.py`)
-
-EDGAR only publishes 10-Q filings for Q1, Q2, and Q3. Q4 data is derived from each company's annual 10-K filing.
-
-**How derivation works:**
-
-- **Flow metrics** (income statement + cash flow): `Q4 = Annual (10-K) − Q1 − Q2 − Q3`. The annual total from the 10-K is the exact accounting sum of all four quarters, so subtraction gives the precise Q4 value.
-- **Balance sheet**: 10-K year-end snapshot taken directly (balance sheet items are point-in-time, not additive).
-- **EPS**: `Q4 EPS = Q4 net income ÷ annual weighted average shares` from the 10-K.
-
-Derived Q4 periods are stored with `period = "Q4 YYYY"`, `filing_type = "10-K"`, and `period_end_date` equal to the fiscal year end date. They appear in the earnings chart alongside Q1–Q3 data.
-
-```bash
-# Derive Q4 for a single ticker (all available fiscal years)
-python ingest_10k.py NVDA
-
-# Only process years ending after a given date
-python ingest_10k.py NVDA --since 2021-01-01
-
-# Dry run (print derived values without writing to DB)
-python ingest_10k.py NVDA --dry-run
-```
-
-`bulk_ingest.py` now runs both 10-Q ingestion and 10-K Q4 derivation in a single pass. Use `--skip-10k` to skip the Q4 step.
-
-### 7. News Scheduler (`scheduler.py`)
-
-Runs `ingest_news.py` automatically on a configurable interval. The interval is set via the `INGEST_INTERVAL_HOURS` env var (default `24`; supports fractional hours).
-
-```bash
-# Run in the foreground (logs to stdout)
-python3 scheduler.py
-
-# Custom interval (every 12 hours)
-INGEST_INTERVAL_HOURS=12 python3 scheduler.py
-
-# Every 10 seconds (for testing)
-INGEST_INTERVAL_HOURS=0.0028 python3 scheduler.py
-INGEST_INTERVAL_HOURS=0.0027 nohup python3 scheduler.py > logs/scheduler.log 2>&1 &
-
-# Run in the background and log to file
-mkdir -p logs
-nohup python3 scheduler.py > logs/scheduler.log 2>&1 &
-
-# Watch the log live
-tail -f logs/scheduler.log
-
-# Stop the scheduler
-pkill -f earnings-news-scheduler
-```
-
-On startup, the scheduler runs ingestion immediately, then sleeps for the configured interval before the next run. Each run logs its start time, result, and the timestamp of the next scheduled run.
+Q4 is derived from each 10-K (`Q4 = annual − Q1 − Q2 − Q3` for flows; the year-end snapshot for the balance sheet; EPS = Q4 net income ÷ annual weighted shares). See core-data's README and `docs/case-studies/` for how ingestion works.
 
 ## Project Structure
 
 ```
 earnings-report-parser/
-├── main.py              # CLI entry point: extract → validate → save → summarize
-├── edgar.py             # EDGAR API client: CIK lookup and 10-Q filing discovery for any ticker
-├── extractors/
-│   ├── __init__.py      # Registry and get_extractor() strategy selector
-│   ├── base.py          # BaseExtractor abstract interface
-│   ├── palantir.py      # Palantir 10-Q implementation (PDF via pdfplumber + regex)
-│   ├── marvell.py       # Marvell Technology 10-Q implementation (iXBRL ZIP via tag lookup)
-│   └── xbrl.py          # Tier 1 EDGAR XBRL extractor: maps US-GAAP concepts to EarningsReport for any XBRL filer
-├── models.py            # Pydantic data models and validators
-├── db.py                # SQLite schema and persistence
-├── app.py               # Flask web server and API; injects STATIC_BUILD flag via context processor
-├── generate.py          # Build static/ from live Flask (sets STATIC_BUILD=true, uses test client)
+├── app.py               # Flask site + API over the shared DB (core_data.flask: one pooled connection per request)
+├── generate.py          # Build static/ from live Flask (STATIC_BUILD=true; STATIC_OUT overrides the output dir)
 ├── verify.py            # Diff live API responses against static JSON files; exits 1 on mismatch
-├── add_stock.py         # CLI: add a ticker to target_stocks, resolve its CIK, and scan its EDGAR filing history in one command
-├── scan_filings.py      # CLI: scan EDGAR 10-Q history for all target stocks — shows count, date range, years before ingestion; --save writes to DB
-├── ingest_xbrl.py       # CLI: ingest 10-Q filings for any ticker via EDGAR XBRL API (no file download)
-├── ingest_10k.py        # CLI: derive Q4 data from 10-K annual filings (Q4 = Annual − Q1 − Q2 − Q3); balance sheet taken directly from year-end snapshot
-├── bulk_ingest.py       # CLI: ingest all target stocks in one pass — runs 10-Q ingestion then 10-K Q4 derivation per ticker; --skip-10k skips derivation
-├── ingest_news.py       # CLI: fetch AI stock news via Claude (Anthropic SDK + web search), store in DB
-├── scheduler.py         # Run ingest_news.py on a configurable interval (INGEST_INTERVAL_HOURS env var)
-├── deploy.sh            # Deploy script: merge develop → main (code + build commits), tag, push to origin
 ├── templates/
 │   ├── earnings.html    # Earnings page: ticker selector, metric chart, quarterly metrics table
 │   └── news.html        # AI news feed: weekly carousel, sentiment chart, swipe nav
-├── data/
-│   ├── inputs/
-│   │   ├── PLTR/        # Place 10-Q PDFs here before running main.py
-│   │   └── MRVL/        # Place 10-Q iXBRL ZIPs here before running main.py
-│   └── outputs/
-│       ├── PLTR/        # Extracted contract JSONs (FY{year}Q{quarter}.json)
-│       └── MRVL/        # Extracted contract JSONs (FY{year}Q{quarter}.json)
-├── docs/
-│   ├── ingestion-pipeline.md          # Full walkthrough of the earnings ingestion pipeline (EDGAR → extract → validate → DB → static build)
-│   ├── aws-deployment.md              # Plan for deploying to S3 + EC2 + RDS
-│   ├── postgres-ops.md                # Postgres operations runbook: diagnosing idle-in-transaction blocking, terminating stuck connections, prevention
-│   └── architecture-diagram-8-22-26.png  # Visual architecture diagram
-├── loader.py            # Load a contract JSON from S3 or local path into the DB
 ├── experimental/
 │   ├── __init__.py      # Flask Blueprint definition (url_prefix="/experimental")
 │   └── routes.py        # Route handlers for experimental features
-├── .claude/
-│   └── agents/
-│       └── news-aggregator.md  # Claude Code skill: fetch and sentiment-score AI stock headlines
+├── tests/               # pytest against a throwaway Postgres (see tests/conftest.py); never the .env database
+│   └── fixtures/        # PLTR / MRVL report JSONs used to seed the test database
+├── static/              # Built static site (committed; deployed to Cloudflare Pages)
+├── docs/                # Pipeline walkthrough, AWS plan, Postgres ops runbook, diagrams
+├── deploy.sh            # Deploy script: merge develop → main (code + build commits), tag, push to origin
+├── .claude/agents/      # Claude Code skills (news-aggregator)
 ├── CLAUDE.md            # AI agent rules for this project
 ├── CHANGELOG.md         # Chronological record of changes
 └── README.md
@@ -335,82 +155,12 @@ The two-commit structure keeps code changes and generated output separate in the
 
 See [docs/aws-deployment.md](docs/aws-deployment.md) for a full plan to deploy this project to AWS using S3 (PDF storage), EC2 (Flask + ingestion), and RDS PostgreSQL (replacing SQLite).
 
-## Workflow: How to Ingest a New Quarterly Report
-
-This section describes the full process — including the iterative debugging that is typically required — for getting a new 10-Q PDF to parse correctly and appear in the dashboard.
-
-### Step 1: Run `main.py` against the new PDF
-
-```bash
-python main.py path/to/new-10-Q.pdf
-```
-
-The most common outcome on a brand-new filing is an extraction error printed to stderr:
-
-```
-ERROR during extraction: Pattern not found: 'Some label pattern here'
-```
-
-This means a regex in `extractor.py` couldn't find the expected label text on the page it was looking at. This is normal — SEC filings use slightly different label wording across companies and across years.
-
-### Step 2: Debug by printing the actual page text
-
-Open a Python shell or scratch script and print the raw text from the relevant page:
-
-```python
-import pdfplumber
-
-with pdfplumber.open("path/to/new-10-Q.pdf") as pdf:
-    print(pdf.pages[3].extract_text())  # page 3 = income statement
-    print(pdf.pages[2].extract_text())  # page 2 = balance sheet
-    # cash flow: scan pages 5-10 manually if needed
-```
-
-Look for the line that should match the failing pattern. The actual text will usually be slightly different — a missing `$`, a word order change, a negative in parentheses instead of with a minus sign, or a line item that's split across two rows instead of one.
-
-### Step 3: Fix the regex in `extractor.py`
-
-Common failure modes encountered so far and how they were fixed:
-
-| Problem | Example | Fix |
-|---|---|---|
-| Parenthetical negative | `(3,173)` instead of `3,173` | Change `([\d,]+)` to `(\([\d,]+\)\|[\d,]+)` |
-| Optional `$` sign | `Total assets 10,199,183` vs `Total assets $ 10,199,183` | Change `\$\s*` to `\$?\s*` |
-| Split line items | `Accounts payable` and `Accrued liabilities` on separate rows | Add a fallback in `_find_accounts_payable` that sums both |
-| Different label wording | `Net earnings per share` vs `Earnings per share` | Use `(?:Net )?` to make the prefix optional |
-| Wrong page | Cash flow on page 7 (index 6) vs page 8 (index 7) | Use `_find_cf_page()` which scans dynamically |
-
-After fixing a pattern, re-run `main.py`. Repeat until the run completes with "Validation passed" and "Saved as report_id=N".
-
-### Step 4: Verify in the dashboard
-
-Reload `http://localhost:5001` — the new filing should appear as a new row in the revenue table automatically. No dashboard changes needed; the UI pulls all data fresh from the DB on each load.
-
-### Step 5: Commit
-
-Per the project rules in `CLAUDE.md`, update this README to reflect any extractor changes (e.g. add the new failure mode to the table above), then commit.
-
----
-
-### What "compatible" means in practice
-
-The extractor will work on a new filing without any changes if:
-- The income statement is on page 4 (index 3) and the balance sheet is on page 3 (index 2)
-- All line item labels use the same wording as a previously tested filing
-- Dollar amounts appear in the same column position (first number after the label)
-
-It will likely need a small fix if the filing is from a different company, a different fiscal year where label wording changed, or the page count of the document shifts the financial statement locations.
-
----
-
 ## Known Limitations
 
-- **`PalantirExtractor` page numbers are hardcoded** (balance sheet index 2, income statement index 3) — reliable across all tested PLTR filings but specific to their layout
-- **Column order is assumed** — the income statement has four columns (current quarter, prior quarter, YTD, prior YTD); the regex always captures the first, which is the current quarter
-- **`PalantirExtractor` is PDF/regex-only** — adding another PDF-based company requires its own subclass
-- **MRVL cash flow is YTD, not quarterly** — Marvell files the cash flow statement as a year-to-date figure in their 10-Q; individual quarter CF is not directly available without subtracting prior periods
-
-Tested and working against: PLTR Q1 2025–Q2 2026; MRVL Q1 2024–Q1 2027.
+- **Data written before the move to core-data may be wrong** — cumulative (YTD) quarterly cash flows, and quarters stored under a mis-tagged label. Run `ingest-earnings --all --reload` once to repair it
+- **Early-XBRL Q4 EPS can be wildly off** (e.g. NVDA Q4 2011 shows ~$298) — Q4 EPS divides by the 10-K's share count, which some early filings tag at the wrong scale
+- **Quarters with untagged core fields are skipped** — EDGAR XBRL is now the only source; a quarter missing revenue, net income or diluted EPS (or failing a cross-check) isn't stored. Earlier PDF-extracted quarters already in the database stay as they are
+- **The site needs Postgres** — SQLite support was removed with the move to core-data
 
 ---
 
@@ -420,37 +170,28 @@ Tested and working against: PLTR Q1 2025–Q2 2026; MRVL Q1 2024–Q1 2027.
 
 | Pattern | Where Applied | Purpose |
 |---|---|---|
-| **Strategy** | `extractors/` — `BaseExtractor` ABC + per-company subclasses (`PalantirExtractor`, `MarvellExtractor`), `get_extractor()` registry | Decouple parsing logic from the orchestrator; new company = new file, nothing else changes |
 | **Experimental Blueprint** | `experimental/` Flask Blueprint mounted at `/experimental` | Isolate prototype features (mock data, unvalidated UI) from the production surface; controlled by `EXPERIMENTAL` env var; see `CLAUDE.md` for the promotion checklist |
-| **S3 Contract / Landing Zone** | `main.py` → `data/outputs/{ticker}/FY{year}Q{quarter}.json` → S3 → `loader.py` → DB | Decouple extraction from loading; contracts are the durable intermediate record; DB can be rebuilt from S3 without re-parsing PDFs |
-| **Repository** | `db.py` — `upsert_report()`, `init_db()` | Isolate all DB read/write logic; callers (`main.py`, `loader.py`, `app.py`) never write SQL directly |
-| **Dual-backend detection** | `db.py` — `isinstance(conn, sqlite3.Connection)` | Single codebase supports SQLite (local dev) and PostgreSQL (cloud) with no code changes; switching is env-var-driven |
+| **Repository** | core-data `core_data.repositories` (used by `app.py`) | All SQL lives in core-data, shared with the admin dashboard; this repo never opens or commits a connection itself |
+| **Connection pool, per-request borrow** | `app.py` → `core_data.flask.init_app` / `request_connection()` | One pooled connection per request, always returned; replaces a single global connection shared across request threads |
 
 ### Infrastructure
 
 | Layer | Technology | Notes |
 |---|---|---|
-| PDF parsing | `pdfplumber` | Used by `PalantirExtractor`; text extraction from specific pages |
-| iXBRL parsing | `zipfile` + `re` | Used by `MarvellExtractor`; extracts US-GAAP tagged values directly from iXBRL HTML; no page-position assumptions |
-| Data validation | `Pydantic v2` | Schema enforcement + cross-field math checks (gross profit, balance sheet equation) |
-| Local database | `SQLite` | Default; auto-initialized at `earnings.db`; no env vars needed |
-| Cloud database | `PostgreSQL` (via `psycopg2`) | Enabled when `DB_HOST` env var is set |
-| Contract storage | `AWS S3` (via `boto3`) | Enabled when `S3_BUCKET` env var is set; key format `{ticker}/{filing_type}/FY{year}Q{quarter}.json` |
-| Web server | `Flask` | Serves dashboard at `localhost:5001`; routes: `/`, `/api/revenue`, `/api/tickers`, `/api/metrics/<ticker>` |
+| Database | `PostgreSQL` via core-data (`psycopg` 3 + `psycopg_pool`) | Required; schema owned by core-data's versioned migrations |
+| Web server | `Flask` | Serves the site at `localhost:5001`; routes: `/`, `/news`, `/api/revenue`, `/api/tickers`, `/api/metrics/<ticker>`, `/api/news` |
 | Fonts | `IBM Plex Mono` + `IBM Plex Sans` (Google Fonts) | Terminal aesthetic: mono for all UI chrome (nav, labels, values), sans-serif for body text |
-| Schema versioning | `schema_version: "1.0"` on `EarningsReport` | Lets `loader.py` detect and reject stale contract formats |
 
 ### Environment Variables
 
 | Variable | Effect |
 |---|---|
-| `S3_BUCKET` | If set, `main.py` uploads the contract JSON to this S3 bucket after extraction |
-| `DB_HOST` | If set, `db.py` connects to PostgreSQL instead of local SQLite |
-| `DB_NAME` | PostgreSQL database name (default: `earningsdb`) |
-| `DB_USER` | PostgreSQL username |
-| `DB_PASSWORD` | PostgreSQL password |
-| `DB_PORT` | PostgreSQL port (default: `5432`) |
-| `PORT` | Flask dev server port (default: `5001`); set automatically by the preview server when `autoPort: true` |
+| `DB_HOST` / `DB_USER` / `DB_PASSWORD` | Postgres connection (required), read by core-data |
+| `DB_NAME` / `DB_PORT` | Database name (default `earningsdb`) and port (default `5432`) |
+| `DB_CONNECT_TIMEOUT` | Seconds before giving up on an unreachable server (default `10`) |
+| `DB_POOL_MIN` / `DB_POOL_MAX` / `DB_POOL_TIMEOUT` | Connection pool sizing (defaults `1` / `10` / `30`s) |
+| `STATIC_OUT` | Output directory for `generate.py` / `verify.py` (default `static`) |
+| `PORT` | Flask dev server port (default: `5001`) |
 | `EXPERIMENTAL` | Mount the experimental Blueprint (default: `1` = enabled); set `0` to disable all `/experimental/*` routes in production |
 
 ---
