@@ -2,6 +2,14 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-11-01** — README now links to core-data's guide on how stocks get tracked and how their earnings get in.
+
+- **2026-11-01** — Added Postgres locking reference diagrams to `docs/`: the lock cascade behind the `news_articles` hangs (`postgres_lock_cascade.svg`) and a lock-mode compatibility guide (`postgres_lock_modes.html`).
+
+- **2026-11-01** — Removed the PDF/iXBRL ingestion pipeline (`main.py`, `loader.py`, the Palantir and Marvell extractors, and S3 contract upload/replay); all earnings data now comes from EDGAR's XBRL API through core-data's `ingest-earnings` or the admin dashboard. The `list-ingested-stocks` and `pending-ingestion` agents now query Postgres and point to `ingest-earnings`. Removed `data/` (the pipeline's source filings, extracted contracts, and an old news snapshot); it remains in git history.
+
+- **2026-10-31** — The site and PDF pipeline now read and write the shared Postgres database through core-data (pooled connections, one per request; the startup log shows which database, password redacted). EDGAR/XBRL ingestion, Q4 derivation, news ingestion and the scheduler moved to core-data (`ingest-earnings`, `ingest-news`, `run-scheduler`), along with the database and model code; SQLite support is gone. Tests now run against a throwaway Postgres and build the static site into a temp folder instead of over `static/`.
+
 - **2026-09-29** — Added BAR/LINE toggle to the single-stock metric chart; bar view renders each bar with a gradient from medium emerald (lower values) to deep forest green (higher values) so relative performance is visible at a glance; line view restores the original dots-and-line design; the selected view persists as you switch metrics
 
 - **2026-09-29** — Charts now start scrolled to the most recent data; scroll left to view earlier periods

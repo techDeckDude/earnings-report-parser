@@ -1,11 +1,21 @@
 from __future__ import annotations
 import os
-from flask import Flask, jsonify, render_template, request
+from pathlib import Path
 
-from db import init_db, _execute, _ph, _is_pg, get_latest_news, get_all_news_runs, get_news_by_week
+from dotenv import load_dotenv
+from flask import Flask, jsonify, render_template
+
+# Load .env before core-data reads the DB_* settings
+load_dotenv(Path(__file__).parent / ".env")
+
+from core_data.db import DbSettings
+from core_data.flask import init_app, request_connection
+from core_data.repositories import earnings, news
 
 app = Flask(__name__)
-_conn = None
+# One pooled connection per request, always returned (core-data owns connections;
+# this replaces a single global connection shared by every request thread).
+init_app(app)
 
 
 @app.context_processor
@@ -25,13 +35,6 @@ if os.getenv("EXPERIMENTAL", "1") != "0":
 # ───────────────────────────────────────────────────────────────────────────
 
 
-def get_db():
-    global _conn
-    if _conn is None:
-        _conn = init_db()
-    return _conn
-
-
 @app.route("/")
 def index():
     return render_template("earnings.html")
@@ -42,11 +45,9 @@ def news_page():
     return render_template("news.html")
 
 
-
 @app.route("/api/revenue")
 def revenue():
-    conn = get_db()
-    rows = _execute(conn, """
+    rows = request_connection().execute("""
         SELECT c.ticker, c.name, er.period, er.period_end_date, fm.value AS revenue
         FROM financial_metrics fm
         JOIN earnings_reports er ON fm.report_id = er.id
@@ -54,71 +55,32 @@ def revenue():
         WHERE fm.statement = 'income_statement' AND fm.metric_name = 'revenue'
         ORDER BY er.period_end_date, c.ticker
     """).fetchall()
-    return jsonify([dict(r) for r in rows])
+    return jsonify(rows)
 
 
 @app.route("/api/tickers")
 def tickers():
-    conn = get_db()
-    rows = _execute(conn, "SELECT ticker, name FROM companies ORDER BY ticker").fetchall()
-    return jsonify([dict(r) for r in rows])
+    rows = request_connection().execute("SELECT ticker, name FROM companies ORDER BY ticker").fetchall()
+    return jsonify(rows)
 
 
 @app.route("/api/metrics/<ticker>")
 def metrics(ticker):
-    conn = get_db()
-    ph = _ph(conn)
-    periods = _execute(conn, f"""
-        SELECT er.id, er.period, er.period_end_date
-        FROM earnings_reports er
-        JOIN companies c ON er.company_id = c.id
-        WHERE c.ticker = {ph}
-        ORDER BY er.period_end_date
-    """, (ticker.upper(),)).fetchall()
-
-    if not periods:
+    """{ticker, name, periods: [...], data: {statement: {metric: [value per period]}}}."""
+    table = earnings.quarterly_table(request_connection(), ticker)
+    if table is None:
         return jsonify({"error": "Ticker not found"}), 404
-
-    report_ids = [p["id"] for p in periods]
-    placeholders = ",".join([ph] * len(report_ids))
-    rows = _execute(conn, f"""
-        SELECT report_id, statement, metric_name, value
-        FROM financial_metrics
-        WHERE report_id IN ({placeholders})
-    """, report_ids).fetchall()
-
-    # Pivot: {statement: {metric_name: [value_per_period]}}
-    pivot: dict[str, dict[str, dict]] = {}
-    for r in rows:
-        s, m = r["statement"], r["metric_name"]
-        if s not in pivot:
-            pivot[s] = {}
-        if m not in pivot[s]:
-            pivot[s][m] = {}
-        pivot[s][m][r["report_id"]] = r["value"]
-
-    company = _execute(conn, f"SELECT name FROM companies WHERE ticker = {ph}",
-                       (ticker.upper(),)).fetchone()
-
-    return jsonify({
-        "ticker": ticker.upper(),
-        "name": company["name"] if company else ticker.upper(),
-        "periods": [dict(p) for p in periods],
-        "data": {
-            s: {
-                m: [pivot[s][m].get(p["id"]) for p in periods]
-                for m in pivot[s]
-            }
-            for s in pivot
-        },
-    })
+    return jsonify(table)
 
 
 @app.route("/api/news")
-def news():
-    return jsonify(get_news_by_week(get_db()))
+def news_by_week():
+    return jsonify(news.get_by_week(request_connection()))
 
 
 if __name__ == "__main__":
     port = int(os.getenv("PORT", 5001))
+    # debug=True runs a reloader parent plus the serving child; print once, from the child.
+    if os.environ.get("WERKZEUG_RUN_MAIN") == "true":
+        print(f" * Database: {DbSettings.from_env().redacted_url()}", flush=True)
     app.run(debug=True, host="0.0.0.0", port=port)

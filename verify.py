@@ -1,22 +1,24 @@
 from __future__ import annotations
-import json, sys
+import json, os, sys
 from pathlib import Path
 
 from app import app  # live mode — no STATIC_BUILD env var
+
+STATIC = Path(os.environ.get("STATIC_OUT", "static"))
 
 
 def main() -> None:
     with app.test_client() as client:
         tickers = client.get("/api/tickers").get_json()
         checks = [
-            ("/api/revenue",  "static/api/revenue.json"),
-            ("/api/tickers",  "static/api/tickers.json"),
+            ("/api/revenue",  STATIC / "api/revenue.json"),
+            ("/api/tickers",  STATIC / "api/tickers.json"),
         ]
         for t in tickers:
             ticker = t["ticker"]
             checks.append((
                 f"/api/metrics/{ticker}",
-                f"static/api/metrics/{ticker}.json",
+                STATIC / f"api/metrics/{ticker}.json",
             ))
 
         ok = True
