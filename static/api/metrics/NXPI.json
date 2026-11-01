@@ -685,119 +685,119 @@
   "name": "NXP Semiconductors N.V.",
   "periods": [
     {
-      "id": 1050,
+      "filing_type": "10-Q",
       "period": "Q1 2020",
-      "period_end_date": "Sun, 29 Mar 2020 00:00:00 GMT"
+      "period_end_date": "2020-03-29"
     },
     {
-      "id": 1051,
+      "filing_type": "10-Q",
       "period": "Q2 2020",
-      "period_end_date": "Sun, 27 Sep 2020 00:00:00 GMT"
+      "period_end_date": "2020-09-27"
     },
     {
-      "id": 1052,
+      "filing_type": "10-Q",
       "period": "Q1 2021",
-      "period_end_date": "Sun, 04 Apr 2021 00:00:00 GMT"
+      "period_end_date": "2021-04-04"
     },
     {
-      "id": 1053,
+      "filing_type": "10-Q",
       "period": "Q2 2021",
-      "period_end_date": "Sun, 04 Jul 2021 00:00:00 GMT"
+      "period_end_date": "2021-07-04"
     },
     {
-      "id": 1054,
+      "filing_type": "10-Q",
       "period": "Q3 2021",
-      "period_end_date": "Sun, 03 Oct 2021 00:00:00 GMT"
+      "period_end_date": "2021-10-03"
     },
     {
-      "id": 1665,
+      "filing_type": "10-K",
       "period": "Q4 2021",
-      "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT"
+      "period_end_date": "2021-12-31"
     },
     {
-      "id": 1055,
+      "filing_type": "10-Q",
       "period": "Q1 2022",
-      "period_end_date": "Sun, 03 Apr 2022 00:00:00 GMT"
+      "period_end_date": "2022-04-03"
     },
     {
-      "id": 1056,
+      "filing_type": "10-Q",
       "period": "Q2 2022",
-      "period_end_date": "Sun, 03 Jul 2022 00:00:00 GMT"
+      "period_end_date": "2022-07-03"
     },
     {
-      "id": 1057,
+      "filing_type": "10-Q",
       "period": "Q3 2022",
-      "period_end_date": "Sun, 02 Oct 2022 00:00:00 GMT"
+      "period_end_date": "2022-10-02"
     },
     {
-      "id": 1666,
+      "filing_type": "10-K",
       "period": "Q4 2022",
-      "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT"
+      "period_end_date": "2022-12-31"
     },
     {
-      "id": 1058,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Sun, 02 Apr 2023 00:00:00 GMT"
+      "period_end_date": "2023-04-02"
     },
     {
-      "id": 1059,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Sun, 02 Jul 2023 00:00:00 GMT"
+      "period_end_date": "2023-07-02"
     },
     {
-      "id": 1060,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Sun, 01 Oct 2023 00:00:00 GMT"
+      "period_end_date": "2023-10-01"
     },
     {
-      "id": 1667,
+      "filing_type": "10-K",
       "period": "Q4 2023",
-      "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT"
+      "period_end_date": "2023-12-31"
     },
     {
-      "id": 1061,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
+      "period_end_date": "2024-03-31"
     },
     {
-      "id": 1062,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
+      "period_end_date": "2024-06-30"
     },
     {
-      "id": 1063,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Sun, 29 Sep 2024 00:00:00 GMT"
+      "period_end_date": "2024-09-29"
     },
     {
-      "id": 1670,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT"
+      "period_end_date": "2024-12-31"
     },
     {
-      "id": 1064,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Sun, 30 Mar 2025 00:00:00 GMT"
+      "period_end_date": "2025-03-30"
     },
     {
-      "id": 1065,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Sun, 29 Jun 2025 00:00:00 GMT"
+      "period_end_date": "2025-06-29"
     },
     {
-      "id": 1066,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Sun, 28 Sep 2025 00:00:00 GMT"
+      "period_end_date": "2025-09-28"
     },
     {
-      "id": 1672,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT"
+      "period_end_date": "2025-12-31"
     },
     {
-      "id": 1067,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Sun, 29 Mar 2026 00:00:00 GMT"
+      "period_end_date": "2026-03-29"
     }
   ],
   "ticker": "NXPI"

@@ -955,169 +955,169 @@
   "name": "NetApp, Inc.",
   "periods": [
     {
-      "id": 522,
+      "filing_type": "10-Q",
       "period": "Q1 2018",
-      "period_end_date": "Fri, 28 Jul 2017 00:00:00 GMT"
+      "period_end_date": "2017-07-28"
     },
     {
-      "id": 523,
+      "filing_type": "10-Q",
       "period": "Q2 2018",
-      "period_end_date": "Fri, 27 Oct 2017 00:00:00 GMT"
+      "period_end_date": "2017-10-27"
     },
     {
-      "id": 524,
+      "filing_type": "10-Q",
       "period": "Q3 2018",
-      "period_end_date": "Fri, 26 Jan 2018 00:00:00 GMT"
+      "period_end_date": "2018-01-26"
     },
     {
-      "id": 525,
+      "filing_type": "10-Q",
       "period": "Q1 2019",
-      "period_end_date": "Fri, 27 Jul 2018 00:00:00 GMT"
+      "period_end_date": "2018-07-27"
     },
     {
-      "id": 526,
+      "filing_type": "10-Q",
       "period": "Q2 2019",
-      "period_end_date": "Fri, 26 Oct 2018 00:00:00 GMT"
+      "period_end_date": "2018-10-26"
     },
     {
-      "id": 527,
+      "filing_type": "10-Q",
       "period": "Q3 2019",
-      "period_end_date": "Fri, 25 Jan 2019 00:00:00 GMT"
+      "period_end_date": "2019-01-25"
     },
     {
-      "id": 1641,
+      "filing_type": "10-K",
       "period": "Q4 2019",
-      "period_end_date": "Fri, 26 Apr 2019 00:00:00 GMT"
+      "period_end_date": "2019-04-26"
     },
     {
-      "id": 528,
+      "filing_type": "10-Q",
       "period": "Q1 2020",
-      "period_end_date": "Fri, 26 Jul 2019 00:00:00 GMT"
+      "period_end_date": "2019-07-26"
     },
     {
-      "id": 529,
+      "filing_type": "10-Q",
       "period": "Q2 2020",
-      "period_end_date": "Fri, 25 Oct 2019 00:00:00 GMT"
+      "period_end_date": "2019-10-25"
     },
     {
-      "id": 530,
+      "filing_type": "10-Q",
       "period": "Q3 2020",
-      "period_end_date": "Fri, 24 Jan 2020 00:00:00 GMT"
+      "period_end_date": "2020-01-24"
     },
     {
-      "id": 1642,
+      "filing_type": "10-K",
       "period": "Q4 2020",
-      "period_end_date": "Fri, 24 Apr 2020 00:00:00 GMT"
+      "period_end_date": "2020-04-24"
     },
     {
-      "id": 531,
+      "filing_type": "10-Q",
       "period": "Q1 2021",
-      "period_end_date": "Fri, 31 Jul 2020 00:00:00 GMT"
+      "period_end_date": "2020-07-31"
     },
     {
-      "id": 532,
+      "filing_type": "10-Q",
       "period": "Q2 2021",
-      "period_end_date": "Fri, 30 Oct 2020 00:00:00 GMT"
+      "period_end_date": "2020-10-30"
     },
     {
-      "id": 533,
+      "filing_type": "10-Q",
       "period": "Q3 2021",
-      "period_end_date": "Fri, 29 Jan 2021 00:00:00 GMT"
+      "period_end_date": "2021-01-29"
     },
     {
-      "id": 1643,
+      "filing_type": "10-K",
       "period": "Q4 2021",
-      "period_end_date": "Fri, 30 Apr 2021 00:00:00 GMT"
+      "period_end_date": "2021-04-30"
     },
     {
-      "id": 534,
+      "filing_type": "10-Q",
       "period": "Q1 2022",
-      "period_end_date": "Fri, 30 Jul 2021 00:00:00 GMT"
+      "period_end_date": "2021-07-30"
     },
     {
-      "id": 535,
+      "filing_type": "10-Q",
       "period": "Q2 2022",
-      "period_end_date": "Fri, 29 Oct 2021 00:00:00 GMT"
+      "period_end_date": "2021-10-29"
     },
     {
-      "id": 536,
+      "filing_type": "10-Q",
       "period": "Q3 2022",
-      "period_end_date": "Fri, 28 Jan 2022 00:00:00 GMT"
+      "period_end_date": "2022-01-28"
     },
     {
-      "id": 1645,
+      "filing_type": "10-K",
       "period": "Q4 2022",
-      "period_end_date": "Fri, 29 Apr 2022 00:00:00 GMT"
+      "period_end_date": "2022-04-29"
     },
     {
-      "id": 537,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Fri, 29 Jul 2022 00:00:00 GMT"
+      "period_end_date": "2022-07-29"
     },
     {
-      "id": 538,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Fri, 28 Oct 2022 00:00:00 GMT"
+      "period_end_date": "2022-10-28"
     },
     {
-      "id": 539,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Fri, 27 Jan 2023 00:00:00 GMT"
+      "period_end_date": "2023-01-27"
     },
     {
-      "id": 1647,
+      "filing_type": "10-K",
       "period": "Q4 2023",
-      "period_end_date": "Fri, 28 Apr 2023 00:00:00 GMT"
+      "period_end_date": "2023-04-28"
     },
     {
-      "id": 540,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Fri, 28 Jul 2023 00:00:00 GMT"
+      "period_end_date": "2023-07-28"
     },
     {
-      "id": 541,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Fri, 27 Oct 2023 00:00:00 GMT"
+      "period_end_date": "2023-10-27"
     },
     {
-      "id": 542,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Fri, 26 Jan 2024 00:00:00 GMT"
+      "period_end_date": "2024-01-26"
     },
     {
-      "id": 1649,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Fri, 26 Apr 2024 00:00:00 GMT"
+      "period_end_date": "2024-04-26"
     },
     {
-      "id": 545,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Fri, 24 Jan 2025 00:00:00 GMT"
+      "period_end_date": "2025-01-24"
     },
     {
-      "id": 1651,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Fri, 25 Apr 2025 00:00:00 GMT"
+      "period_end_date": "2025-04-25"
     },
     {
-      "id": 543,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Fri, 25 Jul 2025 00:00:00 GMT"
+      "period_end_date": "2025-07-25"
     },
     {
-      "id": 544,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Fri, 24 Oct 2025 00:00:00 GMT"
+      "period_end_date": "2025-10-24"
     },
     {
-      "id": 546,
+      "filing_type": "10-Q",
       "period": "Q3 2026",
-      "period_end_date": "Fri, 23 Jan 2026 00:00:00 GMT"
+      "period_end_date": "2026-01-23"
     },
     {
-      "id": 547,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
+      "period_end_date": "2026-07-31"
     }
   ],
   "ticker": "NTAP"

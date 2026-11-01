@@ -758,104 +758,104 @@
   "name": "MARVELL TECHNOLOGY, INC",
   "periods": [
     {
-      "id": 447,
+      "filing_type": "10-Q",
       "period": "Q2 2022",
-      "period_end_date": "Sat, 31 Jul 2021 00:00:00 GMT"
+      "period_end_date": "2021-07-31"
     },
     {
-      "id": 448,
+      "filing_type": "10-Q",
       "period": "Q3 2022",
-      "period_end_date": "Sat, 30 Oct 2021 00:00:00 GMT"
+      "period_end_date": "2021-10-30"
     },
     {
-      "id": 449,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT"
+      "period_end_date": "2022-04-30"
     },
     {
-      "id": 450,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Sat, 30 Jul 2022 00:00:00 GMT"
+      "period_end_date": "2022-07-30"
     },
     {
-      "id": 451,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Sat, 29 Oct 2022 00:00:00 GMT"
+      "period_end_date": "2022-10-29"
     },
     {
-      "id": 1586,
+      "filing_type": "10-K",
       "period": "Q4 2023",
-      "period_end_date": "Sat, 28 Jan 2023 00:00:00 GMT"
+      "period_end_date": "2023-01-28"
     },
     {
-      "id": 6,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Sat, 29 Apr 2023 00:00:00 GMT"
+      "period_end_date": "2023-04-29"
     },
     {
-      "id": 7,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Sat, 29 Jul 2023 00:00:00 GMT"
+      "period_end_date": "2023-07-29"
     },
     {
-      "id": 8,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Sat, 28 Oct 2023 00:00:00 GMT"
+      "period_end_date": "2023-10-28"
     },
     {
-      "id": 1588,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Sat, 03 Feb 2024 00:00:00 GMT"
+      "period_end_date": "2024-02-03"
     },
     {
-      "id": 9,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Sat, 04 May 2024 00:00:00 GMT"
+      "period_end_date": "2024-05-04"
     },
     {
-      "id": 10,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Sat, 03 Aug 2024 00:00:00 GMT"
+      "period_end_date": "2024-08-03"
     },
     {
-      "id": 11,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Sat, 02 Nov 2024 00:00:00 GMT"
+      "period_end_date": "2024-11-02"
     },
     {
-      "id": 1590,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Sat, 01 Feb 2025 00:00:00 GMT"
+      "period_end_date": "2025-02-01"
     },
     {
-      "id": 12,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Sat, 03 May 2025 00:00:00 GMT"
+      "period_end_date": "2025-05-03"
     },
     {
-      "id": 13,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Sat, 02 Aug 2025 00:00:00 GMT"
+      "period_end_date": "2025-08-02"
     },
     {
-      "id": 14,
+      "filing_type": "10-Q",
       "period": "Q3 2026",
-      "period_end_date": "Sat, 01 Nov 2025 00:00:00 GMT"
+      "period_end_date": "2025-11-01"
     },
     {
-      "id": 1591,
+      "filing_type": "10-K",
       "period": "Q4 2026",
-      "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT"
+      "period_end_date": "2026-01-31"
     },
     {
-      "id": 15,
+      "filing_type": "10-Q",
       "period": "Q1 2027",
-      "period_end_date": "Sat, 02 May 2026 00:00:00 GMT"
+      "period_end_date": "2026-05-02"
     },
     {
-      "id": 452,
+      "filing_type": "10-Q",
       "period": "Q2 2027",
-      "period_end_date": "Sat, 01 Aug 2026 00:00:00 GMT"
+      "period_end_date": "2026-08-01"
     }
   ],
   "ticker": "MRVL"

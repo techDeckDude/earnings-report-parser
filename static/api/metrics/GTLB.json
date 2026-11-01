@@ -550,94 +550,94 @@
   "name": "GITLAB INC.",
   "periods": [
     {
-      "id": 948,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT"
+      "period_end_date": "2022-04-30"
     },
     {
-      "id": 949,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT"
+      "period_end_date": "2022-07-31"
     },
     {
-      "id": 950,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Mon, 31 Oct 2022 00:00:00 GMT"
+      "period_end_date": "2022-10-31"
     },
     {
-      "id": 1486,
+      "filing_type": "10-K",
       "period": "Q4 2023",
-      "period_end_date": "Tue, 31 Jan 2023 00:00:00 GMT"
+      "period_end_date": "2023-01-31"
     },
     {
-      "id": 951,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
+      "period_end_date": "2023-04-30"
     },
     {
-      "id": 952,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Mon, 31 Jul 2023 00:00:00 GMT"
+      "period_end_date": "2023-07-31"
     },
     {
-      "id": 953,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Tue, 31 Oct 2023 00:00:00 GMT"
+      "period_end_date": "2023-10-31"
     },
     {
-      "id": 1487,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Wed, 31 Jan 2024 00:00:00 GMT"
+      "period_end_date": "2024-01-31"
     },
     {
-      "id": 1282,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Tue, 30 Apr 2024 00:00:00 GMT"
+      "period_end_date": "2024-04-30"
     },
     {
-      "id": 1283,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Wed, 31 Jul 2024 00:00:00 GMT"
+      "period_end_date": "2024-07-31"
     },
     {
-      "id": 1284,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Thu, 31 Oct 2024 00:00:00 GMT"
+      "period_end_date": "2024-10-31"
     },
     {
-      "id": 1488,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Fri, 31 Jan 2025 00:00:00 GMT"
+      "period_end_date": "2025-01-31"
     },
     {
-      "id": 954,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Wed, 30 Apr 2025 00:00:00 GMT"
+      "period_end_date": "2025-04-30"
     },
     {
-      "id": 955,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Thu, 31 Jul 2025 00:00:00 GMT"
+      "period_end_date": "2025-07-31"
     },
     {
-      "id": 956,
+      "filing_type": "10-Q",
       "period": "Q3 2026",
-      "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT"
+      "period_end_date": "2025-10-31"
     },
     {
-      "id": 1490,
+      "filing_type": "10-K",
       "period": "Q4 2026",
-      "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT"
+      "period_end_date": "2026-01-31"
     },
     {
-      "id": 957,
+      "filing_type": "10-Q",
       "period": "Q1 2027",
-      "period_end_date": "Thu, 30 Apr 2026 00:00:00 GMT"
+      "period_end_date": "2026-04-30"
     },
     {
-      "id": 958,
+      "filing_type": "10-Q",
       "period": "Q2 2027",
-      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
+      "period_end_date": "2026-07-31"
     }
   ],
   "ticker": "GTLB"

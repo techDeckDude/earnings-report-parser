@@ -816,149 +816,149 @@
   "name": "ANALOG DEVICES INC",
   "periods": [
     {
-      "id": 74,
+      "filing_type": "10-Q",
       "period": "Q2 2019",
-      "period_end_date": "Sat, 04 May 2019 00:00:00 GMT"
+      "period_end_date": "2019-05-04"
     },
     {
-      "id": 75,
+      "filing_type": "10-Q",
       "period": "Q3 2019",
-      "period_end_date": "Sat, 03 Aug 2019 00:00:00 GMT"
+      "period_end_date": "2019-08-03"
     },
     {
-      "id": 76,
+      "filing_type": "10-Q",
       "period": "Q1 2020",
-      "period_end_date": "Sat, 01 Feb 2020 00:00:00 GMT"
+      "period_end_date": "2020-02-01"
     },
     {
-      "id": 77,
+      "filing_type": "10-Q",
       "period": "Q2 2020",
-      "period_end_date": "Sat, 02 May 2020 00:00:00 GMT"
+      "period_end_date": "2020-05-02"
     },
     {
-      "id": 78,
+      "filing_type": "10-Q",
       "period": "Q3 2020",
-      "period_end_date": "Sat, 01 Aug 2020 00:00:00 GMT"
+      "period_end_date": "2020-08-01"
     },
     {
-      "id": 1358,
+      "filing_type": "10-K",
       "period": "Q4 2020",
-      "period_end_date": "Sat, 31 Oct 2020 00:00:00 GMT"
+      "period_end_date": "2020-10-31"
     },
     {
-      "id": 79,
+      "filing_type": "10-Q",
       "period": "Q1 2021",
-      "period_end_date": "Sat, 30 Jan 2021 00:00:00 GMT"
+      "period_end_date": "2021-01-30"
     },
     {
-      "id": 80,
+      "filing_type": "10-Q",
       "period": "Q2 2021",
-      "period_end_date": "Sat, 01 May 2021 00:00:00 GMT"
+      "period_end_date": "2021-05-01"
     },
     {
-      "id": 81,
+      "filing_type": "10-Q",
       "period": "Q3 2021",
-      "period_end_date": "Sat, 31 Jul 2021 00:00:00 GMT"
+      "period_end_date": "2021-07-31"
     },
     {
-      "id": 1359,
+      "filing_type": "10-K",
       "period": "Q4 2021",
-      "period_end_date": "Sat, 30 Oct 2021 00:00:00 GMT"
+      "period_end_date": "2021-10-30"
     },
     {
-      "id": 82,
+      "filing_type": "10-Q",
       "period": "Q1 2022",
-      "period_end_date": "Sat, 29 Jan 2022 00:00:00 GMT"
+      "period_end_date": "2022-01-29"
     },
     {
-      "id": 83,
+      "filing_type": "10-Q",
       "period": "Q2 2022",
-      "period_end_date": "Sat, 30 Apr 2022 00:00:00 GMT"
+      "period_end_date": "2022-04-30"
     },
     {
-      "id": 84,
+      "filing_type": "10-Q",
       "period": "Q3 2022",
-      "period_end_date": "Sat, 30 Jul 2022 00:00:00 GMT"
+      "period_end_date": "2022-07-30"
     },
     {
-      "id": 1360,
+      "filing_type": "10-K",
       "period": "Q4 2022",
-      "period_end_date": "Sat, 29 Oct 2022 00:00:00 GMT"
+      "period_end_date": "2022-10-29"
     },
     {
-      "id": 85,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Sat, 28 Jan 2023 00:00:00 GMT"
+      "period_end_date": "2023-01-28"
     },
     {
-      "id": 86,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Sat, 29 Apr 2023 00:00:00 GMT"
+      "period_end_date": "2023-04-29"
     },
     {
-      "id": 87,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Sat, 29 Jul 2023 00:00:00 GMT"
+      "period_end_date": "2023-07-29"
     },
     {
-      "id": 1361,
+      "filing_type": "10-K",
       "period": "Q4 2023",
-      "period_end_date": "Sat, 28 Oct 2023 00:00:00 GMT"
+      "period_end_date": "2023-10-28"
     },
     {
-      "id": 88,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Sat, 03 Feb 2024 00:00:00 GMT"
+      "period_end_date": "2024-02-03"
     },
     {
-      "id": 89,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Sat, 04 May 2024 00:00:00 GMT"
+      "period_end_date": "2024-05-04"
     },
     {
-      "id": 90,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Sat, 03 Aug 2024 00:00:00 GMT"
+      "period_end_date": "2024-08-03"
     },
     {
-      "id": 1362,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Sat, 02 Nov 2024 00:00:00 GMT"
+      "period_end_date": "2024-11-02"
     },
     {
-      "id": 91,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Sat, 01 Feb 2025 00:00:00 GMT"
+      "period_end_date": "2025-02-01"
     },
     {
-      "id": 92,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Sat, 03 May 2025 00:00:00 GMT"
+      "period_end_date": "2025-05-03"
     },
     {
-      "id": 93,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Sat, 02 Aug 2025 00:00:00 GMT"
+      "period_end_date": "2025-08-02"
     },
     {
-      "id": 1363,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Sat, 01 Nov 2025 00:00:00 GMT"
+      "period_end_date": "2025-11-01"
     },
     {
-      "id": 94,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT"
+      "period_end_date": "2026-01-31"
     },
     {
-      "id": 95,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Sat, 02 May 2026 00:00:00 GMT"
+      "period_end_date": "2026-05-02"
     },
     {
-      "id": 96,
+      "filing_type": "10-Q",
       "period": "Q3 2026",
-      "period_end_date": "Sat, 01 Aug 2026 00:00:00 GMT"
+      "period_end_date": "2026-08-01"
     }
   ],
   "ticker": "ADI"

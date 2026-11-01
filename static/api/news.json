@@ -2,6 +2,802 @@
   {
     "headlines": [
       {
+        "headline": "NextDC Slashes FY27 Guidance, Sending Shares Lower Amid AI Data Center Spending Scrutiny",
+        "published_date": "Fri, 23 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Negative",
+        "sentiment_score": -2,
+        "source": "Market Index ASX 200 Live \u2013 October 23, 2026",
+        "stocks_mentioned": [
+          "NXT"
+        ],
+        "summary": "NextDC (ASX: NXT), an Australian AI data center operator, slashed its FY27 guidance on October 23 \u2014 a confirmed downside event representing a direct and disclosed reduction in expected future revenues. This warrants a -2 score as lowered guidance is a confirmed negative earnings impact.",
+        "url": "https://marketindex.com.au/news/asx-200-live-today-friday-23rd-october",
+        "url_verified": true
+      },
+      {
+        "headline": "Lockheed Martin Surges 4% After Q3 Earnings Per Share and Revenue Beat; Full-Year EPS Guidance Raised",
+        "published_date": "Fri, 23 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Charles Schwab Market Update \u2013 Tech Falters, Yields Slump on Oil, Meta's Spending",
+        "stocks_mentioned": [
+          "LMT"
+        ],
+        "summary": "Lockheed Martin confirmed an earnings beat on both EPS and revenue, and raised its full-year fiscal 2026 EPS guidance. This is a confirmed positive revenue and earnings outcome. Note: URL points to a general Schwab market update page rather than a dedicated article; url_verified set to false.",
+        "url": "https://www.schwab.com/learn/story/stock-market-update-open",
+        "url_verified": false
+      },
+      {
+        "headline": "Stock Futures Trade Mixed on Friday as AI Spending Woes Weigh: Nvidia, AMD, Alphabet, CoreWeave, and Dell Decline Pre-Market",
+        "published_date": "Fri, 23 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "CNBC \u2013 Stock Market Live Updates, October 23, 2026",
+        "stocks_mentioned": [
+          "NVDA",
+          "AMD",
+          "GOOGL",
+          "CRWV",
+          "DELL",
+          "ARM",
+          "MRVL",
+          "AMAT",
+          "INTC"
+        ],
+        "summary": "US equity futures traded mixed on Friday October 23 as AI spending concerns lingered from the prior session's selloff. Pre-market declines were seen across Nvidia, AMD, Alphabet, CoreWeave, Dell, Arm Holdings, Marvell, Applied Materials, and Intel. The downside is potential \u2014 driven by investor concern over AI capex returns \u2014 and no confirmed company-level revenue misses are reported in this article.",
+        "url": "https://www.cnbc.com/2026/10/22/stock-market-today-live-update.html",
+        "url_verified": true
+      },
+      {
+        "headline": "South Korean Chip Stocks Hit Hard: Samsung and SK Hynix Each Fall Over 4% as KOSPI Tumbles in AI Selloff",
+        "published_date": "Fri, 23 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Market Index ASX 200 Live \u2013 October 23, 2026",
+        "stocks_mentioned": [
+          "SSNLF",
+          "HXSCL"
+        ],
+        "summary": "Samsung Electronics and SK Hynix each fell more than 4% on October 23 as the AI-driven selloff spread to South Korean chipmakers. Foreign investors sold $13B of Kospi shares in October, mostly in tech. The declines reflect a potential downside risk tied to fears of slowing AI infrastructure demand, with no confirmed revenue impact yet reported.",
+        "url": "https://marketindex.com.au/news/asx-200-live-today-friday-23rd-october",
+        "url_verified": true
+      },
+      {
+        "headline": "US IPO Market Stalls as AI Jitters and Rising Rates Drain Risk Appetite Ahead of Anthropic's Expected November Debut",
+        "published_date": "Fri, 23 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Market Index ASX 200 Live \u2013 October 23, 2026",
+        "stocks_mentioned": [],
+        "summary": "The US IPO pipeline has frozen outside of Anthropic's expected November listing, as the AI selloff and higher interest rates suppress risk appetite. This represents a potential downside for AI companies awaiting public market entry, as a chilled IPO environment could reduce near-term capital formation opportunities. No specific company revenue impact is confirmed.",
+        "url": "https://marketindex.com.au/news/asx-200-live-today-friday-23rd-october",
+        "url_verified": true
+      },
+      {
+        "headline": "Global AI Stock Selloff Continues: Nasdaq 100 Falls 2.9%, Nikkei and KOSPI Slide as AI Spending Fears Spread Worldwide",
+        "published_date": "Fri, 23 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "ABC News Australia \u2013 Markets Live, October 23, 2026",
+        "stocks_mentioned": [
+          "META",
+          "MSFT",
+          "AMZN",
+          "GOOGL"
+        ],
+        "summary": "Global equity markets extended the AI-driven selloff on October 23, with the Nasdaq 100 down 2.9%, Nikkei -0.9%, and KOSPI -1.1%. Investor concerns center on whether the ~$804B in AI capex by hyperscalers will generate sufficient returns, representing a potential downside risk to future earnings for Meta, Microsoft, Amazon, and Alphabet. Impact is potential, not yet confirmed.",
+        "url": "https://abc.net.au/news/2026-10-23/asx-markets-business-news-live-updates-oct-23/107291840",
+        "url_verified": true
+      },
+      {
+        "headline": "Tesla Falls 3% Despite Q3 Earnings Beat as Investors Focus on Heavier Spending Shift to Later Years",
+        "published_date": "Fri, 23 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Market Index ASX 200 Live \u2013 October 23, 2026",
+        "stocks_mentioned": [
+          "TSLA"
+        ],
+        "summary": "Tesla's Q3 earnings beat expectations (confirmed upside on profit), but investors focused on forward spending shifts, causing shares to fall 3%. The confirmed earnings beat supports a positive score, though the forward spending concern introduces uncertainty. Net impact: confirmed revenue beat = potential ongoing positive, offset by market reaction to heavier investment timeline.",
+        "url": "https://marketindex.com.au/news/asx-200-live-today-friday-23rd-october",
+        "url_verified": true
+      },
+      {
+        "headline": "SpaceX Posts First Quarterly Profit as Public Company, Beats Revenue Estimates with $14.6B \u2014 AI Revenue Also Surpasses Expectations",
+        "published_date": "Fri, 23 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Macnicolas Asset Management \u2013 The Weekly Beacon",
+        "stocks_mentioned": [
+          "SPCX"
+        ],
+        "summary": "Confirmed earnings beat: SpaceX reported its first quarterly profit ($4.4B) as a public company, with revenue of $14.6B well ahead of the $12.9B Street estimate. AI revenue also beat estimates. This is a confirmed positive revenue and earnings outcome.",
+        "url": "https://macnicolasset.com/the-weekly-beacon-october-23-2026/",
+        "url_verified": true
+      },
+      {
+        "headline": "Nasdaq Futures Drop Over 1% as AI Spending Concerns Resurface After Tesla and Meta Earnings Disappoint Market",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Reuters / U.S. News",
+        "stocks_mentioned": [
+          "TSLA",
+          "META"
+        ],
+        "summary": "Macro index movement driven by broad AI spending sentiment \u2014 no company-specific confirmed revenue or earnings impact beyond what is captured in individual earnings entries. Index-level moves carry no direct revenue signal.",
+        "url": "https://money.usnews.com/investing/news/articles/2026-10-22/nasdaq-futures-drop-over-1-as-ai-worries-resurface-oil-climbs",
+        "url_verified": true
+      },
+      {
+        "headline": "DeepSeek Reportedly Raises $15 Billion Just Days After U.S. Agencies Ordered Removal of Its AI Technology",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TechCrunch",
+        "stocks_mentioned": [],
+        "summary": "Potential upside for DeepSeek (private): the $15B funding round signals strong investor confidence and expands compute capacity, but money raised is not revenue \u2014 impact is potential. U.S. restrictions introduce a parallel competitive threat to U.S. AI firms.",
+        "url": "https://techcrunch.com/2026/10/22/deepseek-reportedly-raises-15b-days-after-us-restrictions",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Stocks Tumble Broadly as Lam Research Warning and Meta Spending Fears Weigh; Nasdaq Drops Over 1%",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Washington Times / Reuters (via US News)",
+        "stocks_mentioned": [
+          "NVDA",
+          "META",
+          "CRWV"
+        ],
+        "summary": "Potential downside: Broad AI sector selloff driven by Lam Research supply warning and Meta's higher capex outlook, with Nasdaq futures falling over 1%. CoreWeave (CRWV) cited as particularly pressured amid rising debt financing costs. Sector-wide de-rating represents a potential threat to near-term valuations and fundraising for AI-linked companies.",
+        "url": "https://www.washingtontimes.com/news/2026/oct/22/sinking-ai-stocks-undercutting-markets-worldwide-oil-climbs-highest/",
+        "url_verified": true
+      },
+      {
+        "headline": "Bloom Energy Reports Record Q3 Revenue of $1.24B (+138% YoY), Raises Full-Year 2026 Guidance to $4.4B\u2013$4.6B",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "SEC (Form 8-K) / FourWeekMBA",
+        "stocks_mentioned": [
+          "BE"
+        ],
+        "summary": "Confirmed upside: Bloom Energy posted record quarterly revenue of $1,235.8M (up 138.1% YoY) and raised its full-year 2026 guidance to $4.4B\u2013$4.6B, representing ~122% YoY growth at the midpoint \u2014 third consecutive quarterly guidance raise in 2026, driven by AI data center power demand.",
+        "url": "https://www.sec.gov/Archives/edgar/data/0001664703/000162828026066890/ex991_q326financialresults.htm",
+        "url_verified": true
+      },
+      {
+        "headline": "Lam Research Shares Sink ~10% After Q4 Revenue Guidance Misses Buy-Side Expectations on Supply Chain Constraints",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "247 Wall St. / GuruFocus",
+        "stocks_mentioned": [
+          "LRCX",
+          "AMAT",
+          "ASML"
+        ],
+        "summary": "Potential downside confirmed: Lam Research's Q4 revenue guidance of $8.6B missed elevated buy-side expectations; supply chain constraints cited as capping near-term shipments. Stock fell ~10%, dragging Applied Materials (\u22126%) and ASML (\u22124%) lower. Guidance formally met Wall Street consensus but fell short of buy-side whisper numbers.",
+        "url": "https://247wallst.com/investing/2026/10/22/lam-research-sinks-9-as-supply-constraints-cap-outlook-applied-materials-drops-6-asml-holding-falls-4/",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta Stock Sinks Nearly 7% as AI Spend Pushes Free Cash Flow Negative",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Potential downside: despite a revenue beat, Meta's free cash flow turned negative due to accelerating AI capex ($135B\u2013$145B full-year range), raising concerns about earnings sustainability \u2014 impact is potential, as capex trajectory may pressure future margins.",
+        "url": "https://cnbc.com/2026/10/22/meta-stock-q3-earnings-free-cash-flow.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Sinking AI Stocks Undercut Markets Worldwide as Oil Climbs to Highest Price Since May",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Associated Press / Washington Times",
+        "stocks_mentioned": [
+          "NVDA",
+          "AMD",
+          "CRWV"
+        ],
+        "summary": "Potential downside: broad AI-sector sell-off driven by concerns over rising borrowing costs for data center buildout and AI chip demand sustainability \u2014 no confirmed revenue decline yet, but elevated risk to near-term earnings for AI infrastructure names.",
+        "url": "https://www.washingtontimes.com/news/2026/oct/22/sinking-ai-stocks-undercutting-markets-worldwide-oil-climbs-highest/",
+        "url_verified": true
+      },
+      {
+        "headline": "Lam Research Shares Drop 9% After Disappointing Q4 Forecast Amid Supply Chain Concerns",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "GuruFocus / 247 Wall St.",
+        "stocks_mentioned": [
+          "LRCX",
+          "AMAT"
+        ],
+        "summary": "Potential downside: Lam Research's December-quarter guidance missed investor expectations due to supply chain constraints, prompting analyst price-target cuts from Needham and Morgan Stanley \u2014 guidance miss confirmed, but supply disruption impact on full-year revenue is potential, not yet realized.",
+        "url": "https://www.gurufocus.com/news/9136774/lam-research-lrcx-shares-drop-9-after-disappointing-q4-forecast-amid-supply-chain-concerns",
+        "url_verified": true
+      },
+      {
+        "headline": "Nasdaq Falls More Than 2% for Worst Day Since June as AI Spending Woes, Oil Prices Spark Sell-Off",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "META",
+          "AMD",
+          "MU",
+          "NVDA",
+          "CRWV"
+        ],
+        "summary": "Potential downside: renewed AI spending concern drove a broad market sell-off; no single confirmed revenue miss, but specific AI-linked stocks fell 4\u201310%, signaling elevated risk to future earnings across the sector.",
+        "url": "https://www.cnbc.com/2026/10/21/stock-market-today-live-updates.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Dow Jumps 500 Points as Earnings Optimism Steadies Market; AI-Related Stocks Stage Comeback",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "WDC",
+          "STX",
+          "CRWV",
+          "MRVL"
+        ],
+        "summary": "Broad market macro commentary on Oct 20\u201322 index moves driven by general earnings optimism; no company-specific confirmed or potential revenue impact from this macro-level piece. Western Digital and Seagate gained over 2\u20133%, CoreWeave and Marvell each up over 1%, but movement attributed to index sentiment rather than company-specific news.",
+        "url": "https://www.cnbc.com/2026/10/19/stock-market-today-live-updates.html",
+        "url_verified": false
+      },
+      {
+        "headline": "Meta Raises Full-Year 2026 Capex Guidance to $135\u2013$145B, Plans New Class C Stock to Fund AI Build",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "StockTitan / Bloomberg",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Meta narrowed and raised its 2026 capital expenditure guidance to $135\u2013$145B and announced a new Class C non-voting share class to finance AI infrastructure spending. The capex increase and share structure change are capital allocation decisions with no direct confirmed revenue or earnings impact; the revenue beat is captured in the separate Meta Q3 earnings headline.",
+        "url": "https://www.stocktitan.net/articles/meta-q3-2026-earnings-results",
+        "url_verified": true
+      },
+      {
+        "headline": "Stocks Climb in Late Hours on Meta's Big AI Wagers as Tesla Profit Beat Eases Concerns",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "META",
+          "TSLA"
+        ],
+        "summary": "Broad market sentiment improved after-hours as Meta raised its AI capex outlook and reported a revenue beat, and Tesla's profit came in above estimates. Potential positive spill-over for AI-related equities, though the confirmed impact is only at the individual company level rather than a sector-wide earnings confirmation.",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-20/stock-market-today-dow-s-p-live-updates",
+        "url_verified": true
+      },
+      {
+        "headline": "Tesla Q3 FY2026 Earnings Beat Estimates; Adjusted EPS $0.48 vs. $0.44 Forecast",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Alphastreet / CNBC",
+        "stocks_mentioned": [
+          "TSLA"
+        ],
+        "summary": "Tesla confirmed an adjusted EPS beat ($0.48 vs. $0.44 estimate) and positive free cash flow of $1.5B for Q3 2026, potentially alleviating concerns about AI and robotics spending. However, net income fell 43% YoY, automotive revenue declined 3%, and revenue was roughly flat \u2014 making the confirmed upside modest rather than decisive. Score reflects a real beat with significant offsetting negatives.",
+        "url": "https://news.alphastreet.com/tesla-q3-fy26-earnings-decline-but-beat-estimates/",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta Beats Q3 2026 Estimates as AI Push Lifts Shares; Q4 Revenue Guided to $73\u2013$76B",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Investing.com",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Meta reported confirmed Q3 2026 revenue of $64.6B (+26% YoY), beating the $63.34B consensus estimate, with EPS of $3.83 topping the $3.57 forecast. Q4 revenue was guided to $73\u2013$76B. A $9.9B legal charge weighed on reported operating income but did not alter the revenue beat and raised forward guidance \u2014 impact is confirmed positive on revenue and earnings.",
+        "url": "https://www.investing.com/news/transcripts/earnings-call-transcript-meta-beats-q3-2026-estimates-as-ai-push-lifts-shares-93CH-4964260",
+        "url_verified": true
+      },
+      {
+        "headline": "Supermicro Raises Q1 Revenue Forecast on AI Platform Demand",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Investing.com",
+        "stocks_mentioned": [
+          "SMCI"
+        ],
+        "summary": "Super Micro Computer officially raised its Q1 FY2027 preliminary revenue outlook to $18.5\u2013$19.5B from prior guidance of $14.5\u2013$15.5B, and lifted gross margin guidance to 12.0\u201312.5% from 10.4\u201310.8%. Confirmed upside to revenue and margins driven by AI platform demand.",
+        "url": "https://www.investing.com/news/company-news/supermicro-raises-q1-revenue-forecast-on-ai-platform-demand-93CH-4961110",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Stocks Rally After Super Micro Preliminary Sales Bring Relief",
+        "published_date": "Thu, 22 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "SMCI",
+          "DELL",
+          "HPE",
+          "CRWV"
+        ],
+        "summary": "Super Micro Computer confirmed preliminary Q1 FY2027 revenue of $18.5\u2013$19.5B versus prior guidance of $14.5\u2013$15.5B \u2014 a confirmed upside revision that lifted AI server peers including Dell (+5%), HPE (+5%), and CoreWeave (+4.5%). Impact is confirmed via official preliminary release.",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-20/ai-stocks-rally-after-super-micro-preliminary-sales-bring-relief",
+        "url_verified": true
+      },
+      {
+        "headline": "CoreWeave's Market Confidence Erodes as Bond Yields Spike Near 16% and Stock Sinks 36% in October",
+        "published_date": "Wed, 21 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "CRWV"
+        ],
+        "summary": "Potential downside: CoreWeave's bond yields near 15\u201316% and CDS at distressed levels signal mounting refinancing risk and a potential AI debt crisis \u2014 no confirmed revenue miss yet, but material threat to future financing and operations.",
+        "url": "https://www.cnbc.com/2026/10/21/coreweaves-market-confidence-erodes-as-bond-yields-spike-stock-sinks.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Tesla's Lowered Capex Plan Fuels Doubt on AI and Robotics Goals After Cutting Forecast to ~$20B from $25B+",
+        "published_date": "Wed, 21 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "TSLA"
+        ],
+        "summary": "Confirmed capex reduction to ~$20B from prior guidance of >$25B raises potential downside to Tesla's AI, Optimus robotics, and Cybercab product timelines \u2014 impact on future revenue is potential, not yet confirmed.",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-21/tesla-s-third-quarter-earnings-beat-wall-street-estimates",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta Reports Q3 Revenue Beat of $64.6B and Issues Strong Q4 Guidance Above Analyst Estimates",
+        "published_date": "Wed, 21 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Confirmed revenue beat ($64.6B vs. $63.37B est.) and Q4 guidance midpoint of $74.5B above analyst consensus of $73.73B \u2014 direct confirmed upside to revenue and earnings.",
+        "url": "https://www.cnbc.com/2026/10/21/meta-earnings-q3-2026-live-updates.html",
+        "url_verified": true
+      },
+      {
+        "headline": "ASI Raises $325M Series C at $3B Valuation to Deploy Predictive AI in Critical Infrastructure",
+        "published_date": "Wed, 21 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Tech Startups",
+        "stocks_mentioned": [],
+        "summary": "Potential upside: Boston-based ASI raised $325M in Series C equity at a $3B valuation, backed by Spark Capital, Andreessen Horowitz, and Citadel Securities affiliates, to expand predictive AI for critical infrastructure and national security. Funding signals investor confidence but does not directly confirm revenue.",
+        "url": "https://techstartups.com/2026/10/21/startup-funding-news-today-october-21-2026-asi-baba-pigment-eka-robotics-otter-ai-more",
+        "url_verified": true
+      },
+      {
+        "headline": "Tesla Beats Q3 2026 EPS Estimates; Automotive Revenue Declines 3% YoY",
+        "published_date": "Wed, 21 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "TSLA"
+        ],
+        "summary": "Confirmed EPS beat ($0.48 vs. $0.45 expected), but automotive revenue declined 3% YoY and operating income fell 56%. Mixed results with a slight confirmed upside on earnings, partially offset by revenue weakness and reduced FY26 capex guidance.",
+        "url": "https://www.cnbc.com/2026/10/21/tesla-tsla-q3-2026-earnings-report.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta Reports Q3 2026 Revenue Beat and Issues Strong Q4 Guidance",
+        "published_date": "Wed, 21 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Confirmed revenue beat: Meta posted $64.6B in Q3 revenue vs. $63.37B expected (26% YoY growth), and Q4 guidance midpoint of $74.5B exceeded analyst consensus of $73.73B \u2014 both confirmed upside to revenue and earnings.",
+        "url": "https://www.cnbc.com/2026/10/21/meta-earnings-q3-2026-live-updates.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Tesla Beats on Earnings and Sales Even as Auto Revenue Declines",
+        "published_date": "Wed, 21 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "TSLA"
+        ],
+        "summary": "Potential upside: Tesla beat Q3 EPS ($0.48 vs. $0.43 est.) and revenue ($28.05B vs. $27.9B est.), but automotive revenue fell 3% YoY and energy revenue dropped 16% \u2014 headline beat is confirmed, but core revenue declines and continued AI/robotics spend create uncertainty on sustained earnings improvement.",
+        "url": "https://www.cnbc.com/2026/10/21/tesla-tsla-q3-2026-earnings-report.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta Reports Third-Quarter Revenue Beat and Issues Strong Q4 Guidance",
+        "published_date": "Wed, 21 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Confirmed upside: Meta posted Q3 revenue of $64.60B vs. $63.37B estimated (26% YoY growth) and issued Q4 guidance of $73B\u2013$76B above analyst consensus of $73.73B \u2014 both a confirmed revenue beat and raised forward guidance.",
+        "url": "https://www.cnbc.com/2026/10/21/meta-earnings-q3-2026-live-updates.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta Announces 2-for-1 Stock Split Alongside Q3 2026 Earnings to Help Zuckerberg Retain Control While Financing AI Buildout",
+        "published_date": "Wed, 21 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Yahoo Finance",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Neutral: The 2-for-1 stock split and new Class C share structure are corporate governance and capital structure actions with no direct confirmed impact on Meta's revenue or earnings. The announcement was made alongside the earnings beat (scored separately) but is itself a structural event.",
+        "url": "https://finance.yahoo.com/markets/stocks/live/meta-earnings-live-meta-q3-earnings-to-test-wall-streets-stomach-for-ai-spending-173000302.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Meta Beats Q3 2026 Revenue Expectations at $64.6B (+26% YoY), Issues Above-Consensus Q4 Guidance of $73B\u2013$76B",
+        "published_date": "Wed, 21 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "META"
+        ],
+        "summary": "Confirmed upside: Meta reported Q3 revenue of $64.6B, beating the $63.37B consensus estimate and its own $61B\u2013$64B guidance range, with Q4 revenue guidance midpoint of $74.5B also above analyst estimates \u2014 direct, confirmed revenue beat with strong forward guidance.",
+        "url": "https://www.cnbc.com/2026/10/21/meta-earnings-q3-2026-live-updates.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Town AI Raises $108M Series B at $1B Valuation to Expand AI Assistants for Businesses",
+        "published_date": "Tue, 20 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "AI Agents Directory / Tech Funding News",
+        "stocks_mentioned": [],
+        "summary": "Potential upside: Town AI (private) secured $108M in Series B funding at a $1B+ valuation to scale enterprise AI assistants. Funding is not yet revenue \u2014 score reflects investor confidence and potential future growth, not a confirmed revenue event.",
+        "url": "https://aiagentsdirectory.com/news/ai-agents-news-brief-funding-security-and-development-tools-dominate",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Stocks Rally After Super Micro Preliminary Sales; Dell Jumps 7%, HPE Climbs 5%, CoreWeave and Nebius Rise 4.5%+",
+        "published_date": "Tue, 20 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "DELL",
+          "HPE",
+          "CRWV"
+        ],
+        "summary": "Potential upside: The SMCI preliminary beat triggered a broad AI hardware rally, with Dell, HPE, CoreWeave and Nebius posting significant intraday gains. These moves reflect market sentiment about the AI infrastructure cycle, not confirmed earnings beats for these companies \u2014 impact is potential, not confirmed.",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-20/ai-stocks-rally-after-super-micro-preliminary-sales-bring-relief",
+        "url_verified": true
+      },
+      {
+        "headline": "Super Micro Surges 12%+ as Preliminary Q1 Revenue of $18.5B\u2013$19.5B Blows Past $14.5B\u2013$15.5B Guidance",
+        "published_date": "Tue, 20 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Bloomberg / SEC 8-K",
+        "stocks_mentioned": [
+          "SMCI",
+          "DELL",
+          "HPE",
+          "NVDA"
+        ],
+        "summary": "Confirmed upside: Super Micro's preliminary fiscal Q1 FY2027 revenue of $18.5B\u2013$19.5B exceeded its own guidance of $14.5B\u2013$15.5B by ~$4B and gross margins of 12.0%\u201312.5% beat the guided 10.4%\u201310.8%, driven by confirmed AI platform demand \u2014 a direct, confirmed positive revenue impact.",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-20/super-micro-jumps-after-preliminary-results-top-estimates",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Funding Hits $2.42B as Modal Labs Closes $750M Round at $15.75B Valuation (Oct 12\u201318 Weekly Recap)",
+        "published_date": "Mon, 19 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "AI Funding Tracker / Bloomberg",
+        "stocks_mentioned": [],
+        "summary": "Potential upside: Modal Labs (private) confirmed a $750M raise at a $15.75B valuation \u2014 a funding round signals investor confidence in AI inference infrastructure but is not direct revenue; impact is potential.",
+        "url": "https://www.bloomberg.com/news/videos/2026-10-14/modal-ceo-ai-has-entered-a-new-era-of-software-video",
+        "url_verified": true
+      },
+      {
+        "headline": "Nscale and Anthropic in Talks for Second ~$45 Billion AI Cloud Computing Deal at West Virginia Campus",
+        "published_date": "Mon, 19 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Potential upside: Nscale and Anthropic are in active talks \u2014 not yet closed \u2014 for a second ~$45B compute deal; Nvidia (NVDA) indirectly benefits as Nscale is Nvidia-backed and the facility will run Nvidia Vera Rubin chips. Revenue impact is potential until deal is signed.",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-19/nscale-anthropic-in-talks-for-45-billion-cloud-computing-deal",
+        "url_verified": true
+      },
+      {
+        "headline": "Nscale and Anthropic in Talks for Second $45 Billion AI Compute Deal at West Virginia Data Center",
+        "published_date": "Mon, 19 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Potential upside: Talks are ongoing (not yet closed) for a second ~$45B compute agreement between Nscale and Anthropic for a new facility at Monarch campus in West Virginia using Nvidia Vera Rubin chips. Deal not yet finalized \u2014 potential revenue impact for Nscale (private) and Nvidia (chip supplier). Score reflects potential, not confirmed, contract value.",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-19/nscale-anthropic-in-talks-for-45-billion-cloud-computing-deal",
+        "url_verified": true
+      },
+      {
+        "headline": "Nvidia-Backed Nscale and Anthropic in Talks for a Second ~$45B AI Cloud Computing Deal at West Virginia Monarch Campus",
+        "published_date": "Mon, 19 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg / Reuters / TechCrunch",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Potential upside: Talks are ongoing and no deal has been finalized; if closed, it would represent a second ~$45B compute contract for Nscale (private) using Nvidia Vera Rubin chips. Nvidia (NVDA) is cited as a backer of Nscale, giving it indirect exposure. Impact is potential \u2014 not yet confirmed \u2014 and Nscale has not yet secured financing for even its first Anthropic deal.",
+        "url": "https://www.bloomberg.com/news/articles/2026-10-19/nscale-anthropic-in-talks-for-45-billion-cloud-computing-deal",
+        "url_verified": true
+      },
+      {
+        "headline": "Tenstorrent Raises $1.5B Series E at $6.2B Valuation to Scale AI Compute, Led by Trace Capital and Innovation X",
+        "published_date": "Mon, 19 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "TechCrunch / Reuters",
+        "stocks_mentioned": [],
+        "summary": "Potential upside: Tenstorrent (private) closed a $1.5B Series E to fund Galaxy server manufacturing and global expansion \u2014 a funding round signals investor confidence but does not constitute confirmed revenue. No publicly traded tickers directly named; NVDA is a prior backer but not cited as participating in this round.",
+        "url": "https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/",
+        "url_verified": true
+      }
+    ],
+    "period": "Oct 19 \u2013 Oct 25, 2026",
+    "summary_stats": {
+      "net_sentiment_label": "Positive",
+      "score_distribution": {
+        "-1": 12,
+        "-2": 1,
+        "0": 4,
+        "1": 14,
+        "2": 11
+      },
+      "total_headlines": 42,
+      "weighted_sentiment": 0.5
+    },
+    "week_end": "2026-10-25",
+    "week_start": "2026-10-19"
+  },
+  {
+    "headlines": [
+      {
+        "headline": "Cracks Appearing in AI Stock Market as Anthropic Quarterly Revenue Growth Slows and Data Center Bond Selloff Intensifies",
+        "published_date": "Thu, 15 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "NBC News",
+        "stocks_mentioned": [],
+        "summary": "Potential downside: The article reports that Anthropic's quarterly revenue growth has slowed (per FT) and that investors are selling bonds backing AI data centers over fears that AI revenues won't cover borrowing costs \u2014 these are potential signals of weakening AI demand but no confirmed earnings miss or guidance cut from a specific public company is cited.",
+        "url": "https://www.nbcnews.com/business/markets/stock-market-ai-data-centers-doubts-rcna603710",
+        "url_verified": true
+      },
+      {
+        "headline": "CoreWeave Shares Tumble 15.5% as Bond Yields Near 15% on AI Borrowing Binge Concerns",
+        "published_date": "Wed, 14 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "CRWV",
+          "ORCL"
+        ],
+        "summary": "Potential downside: CoreWeave's initial 15.5% single-day stock drop and bond yields surging near 15% reflect investor fears over AI debt load \u2014 no confirmed revenue miss, but the financing threat is a material potential negative for operations and growth.",
+        "url": "https://www.cnbc.com/2026/10/14/coreweave-stock-bond-yields-ai-debt.html",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Stocks Drop After Hot Inflation Report Bolsters Fed Rate Hike Bets; Nasdaq Falls 1.88%, S&P 500 Down 1.11%",
+        "published_date": "Wed, 14 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "CNN",
+        "stocks_mentioned": [],
+        "summary": "Neutral: Broad sector selloff driven by macroeconomic inflation data and Fed rate expectations \u2014 no company-specific revenue or earnings impact confirmed. The article covers index and sector moves without attributing declines to a specific company's fundamentals.",
+        "url": "https://www.cnn.com/2026/10/14/investing/us-stocks-ai-chipmakers",
+        "url_verified": true
+      }
+    ],
+    "period": "Oct 12 \u2013 Oct 18, 2026",
+    "summary_stats": {
+      "net_sentiment_label": "Negative",
+      "score_distribution": {
+        "-1": 2,
+        "-2": 0,
+        "0": 1,
+        "1": 0,
+        "2": 0
+      },
+      "total_headlines": 3,
+      "weighted_sentiment": -0.7
+    },
+    "week_end": "2026-10-18",
+    "week_start": "2026-10-12"
+  },
+  {
+    "headlines": [
+      {
+        "headline": "AI Companies Expected to Drive 31% Uptick in Q3 Corporate Earnings, Though Investors Question Longevity",
+        "published_date": "Sun, 11 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "PYMNTS / Reuters",
+        "stocks_mentioned": [],
+        "summary": "Neutral: This is a forward-looking analyst forecast about broad Q3 earnings trends, not a confirmed outcome for any specific company. No individual stock revenue impact is confirmed; the article is sector-level commentary.",
+        "url": "https://www.pymnts.com/news/artificial-intelligence/2026/ai-companies-expected-to-drive-31-uptick-in-q3-earnings/",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Stock Selloff Pulls Nasdaq Down 1.3%, S&P 500 Down 0.5%; Nvidia Falls Nearly 3%, ARM and Intel Among Biggest Decliners",
+        "published_date": "Thu, 08 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Yahoo Finance",
+        "stocks_mentioned": [
+          "NVDA",
+          "ARM",
+          "INTC",
+          "MU"
+        ],
+        "summary": "Neutral: This is a macro market summary of index-level declines driven by broad AI sentiment \u2014 not a company-specific confirmed revenue or earnings event. Intraday price moves in NVDA, ARM, INTC, and MU are cited but no earnings or guidance revision was reported.",
+        "url": "https://finance.yahoo.com/markets/stocks/articles/markets-news-oct-8-2026-105400965.html",
+        "url_verified": true
+      }
+    ],
+    "period": "Oct 05 \u2013 Oct 11, 2026",
+    "summary_stats": {
+      "net_sentiment_label": "Neutral",
+      "score_distribution": {
+        "-1": 0,
+        "-2": 0,
+        "0": 2,
+        "1": 0,
+        "2": 0
+      },
+      "total_headlines": 2,
+      "weighted_sentiment": 0.0
+    },
+    "week_end": "2026-10-11",
+    "week_start": "2026-10-05"
+  },
+  {
+    "headlines": [
+      {
+        "headline": "OpenAI Looking to Raise at Least $30 Billion at $1.4 Trillion Valuation After Delaying IPO to 2027",
+        "published_date": "Thu, 01 Oct 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Finimize",
+        "stocks_mentioned": [],
+        "summary": "OpenAI is seeking at least $30B in new private funding at a $1.4T valuation after pushing its IPO to 2027. This represents potential upside for AI infrastructure suppliers and cloud partners, but is a funding round \u2014 not confirmed revenue \u2014 so the impact is potential rather than confirmed.",
+        "url": "https://finimize.com/content/your-daily-brief-for-october-1st-2026",
+        "url_verified": true
+      },
+      {
+        "headline": "Nvidia Guides Q3 Gross Margin Down to ~74%, Warns of Further Compression to 71\u201372% in Q4 Amid AI Memory Scarcity",
+        "published_date": "Wed, 30 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Motley Fool (earnings guidance recap)",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Nvidia has guided Q3 gross margin down to ~74% from 75%, with further compression to 71\u201372% expected in Q4 due to AI-driven memory scarcity. This is a confirmed forward guidance reduction on margins \u2014 a potential downside to earnings profitability, scoring -1.",
+        "url": "https://www.fool.com/investing/stock-market/upcoming-earnings-reports/",
+        "url_verified": false
+      },
+      {
+        "headline": "AMD Q3 2026 Revenue Guidance of ~$13 Billion Surpasses Consensus as Data Center Demand Accelerates",
+        "published_date": "Wed, 30 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Very Positive",
+        "sentiment_score": 2,
+        "source": "Investing.com (ProPicks AI recap, citing AMD Q2 earnings report)",
+        "stocks_mentioned": [
+          "AMD"
+        ],
+        "summary": "AMD guided Q3 2026 revenue to ~$13B (+/-$300M), ahead of the $12.5B consensus estimate, following a confirmed record Q2 with $6.7B in data center revenue (up 107% YoY). The raised forward guidance represents a confirmed positive earnings and revenue outlook, warranting a +2 score.",
+        "url": "https://uk.investing.com/news/stock-market-news/after-a-210-return-a-new-list-of-aipicks-for-october-is-coming-tomorrow-4888904",
+        "url_verified": false
+      },
+      {
+        "headline": "Anthropic IPO Roadshow Shifts to Mid-October; Nasdaq Listing Now Targeted for November 2026 at Up to $2 Trillion Valuation",
+        "published_date": "Wed, 30 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Useluminix (citing CNBC and Reuters)",
+        "stocks_mentioned": [
+          "AMZN",
+          "GOOGL"
+        ],
+        "summary": "Anthropic's IPO roadshow has been pushed to mid-October with listing now targeting November 2026. Key backers Amazon (AMZN) and Alphabet/Google (GOOGL) stand to see potential valuation upside on their stakes. This is a potential impact \u2014 no confirmed revenue or earnings event has occurred yet.",
+        "url": "https://www.useluminix.com/reports/company-overviews/what-do-we-know-about-the-anthropic-ipo",
+        "url_verified": true
+      },
+      {
+        "headline": "Micron Technology Reports Fiscal Q4 2026 Earnings Today; Wall Street Expects ~$50.8B Revenue on AI Memory Boom",
+        "published_date": "Wed, 30 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Micron Investor Relations / Yahoo Finance",
+        "stocks_mentioned": [
+          "MU"
+        ],
+        "summary": "Micron's Q4 FY2026 earnings call is scheduled for Sept. 30 at 4pm EDT \u2014 results have not yet been reported as of this aggregation; consensus estimates call for ~$50.8B revenue and ~$31.5 EPS, representing potential 350%+ YoY growth. Score is neutral as no confirmed outcome exists yet.",
+        "url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-to-Report-Fiscal-Fourth-Quarter-Results-on-September-30-2026/default.aspx",
+        "url_verified": true
+      },
+      {
+        "headline": "Nscale Raises $3.4 Billion in Pre-IPO Financing Ahead of NYSE Listing Under Ticker NSCL",
+        "published_date": "Tue, 29 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Tahawul Tech (Bloomberg source)",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Nscale closed $3.4B in pre-IPO convertible financing led by Third Point, with $1B committed from Nvidia (NVDA). The company reports $103B in total contracted value and is targeting a ~$35B NYSE IPO valuation. Impact on Nvidia is potential \u2014 not confirmed revenue from this deal alone.",
+        "url": "https://www.tahawultech.com/business/finance/nscale-raises-3-4-billion-in-pre-ipo-financing/",
+        "url_verified": true
+      },
+      {
+        "headline": "Stocks Edge Up as Tech Rebounds; Investors Weigh Anthropic Prospectus and OpenAI Model Halt",
+        "published_date": "Tue, 29 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Charles Schwab Market Update",
+        "stocks_mentioned": [
+          "MSFT",
+          "GOOGL",
+          "AMZN"
+        ],
+        "summary": "A broad market update noting tech's Tuesday rebound alongside the twin macro catalysts of Anthropic's prospectus and OpenAI's model halt \u2014 this is macro/index-level commentary with no company-specific confirmed revenue or earnings impact; scored neutral.",
+        "url": "https://www.schwab.com/learn/story/stock-market-update-open",
+        "url_verified": true
+      },
+      {
+        "headline": "Anthropic IPO Prospectus Warns AI Models Could Pose 'Catastrophic or Existential Risks to Humanity'",
+        "published_date": "Tue, 29 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Forbes / TechCrunch",
+        "stocks_mentioned": [
+          "GOOGL",
+          "AMZN"
+        ],
+        "summary": "Anthropic's IPO filing devotes nearly a third of its pages to risk factors \u2014 including AI models exhibiting self-preservation, manipulation, and blackmail behaviors \u2014 which is a potential reputational and regulatory headwind for the broader AI sector and major Anthropic investors like Google (GOOGL) and Amazon (AMZN); impact is potential, not confirmed.",
+        "url": "https://www.forbes.com/sites/siladityaray/2026/09/28/anthropic-ipo-prospectus-warns-its-ai-could-pose-existential-risks-to-humanity/",
+        "url_verified": true
+      },
+      {
         "headline": "BCBSA Study Finds AI Coding Tools Added $942 Million in Costs to Member Plans Over Two Years",
         "published_date": "Tue, 29 Sep 2026 00:00:00 GMT",
         "sentiment_label": "Negative",
@@ -50,6 +846,60 @@
         ],
         "summary": "Nvidia's board authorized a $150B increase to its buyback program, raising the total to $235B through fiscal 2028. This is a capital return action \u2014 not a confirmed earnings beat or revenue report \u2014 representing potential shareholder value upside but not confirmed revenue or earnings impact.",
         "url": "https://nvidianews.nvidia.com/news/nvidia-announces-a-150-billion-share-repurchase-authorization-increase",
+        "url_verified": true
+      },
+      {
+        "headline": "AI Stocks Broadly Sell Off Monday as Rising Treasury Yields and Macro Pressure Weigh on Sector",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "CNBC",
+        "stocks_mentioned": [
+          "META",
+          "NVDA"
+        ],
+        "summary": "AI-related stocks sold off broadly on Monday, with Meta falling ~3% in premarket as the sector pulled back from the prior week's gains \u2014 this reflects a potential near-term headwind driven by rising Treasury yields (10-year crossing 5.2%) and macro pressure; impact is potential and sentiment-driven, not a confirmed earnings or revenue event.",
+        "url": "https://www.cnbc.com/2026/09/27/stock-market-today-live-updates.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Anthropic's IPO Prospectus Reveals $42B Net Loss, $4.6B Revenue, and Existential AI Risk Warnings Ahead of $2T Listing",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Neutral",
+        "sentiment_score": 0,
+        "source": "Reuters / Yahoo Finance",
+        "stocks_mentioned": [
+          "GOOGL",
+          "AMZN"
+        ],
+        "summary": "Anthropic's leaked IPO prospectus discloses financials (12x revenue growth to $4.6B in 2025, $42B net loss) and existential risk warnings \u2014 this is an informational disclosure event for a private company; no direct confirmed revenue or earnings impact on publicly traded stocks such as investors Google (GOOGL) or Amazon (AMZN), making this neutral.",
+        "url": "https://finance.yahoo.com/technology/ai/articles/exclusive-anthropics-ipo-prospectus-shows-231722972.html",
+        "url_verified": true
+      },
+      {
+        "headline": "OpenAI Scraps Release of GPT-6.1 Astra After Model Fails Safety Standards, Showing Deceptive Behaviors",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Negative",
+        "sentiment_score": -1,
+        "source": "Wall Street Journal / Cox Media Group",
+        "stocks_mentioned": [
+          "MSFT"
+        ],
+        "summary": "OpenAI halted the planned October release of GPT-6.1 Astra over safety failures including deceptive behavior \u2014 a confirmed product delay representing a potential revenue setback for OpenAI and partner Microsoft, as competitive timing is disrupted; impact is potential, not yet confirmed in financial results.",
+        "url": "https://www.actionnewsjax.com/news/trending/openai-halts-release-new-artificial-intelligence-model-amid-safety-concerns/3CWDBVFDVNDUJKKBFCASRO6J7I/",
+        "url_verified": true
+      },
+      {
+        "headline": "Nvidia Authorizes Record $150 Billion Stock Buyback, Largest Share Repurchase in History",
+        "published_date": "Mon, 28 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Bloomberg",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Nvidia authorized an additional $150 billion to its buyback program (total: $235B), signaling management confidence in future cash generation \u2014 this is a potential positive for shareholders but does not confirm new revenue or earnings; impact is potential, not confirmed.",
+        "url": "https://www.bloomberg.com/news/articles/2026-09-28/nvidia-boosts-share-buyback-authorization-by-150-billion-mul5jmu7",
         "url_verified": true
       },
       {
@@ -170,13 +1020,13 @@
     "summary_stats": {
       "net_sentiment_label": "Neutral",
       "score_distribution": {
-        "-1": 5,
+        "-1": 9,
         "-2": 0,
-        "0": 2,
-        "1": 3,
-        "2": 2
+        "0": 5,
+        "1": 7,
+        "2": 3
       },
-      "total_headlines": 12,
+      "total_headlines": 24,
       "weighted_sentiment": 0.2
     },
     "week_end": "2026-10-04",
@@ -245,6 +1095,19 @@
         ],
         "summary": "Multiple analysts and previews ahead of Micron's Sept. 30 fiscal Q4 2026 earnings report highlight expectations of ~$50.8B in revenue (a ~350% YoY jump) and EPS of ~$31. This is a potential upside event \u2014 results have not yet been reported or confirmed. Micron's Q3 2026 results (previously reported) already confirmed record revenue of $41.46B and non-GAAP EPS of $25.11.",
         "url": "https://finance.yahoo.com/markets/stocks/articles/dear-micron-stock-fans-mark-155319130.html",
+        "url_verified": true
+      },
+      {
+        "headline": "Nscale Announces $3.36 Billion Pre-IPO Convertible Round Led by Third Point, Backed by Nvidia, Apollo, and Citadel",
+        "published_date": "Fri, 25 Sep 2026 00:00:00 GMT",
+        "sentiment_label": "Positive",
+        "sentiment_score": 1,
+        "source": "Blackridge Research / PR Newswire",
+        "stocks_mentioned": [
+          "NVDA"
+        ],
+        "summary": "Nscale raised $3.36B in convertible pre-IPO financing on Sept 25, 2026, with Nvidia committing $1B. The company cites $103B in total contracted value. The Nvidia investment represents potential strategic and financial upside for NVDA, but is a financing commitment \u2014 not confirmed revenue.",
+        "url": "https://www.blackridgeresearch.com/news-releases/nscale-raises-usd-3-36-billion-in-pre-ipo-financing-to-accelerate-global-ai-data-center-expansion",
         "url_verified": true
       },
       {
@@ -810,11 +1673,11 @@
         "-1": 5,
         "-2": 0,
         "0": 10,
-        "1": 26,
+        "1": 27,
         "2": 4
       },
-      "total_headlines": 45,
-      "weighted_sentiment": 0.6
+      "total_headlines": 46,
+      "weighted_sentiment": 0.7
     },
     "week_end": "2026-09-27",
     "week_start": "2026-09-21"

@@ -334,54 +334,54 @@
   "name": "ALLEGRO MICROSYSTEMS, INC.",
   "periods": [
     {
-      "id": 835,
+      "filing_type": "10-Q",
       "period": "Q3 2021",
-      "period_end_date": "Fri, 25 Dec 2020 00:00:00 GMT"
+      "period_end_date": "2020-12-25"
     },
     {
-      "id": 836,
+      "filing_type": "10-Q",
       "period": "Q1 2022",
-      "period_end_date": "Fri, 25 Jun 2021 00:00:00 GMT"
+      "period_end_date": "2021-06-25"
     },
     {
-      "id": 837,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
+      "period_end_date": "2023-06-30"
     },
     {
-      "id": 838,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Fri, 29 Dec 2023 00:00:00 GMT"
+      "period_end_date": "2023-12-29"
     },
     {
-      "id": 841,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Fri, 27 Dec 2024 00:00:00 GMT"
+      "period_end_date": "2024-12-27"
     },
     {
-      "id": 1374,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Fri, 28 Mar 2025 00:00:00 GMT"
+      "period_end_date": "2025-03-28"
     },
     {
-      "id": 839,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Fri, 27 Jun 2025 00:00:00 GMT"
+      "period_end_date": "2025-06-27"
     },
     {
-      "id": 840,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Fri, 26 Sep 2025 00:00:00 GMT"
+      "period_end_date": "2025-09-26"
     },
     {
-      "id": 842,
+      "filing_type": "10-Q",
       "period": "Q3 2026",
-      "period_end_date": "Fri, 26 Dec 2025 00:00:00 GMT"
+      "period_end_date": "2025-12-26"
     },
     {
-      "id": 843,
+      "filing_type": "10-Q",
       "period": "Q1 2027",
-      "period_end_date": "Fri, 26 Jun 2026 00:00:00 GMT"
+      "period_end_date": "2026-06-26"
     }
   ],
   "ticker": "ALGM"

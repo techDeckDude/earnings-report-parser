@@ -847,149 +847,149 @@
   "name": "Calix, Inc",
   "periods": [
     {
-      "id": 236,
+      "filing_type": "10-Q",
       "period": "Q3 2017",
-      "period_end_date": "Sat, 30 Sep 2017 00:00:00 GMT"
+      "period_end_date": "2017-09-30"
     },
     {
-      "id": 237,
+      "filing_type": "10-Q",
       "period": "Q3 2018",
-      "period_end_date": "Sat, 29 Sep 2018 00:00:00 GMT"
+      "period_end_date": "2018-09-29"
     },
     {
-      "id": 238,
+      "filing_type": "10-Q",
       "period": "Q3 2019",
-      "period_end_date": "Sat, 28 Sep 2019 00:00:00 GMT"
+      "period_end_date": "2019-09-28"
     },
     {
-      "id": 239,
+      "filing_type": "10-Q",
       "period": "Q1 2020",
-      "period_end_date": "Sat, 28 Mar 2020 00:00:00 GMT"
+      "period_end_date": "2020-03-28"
     },
     {
-      "id": 240,
+      "filing_type": "10-Q",
       "period": "Q2 2020",
-      "period_end_date": "Sat, 27 Jun 2020 00:00:00 GMT"
+      "period_end_date": "2020-06-27"
     },
     {
-      "id": 241,
+      "filing_type": "10-Q",
       "period": "Q3 2020",
-      "period_end_date": "Sat, 26 Sep 2020 00:00:00 GMT"
+      "period_end_date": "2020-09-26"
     },
     {
-      "id": 1426,
+      "filing_type": "10-K",
       "period": "Q4 2020",
-      "period_end_date": "Thu, 31 Dec 2020 00:00:00 GMT"
+      "period_end_date": "2020-12-31"
     },
     {
-      "id": 242,
+      "filing_type": "10-Q",
       "period": "Q1 2021",
-      "period_end_date": "Sat, 03 Apr 2021 00:00:00 GMT"
+      "period_end_date": "2021-04-03"
     },
     {
-      "id": 243,
+      "filing_type": "10-Q",
       "period": "Q2 2021",
-      "period_end_date": "Sat, 03 Jul 2021 00:00:00 GMT"
+      "period_end_date": "2021-07-03"
     },
     {
-      "id": 244,
+      "filing_type": "10-Q",
       "period": "Q3 2021",
-      "period_end_date": "Sat, 02 Oct 2021 00:00:00 GMT"
+      "period_end_date": "2021-10-02"
     },
     {
-      "id": 1427,
+      "filing_type": "10-K",
       "period": "Q4 2021",
-      "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT"
+      "period_end_date": "2021-12-31"
     },
     {
-      "id": 245,
+      "filing_type": "10-Q",
       "period": "Q1 2022",
-      "period_end_date": "Sat, 02 Apr 2022 00:00:00 GMT"
+      "period_end_date": "2022-04-02"
     },
     {
-      "id": 246,
+      "filing_type": "10-Q",
       "period": "Q2 2022",
-      "period_end_date": "Sat, 02 Jul 2022 00:00:00 GMT"
+      "period_end_date": "2022-07-02"
     },
     {
-      "id": 247,
+      "filing_type": "10-Q",
       "period": "Q3 2022",
-      "period_end_date": "Sat, 01 Oct 2022 00:00:00 GMT"
+      "period_end_date": "2022-10-01"
     },
     {
-      "id": 1428,
+      "filing_type": "10-K",
       "period": "Q4 2022",
-      "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT"
+      "period_end_date": "2022-12-31"
     },
     {
-      "id": 248,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Sat, 01 Apr 2023 00:00:00 GMT"
+      "period_end_date": "2023-04-01"
     },
     {
-      "id": 249,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Sat, 01 Jul 2023 00:00:00 GMT"
+      "period_end_date": "2023-07-01"
     },
     {
-      "id": 250,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
+      "period_end_date": "2023-09-30"
     },
     {
-      "id": 1429,
+      "filing_type": "10-K",
       "period": "Q4 2023",
-      "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT"
+      "period_end_date": "2023-12-31"
     },
     {
-      "id": 251,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Sat, 30 Mar 2024 00:00:00 GMT"
+      "period_end_date": "2024-03-30"
     },
     {
-      "id": 252,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Sat, 29 Jun 2024 00:00:00 GMT"
+      "period_end_date": "2024-06-29"
     },
     {
-      "id": 253,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Sat, 28 Sep 2024 00:00:00 GMT"
+      "period_end_date": "2024-09-28"
     },
     {
-      "id": 1430,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT"
+      "period_end_date": "2024-12-31"
     },
     {
-      "id": 254,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Sat, 29 Mar 2025 00:00:00 GMT"
+      "period_end_date": "2025-03-29"
     },
     {
-      "id": 255,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Sat, 28 Jun 2025 00:00:00 GMT"
+      "period_end_date": "2025-06-28"
     },
     {
-      "id": 256,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Sat, 27 Sep 2025 00:00:00 GMT"
+      "period_end_date": "2025-09-27"
     },
     {
-      "id": 1431,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT"
+      "period_end_date": "2025-12-31"
     },
     {
-      "id": 257,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Sat, 28 Mar 2026 00:00:00 GMT"
+      "period_end_date": "2026-03-28"
     },
     {
-      "id": 258,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Sat, 27 Jun 2026 00:00:00 GMT"
+      "period_end_date": "2026-06-27"
     }
   ],
   "ticker": "CALX"

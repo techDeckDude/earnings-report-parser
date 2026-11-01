@@ -523,89 +523,89 @@
   "name": "Credo Technology Group Holding Ltd",
   "periods": [
     {
-      "id": 259,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Sat, 30 Jul 2022 00:00:00 GMT"
+      "period_end_date": "2022-07-30"
     },
     {
-      "id": 260,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Sat, 29 Oct 2022 00:00:00 GMT"
+      "period_end_date": "2022-10-29"
     },
     {
-      "id": 261,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Sat, 28 Jan 2023 00:00:00 GMT"
+      "period_end_date": "2023-01-28"
     },
     {
-      "id": 1434,
+      "filing_type": "10-K",
       "period": "Q4 2023",
-      "period_end_date": "Sat, 29 Apr 2023 00:00:00 GMT"
+      "period_end_date": "2023-04-29"
     },
     {
-      "id": 262,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Sat, 29 Jul 2023 00:00:00 GMT"
+      "period_end_date": "2023-07-29"
     },
     {
-      "id": 263,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Sat, 28 Oct 2023 00:00:00 GMT"
+      "period_end_date": "2023-10-28"
     },
     {
-      "id": 264,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Sat, 27 Jan 2024 00:00:00 GMT"
+      "period_end_date": "2024-01-27"
     },
     {
-      "id": 1435,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Sat, 27 Apr 2024 00:00:00 GMT"
+      "period_end_date": "2024-04-27"
     },
     {
-      "id": 265,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Sat, 03 Aug 2024 00:00:00 GMT"
+      "period_end_date": "2024-08-03"
     },
     {
-      "id": 266,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Sat, 02 Nov 2024 00:00:00 GMT"
+      "period_end_date": "2024-11-02"
     },
     {
-      "id": 267,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Sat, 01 Feb 2025 00:00:00 GMT"
+      "period_end_date": "2025-02-01"
     },
     {
-      "id": 1436,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Sat, 03 May 2025 00:00:00 GMT"
+      "period_end_date": "2025-05-03"
     },
     {
-      "id": 268,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Sat, 02 Aug 2025 00:00:00 GMT"
+      "period_end_date": "2025-08-02"
     },
     {
-      "id": 269,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Sat, 01 Nov 2025 00:00:00 GMT"
+      "period_end_date": "2025-11-01"
     },
     {
-      "id": 270,
+      "filing_type": "10-Q",
       "period": "Q3 2026",
-      "period_end_date": "Sat, 31 Jan 2026 00:00:00 GMT"
+      "period_end_date": "2026-01-31"
     },
     {
-      "id": 1437,
+      "filing_type": "10-K",
       "period": "Q4 2026",
-      "period_end_date": "Sat, 02 May 2026 00:00:00 GMT"
+      "period_end_date": "2026-05-02"
     },
     {
-      "id": 271,
+      "filing_type": "10-Q",
       "period": "Q1 2027",
-      "period_end_date": "Sat, 01 Aug 2026 00:00:00 GMT"
+      "period_end_date": "2026-08-01"
     }
   ],
   "ticker": "CRDO"

@@ -604,104 +604,104 @@
   "name": "AEVA TECHNOLOGIES, INC.",
   "periods": [
     {
-      "id": 97,
+      "filing_type": "10-Q",
       "period": "Q2 2021",
-      "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT"
+      "period_end_date": "2021-06-30"
     },
     {
-      "id": 98,
+      "filing_type": "10-Q",
       "period": "Q3 2021",
-      "period_end_date": "Thu, 30 Sep 2021 00:00:00 GMT"
+      "period_end_date": "2021-09-30"
     },
     {
-      "id": 99,
+      "filing_type": "10-Q",
       "period": "Q1 2022",
-      "period_end_date": "Thu, 31 Mar 2022 00:00:00 GMT"
+      "period_end_date": "2022-03-31"
     },
     {
-      "id": 100,
+      "filing_type": "10-Q",
       "period": "Q2 2022",
-      "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT"
+      "period_end_date": "2022-06-30"
     },
     {
-      "id": 101,
+      "filing_type": "10-Q",
       "period": "Q3 2022",
-      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
+      "period_end_date": "2022-09-30"
     },
     {
-      "id": 1364,
+      "filing_type": "10-K",
       "period": "Q4 2022",
-      "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT"
+      "period_end_date": "2022-12-31"
     },
     {
-      "id": 102,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
+      "period_end_date": "2023-03-31"
     },
     {
-      "id": 103,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
+      "period_end_date": "2023-06-30"
     },
     {
-      "id": 104,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
+      "period_end_date": "2023-09-30"
     },
     {
-      "id": 1365,
+      "filing_type": "10-K",
       "period": "Q4 2023",
-      "period_end_date": "Sun, 31 Dec 2023 00:00:00 GMT"
+      "period_end_date": "2023-12-31"
     },
     {
-      "id": 105,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Sun, 31 Mar 2024 00:00:00 GMT"
+      "period_end_date": "2024-03-31"
     },
     {
-      "id": 106,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Sun, 30 Jun 2024 00:00:00 GMT"
+      "period_end_date": "2024-06-30"
     },
     {
-      "id": 107,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Mon, 30 Sep 2024 00:00:00 GMT"
+      "period_end_date": "2024-09-30"
     },
     {
-      "id": 1366,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Tue, 31 Dec 2024 00:00:00 GMT"
+      "period_end_date": "2024-12-31"
     },
     {
-      "id": 108,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Mon, 31 Mar 2025 00:00:00 GMT"
+      "period_end_date": "2025-03-31"
     },
     {
-      "id": 109,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Mon, 30 Jun 2025 00:00:00 GMT"
+      "period_end_date": "2025-06-30"
     },
     {
-      "id": 110,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Tue, 30 Sep 2025 00:00:00 GMT"
+      "period_end_date": "2025-09-30"
     },
     {
-      "id": 1367,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Wed, 31 Dec 2025 00:00:00 GMT"
+      "period_end_date": "2025-12-31"
     },
     {
-      "id": 111,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT"
+      "period_end_date": "2026-03-31"
     },
     {
-      "id": 112,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT"
+      "period_end_date": "2026-06-30"
     }
   ],
   "ticker": "AEVA"

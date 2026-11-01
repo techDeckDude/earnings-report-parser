@@ -955,169 +955,169 @@
   "name": "MACOM Technology Solutions Holdings, Inc.",
   "periods": [
     {
-      "id": 470,
+      "filing_type": "10-Q",
       "period": "Q2 2018",
-      "period_end_date": "Fri, 30 Mar 2018 00:00:00 GMT"
+      "period_end_date": "2018-03-30"
     },
     {
-      "id": 471,
+      "filing_type": "10-Q",
       "period": "Q3 2018",
-      "period_end_date": "Fri, 29 Jun 2018 00:00:00 GMT"
+      "period_end_date": "2018-06-29"
     },
     {
-      "id": 472,
+      "filing_type": "10-Q",
       "period": "Q1 2019",
-      "period_end_date": "Fri, 28 Dec 2018 00:00:00 GMT"
+      "period_end_date": "2018-12-28"
     },
     {
-      "id": 473,
+      "filing_type": "10-Q",
       "period": "Q2 2019",
-      "period_end_date": "Fri, 29 Mar 2019 00:00:00 GMT"
+      "period_end_date": "2019-03-29"
     },
     {
-      "id": 474,
+      "filing_type": "10-Q",
       "period": "Q3 2019",
-      "period_end_date": "Fri, 28 Jun 2019 00:00:00 GMT"
+      "period_end_date": "2019-06-28"
     },
     {
-      "id": 1605,
+      "filing_type": "10-K",
       "period": "Q4 2019",
-      "period_end_date": "Fri, 27 Sep 2019 00:00:00 GMT"
+      "period_end_date": "2019-09-27"
     },
     {
-      "id": 475,
+      "filing_type": "10-Q",
       "period": "Q1 2020",
-      "period_end_date": "Fri, 03 Jan 2020 00:00:00 GMT"
+      "period_end_date": "2020-01-03"
     },
     {
-      "id": 476,
+      "filing_type": "10-Q",
       "period": "Q2 2020",
-      "period_end_date": "Fri, 03 Apr 2020 00:00:00 GMT"
+      "period_end_date": "2020-04-03"
     },
     {
-      "id": 477,
+      "filing_type": "10-Q",
       "period": "Q3 2020",
-      "period_end_date": "Fri, 03 Jul 2020 00:00:00 GMT"
+      "period_end_date": "2020-07-03"
     },
     {
-      "id": 1607,
+      "filing_type": "10-K",
       "period": "Q4 2020",
-      "period_end_date": "Fri, 02 Oct 2020 00:00:00 GMT"
+      "period_end_date": "2020-10-02"
     },
     {
-      "id": 478,
+      "filing_type": "10-Q",
       "period": "Q1 2021",
-      "period_end_date": "Fri, 01 Jan 2021 00:00:00 GMT"
+      "period_end_date": "2021-01-01"
     },
     {
-      "id": 479,
+      "filing_type": "10-Q",
       "period": "Q2 2021",
-      "period_end_date": "Fri, 02 Apr 2021 00:00:00 GMT"
+      "period_end_date": "2021-04-02"
     },
     {
-      "id": 480,
+      "filing_type": "10-Q",
       "period": "Q3 2021",
-      "period_end_date": "Fri, 02 Jul 2021 00:00:00 GMT"
+      "period_end_date": "2021-07-02"
     },
     {
-      "id": 1609,
+      "filing_type": "10-K",
       "period": "Q4 2021",
-      "period_end_date": "Fri, 01 Oct 2021 00:00:00 GMT"
+      "period_end_date": "2021-10-01"
     },
     {
-      "id": 481,
+      "filing_type": "10-Q",
       "period": "Q1 2022",
-      "period_end_date": "Fri, 31 Dec 2021 00:00:00 GMT"
+      "period_end_date": "2021-12-31"
     },
     {
-      "id": 482,
+      "filing_type": "10-Q",
       "period": "Q2 2022",
-      "period_end_date": "Fri, 01 Apr 2022 00:00:00 GMT"
+      "period_end_date": "2022-04-01"
     },
     {
-      "id": 483,
+      "filing_type": "10-Q",
       "period": "Q3 2022",
-      "period_end_date": "Fri, 01 Jul 2022 00:00:00 GMT"
+      "period_end_date": "2022-07-01"
     },
     {
-      "id": 1611,
+      "filing_type": "10-K",
       "period": "Q4 2022",
-      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
+      "period_end_date": "2022-09-30"
     },
     {
-      "id": 484,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Fri, 30 Dec 2022 00:00:00 GMT"
+      "period_end_date": "2022-12-30"
     },
     {
-      "id": 485,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Fri, 31 Mar 2023 00:00:00 GMT"
+      "period_end_date": "2023-03-31"
     },
     {
-      "id": 486,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Fri, 30 Jun 2023 00:00:00 GMT"
+      "period_end_date": "2023-06-30"
     },
     {
-      "id": 1612,
+      "filing_type": "10-K",
       "period": "Q4 2023",
-      "period_end_date": "Fri, 29 Sep 2023 00:00:00 GMT"
+      "period_end_date": "2023-09-29"
     },
     {
-      "id": 487,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Fri, 29 Dec 2023 00:00:00 GMT"
+      "period_end_date": "2023-12-29"
     },
     {
-      "id": 488,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Fri, 29 Mar 2024 00:00:00 GMT"
+      "period_end_date": "2024-03-29"
     },
     {
-      "id": 489,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Fri, 28 Jun 2024 00:00:00 GMT"
+      "period_end_date": "2024-06-28"
     },
     {
-      "id": 1613,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Fri, 27 Sep 2024 00:00:00 GMT"
+      "period_end_date": "2024-09-27"
     },
     {
-      "id": 490,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Fri, 03 Jan 2025 00:00:00 GMT"
+      "period_end_date": "2025-01-03"
     },
     {
-      "id": 491,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Fri, 04 Apr 2025 00:00:00 GMT"
+      "period_end_date": "2025-04-04"
     },
     {
-      "id": 492,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Fri, 04 Jul 2025 00:00:00 GMT"
+      "period_end_date": "2025-07-04"
     },
     {
-      "id": 1615,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Fri, 03 Oct 2025 00:00:00 GMT"
+      "period_end_date": "2025-10-03"
     },
     {
-      "id": 493,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Fri, 02 Jan 2026 00:00:00 GMT"
+      "period_end_date": "2026-01-02"
     },
     {
-      "id": 494,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Fri, 03 Apr 2026 00:00:00 GMT"
+      "period_end_date": "2026-04-03"
     },
     {
-      "id": 495,
+      "filing_type": "10-Q",
       "period": "Q3 2026",
-      "period_end_date": "Fri, 03 Jul 2026 00:00:00 GMT"
+      "period_end_date": "2026-07-03"
     }
   ],
   "ticker": "MTSI"

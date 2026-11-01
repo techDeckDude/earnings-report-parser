@@ -582,104 +582,104 @@
   "name": "Lattice Semiconductor Corp",
   "periods": [
     {
-      "id": 379,
+      "filing_type": "10-Q",
       "period": "Q2 2021",
-      "period_end_date": "Sat, 03 Jul 2021 00:00:00 GMT"
+      "period_end_date": "2021-07-03"
     },
     {
-      "id": 380,
+      "filing_type": "10-Q",
       "period": "Q3 2021",
-      "period_end_date": "Sat, 02 Oct 2021 00:00:00 GMT"
+      "period_end_date": "2021-10-02"
     },
     {
-      "id": 381,
+      "filing_type": "10-Q",
       "period": "Q1 2022",
-      "period_end_date": "Sat, 02 Apr 2022 00:00:00 GMT"
+      "period_end_date": "2022-04-02"
     },
     {
-      "id": 382,
+      "filing_type": "10-Q",
       "period": "Q2 2022",
-      "period_end_date": "Sat, 02 Jul 2022 00:00:00 GMT"
+      "period_end_date": "2022-07-02"
     },
     {
-      "id": 383,
+      "filing_type": "10-Q",
       "period": "Q3 2022",
-      "period_end_date": "Sat, 01 Oct 2022 00:00:00 GMT"
+      "period_end_date": "2022-10-01"
     },
     {
-      "id": 1546,
+      "filing_type": "10-K",
       "period": "Q4 2022",
-      "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT"
+      "period_end_date": "2022-12-31"
     },
     {
-      "id": 384,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Sat, 01 Apr 2023 00:00:00 GMT"
+      "period_end_date": "2023-04-01"
     },
     {
-      "id": 385,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Sat, 01 Jul 2023 00:00:00 GMT"
+      "period_end_date": "2023-07-01"
     },
     {
-      "id": 386,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
+      "period_end_date": "2023-09-30"
     },
     {
-      "id": 1548,
+      "filing_type": "10-K",
       "period": "Q4 2023",
-      "period_end_date": "Sat, 30 Dec 2023 00:00:00 GMT"
+      "period_end_date": "2023-12-30"
     },
     {
-      "id": 387,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Sat, 30 Mar 2024 00:00:00 GMT"
+      "period_end_date": "2024-03-30"
     },
     {
-      "id": 388,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Sat, 29 Jun 2024 00:00:00 GMT"
+      "period_end_date": "2024-06-29"
     },
     {
-      "id": 389,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Sat, 28 Sep 2024 00:00:00 GMT"
+      "period_end_date": "2024-09-28"
     },
     {
-      "id": 1550,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Sat, 28 Dec 2024 00:00:00 GMT"
+      "period_end_date": "2024-12-28"
     },
     {
-      "id": 390,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Sat, 29 Mar 2025 00:00:00 GMT"
+      "period_end_date": "2025-03-29"
     },
     {
-      "id": 391,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Sat, 28 Jun 2025 00:00:00 GMT"
+      "period_end_date": "2025-06-28"
     },
     {
-      "id": 392,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Sat, 27 Sep 2025 00:00:00 GMT"
+      "period_end_date": "2025-09-27"
     },
     {
-      "id": 1552,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Sat, 03 Jan 2026 00:00:00 GMT"
+      "period_end_date": "2026-01-03"
     },
     {
-      "id": 393,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Sat, 04 Apr 2026 00:00:00 GMT"
+      "period_end_date": "2026-04-04"
     },
     {
-      "id": 394,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Sat, 04 Jul 2026 00:00:00 GMT"
+      "period_end_date": "2026-07-04"
     }
   ],
   "ticker": "LSCC"
