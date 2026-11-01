@@ -83,7 +83,7 @@ Everything that used to live here as separate scripts now comes from core-data, 
 | `migrate_sqlite_to_pg.py` | Removed — SQLite is no longer supported; schema changes are versioned migrations (`core-data-migrate`) |
 | `main.py`, `loader.py`, `extractors/` (Palantir/Marvell PDF and iXBRL parsing, S3 contracts) | Removed — every stock now comes from EDGAR's XBRL API through core-data |
 
-Q4 is derived from each 10-K (`Q4 = annual − Q1 − Q2 − Q3` for flows; the year-end snapshot for the balance sheet; EPS = Q4 net income ÷ annual weighted shares). See core-data's README and `docs/case-studies/` for how ingestion works.
+Q4 is derived from each 10-K (`Q4 = annual − Q1 − Q2 − Q3` for flows; the year-end snapshot for the balance sheet; EPS = Q4 net income ÷ annual weighted shares). See core-data's [tracking & ingestion guide](../core-data/docs/guides/tracking-and-ingestion.md) for every way a stock gets tracked and its earnings loaded, with diagrams.
 
 ## Project Structure
 

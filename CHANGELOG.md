@@ -2,6 +2,8 @@
 
 Entries are newest-first. Each entry describes the change from a user/operator perspective.
 
+- **2026-11-01** — README now links to core-data's guide on how stocks get tracked and how their earnings get in.
+
 - **2026-11-01** — Added Postgres locking reference diagrams to `docs/`: the lock cascade behind the `news_articles` hangs (`postgres_lock_cascade.svg`) and a lock-mode compatibility guide (`postgres_lock_modes.html`).
 
 - **2026-11-01** — Removed the PDF/iXBRL ingestion pipeline (`main.py`, `loader.py`, the Palantir and Marvell extractors, and S3 contract upload/replay); all earnings data now comes from EDGAR's XBRL API through core-data's `ingest-earnings` or the admin dashboard. The `list-ingested-stocks` and `pending-ingestion` agents now query Postgres and point to `ingest-earnings`. Removed `data/` (the pipeline's source filings, extracted contracts, and an old news snapshot); it remains in git history.
