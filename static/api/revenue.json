@@ -1,10 +1,108 @@
 [
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q1 2010",
+    "period_end_date": "Thu, 03 Dec 2009 00:00:00 GMT",
+    "revenue": 1740000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q1 2011",
+    "period_end_date": "Thu, 02 Dec 2010 00:00:00 GMT",
+    "revenue": 2252000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q2 2011",
+    "period_end_date": "Thu, 03 Mar 2011 00:00:00 GMT",
+    "revenue": 2257000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q3 2011",
+    "period_end_date": "Thu, 02 Jun 2011 00:00:00 GMT",
+    "revenue": 2139000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2011",
+    "period_end_date": "Thu, 01 Sep 2011 00:00:00 GMT",
+    "revenue": 2140000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q1 2012",
+    "period_end_date": "Thu, 01 Dec 2011 00:00:00 GMT",
+    "revenue": 2090000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q2 2012",
+    "period_end_date": "Thu, 01 Mar 2012 00:00:00 GMT",
+    "revenue": 2009000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q3 2012",
+    "period_end_date": "Thu, 31 May 2012 00:00:00 GMT",
+    "revenue": 2172000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2012",
+    "period_end_date": "Thu, 30 Aug 2012 00:00:00 GMT",
+    "revenue": 1963000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q1 2013",
+    "period_end_date": "Thu, 29 Nov 2012 00:00:00 GMT",
+    "revenue": 1834000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q2 2013",
+    "period_end_date": "Thu, 28 Feb 2013 00:00:00 GMT",
+    "revenue": 2078000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q3 2013",
+    "period_end_date": "Thu, 30 May 2013 00:00:00 GMT",
+    "revenue": 2318000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "APPLIED MATERIALS INC /DE",
     "period": "Q3 2013",
     "period_end_date": "Sun, 28 Jul 2013 00:00:00 GMT",
     "revenue": 1975000.0,
     "ticker": "AMAT"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2013",
+    "period_end_date": "Thu, 29 Aug 2013 00:00:00 GMT",
+    "revenue": 2843000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q1 2014",
+    "period_end_date": "Thu, 28 Nov 2013 00:00:00 GMT",
+    "revenue": 4042000.0,
+    "ticker": "MU"
   },
   {
     "name": "CIRRUS LOGIC, INC.",
@@ -14,11 +112,25 @@
     "ticker": "CRUS"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q2 2014",
+    "period_end_date": "Thu, 27 Feb 2014 00:00:00 GMT",
+    "revenue": 4107000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "APPLIED MATERIALS INC /DE",
     "period": "Q2 2014",
     "period_end_date": "Sun, 27 Apr 2014 00:00:00 GMT",
     "revenue": 2353000.0,
     "ticker": "AMAT"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q3 2014",
+    "period_end_date": "Thu, 29 May 2014 00:00:00 GMT",
+    "revenue": 3982000.0,
+    "ticker": "MU"
   },
   {
     "name": "ONTO INNOVATION INC.",
@@ -35,11 +147,32 @@
     "ticker": "AMAT"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2014",
+    "period_end_date": "Thu, 28 Aug 2014 00:00:00 GMT",
+    "revenue": 4227000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "ONTO INNOVATION INC.",
     "period": "Q3 2014",
     "period_end_date": "Sat, 27 Sep 2014 00:00:00 GMT",
     "revenue": 27133.0,
     "ticker": "ONTO"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q1 2015",
+    "period_end_date": "Thu, 04 Dec 2014 00:00:00 GMT",
+    "revenue": 4573000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q2 2015",
+    "period_end_date": "Thu, 05 Mar 2015 00:00:00 GMT",
+    "revenue": 4166000.0,
+    "ticker": "MU"
   },
   {
     "name": "ONTO INNOVATION INC.",
@@ -56,6 +189,13 @@
     "ticker": "AMAT"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q3 2015",
+    "period_end_date": "Thu, 04 Jun 2015 00:00:00 GMT",
+    "revenue": 3853000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "ONTO INNOVATION INC.",
     "period": "Q2 2015",
     "period_end_date": "Sat, 27 Jun 2015 00:00:00 GMT",
@@ -70,11 +210,32 @@
     "ticker": "AMAT"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2015",
+    "period_end_date": "Thu, 03 Sep 2015 00:00:00 GMT",
+    "revenue": 3600000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "ONTO INNOVATION INC.",
     "period": "Q3 2015",
     "period_end_date": "Sat, 26 Sep 2015 00:00:00 GMT",
     "revenue": 45678.0,
     "ticker": "ONTO"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q1 2016",
+    "period_end_date": "Thu, 03 Dec 2015 00:00:00 GMT",
+    "revenue": 3350000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q2 2016",
+    "period_end_date": "Thu, 03 Mar 2016 00:00:00 GMT",
+    "revenue": 2934000.0,
+    "ticker": "MU"
   },
   {
     "name": "Apple Inc.",
@@ -91,6 +252,13 @@
     "ticker": "AMAT"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q3 2016",
+    "period_end_date": "Thu, 02 Jun 2016 00:00:00 GMT",
+    "revenue": 2898000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "Apple Inc.",
     "period": "Q3 2016",
     "period_end_date": "Sat, 25 Jun 2016 00:00:00 GMT",
@@ -105,11 +273,32 @@
     "ticker": "AMAT"
   },
   {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2016",
+    "period_end_date": "Thu, 01 Sep 2016 00:00:00 GMT",
+    "revenue": 3217000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q1 2017",
+    "period_end_date": "Thu, 01 Dec 2016 00:00:00 GMT",
+    "revenue": 3970000.0,
+    "ticker": "MU"
+  },
+  {
     "name": "Apple Inc.",
     "period": "Q1 2017",
     "period_end_date": "Sat, 31 Dec 2016 00:00:00 GMT",
     "revenue": 78351000.0,
     "ticker": "AAPL"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q2 2017",
+    "period_end_date": "Thu, 02 Mar 2017 00:00:00 GMT",
+    "revenue": 4648000.0,
+    "ticker": "MU"
   },
   {
     "name": "Super Micro Computer, Inc.",
@@ -131,6 +320,13 @@
     "period_end_date": "Sun, 30 Apr 2017 00:00:00 GMT",
     "revenue": 3546000.0,
     "ticker": "AMAT"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q3 2017",
+    "period_end_date": "Thu, 01 Jun 2017 00:00:00 GMT",
+    "revenue": 5566000.0,
+    "ticker": "MU"
   },
   {
     "name": "CIRRUS LOGIC, INC.",
@@ -180,6 +376,13 @@
     "period_end_date": "Mon, 31 Jul 2017 00:00:00 GMT",
     "revenue": 71630.0,
     "ticker": "AMBA"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2017",
+    "period_end_date": "Thu, 31 Aug 2017 00:00:00 GMT",
+    "revenue": 6138000.0,
+    "ticker": "MU"
   },
   {
     "name": "CIRRUS LOGIC, INC.",
@@ -243,6 +446,13 @@
     "period_end_date": "Tue, 31 Oct 2017 00:00:00 GMT",
     "revenue": 89062.0,
     "ticker": "AMBA"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q1 2018",
+    "period_end_date": "Thu, 30 Nov 2017 00:00:00 GMT",
+    "revenue": 6803000.0,
+    "ticker": "MU"
   },
   {
     "name": "LAM RESEARCH CORPORATION",
@@ -460,6 +670,13 @@
     "period_end_date": "Sun, 05 Aug 2018 00:00:00 GMT",
     "revenue": 5063000.0,
     "ticker": "AVGO"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2018",
+    "period_end_date": "Thu, 30 Aug 2018 00:00:00 GMT",
+    "revenue": 8440000.0,
+    "ticker": "MU"
   },
   {
     "name": "ADOBE INC.",
@@ -9507,16 +9724,16 @@
   },
   {
     "name": "WOLFSPEED, INC.",
-    "period": "Q4 2026",
+    "period": "Q4 2025",
     "period_end_date": "Sun, 29 Jun 2025 00:00:00 GMT",
-    "revenue": 242100.0,
+    "revenue": 197000.0,
     "ticker": "WOLF"
   },
   {
     "name": "WOLFSPEED, INC.",
-    "period": "Q4 2025",
+    "period": "Q4 2026",
     "period_end_date": "Sun, 29 Jun 2025 00:00:00 GMT",
-    "revenue": 197000.0,
+    "revenue": 242100.0,
     "ticker": "WOLF"
   },
   {
@@ -11835,5 +12052,19 @@
     "period_end_date": "Fri, 28 Aug 2026 00:00:00 GMT",
     "revenue": 6760000.0,
     "ticker": "ADBE"
+  },
+  {
+    "name": "Micron Technology, Inc.",
+    "period": "Q4 2026",
+    "period_end_date": "Thu, 03 Sep 2026 00:00:00 GMT",
+    "revenue": 54229000.0,
+    "ticker": "MU"
+  },
+  {
+    "name": "Meta Platforms, Inc.",
+    "period": "Q3 2026",
+    "period_end_date": "Wed, 30 Sep 2026 00:00:00 GMT",
+    "revenue": 64601000.0,
+    "ticker": "META"
   }
 ]

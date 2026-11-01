@@ -280,44 +280,44 @@
   "name": "Dell Technologies Inc.",
   "periods": [
     {
-      "id": 1270,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Fri, 02 Aug 2024 00:00:00 GMT"
+      "period_end_date": "2024-08-02"
     },
     {
-      "id": 1271,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Fri, 01 Nov 2024 00:00:00 GMT"
+      "period_end_date": "2024-11-01"
     },
     {
-      "id": 327,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Fri, 02 May 2025 00:00:00 GMT"
+      "period_end_date": "2025-05-02"
     },
     {
-      "id": 328,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Fri, 01 Aug 2025 00:00:00 GMT"
+      "period_end_date": "2025-08-01"
     },
     {
-      "id": 329,
+      "filing_type": "10-Q",
       "period": "Q3 2026",
-      "period_end_date": "Fri, 31 Oct 2025 00:00:00 GMT"
+      "period_end_date": "2025-10-31"
     },
     {
-      "id": 1458,
+      "filing_type": "10-K",
       "period": "Q4 2026",
-      "period_end_date": "Fri, 30 Jan 2026 00:00:00 GMT"
+      "period_end_date": "2026-01-30"
     },
     {
-      "id": 330,
+      "filing_type": "10-Q",
       "period": "Q1 2027",
-      "period_end_date": "Fri, 01 May 2026 00:00:00 GMT"
+      "period_end_date": "2026-05-01"
     },
     {
-      "id": 331,
+      "filing_type": "10-Q",
       "period": "Q2 2027",
-      "period_end_date": "Fri, 31 Jul 2026 00:00:00 GMT"
+      "period_end_date": "2026-07-31"
     }
   ],
   "ticker": "DELL"

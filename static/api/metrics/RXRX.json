@@ -226,34 +226,34 @@
   "name": "RECURSION PHARMACEUTICALS, INC.",
   "periods": [
     {
-      "id": 1124,
+      "filing_type": "10-Q",
       "period": "Q2 2021",
-      "period_end_date": "Wed, 30 Jun 2021 00:00:00 GMT"
+      "period_end_date": "2021-06-30"
     },
     {
-      "id": 1125,
+      "filing_type": "10-Q",
       "period": "Q3 2021",
-      "period_end_date": "Thu, 30 Sep 2021 00:00:00 GMT"
+      "period_end_date": "2021-09-30"
     },
     {
-      "id": 1126,
+      "filing_type": "10-Q",
       "period": "Q1 2022",
-      "period_end_date": "Thu, 31 Mar 2022 00:00:00 GMT"
+      "period_end_date": "2022-03-31"
     },
     {
-      "id": 1127,
+      "filing_type": "10-Q",
       "period": "Q2 2022",
-      "period_end_date": "Thu, 30 Jun 2022 00:00:00 GMT"
+      "period_end_date": "2022-06-30"
     },
     {
-      "id": 1128,
+      "filing_type": "10-Q",
       "period": "Q3 2022",
-      "period_end_date": "Fri, 30 Sep 2022 00:00:00 GMT"
+      "period_end_date": "2022-09-30"
     },
     {
-      "id": 1753,
+      "filing_type": "10-K",
       "period": "Q4 2022",
-      "period_end_date": "Sat, 31 Dec 2022 00:00:00 GMT"
+      "period_end_date": "2022-12-31"
     }
   ],
   "ticker": "RXRX"

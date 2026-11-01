@@ -1117,199 +1117,199 @@
   "name": "ONTO INNOVATION INC.",
   "periods": [
     {
-      "id": 585,
+      "filing_type": "10-Q",
       "period": "Q2 2014",
-      "period_end_date": "Sat, 28 Jun 2014 00:00:00 GMT"
+      "period_end_date": "2014-06-28"
     },
     {
-      "id": 586,
+      "filing_type": "10-Q",
       "period": "Q3 2014",
-      "period_end_date": "Sat, 27 Sep 2014 00:00:00 GMT"
+      "period_end_date": "2014-09-27"
     },
     {
-      "id": 587,
+      "filing_type": "10-Q",
       "period": "Q1 2015",
-      "period_end_date": "Sat, 28 Mar 2015 00:00:00 GMT"
+      "period_end_date": "2015-03-28"
     },
     {
-      "id": 588,
+      "filing_type": "10-Q",
       "period": "Q2 2015",
-      "period_end_date": "Sat, 27 Jun 2015 00:00:00 GMT"
+      "period_end_date": "2015-06-27"
     },
     {
-      "id": 589,
+      "filing_type": "10-Q",
       "period": "Q3 2015",
-      "period_end_date": "Sat, 26 Sep 2015 00:00:00 GMT"
+      "period_end_date": "2015-09-26"
     },
     {
-      "id": 590,
+      "filing_type": "10-Q",
       "period": "Q2 2017",
-      "period_end_date": "Sat, 01 Jul 2017 00:00:00 GMT"
+      "period_end_date": "2017-07-01"
     },
     {
-      "id": 591,
+      "filing_type": "10-Q",
       "period": "Q3 2017",
-      "period_end_date": "Sat, 30 Sep 2017 00:00:00 GMT"
+      "period_end_date": "2017-09-30"
     },
     {
-      "id": 592,
+      "filing_type": "10-Q",
       "period": "Q1 2018",
-      "period_end_date": "Sat, 31 Mar 2018 00:00:00 GMT"
+      "period_end_date": "2018-03-31"
     },
     {
-      "id": 593,
+      "filing_type": "10-Q",
       "period": "Q2 2018",
-      "period_end_date": "Sat, 30 Jun 2018 00:00:00 GMT"
+      "period_end_date": "2018-06-30"
     },
     {
-      "id": 594,
+      "filing_type": "10-Q",
       "period": "Q3 2018",
-      "period_end_date": "Sat, 29 Sep 2018 00:00:00 GMT"
+      "period_end_date": "2018-09-29"
     },
     {
-      "id": 1697,
+      "filing_type": "10-K",
       "period": "Q4 2018",
-      "period_end_date": "Sat, 29 Dec 2018 00:00:00 GMT"
+      "period_end_date": "2018-12-29"
     },
     {
-      "id": 595,
+      "filing_type": "10-Q",
       "period": "Q1 2019",
-      "period_end_date": "Sat, 30 Mar 2019 00:00:00 GMT"
+      "period_end_date": "2019-03-30"
     },
     {
-      "id": 596,
+      "filing_type": "10-Q",
       "period": "Q2 2019",
-      "period_end_date": "Sat, 29 Jun 2019 00:00:00 GMT"
+      "period_end_date": "2019-06-29"
     },
     {
-      "id": 597,
+      "filing_type": "10-Q",
       "period": "Q3 2019",
-      "period_end_date": "Sat, 28 Sep 2019 00:00:00 GMT"
+      "period_end_date": "2019-09-28"
     },
     {
-      "id": 1699,
+      "filing_type": "10-K",
       "period": "Q4 2019",
-      "period_end_date": "Tue, 31 Dec 2019 00:00:00 GMT"
+      "period_end_date": "2019-12-31"
     },
     {
-      "id": 598,
+      "filing_type": "10-Q",
       "period": "Q1 2020",
-      "period_end_date": "Sat, 28 Mar 2020 00:00:00 GMT"
+      "period_end_date": "2020-03-28"
     },
     {
-      "id": 599,
+      "filing_type": "10-Q",
       "period": "Q2 2020",
-      "period_end_date": "Sat, 27 Jun 2020 00:00:00 GMT"
+      "period_end_date": "2020-06-27"
     },
     {
-      "id": 600,
+      "filing_type": "10-Q",
       "period": "Q3 2020",
-      "period_end_date": "Sat, 26 Sep 2020 00:00:00 GMT"
+      "period_end_date": "2020-09-26"
     },
     {
-      "id": 1700,
+      "filing_type": "10-K",
       "period": "Q4 2020",
-      "period_end_date": "Sat, 26 Dec 2020 00:00:00 GMT"
+      "period_end_date": "2020-12-26"
     },
     {
-      "id": 601,
+      "filing_type": "10-Q",
       "period": "Q1 2021",
-      "period_end_date": "Sat, 27 Mar 2021 00:00:00 GMT"
+      "period_end_date": "2021-03-27"
     },
     {
-      "id": 602,
+      "filing_type": "10-Q",
       "period": "Q2 2021",
-      "period_end_date": "Sat, 26 Jun 2021 00:00:00 GMT"
+      "period_end_date": "2021-06-26"
     },
     {
-      "id": 603,
+      "filing_type": "10-Q",
       "period": "Q3 2021",
-      "period_end_date": "Sat, 25 Sep 2021 00:00:00 GMT"
+      "period_end_date": "2021-09-25"
     },
     {
-      "id": 1702,
+      "filing_type": "10-K",
       "period": "Q4 2021",
-      "period_end_date": "Sat, 01 Jan 2022 00:00:00 GMT"
+      "period_end_date": "2022-01-01"
     },
     {
-      "id": 604,
+      "filing_type": "10-Q",
       "period": "Q1 2022",
-      "period_end_date": "Sat, 02 Apr 2022 00:00:00 GMT"
+      "period_end_date": "2022-04-02"
     },
     {
-      "id": 605,
+      "filing_type": "10-Q",
       "period": "Q2 2022",
-      "period_end_date": "Sat, 02 Jul 2022 00:00:00 GMT"
+      "period_end_date": "2022-07-02"
     },
     {
-      "id": 606,
+      "filing_type": "10-Q",
       "period": "Q3 2022",
-      "period_end_date": "Sat, 01 Oct 2022 00:00:00 GMT"
+      "period_end_date": "2022-10-01"
     },
     {
-      "id": 607,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Sat, 01 Apr 2023 00:00:00 GMT"
+      "period_end_date": "2023-04-01"
     },
     {
-      "id": 608,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Sat, 01 Jul 2023 00:00:00 GMT"
+      "period_end_date": "2023-07-01"
     },
     {
-      "id": 609,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Sat, 30 Sep 2023 00:00:00 GMT"
+      "period_end_date": "2023-09-30"
     },
     {
-      "id": 1704,
+      "filing_type": "10-K",
       "period": "Q4 2022",
-      "period_end_date": "Sat, 30 Dec 2023 00:00:00 GMT"
+      "period_end_date": "2023-12-30"
     },
     {
-      "id": 610,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Sat, 30 Mar 2024 00:00:00 GMT"
+      "period_end_date": "2024-03-30"
     },
     {
-      "id": 611,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Sat, 29 Jun 2024 00:00:00 GMT"
+      "period_end_date": "2024-06-29"
     },
     {
-      "id": 612,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Sat, 28 Sep 2024 00:00:00 GMT"
+      "period_end_date": "2024-09-28"
     },
     {
-      "id": 613,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Sat, 29 Mar 2025 00:00:00 GMT"
+      "period_end_date": "2025-03-29"
     },
     {
-      "id": 614,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Sat, 28 Jun 2025 00:00:00 GMT"
+      "period_end_date": "2025-06-28"
     },
     {
-      "id": 615,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Sat, 27 Sep 2025 00:00:00 GMT"
+      "period_end_date": "2025-09-27"
     },
     {
-      "id": 1706,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Sat, 03 Jan 2026 00:00:00 GMT"
+      "period_end_date": "2026-01-03"
     },
     {
-      "id": 616,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Tue, 31 Mar 2026 00:00:00 GMT"
+      "period_end_date": "2026-03-31"
     },
     {
-      "id": 617,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Tue, 30 Jun 2026 00:00:00 GMT"
+      "period_end_date": "2026-06-30"
     }
   ],
   "ticker": "ONTO"

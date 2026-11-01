@@ -118,14 +118,14 @@
   "name": "Entegris, Inc.",
   "periods": [
     {
-      "id": 341,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Sat, 28 Mar 2026 00:00:00 GMT"
+      "period_end_date": "2026-03-28"
     },
     {
-      "id": 342,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Sat, 27 Jun 2026 00:00:00 GMT"
+      "period_end_date": "2026-06-27"
     }
   ],
   "ticker": "ENTG"

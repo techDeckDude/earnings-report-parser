@@ -658,114 +658,114 @@
   "name": "NVIDIA CORP",
   "periods": [
     {
-      "id": 548,
+      "filing_type": "10-Q",
       "period": "Q1 2022",
-      "period_end_date": "Sun, 02 May 2021 00:00:00 GMT"
+      "period_end_date": "2021-05-02"
     },
     {
-      "id": 549,
+      "filing_type": "10-Q",
       "period": "Q2 2022",
-      "period_end_date": "Sun, 01 Aug 2021 00:00:00 GMT"
+      "period_end_date": "2021-08-01"
     },
     {
-      "id": 550,
+      "filing_type": "10-Q",
       "period": "Q3 2022",
-      "period_end_date": "Sun, 31 Oct 2021 00:00:00 GMT"
+      "period_end_date": "2021-10-31"
     },
     {
-      "id": 1347,
+      "filing_type": "10-K",
       "period": "Q4 2022",
-      "period_end_date": "Sun, 30 Jan 2022 00:00:00 GMT"
+      "period_end_date": "2022-01-30"
     },
     {
-      "id": 551,
+      "filing_type": "10-Q",
       "period": "Q1 2023",
-      "period_end_date": "Sun, 01 May 2022 00:00:00 GMT"
+      "period_end_date": "2022-05-01"
     },
     {
-      "id": 552,
+      "filing_type": "10-Q",
       "period": "Q2 2023",
-      "period_end_date": "Sun, 31 Jul 2022 00:00:00 GMT"
+      "period_end_date": "2022-07-31"
     },
     {
-      "id": 553,
+      "filing_type": "10-Q",
       "period": "Q3 2023",
-      "period_end_date": "Sun, 30 Oct 2022 00:00:00 GMT"
+      "period_end_date": "2022-10-30"
     },
     {
-      "id": 1348,
+      "filing_type": "10-K",
       "period": "Q4 2023",
-      "period_end_date": "Sun, 29 Jan 2023 00:00:00 GMT"
+      "period_end_date": "2023-01-29"
     },
     {
-      "id": 554,
+      "filing_type": "10-Q",
       "period": "Q1 2024",
-      "period_end_date": "Sun, 30 Apr 2023 00:00:00 GMT"
+      "period_end_date": "2023-04-30"
     },
     {
-      "id": 555,
+      "filing_type": "10-Q",
       "period": "Q2 2024",
-      "period_end_date": "Sun, 30 Jul 2023 00:00:00 GMT"
+      "period_end_date": "2023-07-30"
     },
     {
-      "id": 556,
+      "filing_type": "10-Q",
       "period": "Q3 2024",
-      "period_end_date": "Sun, 29 Oct 2023 00:00:00 GMT"
+      "period_end_date": "2023-10-29"
     },
     {
-      "id": 1349,
+      "filing_type": "10-K",
       "period": "Q4 2024",
-      "period_end_date": "Sun, 28 Jan 2024 00:00:00 GMT"
+      "period_end_date": "2024-01-28"
     },
     {
-      "id": 557,
+      "filing_type": "10-Q",
       "period": "Q1 2025",
-      "period_end_date": "Sun, 28 Apr 2024 00:00:00 GMT"
+      "period_end_date": "2024-04-28"
     },
     {
-      "id": 558,
+      "filing_type": "10-Q",
       "period": "Q2 2025",
-      "period_end_date": "Sun, 28 Jul 2024 00:00:00 GMT"
+      "period_end_date": "2024-07-28"
     },
     {
-      "id": 559,
+      "filing_type": "10-Q",
       "period": "Q3 2025",
-      "period_end_date": "Sun, 27 Oct 2024 00:00:00 GMT"
+      "period_end_date": "2024-10-27"
     },
     {
-      "id": 1350,
+      "filing_type": "10-K",
       "period": "Q4 2025",
-      "period_end_date": "Sun, 26 Jan 2025 00:00:00 GMT"
+      "period_end_date": "2025-01-26"
     },
     {
-      "id": 560,
+      "filing_type": "10-Q",
       "period": "Q1 2026",
-      "period_end_date": "Sun, 27 Apr 2025 00:00:00 GMT"
+      "period_end_date": "2025-04-27"
     },
     {
-      "id": 561,
+      "filing_type": "10-Q",
       "period": "Q2 2026",
-      "period_end_date": "Sun, 27 Jul 2025 00:00:00 GMT"
+      "period_end_date": "2025-07-27"
     },
     {
-      "id": 562,
+      "filing_type": "10-Q",
       "period": "Q3 2026",
-      "period_end_date": "Sun, 26 Oct 2025 00:00:00 GMT"
+      "period_end_date": "2025-10-26"
     },
     {
-      "id": 1351,
+      "filing_type": "10-K",
       "period": "Q4 2026",
-      "period_end_date": "Sun, 25 Jan 2026 00:00:00 GMT"
+      "period_end_date": "2026-01-25"
     },
     {
-      "id": 563,
+      "filing_type": "10-Q",
       "period": "Q1 2027",
-      "period_end_date": "Sun, 26 Apr 2026 00:00:00 GMT"
+      "period_end_date": "2026-04-26"
     },
     {
-      "id": 564,
+      "filing_type": "10-Q",
       "period": "Q2 2027",
-      "period_end_date": "Sun, 26 Jul 2026 00:00:00 GMT"
+      "period_end_date": "2026-07-26"
     }
   ],
   "ticker": "NVDA"
